@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "32.2.1",
-        "title": "Avi AlertObjectList Object API",
+        "title": "Avi AkoAmkoCluster Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi AlertObjectList object api\n```\n- configure alertobjectlist\n- show alertobjectlist\n```\n\nAPI permission: PERMISSION_ALERTCONFIG\n"
+        "description": "Avi AkoAmkoCluster object api\n```\n```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\n"
     },
     "tags": [
         {
-            "name": "AlertObjectList"
+            "name": "AkoAmkoCluster"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/alertobjectlist": {
+        "/akoamkocluster": {
             "get": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist",
-                "operationId": "GET /alertobjectlist",
+                "description": "/akoamkocluster",
+                "operationId": "GET /akoamkocluster",
                 "consumes": [
                     "application/json"
                 ],
@@ -112,6 +112,102 @@
                         "type": "string",
                         "required": false,
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "cloud_uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.name",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.contains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.icontains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "uuid.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "isearch",
+                        "in": "query",
+                        "description": "Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "limit_by",
+                        "in": "query",
+                        "description": "Filter to limit the number of objects in the response data. Eg. limit_by=3.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "description": "Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Parameter to sort the results with respect to a field. Eg. sort=name.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Parameter to specify the desired page number. The page starts from 1 and default is 1.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
+                        "type": "string",
+                        "required": false
                     }
                 ],
                 "security": [
@@ -123,7 +219,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectListApiResponse"
+                            "$ref": "#/definitions/AkoAmkoClusterApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +229,10 @@
             },
             "post": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist",
-                "operationId": "POST /alertobjectlist",
+                "description": "/akoamkocluster",
+                "operationId": "POST /akoamkocluster",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +271,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "AlertObjectList object creation",
+                        "description": "AkoAmkoCluster object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     }
                 ],
@@ -191,7 +287,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     "401": {
@@ -200,13 +296,13 @@
                 }
             }
         },
-        "/alertobjectlist/{uuid}": {
+        "/akoamkocluster/{uuid}": {
             "get": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist/{uuid}/{uuid}",
-                "operationId": "GET /alertobjectlist/{uuid}",
+                "description": "/akoamkocluster/{uuid}/{uuid}",
+                "operationId": "GET /akoamkocluster/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +388,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     "401": {
@@ -305,10 +401,10 @@
             },
             "put": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist/{uuid}/{uuid}",
-                "operationId": "PUT /alertobjectlist/{uuid}",
+                "description": "/akoamkocluster/{uuid}/{uuid}",
+                "operationId": "PUT /akoamkocluster/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +450,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "AlertObjectList object creation",
+                        "description": "AkoAmkoCluster object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     {
@@ -377,7 +473,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     "401": {
@@ -390,10 +486,10 @@
             },
             "patch": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist/{uuid}/{uuid}",
-                "operationId": "PATCH /alertobjectlist/{uuid}",
+                "description": "/akoamkocluster/{uuid}/{uuid}",
+                "operationId": "PATCH /akoamkocluster/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +535,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "AlertObjectList object creation",
+                        "description": "AkoAmkoCluster object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     {
@@ -462,7 +558,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/AlertObjectList"
+                            "$ref": "#/definitions/AkoAmkoCluster"
                         }
                     },
                     "401": {
@@ -475,10 +571,10 @@
             },
             "delete": {
                 "tags": [
-                    "AlertObjectList"
+                    "AkoAmkoCluster"
                 ],
-                "description": "/alertobjectlist/{uuid}/{uuid}",
-                "operationId": "DELETE /alertobjectlist/{uuid}",
+                "description": "/akoamkocluster/{uuid}/{uuid}",
+                "operationId": "DELETE /akoamkocluster/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -549,11 +645,11 @@
         }
     },
     "definitions": {
-        "AlertObjectList": {
+        "AkoAmkoCluster": {
             "type": "object",
             "required": [
-                "name",
-                "source"
+                "created_by",
+                "name"
             ],
             "properties": {
                 "_last_modified": {
@@ -561,23 +657,28 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "cloud_ref": {
+                    "description": "Cloud reference UUID in Avi Controller. It is a reference to an object of type Cloud. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "cluster_type": {
+                    "description": "Type of operator - AKO or AMKO. Enum options - CLUSTER_TYPE_AKO, CLUSTER_TYPE_AMKO. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "created_by": {
+                    "description": "AKO/AMKO user identifier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "deployment_info": {
+                    "description": "Deployment configuration information. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AkoAmkoClusterDeploymentInfo"
+                },
+                "metadata": {
+                    "description": "Additional cluster metadata. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AkoAmkoClusterMetadata"
+                },
                 "name": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "objects": {
-                    "description": " Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP, STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT, PKIPROFILE, AUTHPROFILE, CLOUD, SERVERAUTOSCALEPOLICY, AUTOSCALELAUNCHCONFIG, MICROSERVICEGROUP, IPAMPROFILE, HARDWARESECURITYMODULEGROUP, POOLGROUP, PRIORITYLABELS, POOLGROUPDEPLOYMENTPOLICY, GSLBSERVICE, GSLBSERVICERUNTIME, SCHEDULER, GSLBGEODBPROFILE, GSLBAPPLICATIONPERSISTENCEPROFILE, TRAFFICCLONEPROFILE, VSVIP, WAFPOLICY, WAFPROFILE, ERRORPAGEPROFILE, ERRORPAGEBODY, L4POLICYSET, GSLBSERVICERUNTIMEBATCH, WAFPOLICYPSMGROUP, PINGACCESSAGENT, NETWORKSERVICE, NATPOLICY, SSOPOLICY, PROTOCOLPARSER, EXAMPLECHILD, TESTSEDATASTORELEVEL1, TESTSEDATASTORELEVEL2, TESTSEDATASTORELEVEL3, FILEOBJECT, IPREPUTATIONDB, FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB, BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING, AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY, APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE, CLOUDPROPERTIES, SNMPTRAPPROFILE, ACTIONGROUPPROFILE, MICROSERVICE, ALERTPARAMS, ACTIONGROUPCONFIG, CLOUDCONNECTORUSER, GSLB, GSLBDNSUPDATE, GSLBSITEOPS, GLBMGRWARMSTART, IPAMDNSRECORD, GSLBDNSGSSTATUS, GSLBDNSGEOFILEOPS, GSLBDNSGEOUPDATE, GSLBDNSGEOCLUSTEROPS, GSLBDNSCLEANUP, GSLBSITEOPSRESYNC, IPAMDNSPROVIDERPROFILE, ALBSERVICESCONFIG, SYSTEMLIMITS, REPLICATIONOPERATION, VCENTERSERVER, AVAILABILITYZONE, IMAGE, VSMGRDNSCLEANUP, ALBSERVICESFILEUPLOAD, CONTROLLERSITE, ALERTOBJECTLIST, BACKUPCONFIGURATION, USERACCOUNTPROFILE, WAFAPPLICATIONSIGNATUREPROVIDER, LABELGROUP, CERTIFICATEMANAGEMENTPROFILE, CUSTOMIPAMDNSPROFILE, ALERTSCRIPTCONFIG, WEBHOOK, CLUSTERCLOUDDETAILS, INVENTORYFAULTCONFIG, MEMORYBALANCERREQUEST, SECURECHANNELMAPPING, ALBSERVICESJOB, STATEDIFFOPERATION, SITEVERSION, AUTHMAPPINGPROFILE, WEBAPPUT, TENANTSYSTEMCONFIGURATION, ALERT, JOBENTRY, SECURECHANNELTOKEN, SECURECHANNELAVAILABLELOCALIPS, LICENSESTATUS, FLOATINGIPSUBNET, STATEDIFFSNAPSHOT, CONTROLLERLICENSE, SCVSSTATEINFO, SCPOOLSERVERSTATEINFO, UPGRADESTATUSSUMMARY, CONTROLLERPORTALREGISTRATION, LOGCONTROLLERMAPPING, VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE, GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY, SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE, RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO, REDISCOVERVCENTERPARAM, CERTJWTSTORE, LICENSEQUOTAUSAGEINFO, MANAGEMENTSERVICEREQ, MANAGEMENTSERVICEACCESSGRANTREQ, CREATEMANAGEMENTSERVICEREQ, CREATEMANAGEMENTSERVICEACCESSGRANTREQ, TENANTBINDING, CCCREATESEREQ, CCDELETESEREQ, CCADDVNICSREQ, CCDELVNICSREQ, AKOAMKOCLUSTER, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP, SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY, NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME, SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS, VIRTUALSERVICESCALEOUTSTATUSDETAIL, SECURITYMGRLEARN, SECURITYMGRTOPN, SSLSESSIONCACHE, SEGEODETAILS, GSLBSERVICEALGOSTAT, HTTPCONNECTIONRUNTIME, HTTPCONNECTIONRUNTIMEDETAIL, REMOTESITEWATCHERSUMMARY, REMOTESITEWATCHEREVENT, IPREPUTATIONDBRUNTIME, SEFAULTINJECTEXHAUSTCFG, SEFAULTINJECTEXHAUSTSHMCFG, SEFAULTINJECTEXHAUSTSHMCONN, BGPRUNNINGCONFIG, BGPADVERTISEDROUTES, BGPPEERSTATUS, BFDSESSIONSTATUS, BGPPEERINFO, GSLBSITEOPSREPLICATIONPOLICYOPS, FEDERATEDDATASTORESTATUS, FEDERATEDDIFFQUEUESTATUS, ROUTESTATRUNTIME, ROUTEFLOWRUNTIME, NSXTSEGMENTRUNTIME, VIRTUALSERVICEICAPSTATS, KEYVALSUMMARYOBJSYNC, POOLOBJSYNC, KEYVALDISPATCH, SEAGENTOBJSYNCDETAILS, VIRTUALSERVICESCALEOUTSTATUSKEYVAL, VIRTUALSERVICESCALEOUTSTATUSKEYVALSUMMARY, VIRTUALSERVICEOUTOFBANDREQUESTSTATS, GEODBLOCATIONINFO, SEAGENTRESOLVDBRUNTIME, SEAGENTRESOLVDBRUNTIMESUMMARY, METRICSRUNTIMEDEBUG, BOTCLASSIFICATIONRESULTMETRICS, BOTUACACHERUNTIME, BOTUACACHESTATSRUNTIME, POOLGROUPRUNTIMEDETAIL, SECURITYMGRUACACHEQUERY, SECURITYMGRUACACHECLEAR, SECURITYMGRUACACHESUMMARY, GSLBADAPTIVERUNTIME, BGPPEERSSTATE, VSSERVICESERVERMAPKV, VSSERVICESERVERMAPTABLE, UPGRADESTATUSINFO, CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME, SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME, VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS, VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS, KEYVALSTATS, CSRFMETRICS, DIAMETERCONNECTIONS, DUMPALLOBJSYNCSTATS, QATSTATSRUNTIME, DISPATCHERSTATRUNTIME6, DISPATCHERSTATCLEARRUNTIME6, SEFAULTINJECTSEPARAM, SEFAULTINJECTEXHAUSTPARAM, PRIMARYPOOL, CONNECTIONCLEARFILTER, DISPATCHERTABLEDUMPCLEAR, ARPTABLEFILTER, HTTPCACHEOBJFILTER, CONNPOOLFILTER, PERSISTENCEFILTER, SELOGAGENTSTATS, SELOGAGENTOPERSTATS, SELOGAGENTCONTROLLERINTERFACESTATS, SELOGAGENTNETWORKSTREAMSTATS, SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE, SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO, METRICSAPISRVRSTATS, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE, SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE, SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL, PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME, SEHUGEPAGEINFORUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY, POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP, APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS, APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS, STATECACHECONFIGVERSION, STATECACHEOPERSTATUS, STATECACHEVIRTUALSERVICE, STATECACHEPOOL, STATECACHENODE, STATECACHEOPERSTATE, STATECACHESERVICEENGINE, NSXCONFIGURATION, NSXSGTABLE, NSXAGENTINTERNAL, NSXSGINFO, NSXSGIPS, NSXAGENTINTERNALCLI, NSXTAGENT, SERATELIMITINGRLINTERNAL, SERATELIMITINGMSFINTERNAL, ADAPTREPL, POOLGROUPENABLEPRIMARYPOOL, KEYVALSESSION, KEYVALSESSIONSUMMARY, SYSTEMREPORT, AWSLOGIN, ADAPTREPLFAULTINJ, ALERTFAULTPARAMS, ALERTMGRPARAMS, ALERTTESTEMAILPARAMS, ALERTTESTSYSLOGSNMPPARAMS, APICVSPLACEMENTREQ, APPLYLOGRECOMMENDATIONS, CCFAULTPARAMS, CLUSTERPARAMS, CREDPARAMS, GETLOGRECOMMENDATIONS, GROUPPARAMS, NSXTNSSERVICEPARAMS, OPENSTACKLOGIN, RETRYPLACEMENTPARAMS, SERVERSCALEINPARAMS, SERVERSCALEOUTPARAMS, SYSTESTEMAILPARAMS, TIER1ROUTERFILTER, TRANSPORTZONEPARAMS, VIFAULTINJECTION, VISETMGMTIPSEREQ, VCENTERCLOUDSTATUSREQ, VCENTERINVENTORYDIAGREQ, VCENTERQUARANTINEDHOSTPARAMS, VSMIGRATEPARAMS, VSRESYNCPARAMS, VSSCALEINPARAMS, VSSCALEOUTPARAMS, VSSWITCHOVERPARAMS, TASKJOURNAL, JOURNALERROR, JOURNALINFO, JOURNALSUMMARY, EVENTMANAGERSTATS, EVENTMANAGERSUBSCRIPTIONS, EVENTMANAGERCONFIG, SYSTEMHEALTHGETSYSTEMHEALTHSECURECHANNELRESPONSE, SYSTEMHEALTHGETSYSTEMHEALTHCLUSTERINGRESPONSE, SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE, SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE, SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY, SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS, TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS, ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL, GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME, GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME, GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO, GSLBSITEHTTPTABLE, LOCALWORKERFDSVERSION, GSLBSERVICEHEALTHSTATUS, GSLBFILEOBJECTRUNTIME, GSLBRUNTIMESUMMARY, GSLBRUNTIMEDETAIL, GSLBRUNTIMEINTERNAL, GSLBLEADERCHANGERUNTIME. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "source": {
-                    "description": " Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the AKO/AMKO cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -586,12 +687,16 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the AKO/AMKO cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "version_info": {
+                    "description": "Version information including Kubernetes and AKO/AMKO versions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/AkoAmkoClusterVersionInfo"
                 }
             }
         },
-        "AlertObjectListApiResponse": {
+        "AkoAmkoClusterApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -605,10 +710,55 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/AlertObjectList"
+                        "$ref": "#/definitions/AkoAmkoCluster"
                     }
                 },
                 "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "AkoAmkoClusterDeploymentInfo": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "description": "Kubernetes namespace where AKO/AMKO is deployed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "pod_name": {
+                    "description": "Pod name for identification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "replica_count": {
+                    "description": "Number of replicas in the deployment. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AkoAmkoClusterMetadata": {
+            "type": "object",
+            "properties": {
+                "cni": {
+                    "description": "Container Network Interface (CNI) type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "node_count": {
+                    "description": "Number of nodes in the Kubernetes cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "AkoAmkoClusterVersionInfo": {
+            "type": "object",
+            "properties": {
+                "ako_amko_version": {
+                    "description": "AKO/AMKO operator version (e.g., '1.12.0'). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "kubernetes_version": {
+                    "description": "Kubernetes cluster version (e.g., '1.28.3'). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
