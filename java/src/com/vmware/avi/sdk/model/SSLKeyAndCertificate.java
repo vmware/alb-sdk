@@ -94,7 +94,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     private Boolean skipAutoChain = false;
 
     @JsonProperty("status")
-    private String status;
+    private String status = "SSL_CERTIFICATE_FINISHED";
 
     @JsonProperty("tenant_ref")
     private String tenantRef;
@@ -719,10 +719,9 @@ public class SSLKeyAndCertificate extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Status of the certificate.
-     * Allowed values - ssl_certificate_finished, ssl_certificate_pending.
      * Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CERTIFICATE_FINISHED".
      * @return status
      */
     public String getStatus() {
@@ -731,10 +730,9 @@ public class SSLKeyAndCertificate extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Status of the certificate.
-     * Allowed values - ssl_certificate_finished, ssl_certificate_pending.
      * Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CERTIFICATE_FINISHED".
      * @param status set the status.
      */
     public void setStatus(String  status) {
