@@ -422,7 +422,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/SeFaultRuntime"
                 "401":
                     description: log in failed
                 "404":
@@ -970,6 +970,41 @@ definitions:
                 format: uint32
             num_skips:
                 description: "Number of times the fault should be skipped before executing. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    SeFaultRuntime:
+        type: object
+        properties:
+            proc_id:
+                description: "ID of the process executing the fault. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            se_fault_runtime_entries:
+                description: "Runtime stats of each fault that has been or is configured to be executed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/SeFaultRuntimeEntry'
+            se_uuid:
+                description: "UUID of the SE executing the fault. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    SeFaultRuntimeEntry:
+        type: object
+        properties:
+            executions_remaining:
+                description: "Number of times the fault will be executed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            fault_name:
+                description: "Name of the fault. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            function_name:
+                description: "Name of the function containing the fault. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            skips_remaining:
+                description: "Number of times the fault will be skipped before executing. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            total_executions:
+                description: "Number of times the fault has been executed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     SourcePortAddr:

@@ -423,7 +423,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/GeoDbLocationInfo"
                 "401":
                     description: log in failed
                 "404":
@@ -506,6 +506,29 @@ definitions:
                 type: string
             vendor:
                 description: "Source of the file data. Enum options - VENDOR_USER_DEFINED, VENDOR_AVI_DEFINED. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    GeoDbLocationEntry:
+        type: object
+        required:
+            -   field
+            -   value
+        properties:
+            field:
+                description: "The type of Geo information. Enum options - ATTRIBUTE_IP_PREFIX, ATTRIBUTE_COUNTRY_CODE, ATTRIBUTE_COUNTRY_NAME, ATTRIBUTE_CONTINENT_CODE, ATTRIBUTE_CONTINENT_NAME, ATTRIBUTE_REGION_NAME, ATTRIBUTE_CITY_NAME, ATTRIBUTE_ISP_NAME, ATTRIBUTE_ORGANIZATION_NAME, ATTRIBUTE_AS_NUMBER, ATTRIBUTE_AS_NAME, ATTRIBUTE_LONGITUDE, ATTRIBUTE_LATITUDE, ATTRIBUTE_CUSTOM_1, ATTRIBUTE_CUSTOM_2, ATTRIBUTE_CUSTOM_3, ATTRIBUTE_CUSTOM_4, ATTRIBUTE_CUSTOM_5, ATTRIBUTE_CUSTOM_6, ATTRIBUTE_CUSTOM_7, ATTRIBUTE_CUSTOM_8, ATTRIBUTE_CUSTOM_9, ATTRIBUTE_USER_DEFINED_MAPPING. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            value:
+                description: "Value of the Geo information. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    GeoDbLocationInfo:
+        type: object
+        properties:
+            entries:
+                description: "The Geo entries in the database. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/GeoDbLocationEntry'
+            se_uuid:
+                description: "The UUID of the SE containing this set of entries. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     GeoDBMapping:
         type: object

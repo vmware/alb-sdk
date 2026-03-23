@@ -604,7 +604,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/ServiceEngineGroupRuntime"
                 "401":
                     description: log in failed
                 "404":
@@ -651,7 +651,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/SeGroupPlacementSummary"
                 "401":
                     description: log in failed
                 "404":
@@ -698,7 +698,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/SeGroupPlacementDetail"
                 "401":
                     description: log in failed
                 "404":
@@ -745,7 +745,7 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        type: string
+                        $ref: "#/definitions/SeGroupPlacementIneligible"
                 "401":
                     description: log in failed
                 "404":
@@ -829,6 +829,93 @@ definitions:
             vmg_name:
                 description: "Cluster VM Group name.VM Group name is unique inside cluster. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConsumerStats:
+        type: object
+        properties:
+            num_asymmetric_shared_vip:
+                description: "Count of shared VsVIPs with asymmetrically scaled out VSs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_attach_ip_incomplete:
+                description: "Count of VSs which have not completed cloud programming of the VIP. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_disabled:
+                description: "Count of disabled VSs. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_enable_rhi:
+                description: "Count of VSs with enable_rhi. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_enable_rhi_snat:
+                description: "Count of VSs with enable_rhi_snat. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_fully_placed:
+                description: "Count of VSs which are placed on the requested number of SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_idle:
+                description: "Count of VSs which are idle and not placed on the requested number of SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_ign_pool_net_reach:
+                description: "Count of VSs with ign_pool_net_reach. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_not_placed:
+                description: "Count of VSs not placed on any SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_partially_placed:
+                description: "Count of VSs which are placed on at least one SE, but not the requested number. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_pending_placement:
+                description: "Count of VSs currently pending placement on a SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_placement_ineligible:
+                description: "Count of VSs which are placement ineligible (unable to proceed with placement). Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_scaleout_ecmp:
+                description: "Count of VSs with scaleout_ecmp. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_shared_vip:
+                description: "Count of shared VsVIPs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_sni_child:
+                description: "Count of SNI child VSs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_sni_parent:
+                description: "Count of SNI parent VSs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_total:
+                description: "Total VS count. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_traffic_disabled:
+                description: "Count of VSs with traffic disabled. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_wildcard:
+                description: "Count of wildcard VIP VSs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_wildcard_fully_placed_all_nws:
+                description: "Count of wildcard VIP VSs which are placed on all placement networks. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_wildcard_fully_placed_some_nws:
+                description: "Count of wildcard VIP VSs which are placed on a subset of placement networks. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     CustomTag:
         type: object
         required:
@@ -1079,6 +1166,28 @@ definitions:
                 type: integer
                 default: 10
                 format: uint32
+    PlacementIneligibleReasonConsumers:
+        type: object
+        properties:
+            consumer_ids:
+                description: "Consumer IDs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/SeConsumerId'
+            reason:
+                description: "Placement ineligible reason. Enum options - PLACEMENT_INELIGIBLE_UPGRADE_IN_PROGRESS, PLACEMENT_INELIGIBLE_SE_GRP_UPGRADE_IN_PROGRESS, PLACEMENT_INELIGIBLE_CLOUD_NOT_READY, PLACEMENT_INELIGIBLE_CLOUD_API_NOT_READY, PLACEMENT_INELIGIBLE_VS_ELIGIBLE, PLACEMENT_INELIGIBLE_MULTIPLE_SE_CRASHES, PLACEMENT_INELIGIBLE_SPAWN_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_SPAWN_FAIL_UNRECOVERABLE, PLACEMENT_INELIGIBLE_BOOTUP_FAIL, PLACEMENT_INELIGIBLE_VNIC_FAIL, PLACEMENT_INELIGIBLE_VNIC_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_VNIC_IP_FAIL, PLACEMENT_INELIGIBLE_ATTACH_IP_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_ATTACH_IP_FAIL_UNRECOVERABLE, PLACEMENT_INELIGIBLE_VIP_MULTIPLE_NETWORKS, PLACEMENT_INELIGIBLE_SRVR_MULTIPLE_NETWORKS, PLACEMENT_INELIGIBLE_NO_VIP_NETWORK, PLACEMENT_INELIGIBLE_NO_SRVR_NETWORK, PLACEMENT_INELIGIBLE_VIP_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_SRVR_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_BGP_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_OTHER_SHARED_VIP_VS_PENDING, PLACEMENT_INELIGIBLE_OTHER_ACTIVE_STANDBY_VS_PENDING, PLACEMENT_INELIGIBLE_CONCURRENT_SE_CREATION_LIMIT, PLACEMENT_INELIGIBLE_SE_ELIGIBLE, PLACEMENT_INELIGIBLE_SE_DISABLED, PLACEMENT_INELIGIBLE_SE_DOWN, PLACEMENT_INELIGIBLE_SE_GATEWAY_DOWN, PLACEMENT_INELIGIBLE_SE_DISCONNECTED, PLACEMENT_INELIGIBLE_SE_MAX_VS_PER_SE_LIMIT, PLACEMENT_INELIGIBLE_SE_DEL_PENDING, PLACEMENT_INELIGIBLE_SE_GRP_REBOOT_PENDING, PLACEMENT_INELIGIBLE_NO_FRONTEND_REACH, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH, PLACEMENT_INELIGIBLE_NO_FRONTEND_BACKEND_REACH, PLACEMENT_INELIGIBLE_MAX_VNIC_PER_SE_LIMIT, PLACEMENT_INELIGIBLE_MAX_IPS_PER_VNIC_LIMIT, PLACEMENT_INELIGIBLE_AZ_MISMATCH, PLACEMENT_INELIGIBLE_VNIC_DISCONNECTED, PLACEMENT_INELIGIBLE_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_GCP_VNIC_NOT_ETH0, PLACEMENT_INELIGIBLE_SNI_CONSTRAINTS, PLACEMENT_INELIGIBLE_ACTIVE_STANDBY_CONSTRAINTS, PLACEMENT_INELIGIBLE_SHARED_VIP_CONSTRAINTS, PLACEMENT_INELIGIBLE_OTHER_VIP_ON_VS_PENDING, PLACEMENT_INELIGIBLE_NOT_ALL_BGP_PEERS_REACHABLE_VIP, PLACEMENT_INELIGIBLE_NO_BGP_PEER_REACHABLE_VIP, PLACEMENT_INELIGIBLE_NOT_ALL_BGP_PEERS_REACHABLE_SNAT, PLACEMENT_INELIGIBLE_NO_BGP_PEER_REACHABLE_SNAT, PLACEMENT_INELIGIBLE_SE_HOST_NO_NETWORK_CONNECTIVITY, PLACEMENT_INELIGIBLE_INSUFFICIENT_VNIC_SLOTS, PLACEMENT_INELIGIBLE_EXCLUDED_IP_CANDIDATE, PLACEMENT_INELIGIBLE_CON_IDLE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_CON_IDLE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_IP_CANDIDATE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    PlacementIneligibleReasonResources:
+        type: object
+        properties:
+            reason:
+                description: "Placement ineligible reason. Enum options - PLACEMENT_INELIGIBLE_UPGRADE_IN_PROGRESS, PLACEMENT_INELIGIBLE_SE_GRP_UPGRADE_IN_PROGRESS, PLACEMENT_INELIGIBLE_CLOUD_NOT_READY, PLACEMENT_INELIGIBLE_CLOUD_API_NOT_READY, PLACEMENT_INELIGIBLE_VS_ELIGIBLE, PLACEMENT_INELIGIBLE_MULTIPLE_SE_CRASHES, PLACEMENT_INELIGIBLE_SPAWN_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_SPAWN_FAIL_UNRECOVERABLE, PLACEMENT_INELIGIBLE_BOOTUP_FAIL, PLACEMENT_INELIGIBLE_VNIC_FAIL, PLACEMENT_INELIGIBLE_VNIC_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_VNIC_IP_FAIL, PLACEMENT_INELIGIBLE_ATTACH_IP_FAIL_MAX_LIMIT, PLACEMENT_INELIGIBLE_ATTACH_IP_FAIL_UNRECOVERABLE, PLACEMENT_INELIGIBLE_VIP_MULTIPLE_NETWORKS, PLACEMENT_INELIGIBLE_SRVR_MULTIPLE_NETWORKS, PLACEMENT_INELIGIBLE_NO_VIP_NETWORK, PLACEMENT_INELIGIBLE_NO_SRVR_NETWORK, PLACEMENT_INELIGIBLE_VIP_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_SRVR_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_BGP_NETWORK_DOES_NOT_EXIST, PLACEMENT_INELIGIBLE_OTHER_SHARED_VIP_VS_PENDING, PLACEMENT_INELIGIBLE_OTHER_ACTIVE_STANDBY_VS_PENDING, PLACEMENT_INELIGIBLE_CONCURRENT_SE_CREATION_LIMIT, PLACEMENT_INELIGIBLE_SE_ELIGIBLE, PLACEMENT_INELIGIBLE_SE_DISABLED, PLACEMENT_INELIGIBLE_SE_DOWN, PLACEMENT_INELIGIBLE_SE_GATEWAY_DOWN, PLACEMENT_INELIGIBLE_SE_DISCONNECTED, PLACEMENT_INELIGIBLE_SE_MAX_VS_PER_SE_LIMIT, PLACEMENT_INELIGIBLE_SE_DEL_PENDING, PLACEMENT_INELIGIBLE_SE_GRP_REBOOT_PENDING, PLACEMENT_INELIGIBLE_NO_FRONTEND_REACH, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH, PLACEMENT_INELIGIBLE_NO_FRONTEND_BACKEND_REACH, PLACEMENT_INELIGIBLE_MAX_VNIC_PER_SE_LIMIT, PLACEMENT_INELIGIBLE_MAX_IPS_PER_VNIC_LIMIT, PLACEMENT_INELIGIBLE_AZ_MISMATCH, PLACEMENT_INELIGIBLE_VNIC_DISCONNECTED, PLACEMENT_INELIGIBLE_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_GCP_VNIC_NOT_ETH0, PLACEMENT_INELIGIBLE_SNI_CONSTRAINTS, PLACEMENT_INELIGIBLE_ACTIVE_STANDBY_CONSTRAINTS, PLACEMENT_INELIGIBLE_SHARED_VIP_CONSTRAINTS, PLACEMENT_INELIGIBLE_OTHER_VIP_ON_VS_PENDING, PLACEMENT_INELIGIBLE_NOT_ALL_BGP_PEERS_REACHABLE_VIP, PLACEMENT_INELIGIBLE_NO_BGP_PEER_REACHABLE_VIP, PLACEMENT_INELIGIBLE_NOT_ALL_BGP_PEERS_REACHABLE_SNAT, PLACEMENT_INELIGIBLE_NO_BGP_PEER_REACHABLE_SNAT, PLACEMENT_INELIGIBLE_SE_HOST_NO_NETWORK_CONNECTIVITY, PLACEMENT_INELIGIBLE_INSUFFICIENT_VNIC_SLOTS, PLACEMENT_INELIGIBLE_EXCLUDED_IP_CANDIDATE, PLACEMENT_INELIGIBLE_CON_IDLE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_CON_IDLE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_IP_CANDIDATE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            resource_uuids:
+                description: "SE UUIDs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     PlacementScopeConfig:
         type: object
         required:
@@ -1151,6 +1260,53 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/KeyValueConfiguration'
+    ResourceStats:
+        type: object
+        properties:
+            num_bgp_peers_down:
+                description: "Count of BGP peers down SEs. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_capacity_reached:
+                description: "Count of SEs which have reached the max_vs_per_se limit. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_create_pending:
+                description: "Count of creation pending SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_disabled:
+                description: "Count of disabled SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_disconnected:
+                description: "Count of disconnected SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_gateway_down:
+                description: "Count of gateway down SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_offline:
+                description: "Count of offline SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_placement_eligible:
+                description: "Count of placement eligible SEs (VSs can be placed on SE). Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_reboot_pending:
+                description: "Count of SEs which are pending reboot. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_total:
+                description: "Total SE count. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_vnic_capacity_reached:
+                description: "Count of SEs which have reached the max vNIC limit. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     RoleFilterMatchLabel:
         type: object
         required:
@@ -1164,6 +1320,34 @@ definitions:
                 type: array
                 items:
                     type: string
+    SeConsumerId:
+        type: object
+        properties:
+            vip_id:
+                description: "VIP ID. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vs_uuid:
+                description: "VS UUID. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    SeCreateStats:
+        type: object
+        properties:
+            num_se_create:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_se_create_fail:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_se_create_success:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_se_create_timeout:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
     SeGroupAnalyticsPolicy:
         type: object
         properties:
@@ -1172,6 +1356,146 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/MetricsEventThreshold'
+    SeGroupPlacementDetail:
+        type: object
+        properties:
+            active_standby:
+                description: "Active standby. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            algo:
+                description: "Placement algorithm. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            buffer_se:
+                description: "Buffer SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            consumers_ineligible_reasons:
+                description: "List of VSs for each placement ineligible reason. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/PlacementIneligibleReasonConsumers'
+            create_pending_ses:
+                description: "Creation pending SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            image_ready:
+                description: "Image ready. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            instance_flavor:
+                description: "Instance flavor. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            max_se:
+                description: "Max SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            max_vs_per_se:
+                description: "Max vs per SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            resources_ineligible_reasons:
+                description: "List of SEs for each placement ineligible reason. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/PlacementIneligibleReasonResources'
+            upgrade_in_progress:
+                description: "Upgrade in progress. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            uuid:
+                description: "SE group UUID. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vnic_capacity_reached_ses:
+                description: "SEs which have reached the max vNIC limit. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            vnic_ip_limit_reached_ses:
+                description: "SEs for which there is at least one set of vNIC(s) (corresponding to the same network) which are all at the max vNIC IP limit. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            vs_host_redundancy:
+                description: "VS host redundancy. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+    SeGroupPlacementIneligible:
+        type: object
+        properties:
+            consumers_ineligible_reasons:
+                description: "List of VSs for each placement ineligible reason. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/PlacementIneligibleReasonConsumers'
+            image_ready:
+                description: "Image ready. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            max_vs_per_se:
+                description: "Max VS per SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            resources_ineligible_reasons:
+                description: "List of SEs for each placement ineligible reason. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/PlacementIneligibleReasonResources'
+            upgrade_in_progress:
+                description: "Upgrade in progress. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            uuid:
+                description: "SE group UUID. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    SeGroupPlacementSummary:
+        type: object
+        properties:
+            active_standby:
+                description: "Active standby. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            algo:
+                description: "Placement algorithm. Enum options - PLACEMENT_ALGO_PACKED, PLACEMENT_ALGO_DISTRIBUTED. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            buffer_se:
+                description: "Buffer SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            consumer_stats:
+                description: "VS counts. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ConsumerStats'
+            image_ready:
+                description: "Image ready. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            instance_flavor:
+                description: "Instance flavor. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            max_se:
+                description: "Max SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            max_vs_per_se:
+                description: "Max VS per SE. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            resource_stats:
+                description: "SE counts. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ResourceStats'
+            upgrade_in_progress:
+                description: "Upgrade in progress. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            uuid:
+                description: "SE group UUID. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vs_host_redundancy:
+                description: "VS host redundancy. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+    SeLicenseStats:
+        type: object
+        properties:
+            consumed_service_cores:
+                description: "Total service cores consumed. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            reserved_service_cores:
+                description: "Total service cores reserved. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
     ServiceEngineGroup:
         type: object
         required:
@@ -2482,6 +2806,68 @@ definitions:
                     $ref: "#/definitions/ServiceEngineGroup"
             next:
                 type: string
+    ServiceEngineGroupRuntime:
+        type: object
+        properties:
+            add_vnic_stats:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeVnicStats'
+            at_curr_ver_se:
+                description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            create_stats:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeCreateStats'
+            del_vnic_stats:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeVnicStats'
+            disconnected_se:
+                description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            down_se:
+                description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            license_stats:
+                description: "Licensed service cores stats. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeLicenseStats'
+            modify_vnic_stats:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeVnicStats'
+            next_se_spawn_ticks:
+                description: "Next tick for SE spawn retry. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            num_se_spawn_fail:
+                description: "Number of SE spawn fails. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            query_host_cookie:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            query_host_in_progress:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            query_host_ticks:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            up_se:
+                description: " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            upgrade_in_progress:
+                description: "Flap to indicate if SE group is going through an upgrade. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            uuid:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     SETimeTrackerProperties:
         type: object
         properties:
@@ -2508,6 +2894,25 @@ definitions:
                 type: integer
                 default: 20
                 format: uint32
+    SeVnicStats:
+        type: object
+        properties:
+            num_vnic_op:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_vnic_op_fail:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_vnic_op_success:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_vnic_op_timeout:
+                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
     UserAgentCacheConfig:
         type: object
         properties:
