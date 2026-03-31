@@ -36,29 +36,14 @@ public class PortalConfiguration  {
     @JsonProperty("enable_clickjacking_protection")
     private Boolean enableClickjackingProtection = true;
 
-    @JsonProperty("enable_http")
-    private Boolean enableHttp = true;
-
-    @JsonProperty("enable_https")
-    private Boolean enableHttps = true;
-
     @JsonProperty("enable_rate_limiter")
     private Boolean enableRateLimiter = false;
-
-    @JsonProperty("http_port")
-    private Integer httpPort;
-
-    @JsonProperty("https_port")
-    private Integer httpsPort;
 
     @JsonProperty("legacy_ssl_support")
     private Boolean legacySslSupport = false;
 
     @JsonProperty("pkiprofile_ref")
     private String pkiprofileRef;
-
-    @JsonProperty("redirect_to_https")
-    private Boolean redirectToHttps = true;
 
     @JsonProperty("sslkeyandcertificate_refs")
     private List<String> sslkeyandcertificateRefs;
@@ -191,46 +176,6 @@ public class PortalConfiguration  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @return enableHttp
-     */
-    public Boolean getEnableHttp() {
-        return enableHttp;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @param enableHttp set the enableHttp.
-     */
-    public void setEnableHttp(Boolean  enableHttp) {
-        this.enableHttp = enableHttp;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @return enableHttps
-     */
-    public Boolean getEnableHttps() {
-        return enableHttps;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @param enableHttps set the enableHttps.
-     */
-    public void setEnableHttps(Boolean  enableHttps) {
-        this.enableHttps = enableHttps;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Feature flag for enabling rate limiter(false by default).
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -251,54 +196,6 @@ public class PortalConfiguration  {
      */
     public void setEnableRateLimiter(Boolean  enableRateLimiter) {
         this.enableRateLimiter = enableRateLimiter;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Http port.
-     * Allowed values are 1-65535.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return httpPort
-     */
-    public Integer getHttpPort() {
-        return httpPort;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Http port.
-     * Allowed values are 1-65535.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param httpPort set the httpPort.
-     */
-    public void setHttpPort(Integer  httpPort) {
-        this.httpPort = httpPort;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Https port.
-     * Allowed values are 1-65535.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return httpsPort
-     */
-    public Integer getHttpsPort() {
-        return httpsPort;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Https port.
-     * Allowed values are 1-65535.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param httpsPort set the httpsPort.
-     */
-    public void setHttpsPort(Integer  httpsPort) {
-        this.httpsPort = httpsPort;
     }
 
     /**
@@ -349,26 +246,6 @@ public class PortalConfiguration  {
      */
     public void setPkiprofileRef(String  pkiprofileRef) {
         this.pkiprofileRef = pkiprofileRef;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @return redirectToHttps
-     */
-    public Boolean getRedirectToHttps() {
-        return redirectToHttps;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
-     * @param redirectToHttps set the redirectToHttps.
-     */
-    public void setRedirectToHttps(Boolean  redirectToHttps) {
-        this.redirectToHttps = redirectToHttps;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -473,16 +350,11 @@ public class PortalConfiguration  {
           return false;
       }
       PortalConfiguration objPortalConfiguration = (PortalConfiguration) o;
-      return   Objects.equals(this.enableHttps, objPortalConfiguration.enableHttps)&&
-  Objects.equals(this.redirectToHttps, objPortalConfiguration.redirectToHttps)&&
-  Objects.equals(this.enableHttp, objPortalConfiguration.enableHttp)&&
-  Objects.equals(this.sslkeyandcertificateRefs, objPortalConfiguration.sslkeyandcertificateRefs)&&
+      return   Objects.equals(this.sslkeyandcertificateRefs, objPortalConfiguration.sslkeyandcertificateRefs)&&
   Objects.equals(this.useUuidFromInput, objPortalConfiguration.useUuidFromInput)&&
   Objects.equals(this.sslprofileRef, objPortalConfiguration.sslprofileRef)&&
   Objects.equals(this.enableClickjackingProtection, objPortalConfiguration.enableClickjackingProtection)&&
   Objects.equals(this.allowBasicAuthentication, objPortalConfiguration.allowBasicAuthentication)&&
-  Objects.equals(this.httpPort, objPortalConfiguration.httpPort)&&
-  Objects.equals(this.httpsPort, objPortalConfiguration.httpsPort)&&
   Objects.equals(this.disableRemoteCliShell, objPortalConfiguration.disableRemoteCliShell)&&
   Objects.equals(this.disableSwagger, objPortalConfiguration.disableSwagger)&&
   Objects.equals(this.apiForceTimeout, objPortalConfiguration.apiForceTimeout)&&
@@ -500,14 +372,9 @@ public class PortalConfiguration  {
                         sb.append("    disableRemoteCliShell: ").append(toIndentedString(disableRemoteCliShell)).append("\n");
                         sb.append("    disableSwagger: ").append(toIndentedString(disableSwagger)).append("\n");
                         sb.append("    enableClickjackingProtection: ").append(toIndentedString(enableClickjackingProtection)).append("\n");
-                        sb.append("    enableHttp: ").append(toIndentedString(enableHttp)).append("\n");
-                        sb.append("    enableHttps: ").append(toIndentedString(enableHttps)).append("\n");
                         sb.append("    enableRateLimiter: ").append(toIndentedString(enableRateLimiter)).append("\n");
-                        sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
-                        sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
                         sb.append("    legacySslSupport: ").append(toIndentedString(legacySslSupport)).append("\n");
                         sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
-                        sb.append("    redirectToHttps: ").append(toIndentedString(redirectToHttps)).append("\n");
                         sb.append("    sslkeyandcertificateRefs: ").append(toIndentedString(sslkeyandcertificateRefs)).append("\n");
                         sb.append("    sslprofileRef: ").append(toIndentedString(sslprofileRef)).append("\n");
                         sb.append("    useUuidFromInput: ").append(toIndentedString(useUuidFromInput)).append("\n");
