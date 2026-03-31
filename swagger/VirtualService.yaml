@@ -3935,12 +3935,12 @@ paths:
                     description: object not found
 
 
-    /pool:
+    /debugvirtualservice:
         get:
             tags:
-                - Pool
-            description: /pool
-            operationId: GET /pool
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: GET /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -4003,14 +4003,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/PoolApiResponse"
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - Pool
-            description: /pool
-            operationId: POST /pool
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: POST /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -4038,25 +4038,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
-    /pool/{uuid}:
+    /debugvirtualservice/{uuid}:
         get:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: GET /pool/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: GET /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4116,16 +4116,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PUT /pool/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PUT /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4158,10 +4158,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4173,16 +4173,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PATCH /pool/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PATCH /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4215,10 +4215,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4230,16 +4230,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: DELETE /pool/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: DELETE /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4637,12 +4637,12 @@ paths:
                     description: object not found
 
 
-    /debugvirtualservice:
+    /pool:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: GET /debugvirtualservice
+                - Pool
+            description: /pool
+            operationId: GET /pool
             consumes:
                 -   application/json
             produces:
@@ -4705,14 +4705,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/PoolApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: POST /debugvirtualservice
+                - Pool
+            description: /pool
+            operationId: POST /pool
             consumes:
                 -   application/json
             produces:
@@ -4740,25 +4740,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /pool/{uuid}:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: GET /debugvirtualservice/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: GET /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4818,16 +4818,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PUT /debugvirtualservice/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PUT /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4860,10 +4860,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4875,16 +4875,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PATCH /debugvirtualservice/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PATCH /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4917,10 +4917,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4932,16 +4932,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: DELETE /debugvirtualservice/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: DELETE /pool/{uuid}
             consumes:
                 -   application/json
             produces:

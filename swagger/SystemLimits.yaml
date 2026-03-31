@@ -448,6 +448,11 @@ definitions:
             l7_limits:
                 description: "System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7limits'
+            num_tenant_bindings:
+                description: "Maximum number of tenant bindings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 20000
+                format: int32
             poolgroups_per_virtualservice:
                 description: "Maximum number of poolgroups per virtualservice. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer

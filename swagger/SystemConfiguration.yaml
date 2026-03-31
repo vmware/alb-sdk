@@ -611,35 +611,15 @@ definitions:
                 description: "Enable/Disable Clickjacking protection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
-            enable_http:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
-            enable_https:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
             enable_rate_limiter:
                 description: "Feature flag for enabling rate limiter(false by default). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
-            http_port:
-                description: "HTTP port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            https_port:
-                description: "HTTPS port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
             legacy_ssl_support:
                 description: "Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             pkiprofile_ref:
                 description: "Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-            redirect_to_https:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-                default: True
             sslkeyandcertificate_refs:
                 description: "Certificates for system portal. Maximum 2 allowed. Leave list empty to use system default certs. It is a reference to an object of type SSLKeyAndCertificate. Maximum of 2 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array

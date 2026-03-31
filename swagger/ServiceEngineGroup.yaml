@@ -2696,6 +2696,11 @@ definitions:
             vip_asg:
                 description: "When vip_asg is set, Vip configuration will be managed by Avi.User will be able to configure vip_asg or Vips individually at the time of create. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VipAutoscaleGroup'
+            vmotion_notification_poll_interval:
+                description: "Interval in seconds to poll vmotion notifications. Field introduced in 32.2.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 5
+                format: uint32
             vnic_dhcp_ip_check_interval:
                 description: "DHCP ip check interval. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
