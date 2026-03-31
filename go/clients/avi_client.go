@@ -16,6 +16,7 @@ type AviClient struct {
 	ALBServicesJob                  *ALBServicesJobClient
 	APIRateLimitProfile             *APIRateLimitProfileClient
 	ActionGroupConfig               *ActionGroupConfigClient
+	AkoAmkoCluster                  *AkoAmkoClusterClient
 	Alert                           *AlertClient
 	AlertConfig                     *AlertConfigClient
 	AlertEmailConfig                *AlertEmailConfigClient
@@ -194,6 +195,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
 	aviClient.APIRateLimitProfile = NewAPIRateLimitProfileClient(aviSession)
 	aviClient.ActionGroupConfig = NewActionGroupConfigClient(aviSession)
+	aviClient.AkoAmkoCluster = NewAkoAmkoClusterClient(aviSession)
 	aviClient.Alert = NewAlertClient(aviSession)
 	aviClient.AlertConfig = NewAlertConfigClient(aviSession)
 	aviClient.AlertEmailConfig = NewAlertEmailConfigClient(aviSession)
