@@ -997,6 +997,31 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+    IpAddrTypeConfig:
+        type: object
+        required:
+            -   ip_type
+        properties:
+            ip_type:
+                description: "IP address type for which periodic IP advertisement (GratARP/NA) is enabled. Supported values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            periodicity:
+                description: "Periodicity override for this IP type in minutes. If not set, uses ip_advertisement_profile.default_periodicity. Allowed values are 5-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    IpAdvertisementProfile:
+        type: object
+        properties:
+            default_periodicity:
+                description: "Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 5-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 10
+                format: uint32
+            ip_types:
+                description: "List of IP address types for which periodic IP advertisement (GratARP/NA) is enabled. Supported ip_type values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Applied uniformly to all VRFs in this ServiceEngineGroup. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/IpAddrTypeConfig'
     IptableRule:
         type: object
         required:
@@ -1885,6 +1910,9 @@ definitions:
             instance_flavor:
                 description: "Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            ip_advertisement_profile:
+                description: "Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAdvertisementProfile'
             iptables:
                 description: "Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
