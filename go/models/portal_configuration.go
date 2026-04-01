@@ -23,29 +23,14 @@ type PortalConfiguration struct {
 	// Enable/Disable Clickjacking protection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableClickjackingProtection *bool `json:"enable_clickjacking_protection,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EnableHTTP *bool `json:"enable_http,omitempty"`
-
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EnableHTTPS *bool `json:"enable_https,omitempty"`
-
 	// Feature flag for enabling rate limiter(false by default). Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableRateLimiter *bool `json:"enable_rate_limiter,omitempty"`
-
-	// HTTP port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPPort *uint32 `json:"http_port,omitempty"`
-
-	// HTTPS port. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPSPort *uint32 `json:"https_port,omitempty"`
 
 	// Allow Incoming Connections from Clients Using TLS 1.0/1.1 to Controller. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LegacySslSupport *bool `json:"legacy_ssl_support,omitempty"`
 
 	// Reference to PKIProfile Config used for CRL validation. It is a reference to an object of type PKIProfile. Field introduced in 30.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PkiprofileRef *string `json:"pkiprofile_ref,omitempty"`
-
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	RedirectToHTTPS *bool `json:"redirect_to_https,omitempty"`
 
 	// Certificates for system portal. Maximum 2 allowed. Leave list empty to use system default certs. It is a reference to an object of type SSLKeyAndCertificate. Maximum of 2 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslkeyandcertificateRefs []string `json:"sslkeyandcertificate_refs,omitempty"`

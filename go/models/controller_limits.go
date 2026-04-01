@@ -35,6 +35,9 @@ type ControllerLimits struct {
 	// System limits that apply to Layer 7 configuration objects. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	L7Limits *L7limits `json:"l7_limits,omitempty"`
 
+	// Maximum number of tenant bindings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	NumTenantBindings *int32 `json:"num_tenant_bindings,omitempty"`
+
 	// Maximum number of poolgroups per virtualservice. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolgroupsPerVirtualservice *int32 `json:"poolgroups_per_virtualservice,omitempty"`
 
