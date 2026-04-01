@@ -315,6 +315,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("instance_flavor")
     private String instanceFlavor;
 
+    @JsonProperty("ip_advertisement_profile")
+    private IpAdvertisementProfile ipAdvertisementProfile;
+
     @JsonProperty("iptables")
     private List<IptableRuleSet> iptables;
 
@@ -3522,6 +3525,34 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setInstanceFlavor(String  instanceFlavor) {
         this.instanceFlavor = instanceFlavor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
+     * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
+     * Enable_gratarp_permanent independently controls vip_ip.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ipAdvertisementProfile
+     */
+    public IpAdvertisementProfile getIpAdvertisementProfile() {
+        return ipAdvertisementProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
+     * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
+     * Enable_gratarp_permanent independently controls vip_ip.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ipAdvertisementProfile set the ipAdvertisementProfile.
+     */
+    public void setIpAdvertisementProfile(IpAdvertisementProfile ipAdvertisementProfile) {
+        this.ipAdvertisementProfile = ipAdvertisementProfile;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -9445,7 +9476,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.controlQatHugePages, objServiceEngineGroup.controlQatHugePages)&&
   Objects.equals(this.qatHpageMemPerProcess, objServiceEngineGroup.qatHpageMemPerProcess)&&
   Objects.equals(this.optimisticPlacement, objServiceEngineGroup.optimisticPlacement)&&
-  Objects.equals(this.vmotionNotificationPollInterval, objServiceEngineGroup.vmotionNotificationPollInterval);
+  Objects.equals(this.vmotionNotificationPollInterval, objServiceEngineGroup.vmotionNotificationPollInterval)&&
+  Objects.equals(this.ipAdvertisementProfile, objServiceEngineGroup.ipAdvertisementProfile);
     }
 
     @Override
@@ -9550,6 +9582,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    ingressAccessData: ").append(toIndentedString(ingressAccessData)).append("\n");
                         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
                         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
+                        sb.append("    ipAdvertisementProfile: ").append(toIndentedString(ipAdvertisementProfile)).append("\n");
                         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
                         sb.append("    kniAllowedServerPorts: ").append(toIndentedString(kniAllowedServerPorts)).append("\n");
                         sb.append("    kvValMaxLen: ").append(toIndentedString(kvValMaxLen)).append("\n");
