@@ -306,6 +306,9 @@ type ServiceEngineGroup struct {
 	// Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InstanceFlavor *string `json:"instance_flavor,omitempty"`
 
+	// Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	IPAdvertisementProfile *IPAdvertisementProfile `json:"ip_advertisement_profile,omitempty"`
+
 	// Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Iptables []*IptableRuleSet `json:"iptables,omitempty"`
 
