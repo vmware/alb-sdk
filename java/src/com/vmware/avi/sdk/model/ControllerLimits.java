@@ -48,6 +48,9 @@ public class ControllerLimits  {
     @JsonProperty("l7_limits")
     private L7limits l7Limits;
 
+    @JsonProperty("num_tenant_bindings")
+    private Integer numTenantBindings = 20000;
+
     @JsonProperty("poolgroups_per_virtualservice")
     private Integer poolgroupsPerVirtualservice;
 
@@ -336,6 +339,30 @@ public class ControllerLimits  {
      */
     public void setL7Limits(L7limits l7Limits) {
         this.l7Limits = l7Limits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum number of tenant bindings.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
+     * @return numTenantBindings
+     */
+    public Integer getNumTenantBindings() {
+        return numTenantBindings;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum number of tenant bindings.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 20000.
+     * @param numTenantBindings set the numTenantBindings.
+     */
+    public void setNumTenantBindings(Integer  numTenantBindings) {
+        this.numTenantBindings = numTenantBindings;
     }
 
     /**
@@ -679,6 +706,7 @@ public class ControllerLimits  {
   Objects.equals(this.ipaddressLimits, objControllerLimits.ipaddressLimits)&&
   Objects.equals(this.botLimits, objControllerLimits.botLimits)&&
   Objects.equals(this.wafRuleMetricsEnabledVs, objControllerLimits.wafRuleMetricsEnabledVs)&&
+  Objects.equals(this.numTenantBindings, objControllerLimits.numTenantBindings)&&
   Objects.equals(this.l7Limits, objControllerLimits.l7Limits)&&
   Objects.equals(this.controllerSizingLimits, objControllerLimits.controllerSizingLimits)&&
   Objects.equals(this.controllerCloudLimits, objControllerLimits.controllerCloudLimits);
@@ -697,6 +725,7 @@ public class ControllerLimits  {
                         sb.append("    ipaddressLimits: ").append(toIndentedString(ipaddressLimits)).append("\n");
                         sb.append("    ipsPerIpgroup: ").append(toIndentedString(ipsPerIpgroup)).append("\n");
                         sb.append("    l7Limits: ").append(toIndentedString(l7Limits)).append("\n");
+                        sb.append("    numTenantBindings: ").append(toIndentedString(numTenantBindings)).append("\n");
                         sb.append("    poolgroupsPerVirtualservice: ").append(toIndentedString(poolgroupsPerVirtualservice)).append("\n");
                         sb.append("    poolsPerPoolgroup: ").append(toIndentedString(poolsPerPoolgroup)).append("\n");
                         sb.append("    poolsPerVirtualservice: ").append(toIndentedString(poolsPerVirtualservice)).append("\n");
