@@ -42,7 +42,7 @@ type GslbService struct {
 	// Health monitor probe can be executed for all the members or it can be executed only for third-party members. This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario. In such a case, Avi members can have controller derived status while Non-Avi members can be probed by via health monitor probes in dataplane. Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HealthMonitorScope *string `json:"health_monitor_scope,omitempty"`
 
-	// If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// If enabled, the SRV target's resolved IP addresses are included in the answer section of the DNS response for a GSLB service of type SRV. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IncludeAdditionalRecords *bool `json:"include_additional_records,omitempty"`
 
 	// This field indicates that this object is replicated across GSLB federation. Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -70,7 +70,7 @@ type GslbService struct {
 	// Field to specify the type of GSLB service. Enum options - GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME, GSLB_SERVICE_RECORD_TYPE_SRV. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RecordType *string `json:"record_type,omitempty"`
 
-	// This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This field indicates that for a CNAME query, respond with resolved CNAMEs in the answer section with A and AAAA records. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResolveCname *bool `json:"resolve_cname,omitempty"`
 
 	// Enable site-persistence for the GslbService. . Field introduced in 17.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
