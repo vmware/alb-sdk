@@ -3935,12 +3935,12 @@ paths:
                     description: object not found
 
 
-    /networksecuritypolicy:
+    /httppolicyset:
         get:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy
-            operationId: GET /networksecuritypolicy
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: GET /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -4003,14 +4003,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicyApiResponse"
+                        $ref: "#/definitions/HTTPPolicySetApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy
-            operationId: POST /networksecuritypolicy
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: POST /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -4038,25 +4038,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
-    /networksecuritypolicy/{uuid}:
+    /httppolicyset/{uuid}:
         get:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: GET /networksecuritypolicy/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: GET /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4116,16 +4116,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: PUT /networksecuritypolicy/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PUT /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4158,10 +4158,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4173,16 +4173,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: PATCH /networksecuritypolicy/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PATCH /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4215,10 +4215,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4230,16 +4230,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: DELETE /networksecuritypolicy/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: DELETE /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4637,12 +4637,12 @@ paths:
                     description: object not found
 
 
-    /httppolicyset:
+    /networksecuritypolicy:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: GET /httppolicyset
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy
+            operationId: GET /networksecuritypolicy
             consumes:
                 -   application/json
             produces:
@@ -4705,14 +4705,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySetApiResponse"
+                        $ref: "#/definitions/NetworkSecurityPolicyApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: POST /httppolicyset
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy
+            operationId: POST /networksecuritypolicy
             consumes:
                 -   application/json
             produces:
@@ -4740,25 +4740,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
-    /httppolicyset/{uuid}:
+    /networksecuritypolicy/{uuid}:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: GET /httppolicyset/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: GET /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4818,16 +4818,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PUT /httppolicyset/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: PUT /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4860,10 +4860,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4875,16 +4875,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PATCH /httppolicyset/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: PATCH /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4917,10 +4917,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4932,16 +4932,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: DELETE /httppolicyset/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: DELETE /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:

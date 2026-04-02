@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi AkoAmkoCluster object api\n```\n```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\n"
+        "description": "Avi AkoAmkoCluster object api\n```\n- configure akoamkocluster <key>\n- show akoamkocluster <key>\n```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\n"
     },
     "tags": [
         {
@@ -657,6 +657,10 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "cloud_config_cksum": {
+                    "description": "Checksum of the cloud configuration for AkoAmkoCluster object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "cloud_ref": {
                     "description": "Cloud reference UUID in Avi Controller. It is a reference to an object of type Cloud. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -679,6 +683,10 @@
                 },
                 "name": {
                     "description": "Name of the AKO/AMKO cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "tenant_ref": {
+                    "description": "Tenant that AKO/AMKO cluster belongs to. It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
