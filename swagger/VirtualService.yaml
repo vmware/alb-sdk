@@ -3584,12 +3584,12 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-    /networksecuritypolicy:
+    /pool:
         get:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy
-            operationId: GET /networksecuritypolicy
+                - Pool
+            description: /pool
+            operationId: GET /pool
             consumes:
                 -   application/json
             produces:
@@ -3652,14 +3652,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicyApiResponse"
+                        $ref: "#/definitions/PoolApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy
-            operationId: POST /networksecuritypolicy
+                - Pool
+            description: /pool
+            operationId: POST /pool
             consumes:
                 -   application/json
             produces:
@@ -3687,25 +3687,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
-    /networksecuritypolicy/{uuid}:
+    /pool/{uuid}:
         get:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: GET /networksecuritypolicy/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: GET /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3765,16 +3765,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: PUT /networksecuritypolicy/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PUT /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3807,10 +3807,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -3822,16 +3822,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: PATCH /networksecuritypolicy/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PATCH /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3864,10 +3864,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: NetworkSecurityPolicy object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -3879,16 +3879,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/NetworkSecurityPolicy"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - NetworkSecurityPolicy
-            description: /networksecuritypolicy/{uuid}/{uuid}
-            operationId: DELETE /networksecuritypolicy/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: DELETE /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4286,12 +4286,12 @@ paths:
                     description: object not found
 
 
-    /pool:
+    /networksecuritypolicy:
         get:
             tags:
-                - Pool
-            description: /pool
-            operationId: GET /pool
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy
+            operationId: GET /networksecuritypolicy
             consumes:
                 -   application/json
             produces:
@@ -4354,14 +4354,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/PoolApiResponse"
+                        $ref: "#/definitions/NetworkSecurityPolicyApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - Pool
-            description: /pool
-            operationId: POST /pool
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy
+            operationId: POST /networksecuritypolicy
             consumes:
                 -   application/json
             produces:
@@ -4389,25 +4389,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
-    /pool/{uuid}:
+    /networksecuritypolicy/{uuid}:
         get:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: GET /pool/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: GET /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4467,16 +4467,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PUT /pool/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: PUT /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4509,10 +4509,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4524,16 +4524,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PATCH /pool/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: PATCH /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4566,10 +4566,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: NetworkSecurityPolicy object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4581,16 +4581,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/NetworkSecurityPolicy"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: DELETE /pool/{uuid}
+                - NetworkSecurityPolicy
+            description: /networksecuritypolicy/{uuid}/{uuid}
+            operationId: DELETE /networksecuritypolicy/{uuid}
             consumes:
                 -   application/json
             produces:
