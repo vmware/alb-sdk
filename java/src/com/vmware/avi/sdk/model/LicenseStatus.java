@@ -33,6 +33,9 @@ public class LicenseStatus extends AviRestResource  {
     @JsonProperty("service_update")
     private LicenseServiceUpdate serviceUpdate;
 
+    @JsonProperty("ssp_license_reported_at")
+    private String sspLicenseReportedAt;
+
     @JsonProperty("support_legacy_license")
     private Boolean supportLegacyLicense;
 
@@ -145,6 +148,28 @@ public class LicenseStatus extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Timestamp of last successful license report to ssp.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return sspLicenseReportedAt
+     */
+    public String getSspLicenseReportedAt() {
+        return sspLicenseReportedAt;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timestamp of last successful license report to ssp.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param sspLicenseReportedAt set the sspLicenseReportedAt.
+     */
+    public void setSspLicenseReportedAt(String  sspLicenseReportedAt) {
+        this.sspLicenseReportedAt = sspLicenseReportedAt;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Indicates if legacy licenses are supported.
      * When false, legacy licenses have been cleaned up after grace period expiry.
      * Field introduced in 32.1.1.
@@ -250,6 +275,7 @@ public class LicenseStatus extends AviRestResource  {
   Objects.equals(this.clsStatus, objLicenseStatus.clsStatus)&&
   Objects.equals(this.legacyLicenseGracePeriod, objLicenseStatus.legacyLicenseGracePeriod)&&
   Objects.equals(this.supportLegacyLicense, objLicenseStatus.supportLegacyLicense)&&
+  Objects.equals(this.sspLicenseReportedAt, objLicenseStatus.sspLicenseReportedAt)&&
   Objects.equals(this.tenantUuid, objLicenseStatus.tenantUuid);
     }
 
@@ -261,6 +287,7 @@ public class LicenseStatus extends AviRestResource  {
                         sb.append("    legacyLicenseGracePeriod: ").append(toIndentedString(legacyLicenseGracePeriod)).append("\n");
                         sb.append("    saasStatus: ").append(toIndentedString(saasStatus)).append("\n");
                         sb.append("    serviceUpdate: ").append(toIndentedString(serviceUpdate)).append("\n");
+                        sb.append("    sspLicenseReportedAt: ").append(toIndentedString(sspLicenseReportedAt)).append("\n");
                         sb.append("    supportLegacyLicense: ").append(toIndentedString(supportLegacyLicense)).append("\n");
                         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
