@@ -1736,7 +1736,6 @@ func updateUri(uri string, opts *ApiOptions) string {
 func GetIPVersion(ipAddr string) net.IP {
 	ip := net.ParseIP(ipAddr)
 	if ip == nil {
-		glog.Errorf("Controller Host is not valid.")
 		return nil
 	}
 	return ip
