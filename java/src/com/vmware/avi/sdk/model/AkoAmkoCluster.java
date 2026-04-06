@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AkoAmkoCluster extends AviRestResource  {
+    @JsonProperty("cloud_config_cksum")
+    private String cloudConfigCksum;
+
     @JsonProperty("cloud_ref")
     private String cloudRef;
 
@@ -39,6 +42,9 @@ public class AkoAmkoCluster extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("tenant_ref")
+    private String tenantRef;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -49,6 +55,30 @@ public class AkoAmkoCluster extends AviRestResource  {
     private AkoAmkoClusterVersionInfo versionInfo;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Checksum of the cloud configuration for akoamkocluster object.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return cloudConfigCksum
+     */
+    public String getCloudConfigCksum() {
+        return cloudConfigCksum;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Checksum of the cloud configuration for akoamkocluster object.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param cloudConfigCksum set the cloudConfigCksum.
+     */
+    public void setCloudConfigCksum(String  cloudConfigCksum) {
+        this.cloudConfigCksum = cloudConfigCksum;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -197,6 +227,32 @@ public class AkoAmkoCluster extends AviRestResource  {
     public void setName(String  name) {
         this.name = name;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tenant that ako/amko cluster belongs to.
+     * It is a reference to an object of type tenant.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tenantRef
+     */
+    public String getTenantRef() {
+        return tenantRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tenant that ako/amko cluster belongs to.
+     * It is a reference to an object of type tenant.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tenantRef set the tenantRef.
+     */
+    public void setTenantRef(String  tenantRef) {
+        this.tenantRef = tenantRef;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -280,19 +336,23 @@ public class AkoAmkoCluster extends AviRestResource  {
   Objects.equals(this.cloudRef, objAkoAmkoCluster.cloudRef)&&
   Objects.equals(this.versionInfo, objAkoAmkoCluster.versionInfo)&&
   Objects.equals(this.deploymentInfo, objAkoAmkoCluster.deploymentInfo)&&
-  Objects.equals(this.metadata, objAkoAmkoCluster.metadata);
+  Objects.equals(this.metadata, objAkoAmkoCluster.metadata)&&
+  Objects.equals(this.tenantRef, objAkoAmkoCluster.tenantRef)&&
+  Objects.equals(this.cloudConfigCksum, objAkoAmkoCluster.cloudConfigCksum);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class AkoAmkoCluster {\n");
-                  sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
+                  sb.append("    cloudConfigCksum: ").append(toIndentedString(cloudConfigCksum)).append("\n");
+                        sb.append("    cloudRef: ").append(toIndentedString(cloudRef)).append("\n");
                         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
                         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    deploymentInfo: ").append(toIndentedString(deploymentInfo)).append("\n");
                         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    versionInfo: ").append(toIndentedString(versionInfo)).append("\n");
                   sb.append("}");
