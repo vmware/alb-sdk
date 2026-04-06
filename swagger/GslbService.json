@@ -951,7 +951,7 @@
                     "default": "GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS"
                 },
                 "include_additional_records": {
-                    "description": "If enabled, provide the SRV target's resolved IP in the response SRV GSLB service. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
+                    "description": "If enabled, the SRV target's resolved IP addresses are included in the answer section of the DNS response for a GSLB service of type SRV. Field introduced in 31.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "is_federated": {
@@ -995,7 +995,7 @@
                     "default": "GSLB_SERVICE_RECORD_TYPE_A_AAAA_CNAME"
                 },
                 "resolve_cname": {
-                    "description": "This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field indicates that for a CNAME query, respond with resolved CNAMEs in the answer section with A and AAAA records. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "site_persistence_enabled": {

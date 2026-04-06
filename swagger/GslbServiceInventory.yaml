@@ -498,7 +498,7 @@ definitions:
                 type: string
                 default: "GSLB_SERVICE_ALGORITHM_PRIORITY"
             resolve_cname:
-                description: "This field indicates that for a CNAME query, respond with resolved CNAMEs in the additional section with A records. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
+                description: "This field indicates that for a CNAME query, respond with resolved CNAMEs in the answer section with A and AAAA records. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
                 type: boolean
             site_persistence_enabled:
                 description: "Enable site-persistence for the GslbService. Field introduced in 22.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition."
