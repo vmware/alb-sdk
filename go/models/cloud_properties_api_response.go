@@ -7,15 +7,5 @@ package models
 // CloudPropertiesAPIResponse cloud properties Api response
 // swagger:model CloudPropertiesApiResponse
 type CloudPropertiesAPIResponse struct {
-
-	// count
-	// Required: true
-	Count *int32 `json:"count"`
-
-	// next
-	Next *string `json:"next,omitempty"`
-
-	// results
-	// Required: true
-	Results []*CloudProperties `json:"results,omitempty"`
+	CloudProperties
 }

@@ -7,15 +7,5 @@ package models
 // LicenseStatusAPIResponse license status Api response
 // swagger:model LicenseStatusApiResponse
 type LicenseStatusAPIResponse struct {
-
-	// count
-	// Required: true
-	Count *int32 `json:"count"`
-
-	// next
-	Next *string `json:"next,omitempty"`
-
-	// results
-	// Required: true
-	Results []*LicenseStatus `json:"results,omitempty"`
+	LicenseStatus
 }
