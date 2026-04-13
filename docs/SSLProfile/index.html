@@ -202,323 +202,15 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#sslprofileGet"><code><span class="http-method">get</span> /sslprofile</code></a></li>
-  <li><a href="#sslprofilePost"><code><span class="http-method">post</span> /sslprofile</code></a></li>
-  <li><a href="#sslprofileUuidDelete"><code><span class="http-method">delete</span> /sslprofile/{uuid}</code></a></li>
-  <li><a href="#sslprofileUuidFederatedInfoGet"><code><span class="http-method">get</span> /sslprofile/{uuid}/federated_info/</code></a></li>
   <li><a href="#sslprofileUuidGet"><code><span class="http-method">get</span> /sslprofile/{uuid}</code></a></li>
-  <li><a href="#sslprofileUuidPatch"><code><span class="http-method">patch</span> /sslprofile/{uuid}</code></a></li>
-  <li><a href="#sslprofileUuidPut"><code><span class="http-method">put</span> /sslprofile/{uuid}</code></a></li>
+  <li><a href="#dELETE /sslprofile/{uuid}"><code><span class="http-method">delete</span> /sslprofile/{uuid}</code></a></li>
+  <li><a href="#gET /sslprofile"><code><span class="http-method">get</span> /sslprofile</code></a></li>
+  <li><a href="#gET /sslprofile/{uuid}/federatedInfo/"><code><span class="http-method">get</span> /sslprofile/{uuid}/federated_info/</code></a></li>
+  <li><a href="#pATCH /sslprofile/{uuid}"><code><span class="http-method">patch</span> /sslprofile/{uuid}</code></a></li>
+  <li><a href="#pOST /sslprofile"><code><span class="http-method">post</span> /sslprofile</code></a></li>
+  <li><a href="#pUT /sslprofile/{uuid}"><code><span class="http-method">put</span> /sslprofile/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="sslprofileGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofileGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SSLProfileApiResponse">SSLProfileApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "enable_ssl_session_reuse" : true,
-    "accepted_versions" : [ {
-      "type" : "aeiou"
-    } ],
-    "ssl_session_timeout" : "",
-    "ec_named_curve" : "aeiou",
-    "enable_early_data" : true,
-    "description" : "aeiou",
-    "type" : "aeiou",
-    "ciphersuites" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "tags" : [ {
-      "type" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "send_close_notify" : true,
-    "ssl_rating" : {
-      "performance_rating" : "aeiou",
-      "security_score" : "aeiou",
-      "compatibility_rating" : "aeiou"
-    },
-    "accepted_ciphers" : "aeiou",
-    "cipher_enums" : [ "aeiou" ],
-    "dhparam" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "prefer_client_cipher_ordering" : true,
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "signature_algorithm" : "aeiou",
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "is_federated" : true
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SSLProfileApiResponse">SSLProfileApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslprofilePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /sslprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofilePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SSLProfile object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SSLProfile">SSLProfile</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "enable_ssl_session_reuse" : true,
-  "accepted_versions" : [ {
-    "type" : "aeiou"
-  } ],
-  "ssl_session_timeout" : "",
-  "ec_named_curve" : "aeiou",
-  "enable_early_data" : true,
-  "description" : "aeiou",
-  "type" : "aeiou",
-  "ciphersuites" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "tags" : [ {
-    "type" : "aeiou",
-    "value" : "aeiou"
-  } ],
-  "send_close_notify" : true,
-  "ssl_rating" : {
-    "performance_rating" : "aeiou",
-    "security_score" : "aeiou",
-    "compatibility_rating" : "aeiou"
-  },
-  "accepted_ciphers" : "aeiou",
-  "cipher_enums" : [ "aeiou" ],
-  "dhparam" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "prefer_client_cipher_ordering" : true,
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "signature_algorithm" : "aeiou",
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "is_federated" : true
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SSLProfile">SSLProfile</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslprofileUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /sslprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofileUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslprofileUuidFederatedInfoGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslprofile/{uuid}/federated_info/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofileUuidFederatedInfoGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="sslprofileUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -624,12 +316,229 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="sslprofileUuidPatch"/>
+  <div class="method"><a name="dELETE /sslprofile/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /sslprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /sslprofile/{uuid}</span>)</div>
+    <div class="method-notes">/sslprofile/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /sslprofile"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /sslprofile</span>)</div>
+    <div class="method-notes">/sslprofile</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SSLProfileApiResponse">SSLProfileApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "enable_ssl_session_reuse" : true,
+    "accepted_versions" : [ {
+      "type" : "aeiou"
+    } ],
+    "ssl_session_timeout" : "",
+    "ec_named_curve" : "aeiou",
+    "enable_early_data" : true,
+    "description" : "aeiou",
+    "type" : "aeiou",
+    "ciphersuites" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "tags" : [ {
+      "type" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "send_close_notify" : true,
+    "ssl_rating" : {
+      "performance_rating" : "aeiou",
+      "security_score" : "aeiou",
+      "compatibility_rating" : "aeiou"
+    },
+    "accepted_ciphers" : "aeiou",
+    "cipher_enums" : [ "aeiou" ],
+    "dhparam" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "prefer_client_cipher_ordering" : true,
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "signature_algorithm" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "is_federated" : true
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SSLProfileApiResponse">SSLProfileApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /sslprofile/{uuid}/federatedInfo/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslprofile/{uuid}/federated_info/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /sslprofile/{uuid}/federatedInfo/</span>)</div>
+    <div class="method-notes">/sslprofile/{uuid}/federated_info/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /sslprofile/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /sslprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofileUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /sslprofile/{uuid}</span>)</div>
+    <div class="method-notes">/sslprofile/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -727,12 +636,103 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="sslprofileUuidPut"/>
+  <div class="method"><a name="pOST /sslprofile"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /sslprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /sslprofile</span>)</div>
+    <div class="method-notes">/sslprofile</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SSLProfile object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SSLProfile">SSLProfile</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "enable_ssl_session_reuse" : true,
+  "accepted_versions" : [ {
+    "type" : "aeiou"
+  } ],
+  "ssl_session_timeout" : "",
+  "ec_named_curve" : "aeiou",
+  "enable_early_data" : true,
+  "description" : "aeiou",
+  "type" : "aeiou",
+  "ciphersuites" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "tags" : [ {
+    "type" : "aeiou",
+    "value" : "aeiou"
+  } ],
+  "send_close_notify" : true,
+  "ssl_rating" : {
+    "performance_rating" : "aeiou",
+    "security_score" : "aeiou",
+    "compatibility_rating" : "aeiou"
+  },
+  "accepted_ciphers" : "aeiou",
+  "cipher_enums" : [ "aeiou" ],
+  "dhparam" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "prefer_client_cipher_ordering" : true,
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "signature_algorithm" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "is_federated" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SSLProfile">SSLProfile</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /sslprofile/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /sslprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslprofileUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /sslprofile/{uuid}</span>)</div>
+    <div class="method-notes">/sslprofile/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

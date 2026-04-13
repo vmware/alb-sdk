@@ -202,20 +202,156 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#vimgrclusterruntimeGet"><code><span class="http-method">get</span> /vimgrclusterruntime</code></a></li>
-  <li><a href="#vimgrclusterruntimePost"><code><span class="http-method">post</span> /vimgrclusterruntime</code></a></li>
-  <li><a href="#vimgrclusterruntimeUuidDelete"><code><span class="http-method">delete</span> /vimgrclusterruntime/{uuid}</code></a></li>
   <li><a href="#vimgrclusterruntimeUuidGet"><code><span class="http-method">get</span> /vimgrclusterruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrclusterruntimeUuidPatch"><code><span class="http-method">patch</span> /vimgrclusterruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrclusterruntimeUuidPut"><code><span class="http-method">put</span> /vimgrclusterruntime/{uuid}</code></a></li>
+  <li><a href="#dELETE /vimgrclusterruntime/{uuid}"><code><span class="http-method">delete</span> /vimgrclusterruntime/{uuid}</code></a></li>
+  <li><a href="#gET /vimgrclusterruntime"><code><span class="http-method">get</span> /vimgrclusterruntime</code></a></li>
+  <li><a href="#pATCH /vimgrclusterruntime/{uuid}"><code><span class="http-method">patch</span> /vimgrclusterruntime/{uuid}</code></a></li>
+  <li><a href="#pOST /vimgrclusterruntime"><code><span class="http-method">post</span> /vimgrclusterruntime</code></a></li>
+  <li><a href="#pUT /vimgrclusterruntime/{uuid}"><code><span class="http-method">put</span> /vimgrclusterruntime/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="vimgrclusterruntimeGet"/>
+  <div class="method"><a name="vimgrclusterruntimeUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrclusterruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "host_refs" : [ "aeiou" ],
+  "datacenter_managed_object_id" : "aeiou",
+  "datacenter_uuid" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "managed_object_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /vimgrclusterruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrclusterruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /vimgrclusterruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrclusterruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /vimgrclusterruntime"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrclusterruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /vimgrclusterruntime</span>)</div>
+    <div class="method-notes">/vimgrclusterruntime</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -316,212 +452,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrclusterruntimePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrclusterruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrClusterRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "host_refs" : [ "aeiou" ],
-  "datacenter_managed_object_id" : "aeiou",
-  "datacenter_uuid" : "aeiou",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrclusterruntimeUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrclusterruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrclusterruntimeUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrclusterruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "host_refs" : [ "aeiou" ],
-  "datacenter_managed_object_id" : "aeiou",
-  "datacenter_uuid" : "aeiou",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "managed_object_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrclusterruntimeUuidPatch"/>
+  <div class="method"><a name="pATCH /vimgrclusterruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vimgrclusterruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /vimgrclusterruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrclusterruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -592,12 +528,76 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrclusterruntimeUuidPut"/>
+  <div class="method"><a name="pOST /vimgrclusterruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrclusterruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /vimgrclusterruntime</span>)</div>
+    <div class="method-notes">/vimgrclusterruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrClusterRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "host_refs" : [ "aeiou" ],
+  "datacenter_managed_object_id" : "aeiou",
+  "datacenter_uuid" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "managed_object_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrClusterRuntime">VIMgrClusterRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /vimgrclusterruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /vimgrclusterruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrclusterruntimeUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /vimgrclusterruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrclusterruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

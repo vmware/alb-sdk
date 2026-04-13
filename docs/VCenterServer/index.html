@@ -202,20 +202,160 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#vcenterserverGet"><code><span class="http-method">get</span> /vcenterserver</code></a></li>
-  <li><a href="#vcenterserverPost"><code><span class="http-method">post</span> /vcenterserver</code></a></li>
-  <li><a href="#vcenterserverUuidDelete"><code><span class="http-method">delete</span> /vcenterserver/{uuid}</code></a></li>
   <li><a href="#vcenterserverUuidGet"><code><span class="http-method">get</span> /vcenterserver/{uuid}</code></a></li>
-  <li><a href="#vcenterserverUuidPatch"><code><span class="http-method">patch</span> /vcenterserver/{uuid}</code></a></li>
-  <li><a href="#vcenterserverUuidPut"><code><span class="http-method">put</span> /vcenterserver/{uuid}</code></a></li>
+  <li><a href="#dELETE /vcenterserver/{uuid}"><code><span class="http-method">delete</span> /vcenterserver/{uuid}</code></a></li>
+  <li><a href="#gET /vcenterserver"><code><span class="http-method">get</span> /vcenterserver</code></a></li>
+  <li><a href="#pATCH /vcenterserver/{uuid}"><code><span class="http-method">patch</span> /vcenterserver/{uuid}</code></a></li>
+  <li><a href="#pOST /vcenterserver"><code><span class="http-method">post</span> /vcenterserver</code></a></li>
+  <li><a href="#pUT /vcenterserver/{uuid}"><code><span class="http-method">put</span> /vcenterserver/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="vcenterserverGet"/>
+  <div class="method"><a name="vcenterserverUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vcenterserver/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vcenterserverUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VCenterServer">VCenterServer</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "vcenter_url" : "aeiou",
+  "content_lib" : {
+    "name" : "aeiou",
+    "id" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "vcenter_credentials_ref" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VCenterServer">VCenterServer</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /vcenterserver/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vcenterserver/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /vcenterserver/{uuid}</span>)</div>
+    <div class="method-notes">/vcenterserver/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /vcenterserver"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /vcenterserver</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /vcenterserver</span>)</div>
+    <div class="method-notes">/vcenterserver</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -320,220 +460,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vcenterserverPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /vcenterserver</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VCenterServer object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VCenterServer">VCenterServer</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "vcenter_url" : "aeiou",
-  "content_lib" : {
-    "name" : "aeiou",
-    "id" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "vcenter_credentials_ref" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VCenterServer">VCenterServer</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vcenterserverUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vcenterserver/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vcenterserverUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vcenterserver/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VCenterServer">VCenterServer</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "vcenter_url" : "aeiou",
-  "content_lib" : {
-    "name" : "aeiou",
-    "id" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "vcenter_credentials_ref" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VCenterServer">VCenterServer</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vcenterserverUuidPatch"/>
+  <div class="method"><a name="pATCH /vcenterserver/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vcenterserver/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /vcenterserver/{uuid}</span>)</div>
+    <div class="method-notes">/vcenterserver/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -608,12 +540,80 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vcenterserverUuidPut"/>
+  <div class="method"><a name="pOST /vcenterserver"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vcenterserver</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /vcenterserver</span>)</div>
+    <div class="method-notes">/vcenterserver</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VCenterServer object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VCenterServer">VCenterServer</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "vcenter_url" : "aeiou",
+  "content_lib" : {
+    "name" : "aeiou",
+    "id" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "vcenter_credentials_ref" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VCenterServer">VCenterServer</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /vcenterserver/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /vcenterserver/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vcenterserverUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /vcenterserver/{uuid}</span>)</div>
+    <div class="method-notes">/vcenterserver/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

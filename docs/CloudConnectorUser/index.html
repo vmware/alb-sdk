@@ -202,21 +202,79 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#cloudconnectoruserGet"><code><span class="http-method">get</span> /cloudconnectoruser</code></a></li>
-  <li><a href="#cloudconnectoruserPost"><code><span class="http-method">post</span> /cloudconnectoruser</code></a></li>
-  <li><a href="#cloudconnectoruserUuidDelete"><code><span class="http-method">delete</span> /cloudconnectoruser/{uuid}</code></a></li>
+  <li><a href="#dELETE /cloudconnectoruser/{uuid}"><code><span class="http-method">delete</span> /cloudconnectoruser/{uuid}</code></a></li>
+  <li><a href="#gET /cloudconnectoruser"><code><span class="http-method">get</span> /cloudconnectoruser</code></a></li>
+  <li><a href="#pATCH /cloudconnectoruser/{uuid}"><code><span class="http-method">patch</span> /cloudconnectoruser/{uuid}</code></a></li>
+  <li><a href="#pOST /cloudconnectoruser"><code><span class="http-method">post</span> /cloudconnectoruser</code></a></li>
+  <li><a href="#pOST /cloudconnectoruser/{uuid}/test"><code><span class="http-method">post</span> /cloudconnectoruser/{uuid}/test</code></a></li>
+  <li><a href="#pUT /cloudconnectoruser/{uuid}"><code><span class="http-method">put</span> /cloudconnectoruser/{uuid}</code></a></li>
   <li><a href="#cloudconnectoruserUuidGet"><code><span class="http-method">get</span> /cloudconnectoruser/{uuid}</code></a></li>
-  <li><a href="#cloudconnectoruserUuidPatch"><code><span class="http-method">patch</span> /cloudconnectoruser/{uuid}</code></a></li>
-  <li><a href="#cloudconnectoruserUuidPut"><code><span class="http-method">put</span> /cloudconnectoruser/{uuid}</code></a></li>
-  <li><a href="#cloudconnectoruserUuidTestPost"><code><span class="http-method">post</span> /cloudconnectoruser/{uuid}/test</code></a></li>
   </ol>
 
-  <div class="method"><a name="cloudconnectoruserGet"/>
+  <div class="method"><a name="dELETE /cloudconnectoruser/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /cloudconnectoruser/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /cloudconnectoruser/{uuid}</span>)</div>
+    <div class="method-notes">/cloudconnectoruser/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloudconnectoruser"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /cloudconnectoruser</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloudconnectoruser</span>)</div>
+    <div class="method-notes">/cloudconnectoruser</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -322,12 +380,119 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudconnectoruserPost"/>
+  <div class="method"><a name="pATCH /cloudconnectoruser/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloudconnectoruser/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /cloudconnectoruser/{uuid}</span>)</div>
+    <div class="method-notes">/cloudconnectoruser/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUser object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#CloudConnectorUser">CloudConnectorUser</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "public_key" : "aeiou",
+  "azure_userpass" : {
+    "password" : "aeiou",
+    "tenant_name" : "aeiou",
+    "username" : "aeiou"
+  },
+  "nsxt_credentials" : {
+    "password" : "aeiou",
+    "username" : "aeiou"
+  },
+  "tencent_credentials" : {
+    "secret_id" : "aeiou",
+    "secret_key" : "aeiou"
+  },
+  "private_key" : "aeiou",
+  "azure_serviceprincipal" : {
+    "tenant_id" : "aeiou",
+    "authentication_token" : "aeiou",
+    "application_id" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "password" : "aeiou",
+  "gcp_credentials" : {
+    "service_account_keyfile_data" : "aeiou"
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "vcenter_credentials" : {
+    "password" : "aeiou",
+    "username" : "aeiou"
+  },
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "oci_credentials" : {
+    "pass_phrase" : "aeiou",
+    "key_content" : "aeiou",
+    "fingerprint" : "aeiou",
+    "user" : "aeiou"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#CloudConnectorUser">CloudConnectorUser</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /cloudconnectoruser"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /cloudconnectoruser</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /cloudconnectoruser</span>)</div>
+    <div class="method-notes">/cloudconnectoruser</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -417,12 +582,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudconnectoruserUuidDelete"/>
+  <div class="method"><a name="pOST /cloudconnectoruser/{uuid}/test"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /cloudconnectoruser/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /cloudconnectoruser/{uuid}/test</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /cloudconnectoruser/{uuid}/test</span>)</div>
+    <div class="method-notes">/cloudconnectoruser/{uuid}/test</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -437,14 +602,14 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-
-
-    <h3 class="field-label">Query parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">name (optional)</div>
+      <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUserTestParams </div>
     </div>  <!-- field-items -->
+
+
 
 
     <h3 class="field-label">Return type</h3>
@@ -467,11 +632,118 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
+    <h4 class="field-label">200</h4>
+    OK
         <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /cloudconnectoruser/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /cloudconnectoruser/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /cloudconnectoruser/{uuid}</span>)</div>
+    <div class="method-notes">/cloudconnectoruser/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUser object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#CloudConnectorUser">CloudConnectorUser</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "public_key" : "aeiou",
+  "azure_userpass" : {
+    "password" : "aeiou",
+    "tenant_name" : "aeiou",
+    "username" : "aeiou"
+  },
+  "nsxt_credentials" : {
+    "password" : "aeiou",
+    "username" : "aeiou"
+  },
+  "tencent_credentials" : {
+    "secret_id" : "aeiou",
+    "secret_key" : "aeiou"
+  },
+  "private_key" : "aeiou",
+  "azure_serviceprincipal" : {
+    "tenant_id" : "aeiou",
+    "authentication_token" : "aeiou",
+    "application_id" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "password" : "aeiou",
+  "gcp_credentials" : {
+    "service_account_keyfile_data" : "aeiou"
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "vcenter_credentials" : {
+    "password" : "aeiou",
+    "username" : "aeiou"
+  },
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "oci_credentials" : {
+    "pass_phrase" : "aeiou",
+    "key_content" : "aeiou",
+    "fingerprint" : "aeiou",
+    "user" : "aeiou"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#CloudConnectorUser">CloudConnectorUser</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -579,278 +851,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#CloudConnectorUser">CloudConnectorUser</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudconnectoruserUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloudconnectoruser/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUser object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#CloudConnectorUser">CloudConnectorUser</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "public_key" : "aeiou",
-  "azure_userpass" : {
-    "password" : "aeiou",
-    "tenant_name" : "aeiou",
-    "username" : "aeiou"
-  },
-  "nsxt_credentials" : {
-    "password" : "aeiou",
-    "username" : "aeiou"
-  },
-  "tencent_credentials" : {
-    "secret_id" : "aeiou",
-    "secret_key" : "aeiou"
-  },
-  "private_key" : "aeiou",
-  "azure_serviceprincipal" : {
-    "tenant_id" : "aeiou",
-    "authentication_token" : "aeiou",
-    "application_id" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "password" : "aeiou",
-  "gcp_credentials" : {
-    "service_account_keyfile_data" : "aeiou"
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "vcenter_credentials" : {
-    "password" : "aeiou",
-    "username" : "aeiou"
-  },
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "oci_credentials" : {
-    "pass_phrase" : "aeiou",
-    "key_content" : "aeiou",
-    "fingerprint" : "aeiou",
-    "user" : "aeiou"
-  }
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#CloudConnectorUser">CloudConnectorUser</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudconnectoruserUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /cloudconnectoruser/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUser object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#CloudConnectorUser">CloudConnectorUser</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "public_key" : "aeiou",
-  "azure_userpass" : {
-    "password" : "aeiou",
-    "tenant_name" : "aeiou",
-    "username" : "aeiou"
-  },
-  "nsxt_credentials" : {
-    "password" : "aeiou",
-    "username" : "aeiou"
-  },
-  "tencent_credentials" : {
-    "secret_id" : "aeiou",
-    "secret_key" : "aeiou"
-  },
-  "private_key" : "aeiou",
-  "azure_serviceprincipal" : {
-    "tenant_id" : "aeiou",
-    "authentication_token" : "aeiou",
-    "application_id" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "password" : "aeiou",
-  "gcp_credentials" : {
-    "service_account_keyfile_data" : "aeiou"
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "vcenter_credentials" : {
-    "password" : "aeiou",
-    "username" : "aeiou"
-  },
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "oci_credentials" : {
-    "pass_phrase" : "aeiou",
-    "key_content" : "aeiou",
-    "fingerprint" : "aeiou",
-    "user" : "aeiou"
-  }
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#CloudConnectorUser">CloudConnectorUser</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudconnectoruserUuidTestPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /cloudconnectoruser/{uuid}/test</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudconnectoruserUuidTestPost</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CloudConnectorUserTestParams </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

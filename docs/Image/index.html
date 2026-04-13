@@ -202,382 +202,14 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#imageGet"><code><span class="http-method">get</span> /image</code></a></li>
-  <li><a href="#imagePost"><code><span class="http-method">post</span> /image</code></a></li>
-  <li><a href="#imageUuidDelete"><code><span class="http-method">delete</span> /image/{uuid}</code></a></li>
   <li><a href="#imageUuidGet"><code><span class="http-method">get</span> /image/{uuid}</code></a></li>
-  <li><a href="#imageUuidPatch"><code><span class="http-method">patch</span> /image/{uuid}</code></a></li>
-  <li><a href="#imageUuidPut"><code><span class="http-method">put</span> /image/{uuid}</code></a></li>
+  <li><a href="#dELETE /image/{uuid}"><code><span class="http-method">delete</span> /image/{uuid}</code></a></li>
+  <li><a href="#gET /image"><code><span class="http-method">get</span> /image</code></a></li>
+  <li><a href="#pATCH /image/{uuid}"><code><span class="http-method">patch</span> /image/{uuid}</code></a></li>
+  <li><a href="#pOST /image"><code><span class="http-method">post</span> /image</code></a></li>
+  <li><a href="#pUT /image/{uuid}"><code><span class="http-method">put</span> /image/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="imageGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /image</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">imageGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#ImageApiResponse">ImageApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "cloud_info_values" : [ {
-      "cloud_data_values" : [ {
-        "values" : [ "aeiou" ],
-        "key" : "aeiou"
-      } ],
-      "cloud_name" : "aeiou"
-    } ],
-    "end_time" : "aeiou",
-    "total_tasks" : 123,
-    "se_info" : "",
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "fips_mode_transition_applicable" : true,
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "img_state" : {
-      "reason" : "aeiou",
-      "last_changed_time" : {
-        "usecs" : 123456789,
-        "secs" : 123456789
-      },
-      "state" : "aeiou"
-    },
-    "duration" : "",
-    "uber_bundle" : true,
-    "controller_patch_ref" : "aeiou",
-    "start_time" : "aeiou",
-    "migrations" : {
-      "se_min_memory" : 123,
-      "se_min_cores" : 123,
-      "controller_min_total_disk" : 123,
-      "se_host_min_free_disk_size" : 123,
-      "se_min_total_disk" : 123,
-      "min_supported_api_version" : "aeiou",
-      "controller_min_cores" : 123,
-      "podman_controller_host_min_free_disk_size" : 123,
-      "se_min_free_disk_size" : 123,
-      "api_version" : "aeiou",
-      "controller_min_memory" : 123,
-      "controller_min_docker_version" : "aeiou",
-      "rollback_controller_disk_space" : 123,
-      "rollback_se_disk_space" : 123,
-      "versions" : [ "aeiou" ],
-      "max_active_versions" : 123,
-      "controller_host_min_free_disk_size" : 123,
-      "controller_min_free_disk_size" : 123,
-      "podman_se_host_min_free_disk_size" : 123
-    },
-    "tasks_completed" : 123,
-    "controller_info" : {
-      "patch" : {
-        "reboot" : true,
-        "reboot_list" : [ {
-          "reboot" : true,
-          "patch_version" : "aeiou"
-        } ],
-        "patch_type" : "aeiou"
-      },
-      "path" : "aeiou",
-      "build" : {
-        "date" : "aeiou",
-        "min_version" : "aeiou",
-        "product" : "aeiou",
-        "remote_image_ref" : "aeiou",
-        "build_no" : 123,
-        "tag" : "aeiou",
-        "patch_version" : "aeiou",
-        "product_name" : "aeiou",
-        "version" : "aeiou"
-      },
-      "hash" : "aeiou"
-    },
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "se_patch_name" : "aeiou",
-    "progress" : "",
-    "se_patch_ref" : "aeiou",
-    "controller_patch_name" : "aeiou",
-    "events" : [ {
-      "task_name" : "aeiou",
-      "sub_events" : [ "" ],
-      "nodes_events" : [ {
-        "duration" : "",
-        "start_time" : "aeiou",
-        "ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "end_time" : "aeiou",
-        "sub_tasks" : [ "aeiou" ],
-        "message" : "aeiou",
-        "status" : "aeiou"
-      } ]
-    } ]
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#ImageApiResponse">ImageApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="imagePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /image</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">imagePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Image object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Image">Image</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "cloud_info_values" : [ {
-    "cloud_data_values" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "cloud_name" : "aeiou"
-  } ],
-  "end_time" : "aeiou",
-  "total_tasks" : 123,
-  "se_info" : "",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "fips_mode_transition_applicable" : true,
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "img_state" : {
-    "reason" : "aeiou",
-    "last_changed_time" : {
-      "usecs" : 123456789,
-      "secs" : 123456789
-    },
-    "state" : "aeiou"
-  },
-  "duration" : "",
-  "uber_bundle" : true,
-  "controller_patch_ref" : "aeiou",
-  "start_time" : "aeiou",
-  "migrations" : {
-    "se_min_memory" : 123,
-    "se_min_cores" : 123,
-    "controller_min_total_disk" : 123,
-    "se_host_min_free_disk_size" : 123,
-    "se_min_total_disk" : 123,
-    "min_supported_api_version" : "aeiou",
-    "controller_min_cores" : 123,
-    "podman_controller_host_min_free_disk_size" : 123,
-    "se_min_free_disk_size" : 123,
-    "api_version" : "aeiou",
-    "controller_min_memory" : 123,
-    "controller_min_docker_version" : "aeiou",
-    "rollback_controller_disk_space" : 123,
-    "rollback_se_disk_space" : 123,
-    "versions" : [ "aeiou" ],
-    "max_active_versions" : 123,
-    "controller_host_min_free_disk_size" : 123,
-    "controller_min_free_disk_size" : 123,
-    "podman_se_host_min_free_disk_size" : 123
-  },
-  "tasks_completed" : 123,
-  "controller_info" : {
-    "patch" : {
-      "reboot" : true,
-      "reboot_list" : [ {
-        "reboot" : true,
-        "patch_version" : "aeiou"
-      } ],
-      "patch_type" : "aeiou"
-    },
-    "path" : "aeiou",
-    "build" : {
-      "date" : "aeiou",
-      "min_version" : "aeiou",
-      "product" : "aeiou",
-      "remote_image_ref" : "aeiou",
-      "build_no" : 123,
-      "tag" : "aeiou",
-      "patch_version" : "aeiou",
-      "product_name" : "aeiou",
-      "version" : "aeiou"
-    },
-    "hash" : "aeiou"
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "se_patch_name" : "aeiou",
-  "progress" : "",
-  "se_patch_ref" : "aeiou",
-  "controller_patch_name" : "aeiou",
-  "events" : [ {
-    "task_name" : "aeiou",
-    "sub_events" : [ "" ],
-    "nodes_events" : [ {
-      "duration" : "",
-      "start_time" : "aeiou",
-      "ip" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      },
-      "end_time" : "aeiou",
-      "sub_tasks" : [ "aeiou" ],
-      "message" : "aeiou",
-      "status" : "aeiou"
-    } ]
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Image">Image</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="imageUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /image/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">imageUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="imageUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -739,12 +371,233 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="imageUuidPatch"/>
+  <div class="method"><a name="dELETE /image/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /image/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /image/{uuid}</span>)</div>
+    <div class="method-notes">/image/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /image"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /image</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /image</span>)</div>
+    <div class="method-notes">/image</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ImageApiResponse">ImageApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "cloud_info_values" : [ {
+      "cloud_data_values" : [ {
+        "values" : [ "aeiou" ],
+        "key" : "aeiou"
+      } ],
+      "cloud_name" : "aeiou"
+    } ],
+    "end_time" : "aeiou",
+    "total_tasks" : 123,
+    "se_info" : "",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "fips_mode_transition_applicable" : true,
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "img_state" : {
+      "reason" : "aeiou",
+      "last_changed_time" : {
+        "usecs" : 123456789,
+        "secs" : 123456789
+      },
+      "state" : "aeiou"
+    },
+    "duration" : "",
+    "uber_bundle" : true,
+    "controller_patch_ref" : "aeiou",
+    "start_time" : "aeiou",
+    "migrations" : {
+      "se_min_memory" : 123,
+      "se_min_cores" : 123,
+      "controller_min_total_disk" : 123,
+      "se_host_min_free_disk_size" : 123,
+      "se_min_total_disk" : 123,
+      "min_supported_api_version" : "aeiou",
+      "controller_min_cores" : 123,
+      "podman_controller_host_min_free_disk_size" : 123,
+      "se_min_free_disk_size" : 123,
+      "api_version" : "aeiou",
+      "controller_min_memory" : 123,
+      "controller_min_docker_version" : "aeiou",
+      "rollback_controller_disk_space" : 123,
+      "rollback_se_disk_space" : 123,
+      "versions" : [ "aeiou" ],
+      "max_active_versions" : 123,
+      "controller_host_min_free_disk_size" : 123,
+      "controller_min_free_disk_size" : 123,
+      "podman_se_host_min_free_disk_size" : 123
+    },
+    "tasks_completed" : 123,
+    "controller_info" : {
+      "patch" : {
+        "reboot" : true,
+        "reboot_list" : [ {
+          "reboot" : true,
+          "patch_version" : "aeiou"
+        } ],
+        "patch_type" : "aeiou"
+      },
+      "path" : "aeiou",
+      "build" : {
+        "date" : "aeiou",
+        "min_version" : "aeiou",
+        "product" : "aeiou",
+        "remote_image_ref" : "aeiou",
+        "build_no" : 123,
+        "tag" : "aeiou",
+        "patch_version" : "aeiou",
+        "product_name" : "aeiou",
+        "version" : "aeiou"
+      },
+      "hash" : "aeiou"
+    },
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "se_patch_name" : "aeiou",
+    "progress" : "",
+    "se_patch_ref" : "aeiou",
+    "controller_patch_name" : "aeiou",
+    "events" : [ {
+      "task_name" : "aeiou",
+      "sub_events" : [ "" ],
+      "nodes_events" : [ {
+        "duration" : "",
+        "start_time" : "aeiou",
+        "ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "end_time" : "aeiou",
+        "sub_tasks" : [ "aeiou" ],
+        "message" : "aeiou",
+        "status" : "aeiou"
+      } ]
+    } ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#ImageApiResponse">ImageApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /image/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /image/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">imageUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /image/{uuid}</span>)</div>
+    <div class="method-notes">/image/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -898,12 +751,159 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="imageUuidPut"/>
+  <div class="method"><a name="pOST /image"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /image</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /image</span>)</div>
+    <div class="method-notes">/image</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Image object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Image">Image</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "cloud_info_values" : [ {
+    "cloud_data_values" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "cloud_name" : "aeiou"
+  } ],
+  "end_time" : "aeiou",
+  "total_tasks" : 123,
+  "se_info" : "",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "fips_mode_transition_applicable" : true,
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "img_state" : {
+    "reason" : "aeiou",
+    "last_changed_time" : {
+      "usecs" : 123456789,
+      "secs" : 123456789
+    },
+    "state" : "aeiou"
+  },
+  "duration" : "",
+  "uber_bundle" : true,
+  "controller_patch_ref" : "aeiou",
+  "start_time" : "aeiou",
+  "migrations" : {
+    "se_min_memory" : 123,
+    "se_min_cores" : 123,
+    "controller_min_total_disk" : 123,
+    "se_host_min_free_disk_size" : 123,
+    "se_min_total_disk" : 123,
+    "min_supported_api_version" : "aeiou",
+    "controller_min_cores" : 123,
+    "podman_controller_host_min_free_disk_size" : 123,
+    "se_min_free_disk_size" : 123,
+    "api_version" : "aeiou",
+    "controller_min_memory" : 123,
+    "controller_min_docker_version" : "aeiou",
+    "rollback_controller_disk_space" : 123,
+    "rollback_se_disk_space" : 123,
+    "versions" : [ "aeiou" ],
+    "max_active_versions" : 123,
+    "controller_host_min_free_disk_size" : 123,
+    "controller_min_free_disk_size" : 123,
+    "podman_se_host_min_free_disk_size" : 123
+  },
+  "tasks_completed" : 123,
+  "controller_info" : {
+    "patch" : {
+      "reboot" : true,
+      "reboot_list" : [ {
+        "reboot" : true,
+        "patch_version" : "aeiou"
+      } ],
+      "patch_type" : "aeiou"
+    },
+    "path" : "aeiou",
+    "build" : {
+      "date" : "aeiou",
+      "min_version" : "aeiou",
+      "product" : "aeiou",
+      "remote_image_ref" : "aeiou",
+      "build_no" : 123,
+      "tag" : "aeiou",
+      "patch_version" : "aeiou",
+      "product_name" : "aeiou",
+      "version" : "aeiou"
+    },
+    "hash" : "aeiou"
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "se_patch_name" : "aeiou",
+  "progress" : "",
+  "se_patch_ref" : "aeiou",
+  "controller_patch_name" : "aeiou",
+  "events" : [ {
+    "task_name" : "aeiou",
+    "sub_events" : [ "" ],
+    "nodes_events" : [ {
+      "duration" : "",
+      "start_time" : "aeiou",
+      "ip" : {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      },
+      "end_time" : "aeiou",
+      "sub_tasks" : [ "aeiou" ],
+      "message" : "aeiou",
+      "status" : "aeiou"
+    } ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Image">Image</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /image/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /image/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">imageUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /image/{uuid}</span>)</div>
+    <div class="method-notes">/image/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

@@ -202,21 +202,79 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#alertemailconfigGet"><code><span class="http-method">get</span> /alertemailconfig</code></a></li>
-  <li><a href="#alertemailconfigPost"><code><span class="http-method">post</span> /alertemailconfig</code></a></li>
-  <li><a href="#alertemailconfigUuidDelete"><code><span class="http-method">delete</span> /alertemailconfig/{uuid}</code></a></li>
+  <li><a href="#dELETE /alertemailconfig/{uuid}"><code><span class="http-method">delete</span> /alertemailconfig/{uuid}</code></a></li>
+  <li><a href="#gET /alertemailconfig"><code><span class="http-method">get</span> /alertemailconfig</code></a></li>
+  <li><a href="#pATCH /alertemailconfig/{uuid}"><code><span class="http-method">patch</span> /alertemailconfig/{uuid}</code></a></li>
+  <li><a href="#pOST /alertemailconfig"><code><span class="http-method">post</span> /alertemailconfig</code></a></li>
+  <li><a href="#pOST /alertemailconfig/{uuid}/testemail"><code><span class="http-method">post</span> /alertemailconfig/{uuid}/testemail</code></a></li>
+  <li><a href="#pUT /alertemailconfig/{uuid}"><code><span class="http-method">put</span> /alertemailconfig/{uuid}</code></a></li>
   <li><a href="#alertemailconfigUuidGet"><code><span class="http-method">get</span> /alertemailconfig/{uuid}</code></a></li>
-  <li><a href="#alertemailconfigUuidPatch"><code><span class="http-method">patch</span> /alertemailconfig/{uuid}</code></a></li>
-  <li><a href="#alertemailconfigUuidPut"><code><span class="http-method">put</span> /alertemailconfig/{uuid}</code></a></li>
-  <li><a href="#alertemailconfigUuidTestemailPost"><code><span class="http-method">post</span> /alertemailconfig/{uuid}/testemail</code></a></li>
   </ol>
 
-  <div class="method"><a name="alertemailconfigGet"/>
+  <div class="method"><a name="dELETE /alertemailconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertemailconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /alertemailconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertemailconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /alertemailconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /alertemailconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /alertemailconfig</span>)</div>
+    <div class="method-notes">/alertemailconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -291,12 +349,88 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertemailconfigPost"/>
+  <div class="method"><a name="pATCH /alertemailconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertemailconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /alertemailconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertemailconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertEmailConfig object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AlertEmailConfig">AlertEmailConfig</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "to_emails" : "aeiou",
+  "cc_emails" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertEmailConfig">AlertEmailConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /alertemailconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /alertemailconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /alertemailconfig</span>)</div>
+    <div class="method-notes">/alertemailconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -355,12 +489,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertemailconfigUuidDelete"/>
+  <div class="method"><a name="pOST /alertemailconfig/{uuid}/testemail"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertemailconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /alertemailconfig/{uuid}/testemail</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /alertemailconfig/{uuid}/testemail</span>)</div>
+    <div class="method-notes">/alertemailconfig/{uuid}/testemail</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -375,14 +509,14 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-
-
-    <h3 class="field-label">Query parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">name (optional)</div>
+      <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestEmailParams </div>
     </div>  <!-- field-items -->
+
+
 
 
     <h3 class="field-label">Return type</h3>
@@ -405,11 +539,87 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
+    <h4 class="field-label">200</h4>
+    OK
         <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /alertemailconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertemailconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /alertemailconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertemailconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertEmailConfig object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AlertEmailConfig">AlertEmailConfig</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "to_emails" : "aeiou",
+  "cc_emails" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertEmailConfig">AlertEmailConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -486,216 +696,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#AlertEmailConfig">AlertEmailConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertemailconfigUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertemailconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertEmailConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertEmailConfig">AlertEmailConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "to_emails" : "aeiou",
-  "cc_emails" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertEmailConfig">AlertEmailConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertemailconfigUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertemailconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertEmailConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertEmailConfig">AlertEmailConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "to_emails" : "aeiou",
-  "cc_emails" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertEmailConfig">AlertEmailConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertemailconfigUuidTestemailPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /alertemailconfig/{uuid}/testemail</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertemailconfigUuidTestemailPost</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestEmailParams </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

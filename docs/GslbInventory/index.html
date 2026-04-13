@@ -202,1382 +202,14 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#gslbInventoryGet"><code><span class="http-method">get</span> /gslb-inventory</code></a></li>
-  <li><a href="#gslbInventoryPost"><code><span class="http-method">post</span> /gslb-inventory</code></a></li>
-  <li><a href="#gslbInventoryUuidDelete"><code><span class="http-method">delete</span> /gslb-inventory/{uuid}</code></a></li>
   <li><a href="#gslbInventoryUuidGet"><code><span class="http-method">get</span> /gslb-inventory/{uuid}</code></a></li>
-  <li><a href="#gslbInventoryUuidPatch"><code><span class="http-method">patch</span> /gslb-inventory/{uuid}</code></a></li>
-  <li><a href="#gslbInventoryUuidPut"><code><span class="http-method">put</span> /gslb-inventory/{uuid}</code></a></li>
+  <li><a href="#dELETE /gslbInventory/{uuid}"><code><span class="http-method">delete</span> /gslb-inventory/{uuid}</code></a></li>
+  <li><a href="#gET /gslbInventory"><code><span class="http-method">get</span> /gslb-inventory</code></a></li>
+  <li><a href="#pATCH /gslbInventory/{uuid}"><code><span class="http-method">patch</span> /gslb-inventory/{uuid}</code></a></li>
+  <li><a href="#pOST /gslbInventory"><code><span class="http-method">post</span> /gslb-inventory</code></a></li>
+  <li><a href="#pUT /gslbInventory/{uuid}"><code><span class="http-method">put</span> /gslb-inventory/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="gslbInventoryGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /gslb-inventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbInventoryGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#GslbInventoryApiResponse">GslbInventoryApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "runtime" : {
-      "info" : {
-        "site" : [ {
-          "send_interval" : "",
-          "tenant_name" : "aeiou",
-          "site_stats" : {
-            "num_ghm_cr_rxed" : "",
-            "num_gssl_cert_del_rxed" : "",
-            "num_gjwt_upd_txed" : "",
-            "num_glb_upd_rxed" : "",
-            "num_of_timeouts" : "",
-            "num_glb_cr_txed" : "",
-            "num_of_bad_responses" : "",
-            "num_gap_del_txed" : "",
-            "num_ghm_upd_txed" : "",
-            "num_gs_upd_rxed" : "",
-            "num_file_del_txed" : "",
-            "num_glb_del_rxed" : "",
-            "num_gjwt_del_txed" : "",
-            "num_geo_cr_rxed" : "",
-            "num_geo_del_rxed" : "",
-            "num_gs_del_rxed" : "",
-            "num_of_skip_outstanding_requests" : "",
-            "num_health_msgs_rxed" : "",
-            "num_gpki_upd_txed" : "",
-            "num_of_events_generated" : "",
-            "num_gap_cr_rxed" : "",
-            "num_gjwt_cr_txed" : "",
-            "num_gpki_del_rxed" : "",
-            "num_geo_upd_rxed" : "",
-            "num_gssl_cert_upd_rxed" : "",
-            "num_ghm_del_txed" : "",
-            "num_gpki_cr_txed" : "",
-            "num_gs_cr_rxed" : "",
-            "num_gap_upd_txed" : "",
-            "num_gssl_upd_rxed" : "",
-            "num_glb_cr_rxed" : "",
-            "num_glb_upd_txed" : "",
-            "num_gs_upd_txed" : "",
-            "num_gap_del_rxed" : "",
-            "num_ghm_cr_txed" : "",
-            "num_ghm_upd_rxed" : "",
-            "num_glb_del_txed" : "",
-            "num_gssl_del_rxed" : "",
-            "num_health_msgs_txed" : "",
-            "num_gfo_upd_rxed" : "",
-            "num_gjwt_del_rxed" : "",
-            "num_gs_del_txed" : "",
-            "num_geo_cr_txed" : "",
-            "num_gpki_upd_rxed" : "",
-            "num_geo_del_txed" : "",
-            "num_gpki_del_txed" : "",
-            "num_gap_cr_txed" : "",
-            "num_gjwt_cr_rxed" : "",
-            "num_geo_upd_txed" : "",
-            "num_file_cr_txed" : "",
-            "num_gssl_cert_cr_rxed" : "",
-            "num_gfo_cr_rxed" : "",
-            "num_ghm_del_rxed" : "",
-            "num_gssl_cr_rxed" : "",
-            "num_gs_cr_txed" : "",
-            "num_gpki_cr_rxed" : "",
-            "num_gjwt_upd_rxed" : "",
-            "num_gap_upd_rxed" : "",
-            "num_gfo_del_rxed" : ""
-          },
-          "replication_stats" : {
-            "received_version" : "",
-            "pending_object_count" : "",
-            "acknowledged_version" : ""
-          },
-          "rxed_site_hs" : {
-            "controller_gsinfo" : [ {
-              "app_type" : "aeiou",
-              "controller_status" : {
-                "reason_code" : "",
-                "reason" : [ "aeiou" ],
-                "last_changed_time" : "",
-                "state" : "aeiou",
-                "reason_code_string" : "aeiou"
-              },
-              "fqdn" : "aeiou",
-              "ip" : "",
-              "vs_name" : "aeiou",
-              "datapath_status" : [ {
-                "site_uuid" : "aeiou",
-                "location" : "",
-                "oper_status" : ""
-              } ],
-              "services" : [ {
-                "override_network_profile_ref" : "aeiou",
-                "port" : "",
-                "port_range_end" : "",
-                "is_active_ftp_data_port" : true,
-                "enable_http2" : true,
-                "horizon_internal_ports" : true,
-                "enable_ssl" : true,
-                "override_application_profile_ref" : "aeiou"
-              } ],
-              "oper_status" : "",
-              "vserver_l4_metrics" : {
-                "avg_half_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_rx_bytes_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-                "apdexc" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_tx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_rx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_small_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_pkts_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_http_abort" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_new_established_conns" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_cookie_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_rx_pkts_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_num_active_se" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_rx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_ingress_latency_exceeded_flows" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_slow_uri" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_http_timeout" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_connection_estb_time_fe" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_zero_window_size_events" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_total_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_end_to_end_rtt_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_end_to_end_rtt_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_l4_client_latency" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_syns" : 1.3579000000000001069366817318950779736042022705078125,
-                "node_obj_id" : "aeiou",
-                "sum_server_flow_control" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_non_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_dup_ack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_finished_conns" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_conn_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_ssl_error" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_packet_dropped_user_bandwidth_limit" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_conn" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_connection_dropped_user_limit" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "apdexrtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_pkts_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_zero_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_hdr_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_conn_est_time_exceeded_flows_fe" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_total_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_connections_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_conn_duration" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_sack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_conn_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_http_error" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_bytes_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_total_req" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_timeout_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_uri_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_bad_rst_flood" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_complete_conns" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_end_to_end_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_tx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_out_of_orders" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_rtt_valid_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_tx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_fake_session" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_errored_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_app_error" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_malformed_flood" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_uri_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_custom_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_rx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dos_req_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125
-              },
-              "sp_pools" : [ {
-                "servers" : [ {
-                  "is_enabled" : true,
-                  "hostname" : "aeiou",
-                  "last_state" : "aeiou",
-                  "def_port" : true,
-                  "port" : 123,
-                  "location" : "",
-                  "propogate_state" : true,
-                  "timer_exists" : true,
-                  "ip_addr" : "",
-                  "oper_status" : ""
-                } ],
-                "name" : "aeiou",
-                "num_servers" : 123456789,
-                "num_servers_up" : 123456789,
-                "enable_http2" : true,
-                "uuid" : "aeiou"
-              } ],
-              "site_name" : "aeiou",
-              "oper_ips" : [ "" ],
-              "gs_name" : "aeiou",
-              "vs_uuid" : "aeiou",
-              "cluster_uuid" : "aeiou",
-              "ip_value_to_se" : "",
-              "vip_type" : "aeiou",
-              "vserver_l7_metrics" : {
-                "avg_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_cacheable_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_num_page_load_time_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshakes_reused" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshakes_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "rum_apdexr" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_num_page_load_time_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_reqs_with_params" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_tolerated_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_4xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_get_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_get_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_auth_dsa" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "apdexr" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_rsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_complete_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_cache_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_post_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_post_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_error_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_5xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshake_protocol_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "node_obj_id" : "aeiou",
-                "avg_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_other_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_num_rum_samples" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_frustrated_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_total_requests" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_ssl_open_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_get_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ecdsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_kx_dh" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_kx_ecdh" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_other_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_other_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshakes_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "max_concurrent_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ver_ssl30" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ver_tls12" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ver_tls13" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_total_http2_requests" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_auth_ecdsa" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_response_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_errors_excluded" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshakes_timedout" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ver_tls10" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ver_tls11" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshakes_new" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_reqs_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_reqs_per_session" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "ssl_protocol_strength" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_kx_rsa" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_pre_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_auth_rsa" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_service_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_service_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_post_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_params_per_req" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_ecdsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_handshake_network_errors" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_post_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_ssl_rsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_satisfactory_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-                "avg_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-                "pct_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_total_responses" : 1.3579000000000001069366817318950779736042022705078125,
-                "sum_other_reqs" : 1.3579000000000001069366817318950779736042022705078125
-              },
-              "health_monitor_info" : [ "aeiou" ],
-              "ipv6_value_to_se" : [ "" ],
-              "gs_uuid" : "aeiou"
-            } ],
-            "gap_table" : [ "" ],
-            "dns_info" : {
-              "dns_active" : true,
-              "retry_count" : "",
-              "gs_status" : {
-                "last_changed_time" : "",
-                "partial_update_threshold" : "",
-                "state" : "aeiou",
-                "type" : "aeiou",
-                "num_partial_updates" : ""
-              },
-              "dns_vs_states" : [ {
-                "valid_dns_vs" : true,
-                "gslb_download" : "",
-                "name" : "aeiou",
-                "placement_rules" : [ {
-                  "sub_domain" : "aeiou",
-                  "placement_allowed" : true,
-                  "transition_ops" : "aeiou"
-                } ],
-                "se_list" : [ "aeiou" ],
-                "geo_download" : {
-                  "last_changed_time" : "",
-                  "state" : "aeiou"
-                },
-                "oper_status" : "",
-                "uuid" : "aeiou"
-              } ]
-            },
-            "gs_table" : [ "" ],
-            "glb_table" : [ "" ],
-            "ghm_table" : [ "" ],
-            "datapath_gsinfo" : [ "" ],
-            "geo_table" : [ "" ],
-            "sw_version" : "aeiou",
-            "timestamp" : 1.3579000000000001069366817318950779736042022705078125
-          },
-          "site_info" : {
-            "state_reason" : "aeiou",
-            "num_of_retries" : 123,
-            "role" : "aeiou",
-            "site_type" : "aeiou",
-            "dns_info" : "",
-            "oper_status" : "",
-            "enabled" : true,
-            "sw_version" : "aeiou",
-            "cluster_leader" : "aeiou",
-            "hs_state" : true,
-            "cluster_uuid" : "aeiou",
-            "event_cache" : "",
-            "last_changed_time" : "",
-            "name" : "aeiou",
-            "state" : "aeiou",
-            "rrtoken" : [ "aeiou" ]
-          },
-          "view_id" : "",
-          "health_monitor_info" : "aeiou",
-          "clear_on_max_retries" : "",
-          "glb_uuid" : "aeiou",
-          "site_cfg" : {
-            "glb_info" : "",
-            "fd_info" : {
-              "reader_count" : "",
-              "state" : "aeiou",
-              "queue" : [ {
-                "ds_name" : "aeiou",
-                "ops" : "aeiou",
-                "name" : "aeiou",
-                "uuid" : "aeiou"
-              } ],
-              "writer_count" : ""
-            },
-            "gjwt_info" : "",
-            "repl_queue" : "",
-            "gpki_info" : "",
-            "gap_info" : "",
-            "sync_info" : {
-              "last_fail_obj" : {
-                "event_type" : "aeiou",
-                "obj_name" : "aeiou",
-                "obj_uuid" : "aeiou"
-              },
-              "reason" : "aeiou",
-              "errored_objects" : [ "" ],
-              "last_changed_time" : "",
-              "recommendation" : "aeiou",
-              "sync_state" : "aeiou"
-            },
-            "geo_info" : "",
-            "gs_info" : "",
-            "ghm_info" : "",
-            "mm_info" : ""
-          }
-        } ],
-        "tenant_name" : "aeiou",
-        "checksum" : "aeiou",
-        "event_cache" : {
-          "dns_state" : true,
-          "exceptions" : [ "aeiou" ]
-        },
-        "name" : "aeiou",
-        "dns_enabled" : true,
-        "third_party_sites" : [ {
-          "site_info" : "",
-          "health_monitor_info" : "aeiou"
-        } ],
-        "delete_in_progress" : true,
-        "ldr_state" : "",
-        "uuid" : "aeiou",
-        "flr_state" : [ {
-          "reason" : "aeiou",
-          "site_uuid" : "aeiou",
-          "cfg_version_in_flight" : "",
-          "last_changed_time" : {
-            "usecs" : 123456789,
-            "secs" : 123456789
-          },
-          "cfg_version" : "",
-          "uuid" : "aeiou",
-          "status" : "aeiou"
-        } ]
-      }
-    },
-    "config" : {
-      "async_interval" : "",
-      "maintenance_mode" : true,
-      "leader_cluster_uuid" : "aeiou",
-      "view_id" : "",
-      "sites" : [ {
-        "member_type" : "aeiou",
-        "address" : "aeiou",
-        "ip_addresses" : [ {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        } ],
-        "hm_proxies" : [ {
-          "site_uuid" : "aeiou",
-          "proxy_type" : "aeiou"
-        } ],
-        "uuid" : "aeiou",
-        "enabled" : true,
-        "password" : "aeiou",
-        "dns_vses" : [ {
-          "dns_vs_uuid" : "aeiou",
-          "domain_names" : [ "aeiou" ]
-        } ],
-        "cluster_uuid" : "aeiou",
-        "port" : "",
-        "name" : "aeiou",
-        "location" : {
-          "location" : {
-            "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-            "name" : "aeiou",
-            "tag" : "aeiou",
-            "longitude" : 1.3579000000000001069366817318950779736042022705078125
-          },
-          "source" : "aeiou"
-        },
-        "suspend_mode" : true,
-        "hm_shard_enabled" : true,
-        "ratio" : "",
-        "username" : "aeiou"
-      } ],
-      "clear_on_max_retries" : "",
-      "uuid" : "aeiou",
-      "url" : "aeiou",
-      "send_interval" : "",
-      "error_resync_interval" : "",
-      "tenant_ref" : "aeiou",
-      "tenant_scoped" : true,
-      "name" : "aeiou",
-      "enable_config_by_members" : true,
-      "is_federated" : true,
-      "replication_policy" : {
-        "checkpoint_ref" : "aeiou",
-        "replication_mode" : "aeiou"
-      }
-    },
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#GslbInventoryApiResponse">GslbInventoryApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="gslbInventoryPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /gslb-inventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbInventoryPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#GslbInventory">GslbInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "runtime" : {
-    "info" : {
-      "site" : [ {
-        "send_interval" : "",
-        "tenant_name" : "aeiou",
-        "site_stats" : {
-          "num_ghm_cr_rxed" : "",
-          "num_gssl_cert_del_rxed" : "",
-          "num_gjwt_upd_txed" : "",
-          "num_glb_upd_rxed" : "",
-          "num_of_timeouts" : "",
-          "num_glb_cr_txed" : "",
-          "num_of_bad_responses" : "",
-          "num_gap_del_txed" : "",
-          "num_ghm_upd_txed" : "",
-          "num_gs_upd_rxed" : "",
-          "num_file_del_txed" : "",
-          "num_glb_del_rxed" : "",
-          "num_gjwt_del_txed" : "",
-          "num_geo_cr_rxed" : "",
-          "num_geo_del_rxed" : "",
-          "num_gs_del_rxed" : "",
-          "num_of_skip_outstanding_requests" : "",
-          "num_health_msgs_rxed" : "",
-          "num_gpki_upd_txed" : "",
-          "num_of_events_generated" : "",
-          "num_gap_cr_rxed" : "",
-          "num_gjwt_cr_txed" : "",
-          "num_gpki_del_rxed" : "",
-          "num_geo_upd_rxed" : "",
-          "num_gssl_cert_upd_rxed" : "",
-          "num_ghm_del_txed" : "",
-          "num_gpki_cr_txed" : "",
-          "num_gs_cr_rxed" : "",
-          "num_gap_upd_txed" : "",
-          "num_gssl_upd_rxed" : "",
-          "num_glb_cr_rxed" : "",
-          "num_glb_upd_txed" : "",
-          "num_gs_upd_txed" : "",
-          "num_gap_del_rxed" : "",
-          "num_ghm_cr_txed" : "",
-          "num_ghm_upd_rxed" : "",
-          "num_glb_del_txed" : "",
-          "num_gssl_del_rxed" : "",
-          "num_health_msgs_txed" : "",
-          "num_gfo_upd_rxed" : "",
-          "num_gjwt_del_rxed" : "",
-          "num_gs_del_txed" : "",
-          "num_geo_cr_txed" : "",
-          "num_gpki_upd_rxed" : "",
-          "num_geo_del_txed" : "",
-          "num_gpki_del_txed" : "",
-          "num_gap_cr_txed" : "",
-          "num_gjwt_cr_rxed" : "",
-          "num_geo_upd_txed" : "",
-          "num_file_cr_txed" : "",
-          "num_gssl_cert_cr_rxed" : "",
-          "num_gfo_cr_rxed" : "",
-          "num_ghm_del_rxed" : "",
-          "num_gssl_cr_rxed" : "",
-          "num_gs_cr_txed" : "",
-          "num_gpki_cr_rxed" : "",
-          "num_gjwt_upd_rxed" : "",
-          "num_gap_upd_rxed" : "",
-          "num_gfo_del_rxed" : ""
-        },
-        "replication_stats" : {
-          "received_version" : "",
-          "pending_object_count" : "",
-          "acknowledged_version" : ""
-        },
-        "rxed_site_hs" : {
-          "controller_gsinfo" : [ {
-            "app_type" : "aeiou",
-            "controller_status" : {
-              "reason_code" : "",
-              "reason" : [ "aeiou" ],
-              "last_changed_time" : "",
-              "state" : "aeiou",
-              "reason_code_string" : "aeiou"
-            },
-            "fqdn" : "aeiou",
-            "ip" : "",
-            "vs_name" : "aeiou",
-            "datapath_status" : [ {
-              "site_uuid" : "aeiou",
-              "location" : "",
-              "oper_status" : ""
-            } ],
-            "services" : [ {
-              "override_network_profile_ref" : "aeiou",
-              "port" : "",
-              "port_range_end" : "",
-              "is_active_ftp_data_port" : true,
-              "enable_http2" : true,
-              "horizon_internal_ports" : true,
-              "enable_ssl" : true,
-              "override_application_profile_ref" : "aeiou"
-            } ],
-            "oper_status" : "",
-            "vserver_l4_metrics" : {
-              "avg_half_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_rx_bytes_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-              "apdexc" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_tx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_rx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_small_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_pkts_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_http_abort" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_new_established_conns" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_cookie_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_rx_pkts_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_num_active_se" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_rx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_ingress_latency_exceeded_flows" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_slow_uri" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_http_timeout" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_connection_estb_time_fe" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_zero_window_size_events" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_total_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_end_to_end_rtt_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_end_to_end_rtt_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_l4_client_latency" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_syns" : 1.3579000000000001069366817318950779736042022705078125,
-              "node_obj_id" : "aeiou",
-              "sum_server_flow_control" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_non_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_dup_ack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_finished_conns" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_conn_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_ssl_error" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_packet_dropped_user_bandwidth_limit" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_conn" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_connection_dropped_user_limit" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "apdexrtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_pkts_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_zero_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_hdr_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_conn_est_time_exceeded_flows_fe" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_total_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_connections_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_conn_duration" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_sack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_conn_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_http_error" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_bytes_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_total_req" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_timeout_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_uri_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_bad_rst_flood" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_complete_conns" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_end_to_end_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_tx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_out_of_orders" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_rtt_valid_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_tx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_fake_session" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_errored_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_app_error" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_malformed_flood" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_uri_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_custom_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_rx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dos_req_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125
-            },
-            "sp_pools" : [ {
-              "servers" : [ {
-                "is_enabled" : true,
-                "hostname" : "aeiou",
-                "last_state" : "aeiou",
-                "def_port" : true,
-                "port" : 123,
-                "location" : "",
-                "propogate_state" : true,
-                "timer_exists" : true,
-                "ip_addr" : "",
-                "oper_status" : ""
-              } ],
-              "name" : "aeiou",
-              "num_servers" : 123456789,
-              "num_servers_up" : 123456789,
-              "enable_http2" : true,
-              "uuid" : "aeiou"
-            } ],
-            "site_name" : "aeiou",
-            "oper_ips" : [ "" ],
-            "gs_name" : "aeiou",
-            "vs_uuid" : "aeiou",
-            "cluster_uuid" : "aeiou",
-            "ip_value_to_se" : "",
-            "vip_type" : "aeiou",
-            "vserver_l7_metrics" : {
-              "avg_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_cacheable_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_num_page_load_time_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshakes_reused" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshakes_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "rum_apdexr" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_num_page_load_time_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_reqs_with_params" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_tolerated_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_4xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_get_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_get_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_auth_dsa" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "apdexr" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_rsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_complete_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_cache_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_post_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_post_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_error_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_5xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshake_protocol_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "node_obj_id" : "aeiou",
-              "avg_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_other_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_num_rum_samples" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_frustrated_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_total_requests" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_ssl_open_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_get_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ecdsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_kx_dh" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_kx_ecdh" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_other_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_other_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshakes_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "max_concurrent_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ver_ssl30" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ver_tls12" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ver_tls13" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_total_http2_requests" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_auth_ecdsa" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_response_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_errors_excluded" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshakes_timedout" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ver_tls10" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ver_tls11" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshakes_new" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_reqs_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_reqs_per_session" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "ssl_protocol_strength" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_kx_rsa" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_pre_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_auth_rsa" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_service_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_service_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_post_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_params_per_req" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_ecdsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_handshake_network_errors" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_post_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_ssl_rsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_satisfactory_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
-              "avg_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
-              "pct_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_total_responses" : 1.3579000000000001069366817318950779736042022705078125,
-              "sum_other_reqs" : 1.3579000000000001069366817318950779736042022705078125
-            },
-            "health_monitor_info" : [ "aeiou" ],
-            "ipv6_value_to_se" : [ "" ],
-            "gs_uuid" : "aeiou"
-          } ],
-          "gap_table" : [ "" ],
-          "dns_info" : {
-            "dns_active" : true,
-            "retry_count" : "",
-            "gs_status" : {
-              "last_changed_time" : "",
-              "partial_update_threshold" : "",
-              "state" : "aeiou",
-              "type" : "aeiou",
-              "num_partial_updates" : ""
-            },
-            "dns_vs_states" : [ {
-              "valid_dns_vs" : true,
-              "gslb_download" : "",
-              "name" : "aeiou",
-              "placement_rules" : [ {
-                "sub_domain" : "aeiou",
-                "placement_allowed" : true,
-                "transition_ops" : "aeiou"
-              } ],
-              "se_list" : [ "aeiou" ],
-              "geo_download" : {
-                "last_changed_time" : "",
-                "state" : "aeiou"
-              },
-              "oper_status" : "",
-              "uuid" : "aeiou"
-            } ]
-          },
-          "gs_table" : [ "" ],
-          "glb_table" : [ "" ],
-          "ghm_table" : [ "" ],
-          "datapath_gsinfo" : [ "" ],
-          "geo_table" : [ "" ],
-          "sw_version" : "aeiou",
-          "timestamp" : 1.3579000000000001069366817318950779736042022705078125
-        },
-        "site_info" : {
-          "state_reason" : "aeiou",
-          "num_of_retries" : 123,
-          "role" : "aeiou",
-          "site_type" : "aeiou",
-          "dns_info" : "",
-          "oper_status" : "",
-          "enabled" : true,
-          "sw_version" : "aeiou",
-          "cluster_leader" : "aeiou",
-          "hs_state" : true,
-          "cluster_uuid" : "aeiou",
-          "event_cache" : "",
-          "last_changed_time" : "",
-          "name" : "aeiou",
-          "state" : "aeiou",
-          "rrtoken" : [ "aeiou" ]
-        },
-        "view_id" : "",
-        "health_monitor_info" : "aeiou",
-        "clear_on_max_retries" : "",
-        "glb_uuid" : "aeiou",
-        "site_cfg" : {
-          "glb_info" : "",
-          "fd_info" : {
-            "reader_count" : "",
-            "state" : "aeiou",
-            "queue" : [ {
-              "ds_name" : "aeiou",
-              "ops" : "aeiou",
-              "name" : "aeiou",
-              "uuid" : "aeiou"
-            } ],
-            "writer_count" : ""
-          },
-          "gjwt_info" : "",
-          "repl_queue" : "",
-          "gpki_info" : "",
-          "gap_info" : "",
-          "sync_info" : {
-            "last_fail_obj" : {
-              "event_type" : "aeiou",
-              "obj_name" : "aeiou",
-              "obj_uuid" : "aeiou"
-            },
-            "reason" : "aeiou",
-            "errored_objects" : [ "" ],
-            "last_changed_time" : "",
-            "recommendation" : "aeiou",
-            "sync_state" : "aeiou"
-          },
-          "geo_info" : "",
-          "gs_info" : "",
-          "ghm_info" : "",
-          "mm_info" : ""
-        }
-      } ],
-      "tenant_name" : "aeiou",
-      "checksum" : "aeiou",
-      "event_cache" : {
-        "dns_state" : true,
-        "exceptions" : [ "aeiou" ]
-      },
-      "name" : "aeiou",
-      "dns_enabled" : true,
-      "third_party_sites" : [ {
-        "site_info" : "",
-        "health_monitor_info" : "aeiou"
-      } ],
-      "delete_in_progress" : true,
-      "ldr_state" : "",
-      "uuid" : "aeiou",
-      "flr_state" : [ {
-        "reason" : "aeiou",
-        "site_uuid" : "aeiou",
-        "cfg_version_in_flight" : "",
-        "last_changed_time" : {
-          "usecs" : 123456789,
-          "secs" : 123456789
-        },
-        "cfg_version" : "",
-        "uuid" : "aeiou",
-        "status" : "aeiou"
-      } ]
-    }
-  },
-  "config" : {
-    "async_interval" : "",
-    "maintenance_mode" : true,
-    "leader_cluster_uuid" : "aeiou",
-    "view_id" : "",
-    "sites" : [ {
-      "member_type" : "aeiou",
-      "address" : "aeiou",
-      "ip_addresses" : [ {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      } ],
-      "hm_proxies" : [ {
-        "site_uuid" : "aeiou",
-        "proxy_type" : "aeiou"
-      } ],
-      "uuid" : "aeiou",
-      "enabled" : true,
-      "password" : "aeiou",
-      "dns_vses" : [ {
-        "dns_vs_uuid" : "aeiou",
-        "domain_names" : [ "aeiou" ]
-      } ],
-      "cluster_uuid" : "aeiou",
-      "port" : "",
-      "name" : "aeiou",
-      "location" : {
-        "location" : {
-          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-          "name" : "aeiou",
-          "tag" : "aeiou",
-          "longitude" : 1.3579000000000001069366817318950779736042022705078125
-        },
-        "source" : "aeiou"
-      },
-      "suspend_mode" : true,
-      "hm_shard_enabled" : true,
-      "ratio" : "",
-      "username" : "aeiou"
-    } ],
-    "clear_on_max_retries" : "",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "send_interval" : "",
-    "error_resync_interval" : "",
-    "tenant_ref" : "aeiou",
-    "tenant_scoped" : true,
-    "name" : "aeiou",
-    "enable_config_by_members" : true,
-    "is_federated" : true,
-    "replication_policy" : {
-      "checkpoint_ref" : "aeiou",
-      "replication_mode" : "aeiou"
-    }
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#GslbInventory">GslbInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="gslbInventoryUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /gslb-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbInventoryUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="gslbInventoryUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -2239,12 +871,733 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="gslbInventoryUuidPatch"/>
+  <div class="method"><a name="dELETE /gslbInventory/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /gslb-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /gslbInventory/{uuid}</span>)</div>
+    <div class="method-notes">/gslb-inventory/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /gslbInventory"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /gslb-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /gslbInventory</span>)</div>
+    <div class="method-notes">/gslb-inventory</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#GslbInventoryApiResponse">GslbInventoryApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "runtime" : {
+      "info" : {
+        "site" : [ {
+          "send_interval" : "",
+          "tenant_name" : "aeiou",
+          "site_stats" : {
+            "num_ghm_cr_rxed" : "",
+            "num_gssl_cert_del_rxed" : "",
+            "num_gjwt_upd_txed" : "",
+            "num_glb_upd_rxed" : "",
+            "num_of_timeouts" : "",
+            "num_glb_cr_txed" : "",
+            "num_of_bad_responses" : "",
+            "num_gap_del_txed" : "",
+            "num_ghm_upd_txed" : "",
+            "num_gs_upd_rxed" : "",
+            "num_file_del_txed" : "",
+            "num_glb_del_rxed" : "",
+            "num_gjwt_del_txed" : "",
+            "num_geo_cr_rxed" : "",
+            "num_geo_del_rxed" : "",
+            "num_gs_del_rxed" : "",
+            "num_of_skip_outstanding_requests" : "",
+            "num_health_msgs_rxed" : "",
+            "num_gpki_upd_txed" : "",
+            "num_of_events_generated" : "",
+            "num_gap_cr_rxed" : "",
+            "num_gjwt_cr_txed" : "",
+            "num_gpki_del_rxed" : "",
+            "num_geo_upd_rxed" : "",
+            "num_gssl_cert_upd_rxed" : "",
+            "num_ghm_del_txed" : "",
+            "num_gpki_cr_txed" : "",
+            "num_gs_cr_rxed" : "",
+            "num_gap_upd_txed" : "",
+            "num_gssl_upd_rxed" : "",
+            "num_glb_cr_rxed" : "",
+            "num_glb_upd_txed" : "",
+            "num_gs_upd_txed" : "",
+            "num_gap_del_rxed" : "",
+            "num_ghm_cr_txed" : "",
+            "num_ghm_upd_rxed" : "",
+            "num_glb_del_txed" : "",
+            "num_gssl_del_rxed" : "",
+            "num_health_msgs_txed" : "",
+            "num_gfo_upd_rxed" : "",
+            "num_gjwt_del_rxed" : "",
+            "num_gs_del_txed" : "",
+            "num_geo_cr_txed" : "",
+            "num_gpki_upd_rxed" : "",
+            "num_geo_del_txed" : "",
+            "num_gpki_del_txed" : "",
+            "num_gap_cr_txed" : "",
+            "num_gjwt_cr_rxed" : "",
+            "num_geo_upd_txed" : "",
+            "num_file_cr_txed" : "",
+            "num_gssl_cert_cr_rxed" : "",
+            "num_gfo_cr_rxed" : "",
+            "num_ghm_del_rxed" : "",
+            "num_gssl_cr_rxed" : "",
+            "num_gs_cr_txed" : "",
+            "num_gpki_cr_rxed" : "",
+            "num_gjwt_upd_rxed" : "",
+            "num_gap_upd_rxed" : "",
+            "num_gfo_del_rxed" : ""
+          },
+          "replication_stats" : {
+            "received_version" : "",
+            "pending_object_count" : "",
+            "acknowledged_version" : ""
+          },
+          "rxed_site_hs" : {
+            "controller_gsinfo" : [ {
+              "app_type" : "aeiou",
+              "controller_status" : {
+                "reason_code" : "",
+                "reason" : [ "aeiou" ],
+                "last_changed_time" : "",
+                "state" : "aeiou",
+                "reason_code_string" : "aeiou"
+              },
+              "fqdn" : "aeiou",
+              "ip" : "",
+              "vs_name" : "aeiou",
+              "datapath_status" : [ {
+                "site_uuid" : "aeiou",
+                "location" : "",
+                "oper_status" : ""
+              } ],
+              "services" : [ {
+                "override_network_profile_ref" : "aeiou",
+                "port" : "",
+                "port_range_end" : "",
+                "is_active_ftp_data_port" : true,
+                "enable_http2" : true,
+                "horizon_internal_ports" : true,
+                "enable_ssl" : true,
+                "override_application_profile_ref" : "aeiou"
+              } ],
+              "oper_status" : "",
+              "vserver_l4_metrics" : {
+                "avg_half_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_rx_bytes_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+                "apdexc" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_tx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_rx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_small_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_pkts_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_http_abort" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_new_established_conns" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_cookie_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_rx_pkts_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_num_active_se" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_rx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_ingress_latency_exceeded_flows" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_slow_uri" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_http_timeout" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_connection_estb_time_fe" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_zero_window_size_events" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_total_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_end_to_end_rtt_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_end_to_end_rtt_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_l4_client_latency" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_syns" : 1.3579000000000001069366817318950779736042022705078125,
+                "node_obj_id" : "aeiou",
+                "sum_server_flow_control" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_non_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_dup_ack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_finished_conns" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_conn_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_ssl_error" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_packet_dropped_user_bandwidth_limit" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_conn" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_connection_dropped_user_limit" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "apdexrtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_pkts_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_zero_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_hdr_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_conn_est_time_exceeded_flows_fe" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_total_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_connections_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_conn_duration" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_sack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_conn_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_http_error" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_bytes_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_total_req" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_timeout_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_uri_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_bad_rst_flood" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_complete_conns" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_end_to_end_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_tx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_out_of_orders" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_rtt_valid_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_tx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_fake_session" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_errored_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_app_error" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_malformed_flood" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_uri_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_custom_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_rx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dos_req_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125
+              },
+              "sp_pools" : [ {
+                "servers" : [ {
+                  "is_enabled" : true,
+                  "hostname" : "aeiou",
+                  "last_state" : "aeiou",
+                  "def_port" : true,
+                  "port" : 123,
+                  "location" : "",
+                  "propogate_state" : true,
+                  "timer_exists" : true,
+                  "ip_addr" : "",
+                  "oper_status" : ""
+                } ],
+                "name" : "aeiou",
+                "num_servers" : 123456789,
+                "num_servers_up" : 123456789,
+                "enable_http2" : true,
+                "uuid" : "aeiou"
+              } ],
+              "site_name" : "aeiou",
+              "oper_ips" : [ "" ],
+              "gs_name" : "aeiou",
+              "vs_uuid" : "aeiou",
+              "cluster_uuid" : "aeiou",
+              "ip_value_to_se" : "",
+              "vip_type" : "aeiou",
+              "vserver_l7_metrics" : {
+                "avg_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_cacheable_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_num_page_load_time_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshakes_reused" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshakes_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "rum_apdexr" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_num_page_load_time_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_reqs_with_params" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_tolerated_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_4xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_get_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_get_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_auth_dsa" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "apdexr" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_rsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_complete_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_cache_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_post_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_post_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_error_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_5xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshake_protocol_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "node_obj_id" : "aeiou",
+                "avg_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_other_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_num_rum_samples" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_frustrated_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_total_requests" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_ssl_open_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_get_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ecdsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_kx_dh" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_kx_ecdh" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_other_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_other_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshakes_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "max_concurrent_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ver_ssl30" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ver_tls12" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ver_tls13" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_total_http2_requests" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_auth_ecdsa" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_response_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_errors_excluded" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshakes_timedout" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ver_tls10" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ver_tls11" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshakes_new" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_reqs_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_reqs_per_session" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "ssl_protocol_strength" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_kx_rsa" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_pre_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_auth_rsa" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_service_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_service_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_post_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_params_per_req" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_ecdsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_handshake_network_errors" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_post_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_ssl_rsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_satisfactory_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+                "avg_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+                "pct_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_total_responses" : 1.3579000000000001069366817318950779736042022705078125,
+                "sum_other_reqs" : 1.3579000000000001069366817318950779736042022705078125
+              },
+              "health_monitor_info" : [ "aeiou" ],
+              "ipv6_value_to_se" : [ "" ],
+              "gs_uuid" : "aeiou"
+            } ],
+            "gap_table" : [ "" ],
+            "dns_info" : {
+              "dns_active" : true,
+              "retry_count" : "",
+              "gs_status" : {
+                "last_changed_time" : "",
+                "partial_update_threshold" : "",
+                "state" : "aeiou",
+                "type" : "aeiou",
+                "num_partial_updates" : ""
+              },
+              "dns_vs_states" : [ {
+                "valid_dns_vs" : true,
+                "gslb_download" : "",
+                "name" : "aeiou",
+                "placement_rules" : [ {
+                  "sub_domain" : "aeiou",
+                  "placement_allowed" : true,
+                  "transition_ops" : "aeiou"
+                } ],
+                "se_list" : [ "aeiou" ],
+                "geo_download" : {
+                  "last_changed_time" : "",
+                  "state" : "aeiou"
+                },
+                "oper_status" : "",
+                "uuid" : "aeiou"
+              } ]
+            },
+            "gs_table" : [ "" ],
+            "glb_table" : [ "" ],
+            "ghm_table" : [ "" ],
+            "datapath_gsinfo" : [ "" ],
+            "geo_table" : [ "" ],
+            "sw_version" : "aeiou",
+            "timestamp" : 1.3579000000000001069366817318950779736042022705078125
+          },
+          "site_info" : {
+            "state_reason" : "aeiou",
+            "num_of_retries" : 123,
+            "role" : "aeiou",
+            "site_type" : "aeiou",
+            "dns_info" : "",
+            "oper_status" : "",
+            "enabled" : true,
+            "sw_version" : "aeiou",
+            "cluster_leader" : "aeiou",
+            "hs_state" : true,
+            "cluster_uuid" : "aeiou",
+            "event_cache" : "",
+            "last_changed_time" : "",
+            "name" : "aeiou",
+            "state" : "aeiou",
+            "rrtoken" : [ "aeiou" ]
+          },
+          "view_id" : "",
+          "health_monitor_info" : "aeiou",
+          "clear_on_max_retries" : "",
+          "glb_uuid" : "aeiou",
+          "site_cfg" : {
+            "glb_info" : "",
+            "fd_info" : {
+              "reader_count" : "",
+              "state" : "aeiou",
+              "queue" : [ {
+                "ds_name" : "aeiou",
+                "ops" : "aeiou",
+                "name" : "aeiou",
+                "uuid" : "aeiou"
+              } ],
+              "writer_count" : ""
+            },
+            "gjwt_info" : "",
+            "repl_queue" : "",
+            "gpki_info" : "",
+            "gap_info" : "",
+            "sync_info" : {
+              "last_fail_obj" : {
+                "event_type" : "aeiou",
+                "obj_name" : "aeiou",
+                "obj_uuid" : "aeiou"
+              },
+              "reason" : "aeiou",
+              "errored_objects" : [ "" ],
+              "last_changed_time" : "",
+              "recommendation" : "aeiou",
+              "sync_state" : "aeiou"
+            },
+            "geo_info" : "",
+            "gs_info" : "",
+            "ghm_info" : "",
+            "mm_info" : ""
+          }
+        } ],
+        "tenant_name" : "aeiou",
+        "checksum" : "aeiou",
+        "event_cache" : {
+          "dns_state" : true,
+          "exceptions" : [ "aeiou" ]
+        },
+        "name" : "aeiou",
+        "dns_enabled" : true,
+        "third_party_sites" : [ {
+          "site_info" : "",
+          "health_monitor_info" : "aeiou"
+        } ],
+        "delete_in_progress" : true,
+        "ldr_state" : "",
+        "uuid" : "aeiou",
+        "flr_state" : [ {
+          "reason" : "aeiou",
+          "site_uuid" : "aeiou",
+          "cfg_version_in_flight" : "",
+          "last_changed_time" : {
+            "usecs" : 123456789,
+            "secs" : 123456789
+          },
+          "cfg_version" : "",
+          "uuid" : "aeiou",
+          "status" : "aeiou"
+        } ]
+      }
+    },
+    "config" : {
+      "async_interval" : "",
+      "maintenance_mode" : true,
+      "leader_cluster_uuid" : "aeiou",
+      "view_id" : "",
+      "sites" : [ {
+        "member_type" : "aeiou",
+        "address" : "aeiou",
+        "ip_addresses" : [ {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        } ],
+        "hm_proxies" : [ {
+          "site_uuid" : "aeiou",
+          "proxy_type" : "aeiou"
+        } ],
+        "uuid" : "aeiou",
+        "enabled" : true,
+        "password" : "aeiou",
+        "dns_vses" : [ {
+          "dns_vs_uuid" : "aeiou",
+          "domain_names" : [ "aeiou" ]
+        } ],
+        "cluster_uuid" : "aeiou",
+        "port" : "",
+        "name" : "aeiou",
+        "location" : {
+          "location" : {
+            "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+            "name" : "aeiou",
+            "tag" : "aeiou",
+            "longitude" : 1.3579000000000001069366817318950779736042022705078125
+          },
+          "source" : "aeiou"
+        },
+        "suspend_mode" : true,
+        "hm_shard_enabled" : true,
+        "ratio" : "",
+        "username" : "aeiou"
+      } ],
+      "clear_on_max_retries" : "",
+      "uuid" : "aeiou",
+      "url" : "aeiou",
+      "send_interval" : "",
+      "error_resync_interval" : "",
+      "tenant_ref" : "aeiou",
+      "tenant_scoped" : true,
+      "name" : "aeiou",
+      "enable_config_by_members" : true,
+      "is_federated" : true,
+      "replication_policy" : {
+        "checkpoint_ref" : "aeiou",
+        "replication_mode" : "aeiou"
+      }
+    },
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#GslbInventoryApiResponse">GslbInventoryApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /gslbInventory/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /gslb-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbInventoryUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /gslbInventory/{uuid}</span>)</div>
+    <div class="method-notes">/gslb-inventory/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2898,12 +2251,659 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="gslbInventoryUuidPut"/>
+  <div class="method"><a name="pOST /gslbInventory"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /gslb-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /gslbInventory</span>)</div>
+    <div class="method-notes">/gslb-inventory</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#GslbInventory">GslbInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "runtime" : {
+    "info" : {
+      "site" : [ {
+        "send_interval" : "",
+        "tenant_name" : "aeiou",
+        "site_stats" : {
+          "num_ghm_cr_rxed" : "",
+          "num_gssl_cert_del_rxed" : "",
+          "num_gjwt_upd_txed" : "",
+          "num_glb_upd_rxed" : "",
+          "num_of_timeouts" : "",
+          "num_glb_cr_txed" : "",
+          "num_of_bad_responses" : "",
+          "num_gap_del_txed" : "",
+          "num_ghm_upd_txed" : "",
+          "num_gs_upd_rxed" : "",
+          "num_file_del_txed" : "",
+          "num_glb_del_rxed" : "",
+          "num_gjwt_del_txed" : "",
+          "num_geo_cr_rxed" : "",
+          "num_geo_del_rxed" : "",
+          "num_gs_del_rxed" : "",
+          "num_of_skip_outstanding_requests" : "",
+          "num_health_msgs_rxed" : "",
+          "num_gpki_upd_txed" : "",
+          "num_of_events_generated" : "",
+          "num_gap_cr_rxed" : "",
+          "num_gjwt_cr_txed" : "",
+          "num_gpki_del_rxed" : "",
+          "num_geo_upd_rxed" : "",
+          "num_gssl_cert_upd_rxed" : "",
+          "num_ghm_del_txed" : "",
+          "num_gpki_cr_txed" : "",
+          "num_gs_cr_rxed" : "",
+          "num_gap_upd_txed" : "",
+          "num_gssl_upd_rxed" : "",
+          "num_glb_cr_rxed" : "",
+          "num_glb_upd_txed" : "",
+          "num_gs_upd_txed" : "",
+          "num_gap_del_rxed" : "",
+          "num_ghm_cr_txed" : "",
+          "num_ghm_upd_rxed" : "",
+          "num_glb_del_txed" : "",
+          "num_gssl_del_rxed" : "",
+          "num_health_msgs_txed" : "",
+          "num_gfo_upd_rxed" : "",
+          "num_gjwt_del_rxed" : "",
+          "num_gs_del_txed" : "",
+          "num_geo_cr_txed" : "",
+          "num_gpki_upd_rxed" : "",
+          "num_geo_del_txed" : "",
+          "num_gpki_del_txed" : "",
+          "num_gap_cr_txed" : "",
+          "num_gjwt_cr_rxed" : "",
+          "num_geo_upd_txed" : "",
+          "num_file_cr_txed" : "",
+          "num_gssl_cert_cr_rxed" : "",
+          "num_gfo_cr_rxed" : "",
+          "num_ghm_del_rxed" : "",
+          "num_gssl_cr_rxed" : "",
+          "num_gs_cr_txed" : "",
+          "num_gpki_cr_rxed" : "",
+          "num_gjwt_upd_rxed" : "",
+          "num_gap_upd_rxed" : "",
+          "num_gfo_del_rxed" : ""
+        },
+        "replication_stats" : {
+          "received_version" : "",
+          "pending_object_count" : "",
+          "acknowledged_version" : ""
+        },
+        "rxed_site_hs" : {
+          "controller_gsinfo" : [ {
+            "app_type" : "aeiou",
+            "controller_status" : {
+              "reason_code" : "",
+              "reason" : [ "aeiou" ],
+              "last_changed_time" : "",
+              "state" : "aeiou",
+              "reason_code_string" : "aeiou"
+            },
+            "fqdn" : "aeiou",
+            "ip" : "",
+            "vs_name" : "aeiou",
+            "datapath_status" : [ {
+              "site_uuid" : "aeiou",
+              "location" : "",
+              "oper_status" : ""
+            } ],
+            "services" : [ {
+              "override_network_profile_ref" : "aeiou",
+              "port" : "",
+              "port_range_end" : "",
+              "is_active_ftp_data_port" : true,
+              "enable_http2" : true,
+              "horizon_internal_ports" : true,
+              "enable_ssl" : true,
+              "override_application_profile_ref" : "aeiou"
+            } ],
+            "oper_status" : "",
+            "vserver_l4_metrics" : {
+              "avg_half_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_rx_bytes_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+              "apdexc" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_tx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_rx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_small_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_pkts_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_http_abort" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_new_established_conns" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_cookie_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_rx_pkts_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_num_active_se" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_rx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_ingress_latency_exceeded_flows" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_slow_uri" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_http_timeout" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_connection_estb_time_fe" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_zero_window_size_events" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_total_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_end_to_end_rtt_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_end_to_end_rtt_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_l4_client_latency" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_connection_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_syns" : 1.3579000000000001069366817318950779736042022705078125,
+              "node_obj_id" : "aeiou",
+              "sum_server_flow_control" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_non_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_dup_ack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_finished_conns" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_conn_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_ssl_error" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_syn_flood" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_packet_dropped_user_bandwidth_limit" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_conn" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_connection_dropped_user_limit" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "apdexrtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_pkts_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_zero_window_stress" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_hdr_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_conn_est_time_exceeded_flows_fe" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_total_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_lossy_req" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_connections_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_uri_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_application_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_conn_duration" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_sack_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_conn_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_rx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_http_error" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_bytes_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_total_req" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_timeout_retransmits" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_uri_scan_unknown_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_open_conns" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_policy_drops" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_bad_rst_flood" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_network_dos_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_ip_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_complete_conns" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_end_to_end_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_connections_dropped" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_lossy_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_tx_bytes_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_out_of_orders" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_rtt_valid_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_tx_pkts_absolute" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_fake_session" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_errored_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_tx_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_app_error" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_malformed_flood" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_uri_scan_bad_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_custom_rl_drop" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_rx_pkts" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_bandwidth" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dos_req_uri_rl_drop_bad" : 1.3579000000000001069366817318950779736042022705078125
+            },
+            "sp_pools" : [ {
+              "servers" : [ {
+                "is_enabled" : true,
+                "hostname" : "aeiou",
+                "last_state" : "aeiou",
+                "def_port" : true,
+                "port" : 123,
+                "location" : "",
+                "propogate_state" : true,
+                "timer_exists" : true,
+                "ip_addr" : "",
+                "oper_status" : ""
+              } ],
+              "name" : "aeiou",
+              "num_servers" : 123456789,
+              "num_servers_up" : 123456789,
+              "enable_http2" : true,
+              "uuid" : "aeiou"
+            } ],
+            "site_name" : "aeiou",
+            "oper_ips" : [ "" ],
+            "gs_name" : "aeiou",
+            "vs_uuid" : "aeiou",
+            "cluster_uuid" : "aeiou",
+            "ip_value_to_se" : "",
+            "vip_type" : "aeiou",
+            "vserver_l7_metrics" : {
+              "avg_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_cacheable_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_num_page_load_time_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshakes_reused" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshakes_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "rum_apdexr" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_num_page_load_time_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_reqs_with_params" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_tolerated_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_4xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_get_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_get_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_auth_dsa" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_page_download_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_dns_lookup_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "apdexr" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_cache_hits" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_rsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_flagged_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_complete_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_cache_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_4xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_post_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_post_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_error_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_resp_3xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_latency_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_5xx_avi_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshake_protocol_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "node_obj_id" : "aeiou",
+              "avg_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_evaluated_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_uri_length" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_rejected_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_flagged_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_other_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_num_rum_samples" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_evaluated_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_frustrated_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_application_response_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_total_requests" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_ssl_open_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_get_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ecdsa_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_kx_dh" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_matched_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_kx_ecdh" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_other_client_txn_latency_bucket1" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_other_client_txn_latency_bucket2" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshakes_non_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_post_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "max_concurrent_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_matched_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_flagged" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ver_ssl30" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ver_tls12" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_latency_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_rejected" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ver_tls13" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_rejected_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_evaluated" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_total_http2_requests" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_flagged_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_auth_ecdsa" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_response_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_errors_excluded" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_rejected_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_rum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshakes_timedout" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_attacks" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ver_tls10" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ver_tls11" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_client_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshakes_new" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_latency_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_matched_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_reqs_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_latency_response_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_reqs_per_session" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_dom_content_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_http_headers_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "ssl_protocol_strength" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_kx_rsa" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_matched" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_rejected_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_page_load_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_waf_disabled" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_resp_2xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_http_headers_count" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_connection_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waiting_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_pre_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_flagged_response_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_blocking_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_resp_5xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_auth_rsa" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_service_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_get_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_resp_1xx" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_evaluated_request_header_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_redirection_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_service_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_finished_sessions" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_evaluated_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_http_params_count" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_post_client_txn_latency" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_client_data_transfer_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_params_per_req" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_ecdsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_handshake_network_errors" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_post_compression_bytes" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_ssl_rsa_pfs" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_cacheable_hits" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_post_reqs" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_satisfactory_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_browser_rendering_time" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_server_rtt" : 1.3579000000000001069366817318950779736042022705078125,
+              "avg_waf_matched_request_body_phase" : 1.3579000000000001069366817318950779736042022705078125,
+              "pct_ssl_failed_connections" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_total_responses" : 1.3579000000000001069366817318950779736042022705078125,
+              "sum_other_reqs" : 1.3579000000000001069366817318950779736042022705078125
+            },
+            "health_monitor_info" : [ "aeiou" ],
+            "ipv6_value_to_se" : [ "" ],
+            "gs_uuid" : "aeiou"
+          } ],
+          "gap_table" : [ "" ],
+          "dns_info" : {
+            "dns_active" : true,
+            "retry_count" : "",
+            "gs_status" : {
+              "last_changed_time" : "",
+              "partial_update_threshold" : "",
+              "state" : "aeiou",
+              "type" : "aeiou",
+              "num_partial_updates" : ""
+            },
+            "dns_vs_states" : [ {
+              "valid_dns_vs" : true,
+              "gslb_download" : "",
+              "name" : "aeiou",
+              "placement_rules" : [ {
+                "sub_domain" : "aeiou",
+                "placement_allowed" : true,
+                "transition_ops" : "aeiou"
+              } ],
+              "se_list" : [ "aeiou" ],
+              "geo_download" : {
+                "last_changed_time" : "",
+                "state" : "aeiou"
+              },
+              "oper_status" : "",
+              "uuid" : "aeiou"
+            } ]
+          },
+          "gs_table" : [ "" ],
+          "glb_table" : [ "" ],
+          "ghm_table" : [ "" ],
+          "datapath_gsinfo" : [ "" ],
+          "geo_table" : [ "" ],
+          "sw_version" : "aeiou",
+          "timestamp" : 1.3579000000000001069366817318950779736042022705078125
+        },
+        "site_info" : {
+          "state_reason" : "aeiou",
+          "num_of_retries" : 123,
+          "role" : "aeiou",
+          "site_type" : "aeiou",
+          "dns_info" : "",
+          "oper_status" : "",
+          "enabled" : true,
+          "sw_version" : "aeiou",
+          "cluster_leader" : "aeiou",
+          "hs_state" : true,
+          "cluster_uuid" : "aeiou",
+          "event_cache" : "",
+          "last_changed_time" : "",
+          "name" : "aeiou",
+          "state" : "aeiou",
+          "rrtoken" : [ "aeiou" ]
+        },
+        "view_id" : "",
+        "health_monitor_info" : "aeiou",
+        "clear_on_max_retries" : "",
+        "glb_uuid" : "aeiou",
+        "site_cfg" : {
+          "glb_info" : "",
+          "fd_info" : {
+            "reader_count" : "",
+            "state" : "aeiou",
+            "queue" : [ {
+              "ds_name" : "aeiou",
+              "ops" : "aeiou",
+              "name" : "aeiou",
+              "uuid" : "aeiou"
+            } ],
+            "writer_count" : ""
+          },
+          "gjwt_info" : "",
+          "repl_queue" : "",
+          "gpki_info" : "",
+          "gap_info" : "",
+          "sync_info" : {
+            "last_fail_obj" : {
+              "event_type" : "aeiou",
+              "obj_name" : "aeiou",
+              "obj_uuid" : "aeiou"
+            },
+            "reason" : "aeiou",
+            "errored_objects" : [ "" ],
+            "last_changed_time" : "",
+            "recommendation" : "aeiou",
+            "sync_state" : "aeiou"
+          },
+          "geo_info" : "",
+          "gs_info" : "",
+          "ghm_info" : "",
+          "mm_info" : ""
+        }
+      } ],
+      "tenant_name" : "aeiou",
+      "checksum" : "aeiou",
+      "event_cache" : {
+        "dns_state" : true,
+        "exceptions" : [ "aeiou" ]
+      },
+      "name" : "aeiou",
+      "dns_enabled" : true,
+      "third_party_sites" : [ {
+        "site_info" : "",
+        "health_monitor_info" : "aeiou"
+      } ],
+      "delete_in_progress" : true,
+      "ldr_state" : "",
+      "uuid" : "aeiou",
+      "flr_state" : [ {
+        "reason" : "aeiou",
+        "site_uuid" : "aeiou",
+        "cfg_version_in_flight" : "",
+        "last_changed_time" : {
+          "usecs" : 123456789,
+          "secs" : 123456789
+        },
+        "cfg_version" : "",
+        "uuid" : "aeiou",
+        "status" : "aeiou"
+      } ]
+    }
+  },
+  "config" : {
+    "async_interval" : "",
+    "maintenance_mode" : true,
+    "leader_cluster_uuid" : "aeiou",
+    "view_id" : "",
+    "sites" : [ {
+      "member_type" : "aeiou",
+      "address" : "aeiou",
+      "ip_addresses" : [ {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      } ],
+      "hm_proxies" : [ {
+        "site_uuid" : "aeiou",
+        "proxy_type" : "aeiou"
+      } ],
+      "uuid" : "aeiou",
+      "enabled" : true,
+      "password" : "aeiou",
+      "dns_vses" : [ {
+        "dns_vs_uuid" : "aeiou",
+        "domain_names" : [ "aeiou" ]
+      } ],
+      "cluster_uuid" : "aeiou",
+      "port" : "",
+      "name" : "aeiou",
+      "location" : {
+        "location" : {
+          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+          "name" : "aeiou",
+          "tag" : "aeiou",
+          "longitude" : 1.3579000000000001069366817318950779736042022705078125
+        },
+        "source" : "aeiou"
+      },
+      "suspend_mode" : true,
+      "hm_shard_enabled" : true,
+      "ratio" : "",
+      "username" : "aeiou"
+    } ],
+    "clear_on_max_retries" : "",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "send_interval" : "",
+    "error_resync_interval" : "",
+    "tenant_ref" : "aeiou",
+    "tenant_scoped" : true,
+    "name" : "aeiou",
+    "enable_config_by_members" : true,
+    "is_federated" : true,
+    "replication_policy" : {
+      "checkpoint_ref" : "aeiou",
+      "replication_mode" : "aeiou"
+    }
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#GslbInventory">GslbInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /gslbInventory/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /gslb-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbInventoryUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /gslbInventory/{uuid}</span>)</div>
+    <div class="method-notes">/gslb-inventory/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

@@ -202,266 +202,14 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#securitypolicyGet"><code><span class="http-method">get</span> /securitypolicy</code></a></li>
-  <li><a href="#securitypolicyPost"><code><span class="http-method">post</span> /securitypolicy</code></a></li>
-  <li><a href="#securitypolicyUuidDelete"><code><span class="http-method">delete</span> /securitypolicy/{uuid}</code></a></li>
   <li><a href="#securitypolicyUuidGet"><code><span class="http-method">get</span> /securitypolicy/{uuid}</code></a></li>
-  <li><a href="#securitypolicyUuidPatch"><code><span class="http-method">patch</span> /securitypolicy/{uuid}</code></a></li>
-  <li><a href="#securitypolicyUuidPut"><code><span class="http-method">put</span> /securitypolicy/{uuid}</code></a></li>
+  <li><a href="#dELETE /securitypolicy/{uuid}"><code><span class="http-method">delete</span> /securitypolicy/{uuid}</code></a></li>
+  <li><a href="#gET /securitypolicy"><code><span class="http-method">get</span> /securitypolicy</code></a></li>
+  <li><a href="#pATCH /securitypolicy/{uuid}"><code><span class="http-method">patch</span> /securitypolicy/{uuid}</code></a></li>
+  <li><a href="#pOST /securitypolicy"><code><span class="http-method">post</span> /securitypolicy</code></a></li>
+  <li><a href="#pUT /securitypolicy/{uuid}"><code><span class="http-method">put</span> /securitypolicy/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="securitypolicyGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /securitypolicy</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securitypolicyGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SecurityPolicyApiResponse">SecurityPolicyApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "network_security_policy_index" : "",
-    "dns_attacks" : {
-      "attacks" : [ {
-        "mitigation_action" : {
-          "deny" : true
-        },
-        "threshold" : "",
-        "attack_vector" : "aeiou",
-        "enabled" : true,
-        "max_mitigation_age" : ""
-      } ],
-      "oper_mode" : "aeiou"
-    },
-    "description" : "aeiou",
-    "dns_policy_index" : "",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "oper_mode" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "dns_amplification_denyports" : {
-      "match_criteria" : "aeiou",
-      "ranges" : [ {
-        "start" : "",
-        "end" : ""
-      } ],
-      "ports" : [ "" ]
-    },
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ]
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SecurityPolicyApiResponse">SecurityPolicyApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="securitypolicyPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /securitypolicy</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securitypolicyPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SecurityPolicy object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SecurityPolicy">SecurityPolicy</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "network_security_policy_index" : "",
-  "dns_attacks" : {
-    "attacks" : [ {
-      "mitigation_action" : {
-        "deny" : true
-      },
-      "threshold" : "",
-      "attack_vector" : "aeiou",
-      "enabled" : true,
-      "max_mitigation_age" : ""
-    } ],
-    "oper_mode" : "aeiou"
-  },
-  "description" : "aeiou",
-  "dns_policy_index" : "",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "oper_mode" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "dns_amplification_denyports" : {
-    "match_criteria" : "aeiou",
-    "ranges" : [ {
-      "start" : "",
-      "end" : ""
-    } ],
-    "ports" : [ "" ]
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SecurityPolicy">SecurityPolicy</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="securitypolicyUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /securitypolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securitypolicyUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="securitypolicyUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -565,12 +313,175 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securitypolicyUuidPatch"/>
+  <div class="method"><a name="dELETE /securitypolicy/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /securitypolicy/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /securitypolicy/{uuid}</span>)</div>
+    <div class="method-notes">/securitypolicy/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /securitypolicy"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /securitypolicy</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /securitypolicy</span>)</div>
+    <div class="method-notes">/securitypolicy</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SecurityPolicyApiResponse">SecurityPolicyApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "network_security_policy_index" : "",
+    "dns_attacks" : {
+      "attacks" : [ {
+        "mitigation_action" : {
+          "deny" : true
+        },
+        "threshold" : "",
+        "attack_vector" : "aeiou",
+        "enabled" : true,
+        "max_mitigation_age" : ""
+      } ],
+      "oper_mode" : "aeiou"
+    },
+    "description" : "aeiou",
+    "dns_policy_index" : "",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "oper_mode" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "dns_amplification_denyports" : {
+      "match_criteria" : "aeiou",
+      "ranges" : [ {
+        "start" : "",
+        "end" : ""
+      } ],
+      "ports" : [ "" ]
+    },
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ]
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SecurityPolicyApiResponse">SecurityPolicyApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /securitypolicy/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /securitypolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securitypolicyUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /securitypolicy/{uuid}</span>)</div>
+    <div class="method-notes">/securitypolicy/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -666,12 +577,101 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="securitypolicyUuidPut"/>
+  <div class="method"><a name="pOST /securitypolicy"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /securitypolicy</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /securitypolicy</span>)</div>
+    <div class="method-notes">/securitypolicy</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SecurityPolicy object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SecurityPolicy">SecurityPolicy</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "network_security_policy_index" : "",
+  "dns_attacks" : {
+    "attacks" : [ {
+      "mitigation_action" : {
+        "deny" : true
+      },
+      "threshold" : "",
+      "attack_vector" : "aeiou",
+      "enabled" : true,
+      "max_mitigation_age" : ""
+    } ],
+    "oper_mode" : "aeiou"
+  },
+  "description" : "aeiou",
+  "dns_policy_index" : "",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "oper_mode" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "dns_amplification_denyports" : {
+    "match_criteria" : "aeiou",
+    "ranges" : [ {
+      "start" : "",
+      "end" : ""
+    } ],
+    "ports" : [ "" ]
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SecurityPolicy">SecurityPolicy</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /securitypolicy/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /securitypolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">securitypolicyUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /securitypolicy/{uuid}</span>)</div>
+    <div class="method-notes">/securitypolicy/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

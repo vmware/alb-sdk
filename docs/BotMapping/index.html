@@ -202,20 +202,78 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#botmappingGet"><code><span class="http-method">get</span> /botmapping</code></a></li>
-  <li><a href="#botmappingPost"><code><span class="http-method">post</span> /botmapping</code></a></li>
-  <li><a href="#botmappingUuidDelete"><code><span class="http-method">delete</span> /botmapping/{uuid}</code></a></li>
+  <li><a href="#dELETE /botmapping/{uuid}"><code><span class="http-method">delete</span> /botmapping/{uuid}</code></a></li>
+  <li><a href="#gET /botmapping"><code><span class="http-method">get</span> /botmapping</code></a></li>
+  <li><a href="#pATCH /botmapping/{uuid}"><code><span class="http-method">patch</span> /botmapping/{uuid}</code></a></li>
+  <li><a href="#pOST /botmapping"><code><span class="http-method">post</span> /botmapping</code></a></li>
+  <li><a href="#pUT /botmapping/{uuid}"><code><span class="http-method">put</span> /botmapping/{uuid}</code></a></li>
   <li><a href="#botmappingUuidGet"><code><span class="http-method">get</span> /botmapping/{uuid}</code></a></li>
-  <li><a href="#botmappingUuidPatch"><code><span class="http-method">patch</span> /botmapping/{uuid}</code></a></li>
-  <li><a href="#botmappingUuidPut"><code><span class="http-method">put</span> /botmapping/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="botmappingGet"/>
+  <div class="method"><a name="dELETE /botmapping/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /botmapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /botmapping/{uuid}</span>)</div>
+    <div class="method-notes">/botmapping/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /botmapping"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /botmapping</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">botmappingGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /botmapping</span>)</div>
+    <div class="method-notes">/botmapping</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -346,12 +404,144 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="botmappingPost"/>
+  <div class="method"><a name="pATCH /botmapping/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /botmapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /botmapping/{uuid}</span>)</div>
+    <div class="method-notes">/botmapping/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotMapping object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#BotMapping">BotMapping</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "mapping_rules" : [ {
+    "match" : {
+      "path" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "component_matcher" : "aeiou",
+      "identifier_matcher" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_str" : [ "aeiou" ]
+      },
+      "method" : {
+        "match_criteria" : "aeiou",
+        "methods" : [ "aeiou" ]
+      },
+      "class_matcher" : {
+        "op" : "aeiou",
+        "client_classes" : [ "aeiou" ]
+      },
+      "host_hdr" : {
+        "match_criteria" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "client_ip" : {
+        "group_refs" : [ "aeiou" ],
+        "match_criteria" : "aeiou",
+        "prefixes" : [ {
+          "ip_addr" : "",
+          "mask" : 123
+        } ],
+        "ranges" : [ {
+          "end" : "",
+          "begin" : ""
+        } ],
+        "addrs" : [ {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        } ]
+      },
+      "type_matcher" : {
+        "op" : "aeiou",
+        "client_types" : [ "aeiou" ]
+      },
+      "hdrs" : [ {
+        "match_criteria" : "aeiou",
+        "hdr" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      } ]
+    },
+    "name" : "aeiou",
+    "index" : "",
+    "classification" : {
+      "user_defined_type" : "aeiou",
+      "type" : "aeiou"
+    }
+  } ],
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#BotMapping">BotMapping</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /botmapping"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /botmapping</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">botmappingPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /botmapping</span>)</div>
+    <div class="method-notes">/botmapping</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -466,12 +656,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="botmappingUuidDelete"/>
+  <div class="method"><a name="pUT /botmapping/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /botmapping/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">botmappingUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /botmapping/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /botmapping/{uuid}</span>)</div>
+    <div class="method-notes">/botmapping/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -486,6 +676,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotMapping object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -498,15 +694,83 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#BotMapping">BotMapping</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "mapping_rules" : [ {
+    "match" : {
+      "path" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "component_matcher" : "aeiou",
+      "identifier_matcher" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_str" : [ "aeiou" ]
+      },
+      "method" : {
+        "match_criteria" : "aeiou",
+        "methods" : [ "aeiou" ]
+      },
+      "class_matcher" : {
+        "op" : "aeiou",
+        "client_classes" : [ "aeiou" ]
+      },
+      "host_hdr" : {
+        "match_criteria" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "client_ip" : {
+        "group_refs" : [ "aeiou" ],
+        "match_criteria" : "aeiou",
+        "prefixes" : [ {
+          "ip_addr" : "",
+          "mask" : 123
+        } ],
+        "ranges" : [ {
+          "end" : "",
+          "begin" : ""
+        } ],
+        "addrs" : [ {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        } ]
+      },
+      "type_matcher" : {
+        "op" : "aeiou",
+        "client_types" : [ "aeiou" ]
+      },
+      "hdrs" : [ {
+        "match_criteria" : "aeiou",
+        "hdr" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      } ]
+    },
+    "name" : "aeiou",
+    "index" : "",
+    "classification" : {
+      "user_defined_type" : "aeiou",
+      "type" : "aeiou"
+    }
+  } ],
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -516,11 +780,11 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#BotMapping">BotMapping</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -559,270 +823,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#BotMapping">BotMapping</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "mapping_rules" : [ {
-    "match" : {
-      "path" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "component_matcher" : "aeiou",
-      "identifier_matcher" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_str" : [ "aeiou" ]
-      },
-      "method" : {
-        "match_criteria" : "aeiou",
-        "methods" : [ "aeiou" ]
-      },
-      "class_matcher" : {
-        "op" : "aeiou",
-        "client_classes" : [ "aeiou" ]
-      },
-      "host_hdr" : {
-        "match_criteria" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "client_ip" : {
-        "group_refs" : [ "aeiou" ],
-        "match_criteria" : "aeiou",
-        "prefixes" : [ {
-          "ip_addr" : "",
-          "mask" : 123
-        } ],
-        "ranges" : [ {
-          "end" : "",
-          "begin" : ""
-        } ],
-        "addrs" : [ {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        } ]
-      },
-      "type_matcher" : {
-        "op" : "aeiou",
-        "client_types" : [ "aeiou" ]
-      },
-      "hdrs" : [ {
-        "match_criteria" : "aeiou",
-        "hdr" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      } ]
-    },
-    "name" : "aeiou",
-    "index" : "",
-    "classification" : {
-      "user_defined_type" : "aeiou",
-      "type" : "aeiou"
-    }
-  } ],
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#BotMapping">BotMapping</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="botmappingUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /botmapping/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">botmappingUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotMapping object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#BotMapping">BotMapping</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "mapping_rules" : [ {
-    "match" : {
-      "path" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "component_matcher" : "aeiou",
-      "identifier_matcher" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_str" : [ "aeiou" ]
-      },
-      "method" : {
-        "match_criteria" : "aeiou",
-        "methods" : [ "aeiou" ]
-      },
-      "class_matcher" : {
-        "op" : "aeiou",
-        "client_classes" : [ "aeiou" ]
-      },
-      "host_hdr" : {
-        "match_criteria" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "client_ip" : {
-        "group_refs" : [ "aeiou" ],
-        "match_criteria" : "aeiou",
-        "prefixes" : [ {
-          "ip_addr" : "",
-          "mask" : 123
-        } ],
-        "ranges" : [ {
-          "end" : "",
-          "begin" : ""
-        } ],
-        "addrs" : [ {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        } ]
-      },
-      "type_matcher" : {
-        "op" : "aeiou",
-        "client_types" : [ "aeiou" ]
-      },
-      "hdrs" : [ {
-        "match_criteria" : "aeiou",
-        "hdr" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      } ]
-    },
-    "name" : "aeiou",
-    "index" : "",
-    "classification" : {
-      "user_defined_type" : "aeiou",
-      "type" : "aeiou"
-    }
-  } ],
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#BotMapping">BotMapping</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="botmappingUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /botmapping/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">botmappingUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; BotMapping object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

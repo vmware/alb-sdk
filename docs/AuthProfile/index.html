@@ -202,20 +202,78 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#authprofileGet"><code><span class="http-method">get</span> /authprofile</code></a></li>
-  <li><a href="#authprofilePost"><code><span class="http-method">post</span> /authprofile</code></a></li>
-  <li><a href="#authprofileUuidDelete"><code><span class="http-method">delete</span> /authprofile/{uuid}</code></a></li>
+  <li><a href="#dELETE /authprofile/{uuid}"><code><span class="http-method">delete</span> /authprofile/{uuid}</code></a></li>
+  <li><a href="#gET /authprofile"><code><span class="http-method">get</span> /authprofile</code></a></li>
+  <li><a href="#pATCH /authprofile/{uuid}"><code><span class="http-method">patch</span> /authprofile/{uuid}</code></a></li>
+  <li><a href="#pOST /authprofile"><code><span class="http-method">post</span> /authprofile</code></a></li>
+  <li><a href="#pUT /authprofile/{uuid}"><code><span class="http-method">put</span> /authprofile/{uuid}</code></a></li>
   <li><a href="#authprofileUuidGet"><code><span class="http-method">get</span> /authprofile/{uuid}</code></a></li>
-  <li><a href="#authprofileUuidPatch"><code><span class="http-method">patch</span> /authprofile/{uuid}</code></a></li>
-  <li><a href="#authprofileUuidPut"><code><span class="http-method">put</span> /authprofile/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="authprofileGet"/>
+  <div class="method"><a name="dELETE /authprofile/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /authprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /authprofile/{uuid}</span>)</div>
+    <div class="method-notes">/authprofile/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /authprofile"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /authprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">authprofileGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /authprofile</span>)</div>
+    <div class="method-notes">/authprofile</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -392,12 +450,190 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="authprofilePost"/>
+  <div class="method"><a name="pATCH /authprofile/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /authprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /authprofile/{uuid}</span>)</div>
+    <div class="method-notes">/authprofile/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AuthProfile object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AuthProfile">AuthProfile</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "description" : "aeiou",
+  "pa_agent_ref" : "aeiou",
+  "type" : "aeiou",
+  "tacacs_plus" : {
+    "authorization_attrs" : [ {
+      "name" : "aeiou",
+      "mandatory" : true,
+      "value" : "aeiou"
+    } ],
+    "server" : [ "aeiou" ],
+    "password" : "aeiou",
+    "port" : "",
+    "service" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "ldap" : {
+    "server" : [ "aeiou" ],
+    "settings" : {
+      "admin_bind_dn" : "aeiou",
+      "group_member_is_full_dn" : true,
+      "password" : "aeiou",
+      "group_filter" : "aeiou",
+      "user_id_attribute" : "aeiou",
+      "user_search_dn" : "aeiou",
+      "group_search_dn" : "aeiou",
+      "ignore_referrals" : true,
+      "user_attributes" : [ "aeiou" ],
+      "group_member_attribute" : "aeiou",
+      "group_search_scope" : "aeiou",
+      "user_search_scope" : "aeiou"
+    },
+    "base_dn" : "aeiou",
+    "port" : "",
+    "user_bind" : {
+      "user_id_attribute" : "aeiou",
+      "user_attributes" : [ "aeiou" ],
+      "dn_template" : "aeiou",
+      "token" : "aeiou"
+    },
+    "security_mode" : "aeiou",
+    "bind_as_administrator" : true,
+    "email_attribute" : "aeiou",
+    "full_name_attribute" : "aeiou"
+  },
+  "oauth_profile" : {
+    "service_name" : "aeiou",
+    "introspection_endpoint" : "aeiou",
+    "end_session_endpoint" : "aeiou",
+    "issuer" : "aeiou",
+    "authorization_endpoint" : "aeiou",
+    "userinfo_endpoint" : "aeiou",
+    "pool_ref" : "aeiou",
+    "instance_id" : "aeiou",
+    "oauth_resp_buffer_sz" : 123,
+    "oauth_controller_settings" : {
+      "oidc_config" : {
+        "oidc_enable" : true,
+        "profile" : true,
+        "userinfo" : true
+      },
+      "client_secret" : "aeiou",
+      "scopes" : [ "aeiou" ],
+      "client_id" : "aeiou"
+    },
+    "org_id" : "aeiou",
+    "service_id" : "aeiou",
+    "jwks_uri" : "aeiou",
+    "oauth_profile_type" : "aeiou",
+    "oauth_provider" : "aeiou",
+    "jwks_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "token_endpoint" : "aeiou"
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "saml" : {
+    "idp" : {
+      "metadata" : "aeiou",
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
+    },
+    "sp" : {
+      "org_url" : "aeiou",
+      "sp_nodes" : [ {
+        "signing_ssl_key_and_certificate_ref" : "aeiou",
+        "name" : "aeiou",
+        "entity_id" : "aeiou",
+        "single_signon_url" : "aeiou"
+      } ],
+      "tech_contact_name" : "aeiou",
+      "fqdn" : "aeiou",
+      "saml_entity_type" : "aeiou",
+      "org_display_name" : "aeiou",
+      "org_name" : "aeiou",
+      "tech_contact_email" : "aeiou"
+    }
+  },
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "http" : {
+    "cache_expiration_time" : 123,
+    "request_header" : "aeiou",
+    "require_user_groups" : [ "aeiou" ]
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "jwt_profile_ref" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AuthProfile">AuthProfile</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /authprofile"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /authprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">authprofilePost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /authprofile</span>)</div>
+    <div class="method-notes">/authprofile</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -558,12 +794,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="authprofileUuidDelete"/>
+  <div class="method"><a name="pUT /authprofile/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /authprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">authprofileUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /authprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /authprofile/{uuid}</span>)</div>
+    <div class="method-notes">/authprofile/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -578,6 +814,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AuthProfile object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -590,15 +832,129 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#AuthProfile">AuthProfile</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "description" : "aeiou",
+  "pa_agent_ref" : "aeiou",
+  "type" : "aeiou",
+  "tacacs_plus" : {
+    "authorization_attrs" : [ {
+      "name" : "aeiou",
+      "mandatory" : true,
+      "value" : "aeiou"
+    } ],
+    "server" : [ "aeiou" ],
+    "password" : "aeiou",
+    "port" : "",
+    "service" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "ldap" : {
+    "server" : [ "aeiou" ],
+    "settings" : {
+      "admin_bind_dn" : "aeiou",
+      "group_member_is_full_dn" : true,
+      "password" : "aeiou",
+      "group_filter" : "aeiou",
+      "user_id_attribute" : "aeiou",
+      "user_search_dn" : "aeiou",
+      "group_search_dn" : "aeiou",
+      "ignore_referrals" : true,
+      "user_attributes" : [ "aeiou" ],
+      "group_member_attribute" : "aeiou",
+      "group_search_scope" : "aeiou",
+      "user_search_scope" : "aeiou"
+    },
+    "base_dn" : "aeiou",
+    "port" : "",
+    "user_bind" : {
+      "user_id_attribute" : "aeiou",
+      "user_attributes" : [ "aeiou" ],
+      "dn_template" : "aeiou",
+      "token" : "aeiou"
+    },
+    "security_mode" : "aeiou",
+    "bind_as_administrator" : true,
+    "email_attribute" : "aeiou",
+    "full_name_attribute" : "aeiou"
+  },
+  "oauth_profile" : {
+    "service_name" : "aeiou",
+    "introspection_endpoint" : "aeiou",
+    "end_session_endpoint" : "aeiou",
+    "issuer" : "aeiou",
+    "authorization_endpoint" : "aeiou",
+    "userinfo_endpoint" : "aeiou",
+    "pool_ref" : "aeiou",
+    "instance_id" : "aeiou",
+    "oauth_resp_buffer_sz" : 123,
+    "oauth_controller_settings" : {
+      "oidc_config" : {
+        "oidc_enable" : true,
+        "profile" : true,
+        "userinfo" : true
+      },
+      "client_secret" : "aeiou",
+      "scopes" : [ "aeiou" ],
+      "client_id" : "aeiou"
+    },
+    "org_id" : "aeiou",
+    "service_id" : "aeiou",
+    "jwks_uri" : "aeiou",
+    "oauth_profile_type" : "aeiou",
+    "oauth_provider" : "aeiou",
+    "jwks_timeout" : 123,
+    "redirect_uri" : "aeiou",
+    "token_endpoint" : "aeiou"
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "saml" : {
+    "idp" : {
+      "metadata" : "aeiou",
+      "metadata_url" : "aeiou",
+      "meta_data_download_interval" : 123,
+      "periodic_download" : true
+    },
+    "sp" : {
+      "org_url" : "aeiou",
+      "sp_nodes" : [ {
+        "signing_ssl_key_and_certificate_ref" : "aeiou",
+        "name" : "aeiou",
+        "entity_id" : "aeiou",
+        "single_signon_url" : "aeiou"
+      } ],
+      "tech_contact_name" : "aeiou",
+      "fqdn" : "aeiou",
+      "saml_entity_type" : "aeiou",
+      "org_display_name" : "aeiou",
+      "org_name" : "aeiou",
+      "tech_contact_email" : "aeiou"
+    }
+  },
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "http" : {
+    "cache_expiration_time" : 123,
+    "request_header" : "aeiou",
+    "require_user_groups" : [ "aeiou" ]
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "jwt_profile_ref" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -608,11 +964,11 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AuthProfile">AuthProfile</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -651,362 +1007,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AuthProfile">AuthProfile</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "description" : "aeiou",
-  "pa_agent_ref" : "aeiou",
-  "type" : "aeiou",
-  "tacacs_plus" : {
-    "authorization_attrs" : [ {
-      "name" : "aeiou",
-      "mandatory" : true,
-      "value" : "aeiou"
-    } ],
-    "server" : [ "aeiou" ],
-    "password" : "aeiou",
-    "port" : "",
-    "service" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "ldap" : {
-    "server" : [ "aeiou" ],
-    "settings" : {
-      "admin_bind_dn" : "aeiou",
-      "group_member_is_full_dn" : true,
-      "password" : "aeiou",
-      "group_filter" : "aeiou",
-      "user_id_attribute" : "aeiou",
-      "user_search_dn" : "aeiou",
-      "group_search_dn" : "aeiou",
-      "ignore_referrals" : true,
-      "user_attributes" : [ "aeiou" ],
-      "group_member_attribute" : "aeiou",
-      "group_search_scope" : "aeiou",
-      "user_search_scope" : "aeiou"
-    },
-    "base_dn" : "aeiou",
-    "port" : "",
-    "user_bind" : {
-      "user_id_attribute" : "aeiou",
-      "user_attributes" : [ "aeiou" ],
-      "dn_template" : "aeiou",
-      "token" : "aeiou"
-    },
-    "security_mode" : "aeiou",
-    "bind_as_administrator" : true,
-    "email_attribute" : "aeiou",
-    "full_name_attribute" : "aeiou"
-  },
-  "oauth_profile" : {
-    "service_name" : "aeiou",
-    "introspection_endpoint" : "aeiou",
-    "end_session_endpoint" : "aeiou",
-    "issuer" : "aeiou",
-    "authorization_endpoint" : "aeiou",
-    "userinfo_endpoint" : "aeiou",
-    "pool_ref" : "aeiou",
-    "instance_id" : "aeiou",
-    "oauth_resp_buffer_sz" : 123,
-    "oauth_controller_settings" : {
-      "oidc_config" : {
-        "oidc_enable" : true,
-        "profile" : true,
-        "userinfo" : true
-      },
-      "client_secret" : "aeiou",
-      "scopes" : [ "aeiou" ],
-      "client_id" : "aeiou"
-    },
-    "org_id" : "aeiou",
-    "service_id" : "aeiou",
-    "jwks_uri" : "aeiou",
-    "oauth_profile_type" : "aeiou",
-    "oauth_provider" : "aeiou",
-    "jwks_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "token_endpoint" : "aeiou"
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "saml" : {
-    "idp" : {
-      "metadata" : "aeiou",
-      "metadata_url" : "aeiou",
-      "meta_data_download_interval" : 123,
-      "periodic_download" : true
-    },
-    "sp" : {
-      "org_url" : "aeiou",
-      "sp_nodes" : [ {
-        "signing_ssl_key_and_certificate_ref" : "aeiou",
-        "name" : "aeiou",
-        "entity_id" : "aeiou",
-        "single_signon_url" : "aeiou"
-      } ],
-      "tech_contact_name" : "aeiou",
-      "fqdn" : "aeiou",
-      "saml_entity_type" : "aeiou",
-      "org_display_name" : "aeiou",
-      "org_name" : "aeiou",
-      "tech_contact_email" : "aeiou"
-    }
-  },
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "http" : {
-    "cache_expiration_time" : 123,
-    "request_header" : "aeiou",
-    "require_user_groups" : [ "aeiou" ]
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "jwt_profile_ref" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AuthProfile">AuthProfile</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="authprofileUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /authprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">authprofileUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AuthProfile object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AuthProfile">AuthProfile</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "description" : "aeiou",
-  "pa_agent_ref" : "aeiou",
-  "type" : "aeiou",
-  "tacacs_plus" : {
-    "authorization_attrs" : [ {
-      "name" : "aeiou",
-      "mandatory" : true,
-      "value" : "aeiou"
-    } ],
-    "server" : [ "aeiou" ],
-    "password" : "aeiou",
-    "port" : "",
-    "service" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "ldap" : {
-    "server" : [ "aeiou" ],
-    "settings" : {
-      "admin_bind_dn" : "aeiou",
-      "group_member_is_full_dn" : true,
-      "password" : "aeiou",
-      "group_filter" : "aeiou",
-      "user_id_attribute" : "aeiou",
-      "user_search_dn" : "aeiou",
-      "group_search_dn" : "aeiou",
-      "ignore_referrals" : true,
-      "user_attributes" : [ "aeiou" ],
-      "group_member_attribute" : "aeiou",
-      "group_search_scope" : "aeiou",
-      "user_search_scope" : "aeiou"
-    },
-    "base_dn" : "aeiou",
-    "port" : "",
-    "user_bind" : {
-      "user_id_attribute" : "aeiou",
-      "user_attributes" : [ "aeiou" ],
-      "dn_template" : "aeiou",
-      "token" : "aeiou"
-    },
-    "security_mode" : "aeiou",
-    "bind_as_administrator" : true,
-    "email_attribute" : "aeiou",
-    "full_name_attribute" : "aeiou"
-  },
-  "oauth_profile" : {
-    "service_name" : "aeiou",
-    "introspection_endpoint" : "aeiou",
-    "end_session_endpoint" : "aeiou",
-    "issuer" : "aeiou",
-    "authorization_endpoint" : "aeiou",
-    "userinfo_endpoint" : "aeiou",
-    "pool_ref" : "aeiou",
-    "instance_id" : "aeiou",
-    "oauth_resp_buffer_sz" : 123,
-    "oauth_controller_settings" : {
-      "oidc_config" : {
-        "oidc_enable" : true,
-        "profile" : true,
-        "userinfo" : true
-      },
-      "client_secret" : "aeiou",
-      "scopes" : [ "aeiou" ],
-      "client_id" : "aeiou"
-    },
-    "org_id" : "aeiou",
-    "service_id" : "aeiou",
-    "jwks_uri" : "aeiou",
-    "oauth_profile_type" : "aeiou",
-    "oauth_provider" : "aeiou",
-    "jwks_timeout" : 123,
-    "redirect_uri" : "aeiou",
-    "token_endpoint" : "aeiou"
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "saml" : {
-    "idp" : {
-      "metadata" : "aeiou",
-      "metadata_url" : "aeiou",
-      "meta_data_download_interval" : 123,
-      "periodic_download" : true
-    },
-    "sp" : {
-      "org_url" : "aeiou",
-      "sp_nodes" : [ {
-        "signing_ssl_key_and_certificate_ref" : "aeiou",
-        "name" : "aeiou",
-        "entity_id" : "aeiou",
-        "single_signon_url" : "aeiou"
-      } ],
-      "tech_contact_name" : "aeiou",
-      "fqdn" : "aeiou",
-      "saml_entity_type" : "aeiou",
-      "org_display_name" : "aeiou",
-      "org_name" : "aeiou",
-      "tech_contact_email" : "aeiou"
-    }
-  },
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "http" : {
-    "cache_expiration_time" : 123,
-    "request_header" : "aeiou",
-    "require_user_groups" : [ "aeiou" ]
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "jwt_profile_ref" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AuthProfile">AuthProfile</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="authprofileUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /authprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">authprofileUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AuthProfile object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

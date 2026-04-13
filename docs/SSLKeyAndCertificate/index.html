@@ -202,440 +202,16 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#sslkeyandcertificateGet"><code><span class="http-method">get</span> /sslkeyandcertificate</code></a></li>
-  <li><a href="#sslkeyandcertificatePost"><code><span class="http-method">post</span> /sslkeyandcertificate</code></a></li>
-  <li><a href="#sslkeyandcertificateUuidDelete"><code><span class="http-method">delete</span> /sslkeyandcertificate/{uuid}</code></a></li>
-  <li><a href="#sslkeyandcertificateUuidFederatedInfoGet"><code><span class="http-method">get</span> /sslkeyandcertificate/{uuid}/federated_info/</code></a></li>
   <li><a href="#sslkeyandcertificateUuidGet"><code><span class="http-method">get</span> /sslkeyandcertificate/{uuid}</code></a></li>
-  <li><a href="#sslkeyandcertificateUuidPatch"><code><span class="http-method">patch</span> /sslkeyandcertificate/{uuid}</code></a></li>
-  <li><a href="#sslkeyandcertificateUuidPut"><code><span class="http-method">put</span> /sslkeyandcertificate/{uuid}</code></a></li>
-  <li><a href="#sslkeyandcertificateUuidRenewPost"><code><span class="http-method">post</span> /sslkeyandcertificate/{uuid}/renew</code></a></li>
+  <li><a href="#dELETE /sslkeyandcertificate/{uuid}"><code><span class="http-method">delete</span> /sslkeyandcertificate/{uuid}</code></a></li>
+  <li><a href="#gET /sslkeyandcertificate"><code><span class="http-method">get</span> /sslkeyandcertificate</code></a></li>
+  <li><a href="#gET /sslkeyandcertificate/{uuid}/federatedInfo/"><code><span class="http-method">get</span> /sslkeyandcertificate/{uuid}/federated_info/</code></a></li>
+  <li><a href="#pATCH /sslkeyandcertificate/{uuid}"><code><span class="http-method">patch</span> /sslkeyandcertificate/{uuid}</code></a></li>
+  <li><a href="#pOST /sslkeyandcertificate"><code><span class="http-method">post</span> /sslkeyandcertificate</code></a></li>
+  <li><a href="#pOST /sslkeyandcertificate/{uuid}/renew"><code><span class="http-method">post</span> /sslkeyandcertificate/{uuid}/renew</code></a></li>
+  <li><a href="#pUT /sslkeyandcertificate/{uuid}"><code><span class="http-method">put</span> /sslkeyandcertificate/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="sslkeyandcertificateGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslkeyandcertificate</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SSLKeyAndCertificateApiResponse">SSLKeyAndCertificateApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "key_passphrase" : "aeiou",
-    "enckey_base64" : "aeiou",
-    "certificate" : {
-      "public_key" : "aeiou",
-      "certificate_signing_request" : "aeiou",
-      "signature" : "aeiou",
-      "not_before" : "aeiou",
-      "subject" : "",
-      "certificate" : "aeiou",
-      "serial_number" : "aeiou",
-      "version" : "aeiou",
-      "issuer" : {
-        "country" : "aeiou",
-        "email_address" : "aeiou",
-        "organization" : "aeiou",
-        "distinguished_name" : "aeiou",
-        "locality" : "aeiou",
-        "state" : "aeiou",
-        "common_name" : "aeiou",
-        "organization_unit" : "aeiou"
-      },
-      "not_after" : "aeiou",
-      "days_until_expire" : 123,
-      "expiry_status" : "aeiou",
-      "subject_alt_names" : [ "aeiou" ],
-      "chain_verified" : true,
-      "fingerprint" : "aeiou",
-      "signature_algorithm" : "aeiou",
-      "text" : "aeiou",
-      "key_params" : {
-        "ec_params" : {
-          "curve" : "aeiou"
-        },
-        "rsa_params" : {
-          "exponent" : "",
-          "key_size" : "aeiou"
-        },
-        "algorithm" : "aeiou"
-      },
-      "self_signed" : true
-    },
-    "import_key_to_hsm" : true,
-    "hardwaresecuritymodulegroup_ref" : "aeiou",
-    "type" : "aeiou",
-    "ocsp_error_status" : "aeiou",
-    "uuid" : "aeiou",
-    "_last_modified" : "aeiou",
-    "ocsp_config" : {
-      "responder_url_lists" : [ "aeiou" ],
-      "ocsp_req_interval" : "",
-      "max_tries" : "",
-      "ocsp_resp_timeout" : "",
-      "failed_ocsp_jobs_retry_interval" : "",
-      "url_action" : "aeiou"
-    },
-    "dynamic_params" : [ {
-      "is_sensitive" : true,
-      "is_dynamic" : true,
-      "name" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "certificate_base64" : true,
-    "certificate_management_profile_ref" : "aeiou",
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "key_params" : "",
-    "enckey_name" : "aeiou",
-    "is_federated" : true,
-    "key" : "aeiou",
-    "ca_certs" : [ {
-      "ca_ref" : "aeiou",
-      "name" : "aeiou"
-    } ],
-    "format" : "aeiou",
-    "ocsp_responder_url_list_from_certs" : [ "aeiou" ],
-    "created_by" : "aeiou",
-    "url" : "aeiou",
-    "ocsp_response_info" : {
-      "revocation_time" : "aeiou",
-      "ocsp_resp_from_responder_url" : "aeiou",
-      "ocsp_response" : "aeiou",
-      "this_update" : "aeiou",
-      "cert_status" : "aeiou",
-      "revocation_reason" : "aeiou",
-      "next_update" : "aeiou"
-    },
-    "enable_ocsp_stapling" : true,
-    "tenant_ref" : "aeiou",
-    "key_base64" : true,
-    "name" : "aeiou",
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "status" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SSLKeyAndCertificateApiResponse">SSLKeyAndCertificateApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslkeyandcertificatePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /sslkeyandcertificate</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificatePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SSLKeyAndCertificate object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#SSLKeyAndCertificate">SSLKeyAndCertificate</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "key_passphrase" : "aeiou",
-  "enckey_base64" : "aeiou",
-  "certificate" : {
-    "public_key" : "aeiou",
-    "certificate_signing_request" : "aeiou",
-    "signature" : "aeiou",
-    "not_before" : "aeiou",
-    "subject" : "",
-    "certificate" : "aeiou",
-    "serial_number" : "aeiou",
-    "version" : "aeiou",
-    "issuer" : {
-      "country" : "aeiou",
-      "email_address" : "aeiou",
-      "organization" : "aeiou",
-      "distinguished_name" : "aeiou",
-      "locality" : "aeiou",
-      "state" : "aeiou",
-      "common_name" : "aeiou",
-      "organization_unit" : "aeiou"
-    },
-    "not_after" : "aeiou",
-    "days_until_expire" : 123,
-    "expiry_status" : "aeiou",
-    "subject_alt_names" : [ "aeiou" ],
-    "chain_verified" : true,
-    "fingerprint" : "aeiou",
-    "signature_algorithm" : "aeiou",
-    "text" : "aeiou",
-    "key_params" : {
-      "ec_params" : {
-        "curve" : "aeiou"
-      },
-      "rsa_params" : {
-        "exponent" : "",
-        "key_size" : "aeiou"
-      },
-      "algorithm" : "aeiou"
-    },
-    "self_signed" : true
-  },
-  "import_key_to_hsm" : true,
-  "hardwaresecuritymodulegroup_ref" : "aeiou",
-  "type" : "aeiou",
-  "ocsp_error_status" : "aeiou",
-  "uuid" : "aeiou",
-  "_last_modified" : "aeiou",
-  "ocsp_config" : {
-    "responder_url_lists" : [ "aeiou" ],
-    "ocsp_req_interval" : "",
-    "max_tries" : "",
-    "ocsp_resp_timeout" : "",
-    "failed_ocsp_jobs_retry_interval" : "",
-    "url_action" : "aeiou"
-  },
-  "dynamic_params" : [ {
-    "is_sensitive" : true,
-    "is_dynamic" : true,
-    "name" : "aeiou",
-    "value" : "aeiou"
-  } ],
-  "certificate_base64" : true,
-  "certificate_management_profile_ref" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "key_params" : "",
-  "enckey_name" : "aeiou",
-  "is_federated" : true,
-  "key" : "aeiou",
-  "ca_certs" : [ {
-    "ca_ref" : "aeiou",
-    "name" : "aeiou"
-  } ],
-  "format" : "aeiou",
-  "ocsp_responder_url_list_from_certs" : [ "aeiou" ],
-  "created_by" : "aeiou",
-  "url" : "aeiou",
-  "ocsp_response_info" : {
-    "revocation_time" : "aeiou",
-    "ocsp_resp_from_responder_url" : "aeiou",
-    "ocsp_response" : "aeiou",
-    "this_update" : "aeiou",
-    "cert_status" : "aeiou",
-    "revocation_reason" : "aeiou",
-    "next_update" : "aeiou"
-  },
-  "enable_ocsp_stapling" : true,
-  "tenant_ref" : "aeiou",
-  "key_base64" : true,
-  "name" : "aeiou",
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "status" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#SSLKeyAndCertificate">SSLKeyAndCertificate</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslkeyandcertificateUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /sslkeyandcertificate/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="sslkeyandcertificateUuidFederatedInfoGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslkeyandcertificate/{uuid}/federated_info/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateUuidFederatedInfoGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="sslkeyandcertificateUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -799,12 +375,287 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="sslkeyandcertificateUuidPatch"/>
+  <div class="method"><a name="dELETE /sslkeyandcertificate/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /sslkeyandcertificate/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /sslkeyandcertificate/{uuid}</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /sslkeyandcertificate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslkeyandcertificate</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /sslkeyandcertificate</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SSLKeyAndCertificateApiResponse">SSLKeyAndCertificateApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "key_passphrase" : "aeiou",
+    "enckey_base64" : "aeiou",
+    "certificate" : {
+      "public_key" : "aeiou",
+      "certificate_signing_request" : "aeiou",
+      "signature" : "aeiou",
+      "not_before" : "aeiou",
+      "subject" : "",
+      "certificate" : "aeiou",
+      "serial_number" : "aeiou",
+      "version" : "aeiou",
+      "issuer" : {
+        "country" : "aeiou",
+        "email_address" : "aeiou",
+        "organization" : "aeiou",
+        "distinguished_name" : "aeiou",
+        "locality" : "aeiou",
+        "state" : "aeiou",
+        "common_name" : "aeiou",
+        "organization_unit" : "aeiou"
+      },
+      "not_after" : "aeiou",
+      "days_until_expire" : 123,
+      "expiry_status" : "aeiou",
+      "subject_alt_names" : [ "aeiou" ],
+      "chain_verified" : true,
+      "fingerprint" : "aeiou",
+      "signature_algorithm" : "aeiou",
+      "text" : "aeiou",
+      "key_params" : {
+        "ec_params" : {
+          "curve" : "aeiou"
+        },
+        "rsa_params" : {
+          "exponent" : "",
+          "key_size" : "aeiou"
+        },
+        "algorithm" : "aeiou"
+      },
+      "self_signed" : true
+    },
+    "import_key_to_hsm" : true,
+    "hardwaresecuritymodulegroup_ref" : "aeiou",
+    "type" : "aeiou",
+    "ocsp_error_status" : "aeiou",
+    "uuid" : "aeiou",
+    "_last_modified" : "aeiou",
+    "ocsp_config" : {
+      "responder_url_lists" : [ "aeiou" ],
+      "ocsp_req_interval" : "",
+      "max_tries" : "",
+      "ocsp_resp_timeout" : "",
+      "failed_ocsp_jobs_retry_interval" : "",
+      "url_action" : "aeiou"
+    },
+    "dynamic_params" : [ {
+      "is_sensitive" : true,
+      "is_dynamic" : true,
+      "name" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "certificate_base64" : true,
+    "certificate_management_profile_ref" : "aeiou",
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "key_params" : "",
+    "enckey_name" : "aeiou",
+    "is_federated" : true,
+    "key" : "aeiou",
+    "ca_certs" : [ {
+      "ca_ref" : "aeiou",
+      "name" : "aeiou"
+    } ],
+    "format" : "aeiou",
+    "ocsp_responder_url_list_from_certs" : [ "aeiou" ],
+    "created_by" : "aeiou",
+    "url" : "aeiou",
+    "ocsp_response_info" : {
+      "revocation_time" : "aeiou",
+      "ocsp_resp_from_responder_url" : "aeiou",
+      "ocsp_response" : "aeiou",
+      "this_update" : "aeiou",
+      "cert_status" : "aeiou",
+      "revocation_reason" : "aeiou",
+      "next_update" : "aeiou"
+    },
+    "enable_ocsp_stapling" : true,
+    "tenant_ref" : "aeiou",
+    "key_base64" : true,
+    "name" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "status" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SSLKeyAndCertificateApiResponse">SSLKeyAndCertificateApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /sslkeyandcertificate/{uuid}/federatedInfo/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /sslkeyandcertificate/{uuid}/federated_info/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /sslkeyandcertificate/{uuid}/federatedInfo/</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate/{uuid}/federated_info/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /sslkeyandcertificate/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /sslkeyandcertificate/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /sslkeyandcertificate/{uuid}</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -960,19 +811,13 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="sslkeyandcertificateUuidPut"/>
+  <div class="method"><a name="pOST /sslkeyandcertificate"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /sslkeyandcertificate/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /sslkeyandcertificate</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /sslkeyandcertificate</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate</div>
 
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -988,12 +833,6 @@ font-style: italic;
     </div>  <!-- field-items -->
 
 
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Return type</h3>
@@ -1121,12 +960,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="sslkeyandcertificateUuidRenewPost"/>
+  <div class="method"><a name="pOST /sslkeyandcertificate/{uuid}/renew"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /sslkeyandcertificate/{uuid}/renew</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">sslkeyandcertificateUuidRenewPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /sslkeyandcertificate/{uuid}/renew</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate/{uuid}/renew</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1174,6 +1013,167 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /sslkeyandcertificate/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /sslkeyandcertificate/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /sslkeyandcertificate/{uuid}</span>)</div>
+    <div class="method-notes">/sslkeyandcertificate/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; SSLKeyAndCertificate object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#SSLKeyAndCertificate">SSLKeyAndCertificate</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "key_passphrase" : "aeiou",
+  "enckey_base64" : "aeiou",
+  "certificate" : {
+    "public_key" : "aeiou",
+    "certificate_signing_request" : "aeiou",
+    "signature" : "aeiou",
+    "not_before" : "aeiou",
+    "subject" : "",
+    "certificate" : "aeiou",
+    "serial_number" : "aeiou",
+    "version" : "aeiou",
+    "issuer" : {
+      "country" : "aeiou",
+      "email_address" : "aeiou",
+      "organization" : "aeiou",
+      "distinguished_name" : "aeiou",
+      "locality" : "aeiou",
+      "state" : "aeiou",
+      "common_name" : "aeiou",
+      "organization_unit" : "aeiou"
+    },
+    "not_after" : "aeiou",
+    "days_until_expire" : 123,
+    "expiry_status" : "aeiou",
+    "subject_alt_names" : [ "aeiou" ],
+    "chain_verified" : true,
+    "fingerprint" : "aeiou",
+    "signature_algorithm" : "aeiou",
+    "text" : "aeiou",
+    "key_params" : {
+      "ec_params" : {
+        "curve" : "aeiou"
+      },
+      "rsa_params" : {
+        "exponent" : "",
+        "key_size" : "aeiou"
+      },
+      "algorithm" : "aeiou"
+    },
+    "self_signed" : true
+  },
+  "import_key_to_hsm" : true,
+  "hardwaresecuritymodulegroup_ref" : "aeiou",
+  "type" : "aeiou",
+  "ocsp_error_status" : "aeiou",
+  "uuid" : "aeiou",
+  "_last_modified" : "aeiou",
+  "ocsp_config" : {
+    "responder_url_lists" : [ "aeiou" ],
+    "ocsp_req_interval" : "",
+    "max_tries" : "",
+    "ocsp_resp_timeout" : "",
+    "failed_ocsp_jobs_retry_interval" : "",
+    "url_action" : "aeiou"
+  },
+  "dynamic_params" : [ {
+    "is_sensitive" : true,
+    "is_dynamic" : true,
+    "name" : "aeiou",
+    "value" : "aeiou"
+  } ],
+  "certificate_base64" : true,
+  "certificate_management_profile_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "key_params" : "",
+  "enckey_name" : "aeiou",
+  "is_federated" : true,
+  "key" : "aeiou",
+  "ca_certs" : [ {
+    "ca_ref" : "aeiou",
+    "name" : "aeiou"
+  } ],
+  "format" : "aeiou",
+  "ocsp_responder_url_list_from_certs" : [ "aeiou" ],
+  "created_by" : "aeiou",
+  "url" : "aeiou",
+  "ocsp_response_info" : {
+    "revocation_time" : "aeiou",
+    "ocsp_resp_from_responder_url" : "aeiou",
+    "ocsp_response" : "aeiou",
+    "this_update" : "aeiou",
+    "cert_status" : "aeiou",
+    "revocation_reason" : "aeiou",
+    "next_update" : "aeiou"
+  },
+  "enable_ocsp_stapling" : true,
+  "tenant_ref" : "aeiou",
+  "key_base64" : true,
+  "name" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "status" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#SSLKeyAndCertificate">SSLKeyAndCertificate</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
