@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: StringGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /stringgroup:
         get:
+            tags:
+                - StringGroup
+            description: /stringgroup
+            operationId: GET /stringgroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/StringGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - StringGroup
+            description: /stringgroup
+            operationId: POST /stringgroup
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/StringGroup"
-                401:
+                "401":
                     description: log in failed
     /stringgroup/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/StringGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - StringGroup
+            description: /stringgroup/{uuid}
+            operationId: PUT /stringgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/StringGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - StringGroup
+            description: /stringgroup/{uuid}
+            operationId: PATCH /stringgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/StringGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - StringGroup
+            description: /stringgroup/{uuid}
+            operationId: DELETE /stringgroup/{uuid}
             consumes:
                 -   application/json
             produces:

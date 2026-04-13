@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: MicroServiceGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /microservicegroup:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: GET /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup
+            operationId: POST /microservicegroup
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
     /microservicegroup/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PUT /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: PATCH /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}
+            operationId: DELETE /microservicegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /microservicegroup/{uuid}/runtime/detail/:
         get:
+            tags:
+                - MicroServiceGroup
+            description: /microservicegroup/{uuid}/runtime/detail/
+            operationId: GET /microservicegroup/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

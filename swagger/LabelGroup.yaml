@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: LabelGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /labelgroup:
         get:
+            tags:
+                - LabelGroup
+            description: /labelgroup
+            operationId: GET /labelgroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LabelGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - LabelGroup
+            description: /labelgroup
+            operationId: POST /labelgroup
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LabelGroup"
-                401:
+                "401":
                     description: log in failed
     /labelgroup/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LabelGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - LabelGroup
+            description: /labelgroup/{uuid}
+            operationId: PUT /labelgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LabelGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - LabelGroup
+            description: /labelgroup/{uuid}
+            operationId: PATCH /labelgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/LabelGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - LabelGroup
+            description: /labelgroup/{uuid}
+            operationId: DELETE /labelgroup/{uuid}
             consumes:
                 -   application/json
             produces:

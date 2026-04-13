@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: AvailabilityZone
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /availabilityzone:
         get:
+            tags:
+                - AvailabilityZone
+            description: /availabilityzone
+            operationId: GET /availabilityzone
             consumes:
                 -   application/json
             produces:
@@ -149,13 +157,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AvailabilityZoneApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AvailabilityZone
+            description: /availabilityzone
+            operationId: POST /availabilityzone
             consumes:
                 -   application/json
             produces:
@@ -190,11 +202,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AvailabilityZone"
-                401:
+                "401":
                     description: log in failed
     /availabilityzone/{uuid}:
         get:
@@ -254,13 +266,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AvailabilityZone"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AvailabilityZone
+            description: /availabilityzone/{uuid}
+            operationId: PUT /availabilityzone/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -305,13 +321,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AvailabilityZone"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AvailabilityZone
+            description: /availabilityzone/{uuid}
+            operationId: PATCH /availabilityzone/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -356,13 +376,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AvailabilityZone"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AvailabilityZone
+            description: /availabilityzone/{uuid}
+            operationId: DELETE /availabilityzone/{uuid}
             consumes:
                 -   application/json
             produces:

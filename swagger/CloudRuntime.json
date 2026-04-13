@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show cloudruntime\n```\n"
     },
+    "tags": [
+        {
+            "name": "CloudRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/cloudruntime": {
             "get": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime",
+                "operationId": "GET /cloudruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime",
+                "operationId": "POST /cloudruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "PUT /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "PATCH /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "CloudRuntime"
+                ],
+                "description": "/cloudruntime/{uuid}",
+                "operationId": "DELETE /cloudruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

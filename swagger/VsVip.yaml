@@ -25,6 +25,10 @@ info:
           ```
 
 
+tags:
+  - name: VsVip
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -33,6 +37,10 @@ basePath: /api
 paths:
     /vsvip:
         get:
+            tags:
+                - VsVip
+            description: /vsvip
+            operationId: GET /vsvip
             consumes:
                 -   application/json
             produces:
@@ -155,13 +163,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVipApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VsVip
+            description: /vsvip
+            operationId: POST /vsvip
             consumes:
                 -   application/json
             produces:
@@ -196,11 +208,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
     /vsvip/{uuid}:
         get:
@@ -260,13 +272,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: PUT /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -311,13 +327,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: PATCH /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -362,13 +382,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsVip"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VsVip
+            description: /vsvip/{uuid}
+            operationId: DELETE /vsvip/{uuid}
             consumes:
                 -   application/json
             produces:

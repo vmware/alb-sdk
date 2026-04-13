@@ -10,6 +10,14 @@
         },
         "description": ""
     },
+    "tags": [
+        {
+            "name": "Anomaly"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",

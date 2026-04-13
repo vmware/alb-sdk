@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- upload image\n- show image <key>\n- delete image <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "Image"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/image": {
             "get": {
+                "tags": [
+                    "Image"
+                ],
+                "description": "/image",
+                "operationId": "GET /image",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Image"
+                ],
+                "description": "/image",
+                "operationId": "POST /image",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Image"
+                ],
+                "description": "/image/{uuid}",
+                "operationId": "PUT /image/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Image"
+                ],
+                "description": "/image/{uuid}",
+                "operationId": "PATCH /image/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Image"
+                ],
+                "description": "/image/{uuid}",
+                "operationId": "DELETE /image/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure sslprofile <key>\n- show sslprofile <key>\n```\n\nExamples\n- **sslprofile_example**: To create a standard security SSL profile\n  ```json\n    {'name': 'Standard', 'accepted_versions': [{'type': 'SSL_VERSION_TLS1'}, {'type': 'SSL_VERSION_TLS1'}, {'type': 'SSL_VERSION_TLS1_1'}, {'type': 'SSL_VERSION_TLS1_2'}], 'accepted_ciphers': 'aECDSA:aECDH:kEDH:kRSA'}\n  ```\n"
     },
+    "tags": [
+        {
+            "name": "SSLProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/sslprofile": {
             "get": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile",
+                "operationId": "GET /sslprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile",
+                "operationId": "POST /sslprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile/{uuid}",
+                "operationId": "PUT /sslprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile/{uuid}",
+                "operationId": "PATCH /sslprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile/{uuid}",
+                "operationId": "DELETE /sslprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/sslprofile/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "SSLProfile"
+                ],
+                "description": "/sslprofile/{uuid}/federated_info/",
+                "operationId": "GET /sslprofile/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],

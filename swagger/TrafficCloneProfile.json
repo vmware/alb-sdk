@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure trafficcloneprofile <key>\n- show trafficcloneprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "TrafficCloneProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/trafficcloneprofile": {
             "get": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile",
+                "operationId": "GET /trafficcloneprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile",
+                "operationId": "POST /trafficcloneprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "PUT /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "PATCH /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "TrafficCloneProfile"
+                ],
+                "description": "/trafficcloneprofile/{uuid}",
+                "operationId": "DELETE /trafficcloneprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: SecureChannelMapping
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /securechannelmapping:
         get:
+            tags:
+                - SecureChannelMapping
+            description: /securechannelmapping
+            operationId: GET /securechannelmapping
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelMappingApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SecureChannelMapping
+            description: /securechannelmapping
+            operationId: POST /securechannelmapping
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelMapping"
-                401:
+                "401":
                     description: log in failed
     /securechannelmapping/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelMapping"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SecureChannelMapping
+            description: /securechannelmapping/{uuid}
+            operationId: PUT /securechannelmapping/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelMapping"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SecureChannelMapping
+            description: /securechannelmapping/{uuid}
+            operationId: PATCH /securechannelmapping/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SecureChannelMapping"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SecureChannelMapping
+            description: /securechannelmapping/{uuid}
+            operationId: DELETE /securechannelmapping/{uuid}
             consumes:
                 -   application/json
             produces:

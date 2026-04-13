@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure prioritylabels <key>\n- show prioritylabels <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "PriorityLabels"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/prioritylabels": {
             "get": {
+                "tags": [
+                    "PriorityLabels"
+                ],
+                "description": "/prioritylabels",
+                "operationId": "GET /prioritylabels",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "PriorityLabels"
+                ],
+                "description": "/prioritylabels",
+                "operationId": "POST /prioritylabels",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "PriorityLabels"
+                ],
+                "description": "/prioritylabels/{uuid}",
+                "operationId": "PUT /prioritylabels/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "PriorityLabels"
+                ],
+                "description": "/prioritylabels/{uuid}",
+                "operationId": "PATCH /prioritylabels/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "PriorityLabels"
+                ],
+                "description": "/prioritylabels/{uuid}",
+                "operationId": "DELETE /prioritylabels/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

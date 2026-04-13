@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: GslbGeoDbProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /gslbgeodbprofile:
         get:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile
+            operationId: GET /gslbgeodbprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbGeoDbProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile
+            operationId: POST /gslbgeodbprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbGeoDbProfile"
-                401:
+                "401":
                     description: log in failed
     /gslbgeodbprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbGeoDbProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile/{uuid}
+            operationId: PUT /gslbgeodbprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbGeoDbProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile/{uuid}
+            operationId: PATCH /gslbgeodbprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbGeoDbProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile/{uuid}
+            operationId: DELETE /gslbgeodbprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /gslbgeodbprofile/{uuid}/runtime/:
         get:
+            tags:
+                - GslbGeoDbProfile
+            description: /gslbgeodbprofile/{uuid}/runtime/
+            operationId: GET /gslbgeodbprofile/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

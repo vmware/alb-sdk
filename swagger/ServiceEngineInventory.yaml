@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: ServiceEngineInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /serviceengine-inventory:
         get:
+            tags:
+                - ServiceEngineInventory
+            description: /serviceengine-inventory
+            operationId: GET /serviceengine-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineInventory
+            description: /serviceengine-inventory
+            operationId: POST /serviceengine-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineInventory"
-                401:
+                "401":
                     description: log in failed
     /serviceengine-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineInventory
+            description: /serviceengine-inventory/{uuid}
+            operationId: PUT /serviceengine-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineInventory
+            description: /serviceengine-inventory/{uuid}
+            operationId: PATCH /serviceengine-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineInventory
+            description: /serviceengine-inventory/{uuid}
+            operationId: DELETE /serviceengine-inventory/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ProtocolParser
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /protocolparser:
         get:
+            tags:
+                - ProtocolParser
+            description: /protocolparser
+            operationId: GET /protocolparser
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParserApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ProtocolParser
+            description: /protocolparser
+            operationId: POST /protocolparser
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
     /protocolparser/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: PUT /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: PATCH /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ProtocolParser"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ProtocolParser
+            description: /protocolparser/{uuid}
+            operationId: DELETE /protocolparser/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure gslbservice <key>\n- show gslbservice <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "GslbService"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/gslbservice": {
             "get": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice",
+                "operationId": "GET /gslbservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice",
+                "operationId": "POST /gslbservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "PUT /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "PATCH /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}",
+                "operationId": "DELETE /gslbservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/gslbservice/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "GslbService"
+                ],
+                "description": "/gslbservice/{uuid}/runtime/",
+                "operationId": "GET /gslbservice/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],

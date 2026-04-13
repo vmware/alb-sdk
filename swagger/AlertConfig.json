@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure alertconfig <key>\n- show alertconfig <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AlertConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/alertconfig": {
             "get": {
+                "tags": [
+                    "AlertConfig"
+                ],
+                "description": "/alertconfig",
+                "operationId": "GET /alertconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertConfig"
+                ],
+                "description": "/alertconfig",
+                "operationId": "POST /alertconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertConfig"
+                ],
+                "description": "/alertconfig/{uuid}",
+                "operationId": "PUT /alertconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertConfig"
+                ],
+                "description": "/alertconfig/{uuid}",
+                "operationId": "PATCH /alertconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertConfig"
+                ],
+                "description": "/alertconfig/{uuid}",
+                "operationId": "DELETE /alertconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

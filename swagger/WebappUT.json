@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure webapput <key>\n- show webapput <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "WebappUT"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/webapput": {
             "get": {
+                "tags": [
+                    "WebappUT"
+                ],
+                "description": "/webapput",
+                "operationId": "GET /webapput",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "WebappUT"
+                ],
+                "description": "/webapput",
+                "operationId": "POST /webapput",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "WebappUT"
+                ],
+                "description": "/webapput/{uuid}",
+                "operationId": "PUT /webapput/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "WebappUT"
+                ],
+                "description": "/webapput/{uuid}",
+                "operationId": "PATCH /webapput/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "WebappUT"
+                ],
+                "description": "/webapput/{uuid}",
+                "operationId": "DELETE /webapput/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

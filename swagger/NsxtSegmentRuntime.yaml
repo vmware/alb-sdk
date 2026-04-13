@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: NsxtSegmentRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /nsxtsegmentruntime:
         get:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime
+            operationId: GET /nsxtsegmentruntime
             consumes:
                 -   application/json
             produces:
@@ -148,13 +156,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime
+            operationId: POST /nsxtsegmentruntime
             consumes:
                 -   application/json
             produces:
@@ -189,11 +201,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
     /nsxtsegmentruntime/{uuid}:
         get:
@@ -253,13 +265,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: PUT /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -304,13 +320,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: PATCH /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -355,13 +375,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NsxtSegmentRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NsxtSegmentRuntime
+            description: /nsxtsegmentruntime/{uuid}
+            operationId: DELETE /nsxtsegmentruntime/{uuid}
             consumes:
                 -   application/json
             produces:

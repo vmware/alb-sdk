@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show securechanneltoken <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "SecureChannelToken"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/securechanneltoken": {
             "get": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken",
+                "operationId": "GET /securechanneltoken",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken",
+                "operationId": "POST /securechanneltoken",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "PUT /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "PATCH /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SecureChannelToken"
+                ],
+                "description": "/securechanneltoken/{uuid}",
+                "operationId": "DELETE /securechanneltoken/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

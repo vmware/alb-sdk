@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure stringgroup <key>\n- show stringgroup <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "StringGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/stringgroup": {
             "get": {
+                "tags": [
+                    "StringGroup"
+                ],
+                "description": "/stringgroup",
+                "operationId": "GET /stringgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "StringGroup"
+                ],
+                "description": "/stringgroup",
+                "operationId": "POST /stringgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "StringGroup"
+                ],
+                "description": "/stringgroup/{uuid}",
+                "operationId": "PUT /stringgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "StringGroup"
+                ],
+                "description": "/stringgroup/{uuid}",
+                "operationId": "PATCH /stringgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "StringGroup"
+                ],
+                "description": "/stringgroup/{uuid}",
+                "operationId": "DELETE /stringgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

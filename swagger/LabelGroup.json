@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure labelgroup <key>\n- show labelgroup <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "LabelGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/labelgroup": {
             "get": {
+                "tags": [
+                    "LabelGroup"
+                ],
+                "description": "/labelgroup",
+                "operationId": "GET /labelgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "LabelGroup"
+                ],
+                "description": "/labelgroup",
+                "operationId": "POST /labelgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "LabelGroup"
+                ],
+                "description": "/labelgroup/{uuid}",
+                "operationId": "PUT /labelgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "LabelGroup"
+                ],
+                "description": "/labelgroup/{uuid}",
+                "operationId": "PATCH /labelgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "LabelGroup"
+                ],
+                "description": "/labelgroup/{uuid}",
+                "operationId": "DELETE /labelgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

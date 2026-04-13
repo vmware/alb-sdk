@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: AutoScaleLaunchConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /autoscalelaunchconfig:
         get:
+            tags:
+                - AutoScaleLaunchConfig
+            description: /autoscalelaunchconfig
+            operationId: GET /autoscalelaunchconfig
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AutoScaleLaunchConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AutoScaleLaunchConfig
+            description: /autoscalelaunchconfig
+            operationId: POST /autoscalelaunchconfig
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AutoScaleLaunchConfig"
-                401:
+                "401":
                     description: log in failed
     /autoscalelaunchconfig/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AutoScaleLaunchConfig"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AutoScaleLaunchConfig
+            description: /autoscalelaunchconfig/{uuid}
+            operationId: PUT /autoscalelaunchconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AutoScaleLaunchConfig"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AutoScaleLaunchConfig
+            description: /autoscalelaunchconfig/{uuid}
+            operationId: PATCH /autoscalelaunchconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AutoScaleLaunchConfig"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AutoScaleLaunchConfig
+            description: /autoscalelaunchconfig/{uuid}
+            operationId: DELETE /autoscalelaunchconfig/{uuid}
             consumes:
                 -   application/json
             produces:

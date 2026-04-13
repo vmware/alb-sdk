@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure wafcrs <key>\n- show wafcrs <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "WafCRS"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/wafcrs": {
             "get": {
+                "tags": [
+                    "WafCRS"
+                ],
+                "description": "/wafcrs",
+                "operationId": "GET /wafcrs",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "WafCRS"
+                ],
+                "description": "/wafcrs",
+                "operationId": "POST /wafcrs",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "WafCRS"
+                ],
+                "description": "/wafcrs/{uuid}",
+                "operationId": "PUT /wafcrs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "WafCRS"
+                ],
+                "description": "/wafcrs/{uuid}",
+                "operationId": "PATCH /wafcrs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "WafCRS"
+                ],
+                "description": "/wafcrs/{uuid}",
+                "operationId": "DELETE /wafcrs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

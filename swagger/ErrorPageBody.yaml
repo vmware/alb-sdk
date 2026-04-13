@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ErrorPageBody
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /errorpagebody:
         get:
+            tags:
+                - ErrorPageBody
+            description: /errorpagebody
+            operationId: GET /errorpagebody
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ErrorPageBodyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ErrorPageBody
+            description: /errorpagebody
+            operationId: POST /errorpagebody
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ErrorPageBody"
-                401:
+                "401":
                     description: log in failed
     /errorpagebody/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ErrorPageBody"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ErrorPageBody
+            description: /errorpagebody/{uuid}
+            operationId: PUT /errorpagebody/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ErrorPageBody"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ErrorPageBody
+            description: /errorpagebody/{uuid}
+            operationId: PATCH /errorpagebody/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ErrorPageBody"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ErrorPageBody
+            description: /errorpagebody/{uuid}
+            operationId: DELETE /errorpagebody/{uuid}
             consumes:
                 -   application/json
             produces:

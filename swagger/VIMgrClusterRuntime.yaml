@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: VIMgrClusterRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vimgrclusterruntime:
         get:
+            tags:
+                - VIMgrClusterRuntime
+            description: /vimgrclusterruntime
+            operationId: GET /vimgrclusterruntime
             consumes:
                 -   application/json
             produces:
@@ -148,13 +156,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrClusterRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrClusterRuntime
+            description: /vimgrclusterruntime
+            operationId: POST /vimgrclusterruntime
             consumes:
                 -   application/json
             produces:
@@ -189,11 +201,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrClusterRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrclusterruntime/{uuid}:
         get:
@@ -253,13 +265,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrClusterRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrClusterRuntime
+            description: /vimgrclusterruntime/{uuid}
+            operationId: PUT /vimgrclusterruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -304,13 +320,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrClusterRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrClusterRuntime
+            description: /vimgrclusterruntime/{uuid}
+            operationId: PATCH /vimgrclusterruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -355,13 +375,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrClusterRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrClusterRuntime
+            description: /vimgrclusterruntime/{uuid}
+            operationId: DELETE /vimgrclusterruntime/{uuid}
             consumes:
                 -   application/json
             produces:

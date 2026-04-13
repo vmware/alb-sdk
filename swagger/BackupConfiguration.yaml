@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: BackupConfiguration
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /backupconfiguration:
         get:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration
+            operationId: GET /backupconfiguration
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfigurationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration
+            operationId: POST /backupconfiguration
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
     /backupconfiguration/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}
+            operationId: PUT /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}
+            operationId: PATCH /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BackupConfiguration"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - BackupConfiguration
+            description: /backupconfiguration/{uuid}
+            operationId: DELETE /backupconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:

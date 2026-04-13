@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: WebappUT
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /webapput:
         get:
+            tags:
+                - WebappUT
+            description: /webapput
+            operationId: GET /webapput
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebappUTApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WebappUT
+            description: /webapput
+            operationId: POST /webapput
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebappUT"
-                401:
+                "401":
                     description: log in failed
     /webapput/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebappUT"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WebappUT
+            description: /webapput/{uuid}
+            operationId: PUT /webapput/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebappUT"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WebappUT
+            description: /webapput/{uuid}
+            operationId: PATCH /webapput/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebappUT"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WebappUT
+            description: /webapput/{uuid}
+            operationId: DELETE /webapput/{uuid}
             consumes:
                 -   application/json
             produces:

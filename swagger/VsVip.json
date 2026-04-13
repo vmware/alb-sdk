@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure vsvip <key>\n- show vsvip <key>\n```\n\nExamples\n- **vsvip_example_1**: To create a basic vsvip object\n  ```json\n    {'name': 'production_vsvip', 'vip': [{'subnet': {'ip_addr': {'addr': '10.10.10.0', 'type': 'V4'}}, 'auto_allocate_ip': True}], 'east_west_placement': False}\n  ```\n"
     },
+    "tags": [
+        {
+            "name": "VsVip"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vsvip": {
             "get": {
+                "tags": [
+                    "VsVip"
+                ],
+                "description": "/vsvip",
+                "operationId": "GET /vsvip",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VsVip"
+                ],
+                "description": "/vsvip",
+                "operationId": "POST /vsvip",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VsVip"
+                ],
+                "description": "/vsvip/{uuid}",
+                "operationId": "PUT /vsvip/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VsVip"
+                ],
+                "description": "/vsvip/{uuid}",
+                "operationId": "PATCH /vsvip/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VsVip"
+                ],
+                "description": "/vsvip/{uuid}",
+                "operationId": "DELETE /vsvip/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

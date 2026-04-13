@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure dnspolicy <key>\n- show dnspolicy <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "DnsPolicy"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/dnspolicy": {
             "get": {
+                "tags": [
+                    "DnsPolicy"
+                ],
+                "description": "/dnspolicy",
+                "operationId": "GET /dnspolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "DnsPolicy"
+                ],
+                "description": "/dnspolicy",
+                "operationId": "POST /dnspolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "DnsPolicy"
+                ],
+                "description": "/dnspolicy/{uuid}",
+                "operationId": "PUT /dnspolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "DnsPolicy"
+                ],
+                "description": "/dnspolicy/{uuid}",
+                "operationId": "PATCH /dnspolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "DnsPolicy"
+                ],
+                "description": "/dnspolicy/{uuid}",
+                "operationId": "DELETE /dnspolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

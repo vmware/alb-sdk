@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: VIDCInfo
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vimgrvcenterdatacenters:
         get:
+            tags:
+                - VIDCInfo
+            description: /vimgrvcenterdatacenters
+            operationId: GET /vimgrvcenterdatacenters
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIDCInfoApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIDCInfo
+            description: /vimgrvcenterdatacenters
+            operationId: POST /vimgrvcenterdatacenters
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIDCInfo"
-                401:
+                "401":
                     description: log in failed
     /vimgrvcenterdatacenters/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIDCInfo"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIDCInfo
+            description: /vimgrvcenterdatacenters/{uuid}
+            operationId: PUT /vimgrvcenterdatacenters/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIDCInfo"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIDCInfo
+            description: /vimgrvcenterdatacenters/{uuid}
+            operationId: PATCH /vimgrvcenterdatacenters/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIDCInfo"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIDCInfo
+            description: /vimgrvcenterdatacenters/{uuid}
+            operationId: DELETE /vimgrvcenterdatacenters/{uuid}
             consumes:
                 -   application/json
             produces:

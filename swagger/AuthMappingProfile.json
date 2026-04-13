@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure authmappingprofile <key>\n- show authmappingprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AuthMappingProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/authmappingprofile": {
             "get": {
+                "tags": [
+                    "AuthMappingProfile"
+                ],
+                "description": "/authmappingprofile",
+                "operationId": "GET /authmappingprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AuthMappingProfile"
+                ],
+                "description": "/authmappingprofile",
+                "operationId": "POST /authmappingprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AuthMappingProfile"
+                ],
+                "description": "/authmappingprofile/{uuid}",
+                "operationId": "PUT /authmappingprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AuthMappingProfile"
+                ],
+                "description": "/authmappingprofile/{uuid}",
+                "operationId": "PATCH /authmappingprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AuthMappingProfile"
+                ],
+                "description": "/authmappingprofile/{uuid}",
+                "operationId": "DELETE /authmappingprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

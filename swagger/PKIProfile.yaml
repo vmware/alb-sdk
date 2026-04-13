@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: PKIProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /pkiprofile:
         get:
+            tags:
+                - PKIProfile
+            description: /pkiprofile
+            operationId: GET /pkiprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PKIProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - PKIProfile
+            description: /pkiprofile
+            operationId: POST /pkiprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PKIProfile"
-                401:
+                "401":
                     description: log in failed
     /pkiprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PKIProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - PKIProfile
+            description: /pkiprofile/{uuid}
+            operationId: PUT /pkiprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PKIProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - PKIProfile
+            description: /pkiprofile/{uuid}
+            operationId: PATCH /pkiprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PKIProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - PKIProfile
+            description: /pkiprofile/{uuid}
+            operationId: DELETE /pkiprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /pkiprofile/{uuid}/federated_info/:
         get:
+            tags:
+                - PKIProfile
+            description: /pkiprofile/{uuid}/federated_info/
+            operationId: GET /pkiprofile/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

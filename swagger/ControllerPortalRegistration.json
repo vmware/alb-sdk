@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n```\n"
     },
+    "tags": [
+        {
+            "name": "ControllerPortalRegistration"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/controllerportalregistration": {
             "get": {
+                "tags": [
+                    "ControllerPortalRegistration"
+                ],
+                "description": "/controllerportalregistration",
+                "operationId": "GET /controllerportalregistration",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ControllerPortalRegistration"
+                ],
+                "description": "/controllerportalregistration",
+                "operationId": "POST /controllerportalregistration",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ControllerPortalRegistration"
+                ],
+                "description": "/controllerportalregistration/{uuid}",
+                "operationId": "PUT /controllerportalregistration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ControllerPortalRegistration"
+                ],
+                "description": "/controllerportalregistration/{uuid}",
+                "operationId": "PATCH /controllerportalregistration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ControllerPortalRegistration"
+                ],
+                "description": "/controllerportalregistration/{uuid}",
+                "operationId": "DELETE /controllerportalregistration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

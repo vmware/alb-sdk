@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure customipamdnsprofile <key>\n- show customipamdnsprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "CustomIpamDnsProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/customipamdnsprofile": {
             "get": {
+                "tags": [
+                    "CustomIpamDnsProfile"
+                ],
+                "description": "/customipamdnsprofile",
+                "operationId": "GET /customipamdnsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CustomIpamDnsProfile"
+                ],
+                "description": "/customipamdnsprofile",
+                "operationId": "POST /customipamdnsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "CustomIpamDnsProfile"
+                ],
+                "description": "/customipamdnsprofile/{uuid}",
+                "operationId": "PUT /customipamdnsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "CustomIpamDnsProfile"
+                ],
+                "description": "/customipamdnsprofile/{uuid}",
+                "operationId": "PATCH /customipamdnsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "CustomIpamDnsProfile"
+                ],
+                "description": "/customipamdnsprofile/{uuid}",
+                "operationId": "DELETE /customipamdnsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

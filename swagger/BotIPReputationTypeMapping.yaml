@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: BotIPReputationTypeMapping
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /botipreputationtypemapping:
         get:
+            tags:
+                - BotIPReputationTypeMapping
+            description: /botipreputationtypemapping
+            operationId: GET /botipreputationtypemapping
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotIPReputationTypeMappingApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - BotIPReputationTypeMapping
+            description: /botipreputationtypemapping
+            operationId: POST /botipreputationtypemapping
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotIPReputationTypeMapping"
-                401:
+                "401":
                     description: log in failed
     /botipreputationtypemapping/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotIPReputationTypeMapping"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - BotIPReputationTypeMapping
+            description: /botipreputationtypemapping/{uuid}
+            operationId: PUT /botipreputationtypemapping/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotIPReputationTypeMapping"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - BotIPReputationTypeMapping
+            description: /botipreputationtypemapping/{uuid}
+            operationId: PATCH /botipreputationtypemapping/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotIPReputationTypeMapping"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - BotIPReputationTypeMapping
+            description: /botipreputationtypemapping/{uuid}
+            operationId: DELETE /botipreputationtypemapping/{uuid}
             consumes:
                 -   application/json
             produces:

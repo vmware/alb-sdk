@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: GslbService
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /gslbservice:
         get:
+            tags:
+                - GslbService
+            description: /gslbservice
+            operationId: GET /gslbservice
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbServiceApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GslbService
+            description: /gslbservice
+            operationId: POST /gslbservice
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
     /gslbservice/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: PUT /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: PATCH /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbService"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}
+            operationId: DELETE /gslbservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /gslbservice/{uuid}/runtime/:
         get:
+            tags:
+                - GslbService
+            description: /gslbservice/{uuid}/runtime/
+            operationId: GET /gslbservice/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

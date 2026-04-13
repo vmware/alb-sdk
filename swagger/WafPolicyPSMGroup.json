@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure wafpolicypsmgroup <key>\n- show wafpolicypsmgroup <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "WafPolicyPSMGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/wafpolicypsmgroup": {
             "get": {
+                "tags": [
+                    "WafPolicyPSMGroup"
+                ],
+                "description": "/wafpolicypsmgroup",
+                "operationId": "GET /wafpolicypsmgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "WafPolicyPSMGroup"
+                ],
+                "description": "/wafpolicypsmgroup",
+                "operationId": "POST /wafpolicypsmgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "WafPolicyPSMGroup"
+                ],
+                "description": "/wafpolicypsmgroup/{uuid}",
+                "operationId": "PUT /wafpolicypsmgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "WafPolicyPSMGroup"
+                ],
+                "description": "/wafpolicypsmgroup/{uuid}",
+                "operationId": "PATCH /wafpolicypsmgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "WafPolicyPSMGroup"
+                ],
+                "description": "/wafpolicypsmgroup/{uuid}",
+                "operationId": "DELETE /wafpolicypsmgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- debug serviceengine <key>\n- show debug serviceengine <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "DebugServiceEngine"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/debugserviceengine": {
             "get": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine",
+                "operationId": "GET /debugserviceengine",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine",
+                "operationId": "POST /debugserviceengine",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine/{uuid}",
+                "operationId": "PUT /debugserviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine/{uuid}",
+                "operationId": "PATCH /debugserviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine/{uuid}",
+                "operationId": "DELETE /debugserviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/debugserviceengine/{uuid}/faultruntime/": {
             "get": {
+                "tags": [
+                    "DebugServiceEngine"
+                ],
+                "description": "/debugserviceengine/{uuid}/faultruntime/",
+                "operationId": "GET /debugserviceengine/{uuid}/faultruntime/",
                 "consumes": [
                     "application/json"
                 ],

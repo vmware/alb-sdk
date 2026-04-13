@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show albservicesconfig\n- configure albservicesconfig\n```\n"
     },
+    "tags": [
+        {
+            "name": "ALBServicesConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/albservicesconfig": {
             "get": {
+                "tags": [
+                    "ALBServicesConfig"
+                ],
+                "description": "/albservicesconfig",
+                "operationId": "GET /albservicesconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ALBServicesConfig"
+                ],
+                "description": "/albservicesconfig",
+                "operationId": "POST /albservicesconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ALBServicesConfig"
+                ],
+                "description": "/albservicesconfig/{uuid}",
+                "operationId": "PUT /albservicesconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ALBServicesConfig"
+                ],
+                "description": "/albservicesconfig/{uuid}",
+                "operationId": "PATCH /albservicesconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ALBServicesConfig"
+                ],
+                "description": "/albservicesconfig/{uuid}",
+                "operationId": "DELETE /albservicesconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show useractivity <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "UserActivity"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/useractivity": {
             "get": {
+                "tags": [
+                    "UserActivity"
+                ],
+                "description": "/useractivity",
+                "operationId": "GET /useractivity",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "UserActivity"
+                ],
+                "description": "/useractivity",
+                "operationId": "POST /useractivity",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "UserActivity"
+                ],
+                "description": "/useractivity/{uuid}",
+                "operationId": "PUT /useractivity/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "UserActivity"
+                ],
+                "description": "/useractivity/{uuid}",
+                "operationId": "PATCH /useractivity/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "UserActivity"
+                ],
+                "description": "/useractivity/{uuid}",
+                "operationId": "DELETE /useractivity/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

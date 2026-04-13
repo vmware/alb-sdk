@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: BotConfigConsolidator
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /botconfigconsolidator:
         get:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator
+            operationId: GET /botconfigconsolidator
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidatorApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator
+            operationId: POST /botconfigconsolidator
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
     /botconfigconsolidator/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}
+            operationId: PUT /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}
+            operationId: PATCH /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/BotConfigConsolidator"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - BotConfigConsolidator
+            description: /botconfigconsolidator/{uuid}
+            operationId: DELETE /botconfigconsolidator/{uuid}
             consumes:
                 -   application/json
             produces:

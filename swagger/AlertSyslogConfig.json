@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure alertsyslogconfig <key>\n- show alertsyslogconfig <key>\n- test alerttestsyslog <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AlertSyslogConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/alertsyslogconfig": {
             "get": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig",
+                "operationId": "GET /alertsyslogconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig",
+                "operationId": "POST /alertsyslogconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "PUT /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "PATCH /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}",
+                "operationId": "DELETE /alertsyslogconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/alertsyslogconfig/{uuid}/testsyslog": {
             "post": {
+                "tags": [
+                    "AlertSyslogConfig"
+                ],
+                "description": "/alertsyslogconfig/{uuid}/testsyslog",
+                "operationId": "POST /alertsyslogconfig/{uuid}/testsyslog",
                 "consumes": [
                     "application/json"
                 ],

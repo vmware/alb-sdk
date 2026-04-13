@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure analyticsprofile <key>\n- show analyticsprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AnalyticsProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/analyticsprofile": {
             "get": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile",
+                "operationId": "GET /analyticsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile",
+                "operationId": "POST /analyticsprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "PUT /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "PATCH /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}",
+                "operationId": "DELETE /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/analyticsprofile/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "AnalyticsProfile"
+                ],
+                "description": "/analyticsprofile/{uuid}/runtime/internal/",
+                "operationId": "GET /analyticsprofile/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],

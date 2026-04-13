@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure botmapping <key>\n- show botmapping <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "BotMapping"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/botmapping": {
             "get": {
+                "tags": [
+                    "BotMapping"
+                ],
+                "description": "/botmapping",
+                "operationId": "GET /botmapping",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "BotMapping"
+                ],
+                "description": "/botmapping",
+                "operationId": "POST /botmapping",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "BotMapping"
+                ],
+                "description": "/botmapping/{uuid}",
+                "operationId": "PUT /botmapping/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "BotMapping"
+                ],
+                "description": "/botmapping/{uuid}",
+                "operationId": "PATCH /botmapping/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "BotMapping"
+                ],
+                "description": "/botmapping/{uuid}",
+                "operationId": "DELETE /botmapping/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

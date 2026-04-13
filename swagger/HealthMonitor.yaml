@@ -25,6 +25,10 @@ info:
           ```
 
 
+tags:
+  - name: HealthMonitor
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -33,6 +37,10 @@ basePath: /api
 paths:
     /healthmonitor:
         get:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor
+            operationId: GET /healthmonitor
             consumes:
                 -   application/json
             produces:
@@ -92,13 +100,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitorApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor
+            operationId: POST /healthmonitor
             consumes:
                 -   application/json
             produces:
@@ -133,11 +145,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
     /healthmonitor/{uuid}:
         get:
@@ -197,13 +209,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: PUT /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -248,13 +264,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: PATCH /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -299,13 +319,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HealthMonitor"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}
+            operationId: DELETE /healthmonitor/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -354,6 +378,10 @@ paths:
 
     /healthmonitor/{uuid}/federated_info/:
         get:
+            tags:
+                - HealthMonitor
+            description: /healthmonitor/{uuid}/federated_info/
+            operationId: GET /healthmonitor/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -387,11 +415,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

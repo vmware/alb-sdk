@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure albservicesfiledownload <key>\n- show albservicesfiledownload <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ALBServicesFileDownload"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/albservicesfiledownload": {
             "get": {
+                "tags": [
+                    "ALBServicesFileDownload"
+                ],
+                "description": "/albservicesfiledownload",
+                "operationId": "GET /albservicesfiledownload",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ALBServicesFileDownload"
+                ],
+                "description": "/albservicesfiledownload",
+                "operationId": "POST /albservicesfiledownload",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ALBServicesFileDownload"
+                ],
+                "description": "/albservicesfiledownload/{uuid}",
+                "operationId": "PUT /albservicesfiledownload/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ALBServicesFileDownload"
+                ],
+                "description": "/albservicesfiledownload/{uuid}",
+                "operationId": "PATCH /albservicesfiledownload/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ALBServicesFileDownload"
+                ],
+                "description": "/albservicesfiledownload/{uuid}",
+                "operationId": "DELETE /albservicesfiledownload/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

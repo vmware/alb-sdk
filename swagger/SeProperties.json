@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure serviceengineproperties\n- show serviceengineproperties\n```\n"
     },
+    "tags": [
+        {
+            "name": "SeProperties"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",

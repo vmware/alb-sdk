@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure ipamdnsproviderprofile <key>\n- show ipamdnsproviderprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "IpamDnsProviderProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/ipamdnsproviderprofile": {
             "get": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofile",
+                "operationId": "GET /ipamdnsproviderprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofile",
+                "operationId": "POST /ipamdnsproviderprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofile/{uuid}",
+                "operationId": "PUT /ipamdnsproviderprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofile/{uuid}",
+                "operationId": "PATCH /ipamdnsproviderprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofile/{uuid}",
+                "operationId": "DELETE /ipamdnsproviderprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

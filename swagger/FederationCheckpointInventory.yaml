@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: FederationCheckpointInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /federationcheckpoint-inventory:
         get:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory
+            operationId: GET /federationcheckpoint-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory
+            operationId: POST /federationcheckpoint-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: PUT /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: PATCH /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - FederationCheckpointInventory
+            description: /federationcheckpoint-inventory/{uuid}
+            operationId: DELETE /federationcheckpoint-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -347,6 +371,10 @@ paths:
 
     /federationcheckpoint:
         get:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: GET /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -406,13 +434,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpointApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint
+            operationId: POST /federationcheckpoint
             consumes:
                 -   application/json
             produces:
@@ -447,11 +479,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
     /federationcheckpoint/{uuid}:
         get:
@@ -511,13 +543,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PUT /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -562,13 +598,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: PATCH /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -613,13 +653,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/FederationCheckpoint"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - FederationCheckpoint
+            description: /federationcheckpoint/{uuid}
+            operationId: DELETE /federationcheckpoint/{uuid}
             consumes:
                 -   application/json
             produces:

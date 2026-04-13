@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: PriorityLabels
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /prioritylabels:
         get:
+            tags:
+                - PriorityLabels
+            description: /prioritylabels
+            operationId: GET /prioritylabels
             consumes:
                 -   application/json
             produces:
@@ -149,13 +157,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PriorityLabelsApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - PriorityLabels
+            description: /prioritylabels
+            operationId: POST /prioritylabels
             consumes:
                 -   application/json
             produces:
@@ -190,11 +202,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PriorityLabels"
-                401:
+                "401":
                     description: log in failed
     /prioritylabels/{uuid}:
         get:
@@ -254,13 +266,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PriorityLabels"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - PriorityLabels
+            description: /prioritylabels/{uuid}
+            operationId: PUT /prioritylabels/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -305,13 +321,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PriorityLabels"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - PriorityLabels
+            description: /prioritylabels/{uuid}
+            operationId: PATCH /prioritylabels/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -356,13 +376,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PriorityLabels"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - PriorityLabels
+            description: /prioritylabels/{uuid}
+            operationId: DELETE /prioritylabels/{uuid}
             consumes:
                 -   application/json
             produces:

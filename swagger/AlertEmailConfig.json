@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure alertemailconfig <key>\n- show alertemailconfig <key>\n- test alerttestemail <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AlertEmailConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/alertemailconfig": {
             "get": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig",
+                "operationId": "GET /alertemailconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig",
+                "operationId": "POST /alertemailconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "PUT /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "PATCH /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}",
+                "operationId": "DELETE /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/alertemailconfig/{uuid}/testemail": {
             "post": {
+                "tags": [
+                    "AlertEmailConfig"
+                ],
+                "description": "/alertemailconfig/{uuid}/testemail",
+                "operationId": "POST /alertemailconfig/{uuid}/testemail",
                 "consumes": [
                     "application/json"
                 ],

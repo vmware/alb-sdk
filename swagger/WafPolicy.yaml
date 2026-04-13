@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: WafPolicy
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /wafpolicy:
         get:
+            tags:
+                - WafPolicy
+            description: /wafpolicy
+            operationId: GET /wafpolicy
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafPolicy
+            description: /wafpolicy
+            operationId: POST /wafpolicy
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
     /wafpolicy/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: PUT /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: PATCH /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}
+            operationId: DELETE /wafpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /wafpolicy/{uuid}/update-crs-rules:
         put:
+            tags:
+                - WafPolicy
+            description: /wafpolicy/{uuid}/update-crs-rules
+            operationId: PUT /wafpolicy/{uuid}/update-crs-rules
             consumes:
                 -   application/json
             produces:
@@ -387,11 +415,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

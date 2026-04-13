@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: MicroService
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /microservice:
         get:
+            tags:
+                - MicroService
+            description: /microservice
+            operationId: GET /microservice
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroServiceApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - MicroService
+            description: /microservice
+            operationId: POST /microservice
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroService"
-                401:
+                "401":
                     description: log in failed
     /microservice/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroService"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - MicroService
+            description: /microservice/{uuid}
+            operationId: PUT /microservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroService"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - MicroService
+            description: /microservice/{uuid}
+            operationId: PATCH /microservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/MicroService"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - MicroService
+            description: /microservice/{uuid}
+            operationId: DELETE /microservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /microservice/{uuid}/runtime/internal/:
         get:
+            tags:
+                - MicroService
+            description: /microservice/{uuid}/runtime/internal/
+            operationId: GET /microservice/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -381,14 +409,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /microservice/{uuid}/runtime/detail/:
         get:
+            tags:
+                - MicroService
+            description: /microservice/{uuid}/runtime/detail/
+            operationId: GET /microservice/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -422,11 +454,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

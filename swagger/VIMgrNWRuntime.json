@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show vinfra network <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "VIMgrNWRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrnwruntime": {
             "get": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "GET /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "POST /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PUT /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PATCH /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "DELETE /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

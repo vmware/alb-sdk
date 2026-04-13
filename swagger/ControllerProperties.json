@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure controller properties\n- show controller properties\n```\n"
     },
+    "tags": [
+        {
+            "name": "ControllerProperties"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",

@@ -28,6 +28,10 @@ info:
           ```
 
 
+tags:
+  - name: Pool
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -36,6 +40,10 @@ basePath: /api
 paths:
     /pool:
         get:
+            tags:
+                - Pool
+            description: /pool
+            operationId: GET /pool
             consumes:
                 -   application/json
             produces:
@@ -158,13 +166,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/PoolApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Pool
+            description: /pool
+            operationId: POST /pool
             consumes:
                 -   application/json
             produces:
@@ -199,11 +211,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Pool"
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}:
         get:
@@ -263,13 +275,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Pool"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Pool
+            description: /pool/{uuid}
+            operationId: PUT /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -314,13 +330,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Pool"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Pool
+            description: /pool/{uuid}
+            operationId: PATCH /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -365,13 +385,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Pool"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Pool
+            description: /pool/{uuid}
+            operationId: DELETE /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -419,6 +443,10 @@ paths:
 
     /pool/{uuid}/scaleout:
         post:
+            tags:
+                - Pool
+            description: /pool/{uuid}/scaleout
+            operationId: POST /pool/{uuid}/scaleout
             consumes:
                 -   application/json
             produces:
@@ -458,14 +486,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/scalein:
         post:
+            tags:
+                - Pool
+            description: /pool/{uuid}/scalein
+            operationId: POST /pool/{uuid}/scalein
             consumes:
                 -   application/json
             produces:
@@ -505,14 +537,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/clear:
         post:
+            tags:
+                - Pool
+            description: /pool/clear
+            operationId: POST /pool/clear
             consumes:
                 -   application/json
             produces:
@@ -549,15 +585,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /pool/{uuid}/runtime/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/
+            operationId: GET /pool/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -591,14 +631,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/server/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/server/
+            operationId: GET /pool/{uuid}/runtime/server/
             consumes:
                 -   application/json
             produces:
@@ -632,14 +676,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/detail/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/detail/
+            operationId: GET /pool/{uuid}/runtime/detail/
             consumes:
                 -   application/json
             produces:
@@ -673,14 +721,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/server/detail/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/server/detail/
+            operationId: GET /pool/{uuid}/runtime/server/detail/
             consumes:
                 -   application/json
             produces:
@@ -714,14 +766,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/internal/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/internal/
+            operationId: GET /pool/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -755,14 +811,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/objsync/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/objsync/
+            operationId: GET /pool/{uuid}/objsync/
             consumes:
                 -   application/json
             produces:
@@ -796,14 +856,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/server/internal/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/server/internal/
+            operationId: GET /pool/{uuid}/runtime/server/internal/
             consumes:
                 -   application/json
             produces:
@@ -837,14 +901,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/stats/clear:
         post:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/stats/clear
+            operationId: POST /pool/{uuid}/runtime/stats/clear
             consumes:
                 -   application/json
             produces:
@@ -886,14 +954,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/request_queue/clear:
         post:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/request_queue/clear
+            operationId: POST /pool/{uuid}/runtime/request_queue/clear
             consumes:
                 -   application/json
             produces:
@@ -935,14 +1007,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/debug/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/debug/
+            operationId: GET /pool/{uuid}/runtime/debug/
             consumes:
                 -   application/json
             produces:
@@ -976,14 +1052,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/hmon/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/hmon/
+            operationId: GET /pool/{uuid}/hmon/
             consumes:
                 -   application/json
             produces:
@@ -1017,14 +1097,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/server/hmonstat/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/server/hmonstat/
+            operationId: GET /pool/{uuid}/runtime/server/hmonstat/
             consumes:
                 -   application/json
             produces:
@@ -1058,14 +1142,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/algo/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/algo/
+            operationId: GET /pool/{uuid}/algo/
             consumes:
                 -   application/json
             produces:
@@ -1099,14 +1187,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/persistence/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/persistence/
+            operationId: GET /pool/{uuid}/persistence/
             consumes:
                 -   application/json
             produces:
@@ -1140,14 +1232,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/connpool/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/connpool/
+            operationId: GET /pool/{uuid}/connpool/
             consumes:
                 -   application/json
             produces:
@@ -1181,14 +1277,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/connpoolstats/clear:
         post:
+            tags:
+                - Pool
+            description: /pool/{uuid}/connpoolstats/clear
+            operationId: POST /pool/{uuid}/connpoolstats/clear
             consumes:
                 -   application/json
             produces:
@@ -1230,14 +1330,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/httpcache/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/httpcache/
+            operationId: GET /pool/{uuid}/httpcache/
             consumes:
                 -   application/json
             produces:
@@ -1271,14 +1375,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/httpcachestats/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/httpcachestats/
+            operationId: GET /pool/{uuid}/httpcachestats/
             consumes:
                 -   application/json
             produces:
@@ -1312,14 +1420,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/httpcachestats/detail/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/httpcachestats/detail/
+            operationId: GET /pool/{uuid}/httpcachestats/detail/
             consumes:
                 -   application/json
             produces:
@@ -1353,14 +1465,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/vs/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/vs/
+            operationId: GET /pool/{uuid}/vs/
             consumes:
                 -   application/json
             produces:
@@ -1394,14 +1510,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/vs/service/server/map/kv/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/vs/service/server/map/kv/
+            operationId: GET /pool/{uuid}/runtime/vs/service/server/map/kv/
             consumes:
                 -   application/json
             produces:
@@ -1435,14 +1555,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /pool/{uuid}/runtime/vs/service/server/map/table/:
         get:
+            tags:
+                - Pool
+            description: /pool/{uuid}/runtime/vs/service/server/map/table/
+            operationId: GET /pool/{uuid}/runtime/vs/service/server/map/table/
             consumes:
                 -   application/json
             produces:
@@ -1476,11 +1600,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     AbPool:

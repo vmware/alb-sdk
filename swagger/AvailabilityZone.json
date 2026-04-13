@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure availabilityzone <key>\n- show availabilityzone <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AvailabilityZone"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/availabilityzone": {
             "get": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone",
+                "operationId": "GET /availabilityzone",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone",
+                "operationId": "POST /availabilityzone",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}",
+                "operationId": "PUT /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}",
+                "operationId": "PATCH /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AvailabilityZone"
+                ],
+                "description": "/availabilityzone/{uuid}",
+                "operationId": "DELETE /availabilityzone/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

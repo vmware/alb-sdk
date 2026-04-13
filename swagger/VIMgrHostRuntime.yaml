@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: VIMgrHostRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /vimgrhostruntime:
         get:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime
+            operationId: GET /vimgrhostruntime
             consumes:
                 -   application/json
             produces:
@@ -150,13 +158,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime
+            operationId: POST /vimgrhostruntime
             consumes:
                 -   application/json
             produces:
@@ -191,11 +203,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrhostruntime/{uuid}:
         get:
@@ -255,13 +267,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: PUT /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -306,13 +322,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: PATCH /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -357,13 +377,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrHostRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}
+            operationId: DELETE /vimgrhostruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -411,6 +435,10 @@ paths:
 
     /vimgrhostruntime/{uuid}/accessible:
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/{uuid}/accessible
+            operationId: POST /vimgrhostruntime/{uuid}/accessible
             consumes:
                 -   application/json
             produces:
@@ -452,14 +480,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /vimgrhostruntime/getquarantinedhosts:
         post:
+            tags:
+                - VIMgrHostRuntime
+            description: /vimgrhostruntime/getquarantinedhosts
+            operationId: POST /vimgrhostruntime/getquarantinedhosts
             consumes:
                 -   application/json
             produces:
@@ -494,11 +526,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

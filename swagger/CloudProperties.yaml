@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: CloudProperties
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /cloudproperties:
         get:
+            tags:
+                - CloudProperties
+            description: /cloudproperties
+            operationId: GET /cloudproperties
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudPropertiesApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CloudProperties
+            description: /cloudproperties
+            operationId: POST /cloudproperties
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
     /cloudproperties/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: PUT /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: PATCH /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudProperties"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CloudProperties
+            description: /cloudproperties/{uuid}
+            operationId: DELETE /cloudproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /controllerproperties:
         get:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: GET /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -407,13 +435,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPropertiesApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties
+            operationId: POST /controllerproperties
             consumes:
                 -   application/json
             produces:
@@ -448,11 +480,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
     /controllerproperties/{uuid}:
         get:
@@ -512,13 +544,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: PUT /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -563,13 +599,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: PATCH /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -614,13 +654,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerProperties"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ControllerProperties
+            description: /controllerproperties/{uuid}
+            operationId: DELETE /controllerproperties/{uuid}
             consumes:
                 -   application/json
             produces:

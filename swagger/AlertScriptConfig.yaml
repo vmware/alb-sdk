@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: AlertScriptConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /alertscriptconfig:
         get:
+            tags:
+                - AlertScriptConfig
+            description: /alertscriptconfig
+            operationId: GET /alertscriptconfig
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertScriptConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AlertScriptConfig
+            description: /alertscriptconfig
+            operationId: POST /alertscriptconfig
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertScriptConfig"
-                401:
+                "401":
                     description: log in failed
     /alertscriptconfig/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertScriptConfig"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AlertScriptConfig
+            description: /alertscriptconfig/{uuid}
+            operationId: PUT /alertscriptconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertScriptConfig"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AlertScriptConfig
+            description: /alertscriptconfig/{uuid}
+            operationId: PATCH /alertscriptconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertScriptConfig"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AlertScriptConfig
+            description: /alertscriptconfig/{uuid}
+            operationId: DELETE /alertscriptconfig/{uuid}
             consumes:
                 -   application/json
             produces:

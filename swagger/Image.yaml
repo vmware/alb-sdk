@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: Image
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /image:
         get:
+            tags:
+                - Image
+            description: /image
+            operationId: GET /image
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ImageApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Image
+            description: /image
+            operationId: POST /image
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Image"
-                401:
+                "401":
                     description: log in failed
     /image/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Image"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Image
+            description: /image/{uuid}
+            operationId: PUT /image/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Image"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Image
+            description: /image/{uuid}
+            operationId: PATCH /image/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Image"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Image
+            description: /image/{uuid}
+            operationId: DELETE /image/{uuid}
             consumes:
                 -   application/json
             produces:

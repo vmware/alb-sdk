@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure errorpageprofile <key>\n- show errorpageprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ErrorPageProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/errorpageprofile": {
             "get": {
+                "tags": [
+                    "ErrorPageProfile"
+                ],
+                "description": "/errorpageprofile",
+                "operationId": "GET /errorpageprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ErrorPageProfile"
+                ],
+                "description": "/errorpageprofile",
+                "operationId": "POST /errorpageprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ErrorPageProfile"
+                ],
+                "description": "/errorpageprofile/{uuid}",
+                "operationId": "PUT /errorpageprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ErrorPageProfile"
+                ],
+                "description": "/errorpageprofile/{uuid}",
+                "operationId": "PATCH /errorpageprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ErrorPageProfile"
+                ],
+                "description": "/errorpageprofile/{uuid}",
+                "operationId": "DELETE /errorpageprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

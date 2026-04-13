@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show systemreport <key>\n- show systemreport <key> export\n- delete systemreport <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "SystemReport"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/systemreport": {
             "get": {
+                "tags": [
+                    "SystemReport"
+                ],
+                "description": "/systemreport",
+                "operationId": "GET /systemreport",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SystemReport"
+                ],
+                "description": "/systemreport",
+                "operationId": "POST /systemreport",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SystemReport"
+                ],
+                "description": "/systemreport/{uuid}",
+                "operationId": "PUT /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SystemReport"
+                ],
+                "description": "/systemreport/{uuid}",
+                "operationId": "PATCH /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SystemReport"
+                ],
+                "description": "/systemreport/{uuid}",
+                "operationId": "DELETE /systemreport/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

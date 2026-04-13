@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure geodb <key>\n- show geodb <key>\n- show geodb <key> data\n```\n"
     },
+    "tags": [
+        {
+            "name": "GeoDB"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/geodb": {
             "get": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb",
+                "operationId": "GET /geodb",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb",
+                "operationId": "POST /geodb",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb/{uuid}",
+                "operationId": "PUT /geodb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb/{uuid}",
+                "operationId": "PATCH /geodb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb/{uuid}",
+                "operationId": "DELETE /geodb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/geodb/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "GeoDB"
+                ],
+                "description": "/geodb/{uuid}/runtime/internal/",
+                "operationId": "GET /geodb/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],

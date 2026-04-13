@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: VrfContext
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /vrfcontext:
         get:
+            tags:
+                - VrfContext
+            description: /vrfcontext
+            operationId: GET /vrfcontext
             consumes:
                 -   application/json
             produces:
@@ -149,13 +157,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContextApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VrfContext
+            description: /vrfcontext
+            operationId: POST /vrfcontext
             consumes:
                 -   application/json
             produces:
@@ -190,11 +202,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
     /vrfcontext/{uuid}:
         get:
@@ -254,13 +266,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: PUT /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -305,13 +321,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: PATCH /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -356,13 +376,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VrfContext"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VrfContext
+            description: /vrfcontext/{uuid}
+            operationId: DELETE /vrfcontext/{uuid}
             consumes:
                 -   application/json
             produces:

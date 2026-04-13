@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show logcontrollermapping\n```\n"
     },
+    "tags": [
+        {
+            "name": "LogControllerMapping"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/logcontroller": {
             "get": {
+                "tags": [
+                    "LogControllerMapping"
+                ],
+                "description": "/logcontroller",
+                "operationId": "GET /logcontroller",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "LogControllerMapping"
+                ],
+                "description": "/logcontroller",
+                "operationId": "POST /logcontroller",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "LogControllerMapping"
+                ],
+                "description": "/logcontroller/{uuid}",
+                "operationId": "PUT /logcontroller/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "LogControllerMapping"
+                ],
+                "description": "/logcontroller/{uuid}",
+                "operationId": "PATCH /logcontroller/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "LogControllerMapping"
+                ],
+                "description": "/logcontroller/{uuid}",
+                "operationId": "DELETE /logcontroller/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

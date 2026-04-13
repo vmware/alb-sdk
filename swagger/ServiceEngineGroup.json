@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure serviceenginegroup <key>\n- show serviceenginegroup <key>\n- redistribute serviceenginegroup <key>\n- clear serviceenginegroup <key>\n```\n\nExamples\n- **serviceenginegroup_example_1**: To create a SE group that is suitable for a production application with a HA policy of shared active/active with a minimum scale out of 2 SE\n  ```json\n    {'name': 'production-group', 'min_scaleout_per_vs': 2, 'ha_mode': 'HA_MODE_SHARED_PAIR'}\n  ```\n\n- **serviceenginegroup_example_2**: To create a SE group that is of best effort category suitable for test deployments\n  ```json\n    {'name': 'test-group', 'max_se': 8, 'ha_mode': 'HA_MODE_SHARED', 'buffer_se': 0}\n  ```\n"
     },
+    "tags": [
+        {
+            "name": "ServiceEngineGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/serviceenginegroup": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "GET /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "POST /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PUT /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PATCH /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "DELETE /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -591,6 +624,11 @@
         },
         "/serviceenginegroup/{uuid}/redistribute": {
             "post": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}/redistribute",
+                "operationId": "POST /serviceenginegroup/{uuid}/redistribute",
                 "consumes": [
                     "application/json"
                 ],
@@ -666,6 +704,11 @@
         },
         "/serviceenginegroup/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/clear",
+                "operationId": "POST /serviceenginegroup/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -734,6 +777,11 @@
         },
         "/serviceenginegroup/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}/runtime/",
+                "operationId": "GET /serviceenginegroup/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -797,6 +845,11 @@
         },
         "/serviceenginegroup/{uuid}/placement/summary/": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}/placement/summary/",
+                "operationId": "GET /serviceenginegroup/{uuid}/placement/summary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -860,6 +913,11 @@
         },
         "/serviceenginegroup/{uuid}/placement/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}/placement/detail/",
+                "operationId": "GET /serviceenginegroup/{uuid}/placement/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -923,6 +981,11 @@
         },
         "/serviceenginegroup/{uuid}/placement/ineligible/": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}/placement/ineligible/",
+                "operationId": "GET /serviceenginegroup/{uuid}/placement/ineligible/",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show serviceenginegroupinventory <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ServiceEngineGroupInventory"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/serviceenginegroup-inventory": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory",
+                "operationId": "GET /serviceenginegroup-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory",
+                "operationId": "POST /serviceenginegroup-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "PUT /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "PATCH /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngineGroupInventory"
+                ],
+                "description": "/serviceenginegroup-inventory/{uuid}",
+                "operationId": "DELETE /serviceenginegroup-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/serviceenginegroup": {
             "get": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "GET /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -601,6 +639,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup",
+                "operationId": "POST /serviceenginegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -760,6 +803,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PUT /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -837,6 +885,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "PATCH /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -914,6 +967,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngineGroup"
+                ],
+                "description": "/serviceenginegroup/{uuid}",
+                "operationId": "DELETE /serviceenginegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -984,6 +1042,11 @@
         },
         "/upgradestatussummary": {
             "get": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary",
+                "operationId": "GET /upgradestatussummary",
                 "consumes": [
                     "application/json"
                 ],
@@ -1083,6 +1146,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary",
+                "operationId": "POST /upgradestatussummary",
                 "consumes": [
                     "application/json"
                 ],
@@ -1242,6 +1310,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "PUT /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1319,6 +1392,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "PATCH /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1396,6 +1474,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "UpgradeStatusSummary"
+                ],
+                "description": "/upgradestatussummary/{uuid}",
+                "operationId": "DELETE /upgradestatussummary/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: NatPolicy
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /natpolicy:
         get:
+            tags:
+                - NatPolicy
+            description: /natpolicy
+            operationId: GET /natpolicy
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NatPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NatPolicy
+            description: /natpolicy
+            operationId: POST /natpolicy
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NatPolicy"
-                401:
+                "401":
                     description: log in failed
     /natpolicy/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NatPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NatPolicy
+            description: /natpolicy/{uuid}
+            operationId: PUT /natpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NatPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NatPolicy
+            description: /natpolicy/{uuid}
+            operationId: PATCH /natpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NatPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NatPolicy
+            description: /natpolicy/{uuid}
+            operationId: DELETE /natpolicy/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: UserAccountProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /useraccountprofile:
         get:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: GET /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile
+            operationId: POST /useraccountprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
     /useraccountprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PUT /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: PATCH /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UserAccountProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - UserAccountProfile
+            description: /useraccountprofile/{uuid}
+            operationId: DELETE /useraccountprofile/{uuid}
             consumes:
                 -   application/json
             produces:
