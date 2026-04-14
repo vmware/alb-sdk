@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure useraccountprofile <key>\n- show useraccountprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "UserAccountProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/useraccountprofile": {
             "get": {
+                "tags": [
+                    "UserAccountProfile"
+                ],
+                "description": "/useraccountprofile",
+                "operationId": "GET /useraccountprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "UserAccountProfile"
+                ],
+                "description": "/useraccountprofile",
+                "operationId": "POST /useraccountprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "UserAccountProfile"
+                ],
+                "description": "/useraccountprofile/{uuid}",
+                "operationId": "PUT /useraccountprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "UserAccountProfile"
+                ],
+                "description": "/useraccountprofile/{uuid}",
+                "operationId": "PATCH /useraccountprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "UserAccountProfile"
+                ],
+                "description": "/useraccountprofile/{uuid}",
+                "operationId": "DELETE /useraccountprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ALBServicesFileUpload
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /albservicesfileupload:
         get:
+            tags:
+                - ALBServicesFileUpload
+            description: /albservicesfileupload
+            operationId: GET /albservicesfileupload
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileUploadApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ALBServicesFileUpload
+            description: /albservicesfileupload
+            operationId: POST /albservicesfileupload
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileUpload"
-                401:
+                "401":
                     description: log in failed
     /albservicesfileupload/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileUpload"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ALBServicesFileUpload
+            description: /albservicesfileupload/{uuid}
+            operationId: PUT /albservicesfileupload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileUpload"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ALBServicesFileUpload
+            description: /albservicesfileupload/{uuid}
+            operationId: PATCH /albservicesfileupload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileUpload"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ALBServicesFileUpload
+            description: /albservicesfileupload/{uuid}
+            operationId: DELETE /albservicesfileupload/{uuid}
             consumes:
                 -   application/json
             produces:

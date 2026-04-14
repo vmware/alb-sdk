@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: TenantSystemConfiguration
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /tenantsystemconfiguration:
         get:
+            tags:
+                - TenantSystemConfiguration
+            description: /tenantsystemconfiguration
+            operationId: GET /tenantsystemconfiguration
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantSystemConfigurationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - TenantSystemConfiguration
+            description: /tenantsystemconfiguration
+            operationId: POST /tenantsystemconfiguration
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantSystemConfiguration"
-                401:
+                "401":
                     description: log in failed
     /tenantsystemconfiguration/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantSystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - TenantSystemConfiguration
+            description: /tenantsystemconfiguration/{uuid}
+            operationId: PUT /tenantsystemconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantSystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - TenantSystemConfiguration
+            description: /tenantsystemconfiguration/{uuid}
+            operationId: PATCH /tenantsystemconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantSystemConfiguration"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - TenantSystemConfiguration
+            description: /tenantsystemconfiguration/{uuid}
+            operationId: DELETE /tenantsystemconfiguration/{uuid}
             consumes:
                 -   application/json
             produces:

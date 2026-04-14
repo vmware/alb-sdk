@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show networkinventory <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "NetworkInventory"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/network-inventory": {
             "get": {
+                "tags": [
+                    "NetworkInventory"
+                ],
+                "description": "/network-inventory",
+                "operationId": "GET /network-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NetworkInventory"
+                ],
+                "description": "/network-inventory",
+                "operationId": "POST /network-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "NetworkInventory"
+                ],
+                "description": "/network-inventory/{uuid}",
+                "operationId": "PUT /network-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "NetworkInventory"
+                ],
+                "description": "/network-inventory/{uuid}",
+                "operationId": "PATCH /network-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "NetworkInventory"
+                ],
+                "description": "/network-inventory/{uuid}",
+                "operationId": "DELETE /network-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/vimgrnwruntime": {
             "get": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "GET /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -601,6 +639,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime",
+                "operationId": "POST /vimgrnwruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -760,6 +803,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PUT /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -837,6 +885,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "PATCH /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -914,6 +967,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrNWRuntime"
+                ],
+                "description": "/vimgrnwruntime/{uuid}",
+                "operationId": "DELETE /vimgrnwruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -984,6 +1042,11 @@
         },
         "/networkruntime": {
             "get": {
+                "tags": [
+                    "NetworkRuntime"
+                ],
+                "description": "/networkruntime",
+                "operationId": "GET /networkruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1083,6 +1146,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NetworkRuntime"
+                ],
+                "description": "/networkruntime",
+                "operationId": "POST /networkruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -1242,6 +1310,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "NetworkRuntime"
+                ],
+                "description": "/networkruntime/{uuid}",
+                "operationId": "PUT /networkruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1319,6 +1392,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "NetworkRuntime"
+                ],
+                "description": "/networkruntime/{uuid}",
+                "operationId": "PATCH /networkruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -1396,6 +1474,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "NetworkRuntime"
+                ],
+                "description": "/networkruntime/{uuid}",
+                "operationId": "DELETE /networkruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

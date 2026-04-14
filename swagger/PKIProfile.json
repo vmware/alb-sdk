@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure pkiprofile <key>\n- show pkiprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "PKIProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/pkiprofile": {
             "get": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile",
+                "operationId": "GET /pkiprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile",
+                "operationId": "POST /pkiprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile/{uuid}",
+                "operationId": "PUT /pkiprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile/{uuid}",
+                "operationId": "PATCH /pkiprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile/{uuid}",
+                "operationId": "DELETE /pkiprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/pkiprofile/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "PKIProfile"
+                ],
+                "description": "/pkiprofile/{uuid}/federated_info/",
+                "operationId": "GET /pkiprofile/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure alertscriptconfig <key>\n- show alertscriptconfig <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "AlertScriptConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/alertscriptconfig": {
             "get": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig",
+                "operationId": "GET /alertscriptconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig",
+                "operationId": "POST /alertscriptconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "PUT /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "PATCH /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "AlertScriptConfig"
+                ],
+                "description": "/alertscriptconfig/{uuid}",
+                "operationId": "DELETE /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

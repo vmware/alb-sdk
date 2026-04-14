@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure federationcheckpoint <key>\n- show federationcheckpoint <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "FederationCheckpoint"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/federationcheckpoint": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "GET /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint",
+                "operationId": "POST /federationcheckpoint",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PUT /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "PATCH /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}",
+                "operationId": "DELETE /federationcheckpoint/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/federationcheckpoint/{uuid}/pendingobjects/": {
             "get": {
+                "tags": [
+                    "FederationCheckpoint"
+                ],
+                "description": "/federationcheckpoint/{uuid}/pendingobjects/",
+                "operationId": "GET /federationcheckpoint/{uuid}/pendingobjects/",
                 "consumes": [
                     "application/json"
                 ],

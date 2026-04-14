@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure botconfigconsolidator <key>\n- show botconfigconsolidator <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "BotConfigConsolidator"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/botconfigconsolidator": {
             "get": {
+                "tags": [
+                    "BotConfigConsolidator"
+                ],
+                "description": "/botconfigconsolidator",
+                "operationId": "GET /botconfigconsolidator",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "BotConfigConsolidator"
+                ],
+                "description": "/botconfigconsolidator",
+                "operationId": "POST /botconfigconsolidator",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "BotConfigConsolidator"
+                ],
+                "description": "/botconfigconsolidator/{uuid}",
+                "operationId": "PUT /botconfigconsolidator/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "BotConfigConsolidator"
+                ],
+                "description": "/botconfigconsolidator/{uuid}",
+                "operationId": "PATCH /botconfigconsolidator/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "BotConfigConsolidator"
+                ],
+                "description": "/botconfigconsolidator/{uuid}",
+                "operationId": "DELETE /botconfigconsolidator/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

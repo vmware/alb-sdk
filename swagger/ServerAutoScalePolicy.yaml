@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ServerAutoScalePolicy
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /serverautoscalepolicy:
         get:
+            tags:
+                - ServerAutoScalePolicy
+            description: /serverautoscalepolicy
+            operationId: GET /serverautoscalepolicy
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServerAutoScalePolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServerAutoScalePolicy
+            description: /serverautoscalepolicy
+            operationId: POST /serverautoscalepolicy
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServerAutoScalePolicy"
-                401:
+                "401":
                     description: log in failed
     /serverautoscalepolicy/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServerAutoScalePolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServerAutoScalePolicy
+            description: /serverautoscalepolicy/{uuid}
+            operationId: PUT /serverautoscalepolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServerAutoScalePolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServerAutoScalePolicy
+            description: /serverautoscalepolicy/{uuid}
+            operationId: PATCH /serverautoscalepolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServerAutoScalePolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServerAutoScalePolicy
+            description: /serverautoscalepolicy/{uuid}
+            operationId: DELETE /serverautoscalepolicy/{uuid}
             consumes:
                 -   application/json
             produces:

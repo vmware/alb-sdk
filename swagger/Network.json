@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure network <key>\n- show network <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "Network"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/network": {
             "get": {
+                "tags": [
+                    "Network"
+                ],
+                "description": "/network",
+                "operationId": "GET /network",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Network"
+                ],
+                "description": "/network",
+                "operationId": "POST /network",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Network"
+                ],
+                "description": "/network/{uuid}",
+                "operationId": "PUT /network/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Network"
+                ],
+                "description": "/network/{uuid}",
+                "operationId": "PATCH /network/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Network"
+                ],
+                "description": "/network/{uuid}",
+                "operationId": "DELETE /network/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

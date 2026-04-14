@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure snmptrapprofile <key>\n- show snmptrapprofile <key>\n- test alerttestsnmptrap <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "SnmpTrapProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/snmptrapprofile": {
             "get": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile",
+                "operationId": "GET /snmptrapprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile",
+                "operationId": "POST /snmptrapprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "PUT /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "PATCH /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}",
+                "operationId": "DELETE /snmptrapprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/snmptrapprofile/{uuid}/testsnmptrap": {
             "post": {
+                "tags": [
+                    "SnmpTrapProfile"
+                ],
+                "description": "/snmptrapprofile/{uuid}/testsnmptrap",
+                "operationId": "POST /snmptrapprofile/{uuid}/testsnmptrap",
                 "consumes": [
                     "application/json"
                 ],

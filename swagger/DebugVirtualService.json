@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- debug virtualservice <key>\n- show debug virtualservice <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "DebugVirtualService"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/debugvirtualservice": {
             "get": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "DebugVirtualService"
+                ],
+                "description": "/debugvirtualservice/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

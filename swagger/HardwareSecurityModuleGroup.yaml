@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: HardwareSecurityModuleGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /hardwaresecuritymodulegroup:
         get:
+            tags:
+                - HardwareSecurityModuleGroup
+            description: /hardwaresecuritymodulegroup
+            operationId: GET /hardwaresecuritymodulegroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HardwareSecurityModuleGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - HardwareSecurityModuleGroup
+            description: /hardwaresecuritymodulegroup
+            operationId: POST /hardwaresecuritymodulegroup
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HardwareSecurityModuleGroup"
-                401:
+                "401":
                     description: log in failed
     /hardwaresecuritymodulegroup/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HardwareSecurityModuleGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - HardwareSecurityModuleGroup
+            description: /hardwaresecuritymodulegroup/{uuid}
+            operationId: PUT /hardwaresecuritymodulegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HardwareSecurityModuleGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - HardwareSecurityModuleGroup
+            description: /hardwaresecuritymodulegroup/{uuid}
+            operationId: PATCH /hardwaresecuritymodulegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/HardwareSecurityModuleGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - HardwareSecurityModuleGroup
+            description: /hardwaresecuritymodulegroup/{uuid}
+            operationId: DELETE /hardwaresecuritymodulegroup/{uuid}
             consumes:
                 -   application/json
             produces:

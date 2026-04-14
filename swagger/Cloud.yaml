@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: Cloud
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /cloud:
         get:
+            tags:
+                - Cloud
+            description: /cloud
+            operationId: GET /cloud
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Cloud
+            description: /cloud
+            operationId: POST /cloud
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: PUT /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: PATCH /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Cloud"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}
+            operationId: DELETE /cloud/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /cloud/list:
         post:
+            tags:
+                - Cloud
+            description: /cloud/list
+            operationId: POST /cloud/list
             consumes:
                 -   application/json
             produces:
@@ -384,15 +412,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /cloud/{uuid}/internals/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/internals/
+            operationId: GET /cloud/{uuid}/internals/
             consumes:
                 -   application/json
             produces:
@@ -426,14 +458,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/status/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/status/
+            operationId: GET /cloud/{uuid}/status/
             consumes:
                 -   application/json
             produces:
@@ -467,54 +503,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/gc/:
-        patch:
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                200:
-                    description: OK
-                    schema:
-                        type: string
-                401:
-                    description: log in failed
         put:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PUT /cloud/{uuid}/gc/
             consumes:
                 -   application/json
             produces:
@@ -556,14 +556,62 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
+                    description: log in failed
+        patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PATCH /cloud/{uuid}/gc/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
                     description: log in failed
     /cloud/{uuid}/health/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/health/
+            operationId: GET /cloud/{uuid}/health/
             consumes:
                 -   application/json
             produces:
@@ -597,14 +645,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/hosts/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/hosts/
+            operationId: GET /cloud/{uuid}/hosts/
             consumes:
                 -   application/json
             produces:
@@ -638,14 +690,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/autoscalegroup/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/autoscalegroup/
+            operationId: GET /cloud/{uuid}/autoscalegroup/
             consumes:
                 -   application/json
             produces:
@@ -679,14 +735,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/autoscalegroupservers/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/autoscalegroupservers/
+            operationId: GET /cloud/{uuid}/autoscalegroupservers/
             consumes:
                 -   application/json
             produces:
@@ -720,14 +780,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/placement/summary/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/placement/summary/
+            operationId: GET /cloud/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -761,14 +825,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /cloud/{uuid}/placement/ineligible/:
         get:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/placement/ineligible/
+            operationId: GET /cloud/{uuid}/placement/ineligible/
             consumes:
                 -   application/json
             produces:
@@ -802,11 +870,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     AwsConfiguration:

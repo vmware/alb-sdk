@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure healthmonitor <key>\n- show healthmonitor <key>\n```\n\nExamples\n- **healthmonitor_example**: To create a basic HTTP health monitor that uses GET / to determine if the service is alive\n  ```json\n    {'name': 'http-hmon', 'send_interval': 10, 'receive_timeout': 4, 'failed_checks': 3, 'type': 'HEALTH_MONITOR_HTTP', 'http_monitor': {'http_request': 'GET / HTTP/1.0'}}\n  ```\n"
     },
+    "tags": [
+        {
+            "name": "HealthMonitor"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/healthmonitor": {
             "get": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor",
+                "operationId": "GET /healthmonitor",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor",
+                "operationId": "POST /healthmonitor",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "PUT /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "PATCH /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}",
+                "operationId": "DELETE /healthmonitor/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/healthmonitor/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "HealthMonitor"
+                ],
+                "description": "/healthmonitor/{uuid}/federated_info/",
+                "operationId": "GET /healthmonitor/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],

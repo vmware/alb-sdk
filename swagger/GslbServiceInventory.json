@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show gslbserviceinventory <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "GslbServiceInventory"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/gslbservice-inventory": {
             "get": {
+                "tags": [
+                    "GslbServiceInventory"
+                ],
+                "description": "/gslbservice-inventory",
+                "operationId": "GET /gslbservice-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "GslbServiceInventory"
+                ],
+                "description": "/gslbservice-inventory",
+                "operationId": "POST /gslbservice-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "GslbServiceInventory"
+                ],
+                "description": "/gslbservice-inventory/{uuid}",
+                "operationId": "PUT /gslbservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "GslbServiceInventory"
+                ],
+                "description": "/gslbservice-inventory/{uuid}",
+                "operationId": "PATCH /gslbservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "GslbServiceInventory"
+                ],
+                "description": "/gslbservice-inventory/{uuid}",
+                "operationId": "DELETE /gslbservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

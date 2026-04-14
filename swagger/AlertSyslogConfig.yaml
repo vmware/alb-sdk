@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: AlertSyslogConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /alertsyslogconfig:
         get:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig
+            operationId: GET /alertsyslogconfig
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig
+            operationId: POST /alertsyslogconfig
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
     /alertsyslogconfig/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: PUT /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: PATCH /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/AlertSyslogConfig"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}
+            operationId: DELETE /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /alertsyslogconfig/{uuid}/testsyslog:
         post:
+            tags:
+                - AlertSyslogConfig
+            description: /alertsyslogconfig/{uuid}/testsyslog
+            operationId: POST /alertsyslogconfig/{uuid}/testsyslog
             consumes:
                 -   application/json
             produces:
@@ -387,11 +415,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

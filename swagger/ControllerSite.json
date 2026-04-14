@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure controllersite <key>\n- show controllersite <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ControllerSite"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/controllersite": {
             "get": {
+                "tags": [
+                    "ControllerSite"
+                ],
+                "description": "/controllersite",
+                "operationId": "GET /controllersite",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ControllerSite"
+                ],
+                "description": "/controllersite",
+                "operationId": "POST /controllersite",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ControllerSite"
+                ],
+                "description": "/controllersite/{uuid}",
+                "operationId": "PUT /controllersite/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ControllerSite"
+                ],
+                "description": "/controllersite/{uuid}",
+                "operationId": "PATCH /controllersite/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ControllerSite"
+                ],
+                "description": "/controllersite/{uuid}",
+                "operationId": "DELETE /controllersite/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

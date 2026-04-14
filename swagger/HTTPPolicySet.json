@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure httppolicyset <key>\n- show httppolicyset <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "HTTPPolicySet"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/httppolicyset": {
             "get": {
+                "tags": [
+                    "HTTPPolicySet"
+                ],
+                "description": "/httppolicyset",
+                "operationId": "GET /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "HTTPPolicySet"
+                ],
+                "description": "/httppolicyset",
+                "operationId": "POST /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "HTTPPolicySet"
+                ],
+                "description": "/httppolicyset/{uuid}",
+                "operationId": "PUT /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "HTTPPolicySet"
+                ],
+                "description": "/httppolicyset/{uuid}",
+                "operationId": "PATCH /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "HTTPPolicySet"
+                ],
+                "description": "/httppolicyset/{uuid}",
+                "operationId": "DELETE /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

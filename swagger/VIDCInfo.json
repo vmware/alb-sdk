@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show vcenter datacenters\n```\n"
     },
+    "tags": [
+        {
+            "name": "VIDCInfo"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrvcenterdatacenters": {
             "get": {
+                "tags": [
+                    "VIDCInfo"
+                ],
+                "description": "/vimgrvcenterdatacenters",
+                "operationId": "GET /vimgrvcenterdatacenters",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIDCInfo"
+                ],
+                "description": "/vimgrvcenterdatacenters",
+                "operationId": "POST /vimgrvcenterdatacenters",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIDCInfo"
+                ],
+                "description": "/vimgrvcenterdatacenters/{uuid}",
+                "operationId": "PUT /vimgrvcenterdatacenters/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIDCInfo"
+                ],
+                "description": "/vimgrvcenterdatacenters/{uuid}",
+                "operationId": "PATCH /vimgrvcenterdatacenters/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIDCInfo"
+                ],
+                "description": "/vimgrvcenterdatacenters/{uuid}",
+                "operationId": "DELETE /vimgrvcenterdatacenters/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

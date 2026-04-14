@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure microservicegroup <key>\n- show microservicegroup <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "MicroServiceGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/microservicegroup": {
             "get": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup",
+                "operationId": "GET /microservicegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup",
+                "operationId": "POST /microservicegroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup/{uuid}",
+                "operationId": "PUT /microservicegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup/{uuid}",
+                "operationId": "PATCH /microservicegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup/{uuid}",
+                "operationId": "DELETE /microservicegroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/microservicegroup/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "MicroServiceGroup"
+                ],
+                "description": "/microservicegroup/{uuid}/runtime/detail/",
+                "operationId": "GET /microservicegroup/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ApplicationPersistenceProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /applicationpersistenceprofile:
         get:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile
+            operationId: GET /applicationpersistenceprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationPersistenceProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile
+            operationId: POST /applicationpersistenceprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationPersistenceProfile"
-                401:
+                "401":
                     description: log in failed
     /applicationpersistenceprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationPersistenceProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile/{uuid}
+            operationId: PUT /applicationpersistenceprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationPersistenceProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile/{uuid}
+            operationId: PATCH /applicationpersistenceprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationPersistenceProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile/{uuid}
+            operationId: DELETE /applicationpersistenceprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /applicationpersistenceprofile/{uuid}/federated_info/:
         get:
+            tags:
+                - ApplicationPersistenceProfile
+            description: /applicationpersistenceprofile/{uuid}/federated_info/
+            operationId: GET /applicationpersistenceprofile/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     AppCookiePersistenceProfile:

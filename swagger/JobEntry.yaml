@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: JobEntry
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /jobs:
         get:
+            tags:
+                - JobEntry
+            description: /jobs
+            operationId: GET /jobs
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/JobEntryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - JobEntry
+            description: /jobs
+            operationId: POST /jobs
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/JobEntry"
-                401:
+                "401":
                     description: log in failed
     /jobs/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/JobEntry"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - JobEntry
+            description: /jobs/{uuid}
+            operationId: PUT /jobs/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/JobEntry"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - JobEntry
+            description: /jobs/{uuid}
+            operationId: PATCH /jobs/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/JobEntry"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - JobEntry
+            description: /jobs/{uuid}
+            operationId: DELETE /jobs/{uuid}
             consumes:
                 -   application/json
             produces:

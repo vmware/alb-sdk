@@ -25,6 +25,10 @@ info:
           ```
 
 
+tags:
+  - name: SSLProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -33,6 +37,10 @@ basePath: /api
 paths:
     /sslprofile:
         get:
+            tags:
+                - SSLProfile
+            description: /sslprofile
+            operationId: GET /sslprofile
             consumes:
                 -   application/json
             produces:
@@ -92,13 +100,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SSLProfile
+            description: /sslprofile
+            operationId: POST /sslprofile
             consumes:
                 -   application/json
             produces:
@@ -133,11 +145,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLProfile"
-                401:
+                "401":
                     description: log in failed
     /sslprofile/{uuid}:
         get:
@@ -197,13 +209,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SSLProfile
+            description: /sslprofile/{uuid}
+            operationId: PUT /sslprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -248,13 +264,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SSLProfile
+            description: /sslprofile/{uuid}
+            operationId: PATCH /sslprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -299,13 +319,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SSLProfile
+            description: /sslprofile/{uuid}
+            operationId: DELETE /sslprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -354,6 +378,10 @@ paths:
 
     /sslprofile/{uuid}/federated_info/:
         get:
+            tags:
+                - SSLProfile
+            description: /sslprofile/{uuid}/federated_info/
+            operationId: GET /sslprofile/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -387,11 +415,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

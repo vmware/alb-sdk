@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure vrfcontext <key>\n- show vrfcontext <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "VrfContext"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vrfcontext": {
             "get": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext",
+                "operationId": "GET /vrfcontext",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext",
+                "operationId": "POST /vrfcontext",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "PUT /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "PATCH /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VrfContext"
+                ],
+                "description": "/vrfcontext/{uuid}",
+                "operationId": "DELETE /vrfcontext/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

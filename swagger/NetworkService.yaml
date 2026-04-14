@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: NetworkService
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /networkservice:
         get:
+            tags:
+                - NetworkService
+            description: /networkservice
+            operationId: GET /networkservice
             consumes:
                 -   application/json
             produces:
@@ -149,13 +157,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkServiceApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NetworkService
+            description: /networkservice
+            operationId: POST /networkservice
             consumes:
                 -   application/json
             produces:
@@ -190,11 +202,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkService"
-                401:
+                "401":
                     description: log in failed
     /networkservice/{uuid}:
         get:
@@ -254,13 +266,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkService"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NetworkService
+            description: /networkservice/{uuid}
+            operationId: PUT /networkservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -305,13 +321,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkService"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NetworkService
+            description: /networkservice/{uuid}
+            operationId: PATCH /networkservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -356,13 +376,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkService"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NetworkService
+            description: /networkservice/{uuid}
+            operationId: DELETE /networkservice/{uuid}
             consumes:
                 -   application/json
             produces:

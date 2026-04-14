@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: Application
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /application:
         get:
+            tags:
+                - Application
+            description: /application
+            operationId: GET /application
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Application
+            description: /application
+            operationId: POST /application
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Application"
-                401:
+                "401":
                     description: log in failed
     /application/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Application"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Application
+            description: /application/{uuid}
+            operationId: PUT /application/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Application"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Application
+            description: /application/{uuid}
+            operationId: PATCH /application/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Application"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Application
+            description: /application/{uuid}
+            operationId: DELETE /application/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: WafPolicyPSMGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /wafpolicypsmgroup:
         get:
+            tags:
+                - WafPolicyPSMGroup
+            description: /wafpolicypsmgroup
+            operationId: GET /wafpolicypsmgroup
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafPolicyPSMGroup
+            description: /wafpolicypsmgroup
+            operationId: POST /wafpolicypsmgroup
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroup"
-                401:
+                "401":
                     description: log in failed
     /wafpolicypsmgroup/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafPolicyPSMGroup
+            description: /wafpolicypsmgroup/{uuid}
+            operationId: PUT /wafpolicypsmgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafPolicyPSMGroup
+            description: /wafpolicypsmgroup/{uuid}
+            operationId: PATCH /wafpolicypsmgroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafPolicyPSMGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafPolicyPSMGroup
+            description: /wafpolicypsmgroup/{uuid}
+            operationId: DELETE /wafpolicypsmgroup/{uuid}
             consumes:
                 -   application/json
             produces:

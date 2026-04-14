@@ -13,6 +13,10 @@ info:
         email: support@avinetworks.com
     description: |
 
+tags:
+  - name: Anomaly
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic

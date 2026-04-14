@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: NetworkInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /network-inventory:
         get:
+            tags:
+                - NetworkInventory
+            description: /network-inventory
+            operationId: GET /network-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NetworkInventory
+            description: /network-inventory
+            operationId: POST /network-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
     /network-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NetworkInventory
+            description: /network-inventory/{uuid}
+            operationId: PUT /network-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NetworkInventory
+            description: /network-inventory/{uuid}
+            operationId: PATCH /network-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NetworkInventory
+            description: /network-inventory/{uuid}
+            operationId: DELETE /network-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -347,6 +371,10 @@ paths:
 
     /vimgrnwruntime:
         get:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime
+            operationId: GET /vimgrnwruntime
             consumes:
                 -   application/json
             produces:
@@ -406,13 +434,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime
+            operationId: POST /vimgrnwruntime
             consumes:
                 -   application/json
             produces:
@@ -447,11 +479,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrnwruntime/{uuid}:
         get:
@@ -511,13 +543,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: PUT /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -562,13 +598,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: PATCH /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -613,13 +653,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrNWRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrNWRuntime
+            description: /vimgrnwruntime/{uuid}
+            operationId: DELETE /vimgrnwruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -668,6 +712,10 @@ paths:
 
     /networkruntime:
         get:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime
+            operationId: GET /networkruntime
             consumes:
                 -   application/json
             produces:
@@ -727,13 +775,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime
+            operationId: POST /networkruntime
             consumes:
                 -   application/json
             produces:
@@ -768,11 +820,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkRuntime"
-                401:
+                "401":
                     description: log in failed
     /networkruntime/{uuid}:
         get:
@@ -832,13 +884,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: PUT /networkruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -883,13 +939,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: PATCH /networkruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -934,13 +994,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NetworkRuntime
+            description: /networkruntime/{uuid}
+            operationId: DELETE /networkruntime/{uuid}
             consumes:
                 -   application/json
             produces:

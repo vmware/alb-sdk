@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ApplicationProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /applicationprofile:
         get:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile
+            operationId: GET /applicationprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile
+            operationId: POST /applicationprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
     /applicationprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: PUT /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: PATCH /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ApplicationProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}
+            operationId: DELETE /applicationprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /applicationprofile/{uuid}/runtime/internal/:
         get:
+            tags:
+                - ApplicationProfile
+            description: /applicationprofile/{uuid}/runtime/internal/
+            operationId: GET /applicationprofile/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ApplicationProfile:

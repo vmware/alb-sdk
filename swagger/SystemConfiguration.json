@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure systemconfiguration\n- show systemconfiguration\n- test systememail\n```\n"
     },
+    "tags": [
+        {
+            "name": "SystemConfiguration"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",

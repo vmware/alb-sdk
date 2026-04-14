@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure user <key>\n- show user <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "User"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/user": {
             "get": {
+                "tags": [
+                    "User"
+                ],
+                "description": "/user",
+                "operationId": "GET /user",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "User"
+                ],
+                "description": "/user",
+                "operationId": "POST /user",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "User"
+                ],
+                "description": "/user/{uuid}",
+                "operationId": "PUT /user/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "User"
+                ],
+                "description": "/user/{uuid}",
+                "operationId": "PATCH /user/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "User"
+                ],
+                "description": "/user/{uuid}",
+                "operationId": "DELETE /user/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: NetworkProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /networkprofile:
         get:
+            tags:
+                - NetworkProfile
+            description: /networkprofile
+            operationId: GET /networkprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - NetworkProfile
+            description: /networkprofile
+            operationId: POST /networkprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
     /networkprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: PUT /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: PATCH /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/NetworkProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}
+            operationId: DELETE /networkprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /networkprofile/{uuid}/runtime/internal/:
         get:
+            tags:
+                - NetworkProfile
+            description: /networkprofile/{uuid}/runtime/internal/
+            operationId: GET /networkprofile/{uuid}/runtime/internal/
             consumes:
                 -   application/json
             produces:
@@ -381,11 +409,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     ConfigPbAttributes:

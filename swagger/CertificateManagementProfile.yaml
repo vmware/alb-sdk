@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: CertificateManagementProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /certificatemanagementprofile:
         get:
+            tags:
+                - CertificateManagementProfile
+            description: /certificatemanagementprofile
+            operationId: GET /certificatemanagementprofile
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CertificateManagementProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CertificateManagementProfile
+            description: /certificatemanagementprofile
+            operationId: POST /certificatemanagementprofile
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CertificateManagementProfile"
-                401:
+                "401":
                     description: log in failed
     /certificatemanagementprofile/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CertificateManagementProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CertificateManagementProfile
+            description: /certificatemanagementprofile/{uuid}
+            operationId: PUT /certificatemanagementprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CertificateManagementProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CertificateManagementProfile
+            description: /certificatemanagementprofile/{uuid}
+            operationId: PATCH /certificatemanagementprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CertificateManagementProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CertificateManagementProfile
+            description: /certificatemanagementprofile/{uuid}
+            operationId: DELETE /certificatemanagementprofile/{uuid}
             consumes:
                 -   application/json
             produces:

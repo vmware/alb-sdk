@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure systemlimits\n- show systemlimits\n```\n"
     },
+    "tags": [
+        {
+            "name": "SystemLimits"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/systemlimits": {
             "get": {
+                "tags": [
+                    "SystemLimits"
+                ],
+                "description": "/systemlimits",
+                "operationId": "GET /systemlimits",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SystemLimits"
+                ],
+                "description": "/systemlimits",
+                "operationId": "POST /systemlimits",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SystemLimits"
+                ],
+                "description": "/systemlimits/{uuid}",
+                "operationId": "PUT /systemlimits/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SystemLimits"
+                ],
+                "description": "/systemlimits/{uuid}",
+                "operationId": "PATCH /systemlimits/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SystemLimits"
+                ],
+                "description": "/systemlimits/{uuid}",
+                "operationId": "DELETE /systemlimits/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

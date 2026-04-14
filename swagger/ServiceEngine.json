@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure serviceengine <key>\n- show serviceengine <key>\n- reboot serviceengine <key>\n- delete serviceengine <key>\n- forcedelete serviceengine <key>\n- switchover serviceengine <key>\n- clear serviceengine <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ServiceEngine"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/serviceengine": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine",
+                "operationId": "GET /serviceengine",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine",
+                "operationId": "POST /serviceengine",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}",
+                "operationId": "PUT /serviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}",
+                "operationId": "PATCH /serviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}",
+                "operationId": "DELETE /serviceengine/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -591,6 +624,11 @@
         },
         "/serviceengine/{uuid}/reboot": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/reboot",
+                "operationId": "POST /serviceengine/{uuid}/reboot",
                 "consumes": [
                     "application/json"
                 ],
@@ -666,6 +704,11 @@
         },
         "/serviceengine/{uuid}/forcedelete": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/forcedelete",
+                "operationId": "POST /serviceengine/{uuid}/forcedelete",
                 "consumes": [
                     "application/json"
                 ],
@@ -741,6 +784,11 @@
         },
         "/serviceengine/{uuid}/switchover": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/switchover",
+                "operationId": "POST /serviceengine/{uuid}/switchover",
                 "consumes": [
                     "application/json"
                 ],
@@ -816,6 +864,11 @@
         },
         "/serviceengine/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/clear",
+                "operationId": "POST /serviceengine/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -884,6 +937,11 @@
         },
         "/serviceengine/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/runtime/",
+                "operationId": "GET /serviceengine/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -947,6 +1005,11 @@
         },
         "/serviceengine/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/runtime/detail/",
+                "operationId": "GET /serviceengine/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1010,6 +1073,11 @@
         },
         "/serviceengine/{uuid}/internal/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/internal/",
+                "operationId": "GET /serviceengine/{uuid}/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1073,6 +1141,11 @@
         },
         "/serviceengine/{uuid}/ipstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ipstat/",
+                "operationId": "GET /serviceengine/{uuid}/ipstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1136,6 +1209,11 @@
         },
         "/serviceengine/{uuid}/arpstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/arpstat/",
+                "operationId": "GET /serviceengine/{uuid}/arpstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1199,6 +1277,11 @@
         },
         "/serviceengine/{uuid}/icmpstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/icmpstat/",
+                "operationId": "GET /serviceengine/{uuid}/icmpstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1262,6 +1345,11 @@
         },
         "/serviceengine/{uuid}/mbufstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/mbufstats/",
+                "operationId": "GET /serviceengine/{uuid}/mbufstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1325,6 +1413,11 @@
         },
         "/serviceengine/{uuid}/mallocstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/mallocstats/",
+                "operationId": "GET /serviceengine/{uuid}/mallocstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1388,6 +1481,11 @@
         },
         "/serviceengine/{uuid}/shmallocstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/shmallocstats/",
+                "operationId": "GET /serviceengine/{uuid}/shmallocstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1451,6 +1549,11 @@
         },
         "/serviceengine/{uuid}/seassertstats/dp/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/seassertstats/dp/",
+                "operationId": "GET /serviceengine/{uuid}/seassertstats/dp/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1514,6 +1617,11 @@
         },
         "/serviceengine/{uuid}/seassertstats/ag/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/seassertstats/ag/",
+                "operationId": "GET /serviceengine/{uuid}/seassertstats/ag/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1577,6 +1685,11 @@
         },
         "/serviceengine/{uuid}/sevshbstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/sevshbstats/",
+                "operationId": "GET /serviceengine/{uuid}/sevshbstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1640,6 +1753,11 @@
         },
         "/serviceengine/{uuid}/sevssplacement/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/sevssplacement/",
+                "operationId": "GET /serviceengine/{uuid}/sevssplacement/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1703,6 +1821,11 @@
         },
         "/serviceengine/{uuid}/cpu/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/cpu/",
+                "operationId": "GET /serviceengine/{uuid}/cpu/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1766,6 +1889,11 @@
         },
         "/serviceengine/{uuid}/cpu/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/cpu/detail/",
+                "operationId": "GET /serviceengine/{uuid}/cpu/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1829,6 +1957,11 @@
         },
         "/serviceengine/{uuid}/meminfo/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/meminfo/",
+                "operationId": "GET /serviceengine/{uuid}/meminfo/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1892,6 +2025,11 @@
         },
         "/serviceengine/{uuid}/interface/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/interface/",
+                "operationId": "GET /serviceengine/{uuid}/interface/",
                 "consumes": [
                     "application/json"
                 ],
@@ -1955,6 +2093,11 @@
         },
         "/serviceengine/{uuid}/bgp/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2018,6 +2161,11 @@
         },
         "/serviceengine/{uuid}/bgp/debug/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/debug/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/debug/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2081,6 +2229,11 @@
         },
         "/serviceengine/{uuid}/bgp/advertised_routes/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/advertised_routes/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/advertised_routes/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2144,6 +2297,11 @@
         },
         "/serviceengine/{uuid}/bgp/peer_status/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/peer_status/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/peer_status/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2207,6 +2365,11 @@
         },
         "/serviceengine/{uuid}/bgp/peer_info/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/peer_info/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/peer_info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2270,6 +2433,11 @@
         },
         "/serviceengine/{uuid}/bgp/running_config/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/running_config/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/running_config/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2333,6 +2501,11 @@
         },
         "/serviceengine/{uuid}/bgp/peer_state/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bgp/peer_state/",
+                "operationId": "GET /serviceengine/{uuid}/bgp/peer_state/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2396,6 +2569,11 @@
         },
         "/serviceengine/{uuid}/bfd/running_config/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bfd/running_config/",
+                "operationId": "GET /serviceengine/{uuid}/bfd/running_config/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2459,6 +2637,11 @@
         },
         "/serviceengine/{uuid}/bfd/session_status/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/bfd/session_status/",
+                "operationId": "GET /serviceengine/{uuid}/bfd/session_status/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2522,6 +2705,11 @@
         },
         "/serviceengine/{uuid}/interfacesummary/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/interfacesummary/",
+                "operationId": "GET /serviceengine/{uuid}/interfacesummary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2585,6 +2773,11 @@
         },
         "/serviceengine/{uuid}/interface/lacp/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/interface/lacp/",
+                "operationId": "GET /serviceengine/{uuid}/interface/lacp/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2648,6 +2841,11 @@
         },
         "/serviceengine/{uuid}/lldp/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/lldp/",
+                "operationId": "GET /serviceengine/{uuid}/lldp/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2711,6 +2909,11 @@
         },
         "/serviceengine/{uuid}/route/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/route/",
+                "operationId": "GET /serviceengine/{uuid}/route/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2774,6 +2977,11 @@
         },
         "/serviceengine/{uuid}/ip6route/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ip6route/",
+                "operationId": "GET /serviceengine/{uuid}/ip6route/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2837,6 +3045,11 @@
         },
         "/serviceengine/{uuid}/arptable/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/arptable/",
+                "operationId": "GET /serviceengine/{uuid}/arptable/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2900,6 +3113,11 @@
         },
         "/serviceengine/{uuid}/httpstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/httpstats/",
+                "operationId": "GET /serviceengine/{uuid}/httpstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -2963,6 +3181,11 @@
         },
         "/serviceengine/{uuid}/seruminsertionstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/seruminsertionstats/",
+                "operationId": "GET /serviceengine/{uuid}/seruminsertionstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3026,6 +3249,11 @@
         },
         "/serviceengine/{uuid}/selogstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/selogstats/",
+                "operationId": "GET /serviceengine/{uuid}/selogstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3089,6 +3317,11 @@
         },
         "/serviceengine/{uuid}/seauthstats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/seauthstats/",
+                "operationId": "GET /serviceengine/{uuid}/seauthstats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3152,6 +3385,11 @@
         },
         "/serviceengine/{uuid}/vnicdb/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/vnicdb/",
+                "operationId": "GET /serviceengine/{uuid}/vnicdb/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3215,6 +3453,11 @@
         },
         "/serviceengine/{uuid}/vnicdbhistory/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/vnicdbhistory/",
+                "operationId": "GET /serviceengine/{uuid}/vnicdbhistory/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3278,6 +3521,11 @@
         },
         "/serviceengine/{uuid}/graphdb/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/graphdb/",
+                "operationId": "GET /serviceengine/{uuid}/graphdb/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3341,6 +3589,11 @@
         },
         "/serviceengine/{uuid}/seagent/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/seagent/",
+                "operationId": "GET /serviceengine/{uuid}/seagent/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3404,6 +3657,11 @@
         },
         "/serviceengine/{uuid}/resourcemap/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/resourcemap/",
+                "operationId": "GET /serviceengine/{uuid}/resourcemap/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3467,6 +3725,11 @@
         },
         "/serviceengine/{uuid}/consistenthash/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/consistenthash/",
+                "operationId": "GET /serviceengine/{uuid}/consistenthash/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3530,6 +3793,11 @@
         },
         "/serviceengine/{uuid}/appmap/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/appmap/",
+                "operationId": "GET /serviceengine/{uuid}/appmap/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3593,6 +3861,11 @@
         },
         "/serviceengine/{uuid}/shardclientevents/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/shardclientevents/",
+                "operationId": "GET /serviceengine/{uuid}/shardclientevents/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3656,6 +3929,11 @@
         },
         "/serviceengine/{uuid}/rteringstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/rteringstat/",
+                "operationId": "GET /serviceengine/{uuid}/rteringstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3719,6 +3997,11 @@
         },
         "/serviceengine/{uuid}/sehmprobedisable/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/sehmprobedisable/",
+                "operationId": "GET /serviceengine/{uuid}/sehmprobedisable/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3782,6 +4065,11 @@
         },
         "/serviceengine/{uuid}/flowtablestat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/flowtablestat/",
+                "operationId": "GET /serviceengine/{uuid}/flowtablestat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3845,6 +4133,11 @@
         },
         "/serviceengine/{uuid}/flowtable/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/flowtable/",
+                "operationId": "GET /serviceengine/{uuid}/flowtable/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3908,6 +4201,11 @@
         },
         "/serviceengine/{uuid}/vshash/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/vshash/",
+                "operationId": "GET /serviceengine/{uuid}/vshash/",
                 "consumes": [
                     "application/json"
                 ],
@@ -3971,6 +4269,11 @@
         },
         "/serviceengine/{uuid}/flowtable_remote/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/flowtable_remote/",
+                "operationId": "GET /serviceengine/{uuid}/flowtable_remote/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4034,6 +4337,11 @@
         },
         "/serviceengine/{uuid}/tcp-flows/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/tcp-flows/",
+                "operationId": "GET /serviceengine/{uuid}/tcp-flows/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4097,6 +4405,11 @@
         },
         "/serviceengine/{uuid}/sctp-flows/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/sctp-flows/",
+                "operationId": "GET /serviceengine/{uuid}/sctp-flows/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4160,6 +4473,11 @@
         },
         "/serviceengine/{uuid}/tcp-flows/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/tcp-flows/detail/",
+                "operationId": "GET /serviceengine/{uuid}/tcp-flows/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4223,6 +4541,11 @@
         },
         "/serviceengine/{uuid}/sctp-flows/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/sctp-flows/detail/",
+                "operationId": "GET /serviceengine/{uuid}/sctp-flows/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4286,6 +4609,11 @@
         },
         "/serviceengine/{uuid}/metrics/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/metrics/",
+                "operationId": "GET /serviceengine/{uuid}/metrics/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4349,6 +4677,11 @@
         },
         "/serviceengine/{uuid}/metrics/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/metrics/detail/",
+                "operationId": "GET /serviceengine/{uuid}/metrics/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4412,6 +4745,11 @@
         },
         "/serviceengine/{uuid}/metrics/debug/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/metrics/debug/",
+                "operationId": "GET /serviceengine/{uuid}/metrics/debug/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4475,6 +4813,11 @@
         },
         "/serviceengine/{uuid}/metrics/debug/summary/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/metrics/debug/summary/",
+                "operationId": "GET /serviceengine/{uuid}/metrics/debug/summary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4538,6 +4881,11 @@
         },
         "/serviceengine/{uuid}/dosstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/dosstat/",
+                "operationId": "GET /serviceengine/{uuid}/dosstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4601,6 +4949,11 @@
         },
         "/serviceengine/{uuid}/memdist/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/memdist/",
+                "operationId": "GET /serviceengine/{uuid}/memdist/",
                 "consumes": [
                     "application/json"
                 ],
@@ -4664,6 +5017,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_mbuf/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_mbuf/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_mbuf/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -4736,6 +5094,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_mcl/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_mcl/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_mcl/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -4808,6 +5171,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_mcl_small/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -4880,6 +5248,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_conn/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_conn/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_conn/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -4952,6 +5325,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_shm_conn/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -5024,6 +5402,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_cfg/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_cfg/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_cfg/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -5096,6 +5479,11 @@
         },
         "/serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/exhaust_shm_cfg/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -5168,6 +5556,11 @@
         },
         "/serviceengine/{uuid}/faultinject/sefault/clear": {
             "post": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/faultinject/sefault/clear",
+                "operationId": "POST /serviceengine/{uuid}/faultinject/sefault/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -5240,6 +5633,11 @@
         },
         "/serviceengine/{uuid}/placement/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/placement/",
+                "operationId": "GET /serviceengine/{uuid}/placement/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5303,6 +5701,11 @@
         },
         "/serviceengine/{uuid}/reservedvs/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/reservedvs/",
+                "operationId": "GET /serviceengine/{uuid}/reservedvs/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5366,6 +5769,11 @@
         },
         "/serviceengine/{uuid}/microservice/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/microservice/",
+                "operationId": "GET /serviceengine/{uuid}/microservice/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5429,6 +5837,11 @@
         },
         "/serviceengine/{uuid}/ndtable/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ndtable/",
+                "operationId": "GET /serviceengine/{uuid}/ndtable/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5492,6 +5905,11 @@
         },
         "/serviceengine/{uuid}/ip6stat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ip6stat/",
+                "operationId": "GET /serviceengine/{uuid}/ip6stat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5555,6 +5973,11 @@
         },
         "/serviceengine/{uuid}/icmp6stat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/icmp6stat/",
+                "operationId": "GET /serviceengine/{uuid}/icmp6stat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5618,6 +6041,11 @@
         },
         "/serviceengine/{uuid}/natstat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/natstat/",
+                "operationId": "GET /serviceengine/{uuid}/natstat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5681,6 +6109,11 @@
         },
         "/serviceengine/{uuid}/nat-flows/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/nat-flows/",
+                "operationId": "GET /serviceengine/{uuid}/nat-flows/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5744,6 +6177,11 @@
         },
         "/serviceengine/{uuid}/network-service/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/network-service/",
+                "operationId": "GET /serviceengine/{uuid}/network-service/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5807,6 +6245,11 @@
         },
         "/serviceengine/{uuid}/natpolicystats/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/natpolicystats/",
+                "operationId": "GET /serviceengine/{uuid}/natpolicystats/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5870,6 +6313,11 @@
         },
         "/serviceengine/{uuid}/vrf-ip-info/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/vrf-ip-info/",
+                "operationId": "GET /serviceengine/{uuid}/vrf-ip-info/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5933,6 +6381,11 @@
         },
         "/serviceengine/{uuid}/ratelimiting/rl/internal/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ratelimiting/rl/internal/",
+                "operationId": "GET /serviceengine/{uuid}/ratelimiting/rl/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -5996,6 +6449,11 @@
         },
         "/serviceengine/{uuid}/ratelimiting/msf/internal/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/ratelimiting/msf/internal/",
+                "operationId": "GET /serviceengine/{uuid}/ratelimiting/msf/internal/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6059,6 +6517,11 @@
         },
         "/serviceengine/{uuid}/routestat/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/routestat/",
+                "operationId": "GET /serviceengine/{uuid}/routestat/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6122,6 +6585,11 @@
         },
         "/serviceengine/{uuid}/route-flows/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/route-flows/",
+                "operationId": "GET /serviceengine/{uuid}/route-flows/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6185,6 +6653,11 @@
         },
         "/serviceengine/{uuid}/objsync/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/objsync/",
+                "operationId": "GET /serviceengine/{uuid}/objsync/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6248,6 +6721,11 @@
         },
         "/serviceengine/{uuid}/resolverdb/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/resolverdb/",
+                "operationId": "GET /serviceengine/{uuid}/resolverdb/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6311,6 +6789,11 @@
         },
         "/serviceengine/{uuid}/resolverdbsummary/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/resolverdbsummary/",
+                "operationId": "GET /serviceengine/{uuid}/resolverdbsummary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6374,6 +6857,11 @@
         },
         "/serviceengine/{uuid}/botuacacheruntime/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/botuacacheruntime/",
+                "operationId": "GET /serviceengine/{uuid}/botuacacheruntime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6437,6 +6925,11 @@
         },
         "/serviceengine/{uuid}/botuacachestatsruntime/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/botuacachestatsruntime/",
+                "operationId": "GET /serviceengine/{uuid}/botuacachestatsruntime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6500,6 +6993,11 @@
         },
         "/serviceengine/{uuid}/placement/summary/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/placement/summary/",
+                "operationId": "GET /serviceengine/{uuid}/placement/summary/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6563,6 +7061,11 @@
         },
         "/serviceengine/{uuid}/placement/detail/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/placement/detail/",
+                "operationId": "GET /serviceengine/{uuid}/placement/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6626,6 +7129,11 @@
         },
         "/serviceengine/{uuid}/adaptiveevents/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/adaptiveevents/",
+                "operationId": "GET /serviceengine/{uuid}/adaptiveevents/",
                 "consumes": [
                     "application/json"
                 ],
@@ -6689,6 +7197,11 @@
         },
         "/serviceengine/{uuid}/dpmetrics/": {
             "get": {
+                "tags": [
+                    "ServiceEngine"
+                ],
+                "description": "/serviceengine/{uuid}/dpmetrics/",
+                "operationId": "GET /serviceengine/{uuid}/dpmetrics/",
                 "consumes": [
                     "application/json"
                 ],

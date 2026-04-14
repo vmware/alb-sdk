@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure gslbgeodbprofile <key>\n- show gslbgeodbprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "GslbGeoDbProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/gslbgeodbprofile": {
             "get": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile",
+                "operationId": "GET /gslbgeodbprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile",
+                "operationId": "POST /gslbgeodbprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile/{uuid}",
+                "operationId": "PUT /gslbgeodbprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile/{uuid}",
+                "operationId": "PATCH /gslbgeodbprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile/{uuid}",
+                "operationId": "DELETE /gslbgeodbprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/gslbgeodbprofile/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "GslbGeoDbProfile"
+                ],
+                "description": "/gslbgeodbprofile/{uuid}/runtime/",
+                "operationId": "GET /gslbgeodbprofile/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],

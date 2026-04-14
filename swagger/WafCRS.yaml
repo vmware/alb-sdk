@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: WafCRS
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /wafcrs:
         get:
+            tags:
+                - WafCRS
+            description: /wafcrs
+            operationId: GET /wafcrs
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafCRSApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafCRS
+            description: /wafcrs
+            operationId: POST /wafcrs
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafCRS"
-                401:
+                "401":
                     description: log in failed
     /wafcrs/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafCRS"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafCRS
+            description: /wafcrs/{uuid}
+            operationId: PUT /wafcrs/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafCRS"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafCRS
+            description: /wafcrs/{uuid}
+            operationId: PATCH /wafcrs/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafCRS"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafCRS
+            description: /wafcrs/{uuid}
+            operationId: DELETE /wafcrs/{uuid}
             consumes:
                 -   application/json
             produces:

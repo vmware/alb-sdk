@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show nsxt segment <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "NsxtSegmentRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/nsxtsegmentruntime": {
             "get": {
+                "tags": [
+                    "NsxtSegmentRuntime"
+                ],
+                "description": "/nsxtsegmentruntime",
+                "operationId": "GET /nsxtsegmentruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NsxtSegmentRuntime"
+                ],
+                "description": "/nsxtsegmentruntime",
+                "operationId": "POST /nsxtsegmentruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "NsxtSegmentRuntime"
+                ],
+                "description": "/nsxtsegmentruntime/{uuid}",
+                "operationId": "PUT /nsxtsegmentruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "NsxtSegmentRuntime"
+                ],
+                "description": "/nsxtsegmentruntime/{uuid}",
+                "operationId": "PATCH /nsxtsegmentruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "NsxtSegmentRuntime"
+                ],
+                "description": "/nsxtsegmentruntime/{uuid}",
+                "operationId": "DELETE /nsxtsegmentruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

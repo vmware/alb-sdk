@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: SystemReport
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /systemreport:
         get:
+            tags:
+                - SystemReport
+            description: /systemreport
+            operationId: GET /systemreport
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReportApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SystemReport
+            description: /systemreport
+            operationId: POST /systemreport
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
     /systemreport/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: PUT /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: PATCH /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemReport"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SystemReport
+            description: /systemreport/{uuid}
+            operationId: DELETE /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:

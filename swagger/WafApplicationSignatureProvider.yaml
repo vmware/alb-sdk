@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: WafApplicationSignatureProvider
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /wafapplicationsignatureprovider:
         get:
+            tags:
+                - WafApplicationSignatureProvider
+            description: /wafapplicationsignatureprovider
+            operationId: GET /wafapplicationsignatureprovider
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafApplicationSignatureProviderApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - WafApplicationSignatureProvider
+            description: /wafapplicationsignatureprovider
+            operationId: POST /wafapplicationsignatureprovider
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafApplicationSignatureProvider"
-                401:
+                "401":
                     description: log in failed
     /wafapplicationsignatureprovider/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafApplicationSignatureProvider"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - WafApplicationSignatureProvider
+            description: /wafapplicationsignatureprovider/{uuid}
+            operationId: PUT /wafapplicationsignatureprovider/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafApplicationSignatureProvider"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - WafApplicationSignatureProvider
+            description: /wafapplicationsignatureprovider/{uuid}
+            operationId: PATCH /wafapplicationsignatureprovider/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WafApplicationSignatureProvider"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - WafApplicationSignatureProvider
+            description: /wafapplicationsignatureprovider/{uuid}
+            operationId: DELETE /wafapplicationsignatureprovider/{uuid}
             consumes:
                 -   application/json
             produces:

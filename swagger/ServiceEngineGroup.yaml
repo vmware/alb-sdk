@@ -32,6 +32,10 @@ info:
           ```
 
 
+tags:
+  - name: ServiceEngineGroup
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -40,6 +44,10 @@ basePath: /api
 paths:
     /serviceenginegroup:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: GET /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -162,13 +170,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: POST /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -203,11 +215,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}:
         get:
@@ -267,13 +279,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PUT /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -318,13 +334,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PATCH /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -369,13 +389,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: DELETE /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -423,6 +447,10 @@ paths:
 
     /serviceenginegroup/{uuid}/redistribute:
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/redistribute
+            operationId: POST /serviceenginegroup/{uuid}/redistribute
             consumes:
                 -   application/json
             produces:
@@ -464,14 +492,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/clear:
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/clear
+            operationId: POST /serviceenginegroup/clear
             consumes:
                 -   application/json
             produces:
@@ -508,15 +540,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /serviceenginegroup/{uuid}/runtime/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/runtime/
+            operationId: GET /serviceenginegroup/{uuid}/runtime/
             consumes:
                 -   application/json
             produces:
@@ -550,14 +586,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/summary/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/summary/
+            operationId: GET /serviceenginegroup/{uuid}/placement/summary/
             consumes:
                 -   application/json
             produces:
@@ -591,14 +631,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/detail/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/detail/
+            operationId: GET /serviceenginegroup/{uuid}/placement/detail/
             consumes:
                 -   application/json
             produces:
@@ -632,14 +676,18 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}/placement/ineligible/:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}/placement/ineligible/
+            operationId: GET /serviceenginegroup/{uuid}/placement/ineligible/
             consumes:
                 -   application/json
             produces:
@@ -673,11 +721,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     CloudFlavor:

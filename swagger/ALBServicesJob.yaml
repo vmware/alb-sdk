@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ALBServicesJob
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /albservicesjob:
         get:
+            tags:
+                - ALBServicesJob
+            description: /albservicesjob
+            operationId: GET /albservicesjob
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesJobApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ALBServicesJob
+            description: /albservicesjob
+            operationId: POST /albservicesjob
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesJob"
-                401:
+                "401":
                     description: log in failed
     /albservicesjob/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesJob"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ALBServicesJob
+            description: /albservicesjob/{uuid}
+            operationId: PUT /albservicesjob/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesJob"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ALBServicesJob
+            description: /albservicesjob/{uuid}
+            operationId: PATCH /albservicesjob/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesJob"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ALBServicesJob
+            description: /albservicesjob/{uuid}
+            operationId: DELETE /albservicesjob/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show vinfra virtualmachine <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "VIMgrVMRuntime"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vimgrvmruntime": {
             "get": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime",
+                "operationId": "GET /vimgrvmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime",
+                "operationId": "POST /vimgrvmruntime",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "PUT /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "PATCH /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VIMgrVMRuntime"
+                ],
+                "description": "/vimgrvmruntime/{uuid}",
+                "operationId": "DELETE /vimgrvmruntime/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show backupconfiguration <key>\n- configure backupconfiguration <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "BackupConfiguration"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/backupconfiguration": {
             "get": {
+                "tags": [
+                    "BackupConfiguration"
+                ],
+                "description": "/backupconfiguration",
+                "operationId": "GET /backupconfiguration",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "BackupConfiguration"
+                ],
+                "description": "/backupconfiguration",
+                "operationId": "POST /backupconfiguration",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "BackupConfiguration"
+                ],
+                "description": "/backupconfiguration/{uuid}",
+                "operationId": "PUT /backupconfiguration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "BackupConfiguration"
+                ],
+                "description": "/backupconfiguration/{uuid}",
+                "operationId": "PATCH /backupconfiguration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "BackupConfiguration"
+                ],
+                "description": "/backupconfiguration/{uuid}",
+                "operationId": "DELETE /backupconfiguration/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

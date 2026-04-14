@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure networksecuritypolicy <key>\n- show networksecuritypolicy <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "NetworkSecurityPolicy"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/networksecuritypolicy": {
             "get": {
+                "tags": [
+                    "NetworkSecurityPolicy"
+                ],
+                "description": "/networksecuritypolicy",
+                "operationId": "GET /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "NetworkSecurityPolicy"
+                ],
+                "description": "/networksecuritypolicy",
+                "operationId": "POST /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "NetworkSecurityPolicy"
+                ],
+                "description": "/networksecuritypolicy/{uuid}",
+                "operationId": "PUT /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "NetworkSecurityPolicy"
+                ],
+                "description": "/networksecuritypolicy/{uuid}",
+                "operationId": "PATCH /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "NetworkSecurityPolicy"
+                ],
+                "description": "/networksecuritypolicy/{uuid}",
+                "operationId": "DELETE /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

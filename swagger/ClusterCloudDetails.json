@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure clusterclouddetails <key>\n- show clusterclouddetails <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ClusterCloudDetails"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/clusterclouddetails": {
             "get": {
+                "tags": [
+                    "ClusterCloudDetails"
+                ],
+                "description": "/clusterclouddetails",
+                "operationId": "GET /clusterclouddetails",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ClusterCloudDetails"
+                ],
+                "description": "/clusterclouddetails",
+                "operationId": "POST /clusterclouddetails",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ClusterCloudDetails"
+                ],
+                "description": "/clusterclouddetails/{uuid}",
+                "operationId": "PUT /clusterclouddetails/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ClusterCloudDetails"
+                ],
+                "description": "/clusterclouddetails/{uuid}",
+                "operationId": "PATCH /clusterclouddetails/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ClusterCloudDetails"
+                ],
+                "description": "/clusterclouddetails/{uuid}",
+                "operationId": "DELETE /clusterclouddetails/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

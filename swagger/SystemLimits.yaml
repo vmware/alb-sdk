@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: SystemLimits
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /systemlimits:
         get:
+            tags:
+                - SystemLimits
+            description: /systemlimits
+            operationId: GET /systemlimits
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemLimitsApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SystemLimits
+            description: /systemlimits
+            operationId: POST /systemlimits
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemLimits"
-                401:
+                "401":
                     description: log in failed
     /systemlimits/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemLimits"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SystemLimits
+            description: /systemlimits/{uuid}
+            operationId: PUT /systemlimits/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemLimits"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SystemLimits
+            description: /systemlimits/{uuid}
+            operationId: PATCH /systemlimits/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SystemLimits"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SystemLimits
+            description: /systemlimits/{uuid}
+            operationId: DELETE /systemlimits/{uuid}
             consumes:
                 -   application/json
             produces:

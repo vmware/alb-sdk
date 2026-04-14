@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: SiteVersion
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /siteversion:
         get:
+            tags:
+                - SiteVersion
+            description: /siteversion
+            operationId: GET /siteversion
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersionApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SiteVersion
+            description: /siteversion
+            operationId: POST /siteversion
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
     /siteversion/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: PUT /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: PATCH /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SiteVersion"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SiteVersion
+            description: /siteversion/{uuid}
+            operationId: DELETE /siteversion/{uuid}
             consumes:
                 -   application/json
             produces:

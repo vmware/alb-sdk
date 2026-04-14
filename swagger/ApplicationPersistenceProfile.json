@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure applicationpersistenceprofile <key>\n- show applicationpersistenceprofile <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ApplicationPersistenceProfile"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/applicationpersistenceprofile": {
             "get": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile",
+                "operationId": "GET /applicationpersistenceprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile",
+                "operationId": "POST /applicationpersistenceprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "PUT /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "PATCH /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}",
+                "operationId": "DELETE /applicationpersistenceprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/applicationpersistenceprofile/{uuid}/federated_info/": {
             "get": {
+                "tags": [
+                    "ApplicationPersistenceProfile"
+                ],
+                "description": "/applicationpersistenceprofile/{uuid}/federated_info/",
+                "operationId": "GET /applicationpersistenceprofile/{uuid}/federated_info/",
                 "consumes": [
                     "application/json"
                 ],

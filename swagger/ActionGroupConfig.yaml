@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ActionGroupConfig
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /actiongroupconfig:
         get:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig
+            operationId: GET /actiongroupconfig
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfigApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig
+            operationId: POST /actiongroupconfig
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
     /actiongroupconfig/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: PUT /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: PATCH /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ActionGroupConfig"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ActionGroupConfig
+            description: /actiongroupconfig/{uuid}
+            operationId: DELETE /actiongroupconfig/{uuid}
             consumes:
                 -   application/json
             produces:

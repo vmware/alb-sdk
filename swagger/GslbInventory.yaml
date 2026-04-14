@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: GslbInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /gslb-inventory:
         get:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory
+            operationId: GET /gslb-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory
+            operationId: POST /gslb-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
     /gslb-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: PUT /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: PATCH /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - GslbInventory
+            description: /gslb-inventory/{uuid}
+            operationId: DELETE /gslb-inventory/{uuid}
             consumes:
                 -   application/json
             produces:

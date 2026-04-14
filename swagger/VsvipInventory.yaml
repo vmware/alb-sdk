@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: VsvipInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vsvip-inventory:
         get:
+            tags:
+                - VsvipInventory
+            description: /vsvip-inventory
+            operationId: GET /vsvip-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsvipInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VsvipInventory
+            description: /vsvip-inventory
+            operationId: POST /vsvip-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsvipInventory"
-                401:
+                "401":
                     description: log in failed
     /vsvip-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsvipInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VsvipInventory
+            description: /vsvip-inventory/{uuid}
+            operationId: PUT /vsvip-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsvipInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VsvipInventory
+            description: /vsvip-inventory/{uuid}
+            operationId: PATCH /vsvip-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsvipInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VsvipInventory
+            description: /vsvip-inventory/{uuid}
+            operationId: DELETE /vsvip-inventory/{uuid}
             consumes:
                 -   application/json
             produces:

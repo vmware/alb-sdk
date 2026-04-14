@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: Tenant
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /tenant:
         get:
+            tags:
+                - Tenant
+            description: /tenant
+            operationId: GET /tenant
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/TenantApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Tenant
+            description: /tenant
+            operationId: POST /tenant
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
     /tenant/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: PUT /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: PATCH /tenant/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Tenant"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Tenant
+            description: /tenant/{uuid}
+            operationId: DELETE /tenant/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show siteversion <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "SiteVersion"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/siteversion": {
             "get": {
+                "tags": [
+                    "SiteVersion"
+                ],
+                "description": "/siteversion",
+                "operationId": "GET /siteversion",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "SiteVersion"
+                ],
+                "description": "/siteversion",
+                "operationId": "POST /siteversion",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "SiteVersion"
+                ],
+                "description": "/siteversion/{uuid}",
+                "operationId": "PUT /siteversion/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "SiteVersion"
+                ],
+                "description": "/siteversion/{uuid}",
+                "operationId": "PATCH /siteversion/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "SiteVersion"
+                ],
+                "description": "/siteversion/{uuid}",
+                "operationId": "DELETE /siteversion/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

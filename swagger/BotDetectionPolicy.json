@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure botdetectionpolicy <key>\n- show botdetectionpolicy <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "BotDetectionPolicy"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/botdetectionpolicy": {
             "get": {
+                "tags": [
+                    "BotDetectionPolicy"
+                ],
+                "description": "/botdetectionpolicy",
+                "operationId": "GET /botdetectionpolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "BotDetectionPolicy"
+                ],
+                "description": "/botdetectionpolicy",
+                "operationId": "POST /botdetectionpolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "BotDetectionPolicy"
+                ],
+                "description": "/botdetectionpolicy/{uuid}",
+                "operationId": "PUT /botdetectionpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "BotDetectionPolicy"
+                ],
+                "description": "/botdetectionpolicy/{uuid}",
+                "operationId": "PATCH /botdetectionpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "BotDetectionPolicy"
+                ],
+                "description": "/botdetectionpolicy/{uuid}",
+                "operationId": "DELETE /botdetectionpolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

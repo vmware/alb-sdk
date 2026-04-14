@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure testsedatastorelevel3 <key>\n- show testsedatastorelevel3 <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "TestSeDatastoreLevel3"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/testsedatastorelevel3": {
             "get": {
+                "tags": [
+                    "TestSeDatastoreLevel3"
+                ],
+                "description": "/testsedatastorelevel3",
+                "operationId": "GET /testsedatastorelevel3",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "TestSeDatastoreLevel3"
+                ],
+                "description": "/testsedatastorelevel3",
+                "operationId": "POST /testsedatastorelevel3",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "TestSeDatastoreLevel3"
+                ],
+                "description": "/testsedatastorelevel3/{uuid}",
+                "operationId": "PUT /testsedatastorelevel3/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "TestSeDatastoreLevel3"
+                ],
+                "description": "/testsedatastorelevel3/{uuid}",
+                "operationId": "PATCH /testsedatastorelevel3/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "TestSeDatastoreLevel3"
+                ],
+                "description": "/testsedatastorelevel3/{uuid}",
+                "operationId": "DELETE /testsedatastorelevel3/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

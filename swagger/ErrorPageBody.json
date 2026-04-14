@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure errorpagebody <key>\n- show errorpagebody <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ErrorPageBody"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/errorpagebody": {
             "get": {
+                "tags": [
+                    "ErrorPageBody"
+                ],
+                "description": "/errorpagebody",
+                "operationId": "GET /errorpagebody",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ErrorPageBody"
+                ],
+                "description": "/errorpagebody",
+                "operationId": "POST /errorpagebody",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ErrorPageBody"
+                ],
+                "description": "/errorpagebody/{uuid}",
+                "operationId": "PUT /errorpagebody/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ErrorPageBody"
+                ],
+                "description": "/errorpagebody/{uuid}",
+                "operationId": "PATCH /errorpagebody/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ErrorPageBody"
+                ],
+                "description": "/errorpagebody/{uuid}",
+                "operationId": "DELETE /errorpagebody/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

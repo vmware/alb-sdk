@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show vsinventory <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "VsInventory"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/virtualservice-inventory": {
             "get": {
+                "tags": [
+                    "VsInventory"
+                ],
+                "description": "/virtualservice-inventory",
+                "operationId": "GET /virtualservice-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VsInventory"
+                ],
+                "description": "/virtualservice-inventory",
+                "operationId": "POST /virtualservice-inventory",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VsInventory"
+                ],
+                "description": "/virtualservice-inventory/{uuid}",
+                "operationId": "PUT /virtualservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VsInventory"
+                ],
+                "description": "/virtualservice-inventory/{uuid}",
+                "operationId": "PATCH /virtualservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VsInventory"
+                ],
+                "description": "/virtualservice-inventory/{uuid}",
+                "operationId": "DELETE /virtualservice-inventory/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

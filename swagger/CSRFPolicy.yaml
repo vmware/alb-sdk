@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: CSRFPolicy
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /csrfpolicy:
         get:
+            tags:
+                - CSRFPolicy
+            description: /csrfpolicy
+            operationId: GET /csrfpolicy
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CSRFPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CSRFPolicy
+            description: /csrfpolicy
+            operationId: POST /csrfpolicy
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CSRFPolicy"
-                401:
+                "401":
                     description: log in failed
     /csrfpolicy/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CSRFPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CSRFPolicy
+            description: /csrfpolicy/{uuid}
+            operationId: PUT /csrfpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CSRFPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CSRFPolicy
+            description: /csrfpolicy/{uuid}
+            operationId: PATCH /csrfpolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CSRFPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CSRFPolicy
+            description: /csrfpolicy/{uuid}
+            operationId: DELETE /csrfpolicy/{uuid}
             consumes:
                 -   application/json
             produces:

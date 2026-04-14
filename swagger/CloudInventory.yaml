@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: CloudInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /cloud-inventory:
         get:
+            tags:
+                - CloudInventory
+            description: /cloud-inventory
+            operationId: GET /cloud-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - CloudInventory
+            description: /cloud-inventory
+            operationId: POST /cloud-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudInventory"
-                401:
+                "401":
                     description: log in failed
     /cloud-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - CloudInventory
+            description: /cloud-inventory/{uuid}
+            operationId: PUT /cloud-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - CloudInventory
+            description: /cloud-inventory/{uuid}
+            operationId: PATCH /cloud-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/CloudInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - CloudInventory
+            description: /cloud-inventory/{uuid}
+            operationId: DELETE /cloud-inventory/{uuid}
             consumes:
                 -   application/json
             produces:

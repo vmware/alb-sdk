@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: VIMgrSEVMRuntime
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /vimgrsevmruntime:
         get:
+            tags:
+                - VIMgrSEVMRuntime
+            description: /vimgrsevmruntime
+            operationId: GET /vimgrsevmruntime
             consumes:
                 -   application/json
             produces:
@@ -148,13 +156,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrSEVMRuntimeApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VIMgrSEVMRuntime
+            description: /vimgrsevmruntime
+            operationId: POST /vimgrsevmruntime
             consumes:
                 -   application/json
             produces:
@@ -189,11 +201,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrSEVMRuntime"
-                401:
+                "401":
                     description: log in failed
     /vimgrsevmruntime/{uuid}:
         get:
@@ -253,13 +265,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrSEVMRuntime"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VIMgrSEVMRuntime
+            description: /vimgrsevmruntime/{uuid}
+            operationId: PUT /vimgrsevmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -304,13 +320,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrSEVMRuntime"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VIMgrSEVMRuntime
+            description: /vimgrsevmruntime/{uuid}
+            operationId: PATCH /vimgrsevmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -355,13 +375,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VIMgrSEVMRuntime"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VIMgrSEVMRuntime
+            description: /vimgrsevmruntime/{uuid}
+            operationId: DELETE /vimgrsevmruntime/{uuid}
             consumes:
                 -   application/json
             produces:

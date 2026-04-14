@@ -17,6 +17,10 @@ info:
         ```
 
 
+tags:
+  - name: ControllerPortalRegistration
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -25,6 +29,10 @@ basePath: /api
 paths:
     /controllerportalregistration:
         get:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration
+            operationId: GET /controllerportalregistration
             consumes:
                 -   application/json
             produces:
@@ -84,13 +92,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistrationApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration
+            operationId: POST /controllerportalregistration
             consumes:
                 -   application/json
             produces:
@@ -125,11 +137,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
     /controllerportalregistration/{uuid}:
         get:
@@ -189,13 +201,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: PUT /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -240,13 +256,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: PATCH /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -291,13 +311,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ControllerPortalRegistration"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ControllerPortalRegistration
+            description: /controllerportalregistration/{uuid}
+            operationId: DELETE /controllerportalregistration/{uuid}
             consumes:
                 -   application/json
             produces:

@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: Webhook
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /webhook:
         get:
+            tags:
+                - Webhook
+            description: /webhook
+            operationId: GET /webhook
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/WebhookApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Webhook
+            description: /webhook
+            operationId: POST /webhook
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
     /webhook/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: PUT /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: PATCH /webhook/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Webhook"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Webhook
+            description: /webhook/{uuid}
+            operationId: DELETE /webhook/{uuid}
             consumes:
                 -   application/json
             produces:

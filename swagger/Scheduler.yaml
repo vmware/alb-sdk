@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: Scheduler
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /scheduler:
         get:
+            tags:
+                - Scheduler
+            description: /scheduler
+            operationId: GET /scheduler
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SchedulerApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - Scheduler
+            description: /scheduler
+            operationId: POST /scheduler
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Scheduler"
-                401:
+                "401":
                     description: log in failed
     /scheduler/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Scheduler"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - Scheduler
+            description: /scheduler/{uuid}
+            operationId: PUT /scheduler/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Scheduler"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - Scheduler
+            description: /scheduler/{uuid}
+            operationId: PATCH /scheduler/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/Scheduler"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - Scheduler
+            description: /scheduler/{uuid}
+            operationId: DELETE /scheduler/{uuid}
             consumes:
                 -   application/json
             produces:

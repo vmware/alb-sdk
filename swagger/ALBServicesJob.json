@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ALBServicesJob"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/albservicesjob": {
             "get": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob",
+                "operationId": "GET /albservicesjob",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob",
+                "operationId": "POST /albservicesjob",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "PUT /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "PATCH /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ALBServicesJob"
+                ],
+                "description": "/albservicesjob/{uuid}",
+                "operationId": "DELETE /albservicesjob/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

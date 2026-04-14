@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: DnsPolicy
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /dnspolicy:
         get:
+            tags:
+                - DnsPolicy
+            description: /dnspolicy
+            operationId: GET /dnspolicy
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DnsPolicyApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - DnsPolicy
+            description: /dnspolicy
+            operationId: POST /dnspolicy
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DnsPolicy"
-                401:
+                "401":
                     description: log in failed
     /dnspolicy/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DnsPolicy"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - DnsPolicy
+            description: /dnspolicy/{uuid}
+            operationId: PUT /dnspolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DnsPolicy"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - DnsPolicy
+            description: /dnspolicy/{uuid}
+            operationId: PATCH /dnspolicy/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/DnsPolicy"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - DnsPolicy
+            description: /dnspolicy/{uuid}
+            operationId: DELETE /dnspolicy/{uuid}
             consumes:
                 -   application/json
             produces:

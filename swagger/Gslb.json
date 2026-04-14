@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure gslb <key>\n- show gslb <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "Gslb"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/gslb": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb",
+                "operationId": "GET /gslb",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb",
+                "operationId": "POST /gslb",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "PUT /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "PATCH /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}",
+                "operationId": "DELETE /gslb/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/gslb/{uuid}/runtime/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/",
+                "operationId": "GET /gslb/{uuid}/runtime/",
                 "consumes": [
                     "application/json"
                 ],
@@ -565,6 +603,11 @@
         },
         "/gslb/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/detail/",
+                "operationId": "GET /gslb/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -628,6 +671,11 @@
         },
         "/gslb/{uuid}/runtime/internal/": {
             "get": {
+                "tags": [
+                    "Gslb"
+                ],
+                "description": "/gslb/{uuid}/runtime/internal/",
+                "operationId": "GET /gslb/{uuid}/runtime/internal/",
                 "consumes": [
                     "application/json"
                 ],

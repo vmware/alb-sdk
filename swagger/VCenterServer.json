@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure vcenterserver <key>\n- show vcenterserver <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "VCenterServer"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/vcenterserver": {
             "get": {
+                "tags": [
+                    "VCenterServer"
+                ],
+                "description": "/vcenterserver",
+                "operationId": "GET /vcenterserver",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "VCenterServer"
+                ],
+                "description": "/vcenterserver",
+                "operationId": "POST /vcenterserver",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "VCenterServer"
+                ],
+                "description": "/vcenterserver/{uuid}",
+                "operationId": "PUT /vcenterserver/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "VCenterServer"
+                ],
+                "description": "/vcenterserver/{uuid}",
+                "operationId": "PATCH /vcenterserver/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "VCenterServer"
+                ],
+                "description": "/vcenterserver/{uuid}",
+                "operationId": "DELETE /vcenterserver/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- show job <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "JobEntry"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/jobs": {
             "get": {
+                "tags": [
+                    "JobEntry"
+                ],
+                "description": "/jobs",
+                "operationId": "GET /jobs",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "JobEntry"
+                ],
+                "description": "/jobs",
+                "operationId": "POST /jobs",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "JobEntry"
+                ],
+                "description": "/jobs/{uuid}",
+                "operationId": "PUT /jobs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "JobEntry"
+                ],
+                "description": "/jobs/{uuid}",
+                "operationId": "PATCH /jobs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "JobEntry"
+                ],
+                "description": "/jobs/{uuid}",
+                "operationId": "DELETE /jobs/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

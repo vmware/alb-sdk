@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: VsInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /virtualservice-inventory:
         get:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory
+            operationId: GET /virtualservice-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory
+            operationId: POST /virtualservice-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
     /virtualservice-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: PUT /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: PATCH /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/VsInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - VsInventory
+            description: /virtualservice-inventory/{uuid}
+            operationId: DELETE /virtualservice-inventory/{uuid}
             consumes:
                 -   application/json
             produces:

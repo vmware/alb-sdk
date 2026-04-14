@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: SnmpTrapProfile
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -28,6 +32,10 @@ basePath: /api
 paths:
     /snmptrapprofile:
         get:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile
+            operationId: GET /snmptrapprofile
             consumes:
                 -   application/json
             produces:
@@ -87,13 +95,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SnmpTrapProfileApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile
+            operationId: POST /snmptrapprofile
             consumes:
                 -   application/json
             produces:
@@ -128,11 +140,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SnmpTrapProfile"
-                401:
+                "401":
                     description: log in failed
     /snmptrapprofile/{uuid}:
         get:
@@ -192,13 +204,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SnmpTrapProfile"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile/{uuid}
+            operationId: PUT /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -243,13 +259,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SnmpTrapProfile"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile/{uuid}
+            operationId: PATCH /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -294,13 +314,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SnmpTrapProfile"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile/{uuid}
+            operationId: DELETE /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -348,6 +372,10 @@ paths:
 
     /snmptrapprofile/{uuid}/testsnmptrap:
         post:
+            tags:
+                - SnmpTrapProfile
+            description: /snmptrapprofile/{uuid}/testsnmptrap
+            operationId: POST /snmptrapprofile/{uuid}/testsnmptrap
             consumes:
                 -   application/json
             produces:
@@ -387,11 +415,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
 definitions:

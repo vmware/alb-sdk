@@ -20,6 +20,10 @@ info:
         ```
 
 
+tags:
+  - name: SystemConfiguration
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic

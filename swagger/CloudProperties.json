@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure cloudproperties\n- show cloudproperties\n```\n"
     },
+    "tags": [
+        {
+            "name": "CloudProperties"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/cloudproperties": {
             "get": {
+                "tags": [
+                    "CloudProperties"
+                ],
+                "description": "/cloudproperties",
+                "operationId": "GET /cloudproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "CloudProperties"
+                ],
+                "description": "/cloudproperties",
+                "operationId": "POST /cloudproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "CloudProperties"
+                ],
+                "description": "/cloudproperties/{uuid}",
+                "operationId": "PUT /cloudproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "CloudProperties"
+                ],
+                "description": "/cloudproperties/{uuid}",
+                "operationId": "PATCH /cloudproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "CloudProperties"
+                ],
+                "description": "/cloudproperties/{uuid}",
+                "operationId": "DELETE /cloudproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -502,6 +535,11 @@
         },
         "/controllerproperties": {
             "get": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties",
+                "operationId": "GET /controllerproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -601,6 +639,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties",
+                "operationId": "POST /controllerproperties",
                 "consumes": [
                     "application/json"
                 ],
@@ -760,6 +803,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties/{uuid}",
+                "operationId": "PUT /controllerproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -837,6 +885,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties/{uuid}",
+                "operationId": "PATCH /controllerproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -914,6 +967,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ControllerProperties"
+                ],
+                "description": "/controllerproperties/{uuid}",
+                "operationId": "DELETE /controllerproperties/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

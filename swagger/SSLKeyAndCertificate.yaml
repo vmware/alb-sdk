@@ -42,6 +42,10 @@ info:
           ```
 
 
+tags:
+  - name: SSLKeyAndCertificate
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -50,6 +54,10 @@ basePath: /api
 paths:
     /sslkeyandcertificate:
         get:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate
+            operationId: GET /sslkeyandcertificate
             consumes:
                 -   application/json
             produces:
@@ -109,13 +117,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLKeyAndCertificateApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate
+            operationId: POST /sslkeyandcertificate
             consumes:
                 -   application/json
             produces:
@@ -150,11 +162,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLKeyAndCertificate"
-                401:
+                "401":
                     description: log in failed
     /sslkeyandcertificate/{uuid}:
         get:
@@ -214,13 +226,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLKeyAndCertificate"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate/{uuid}
+            operationId: PUT /sslkeyandcertificate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -265,13 +281,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLKeyAndCertificate"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate/{uuid}
+            operationId: PATCH /sslkeyandcertificate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -316,13 +336,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/SSLKeyAndCertificate"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate/{uuid}
+            operationId: DELETE /sslkeyandcertificate/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -370,6 +394,10 @@ paths:
 
     /sslkeyandcertificate/{uuid}/renew:
         post:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate/{uuid}/renew
+            operationId: POST /sslkeyandcertificate/{uuid}/renew
             consumes:
                 -   application/json
             produces:
@@ -411,15 +439,19 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 
     /sslkeyandcertificate/{uuid}/federated_info/:
         get:
+            tags:
+                - SSLKeyAndCertificate
+            description: /sslkeyandcertificate/{uuid}/federated_info/
+            operationId: GET /sslkeyandcertificate/{uuid}/federated_info/
             consumes:
                 -   application/json
             produces:
@@ -453,11 +485,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         type: string
-                401:
+                "401":
                     description: log in failed
 definitions:
     CertificateAuthority:

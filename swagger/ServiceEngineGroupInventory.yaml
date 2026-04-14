@@ -18,6 +18,10 @@ info:
         ```
 
 
+tags:
+  - name: ServiceEngineGroupInventory
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -26,6 +30,10 @@ basePath: /api
 paths:
     /serviceenginegroup-inventory:
         get:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory
+            operationId: GET /serviceenginegroup-inventory
             consumes:
                 -   application/json
             produces:
@@ -85,13 +93,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventoryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory
+            operationId: POST /serviceenginegroup-inventory
             consumes:
                 -   application/json
             produces:
@@ -126,11 +138,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup-inventory/{uuid}:
         get:
@@ -190,13 +202,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: PUT /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -241,13 +257,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: PATCH /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -292,13 +312,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupInventory"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroupInventory
+            description: /serviceenginegroup-inventory/{uuid}
+            operationId: DELETE /serviceenginegroup-inventory/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -347,6 +371,10 @@ paths:
 
     /serviceenginegroup:
         get:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: GET /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -406,13 +434,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroupApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup
+            operationId: POST /serviceenginegroup
             consumes:
                 -   application/json
             produces:
@@ -447,11 +479,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
     /serviceenginegroup/{uuid}:
         get:
@@ -511,13 +543,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PUT /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -562,13 +598,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: PATCH /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -613,13 +653,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ServiceEngineGroup"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ServiceEngineGroup
+            description: /serviceenginegroup/{uuid}
+            operationId: DELETE /serviceenginegroup/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -668,6 +712,10 @@ paths:
 
     /upgradestatussummary:
         get:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary
+            operationId: GET /upgradestatussummary
             consumes:
                 -   application/json
             produces:
@@ -727,13 +775,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummaryApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary
+            operationId: POST /upgradestatussummary
             consumes:
                 -   application/json
             produces:
@@ -768,11 +820,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
     /upgradestatussummary/{uuid}:
         get:
@@ -832,13 +884,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: PUT /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -883,13 +939,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: PATCH /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -934,13 +994,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/UpgradeStatusSummary"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - UpgradeStatusSummary
+            description: /upgradestatussummary/{uuid}
+            operationId: DELETE /upgradestatussummary/{uuid}
             consumes:
                 -   application/json
             produces:

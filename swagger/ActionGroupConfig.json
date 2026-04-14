@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure actiongroupconfig <key>\n- show actiongroupconfig <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "ActionGroupConfig"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/actiongroupconfig": {
             "get": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig",
+                "operationId": "GET /actiongroupconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,6 +132,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig",
+                "operationId": "POST /actiongroupconfig",
                 "consumes": [
                     "application/json"
                 ],
@@ -278,6 +296,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "PUT /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -355,6 +378,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "PATCH /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -432,6 +460,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "ActionGroupConfig"
+                ],
+                "description": "/actiongroupconfig/{uuid}",
+                "operationId": "DELETE /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

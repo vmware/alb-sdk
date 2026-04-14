@@ -19,6 +19,10 @@ info:
         ```
 
 
+tags:
+  - name: ALBServicesFileDownload
+schemes:
+  - https
 securityDefinitions:
     basicAuth:
         type: basic
@@ -27,6 +31,10 @@ basePath: /api
 paths:
     /albservicesfiledownload:
         get:
+            tags:
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload
+            operationId: GET /albservicesfiledownload
             consumes:
                 -   application/json
             produces:
@@ -86,13 +94,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileDownloadApiResponse"
-                401:
+                "401":
                     description: log in failed
         post:
+            tags:
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload
+            operationId: POST /albservicesfiledownload
             consumes:
                 -   application/json
             produces:
@@ -127,11 +139,11 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileDownload"
-                401:
+                "401":
                     description: log in failed
     /albservicesfiledownload/{uuid}:
         get:
@@ -191,13 +203,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileDownload"
-                401:
+                "401":
                     description: log in failed
         put:
+            tags:
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}
+            operationId: PUT /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -242,13 +258,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileDownload"
-                401:
+                "401":
                     description: log in failed
         patch:
+            tags:
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}
+            operationId: PATCH /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -293,13 +313,17 @@ paths:
             security:
                 - basicAuth: []
             responses:
-                200:
+                "200":
                     description: OK
                     schema:
                         $ref: "#/definitions/ALBServicesFileDownload"
-                401:
+                "401":
                     description: log in failed
         delete:
+            tags:
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}
+            operationId: DELETE /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:

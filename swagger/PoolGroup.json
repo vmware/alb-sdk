@@ -10,6 +10,14 @@
         },
         "description": "CLI\n```\n- configure poolgroup <key>\n- show poolgroup <key>\n- clear poolgroup <key>\n```\n"
     },
+    "tags": [
+        {
+            "name": "PoolGroup"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
     "securityDefinitions": {
         "basicAuth": {
             "type": "basic",
@@ -20,6 +28,11 @@
     "paths": {
         "/poolgroup": {
             "get": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup",
+                "operationId": "GET /poolgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -208,6 +221,11 @@
                 }
             },
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup",
+                "operationId": "POST /poolgroup",
                 "consumes": [
                     "application/json"
                 ],
@@ -367,6 +385,11 @@
                 }
             },
             "put": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}",
+                "operationId": "PUT /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,6 +467,11 @@
                 }
             },
             "patch": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}",
+                "operationId": "PATCH /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -521,6 +549,11 @@
                 }
             },
             "delete": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}",
+                "operationId": "DELETE /poolgroup/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -591,6 +624,11 @@
         },
         "/poolgroup/clear": {
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/clear",
+                "operationId": "POST /poolgroup/clear",
                 "consumes": [
                     "application/json"
                 ],
@@ -659,6 +697,11 @@
         },
         "/poolgroup/{uuid}/runtime/detail/": {
             "get": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/runtime/detail/",
+                "operationId": "GET /poolgroup/{uuid}/runtime/detail/",
                 "consumes": [
                     "application/json"
                 ],
@@ -722,6 +765,11 @@
         },
         "/poolgroup/{uuid}/enable_primary_pool/clear": {
             "post": {
+                "tags": [
+                    "PoolGroup"
+                ],
+                "description": "/poolgroup/{uuid}/enable_primary_pool/clear",
+                "operationId": "POST /poolgroup/{uuid}/enable_primary_pool/clear",
                 "consumes": [
                     "application/json"
                 ],
