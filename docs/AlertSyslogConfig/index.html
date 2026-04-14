@@ -202,21 +202,79 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#alertsyslogconfigGet"><code><span class="http-method">get</span> /alertsyslogconfig</code></a></li>
-  <li><a href="#alertsyslogconfigPost"><code><span class="http-method">post</span> /alertsyslogconfig</code></a></li>
-  <li><a href="#alertsyslogconfigUuidDelete"><code><span class="http-method">delete</span> /alertsyslogconfig/{uuid}</code></a></li>
+  <li><a href="#dELETE /alertsyslogconfig/{uuid}"><code><span class="http-method">delete</span> /alertsyslogconfig/{uuid}</code></a></li>
+  <li><a href="#gET /alertsyslogconfig"><code><span class="http-method">get</span> /alertsyslogconfig</code></a></li>
+  <li><a href="#pATCH /alertsyslogconfig/{uuid}"><code><span class="http-method">patch</span> /alertsyslogconfig/{uuid}</code></a></li>
+  <li><a href="#pOST /alertsyslogconfig"><code><span class="http-method">post</span> /alertsyslogconfig</code></a></li>
+  <li><a href="#pOST /alertsyslogconfig/{uuid}/testsyslog"><code><span class="http-method">post</span> /alertsyslogconfig/{uuid}/testsyslog</code></a></li>
+  <li><a href="#pUT /alertsyslogconfig/{uuid}"><code><span class="http-method">put</span> /alertsyslogconfig/{uuid}</code></a></li>
   <li><a href="#alertsyslogconfigUuidGet"><code><span class="http-method">get</span> /alertsyslogconfig/{uuid}</code></a></li>
-  <li><a href="#alertsyslogconfigUuidPatch"><code><span class="http-method">patch</span> /alertsyslogconfig/{uuid}</code></a></li>
-  <li><a href="#alertsyslogconfigUuidPut"><code><span class="http-method">put</span> /alertsyslogconfig/{uuid}</code></a></li>
-  <li><a href="#alertsyslogconfigUuidTestsyslogPost"><code><span class="http-method">post</span> /alertsyslogconfig/{uuid}/testsyslog</code></a></li>
   </ol>
 
-  <div class="method"><a name="alertsyslogconfigGet"/>
+  <div class="method"><a name="dELETE /alertsyslogconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertsyslogconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /alertsyslogconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertsyslogconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /alertsyslogconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /alertsyslogconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /alertsyslogconfig</span>)</div>
+    <div class="method-notes">/alertsyslogconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -301,12 +359,98 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertsyslogconfigPost"/>
+  <div class="method"><a name="pATCH /alertsyslogconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertsyslogconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /alertsyslogconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertsyslogconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertSyslogConfig object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "syslog_servers" : [ {
+    "udp" : true,
+    "ssl_key_and_certificate_ref" : "aeiou",
+    "tls_enable" : true,
+    "format" : "aeiou",
+    "syslog_server" : "aeiou",
+    "pkiprofile_ref" : "aeiou",
+    "syslog_server_port" : "",
+    "anon_auth" : true,
+    "strict_cert_verify" : true
+  } ],
+  "sender_hostname" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /alertsyslogconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /alertsyslogconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /alertsyslogconfig</span>)</div>
+    <div class="method-notes">/alertsyslogconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -375,12 +519,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertsyslogconfigUuidDelete"/>
+  <div class="method"><a name="pOST /alertsyslogconfig/{uuid}/testsyslog"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertsyslogconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /alertsyslogconfig/{uuid}/testsyslog</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /alertsyslogconfig/{uuid}/testsyslog</span>)</div>
+    <div class="method-notes">/alertsyslogconfig/{uuid}/testsyslog</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -395,14 +539,14 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-
-
-    <h3 class="field-label">Query parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">name (optional)</div>
+      <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestSyslogSnmpParams </div>
     </div>  <!-- field-items -->
+
+
 
 
     <h3 class="field-label">Return type</h3>
@@ -425,11 +569,97 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
+    <h4 class="field-label">200</h4>
+    OK
         <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /alertsyslogconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertsyslogconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /alertsyslogconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertsyslogconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertSyslogConfig object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "syslog_servers" : [ {
+    "udp" : true,
+    "ssl_key_and_certificate_ref" : "aeiou",
+    "tls_enable" : true,
+    "format" : "aeiou",
+    "syslog_server" : "aeiou",
+    "pkiprofile_ref" : "aeiou",
+    "syslog_server_port" : "",
+    "anon_auth" : true,
+    "strict_cert_verify" : true
+  } ],
+  "sender_hostname" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -516,236 +746,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertsyslogconfigUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertsyslogconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertSyslogConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "syslog_servers" : [ {
-    "udp" : true,
-    "ssl_key_and_certificate_ref" : "aeiou",
-    "tls_enable" : true,
-    "format" : "aeiou",
-    "syslog_server" : "aeiou",
-    "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : "",
-    "anon_auth" : true,
-    "strict_cert_verify" : true
-  } ],
-  "sender_hostname" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertsyslogconfigUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertsyslogconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertSyslogConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "syslog_servers" : [ {
-    "udp" : true,
-    "ssl_key_and_certificate_ref" : "aeiou",
-    "tls_enable" : true,
-    "format" : "aeiou",
-    "syslog_server" : "aeiou",
-    "pkiprofile_ref" : "aeiou",
-    "syslog_server_port" : "",
-    "anon_auth" : true,
-    "strict_cert_verify" : true
-  } ],
-  "sender_hostname" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertSyslogConfig">AlertSyslogConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertsyslogconfigUuidTestsyslogPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /alertsyslogconfig/{uuid}/testsyslog</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertsyslogconfigUuidTestsyslogPost</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertTestSyslogSnmpParams </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

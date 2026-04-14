@@ -202,20 +202,78 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#csrfpolicyGet"><code><span class="http-method">get</span> /csrfpolicy</code></a></li>
-  <li><a href="#csrfpolicyPost"><code><span class="http-method">post</span> /csrfpolicy</code></a></li>
-  <li><a href="#csrfpolicyUuidDelete"><code><span class="http-method">delete</span> /csrfpolicy/{uuid}</code></a></li>
+  <li><a href="#dELETE /csrfpolicy/{uuid}"><code><span class="http-method">delete</span> /csrfpolicy/{uuid}</code></a></li>
+  <li><a href="#gET /csrfpolicy"><code><span class="http-method">get</span> /csrfpolicy</code></a></li>
+  <li><a href="#pATCH /csrfpolicy/{uuid}"><code><span class="http-method">patch</span> /csrfpolicy/{uuid}</code></a></li>
+  <li><a href="#pOST /csrfpolicy"><code><span class="http-method">post</span> /csrfpolicy</code></a></li>
+  <li><a href="#pUT /csrfpolicy/{uuid}"><code><span class="http-method">put</span> /csrfpolicy/{uuid}</code></a></li>
   <li><a href="#csrfpolicyUuidGet"><code><span class="http-method">get</span> /csrfpolicy/{uuid}</code></a></li>
-  <li><a href="#csrfpolicyUuidPatch"><code><span class="http-method">patch</span> /csrfpolicy/{uuid}</code></a></li>
-  <li><a href="#csrfpolicyUuidPut"><code><span class="http-method">put</span> /csrfpolicy/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="csrfpolicyGet"/>
+  <div class="method"><a name="dELETE /csrfpolicy/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /csrfpolicy/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /csrfpolicy/{uuid}</span>)</div>
+    <div class="method-notes">/csrfpolicy/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /csrfpolicy"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /csrfpolicy</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">csrfpolicyGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /csrfpolicy</span>)</div>
+    <div class="method-notes">/csrfpolicy</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -383,12 +441,181 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="csrfpolicyPost"/>
+  <div class="method"><a name="pATCH /csrfpolicy/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /csrfpolicy/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /csrfpolicy/{uuid}</span>)</div>
+    <div class="method-notes">/csrfpolicy/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CSRFPolicy object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#CSRFPolicy">CSRFPolicy</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "rules" : [ {
+    "enable" : true,
+    "match" : {
+      "cookie" : {
+        "match_criteria" : "aeiou",
+        "name" : "aeiou",
+        "value" : "aeiou",
+        "match_case" : "aeiou"
+      },
+      "method" : {
+        "match_criteria" : "aeiou",
+        "methods" : [ "aeiou" ]
+      },
+      "host_hdr" : {
+        "match_criteria" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "ip_reputation_type" : {
+        "reputation_types" : [ "aeiou" ],
+        "match_operation" : "aeiou"
+      },
+      "query" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "vs_port" : {
+        "match_criteria" : "aeiou",
+        "ports" : [ "" ]
+      },
+      "hdrs" : [ {
+        "match_criteria" : "aeiou",
+        "hdr" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      } ],
+      "version" : {
+        "match_criteria" : "aeiou",
+        "versions" : [ "aeiou" ]
+      },
+      "tls_fingerprint_match" : {
+        "match_operation" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "fingerprints" : [ "aeiou" ]
+      },
+      "source_ip" : "",
+      "path" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "geo_matches" : [ {
+        "match_operation" : "aeiou",
+        "values" : [ "aeiou" ],
+        "attribute" : "aeiou"
+      } ],
+      "protocol" : {
+        "match_criteria" : "aeiou",
+        "protocols" : "aeiou"
+      },
+      "client_ip" : {
+        "group_refs" : [ "aeiou" ],
+        "match_criteria" : "aeiou",
+        "prefixes" : [ {
+          "ip_addr" : "",
+          "mask" : 123
+        } ],
+        "ranges" : [ {
+          "end" : "",
+          "begin" : ""
+        } ],
+        "addrs" : [ {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        } ]
+      },
+      "bot_detection_result" : {
+        "classifications" : [ {
+          "user_defined_type" : "aeiou",
+          "type" : "aeiou"
+        } ],
+        "match_operation" : "aeiou"
+      }
+    },
+    "name" : "aeiou",
+    "action" : "aeiou",
+    "index" : ""
+  } ],
+  "token_validity_time_min" : "",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "cookie_name" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#CSRFPolicy">CSRFPolicy</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /csrfpolicy"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /csrfpolicy</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">csrfpolicyPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /csrfpolicy</span>)</div>
+    <div class="method-notes">/csrfpolicy</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -540,12 +767,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="csrfpolicyUuidDelete"/>
+  <div class="method"><a name="pUT /csrfpolicy/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /csrfpolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">csrfpolicyUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /csrfpolicy/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /csrfpolicy/{uuid}</span>)</div>
+    <div class="method-notes">/csrfpolicy/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -560,6 +787,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CSRFPolicy object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -572,15 +805,120 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#CSRFPolicy">CSRFPolicy</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "description" : "aeiou",
+  "rules" : [ {
+    "enable" : true,
+    "match" : {
+      "cookie" : {
+        "match_criteria" : "aeiou",
+        "name" : "aeiou",
+        "value" : "aeiou",
+        "match_case" : "aeiou"
+      },
+      "method" : {
+        "match_criteria" : "aeiou",
+        "methods" : [ "aeiou" ]
+      },
+      "host_hdr" : {
+        "match_criteria" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "ip_reputation_type" : {
+        "reputation_types" : [ "aeiou" ],
+        "match_operation" : "aeiou"
+      },
+      "query" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "vs_port" : {
+        "match_criteria" : "aeiou",
+        "ports" : [ "" ]
+      },
+      "hdrs" : [ {
+        "match_criteria" : "aeiou",
+        "hdr" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      } ],
+      "version" : {
+        "match_criteria" : "aeiou",
+        "versions" : [ "aeiou" ]
+      },
+      "tls_fingerprint_match" : {
+        "match_operation" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "fingerprints" : [ "aeiou" ]
+      },
+      "source_ip" : "",
+      "path" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "geo_matches" : [ {
+        "match_operation" : "aeiou",
+        "values" : [ "aeiou" ],
+        "attribute" : "aeiou"
+      } ],
+      "protocol" : {
+        "match_criteria" : "aeiou",
+        "protocols" : "aeiou"
+      },
+      "client_ip" : {
+        "group_refs" : [ "aeiou" ],
+        "match_criteria" : "aeiou",
+        "prefixes" : [ {
+          "ip_addr" : "",
+          "mask" : 123
+        } ],
+        "ranges" : [ {
+          "end" : "",
+          "begin" : ""
+        } ],
+        "addrs" : [ {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        } ]
+      },
+      "bot_detection_result" : {
+        "classifications" : [ {
+          "user_defined_type" : "aeiou",
+          "type" : "aeiou"
+        } ],
+        "match_operation" : "aeiou"
+      }
+    },
+    "name" : "aeiou",
+    "action" : "aeiou",
+    "index" : ""
+  } ],
+  "token_validity_time_min" : "",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "cookie_name" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -590,11 +928,11 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#CSRFPolicy">CSRFPolicy</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -633,344 +971,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#CSRFPolicy">CSRFPolicy</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "rules" : [ {
-    "enable" : true,
-    "match" : {
-      "cookie" : {
-        "match_criteria" : "aeiou",
-        "name" : "aeiou",
-        "value" : "aeiou",
-        "match_case" : "aeiou"
-      },
-      "method" : {
-        "match_criteria" : "aeiou",
-        "methods" : [ "aeiou" ]
-      },
-      "host_hdr" : {
-        "match_criteria" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "ip_reputation_type" : {
-        "reputation_types" : [ "aeiou" ],
-        "match_operation" : "aeiou"
-      },
-      "query" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "vs_port" : {
-        "match_criteria" : "aeiou",
-        "ports" : [ "" ]
-      },
-      "hdrs" : [ {
-        "match_criteria" : "aeiou",
-        "hdr" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      } ],
-      "version" : {
-        "match_criteria" : "aeiou",
-        "versions" : [ "aeiou" ]
-      },
-      "tls_fingerprint_match" : {
-        "match_operation" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "fingerprints" : [ "aeiou" ]
-      },
-      "source_ip" : "",
-      "path" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "geo_matches" : [ {
-        "match_operation" : "aeiou",
-        "values" : [ "aeiou" ],
-        "attribute" : "aeiou"
-      } ],
-      "protocol" : {
-        "match_criteria" : "aeiou",
-        "protocols" : "aeiou"
-      },
-      "client_ip" : {
-        "group_refs" : [ "aeiou" ],
-        "match_criteria" : "aeiou",
-        "prefixes" : [ {
-          "ip_addr" : "",
-          "mask" : 123
-        } ],
-        "ranges" : [ {
-          "end" : "",
-          "begin" : ""
-        } ],
-        "addrs" : [ {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        } ]
-      },
-      "bot_detection_result" : {
-        "classifications" : [ {
-          "user_defined_type" : "aeiou",
-          "type" : "aeiou"
-        } ],
-        "match_operation" : "aeiou"
-      }
-    },
-    "name" : "aeiou",
-    "action" : "aeiou",
-    "index" : ""
-  } ],
-  "token_validity_time_min" : "",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "cookie_name" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#CSRFPolicy">CSRFPolicy</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="csrfpolicyUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /csrfpolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">csrfpolicyUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CSRFPolicy object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#CSRFPolicy">CSRFPolicy</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "description" : "aeiou",
-  "rules" : [ {
-    "enable" : true,
-    "match" : {
-      "cookie" : {
-        "match_criteria" : "aeiou",
-        "name" : "aeiou",
-        "value" : "aeiou",
-        "match_case" : "aeiou"
-      },
-      "method" : {
-        "match_criteria" : "aeiou",
-        "methods" : [ "aeiou" ]
-      },
-      "host_hdr" : {
-        "match_criteria" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "ip_reputation_type" : {
-        "reputation_types" : [ "aeiou" ],
-        "match_operation" : "aeiou"
-      },
-      "query" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "vs_port" : {
-        "match_criteria" : "aeiou",
-        "ports" : [ "" ]
-      },
-      "hdrs" : [ {
-        "match_criteria" : "aeiou",
-        "hdr" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      } ],
-      "version" : {
-        "match_criteria" : "aeiou",
-        "versions" : [ "aeiou" ]
-      },
-      "tls_fingerprint_match" : {
-        "match_operation" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "fingerprints" : [ "aeiou" ]
-      },
-      "source_ip" : "",
-      "path" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "geo_matches" : [ {
-        "match_operation" : "aeiou",
-        "values" : [ "aeiou" ],
-        "attribute" : "aeiou"
-      } ],
-      "protocol" : {
-        "match_criteria" : "aeiou",
-        "protocols" : "aeiou"
-      },
-      "client_ip" : {
-        "group_refs" : [ "aeiou" ],
-        "match_criteria" : "aeiou",
-        "prefixes" : [ {
-          "ip_addr" : "",
-          "mask" : 123
-        } ],
-        "ranges" : [ {
-          "end" : "",
-          "begin" : ""
-        } ],
-        "addrs" : [ {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        } ]
-      },
-      "bot_detection_result" : {
-        "classifications" : [ {
-          "user_defined_type" : "aeiou",
-          "type" : "aeiou"
-        } ],
-        "match_operation" : "aeiou"
-      }
-    },
-    "name" : "aeiou",
-    "action" : "aeiou",
-    "index" : ""
-  } ],
-  "token_validity_time_min" : "",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "cookie_name" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#CSRFPolicy">CSRFPolicy</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="csrfpolicyUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /csrfpolicy/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">csrfpolicyUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; CSRFPolicy object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

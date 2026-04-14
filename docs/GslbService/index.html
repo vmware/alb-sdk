@@ -202,351 +202,15 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#gslbserviceGet"><code><span class="http-method">get</span> /gslbservice</code></a></li>
-  <li><a href="#gslbservicePost"><code><span class="http-method">post</span> /gslbservice</code></a></li>
-  <li><a href="#gslbserviceUuidDelete"><code><span class="http-method">delete</span> /gslbservice/{uuid}</code></a></li>
   <li><a href="#gslbserviceUuidGet"><code><span class="http-method">get</span> /gslbservice/{uuid}</code></a></li>
-  <li><a href="#gslbserviceUuidPatch"><code><span class="http-method">patch</span> /gslbservice/{uuid}</code></a></li>
-  <li><a href="#gslbserviceUuidPut"><code><span class="http-method">put</span> /gslbservice/{uuid}</code></a></li>
-  <li><a href="#gslbserviceUuidRuntimeGet"><code><span class="http-method">get</span> /gslbservice/{uuid}/runtime/</code></a></li>
+  <li><a href="#dELETE /gslbservice/{uuid}"><code><span class="http-method">delete</span> /gslbservice/{uuid}</code></a></li>
+  <li><a href="#gET /gslbservice"><code><span class="http-method">get</span> /gslbservice</code></a></li>
+  <li><a href="#gET /gslbservice/{uuid}/runtime/"><code><span class="http-method">get</span> /gslbservice/{uuid}/runtime/</code></a></li>
+  <li><a href="#pATCH /gslbservice/{uuid}"><code><span class="http-method">patch</span> /gslbservice/{uuid}</code></a></li>
+  <li><a href="#pOST /gslbservice"><code><span class="http-method">post</span> /gslbservice</code></a></li>
+  <li><a href="#pUT /gslbservice/{uuid}"><code><span class="http-method">put</span> /gslbservice/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="gslbserviceGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /gslbservice</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbserviceGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#GslbServiceApiResponse">GslbServiceApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "site_persistence_enabled" : true,
-    "pool_algorithm" : "aeiou",
-    "description" : "aeiou",
-    "uuid" : "aeiou",
-    "enabled" : true,
-    "_last_modified" : "aeiou",
-    "down_response" : {
-      "fallback_ip6" : "",
-      "fallback_ip" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      },
-      "type" : "aeiou",
-      "fallback_cname" : "aeiou"
-    },
-    "hm_off" : true,
-    "wildcard_match" : true,
-    "use_edns_client_subnet" : true,
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "health_monitor_refs" : [ "aeiou" ],
-    "num_dns_ip" : "",
-    "is_federated" : true,
-    "resolve_cname" : true,
-    "topology_policy_enabled" : true,
-    "application_persistence_profile_ref" : "aeiou",
-    "groups" : [ {
-      "min_health_monitors_up" : "",
-      "consistent_hash_mask" : "",
-      "members" : [ {
-        "public_ip" : {
-          "ip" : ""
-        },
-        "fqdn" : "aeiou",
-        "ip" : "",
-        "preference_order" : "",
-        "description" : "aeiou",
-        "enabled" : true,
-        "resolve_fqdn_to_v6" : true,
-        "cloud_uuid" : "aeiou",
-        "hostname" : "aeiou",
-        "vs_uuid" : "aeiou",
-        "cluster_uuid" : "aeiou",
-        "location" : {
-          "location" : {
-            "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-            "name" : "aeiou",
-            "tag" : "aeiou",
-            "longitude" : 1.3579000000000001069366817318950779736042022705078125
-          },
-          "source" : "aeiou"
-        },
-        "ratio" : ""
-      } ],
-      "name" : "aeiou",
-      "description" : "aeiou",
-      "priority" : "",
-      "fallback_algorithm" : "aeiou",
-      "consistent_hash_mask6" : "",
-      "enabled" : true,
-      "algorithm" : "aeiou",
-      "manual_resume" : true
-    } ],
-    "min_members" : "",
-    "controller_health_status_enabled" : true,
-    "created_by" : "aeiou",
-    "ttl" : "",
-    "url" : "aeiou",
-    "domain_names" : [ "aeiou" ],
-    "pki_profile_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "health_monitor_scope" : "aeiou",
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ]
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#GslbServiceApiResponse">GslbServiceApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="gslbservicePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /gslbservice</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbservicePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#GslbService">GslbService</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "site_persistence_enabled" : true,
-  "pool_algorithm" : "aeiou",
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "down_response" : {
-    "fallback_ip6" : "",
-    "fallback_ip" : {
-      "addr" : "aeiou",
-      "type" : "aeiou"
-    },
-    "type" : "aeiou",
-    "fallback_cname" : "aeiou"
-  },
-  "hm_off" : true,
-  "wildcard_match" : true,
-  "use_edns_client_subnet" : true,
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "num_dns_ip" : "",
-  "is_federated" : true,
-  "resolve_cname" : true,
-  "topology_policy_enabled" : true,
-  "application_persistence_profile_ref" : "aeiou",
-  "groups" : [ {
-    "min_health_monitors_up" : "",
-    "consistent_hash_mask" : "",
-    "members" : [ {
-      "public_ip" : {
-        "ip" : ""
-      },
-      "fqdn" : "aeiou",
-      "ip" : "",
-      "preference_order" : "",
-      "description" : "aeiou",
-      "enabled" : true,
-      "resolve_fqdn_to_v6" : true,
-      "cloud_uuid" : "aeiou",
-      "hostname" : "aeiou",
-      "vs_uuid" : "aeiou",
-      "cluster_uuid" : "aeiou",
-      "location" : {
-        "location" : {
-          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-          "name" : "aeiou",
-          "tag" : "aeiou",
-          "longitude" : 1.3579000000000001069366817318950779736042022705078125
-        },
-        "source" : "aeiou"
-      },
-      "ratio" : ""
-    } ],
-    "name" : "aeiou",
-    "description" : "aeiou",
-    "priority" : "",
-    "fallback_algorithm" : "aeiou",
-    "consistent_hash_mask6" : "",
-    "enabled" : true,
-    "algorithm" : "aeiou",
-    "manual_resume" : true
-  } ],
-  "min_members" : "",
-  "controller_health_status_enabled" : true,
-  "created_by" : "aeiou",
-  "ttl" : "",
-  "url" : "aeiou",
-  "domain_names" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "health_monitor_scope" : "aeiou",
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#GslbService">GslbService</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="gslbserviceUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /gslbservice/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbserviceUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="gslbserviceUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -692,12 +356,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="gslbserviceUuidPatch"/>
+  <div class="method"><a name="dELETE /gslbservice/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /gslbservice/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbserviceUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /gslbservice/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /gslbservice/{uuid}</span>)</div>
+    <div class="method-notes">/gslbservice/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -712,12 +376,6 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
-    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -730,94 +388,15 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#GslbService">GslbService</a>
       
+      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "site_persistence_enabled" : true,
-  "pool_algorithm" : "aeiou",
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "down_response" : {
-    "fallback_ip6" : "",
-    "fallback_ip" : {
-      "addr" : "aeiou",
-      "type" : "aeiou"
-    },
-    "type" : "aeiou",
-    "fallback_cname" : "aeiou"
-  },
-  "hm_off" : true,
-  "wildcard_match" : true,
-  "use_edns_client_subnet" : true,
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "num_dns_ip" : "",
-  "is_federated" : true,
-  "resolve_cname" : true,
-  "topology_policy_enabled" : true,
-  "application_persistence_profile_ref" : "aeiou",
-  "groups" : [ {
-    "min_health_monitors_up" : "",
-    "consistent_hash_mask" : "",
-    "members" : [ {
-      "public_ip" : {
-        "ip" : ""
-      },
-      "fqdn" : "aeiou",
-      "ip" : "",
-      "preference_order" : "",
-      "description" : "aeiou",
-      "enabled" : true,
-      "resolve_fqdn_to_v6" : true,
-      "cloud_uuid" : "aeiou",
-      "hostname" : "aeiou",
-      "vs_uuid" : "aeiou",
-      "cluster_uuid" : "aeiou",
-      "location" : {
-        "location" : {
-          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-          "name" : "aeiou",
-          "tag" : "aeiou",
-          "longitude" : 1.3579000000000001069366817318950779736042022705078125
-        },
-        "source" : "aeiou"
-      },
-      "ratio" : ""
-    } ],
-    "name" : "aeiou",
-    "description" : "aeiou",
-    "priority" : "",
-    "fallback_algorithm" : "aeiou",
-    "consistent_hash_mask6" : "",
-    "enabled" : true,
-    "algorithm" : "aeiou",
-    "manual_resume" : true
-  } ],
-  "min_members" : "",
-  "controller_health_status_enabled" : true,
-  "created_by" : "aeiou",
-  "ttl" : "",
-  "url" : "aeiou",
-  "domain_names" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "health_monitor_scope" : "aeiou",
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ]
-}</code></pre>
+    <pre class="example"><code>"aeiou"</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -827,27 +406,21 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#GslbService">GslbService</a>
-    <h4 class="field-label">401</h4>
-    log in failed
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="gslbserviceUuidPut"/>
+  <div class="method"><a name="gET /gslbservice"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /gslbservice/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbserviceUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /gslbservice</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /gslbservice</span>)</div>
+    <div class="method-notes">/gslbservice</div>
 
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -855,25 +428,31 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
-    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
     <div class="field-items">
       <div class="param">name (optional)</div>
 
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
     </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#GslbService">GslbService</a>
+      <a href="#GslbServiceApiResponse">GslbServiceApiResponse</a>
       
     </div>
 
@@ -882,83 +461,87 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "site_persistence_enabled" : true,
-  "pool_algorithm" : "aeiou",
-  "description" : "aeiou",
-  "uuid" : "aeiou",
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "down_response" : {
-    "fallback_ip6" : "",
-    "fallback_ip" : {
-      "addr" : "aeiou",
-      "type" : "aeiou"
-    },
-    "type" : "aeiou",
-    "fallback_cname" : "aeiou"
-  },
-  "hm_off" : true,
-  "wildcard_match" : true,
-  "use_edns_client_subnet" : true,
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "num_dns_ip" : "",
-  "is_federated" : true,
-  "resolve_cname" : true,
-  "topology_policy_enabled" : true,
-  "application_persistence_profile_ref" : "aeiou",
-  "groups" : [ {
-    "min_health_monitors_up" : "",
-    "consistent_hash_mask" : "",
-    "members" : [ {
-      "public_ip" : {
-        "ip" : ""
-      },
-      "fqdn" : "aeiou",
-      "ip" : "",
-      "preference_order" : "",
-      "description" : "aeiou",
-      "enabled" : true,
-      "resolve_fqdn_to_v6" : true,
-      "cloud_uuid" : "aeiou",
-      "hostname" : "aeiou",
-      "vs_uuid" : "aeiou",
-      "cluster_uuid" : "aeiou",
-      "location" : {
-        "location" : {
-          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-          "name" : "aeiou",
-          "tag" : "aeiou",
-          "longitude" : 1.3579000000000001069366817318950779736042022705078125
-        },
-        "source" : "aeiou"
-      },
-      "ratio" : ""
-    } ],
-    "name" : "aeiou",
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "site_persistence_enabled" : true,
+    "pool_algorithm" : "aeiou",
     "description" : "aeiou",
-    "priority" : "",
-    "fallback_algorithm" : "aeiou",
-    "consistent_hash_mask6" : "",
+    "uuid" : "aeiou",
     "enabled" : true,
-    "algorithm" : "aeiou",
-    "manual_resume" : true
-  } ],
-  "min_members" : "",
-  "controller_health_status_enabled" : true,
-  "created_by" : "aeiou",
-  "ttl" : "",
-  "url" : "aeiou",
-  "domain_names" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "health_monitor_scope" : "aeiou",
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
+    "_last_modified" : "aeiou",
+    "down_response" : {
+      "fallback_ip6" : "",
+      "fallback_ip" : {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      },
+      "type" : "aeiou",
+      "fallback_cname" : "aeiou"
+    },
+    "hm_off" : true,
+    "wildcard_match" : true,
+    "use_edns_client_subnet" : true,
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "health_monitor_refs" : [ "aeiou" ],
+    "num_dns_ip" : "",
+    "is_federated" : true,
+    "resolve_cname" : true,
+    "topology_policy_enabled" : true,
+    "application_persistence_profile_ref" : "aeiou",
+    "groups" : [ {
+      "min_health_monitors_up" : "",
+      "consistent_hash_mask" : "",
+      "members" : [ {
+        "public_ip" : {
+          "ip" : ""
+        },
+        "fqdn" : "aeiou",
+        "ip" : "",
+        "preference_order" : "",
+        "description" : "aeiou",
+        "enabled" : true,
+        "resolve_fqdn_to_v6" : true,
+        "cloud_uuid" : "aeiou",
+        "hostname" : "aeiou",
+        "vs_uuid" : "aeiou",
+        "cluster_uuid" : "aeiou",
+        "location" : {
+          "location" : {
+            "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+            "name" : "aeiou",
+            "tag" : "aeiou",
+            "longitude" : 1.3579000000000001069366817318950779736042022705078125
+          },
+          "source" : "aeiou"
+        },
+        "ratio" : ""
+      } ],
+      "name" : "aeiou",
+      "description" : "aeiou",
+      "priority" : "",
+      "fallback_algorithm" : "aeiou",
+      "consistent_hash_mask6" : "",
+      "enabled" : true,
+      "algorithm" : "aeiou",
+      "manual_resume" : true
+    } ],
+    "min_members" : "",
+    "controller_health_status_enabled" : true,
+    "created_by" : "aeiou",
+    "ttl" : "",
+    "url" : "aeiou",
+    "domain_names" : [ "aeiou" ],
+    "pki_profile_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "health_monitor_scope" : "aeiou",
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ]
   } ]
 }</code></pre>
 
@@ -972,18 +555,18 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#GslbService">GslbService</a>
+        <a href="#GslbServiceApiResponse">GslbServiceApiResponse</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="gslbserviceUuidRuntimeGet"/>
+  <div class="method"><a name="gET /gslbservice/{uuid}/runtime/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /gslbservice/{uuid}/runtime/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">gslbserviceUuidRuntimeGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /gslbservice/{uuid}/runtime/</span>)</div>
+    <div class="method-notes">/gslbservice/{uuid}/runtime/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1025,6 +608,423 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /gslbservice/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /gslbservice/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /gslbservice/{uuid}</span>)</div>
+    <div class="method-notes">/gslbservice/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#GslbService">GslbService</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "site_persistence_enabled" : true,
+  "pool_algorithm" : "aeiou",
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "down_response" : {
+    "fallback_ip6" : "",
+    "fallback_ip" : {
+      "addr" : "aeiou",
+      "type" : "aeiou"
+    },
+    "type" : "aeiou",
+    "fallback_cname" : "aeiou"
+  },
+  "hm_off" : true,
+  "wildcard_match" : true,
+  "use_edns_client_subnet" : true,
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "num_dns_ip" : "",
+  "is_federated" : true,
+  "resolve_cname" : true,
+  "topology_policy_enabled" : true,
+  "application_persistence_profile_ref" : "aeiou",
+  "groups" : [ {
+    "min_health_monitors_up" : "",
+    "consistent_hash_mask" : "",
+    "members" : [ {
+      "public_ip" : {
+        "ip" : ""
+      },
+      "fqdn" : "aeiou",
+      "ip" : "",
+      "preference_order" : "",
+      "description" : "aeiou",
+      "enabled" : true,
+      "resolve_fqdn_to_v6" : true,
+      "cloud_uuid" : "aeiou",
+      "hostname" : "aeiou",
+      "vs_uuid" : "aeiou",
+      "cluster_uuid" : "aeiou",
+      "location" : {
+        "location" : {
+          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+          "name" : "aeiou",
+          "tag" : "aeiou",
+          "longitude" : 1.3579000000000001069366817318950779736042022705078125
+        },
+        "source" : "aeiou"
+      },
+      "ratio" : ""
+    } ],
+    "name" : "aeiou",
+    "description" : "aeiou",
+    "priority" : "",
+    "fallback_algorithm" : "aeiou",
+    "consistent_hash_mask6" : "",
+    "enabled" : true,
+    "algorithm" : "aeiou",
+    "manual_resume" : true
+  } ],
+  "min_members" : "",
+  "controller_health_status_enabled" : true,
+  "created_by" : "aeiou",
+  "ttl" : "",
+  "url" : "aeiou",
+  "domain_names" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "health_monitor_scope" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#GslbService">GslbService</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /gslbservice"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /gslbservice</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /gslbservice</span>)</div>
+    <div class="method-notes">/gslbservice</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#GslbService">GslbService</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "site_persistence_enabled" : true,
+  "pool_algorithm" : "aeiou",
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "down_response" : {
+    "fallback_ip6" : "",
+    "fallback_ip" : {
+      "addr" : "aeiou",
+      "type" : "aeiou"
+    },
+    "type" : "aeiou",
+    "fallback_cname" : "aeiou"
+  },
+  "hm_off" : true,
+  "wildcard_match" : true,
+  "use_edns_client_subnet" : true,
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "num_dns_ip" : "",
+  "is_federated" : true,
+  "resolve_cname" : true,
+  "topology_policy_enabled" : true,
+  "application_persistence_profile_ref" : "aeiou",
+  "groups" : [ {
+    "min_health_monitors_up" : "",
+    "consistent_hash_mask" : "",
+    "members" : [ {
+      "public_ip" : {
+        "ip" : ""
+      },
+      "fqdn" : "aeiou",
+      "ip" : "",
+      "preference_order" : "",
+      "description" : "aeiou",
+      "enabled" : true,
+      "resolve_fqdn_to_v6" : true,
+      "cloud_uuid" : "aeiou",
+      "hostname" : "aeiou",
+      "vs_uuid" : "aeiou",
+      "cluster_uuid" : "aeiou",
+      "location" : {
+        "location" : {
+          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+          "name" : "aeiou",
+          "tag" : "aeiou",
+          "longitude" : 1.3579000000000001069366817318950779736042022705078125
+        },
+        "source" : "aeiou"
+      },
+      "ratio" : ""
+    } ],
+    "name" : "aeiou",
+    "description" : "aeiou",
+    "priority" : "",
+    "fallback_algorithm" : "aeiou",
+    "consistent_hash_mask6" : "",
+    "enabled" : true,
+    "algorithm" : "aeiou",
+    "manual_resume" : true
+  } ],
+  "min_members" : "",
+  "controller_health_status_enabled" : true,
+  "created_by" : "aeiou",
+  "ttl" : "",
+  "url" : "aeiou",
+  "domain_names" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "health_monitor_scope" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#GslbService">GslbService</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /gslbservice/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /gslbservice/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /gslbservice/{uuid}</span>)</div>
+    <div class="method-notes">/gslbservice/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; GslbService object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#GslbService">GslbService</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "site_persistence_enabled" : true,
+  "pool_algorithm" : "aeiou",
+  "description" : "aeiou",
+  "uuid" : "aeiou",
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "down_response" : {
+    "fallback_ip6" : "",
+    "fallback_ip" : {
+      "addr" : "aeiou",
+      "type" : "aeiou"
+    },
+    "type" : "aeiou",
+    "fallback_cname" : "aeiou"
+  },
+  "hm_off" : true,
+  "wildcard_match" : true,
+  "use_edns_client_subnet" : true,
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "num_dns_ip" : "",
+  "is_federated" : true,
+  "resolve_cname" : true,
+  "topology_policy_enabled" : true,
+  "application_persistence_profile_ref" : "aeiou",
+  "groups" : [ {
+    "min_health_monitors_up" : "",
+    "consistent_hash_mask" : "",
+    "members" : [ {
+      "public_ip" : {
+        "ip" : ""
+      },
+      "fqdn" : "aeiou",
+      "ip" : "",
+      "preference_order" : "",
+      "description" : "aeiou",
+      "enabled" : true,
+      "resolve_fqdn_to_v6" : true,
+      "cloud_uuid" : "aeiou",
+      "hostname" : "aeiou",
+      "vs_uuid" : "aeiou",
+      "cluster_uuid" : "aeiou",
+      "location" : {
+        "location" : {
+          "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+          "name" : "aeiou",
+          "tag" : "aeiou",
+          "longitude" : 1.3579000000000001069366817318950779736042022705078125
+        },
+        "source" : "aeiou"
+      },
+      "ratio" : ""
+    } ],
+    "name" : "aeiou",
+    "description" : "aeiou",
+    "priority" : "",
+    "fallback_algorithm" : "aeiou",
+    "consistent_hash_mask6" : "",
+    "enabled" : true,
+    "algorithm" : "aeiou",
+    "manual_resume" : true
+  } ],
+  "min_members" : "",
+  "controller_health_status_enabled" : true,
+  "created_by" : "aeiou",
+  "ttl" : "",
+  "url" : "aeiou",
+  "domain_names" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "health_monitor_scope" : "aeiou",
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#GslbService">GslbService</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

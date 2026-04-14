@@ -202,318 +202,14 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#wafpolicypsmgroupGet"><code><span class="http-method">get</span> /wafpolicypsmgroup</code></a></li>
-  <li><a href="#wafpolicypsmgroupPost"><code><span class="http-method">post</span> /wafpolicypsmgroup</code></a></li>
-  <li><a href="#wafpolicypsmgroupUuidDelete"><code><span class="http-method">delete</span> /wafpolicypsmgroup/{uuid}</code></a></li>
   <li><a href="#wafpolicypsmgroupUuidGet"><code><span class="http-method">get</span> /wafpolicypsmgroup/{uuid}</code></a></li>
-  <li><a href="#wafpolicypsmgroupUuidPatch"><code><span class="http-method">patch</span> /wafpolicypsmgroup/{uuid}</code></a></li>
-  <li><a href="#wafpolicypsmgroupUuidPut"><code><span class="http-method">put</span> /wafpolicypsmgroup/{uuid}</code></a></li>
+  <li><a href="#dELETE /wafpolicypsmgroup/{uuid}"><code><span class="http-method">delete</span> /wafpolicypsmgroup/{uuid}</code></a></li>
+  <li><a href="#gET /wafpolicypsmgroup"><code><span class="http-method">get</span> /wafpolicypsmgroup</code></a></li>
+  <li><a href="#pATCH /wafpolicypsmgroup/{uuid}"><code><span class="http-method">patch</span> /wafpolicypsmgroup/{uuid}</code></a></li>
+  <li><a href="#pOST /wafpolicypsmgroup"><code><span class="http-method">post</span> /wafpolicypsmgroup</code></a></li>
+  <li><a href="#pUT /wafpolicypsmgroup/{uuid}"><code><span class="http-method">put</span> /wafpolicypsmgroup/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="wafpolicypsmgroupGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /wafpolicypsmgroup</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicypsmgroupGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#WafPolicyPSMGroupApiResponse">WafPolicyPSMGroupApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "description" : "aeiou",
-    "hit_action" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "enable" : true,
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "is_learning_group" : true,
-    "locations" : [ {
-      "match" : {
-        "path" : {
-          "match_criteria" : "aeiou",
-          "string_group_refs" : [ "aeiou" ],
-          "match_decoded_string" : true,
-          "match_str" : [ "aeiou" ],
-          "match_case" : "aeiou"
-        },
-        "methods" : {
-          "match_criteria" : "aeiou",
-          "methods" : [ "aeiou" ]
-        },
-        "host" : {
-          "match_criteria" : "aeiou",
-          "value" : [ "aeiou" ],
-          "match_case" : "aeiou"
-        }
-      },
-      "name" : "aeiou",
-      "description" : "aeiou",
-      "index" : "",
-      "rules" : [ {
-        "match_value_string_group_ref" : "aeiou",
-        "match_value_pattern" : "aeiou",
-        "description" : "aeiou",
-        "index" : "",
-        "match_case" : "aeiou",
-        "mode" : "aeiou",
-        "rule_id" : "aeiou",
-        "match_elements" : [ {
-          "excluded" : true,
-          "name" : "aeiou",
-          "index" : "",
-          "match_op" : "aeiou",
-          "match_case" : "aeiou",
-          "sub_element" : "aeiou"
-        } ],
-        "match_value_string_group_key" : "aeiou",
-        "enable" : true,
-        "match_value_max_length" : "",
-        "name" : "aeiou",
-        "paranoia_level" : "aeiou"
-      } ]
-    } ],
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "miss_action" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#WafPolicyPSMGroupApiResponse">WafPolicyPSMGroupApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="wafpolicypsmgroupPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /wafpolicypsmgroup</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicypsmgroupPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; WafPolicyPSMGroup object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#WafPolicyPSMGroup">WafPolicyPSMGroup</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "description" : "aeiou",
-  "hit_action" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "enable" : true,
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "is_learning_group" : true,
-  "locations" : [ {
-    "match" : {
-      "path" : {
-        "match_criteria" : "aeiou",
-        "string_group_refs" : [ "aeiou" ],
-        "match_decoded_string" : true,
-        "match_str" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      },
-      "methods" : {
-        "match_criteria" : "aeiou",
-        "methods" : [ "aeiou" ]
-      },
-      "host" : {
-        "match_criteria" : "aeiou",
-        "value" : [ "aeiou" ],
-        "match_case" : "aeiou"
-      }
-    },
-    "name" : "aeiou",
-    "description" : "aeiou",
-    "index" : "",
-    "rules" : [ {
-      "match_value_string_group_ref" : "aeiou",
-      "match_value_pattern" : "aeiou",
-      "description" : "aeiou",
-      "index" : "",
-      "match_case" : "aeiou",
-      "mode" : "aeiou",
-      "rule_id" : "aeiou",
-      "match_elements" : [ {
-        "excluded" : true,
-        "name" : "aeiou",
-        "index" : "",
-        "match_op" : "aeiou",
-        "match_case" : "aeiou",
-        "sub_element" : "aeiou"
-      } ],
-      "match_value_string_group_key" : "aeiou",
-      "enable" : true,
-      "match_value_max_length" : "",
-      "name" : "aeiou",
-      "paranoia_level" : "aeiou"
-    } ]
-  } ],
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "miss_action" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#WafPolicyPSMGroup">WafPolicyPSMGroup</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="wafpolicypsmgroupUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /wafpolicypsmgroup/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicypsmgroupUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="wafpolicypsmgroupUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -643,12 +339,201 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="wafpolicypsmgroupUuidPatch"/>
+  <div class="method"><a name="dELETE /wafpolicypsmgroup/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /wafpolicypsmgroup/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /wafpolicypsmgroup/{uuid}</span>)</div>
+    <div class="method-notes">/wafpolicypsmgroup/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /wafpolicypsmgroup"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /wafpolicypsmgroup</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /wafpolicypsmgroup</span>)</div>
+    <div class="method-notes">/wafpolicypsmgroup</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#WafPolicyPSMGroupApiResponse">WafPolicyPSMGroupApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "description" : "aeiou",
+    "hit_action" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "enable" : true,
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "is_learning_group" : true,
+    "locations" : [ {
+      "match" : {
+        "path" : {
+          "match_criteria" : "aeiou",
+          "string_group_refs" : [ "aeiou" ],
+          "match_decoded_string" : true,
+          "match_str" : [ "aeiou" ],
+          "match_case" : "aeiou"
+        },
+        "methods" : {
+          "match_criteria" : "aeiou",
+          "methods" : [ "aeiou" ]
+        },
+        "host" : {
+          "match_criteria" : "aeiou",
+          "value" : [ "aeiou" ],
+          "match_case" : "aeiou"
+        }
+      },
+      "name" : "aeiou",
+      "description" : "aeiou",
+      "index" : "",
+      "rules" : [ {
+        "match_value_string_group_ref" : "aeiou",
+        "match_value_pattern" : "aeiou",
+        "description" : "aeiou",
+        "index" : "",
+        "match_case" : "aeiou",
+        "mode" : "aeiou",
+        "rule_id" : "aeiou",
+        "match_elements" : [ {
+          "excluded" : true,
+          "name" : "aeiou",
+          "index" : "",
+          "match_op" : "aeiou",
+          "match_case" : "aeiou",
+          "sub_element" : "aeiou"
+        } ],
+        "match_value_string_group_key" : "aeiou",
+        "enable" : true,
+        "match_value_max_length" : "",
+        "name" : "aeiou",
+        "paranoia_level" : "aeiou"
+      } ]
+    } ],
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "miss_action" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#WafPolicyPSMGroupApiResponse">WafPolicyPSMGroupApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /wafpolicypsmgroup/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /wafpolicypsmgroup/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicypsmgroupUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /wafpolicypsmgroup/{uuid}</span>)</div>
+    <div class="method-notes">/wafpolicypsmgroup/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -770,12 +655,127 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="wafpolicypsmgroupUuidPut"/>
+  <div class="method"><a name="pOST /wafpolicypsmgroup"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /wafpolicypsmgroup</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /wafpolicypsmgroup</span>)</div>
+    <div class="method-notes">/wafpolicypsmgroup</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; WafPolicyPSMGroup object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#WafPolicyPSMGroup">WafPolicyPSMGroup</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "description" : "aeiou",
+  "hit_action" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "enable" : true,
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "is_learning_group" : true,
+  "locations" : [ {
+    "match" : {
+      "path" : {
+        "match_criteria" : "aeiou",
+        "string_group_refs" : [ "aeiou" ],
+        "match_decoded_string" : true,
+        "match_str" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      },
+      "methods" : {
+        "match_criteria" : "aeiou",
+        "methods" : [ "aeiou" ]
+      },
+      "host" : {
+        "match_criteria" : "aeiou",
+        "value" : [ "aeiou" ],
+        "match_case" : "aeiou"
+      }
+    },
+    "name" : "aeiou",
+    "description" : "aeiou",
+    "index" : "",
+    "rules" : [ {
+      "match_value_string_group_ref" : "aeiou",
+      "match_value_pattern" : "aeiou",
+      "description" : "aeiou",
+      "index" : "",
+      "match_case" : "aeiou",
+      "mode" : "aeiou",
+      "rule_id" : "aeiou",
+      "match_elements" : [ {
+        "excluded" : true,
+        "name" : "aeiou",
+        "index" : "",
+        "match_op" : "aeiou",
+        "match_case" : "aeiou",
+        "sub_element" : "aeiou"
+      } ],
+      "match_value_string_group_key" : "aeiou",
+      "enable" : true,
+      "match_value_max_length" : "",
+      "name" : "aeiou",
+      "paranoia_level" : "aeiou"
+    } ]
+  } ],
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "miss_action" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#WafPolicyPSMGroup">WafPolicyPSMGroup</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /wafpolicypsmgroup/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /wafpolicypsmgroup/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">wafpolicypsmgroupUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /wafpolicypsmgroup/{uuid}</span>)</div>
+    <div class="method-notes">/wafpolicypsmgroup/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

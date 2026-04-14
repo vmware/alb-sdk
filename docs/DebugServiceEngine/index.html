@@ -202,21 +202,79 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#debugserviceengineGet"><code><span class="http-method">get</span> /debugserviceengine</code></a></li>
-  <li><a href="#debugserviceenginePost"><code><span class="http-method">post</span> /debugserviceengine</code></a></li>
-  <li><a href="#debugserviceengineUuidDelete"><code><span class="http-method">delete</span> /debugserviceengine/{uuid}</code></a></li>
-  <li><a href="#debugserviceengineUuidFaultruntimeGet"><code><span class="http-method">get</span> /debugserviceengine/{uuid}/faultruntime/</code></a></li>
+  <li><a href="#dELETE /debugserviceengine/{uuid}"><code><span class="http-method">delete</span> /debugserviceengine/{uuid}</code></a></li>
+  <li><a href="#gET /debugserviceengine"><code><span class="http-method">get</span> /debugserviceengine</code></a></li>
+  <li><a href="#gET /debugserviceengine/{uuid}/faultruntime/"><code><span class="http-method">get</span> /debugserviceengine/{uuid}/faultruntime/</code></a></li>
+  <li><a href="#pATCH /debugserviceengine/{uuid}"><code><span class="http-method">patch</span> /debugserviceengine/{uuid}</code></a></li>
+  <li><a href="#pOST /debugserviceengine"><code><span class="http-method">post</span> /debugserviceengine</code></a></li>
+  <li><a href="#pUT /debugserviceengine/{uuid}"><code><span class="http-method">put</span> /debugserviceengine/{uuid}</code></a></li>
   <li><a href="#debugserviceengineUuidGet"><code><span class="http-method">get</span> /debugserviceengine/{uuid}</code></a></li>
-  <li><a href="#debugserviceengineUuidPatch"><code><span class="http-method">patch</span> /debugserviceengine/{uuid}</code></a></li>
-  <li><a href="#debugserviceengineUuidPut"><code><span class="http-method">put</span> /debugserviceengine/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="debugserviceengineGet"/>
+  <div class="method"><a name="dELETE /debugserviceengine/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /debugserviceengine/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /debugserviceengine/{uuid}</span>)</div>
+    <div class="method-notes">/debugserviceengine/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /debugserviceengine"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /debugserviceengine</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceengineGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /debugserviceengine</span>)</div>
+    <div class="method-notes">/debugserviceengine</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -409,12 +467,258 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="debugserviceenginePost"/>
+  <div class="method"><a name="gET /debugserviceengine/{uuid}/faultruntime/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /debugserviceengine/{uuid}/faultruntime/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /debugserviceengine/{uuid}/faultruntime/</span>)</div>
+    <div class="method-notes">/debugserviceengine/{uuid}/faultruntime/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /debugserviceengine/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /debugserviceengine/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /debugserviceengine/{uuid}</span>)</div>
+    <div class="method-notes">/debugserviceengine/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugServiceEngine object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#DebugServiceEngine">DebugServiceEngine</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "capture_params" : {
+    "duration" : "",
+    "file_count" : "",
+    "pcap_ng" : true,
+    "enable_ssl_session_key_capture" : true,
+    "pkt_size" : "",
+    "num_pkts" : "",
+    "capture_file_size" : {
+      "percentage_size" : "",
+      "absolute_size" : ""
+    }
+  },
+  "seagent_debug" : [ {
+    "trace_level" : "aeiou",
+    "log_level" : "aeiou",
+    "sub_module" : "aeiou",
+    "log_every_n" : ""
+  } ],
+  "selogagent_debug" : "",
+  "enable_rpc_timing_profiler" : true,
+  "enable_kdump" : true,
+  "benchmark_option" : "aeiou",
+  "flags" : [ {
+    "flag" : "aeiou"
+  } ],
+  "capture" : true,
+  "fault" : {
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
+    "se_mbuf_cl_sanity" : true,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
+    "faults" : [ {
+      "num_skips" : "",
+      "fault_name" : "aeiou",
+      "arg" : "",
+      "function_name" : "aeiou",
+      "num_executions" : ""
+    } ]
+  },
+  "benchmark_action" : "aeiou",
+  "capture_filters" : {
+    "src_port" : "",
+    "ip_proto" : "aeiou",
+    "tcp_ack" : true,
+    "tcp_syn" : true,
+    "tcp_fin" : true,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
+    "tcp_push" : true,
+    "capture_ip" : {
+      "prefixes" : [ {
+        "ip_addr" : "",
+        "mask" : 123
+      } ],
+      "ranges" : [ {
+        "end" : "",
+        "begin" : ""
+      } ],
+      "match_operation" : "aeiou",
+      "addrs" : [ {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      } ]
+    },
+    "capture_ipc" : {
+      "flow_del_probe" : true,
+      "flow_mirror_del" : true,
+      "ipc_tx_res" : true,
+      "ipc_tx_req" : true,
+      "vs_hb" : true,
+      "flow_probe" : true,
+      "ipc_batched" : true,
+      "ipc_rx_req" : true,
+      "flow_mirror_add" : true,
+      "flow_mirror_all" : true,
+      "flow_probe_all" : true,
+      "ipc_rx_res" : true
+    },
+    "dst_port_end" : "",
+    "eth_proto" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "trace_memory" : {
+    "trace_shm_malloc_types" : [ {
+      "shm_malloc_type_index" : ""
+    } ],
+    "trace_malloc_types" : [ {
+      "malloc_type_index" : ""
+    } ]
+  },
+  "debug_ip" : "",
+  "tenant_ref" : "aeiou",
+  "benchmark_layer" : "aeiou",
+  "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "tcpflag" : {
+        "tcp_ack" : true,
+        "tcp_syn" : true,
+        "tcp_fin" : true,
+        "match_operation" : "aeiou",
+        "tcp_push" : true,
+        "tcp_rst" : true,
+        "filter_op" : "aeiou"
+      },
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
+  "cpu_shares" : [ {
+    "shares" : 123,
+    "cpu" : ""
+  } ],
+  "benchmark_rss_hash" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#DebugServiceEngine">DebugServiceEngine</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /debugserviceengine"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /debugserviceengine</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceenginePost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /debugserviceengine</span>)</div>
+    <div class="method-notes">/debugserviceengine</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -591,12 +895,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="debugserviceengineUuidDelete"/>
+  <div class="method"><a name="pUT /debugserviceengine/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /debugserviceengine/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceengineUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /debugserviceengine/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /debugserviceengine/{uuid}</span>)</div>
+    <div class="method-notes">/debugserviceengine/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -611,6 +915,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugServiceEngine object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -623,67 +933,145 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#DebugServiceEngine">DebugServiceEngine</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="debugserviceengineUuidFaultruntimeGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /debugserviceengine/{uuid}/faultruntime/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceengineUuidFaultruntimeGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "capture_params" : {
+    "duration" : "",
+    "file_count" : "",
+    "pcap_ng" : true,
+    "enable_ssl_session_key_capture" : true,
+    "pkt_size" : "",
+    "num_pkts" : "",
+    "capture_file_size" : {
+      "percentage_size" : "",
+      "absolute_size" : ""
+    }
+  },
+  "seagent_debug" : [ {
+    "trace_level" : "aeiou",
+    "log_level" : "aeiou",
+    "sub_module" : "aeiou",
+    "log_every_n" : ""
+  } ],
+  "selogagent_debug" : "",
+  "enable_rpc_timing_profiler" : true,
+  "enable_kdump" : true,
+  "benchmark_option" : "aeiou",
+  "flags" : [ {
+    "flag" : "aeiou"
+  } ],
+  "capture" : true,
+  "fault" : {
+    "se_waf_learning_alloc_fail_frequency" : "",
+    "se_malloc_fail_type" : "",
+    "se_malloc_fail_frequency" : "",
+    "se_mbuf_cl_sanity" : true,
+    "se_waf_alloc_fail_frequency" : "",
+    "se_shm_malloc_fail_type" : "",
+    "se_shm_malloc_fail_frequency" : "",
+    "faults" : [ {
+      "num_skips" : "",
+      "fault_name" : "aeiou",
+      "arg" : "",
+      "function_name" : "aeiou",
+      "num_executions" : ""
+    } ]
+  },
+  "benchmark_action" : "aeiou",
+  "capture_filters" : {
+    "src_port" : "",
+    "ip_proto" : "aeiou",
+    "tcp_ack" : true,
+    "tcp_syn" : true,
+    "tcp_fin" : true,
+    "src_port_range_end" : "",
+    "dst_port_start" : "",
+    "tcp_push" : true,
+    "capture_ip" : {
+      "prefixes" : [ {
+        "ip_addr" : "",
+        "mask" : 123
+      } ],
+      "ranges" : [ {
+        "end" : "",
+        "begin" : ""
+      } ],
+      "match_operation" : "aeiou",
+      "addrs" : [ {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      } ]
+    },
+    "capture_ipc" : {
+      "flow_del_probe" : true,
+      "flow_mirror_del" : true,
+      "ipc_tx_res" : true,
+      "ipc_tx_req" : true,
+      "vs_hb" : true,
+      "flow_probe" : true,
+      "ipc_batched" : true,
+      "ipc_rx_req" : true,
+      "flow_mirror_add" : true,
+      "flow_mirror_all" : true,
+      "flow_probe_all" : true,
+      "ipc_rx_res" : true
+    },
+    "dst_port_end" : "",
+    "eth_proto" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "trace_memory" : {
+    "trace_shm_malloc_types" : [ {
+      "shm_malloc_type_index" : ""
+    } ],
+    "trace_malloc_types" : [ {
+      "malloc_type_index" : ""
+    } ]
+  },
+  "debug_ip" : "",
+  "tenant_ref" : "aeiou",
+  "benchmark_layer" : "aeiou",
+  "name" : "aeiou",
+  "capture_pkt_filter" : {
+    "capture_tcp_filters" : [ {
+      "tcpflag" : {
+        "tcp_ack" : true,
+        "tcp_syn" : true,
+        "tcp_fin" : true,
+        "match_operation" : "aeiou",
+        "tcp_push" : true,
+        "tcp_rst" : true,
+        "filter_op" : "aeiou"
+      },
+      "host_ip" : "",
+      "src_port_range" : {
+        "match_operation" : "aeiou",
+        "src_port_start" : "",
+        "src_port_end" : ""
+      },
+      "dst_port_range" : {
+        "match_operation" : "aeiou",
+        "dst_port_start" : "",
+        "dst_port_end" : ""
+      },
+      "eth_proto" : "aeiou"
+    } ]
+  },
+  "cpu_shares" : [ {
+    "shares" : 123,
+    "cpu" : ""
+  } ],
+  "benchmark_rss_hash" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -695,7 +1083,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#String">String</a>
+        <a href="#DebugServiceEngine">DebugServiceEngine</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
@@ -736,394 +1124,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#DebugServiceEngine">DebugServiceEngine</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "capture_params" : {
-    "duration" : "",
-    "file_count" : "",
-    "pcap_ng" : true,
-    "enable_ssl_session_key_capture" : true,
-    "pkt_size" : "",
-    "num_pkts" : "",
-    "capture_file_size" : {
-      "percentage_size" : "",
-      "absolute_size" : ""
-    }
-  },
-  "seagent_debug" : [ {
-    "trace_level" : "aeiou",
-    "log_level" : "aeiou",
-    "sub_module" : "aeiou",
-    "log_every_n" : ""
-  } ],
-  "selogagent_debug" : "",
-  "enable_rpc_timing_profiler" : true,
-  "enable_kdump" : true,
-  "benchmark_option" : "aeiou",
-  "flags" : [ {
-    "flag" : "aeiou"
-  } ],
-  "capture" : true,
-  "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : "",
-    "se_malloc_fail_type" : "",
-    "se_malloc_fail_frequency" : "",
-    "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : "",
-    "se_shm_malloc_fail_type" : "",
-    "se_shm_malloc_fail_frequency" : "",
-    "faults" : [ {
-      "num_skips" : "",
-      "fault_name" : "aeiou",
-      "arg" : "",
-      "function_name" : "aeiou",
-      "num_executions" : ""
-    } ]
-  },
-  "benchmark_action" : "aeiou",
-  "capture_filters" : {
-    "src_port" : "",
-    "ip_proto" : "aeiou",
-    "tcp_ack" : true,
-    "tcp_syn" : true,
-    "tcp_fin" : true,
-    "src_port_range_end" : "",
-    "dst_port_start" : "",
-    "tcp_push" : true,
-    "capture_ip" : {
-      "prefixes" : [ {
-        "ip_addr" : "",
-        "mask" : 123
-      } ],
-      "ranges" : [ {
-        "end" : "",
-        "begin" : ""
-      } ],
-      "match_operation" : "aeiou",
-      "addrs" : [ {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      } ]
-    },
-    "capture_ipc" : {
-      "flow_del_probe" : true,
-      "flow_mirror_del" : true,
-      "ipc_tx_res" : true,
-      "ipc_tx_req" : true,
-      "vs_hb" : true,
-      "flow_probe" : true,
-      "ipc_batched" : true,
-      "ipc_rx_req" : true,
-      "flow_mirror_add" : true,
-      "flow_mirror_all" : true,
-      "flow_probe_all" : true,
-      "ipc_rx_res" : true
-    },
-    "dst_port_end" : "",
-    "eth_proto" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "trace_memory" : {
-    "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : ""
-    } ],
-    "trace_malloc_types" : [ {
-      "malloc_type_index" : ""
-    } ]
-  },
-  "debug_ip" : "",
-  "tenant_ref" : "aeiou",
-  "benchmark_layer" : "aeiou",
-  "name" : "aeiou",
-  "capture_pkt_filter" : {
-    "capture_tcp_filters" : [ {
-      "tcpflag" : {
-        "tcp_ack" : true,
-        "tcp_syn" : true,
-        "tcp_fin" : true,
-        "match_operation" : "aeiou",
-        "tcp_push" : true,
-        "tcp_rst" : true,
-        "filter_op" : "aeiou"
-      },
-      "host_ip" : "",
-      "src_port_range" : {
-        "match_operation" : "aeiou",
-        "src_port_start" : "",
-        "src_port_end" : ""
-      },
-      "dst_port_range" : {
-        "match_operation" : "aeiou",
-        "dst_port_start" : "",
-        "dst_port_end" : ""
-      },
-      "eth_proto" : "aeiou"
-    } ]
-  },
-  "cpu_shares" : [ {
-    "shares" : 123,
-    "cpu" : ""
-  } ],
-  "benchmark_rss_hash" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#DebugServiceEngine">DebugServiceEngine</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="debugserviceengineUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /debugserviceengine/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceengineUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugServiceEngine object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#DebugServiceEngine">DebugServiceEngine</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "capture_params" : {
-    "duration" : "",
-    "file_count" : "",
-    "pcap_ng" : true,
-    "enable_ssl_session_key_capture" : true,
-    "pkt_size" : "",
-    "num_pkts" : "",
-    "capture_file_size" : {
-      "percentage_size" : "",
-      "absolute_size" : ""
-    }
-  },
-  "seagent_debug" : [ {
-    "trace_level" : "aeiou",
-    "log_level" : "aeiou",
-    "sub_module" : "aeiou",
-    "log_every_n" : ""
-  } ],
-  "selogagent_debug" : "",
-  "enable_rpc_timing_profiler" : true,
-  "enable_kdump" : true,
-  "benchmark_option" : "aeiou",
-  "flags" : [ {
-    "flag" : "aeiou"
-  } ],
-  "capture" : true,
-  "fault" : {
-    "se_waf_learning_alloc_fail_frequency" : "",
-    "se_malloc_fail_type" : "",
-    "se_malloc_fail_frequency" : "",
-    "se_mbuf_cl_sanity" : true,
-    "se_waf_alloc_fail_frequency" : "",
-    "se_shm_malloc_fail_type" : "",
-    "se_shm_malloc_fail_frequency" : "",
-    "faults" : [ {
-      "num_skips" : "",
-      "fault_name" : "aeiou",
-      "arg" : "",
-      "function_name" : "aeiou",
-      "num_executions" : ""
-    } ]
-  },
-  "benchmark_action" : "aeiou",
-  "capture_filters" : {
-    "src_port" : "",
-    "ip_proto" : "aeiou",
-    "tcp_ack" : true,
-    "tcp_syn" : true,
-    "tcp_fin" : true,
-    "src_port_range_end" : "",
-    "dst_port_start" : "",
-    "tcp_push" : true,
-    "capture_ip" : {
-      "prefixes" : [ {
-        "ip_addr" : "",
-        "mask" : 123
-      } ],
-      "ranges" : [ {
-        "end" : "",
-        "begin" : ""
-      } ],
-      "match_operation" : "aeiou",
-      "addrs" : [ {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      } ]
-    },
-    "capture_ipc" : {
-      "flow_del_probe" : true,
-      "flow_mirror_del" : true,
-      "ipc_tx_res" : true,
-      "ipc_tx_req" : true,
-      "vs_hb" : true,
-      "flow_probe" : true,
-      "ipc_batched" : true,
-      "ipc_rx_req" : true,
-      "flow_mirror_add" : true,
-      "flow_mirror_all" : true,
-      "flow_probe_all" : true,
-      "ipc_rx_res" : true
-    },
-    "dst_port_end" : "",
-    "eth_proto" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "trace_memory" : {
-    "trace_shm_malloc_types" : [ {
-      "shm_malloc_type_index" : ""
-    } ],
-    "trace_malloc_types" : [ {
-      "malloc_type_index" : ""
-    } ]
-  },
-  "debug_ip" : "",
-  "tenant_ref" : "aeiou",
-  "benchmark_layer" : "aeiou",
-  "name" : "aeiou",
-  "capture_pkt_filter" : {
-    "capture_tcp_filters" : [ {
-      "tcpflag" : {
-        "tcp_ack" : true,
-        "tcp_syn" : true,
-        "tcp_fin" : true,
-        "match_operation" : "aeiou",
-        "tcp_push" : true,
-        "tcp_rst" : true,
-        "filter_op" : "aeiou"
-      },
-      "host_ip" : "",
-      "src_port_range" : {
-        "match_operation" : "aeiou",
-        "src_port_start" : "",
-        "src_port_end" : ""
-      },
-      "dst_port_range" : {
-        "match_operation" : "aeiou",
-        "dst_port_start" : "",
-        "dst_port_end" : ""
-      },
-      "eth_proto" : "aeiou"
-    } ]
-  },
-  "cpu_shares" : [ {
-    "shares" : 123,
-    "cpu" : ""
-  } ],
-  "benchmark_rss_hash" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#DebugServiceEngine">DebugServiceEngine</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="debugserviceengineUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /debugserviceengine/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugserviceengineUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugServiceEngine object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

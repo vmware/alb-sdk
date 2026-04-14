@@ -202,20 +202,78 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#debugcontrollerGet"><code><span class="http-method">get</span> /debugcontroller</code></a></li>
-  <li><a href="#debugcontrollerPost"><code><span class="http-method">post</span> /debugcontroller</code></a></li>
-  <li><a href="#debugcontrollerUuidDelete"><code><span class="http-method">delete</span> /debugcontroller/{uuid}</code></a></li>
+  <li><a href="#dELETE /debugcontroller/{uuid}"><code><span class="http-method">delete</span> /debugcontroller/{uuid}</code></a></li>
+  <li><a href="#gET /debugcontroller"><code><span class="http-method">get</span> /debugcontroller</code></a></li>
+  <li><a href="#pATCH /debugcontroller/{uuid}"><code><span class="http-method">patch</span> /debugcontroller/{uuid}</code></a></li>
+  <li><a href="#pOST /debugcontroller"><code><span class="http-method">post</span> /debugcontroller</code></a></li>
+  <li><a href="#pUT /debugcontroller/{uuid}"><code><span class="http-method">put</span> /debugcontroller/{uuid}</code></a></li>
   <li><a href="#debugcontrollerUuidGet"><code><span class="http-method">get</span> /debugcontroller/{uuid}</code></a></li>
-  <li><a href="#debugcontrollerUuidPatch"><code><span class="http-method">patch</span> /debugcontroller/{uuid}</code></a></li>
-  <li><a href="#debugcontrollerUuidPut"><code><span class="http-method">put</span> /debugcontroller/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="debugcontrollerGet"/>
+  <div class="method"><a name="dELETE /debugcontroller/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /debugcontroller/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /debugcontroller/{uuid}</span>)</div>
+    <div class="method-notes">/debugcontroller/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /debugcontroller"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /debugcontroller</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugcontrollerGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /debugcontroller</span>)</div>
+    <div class="method-notes">/debugcontroller</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -359,12 +417,157 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="debugcontrollerPost"/>
+  <div class="method"><a name="pATCH /debugcontroller/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /debugcontroller/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /debugcontroller/{uuid}</span>)</div>
+    <div class="method-notes">/debugcontroller/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugController object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#DebugController">DebugController</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "trace_level" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "log_level" : "aeiou",
+  "name" : "aeiou",
+  "sub_module" : "aeiou",
+  "filters" : {
+    "hs_debug_filter" : {
+      "server" : "aeiou",
+      "period" : 123,
+      "pool" : "aeiou",
+      "metric_entity" : "aeiou",
+      "skip_hs_db_writes" : true,
+      "entity" : "aeiou"
+    },
+    "alert_debug_filter" : {
+      "cfg_uuid" : "aeiou",
+      "alert_objid" : "aeiou",
+      "alert_uuid" : "aeiou"
+    },
+    "metrics_debug_filter" : {
+      "skip_cluster_map_check" : "aeiou",
+      "metric_instance_id" : "aeiou",
+      "log_first_n" : "aeiou",
+      "disable_hw_training" : "aeiou",
+      "obj" : "aeiou",
+      "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
+      "skip_metrics_db_writes" : "aeiou",
+      "license_grace_period" : "aeiou",
+      "entity" : "aeiou",
+      "logging_freq" : "aeiou"
+    },
+    "se_mgr_debug_filter" : {
+      "name" : "aeiou"
+    },
+    "mesos_metrics_debug_filter" : {
+      "metrics_collection_frq" : "",
+      "metric_entity" : "aeiou",
+      "mesos_slave" : "aeiou",
+      "mesos_master" : "aeiou"
+    },
+    "logmanager_debug_filter" : {
+      "entity_ref" : "aeiou"
+    },
+    "se_rpc_proxy_filter" : {
+      "method_name" : "aeiou",
+      "queue" : "aeiou",
+      "se_uuid" : "aeiou"
+    },
+    "type" : "aeiou",
+    "autoscale_mgr_debug_filter" : {
+      "intelligent_autoscale_period" : "",
+      "pool_ref" : "aeiou",
+      "enable_aws_autoscale_integration" : true
+    },
+    "cloud_connector_debug_filter" : {
+      "disable_se_reboot" : true,
+      "se_id" : "aeiou",
+      "app_id" : "aeiou"
+    },
+    "metricsapi_srv_debug_filter" : {
+      "entity_ref" : "aeiou"
+    },
+    "state_cache_mgr_debug_filter" : {
+      "pool_ref" : "aeiou",
+      "vs_ref" : "aeiou"
+    },
+    "securitymgr_debug_filter" : {
+      "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
+      "entity_ref" : "aeiou"
+    },
+    "vs_debug_filter" : {
+      "name" : "aeiou",
+      "se_uuid" : "aeiou"
+    }
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#DebugController">DebugController</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /debugcontroller"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /debugcontroller</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugcontrollerPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /debugcontroller</span>)</div>
+    <div class="method-notes">/debugcontroller</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -492,12 +695,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="debugcontrollerUuidDelete"/>
+  <div class="method"><a name="pUT /debugcontroller/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /debugcontroller/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugcontrollerUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /debugcontroller/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /debugcontroller/{uuid}</span>)</div>
+    <div class="method-notes">/debugcontroller/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -512,6 +715,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugController object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -524,15 +733,96 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#DebugController">DebugController</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "trace_level" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "log_level" : "aeiou",
+  "name" : "aeiou",
+  "sub_module" : "aeiou",
+  "filters" : {
+    "hs_debug_filter" : {
+      "server" : "aeiou",
+      "period" : 123,
+      "pool" : "aeiou",
+      "metric_entity" : "aeiou",
+      "skip_hs_db_writes" : true,
+      "entity" : "aeiou"
+    },
+    "alert_debug_filter" : {
+      "cfg_uuid" : "aeiou",
+      "alert_objid" : "aeiou",
+      "alert_uuid" : "aeiou"
+    },
+    "metrics_debug_filter" : {
+      "skip_cluster_map_check" : "aeiou",
+      "metric_instance_id" : "aeiou",
+      "log_first_n" : "aeiou",
+      "disable_hw_training" : "aeiou",
+      "obj" : "aeiou",
+      "debug_skip_eval_period" : "aeiou",
+      "min_db_queries_each_conn" : "aeiou",
+      "skip_metrics_db_writes" : "aeiou",
+      "license_grace_period" : "aeiou",
+      "entity" : "aeiou",
+      "logging_freq" : "aeiou"
+    },
+    "se_mgr_debug_filter" : {
+      "name" : "aeiou"
+    },
+    "mesos_metrics_debug_filter" : {
+      "metrics_collection_frq" : "",
+      "metric_entity" : "aeiou",
+      "mesos_slave" : "aeiou",
+      "mesos_master" : "aeiou"
+    },
+    "logmanager_debug_filter" : {
+      "entity_ref" : "aeiou"
+    },
+    "se_rpc_proxy_filter" : {
+      "method_name" : "aeiou",
+      "queue" : "aeiou",
+      "se_uuid" : "aeiou"
+    },
+    "type" : "aeiou",
+    "autoscale_mgr_debug_filter" : {
+      "intelligent_autoscale_period" : "",
+      "pool_ref" : "aeiou",
+      "enable_aws_autoscale_integration" : true
+    },
+    "cloud_connector_debug_filter" : {
+      "disable_se_reboot" : true,
+      "se_id" : "aeiou",
+      "app_id" : "aeiou"
+    },
+    "metricsapi_srv_debug_filter" : {
+      "entity_ref" : "aeiou"
+    },
+    "state_cache_mgr_debug_filter" : {
+      "pool_ref" : "aeiou",
+      "vs_ref" : "aeiou"
+    },
+    "securitymgr_debug_filter" : {
+      "enable_adaptive_config" : true,
+      "psm_rule_id_multiplier" : "",
+      "entity_ref" : "aeiou"
+    },
+    "vs_debug_filter" : {
+      "name" : "aeiou",
+      "se_uuid" : "aeiou"
+    }
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -542,11 +832,11 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#DebugController">DebugController</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -585,296 +875,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#DebugController">DebugController</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "trace_level" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "log_level" : "aeiou",
-  "name" : "aeiou",
-  "sub_module" : "aeiou",
-  "filters" : {
-    "hs_debug_filter" : {
-      "server" : "aeiou",
-      "period" : 123,
-      "pool" : "aeiou",
-      "metric_entity" : "aeiou",
-      "skip_hs_db_writes" : true,
-      "entity" : "aeiou"
-    },
-    "alert_debug_filter" : {
-      "cfg_uuid" : "aeiou",
-      "alert_objid" : "aeiou",
-      "alert_uuid" : "aeiou"
-    },
-    "metrics_debug_filter" : {
-      "skip_cluster_map_check" : "aeiou",
-      "metric_instance_id" : "aeiou",
-      "log_first_n" : "aeiou",
-      "disable_hw_training" : "aeiou",
-      "obj" : "aeiou",
-      "debug_skip_eval_period" : "aeiou",
-      "min_db_queries_each_conn" : "aeiou",
-      "skip_metrics_db_writes" : "aeiou",
-      "license_grace_period" : "aeiou",
-      "entity" : "aeiou",
-      "logging_freq" : "aeiou"
-    },
-    "se_mgr_debug_filter" : {
-      "name" : "aeiou"
-    },
-    "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : "",
-      "metric_entity" : "aeiou",
-      "mesos_slave" : "aeiou",
-      "mesos_master" : "aeiou"
-    },
-    "logmanager_debug_filter" : {
-      "entity_ref" : "aeiou"
-    },
-    "se_rpc_proxy_filter" : {
-      "method_name" : "aeiou",
-      "queue" : "aeiou",
-      "se_uuid" : "aeiou"
-    },
-    "type" : "aeiou",
-    "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : "",
-      "pool_ref" : "aeiou",
-      "enable_aws_autoscale_integration" : true
-    },
-    "cloud_connector_debug_filter" : {
-      "disable_se_reboot" : true,
-      "se_id" : "aeiou",
-      "app_id" : "aeiou"
-    },
-    "metricsapi_srv_debug_filter" : {
-      "entity_ref" : "aeiou"
-    },
-    "state_cache_mgr_debug_filter" : {
-      "pool_ref" : "aeiou",
-      "vs_ref" : "aeiou"
-    },
-    "securitymgr_debug_filter" : {
-      "enable_adaptive_config" : true,
-      "psm_rule_id_multiplier" : "",
-      "entity_ref" : "aeiou"
-    },
-    "vs_debug_filter" : {
-      "name" : "aeiou",
-      "se_uuid" : "aeiou"
-    }
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#DebugController">DebugController</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="debugcontrollerUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /debugcontroller/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugcontrollerUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugController object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#DebugController">DebugController</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "trace_level" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "log_level" : "aeiou",
-  "name" : "aeiou",
-  "sub_module" : "aeiou",
-  "filters" : {
-    "hs_debug_filter" : {
-      "server" : "aeiou",
-      "period" : 123,
-      "pool" : "aeiou",
-      "metric_entity" : "aeiou",
-      "skip_hs_db_writes" : true,
-      "entity" : "aeiou"
-    },
-    "alert_debug_filter" : {
-      "cfg_uuid" : "aeiou",
-      "alert_objid" : "aeiou",
-      "alert_uuid" : "aeiou"
-    },
-    "metrics_debug_filter" : {
-      "skip_cluster_map_check" : "aeiou",
-      "metric_instance_id" : "aeiou",
-      "log_first_n" : "aeiou",
-      "disable_hw_training" : "aeiou",
-      "obj" : "aeiou",
-      "debug_skip_eval_period" : "aeiou",
-      "min_db_queries_each_conn" : "aeiou",
-      "skip_metrics_db_writes" : "aeiou",
-      "license_grace_period" : "aeiou",
-      "entity" : "aeiou",
-      "logging_freq" : "aeiou"
-    },
-    "se_mgr_debug_filter" : {
-      "name" : "aeiou"
-    },
-    "mesos_metrics_debug_filter" : {
-      "metrics_collection_frq" : "",
-      "metric_entity" : "aeiou",
-      "mesos_slave" : "aeiou",
-      "mesos_master" : "aeiou"
-    },
-    "logmanager_debug_filter" : {
-      "entity_ref" : "aeiou"
-    },
-    "se_rpc_proxy_filter" : {
-      "method_name" : "aeiou",
-      "queue" : "aeiou",
-      "se_uuid" : "aeiou"
-    },
-    "type" : "aeiou",
-    "autoscale_mgr_debug_filter" : {
-      "intelligent_autoscale_period" : "",
-      "pool_ref" : "aeiou",
-      "enable_aws_autoscale_integration" : true
-    },
-    "cloud_connector_debug_filter" : {
-      "disable_se_reboot" : true,
-      "se_id" : "aeiou",
-      "app_id" : "aeiou"
-    },
-    "metricsapi_srv_debug_filter" : {
-      "entity_ref" : "aeiou"
-    },
-    "state_cache_mgr_debug_filter" : {
-      "pool_ref" : "aeiou",
-      "vs_ref" : "aeiou"
-    },
-    "securitymgr_debug_filter" : {
-      "enable_adaptive_config" : true,
-      "psm_rule_id_multiplier" : "",
-      "entity_ref" : "aeiou"
-    },
-    "vs_debug_filter" : {
-      "name" : "aeiou",
-      "se_uuid" : "aeiou"
-    }
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#DebugController">DebugController</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="debugcontrollerUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /debugcontroller/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">debugcontrollerUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; DebugController object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

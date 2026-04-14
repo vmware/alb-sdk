@@ -202,484 +202,14 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#ipamdnsproviderprofileGet"><code><span class="http-method">get</span> /ipamdnsproviderprofile</code></a></li>
-  <li><a href="#ipamdnsproviderprofilePost"><code><span class="http-method">post</span> /ipamdnsproviderprofile</code></a></li>
-  <li><a href="#ipamdnsproviderprofileUuidDelete"><code><span class="http-method">delete</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
   <li><a href="#ipamdnsproviderprofileUuidGet"><code><span class="http-method">get</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
-  <li><a href="#ipamdnsproviderprofileUuidPatch"><code><span class="http-method">patch</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
-  <li><a href="#ipamdnsproviderprofileUuidPut"><code><span class="http-method">put</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
+  <li><a href="#dELETE /ipamdnsproviderprofile/{uuid}"><code><span class="http-method">delete</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
+  <li><a href="#gET /ipamdnsproviderprofile"><code><span class="http-method">get</span> /ipamdnsproviderprofile</code></a></li>
+  <li><a href="#pATCH /ipamdnsproviderprofile/{uuid}"><code><span class="http-method">patch</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
+  <li><a href="#pOST /ipamdnsproviderprofile"><code><span class="http-method">post</span> /ipamdnsproviderprofile</code></a></li>
+  <li><a href="#pUT /ipamdnsproviderprofile/{uuid}"><code><span class="http-method">put</span> /ipamdnsproviderprofile/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="ipamdnsproviderprofileGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /ipamdnsproviderprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">ipamdnsproviderprofileGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#IpamDnsProviderProfileApiResponse">IpamDnsProviderProfileApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "aws_profile" : {
-      "access_key_id" : "aeiou",
-      "iam_assume_role" : "aeiou",
-      "vpc_id" : "aeiou",
-      "secret_access_key" : "aeiou",
-      "vpc" : "aeiou",
-      "publish_vip_to_public_zone" : true,
-      "zones" : [ {
-        "availability_zone" : "aeiou",
-        "usable_network_uuids" : [ "aeiou" ]
-      } ],
-      "ttl" : "",
-      "egress_service_subnets" : [ "aeiou" ],
-      "usable_domains" : [ "aeiou" ],
-      "usable_network_uuids" : [ "aeiou" ],
-      "use_iam_roles" : true,
-      "region" : "aeiou"
-    },
-    "oci_profile" : {
-      "tenancy" : "aeiou",
-      "vcn_id" : "aeiou",
-      "cloud_credentials_ref" : "aeiou",
-      "region" : "aeiou",
-      "vcn_compartment_id" : "aeiou"
-    },
-    "gcp_profile" : {
-      "vpc_network_name" : "aeiou",
-      "match_se_group_subnet" : true,
-      "network_host_project_id" : "aeiou",
-      "use_gcp_network" : true,
-      "usable_network_refs" : [ "aeiou" ],
-      "region_name" : "aeiou",
-      "se_project_id" : "aeiou"
-    },
-    "allocate_ip_in_vrf" : true,
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "custom_profile" : {
-      "usable_alloc_subnets" : [ {
-        "subnet" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "network_id" : "aeiou",
-        "subnet6" : ""
-      } ],
-      "dynamic_params" : [ {
-        "is_sensitive" : true,
-        "is_dynamic" : true,
-        "name" : "aeiou",
-        "value" : "aeiou"
-      } ],
-      "custom_ipam_dns_profile_ref" : "aeiou",
-      "usable_domains" : [ "aeiou" ]
-    },
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "configpb_attributes" : {
-      "version" : ""
-    },
-    "tencent_profile" : {
-      "usable_subnet_ids" : [ "aeiou" ],
-      "vpc_id" : "aeiou",
-      "cloud_credentials_ref" : "aeiou",
-      "region" : "aeiou",
-      "zones" : [ {
-        "availability_zone" : "aeiou",
-        "usable_subnet_id" : "aeiou"
-      } ]
-    },
-    "internal_profile" : {
-      "dns_service_domain" : [ {
-        "domain_name" : "aeiou",
-        "pass_through" : true,
-        "record_ttl" : ""
-      } ],
-      "dns_virtualservice_ref" : "aeiou",
-      "usable_networks" : [ {
-        "nw_ref" : "aeiou",
-        "labels" : [ {
-          "value" : "aeiou",
-          "key" : "aeiou"
-        } ]
-      } ],
-      "ttl" : ""
-    },
-    "proxy_configuration" : {
-      "password" : "aeiou",
-      "port" : "",
-      "host" : "aeiou",
-      "username" : "aeiou"
-    },
-    "infoblox_profile" : {
-      "extensible_attributes" : [ "" ],
-      "ip6_address" : "",
-      "network_view" : "aeiou",
-      "usable_alloc_subnets" : [ {
-        "subnet" : "",
-        "subnet6" : ""
-      } ],
-      "password" : "aeiou",
-      "profile_url" : "aeiou",
-      "dns_view" : "aeiou",
-      "ip_address" : "",
-      "usable_domains" : [ "aeiou" ],
-      "username" : "aeiou",
-      "wapi_version" : "aeiou"
-    },
-    "markers" : [ {
-      "values" : [ "aeiou" ],
-      "key" : "aeiou"
-    } ],
-    "azure_profile" : {
-      "subscription_id" : "aeiou",
-      "use_enhanced_ha" : true,
-      "use_standard_alb" : true,
-      "resource_group" : "aeiou",
-      "azure_userpass" : {
-        "password" : "aeiou",
-        "tenant_name" : "aeiou",
-        "username" : "aeiou"
-      },
-      "virtual_network_ids" : [ "aeiou" ],
-      "azure_serviceprincipal" : {
-        "tenant_id" : "aeiou",
-        "authentication_token" : "aeiou",
-        "application_id" : "aeiou"
-      },
-      "egress_service_subnets" : [ "aeiou" ],
-      "usable_domains" : [ "aeiou" ],
-      "usable_network_uuids" : [ "aeiou" ]
-    },
-    "openstack_profile" : {
-      "password" : "aeiou",
-      "keystone_host" : "aeiou",
-      "vip_network_name" : "aeiou",
-      "region" : "aeiou",
-      "tenant" : "aeiou",
-      "username" : "aeiou"
-    }
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#IpamDnsProviderProfileApiResponse">IpamDnsProviderProfileApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="ipamdnsproviderprofilePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /ipamdnsproviderprofile</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">ipamdnsproviderprofilePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; IpamDnsProviderProfile object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#IpamDnsProviderProfile">IpamDnsProviderProfile</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "aws_profile" : {
-    "access_key_id" : "aeiou",
-    "iam_assume_role" : "aeiou",
-    "vpc_id" : "aeiou",
-    "secret_access_key" : "aeiou",
-    "vpc" : "aeiou",
-    "publish_vip_to_public_zone" : true,
-    "zones" : [ {
-      "availability_zone" : "aeiou",
-      "usable_network_uuids" : [ "aeiou" ]
-    } ],
-    "ttl" : "",
-    "egress_service_subnets" : [ "aeiou" ],
-    "usable_domains" : [ "aeiou" ],
-    "usable_network_uuids" : [ "aeiou" ],
-    "use_iam_roles" : true,
-    "region" : "aeiou"
-  },
-  "oci_profile" : {
-    "tenancy" : "aeiou",
-    "vcn_id" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "region" : "aeiou",
-    "vcn_compartment_id" : "aeiou"
-  },
-  "gcp_profile" : {
-    "vpc_network_name" : "aeiou",
-    "match_se_group_subnet" : true,
-    "network_host_project_id" : "aeiou",
-    "use_gcp_network" : true,
-    "usable_network_refs" : [ "aeiou" ],
-    "region_name" : "aeiou",
-    "se_project_id" : "aeiou"
-  },
-  "allocate_ip_in_vrf" : true,
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "custom_profile" : {
-    "usable_alloc_subnets" : [ {
-      "subnet" : {
-        "ip_addr" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "mask" : 123
-      },
-      "network_id" : "aeiou",
-      "subnet6" : ""
-    } ],
-    "dynamic_params" : [ {
-      "is_sensitive" : true,
-      "is_dynamic" : true,
-      "name" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "custom_ipam_dns_profile_ref" : "aeiou",
-    "usable_domains" : [ "aeiou" ]
-  },
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "tencent_profile" : {
-    "usable_subnet_ids" : [ "aeiou" ],
-    "vpc_id" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "region" : "aeiou",
-    "zones" : [ {
-      "availability_zone" : "aeiou",
-      "usable_subnet_id" : "aeiou"
-    } ]
-  },
-  "internal_profile" : {
-    "dns_service_domain" : [ {
-      "domain_name" : "aeiou",
-      "pass_through" : true,
-      "record_ttl" : ""
-    } ],
-    "dns_virtualservice_ref" : "aeiou",
-    "usable_networks" : [ {
-      "nw_ref" : "aeiou",
-      "labels" : [ {
-        "value" : "aeiou",
-        "key" : "aeiou"
-      } ]
-    } ],
-    "ttl" : ""
-  },
-  "proxy_configuration" : {
-    "password" : "aeiou",
-    "port" : "",
-    "host" : "aeiou",
-    "username" : "aeiou"
-  },
-  "infoblox_profile" : {
-    "extensible_attributes" : [ "" ],
-    "ip6_address" : "",
-    "network_view" : "aeiou",
-    "usable_alloc_subnets" : [ {
-      "subnet" : "",
-      "subnet6" : ""
-    } ],
-    "password" : "aeiou",
-    "profile_url" : "aeiou",
-    "dns_view" : "aeiou",
-    "ip_address" : "",
-    "usable_domains" : [ "aeiou" ],
-    "username" : "aeiou",
-    "wapi_version" : "aeiou"
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "azure_profile" : {
-    "subscription_id" : "aeiou",
-    "use_enhanced_ha" : true,
-    "use_standard_alb" : true,
-    "resource_group" : "aeiou",
-    "azure_userpass" : {
-      "password" : "aeiou",
-      "tenant_name" : "aeiou",
-      "username" : "aeiou"
-    },
-    "virtual_network_ids" : [ "aeiou" ],
-    "azure_serviceprincipal" : {
-      "tenant_id" : "aeiou",
-      "authentication_token" : "aeiou",
-      "application_id" : "aeiou"
-    },
-    "egress_service_subnets" : [ "aeiou" ],
-    "usable_domains" : [ "aeiou" ],
-    "usable_network_uuids" : [ "aeiou" ]
-  },
-  "openstack_profile" : {
-    "password" : "aeiou",
-    "keystone_host" : "aeiou",
-    "vip_network_name" : "aeiou",
-    "region" : "aeiou",
-    "tenant" : "aeiou",
-    "username" : "aeiou"
-  }
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#IpamDnsProviderProfile">IpamDnsProviderProfile</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="ipamdnsproviderprofileUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /ipamdnsproviderprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">ipamdnsproviderprofileUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="ipamdnsproviderprofileUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -892,12 +422,284 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="ipamdnsproviderprofileUuidPatch"/>
+  <div class="method"><a name="dELETE /ipamdnsproviderprofile/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /ipamdnsproviderprofile/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /ipamdnsproviderprofile/{uuid}</span>)</div>
+    <div class="method-notes">/ipamdnsproviderprofile/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /ipamdnsproviderprofile"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /ipamdnsproviderprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /ipamdnsproviderprofile</span>)</div>
+    <div class="method-notes">/ipamdnsproviderprofile</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#IpamDnsProviderProfileApiResponse">IpamDnsProviderProfileApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "aws_profile" : {
+      "access_key_id" : "aeiou",
+      "iam_assume_role" : "aeiou",
+      "vpc_id" : "aeiou",
+      "secret_access_key" : "aeiou",
+      "vpc" : "aeiou",
+      "publish_vip_to_public_zone" : true,
+      "zones" : [ {
+        "availability_zone" : "aeiou",
+        "usable_network_uuids" : [ "aeiou" ]
+      } ],
+      "ttl" : "",
+      "egress_service_subnets" : [ "aeiou" ],
+      "usable_domains" : [ "aeiou" ],
+      "usable_network_uuids" : [ "aeiou" ],
+      "use_iam_roles" : true,
+      "region" : "aeiou"
+    },
+    "oci_profile" : {
+      "tenancy" : "aeiou",
+      "vcn_id" : "aeiou",
+      "cloud_credentials_ref" : "aeiou",
+      "region" : "aeiou",
+      "vcn_compartment_id" : "aeiou"
+    },
+    "gcp_profile" : {
+      "vpc_network_name" : "aeiou",
+      "match_se_group_subnet" : true,
+      "network_host_project_id" : "aeiou",
+      "use_gcp_network" : true,
+      "usable_network_refs" : [ "aeiou" ],
+      "region_name" : "aeiou",
+      "se_project_id" : "aeiou"
+    },
+    "allocate_ip_in_vrf" : true,
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "custom_profile" : {
+      "usable_alloc_subnets" : [ {
+        "subnet" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "network_id" : "aeiou",
+        "subnet6" : ""
+      } ],
+      "dynamic_params" : [ {
+        "is_sensitive" : true,
+        "is_dynamic" : true,
+        "name" : "aeiou",
+        "value" : "aeiou"
+      } ],
+      "custom_ipam_dns_profile_ref" : "aeiou",
+      "usable_domains" : [ "aeiou" ]
+    },
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "configpb_attributes" : {
+      "version" : ""
+    },
+    "tencent_profile" : {
+      "usable_subnet_ids" : [ "aeiou" ],
+      "vpc_id" : "aeiou",
+      "cloud_credentials_ref" : "aeiou",
+      "region" : "aeiou",
+      "zones" : [ {
+        "availability_zone" : "aeiou",
+        "usable_subnet_id" : "aeiou"
+      } ]
+    },
+    "internal_profile" : {
+      "dns_service_domain" : [ {
+        "domain_name" : "aeiou",
+        "pass_through" : true,
+        "record_ttl" : ""
+      } ],
+      "dns_virtualservice_ref" : "aeiou",
+      "usable_networks" : [ {
+        "nw_ref" : "aeiou",
+        "labels" : [ {
+          "value" : "aeiou",
+          "key" : "aeiou"
+        } ]
+      } ],
+      "ttl" : ""
+    },
+    "proxy_configuration" : {
+      "password" : "aeiou",
+      "port" : "",
+      "host" : "aeiou",
+      "username" : "aeiou"
+    },
+    "infoblox_profile" : {
+      "extensible_attributes" : [ "" ],
+      "ip6_address" : "",
+      "network_view" : "aeiou",
+      "usable_alloc_subnets" : [ {
+        "subnet" : "",
+        "subnet6" : ""
+      } ],
+      "password" : "aeiou",
+      "profile_url" : "aeiou",
+      "dns_view" : "aeiou",
+      "ip_address" : "",
+      "usable_domains" : [ "aeiou" ],
+      "username" : "aeiou",
+      "wapi_version" : "aeiou"
+    },
+    "markers" : [ {
+      "values" : [ "aeiou" ],
+      "key" : "aeiou"
+    } ],
+    "azure_profile" : {
+      "subscription_id" : "aeiou",
+      "use_enhanced_ha" : true,
+      "use_standard_alb" : true,
+      "resource_group" : "aeiou",
+      "azure_userpass" : {
+        "password" : "aeiou",
+        "tenant_name" : "aeiou",
+        "username" : "aeiou"
+      },
+      "virtual_network_ids" : [ "aeiou" ],
+      "azure_serviceprincipal" : {
+        "tenant_id" : "aeiou",
+        "authentication_token" : "aeiou",
+        "application_id" : "aeiou"
+      },
+      "egress_service_subnets" : [ "aeiou" ],
+      "usable_domains" : [ "aeiou" ],
+      "usable_network_uuids" : [ "aeiou" ]
+    },
+    "openstack_profile" : {
+      "password" : "aeiou",
+      "keystone_host" : "aeiou",
+      "vip_network_name" : "aeiou",
+      "region" : "aeiou",
+      "tenant" : "aeiou",
+      "username" : "aeiou"
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#IpamDnsProviderProfileApiResponse">IpamDnsProviderProfileApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /ipamdnsproviderprofile/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /ipamdnsproviderprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">ipamdnsproviderprofileUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /ipamdnsproviderprofile/{uuid}</span>)</div>
+    <div class="method-notes">/ipamdnsproviderprofile/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1102,12 +904,210 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="ipamdnsproviderprofileUuidPut"/>
+  <div class="method"><a name="pOST /ipamdnsproviderprofile"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /ipamdnsproviderprofile</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /ipamdnsproviderprofile</span>)</div>
+    <div class="method-notes">/ipamdnsproviderprofile</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; IpamDnsProviderProfile object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#IpamDnsProviderProfile">IpamDnsProviderProfile</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "aws_profile" : {
+    "access_key_id" : "aeiou",
+    "iam_assume_role" : "aeiou",
+    "vpc_id" : "aeiou",
+    "secret_access_key" : "aeiou",
+    "vpc" : "aeiou",
+    "publish_vip_to_public_zone" : true,
+    "zones" : [ {
+      "availability_zone" : "aeiou",
+      "usable_network_uuids" : [ "aeiou" ]
+    } ],
+    "ttl" : "",
+    "egress_service_subnets" : [ "aeiou" ],
+    "usable_domains" : [ "aeiou" ],
+    "usable_network_uuids" : [ "aeiou" ],
+    "use_iam_roles" : true,
+    "region" : "aeiou"
+  },
+  "oci_profile" : {
+    "tenancy" : "aeiou",
+    "vcn_id" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "region" : "aeiou",
+    "vcn_compartment_id" : "aeiou"
+  },
+  "gcp_profile" : {
+    "vpc_network_name" : "aeiou",
+    "match_se_group_subnet" : true,
+    "network_host_project_id" : "aeiou",
+    "use_gcp_network" : true,
+    "usable_network_refs" : [ "aeiou" ],
+    "region_name" : "aeiou",
+    "se_project_id" : "aeiou"
+  },
+  "allocate_ip_in_vrf" : true,
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "custom_profile" : {
+    "usable_alloc_subnets" : [ {
+      "subnet" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
+      },
+      "network_id" : "aeiou",
+      "subnet6" : ""
+    } ],
+    "dynamic_params" : [ {
+      "is_sensitive" : true,
+      "is_dynamic" : true,
+      "name" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "custom_ipam_dns_profile_ref" : "aeiou",
+    "usable_domains" : [ "aeiou" ]
+  },
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "tencent_profile" : {
+    "usable_subnet_ids" : [ "aeiou" ],
+    "vpc_id" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "region" : "aeiou",
+    "zones" : [ {
+      "availability_zone" : "aeiou",
+      "usable_subnet_id" : "aeiou"
+    } ]
+  },
+  "internal_profile" : {
+    "dns_service_domain" : [ {
+      "domain_name" : "aeiou",
+      "pass_through" : true,
+      "record_ttl" : ""
+    } ],
+    "dns_virtualservice_ref" : "aeiou",
+    "usable_networks" : [ {
+      "nw_ref" : "aeiou",
+      "labels" : [ {
+        "value" : "aeiou",
+        "key" : "aeiou"
+      } ]
+    } ],
+    "ttl" : ""
+  },
+  "proxy_configuration" : {
+    "password" : "aeiou",
+    "port" : "",
+    "host" : "aeiou",
+    "username" : "aeiou"
+  },
+  "infoblox_profile" : {
+    "extensible_attributes" : [ "" ],
+    "ip6_address" : "",
+    "network_view" : "aeiou",
+    "usable_alloc_subnets" : [ {
+      "subnet" : "",
+      "subnet6" : ""
+    } ],
+    "password" : "aeiou",
+    "profile_url" : "aeiou",
+    "dns_view" : "aeiou",
+    "ip_address" : "",
+    "usable_domains" : [ "aeiou" ],
+    "username" : "aeiou",
+    "wapi_version" : "aeiou"
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "azure_profile" : {
+    "subscription_id" : "aeiou",
+    "use_enhanced_ha" : true,
+    "use_standard_alb" : true,
+    "resource_group" : "aeiou",
+    "azure_userpass" : {
+      "password" : "aeiou",
+      "tenant_name" : "aeiou",
+      "username" : "aeiou"
+    },
+    "virtual_network_ids" : [ "aeiou" ],
+    "azure_serviceprincipal" : {
+      "tenant_id" : "aeiou",
+      "authentication_token" : "aeiou",
+      "application_id" : "aeiou"
+    },
+    "egress_service_subnets" : [ "aeiou" ],
+    "usable_domains" : [ "aeiou" ],
+    "usable_network_uuids" : [ "aeiou" ]
+  },
+  "openstack_profile" : {
+    "password" : "aeiou",
+    "keystone_host" : "aeiou",
+    "vip_network_name" : "aeiou",
+    "region" : "aeiou",
+    "tenant" : "aeiou",
+    "username" : "aeiou"
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#IpamDnsProviderProfile">IpamDnsProviderProfile</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /ipamdnsproviderprofile/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /ipamdnsproviderprofile/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">ipamdnsproviderprofileUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /ipamdnsproviderprofile/{uuid}</span>)</div>
+    <div class="method-notes">/ipamdnsproviderprofile/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

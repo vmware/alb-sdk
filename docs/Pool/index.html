@@ -202,46 +202,52 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#poolClearPost"><code><span class="http-method">post</span> /pool/clear</code></a></li>
-  <li><a href="#poolGet"><code><span class="http-method">get</span> /pool</code></a></li>
-  <li><a href="#poolPost"><code><span class="http-method">post</span> /pool</code></a></li>
-  <li><a href="#poolUuidAlgoGet"><code><span class="http-method">get</span> /pool/{uuid}/algo/</code></a></li>
-  <li><a href="#poolUuidConnpoolGet"><code><span class="http-method">get</span> /pool/{uuid}/connpool/</code></a></li>
-  <li><a href="#poolUuidConnpoolstatsClearPost"><code><span class="http-method">post</span> /pool/{uuid}/connpoolstats/clear</code></a></li>
-  <li><a href="#poolUuidDelete"><code><span class="http-method">delete</span> /pool/{uuid}</code></a></li>
   <li><a href="#poolUuidGet"><code><span class="http-method">get</span> /pool/{uuid}</code></a></li>
-  <li><a href="#poolUuidHmonGet"><code><span class="http-method">get</span> /pool/{uuid}/hmon/</code></a></li>
-  <li><a href="#poolUuidHttpcacheGet"><code><span class="http-method">get</span> /pool/{uuid}/httpcache/</code></a></li>
-  <li><a href="#poolUuidHttpcachestatsDetailGet"><code><span class="http-method">get</span> /pool/{uuid}/httpcachestats/detail/</code></a></li>
-  <li><a href="#poolUuidHttpcachestatsGet"><code><span class="http-method">get</span> /pool/{uuid}/httpcachestats/</code></a></li>
-  <li><a href="#poolUuidObjsyncGet"><code><span class="http-method">get</span> /pool/{uuid}/objsync/</code></a></li>
-  <li><a href="#poolUuidPatch"><code><span class="http-method">patch</span> /pool/{uuid}</code></a></li>
-  <li><a href="#poolUuidPersistenceGet"><code><span class="http-method">get</span> /pool/{uuid}/persistence/</code></a></li>
-  <li><a href="#poolUuidPut"><code><span class="http-method">put</span> /pool/{uuid}</code></a></li>
-  <li><a href="#poolUuidRuntimeDebugGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/debug/</code></a></li>
-  <li><a href="#poolUuidRuntimeDetailGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/detail/</code></a></li>
-  <li><a href="#poolUuidRuntimeGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/</code></a></li>
-  <li><a href="#poolUuidRuntimeInternalGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/internal/</code></a></li>
-  <li><a href="#poolUuidRuntimeRequestQueueClearPost"><code><span class="http-method">post</span> /pool/{uuid}/runtime/request_queue/clear</code></a></li>
-  <li><a href="#poolUuidRuntimeServerDetailGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/detail/</code></a></li>
-  <li><a href="#poolUuidRuntimeServerGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/</code></a></li>
-  <li><a href="#poolUuidRuntimeServerHmonstatGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/hmonstat/</code></a></li>
-  <li><a href="#poolUuidRuntimeServerInternalGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/internal/</code></a></li>
-  <li><a href="#poolUuidRuntimeStatsClearPost"><code><span class="http-method">post</span> /pool/{uuid}/runtime/stats/clear</code></a></li>
-  <li><a href="#poolUuidRuntimeVsServiceServerMapKvGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></a></li>
-  <li><a href="#poolUuidRuntimeVsServiceServerMapTableGet"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></a></li>
-  <li><a href="#poolUuidScaleinPost"><code><span class="http-method">post</span> /pool/{uuid}/scalein</code></a></li>
-  <li><a href="#poolUuidScaleoutPost"><code><span class="http-method">post</span> /pool/{uuid}/scaleout</code></a></li>
-  <li><a href="#poolUuidVsGet"><code><span class="http-method">get</span> /pool/{uuid}/vs/</code></a></li>
+  <li><a href="#dELETE /pool/{uuid}"><code><span class="http-method">delete</span> /pool/{uuid}</code></a></li>
+  <li><a href="#gET /pool"><code><span class="http-method">get</span> /pool</code></a></li>
+  <li><a href="#gET /pool/{uuid}/algo/"><code><span class="http-method">get</span> /pool/{uuid}/algo/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/connpool/"><code><span class="http-method">get</span> /pool/{uuid}/connpool/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/hmon/"><code><span class="http-method">get</span> /pool/{uuid}/hmon/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/httpcache/"><code><span class="http-method">get</span> /pool/{uuid}/httpcache/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/httpcachestats/"><code><span class="http-method">get</span> /pool/{uuid}/httpcachestats/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/httpcachestats/detail/"><code><span class="http-method">get</span> /pool/{uuid}/httpcachestats/detail/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/objsync/"><code><span class="http-method">get</span> /pool/{uuid}/objsync/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/persistence/"><code><span class="http-method">get</span> /pool/{uuid}/persistence/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/debug/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/debug/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/detail/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/detail/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/internal/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/internal/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/server/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/server/detail/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/detail/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/server/hmonstat/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/hmonstat/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/server/internal/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/server/internal/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/vs/service/server/map/kv/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/runtime/vs/service/server/map/table/"><code><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></a></li>
+  <li><a href="#gET /pool/{uuid}/vs/"><code><span class="http-method">get</span> /pool/{uuid}/vs/</code></a></li>
+  <li><a href="#pATCH /pool/{uuid}"><code><span class="http-method">patch</span> /pool/{uuid}</code></a></li>
+  <li><a href="#pOST /pool"><code><span class="http-method">post</span> /pool</code></a></li>
+  <li><a href="#pOST /pool/clear"><code><span class="http-method">post</span> /pool/clear</code></a></li>
+  <li><a href="#pOST /pool/{uuid}/connpoolstats/clear"><code><span class="http-method">post</span> /pool/{uuid}/connpoolstats/clear</code></a></li>
+  <li><a href="#pOST /pool/{uuid}/runtime/requestQueue/clear"><code><span class="http-method">post</span> /pool/{uuid}/runtime/request_queue/clear</code></a></li>
+  <li><a href="#pOST /pool/{uuid}/runtime/stats/clear"><code><span class="http-method">post</span> /pool/{uuid}/runtime/stats/clear</code></a></li>
+  <li><a href="#pOST /pool/{uuid}/scalein"><code><span class="http-method">post</span> /pool/{uuid}/scalein</code></a></li>
+  <li><a href="#pOST /pool/{uuid}/scaleout"><code><span class="http-method">post</span> /pool/{uuid}/scaleout</code></a></li>
+  <li><a href="#pUT /pool/{uuid}"><code><span class="http-method">put</span> /pool/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="poolClearPost"/>
+  <div class="method"><a name="poolUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/clear</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolClearPost</span>)</div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">poolUuidGet</span>)</div>
     <div class="method-notes"></div>
 
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -249,14 +255,285 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
     </div>  <!-- field-items -->
 
 
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Pool">Pool</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "ipaddrgroup_ref" : "aeiou",
+  "min_health_monitors_up" : "",
+  "inline_health_monitor" : true,
+  "default_server_port" : 123,
+  "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
+  "lookup_server_by_name" : true,
+  "fewest_tasks_feedback_delay" : "",
+  "sni_enabled" : true,
+  "vrf_ref" : "aeiou",
+  "uuid" : "aeiou",
+  "domain_name" : [ "aeiou" ],
+  "east_west" : true,
+  "rewrite_host_header_to_server_name" : true,
+  "ssl_key_and_certificate_ref" : "aeiou",
+  "append_port" : "aeiou",
+  "cloud_ref" : "aeiou",
+  "tier1_lr" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "analytics_policy" : {
+    "enable_realtime_metrics" : true
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "graceful_hm_down_disable_timeout" : 123,
+  "application_persistence_profile_ref" : "aeiou",
+  "lb_algorithm_core_nonaffinity" : "",
+  "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
+  "routing_pool" : true,
+  "placement_networks" : [ {
+    "subnet" : {
+      "ip_addr" : {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      },
+      "mask" : 123
+    },
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_ssl_mode" : true,
+  "autoscale_networks" : [ "aeiou" ],
+  "enable_http2" : true,
+  "created_by" : "aeiou",
+  "external_autoscale_groups" : [ "aeiou" ],
+  "min_servers_up" : "",
+  "capacity_estimation" : true,
+  "http2_properties" : {
+    "max_http2_control_frames_per_connection" : "",
+    "max_http2_header_field_size" : ""
+  },
+  "ignore_server_port" : true,
+  "name" : "aeiou",
+  "cloud_config_cksum" : "aeiou",
+  "gslb_sp_enabled" : true,
+  "server_name" : "aeiou",
+  "request_queue_depth" : "",
+  "description" : "aeiou",
+  "lb_algorithm" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "graceful_disable_timeout" : 123,
+  "networks" : [ {
+    "server_filter" : "aeiou",
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_port" : true,
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "server_reselect" : {
+    "retry_timeout" : "",
+    "svr_resp_code" : {
+      "resp_code_block" : [ "aeiou" ],
+      "codes" : [ "" ],
+      "ranges" : [ {
+        "end" : 123,
+        "begin" : 123
+      } ]
+    },
+    "num_retries" : "",
+    "enabled" : true,
+    "retry_nonidempotent" : true
+  },
+  "autoscale_policy_ref" : "aeiou",
+  "servers" : [ {
+    "availability_zone" : "aeiou",
+    "prst_hdr_val" : "aeiou",
+    "static" : true,
+    "vm_ref" : "aeiou",
+    "ip" : "",
+    "preference_order" : "",
+    "description" : "aeiou",
+    "external_uuid" : "aeiou",
+    "verify_network" : true,
+    "enabled" : true,
+    "autoscaling_group_name" : "aeiou",
+    "rewrite_host_header" : true,
+    "hostname" : "aeiou",
+    "nw_ref" : "aeiou",
+    "external_orchestration_id" : "aeiou",
+    "port" : 123,
+    "mac_address" : "aeiou",
+    "server_node" : "aeiou",
+    "location" : {
+      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+      "name" : "aeiou",
+      "tag" : "aeiou",
+      "longitude" : 1.3579000000000001069366817318950779736042022705078125
+    },
+    "resolve_server_by_dns" : true,
+    "discovered_networks" : [ {
+      "subnet" : [ "" ],
+      "subnet6" : [ "" ],
+      "network_ref" : "aeiou"
+    } ],
+    "ratio" : 123
+  } ],
+  "fail_action" : {
+    "redirect" : {
+      "path" : "aeiou",
+      "protocol" : "aeiou",
+      "status_code" : "aeiou",
+      "query" : "aeiou",
+      "host" : "aeiou"
+    },
+    "local_rsp" : {
+      "file" : {
+        "file_content" : "aeiou",
+        "content_type" : "aeiou",
+        "file_length" : ""
+      },
+      "status_code" : "aeiou"
+    },
+    "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : "",
+    "pcoip_port" : ""
+  },
+  "max_conn_rate_per_server" : {
+    "rate_limiter" : {
+      "period" : "",
+      "count" : "",
+      "name" : "aeiou",
+      "burst_sz" : ""
+    },
+    "action" : {
+      "redirect" : {
+        "keep_query" : true,
+        "path" : "",
+        "protocol" : "aeiou",
+        "status_code" : "aeiou",
+        "add_string" : "aeiou",
+        "port" : "",
+        "host" : {
+          "tokens" : [ {
+            "start_index" : "",
+            "str_value" : "aeiou",
+            "end_index" : "",
+            "type" : "aeiou"
+          } ],
+          "type" : "aeiou"
+        }
+      },
+      "file" : "",
+      "status_code" : "aeiou",
+      "type" : "aeiou"
+    },
+    "explicit_tracking" : true,
+    "fine_grain" : true,
+    "http_cookie" : "aeiou",
+    "http_header" : "aeiou"
+  },
+  "pool_type" : "aeiou",
+  "analytics_profile_ref" : "aeiou",
+  "max_concurrent_connections_per_server" : 123,
+  "service_metadata" : "aeiou",
+  "capacity_estimation_ttfb_thresh" : "",
+  "lb_algorithm_hash" : "aeiou",
+  "delete_server_on_dns_refresh" : true,
+  "request_queue_enabled" : true,
+  "host_check_enabled" : true,
+  "server_timeout" : "",
+  "url" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
+  "connection_ramp_duration" : 123,
+  "tenant_ref" : "aeiou",
+  "conn_pool_properties" : {
+    "upstream_connpool_conn_idle_tmo" : "",
+    "upstream_connpool_conn_life_tmo" : "",
+    "upstream_connpool_conn_max_reuse" : "",
+    "upstream_connpool_server_max_cache" : ""
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "lb_algorithm_consistent_hash_hdr" : "aeiou",
+  "rewrite_host_header_to_sni" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Pool">Pool</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /pool/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /pool/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /pool/{uuid}</span>)</div>
+    <div class="method-notes">/pool/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Return type</h3>
@@ -279,20 +556,20 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
+    <h4 class="field-label">204</h4>
+    object deleted
         <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
+    <h4 class="field-label">404</h4>
+    not found
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolGet"/>
+  <div class="method"><a name="gET /pool"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool</span>)</div>
+    <div class="method-notes">/pool</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -586,269 +863,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Pool object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Pool">Pool</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "ipaddrgroup_ref" : "aeiou",
-  "min_health_monitors_up" : "",
-  "inline_health_monitor" : true,
-  "default_server_port" : 123,
-  "resolve_pool_by_dns" : true,
-  "server_disable_type" : "aeiou",
-  "lookup_server_by_name" : true,
-  "fewest_tasks_feedback_delay" : "",
-  "sni_enabled" : true,
-  "vrf_ref" : "aeiou",
-  "uuid" : "aeiou",
-  "domain_name" : [ "aeiou" ],
-  "east_west" : true,
-  "rewrite_host_header_to_server_name" : true,
-  "ssl_key_and_certificate_ref" : "aeiou",
-  "append_port" : "aeiou",
-  "cloud_ref" : "aeiou",
-  "tier1_lr" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "analytics_policy" : {
-    "enable_realtime_metrics" : true
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "graceful_hm_down_disable_timeout" : 123,
-  "application_persistence_profile_ref" : "aeiou",
-  "lb_algorithm_core_nonaffinity" : "",
-  "autoscale_launch_config_ref" : "aeiou",
-  "lb_algo_rr_per_se" : true,
-  "routing_pool" : true,
-  "placement_networks" : [ {
-    "subnet" : {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      },
-      "mask" : 123
-    },
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_ssl_mode" : true,
-  "autoscale_networks" : [ "aeiou" ],
-  "enable_http2" : true,
-  "created_by" : "aeiou",
-  "external_autoscale_groups" : [ "aeiou" ],
-  "min_servers_up" : "",
-  "capacity_estimation" : true,
-  "http2_properties" : {
-    "max_http2_control_frames_per_connection" : "",
-    "max_http2_header_field_size" : ""
-  },
-  "ignore_server_port" : true,
-  "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
-  "gslb_sp_enabled" : true,
-  "server_name" : "aeiou",
-  "request_queue_depth" : "",
-  "description" : "aeiou",
-  "lb_algorithm" : "aeiou",
-  "ssl_profile_ref" : "aeiou",
-  "graceful_disable_timeout" : 123,
-  "networks" : [ {
-    "server_filter" : "aeiou",
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_port" : true,
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "server_reselect" : {
-    "retry_timeout" : "",
-    "svr_resp_code" : {
-      "resp_code_block" : [ "aeiou" ],
-      "codes" : [ "" ],
-      "ranges" : [ {
-        "end" : 123,
-        "begin" : 123
-      } ]
-    },
-    "num_retries" : "",
-    "enabled" : true,
-    "retry_nonidempotent" : true
-  },
-  "autoscale_policy_ref" : "aeiou",
-  "servers" : [ {
-    "availability_zone" : "aeiou",
-    "prst_hdr_val" : "aeiou",
-    "static" : true,
-    "vm_ref" : "aeiou",
-    "ip" : "",
-    "preference_order" : "",
-    "description" : "aeiou",
-    "external_uuid" : "aeiou",
-    "verify_network" : true,
-    "enabled" : true,
-    "autoscaling_group_name" : "aeiou",
-    "rewrite_host_header" : true,
-    "hostname" : "aeiou",
-    "nw_ref" : "aeiou",
-    "external_orchestration_id" : "aeiou",
-    "port" : 123,
-    "mac_address" : "aeiou",
-    "server_node" : "aeiou",
-    "location" : {
-      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-      "name" : "aeiou",
-      "tag" : "aeiou",
-      "longitude" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "resolve_server_by_dns" : true,
-    "discovered_networks" : [ {
-      "subnet" : [ "" ],
-      "subnet6" : [ "" ],
-      "network_ref" : "aeiou"
-    } ],
-    "ratio" : 123
-  } ],
-  "fail_action" : {
-    "redirect" : {
-      "path" : "aeiou",
-      "protocol" : "aeiou",
-      "status_code" : "aeiou",
-      "query" : "aeiou",
-      "host" : "aeiou"
-    },
-    "local_rsp" : {
-      "file" : {
-        "file_content" : "aeiou",
-        "content_type" : "aeiou",
-        "file_length" : ""
-      },
-      "status_code" : "aeiou"
-    },
-    "type" : "aeiou"
-  },
-  "horizon_profile" : {
-    "blast_port" : "",
-    "pcoip_port" : ""
-  },
-  "max_conn_rate_per_server" : {
-    "rate_limiter" : {
-      "period" : "",
-      "count" : "",
-      "name" : "aeiou",
-      "burst_sz" : ""
-    },
-    "action" : {
-      "redirect" : {
-        "keep_query" : true,
-        "path" : "",
-        "protocol" : "aeiou",
-        "status_code" : "aeiou",
-        "add_string" : "aeiou",
-        "port" : "",
-        "host" : {
-          "tokens" : [ {
-            "start_index" : "",
-            "str_value" : "aeiou",
-            "end_index" : "",
-            "type" : "aeiou"
-          } ],
-          "type" : "aeiou"
-        }
-      },
-      "file" : "",
-      "status_code" : "aeiou",
-      "type" : "aeiou"
-    },
-    "explicit_tracking" : true,
-    "fine_grain" : true,
-    "http_cookie" : "aeiou",
-    "http_header" : "aeiou"
-  },
-  "pool_type" : "aeiou",
-  "analytics_profile_ref" : "aeiou",
-  "max_concurrent_connections_per_server" : 123,
-  "service_metadata" : "aeiou",
-  "capacity_estimation_ttfb_thresh" : "",
-  "lb_algorithm_hash" : "aeiou",
-  "delete_server_on_dns_refresh" : true,
-  "request_queue_enabled" : true,
-  "host_check_enabled" : true,
-  "server_timeout" : "",
-  "url" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "sp_gs_info" : {
-    "gs_ref" : "aeiou",
-    "fqdns" : [ "aeiou" ]
-  },
-  "connection_ramp_duration" : 123,
-  "tenant_ref" : "aeiou",
-  "conn_pool_properties" : {
-    "upstream_connpool_conn_idle_tmo" : "",
-    "upstream_connpool_conn_life_tmo" : "",
-    "upstream_connpool_conn_max_reuse" : "",
-    "upstream_connpool_server_max_cache" : ""
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "lb_algorithm_consistent_hash_hdr" : "aeiou",
-  "rewrite_host_header_to_sni" : true
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Pool">Pool</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidAlgoGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/algo/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/algo/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidAlgoGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/algo/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/algo/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -895,12 +915,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidConnpoolGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/connpool/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/connpool/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidConnpoolGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/connpool/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/connpool/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -947,399 +967,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidConnpoolstatsClearPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/connpoolstats/clear</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidConnpoolstatsClearPost</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /pool/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Pool">Pool</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "ipaddrgroup_ref" : "aeiou",
-  "min_health_monitors_up" : "",
-  "inline_health_monitor" : true,
-  "default_server_port" : 123,
-  "resolve_pool_by_dns" : true,
-  "server_disable_type" : "aeiou",
-  "lookup_server_by_name" : true,
-  "fewest_tasks_feedback_delay" : "",
-  "sni_enabled" : true,
-  "vrf_ref" : "aeiou",
-  "uuid" : "aeiou",
-  "domain_name" : [ "aeiou" ],
-  "east_west" : true,
-  "rewrite_host_header_to_server_name" : true,
-  "ssl_key_and_certificate_ref" : "aeiou",
-  "append_port" : "aeiou",
-  "cloud_ref" : "aeiou",
-  "tier1_lr" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "analytics_policy" : {
-    "enable_realtime_metrics" : true
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "graceful_hm_down_disable_timeout" : 123,
-  "application_persistence_profile_ref" : "aeiou",
-  "lb_algorithm_core_nonaffinity" : "",
-  "autoscale_launch_config_ref" : "aeiou",
-  "lb_algo_rr_per_se" : true,
-  "routing_pool" : true,
-  "placement_networks" : [ {
-    "subnet" : {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      },
-      "mask" : 123
-    },
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_ssl_mode" : true,
-  "autoscale_networks" : [ "aeiou" ],
-  "enable_http2" : true,
-  "created_by" : "aeiou",
-  "external_autoscale_groups" : [ "aeiou" ],
-  "min_servers_up" : "",
-  "capacity_estimation" : true,
-  "http2_properties" : {
-    "max_http2_control_frames_per_connection" : "",
-    "max_http2_header_field_size" : ""
-  },
-  "ignore_server_port" : true,
-  "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
-  "gslb_sp_enabled" : true,
-  "server_name" : "aeiou",
-  "request_queue_depth" : "",
-  "description" : "aeiou",
-  "lb_algorithm" : "aeiou",
-  "ssl_profile_ref" : "aeiou",
-  "graceful_disable_timeout" : 123,
-  "networks" : [ {
-    "server_filter" : "aeiou",
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_port" : true,
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "server_reselect" : {
-    "retry_timeout" : "",
-    "svr_resp_code" : {
-      "resp_code_block" : [ "aeiou" ],
-      "codes" : [ "" ],
-      "ranges" : [ {
-        "end" : 123,
-        "begin" : 123
-      } ]
-    },
-    "num_retries" : "",
-    "enabled" : true,
-    "retry_nonidempotent" : true
-  },
-  "autoscale_policy_ref" : "aeiou",
-  "servers" : [ {
-    "availability_zone" : "aeiou",
-    "prst_hdr_val" : "aeiou",
-    "static" : true,
-    "vm_ref" : "aeiou",
-    "ip" : "",
-    "preference_order" : "",
-    "description" : "aeiou",
-    "external_uuid" : "aeiou",
-    "verify_network" : true,
-    "enabled" : true,
-    "autoscaling_group_name" : "aeiou",
-    "rewrite_host_header" : true,
-    "hostname" : "aeiou",
-    "nw_ref" : "aeiou",
-    "external_orchestration_id" : "aeiou",
-    "port" : 123,
-    "mac_address" : "aeiou",
-    "server_node" : "aeiou",
-    "location" : {
-      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-      "name" : "aeiou",
-      "tag" : "aeiou",
-      "longitude" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "resolve_server_by_dns" : true,
-    "discovered_networks" : [ {
-      "subnet" : [ "" ],
-      "subnet6" : [ "" ],
-      "network_ref" : "aeiou"
-    } ],
-    "ratio" : 123
-  } ],
-  "fail_action" : {
-    "redirect" : {
-      "path" : "aeiou",
-      "protocol" : "aeiou",
-      "status_code" : "aeiou",
-      "query" : "aeiou",
-      "host" : "aeiou"
-    },
-    "local_rsp" : {
-      "file" : {
-        "file_content" : "aeiou",
-        "content_type" : "aeiou",
-        "file_length" : ""
-      },
-      "status_code" : "aeiou"
-    },
-    "type" : "aeiou"
-  },
-  "horizon_profile" : {
-    "blast_port" : "",
-    "pcoip_port" : ""
-  },
-  "max_conn_rate_per_server" : {
-    "rate_limiter" : {
-      "period" : "",
-      "count" : "",
-      "name" : "aeiou",
-      "burst_sz" : ""
-    },
-    "action" : {
-      "redirect" : {
-        "keep_query" : true,
-        "path" : "",
-        "protocol" : "aeiou",
-        "status_code" : "aeiou",
-        "add_string" : "aeiou",
-        "port" : "",
-        "host" : {
-          "tokens" : [ {
-            "start_index" : "",
-            "str_value" : "aeiou",
-            "end_index" : "",
-            "type" : "aeiou"
-          } ],
-          "type" : "aeiou"
-        }
-      },
-      "file" : "",
-      "status_code" : "aeiou",
-      "type" : "aeiou"
-    },
-    "explicit_tracking" : true,
-    "fine_grain" : true,
-    "http_cookie" : "aeiou",
-    "http_header" : "aeiou"
-  },
-  "pool_type" : "aeiou",
-  "analytics_profile_ref" : "aeiou",
-  "max_concurrent_connections_per_server" : 123,
-  "service_metadata" : "aeiou",
-  "capacity_estimation_ttfb_thresh" : "",
-  "lb_algorithm_hash" : "aeiou",
-  "delete_server_on_dns_refresh" : true,
-  "request_queue_enabled" : true,
-  "host_check_enabled" : true,
-  "server_timeout" : "",
-  "url" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "sp_gs_info" : {
-    "gs_ref" : "aeiou",
-    "fqdns" : [ "aeiou" ]
-  },
-  "connection_ramp_duration" : 123,
-  "tenant_ref" : "aeiou",
-  "conn_pool_properties" : {
-    "upstream_connpool_conn_idle_tmo" : "",
-    "upstream_connpool_conn_life_tmo" : "",
-    "upstream_connpool_conn_max_reuse" : "",
-    "upstream_connpool_server_max_cache" : ""
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "lb_algorithm_consistent_hash_hdr" : "aeiou",
-  "rewrite_host_header_to_sni" : true
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Pool">Pool</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidHmonGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/hmon/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/hmon/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidHmonGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/hmon/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/hmon/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1386,12 +1019,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidHttpcacheGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/httpcache/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/httpcache/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidHttpcacheGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/httpcache/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/httpcache/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1438,64 +1071,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidHttpcachestatsDetailGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/httpcachestats/detail/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidHttpcachestatsDetailGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidHttpcachestatsGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/httpcachestats/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/httpcachestats/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidHttpcachestatsGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/httpcachestats/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/httpcachestats/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1542,12 +1123,64 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidObjsyncGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/httpcachestats/detail/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/httpcachestats/detail/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/httpcachestats/detail/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/httpcachestats/detail/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/objsync/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/objsync/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidObjsyncGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/objsync/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/objsync/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1594,281 +1227,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /pool/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Pool object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Pool">Pool</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "ipaddrgroup_ref" : "aeiou",
-  "min_health_monitors_up" : "",
-  "inline_health_monitor" : true,
-  "default_server_port" : 123,
-  "resolve_pool_by_dns" : true,
-  "server_disable_type" : "aeiou",
-  "lookup_server_by_name" : true,
-  "fewest_tasks_feedback_delay" : "",
-  "sni_enabled" : true,
-  "vrf_ref" : "aeiou",
-  "uuid" : "aeiou",
-  "domain_name" : [ "aeiou" ],
-  "east_west" : true,
-  "rewrite_host_header_to_server_name" : true,
-  "ssl_key_and_certificate_ref" : "aeiou",
-  "append_port" : "aeiou",
-  "cloud_ref" : "aeiou",
-  "tier1_lr" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "analytics_policy" : {
-    "enable_realtime_metrics" : true
-  },
-  "health_monitor_refs" : [ "aeiou" ],
-  "graceful_hm_down_disable_timeout" : 123,
-  "application_persistence_profile_ref" : "aeiou",
-  "lb_algorithm_core_nonaffinity" : "",
-  "autoscale_launch_config_ref" : "aeiou",
-  "lb_algo_rr_per_se" : true,
-  "routing_pool" : true,
-  "placement_networks" : [ {
-    "subnet" : {
-      "ip_addr" : {
-        "addr" : "aeiou",
-        "type" : "aeiou"
-      },
-      "mask" : 123
-    },
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_ssl_mode" : true,
-  "autoscale_networks" : [ "aeiou" ],
-  "enable_http2" : true,
-  "created_by" : "aeiou",
-  "external_autoscale_groups" : [ "aeiou" ],
-  "min_servers_up" : "",
-  "capacity_estimation" : true,
-  "http2_properties" : {
-    "max_http2_control_frames_per_connection" : "",
-    "max_http2_header_field_size" : ""
-  },
-  "ignore_server_port" : true,
-  "name" : "aeiou",
-  "cloud_config_cksum" : "aeiou",
-  "gslb_sp_enabled" : true,
-  "server_name" : "aeiou",
-  "request_queue_depth" : "",
-  "description" : "aeiou",
-  "lb_algorithm" : "aeiou",
-  "ssl_profile_ref" : "aeiou",
-  "graceful_disable_timeout" : 123,
-  "networks" : [ {
-    "server_filter" : "aeiou",
-    "network_ref" : "aeiou"
-  } ],
-  "use_service_port" : true,
-  "enabled" : true,
-  "_last_modified" : "aeiou",
-  "server_reselect" : {
-    "retry_timeout" : "",
-    "svr_resp_code" : {
-      "resp_code_block" : [ "aeiou" ],
-      "codes" : [ "" ],
-      "ranges" : [ {
-        "end" : 123,
-        "begin" : 123
-      } ]
-    },
-    "num_retries" : "",
-    "enabled" : true,
-    "retry_nonidempotent" : true
-  },
-  "autoscale_policy_ref" : "aeiou",
-  "servers" : [ {
-    "availability_zone" : "aeiou",
-    "prst_hdr_val" : "aeiou",
-    "static" : true,
-    "vm_ref" : "aeiou",
-    "ip" : "",
-    "preference_order" : "",
-    "description" : "aeiou",
-    "external_uuid" : "aeiou",
-    "verify_network" : true,
-    "enabled" : true,
-    "autoscaling_group_name" : "aeiou",
-    "rewrite_host_header" : true,
-    "hostname" : "aeiou",
-    "nw_ref" : "aeiou",
-    "external_orchestration_id" : "aeiou",
-    "port" : 123,
-    "mac_address" : "aeiou",
-    "server_node" : "aeiou",
-    "location" : {
-      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
-      "name" : "aeiou",
-      "tag" : "aeiou",
-      "longitude" : 1.3579000000000001069366817318950779736042022705078125
-    },
-    "resolve_server_by_dns" : true,
-    "discovered_networks" : [ {
-      "subnet" : [ "" ],
-      "subnet6" : [ "" ],
-      "network_ref" : "aeiou"
-    } ],
-    "ratio" : 123
-  } ],
-  "fail_action" : {
-    "redirect" : {
-      "path" : "aeiou",
-      "protocol" : "aeiou",
-      "status_code" : "aeiou",
-      "query" : "aeiou",
-      "host" : "aeiou"
-    },
-    "local_rsp" : {
-      "file" : {
-        "file_content" : "aeiou",
-        "content_type" : "aeiou",
-        "file_length" : ""
-      },
-      "status_code" : "aeiou"
-    },
-    "type" : "aeiou"
-  },
-  "horizon_profile" : {
-    "blast_port" : "",
-    "pcoip_port" : ""
-  },
-  "max_conn_rate_per_server" : {
-    "rate_limiter" : {
-      "period" : "",
-      "count" : "",
-      "name" : "aeiou",
-      "burst_sz" : ""
-    },
-    "action" : {
-      "redirect" : {
-        "keep_query" : true,
-        "path" : "",
-        "protocol" : "aeiou",
-        "status_code" : "aeiou",
-        "add_string" : "aeiou",
-        "port" : "",
-        "host" : {
-          "tokens" : [ {
-            "start_index" : "",
-            "str_value" : "aeiou",
-            "end_index" : "",
-            "type" : "aeiou"
-          } ],
-          "type" : "aeiou"
-        }
-      },
-      "file" : "",
-      "status_code" : "aeiou",
-      "type" : "aeiou"
-    },
-    "explicit_tracking" : true,
-    "fine_grain" : true,
-    "http_cookie" : "aeiou",
-    "http_header" : "aeiou"
-  },
-  "pool_type" : "aeiou",
-  "analytics_profile_ref" : "aeiou",
-  "max_concurrent_connections_per_server" : 123,
-  "service_metadata" : "aeiou",
-  "capacity_estimation_ttfb_thresh" : "",
-  "lb_algorithm_hash" : "aeiou",
-  "delete_server_on_dns_refresh" : true,
-  "request_queue_enabled" : true,
-  "host_check_enabled" : true,
-  "server_timeout" : "",
-  "url" : "aeiou",
-  "nsx_securitygroup" : [ "aeiou" ],
-  "pki_profile_ref" : "aeiou",
-  "sp_gs_info" : {
-    "gs_ref" : "aeiou",
-    "fqdns" : [ "aeiou" ]
-  },
-  "connection_ramp_duration" : 123,
-  "tenant_ref" : "aeiou",
-  "conn_pool_properties" : {
-    "upstream_connpool_conn_idle_tmo" : "",
-    "upstream_connpool_conn_life_tmo" : "",
-    "upstream_connpool_conn_max_reuse" : "",
-    "upstream_connpool_server_max_cache" : ""
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "lb_algorithm_consistent_hash_hdr" : "aeiou",
-  "rewrite_host_header_to_sni" : true
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Pool">Pool</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidPersistenceGet"/>
+  <div class="method"><a name="gET /pool/{uuid}/persistence/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/persistence/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidPersistenceGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/persistence/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/persistence/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1915,12 +1279,584 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidPut"/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /pool/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/debug/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/debug/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/debug/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/debug/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/detail/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/detail/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/detail/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/detail/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/internal/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/internal/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/internal/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/internal/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/server/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/server/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/server/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/server/detail/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/detail/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/server/detail/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/server/detail/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/server/hmonstat/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/hmonstat/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/server/hmonstat/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/server/hmonstat/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/server/internal/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/internal/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/server/internal/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/server/internal/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/vs/service/server/map/kv/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/vs/service/server/map/kv/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/vs/service/server/map/kv/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/runtime/vs/service/server/map/table/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/runtime/vs/service/server/map/table/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/vs/service/server/map/table/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /pool/{uuid}/vs/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/vs/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /pool/{uuid}/vs/</span>)</div>
+    <div class="method-notes">/pool/{uuid}/vs/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /pool/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /pool/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /pool/{uuid}</span>)</div>
+    <div class="method-notes">/pool/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2184,19 +2120,13 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidRuntimeDebugGet"/>
+  <div class="method"><a name="pOST /pool"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/debug/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeDebugGet</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool</span>)</div>
+    <div class="method-notes">/pool</div>
 
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -2204,6 +2134,269 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Pool object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Pool">Pool</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "ipaddrgroup_ref" : "aeiou",
+  "min_health_monitors_up" : "",
+  "inline_health_monitor" : true,
+  "default_server_port" : 123,
+  "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
+  "lookup_server_by_name" : true,
+  "fewest_tasks_feedback_delay" : "",
+  "sni_enabled" : true,
+  "vrf_ref" : "aeiou",
+  "uuid" : "aeiou",
+  "domain_name" : [ "aeiou" ],
+  "east_west" : true,
+  "rewrite_host_header_to_server_name" : true,
+  "ssl_key_and_certificate_ref" : "aeiou",
+  "append_port" : "aeiou",
+  "cloud_ref" : "aeiou",
+  "tier1_lr" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "analytics_policy" : {
+    "enable_realtime_metrics" : true
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "graceful_hm_down_disable_timeout" : 123,
+  "application_persistence_profile_ref" : "aeiou",
+  "lb_algorithm_core_nonaffinity" : "",
+  "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
+  "routing_pool" : true,
+  "placement_networks" : [ {
+    "subnet" : {
+      "ip_addr" : {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      },
+      "mask" : 123
+    },
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_ssl_mode" : true,
+  "autoscale_networks" : [ "aeiou" ],
+  "enable_http2" : true,
+  "created_by" : "aeiou",
+  "external_autoscale_groups" : [ "aeiou" ],
+  "min_servers_up" : "",
+  "capacity_estimation" : true,
+  "http2_properties" : {
+    "max_http2_control_frames_per_connection" : "",
+    "max_http2_header_field_size" : ""
+  },
+  "ignore_server_port" : true,
+  "name" : "aeiou",
+  "cloud_config_cksum" : "aeiou",
+  "gslb_sp_enabled" : true,
+  "server_name" : "aeiou",
+  "request_queue_depth" : "",
+  "description" : "aeiou",
+  "lb_algorithm" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "graceful_disable_timeout" : 123,
+  "networks" : [ {
+    "server_filter" : "aeiou",
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_port" : true,
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "server_reselect" : {
+    "retry_timeout" : "",
+    "svr_resp_code" : {
+      "resp_code_block" : [ "aeiou" ],
+      "codes" : [ "" ],
+      "ranges" : [ {
+        "end" : 123,
+        "begin" : 123
+      } ]
+    },
+    "num_retries" : "",
+    "enabled" : true,
+    "retry_nonidempotent" : true
+  },
+  "autoscale_policy_ref" : "aeiou",
+  "servers" : [ {
+    "availability_zone" : "aeiou",
+    "prst_hdr_val" : "aeiou",
+    "static" : true,
+    "vm_ref" : "aeiou",
+    "ip" : "",
+    "preference_order" : "",
+    "description" : "aeiou",
+    "external_uuid" : "aeiou",
+    "verify_network" : true,
+    "enabled" : true,
+    "autoscaling_group_name" : "aeiou",
+    "rewrite_host_header" : true,
+    "hostname" : "aeiou",
+    "nw_ref" : "aeiou",
+    "external_orchestration_id" : "aeiou",
+    "port" : 123,
+    "mac_address" : "aeiou",
+    "server_node" : "aeiou",
+    "location" : {
+      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+      "name" : "aeiou",
+      "tag" : "aeiou",
+      "longitude" : 1.3579000000000001069366817318950779736042022705078125
+    },
+    "resolve_server_by_dns" : true,
+    "discovered_networks" : [ {
+      "subnet" : [ "" ],
+      "subnet6" : [ "" ],
+      "network_ref" : "aeiou"
+    } ],
+    "ratio" : 123
+  } ],
+  "fail_action" : {
+    "redirect" : {
+      "path" : "aeiou",
+      "protocol" : "aeiou",
+      "status_code" : "aeiou",
+      "query" : "aeiou",
+      "host" : "aeiou"
+    },
+    "local_rsp" : {
+      "file" : {
+        "file_content" : "aeiou",
+        "content_type" : "aeiou",
+        "file_length" : ""
+      },
+      "status_code" : "aeiou"
+    },
+    "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : "",
+    "pcoip_port" : ""
+  },
+  "max_conn_rate_per_server" : {
+    "rate_limiter" : {
+      "period" : "",
+      "count" : "",
+      "name" : "aeiou",
+      "burst_sz" : ""
+    },
+    "action" : {
+      "redirect" : {
+        "keep_query" : true,
+        "path" : "",
+        "protocol" : "aeiou",
+        "status_code" : "aeiou",
+        "add_string" : "aeiou",
+        "port" : "",
+        "host" : {
+          "tokens" : [ {
+            "start_index" : "",
+            "str_value" : "aeiou",
+            "end_index" : "",
+            "type" : "aeiou"
+          } ],
+          "type" : "aeiou"
+        }
+      },
+      "file" : "",
+      "status_code" : "aeiou",
+      "type" : "aeiou"
+    },
+    "explicit_tracking" : true,
+    "fine_grain" : true,
+    "http_cookie" : "aeiou",
+    "http_header" : "aeiou"
+  },
+  "pool_type" : "aeiou",
+  "analytics_profile_ref" : "aeiou",
+  "max_concurrent_connections_per_server" : 123,
+  "service_metadata" : "aeiou",
+  "capacity_estimation_ttfb_thresh" : "",
+  "lb_algorithm_hash" : "aeiou",
+  "delete_server_on_dns_refresh" : true,
+  "request_queue_enabled" : true,
+  "host_check_enabled" : true,
+  "server_timeout" : "",
+  "url" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
+  "connection_ramp_duration" : 123,
+  "tenant_ref" : "aeiou",
+  "conn_pool_properties" : {
+    "upstream_connpool_conn_idle_tmo" : "",
+    "upstream_connpool_conn_life_tmo" : "",
+    "upstream_connpool_conn_max_reuse" : "",
+    "upstream_connpool_server_max_cache" : ""
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "lb_algorithm_consistent_hash_hdr" : "aeiou",
+  "rewrite_host_header_to_sni" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Pool">Pool</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /pool/clear"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/clear</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/clear</span>)</div>
+    <div class="method-notes">/pool/clear</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
+    </div>  <!-- field-items -->
 
 
 
@@ -2236,12 +2429,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidRuntimeDetailGet"/>
+  <div class="method"><a name="pOST /pool/{uuid}/connpoolstats/clear"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/detail/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeDetailGet</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/connpoolstats/clear</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/{uuid}/connpoolstats/clear</span>)</div>
+    <div class="method-notes">/pool/{uuid}/connpoolstats/clear</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2256,6 +2449,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
+    </div>  <!-- field-items -->
 
 
 
@@ -2288,116 +2487,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidRuntimeGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeInternalGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/internal/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeInternalGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeRequestQueueClearPost"/>
+  <div class="method"><a name="pOST /pool/{uuid}/runtime/requestQueue/clear"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/runtime/request_queue/clear</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeRequestQueueClearPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/{uuid}/runtime/requestQueue/clear</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/request_queue/clear</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2450,220 +2545,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidRuntimeServerDetailGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/detail/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeServerDetailGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeServerGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeServerGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeServerHmonstatGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/hmonstat/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeServerHmonstatGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeServerInternalGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/server/internal/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeServerInternalGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeStatsClearPost"/>
+  <div class="method"><a name="pOST /pool/{uuid}/runtime/stats/clear"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/runtime/stats/clear</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeStatsClearPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/{uuid}/runtime/stats/clear</span>)</div>
+    <div class="method-notes">/pool/{uuid}/runtime/stats/clear</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2716,116 +2603,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidRuntimeVsServiceServerMapKvGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/kv/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeVsServiceServerMapKvGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidRuntimeVsServiceServerMapTableGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/runtime/vs/service/server/map/table/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidRuntimeVsServiceServerMapTableGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="poolUuidScaleinPost"/>
+  <div class="method"><a name="pOST /pool/{uuid}/scalein"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/scalein</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidScaleinPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/{uuid}/scalein</span>)</div>
+    <div class="method-notes">/pool/{uuid}/scalein</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2878,12 +2661,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidScaleoutPost"/>
+  <div class="method"><a name="pOST /pool/{uuid}/scaleout"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /pool/{uuid}/scaleout</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidScaleoutPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /pool/{uuid}/scaleout</span>)</div>
+    <div class="method-notes">/pool/{uuid}/scaleout</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2936,12 +2719,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="poolUuidVsGet"/>
+  <div class="method"><a name="pUT /pool/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /pool/{uuid}/vs/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">poolUuidVsGet</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /pool/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /pool/{uuid}</span>)</div>
+    <div class="method-notes">/pool/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2956,21 +2739,238 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Pool object creation </div>
+    </div>  <!-- field-items -->
 
 
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#Pool">Pool</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "ipaddrgroup_ref" : "aeiou",
+  "min_health_monitors_up" : "",
+  "inline_health_monitor" : true,
+  "default_server_port" : 123,
+  "resolve_pool_by_dns" : true,
+  "server_disable_type" : "aeiou",
+  "lookup_server_by_name" : true,
+  "fewest_tasks_feedback_delay" : "",
+  "sni_enabled" : true,
+  "vrf_ref" : "aeiou",
+  "uuid" : "aeiou",
+  "domain_name" : [ "aeiou" ],
+  "east_west" : true,
+  "rewrite_host_header_to_server_name" : true,
+  "ssl_key_and_certificate_ref" : "aeiou",
+  "append_port" : "aeiou",
+  "cloud_ref" : "aeiou",
+  "tier1_lr" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "analytics_policy" : {
+    "enable_realtime_metrics" : true
+  },
+  "health_monitor_refs" : [ "aeiou" ],
+  "graceful_hm_down_disable_timeout" : 123,
+  "application_persistence_profile_ref" : "aeiou",
+  "lb_algorithm_core_nonaffinity" : "",
+  "autoscale_launch_config_ref" : "aeiou",
+  "lb_algo_rr_per_se" : true,
+  "routing_pool" : true,
+  "placement_networks" : [ {
+    "subnet" : {
+      "ip_addr" : {
+        "addr" : "aeiou",
+        "type" : "aeiou"
+      },
+      "mask" : 123
+    },
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_ssl_mode" : true,
+  "autoscale_networks" : [ "aeiou" ],
+  "enable_http2" : true,
+  "created_by" : "aeiou",
+  "external_autoscale_groups" : [ "aeiou" ],
+  "min_servers_up" : "",
+  "capacity_estimation" : true,
+  "http2_properties" : {
+    "max_http2_control_frames_per_connection" : "",
+    "max_http2_header_field_size" : ""
+  },
+  "ignore_server_port" : true,
+  "name" : "aeiou",
+  "cloud_config_cksum" : "aeiou",
+  "gslb_sp_enabled" : true,
+  "server_name" : "aeiou",
+  "request_queue_depth" : "",
+  "description" : "aeiou",
+  "lb_algorithm" : "aeiou",
+  "ssl_profile_ref" : "aeiou",
+  "graceful_disable_timeout" : 123,
+  "networks" : [ {
+    "server_filter" : "aeiou",
+    "network_ref" : "aeiou"
+  } ],
+  "use_service_port" : true,
+  "enabled" : true,
+  "_last_modified" : "aeiou",
+  "server_reselect" : {
+    "retry_timeout" : "",
+    "svr_resp_code" : {
+      "resp_code_block" : [ "aeiou" ],
+      "codes" : [ "" ],
+      "ranges" : [ {
+        "end" : 123,
+        "begin" : 123
+      } ]
+    },
+    "num_retries" : "",
+    "enabled" : true,
+    "retry_nonidempotent" : true
+  },
+  "autoscale_policy_ref" : "aeiou",
+  "servers" : [ {
+    "availability_zone" : "aeiou",
+    "prst_hdr_val" : "aeiou",
+    "static" : true,
+    "vm_ref" : "aeiou",
+    "ip" : "",
+    "preference_order" : "",
+    "description" : "aeiou",
+    "external_uuid" : "aeiou",
+    "verify_network" : true,
+    "enabled" : true,
+    "autoscaling_group_name" : "aeiou",
+    "rewrite_host_header" : true,
+    "hostname" : "aeiou",
+    "nw_ref" : "aeiou",
+    "external_orchestration_id" : "aeiou",
+    "port" : 123,
+    "mac_address" : "aeiou",
+    "server_node" : "aeiou",
+    "location" : {
+      "latitude" : 1.3579000000000001069366817318950779736042022705078125,
+      "name" : "aeiou",
+      "tag" : "aeiou",
+      "longitude" : 1.3579000000000001069366817318950779736042022705078125
+    },
+    "resolve_server_by_dns" : true,
+    "discovered_networks" : [ {
+      "subnet" : [ "" ],
+      "subnet6" : [ "" ],
+      "network_ref" : "aeiou"
+    } ],
+    "ratio" : 123
+  } ],
+  "fail_action" : {
+    "redirect" : {
+      "path" : "aeiou",
+      "protocol" : "aeiou",
+      "status_code" : "aeiou",
+      "query" : "aeiou",
+      "host" : "aeiou"
+    },
+    "local_rsp" : {
+      "file" : {
+        "file_content" : "aeiou",
+        "content_type" : "aeiou",
+        "file_length" : ""
+      },
+      "status_code" : "aeiou"
+    },
+    "type" : "aeiou"
+  },
+  "horizon_profile" : {
+    "blast_port" : "",
+    "pcoip_port" : ""
+  },
+  "max_conn_rate_per_server" : {
+    "rate_limiter" : {
+      "period" : "",
+      "count" : "",
+      "name" : "aeiou",
+      "burst_sz" : ""
+    },
+    "action" : {
+      "redirect" : {
+        "keep_query" : true,
+        "path" : "",
+        "protocol" : "aeiou",
+        "status_code" : "aeiou",
+        "add_string" : "aeiou",
+        "port" : "",
+        "host" : {
+          "tokens" : [ {
+            "start_index" : "",
+            "str_value" : "aeiou",
+            "end_index" : "",
+            "type" : "aeiou"
+          } ],
+          "type" : "aeiou"
+        }
+      },
+      "file" : "",
+      "status_code" : "aeiou",
+      "type" : "aeiou"
+    },
+    "explicit_tracking" : true,
+    "fine_grain" : true,
+    "http_cookie" : "aeiou",
+    "http_header" : "aeiou"
+  },
+  "pool_type" : "aeiou",
+  "analytics_profile_ref" : "aeiou",
+  "max_concurrent_connections_per_server" : 123,
+  "service_metadata" : "aeiou",
+  "capacity_estimation_ttfb_thresh" : "",
+  "lb_algorithm_hash" : "aeiou",
+  "delete_server_on_dns_refresh" : true,
+  "request_queue_enabled" : true,
+  "host_check_enabled" : true,
+  "server_timeout" : "",
+  "url" : "aeiou",
+  "nsx_securitygroup" : [ "aeiou" ],
+  "pki_profile_ref" : "aeiou",
+  "sp_gs_info" : {
+    "gs_ref" : "aeiou",
+    "fqdns" : [ "aeiou" ]
+  },
+  "connection_ramp_duration" : 123,
+  "tenant_ref" : "aeiou",
+  "conn_pool_properties" : {
+    "upstream_connpool_conn_idle_tmo" : "",
+    "upstream_connpool_conn_life_tmo" : "",
+    "upstream_connpool_conn_max_reuse" : "",
+    "upstream_connpool_server_max_cache" : ""
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "lb_algorithm_consistent_hash_hdr" : "aeiou",
+  "rewrite_host_header_to_sni" : true
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -2982,7 +2982,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#String">String</a>
+        <a href="#Pool">Pool</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

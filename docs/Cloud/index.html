@@ -202,31 +202,89 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#cloudGet"><code><span class="http-method">get</span> /cloud</code></a></li>
-  <li><a href="#cloudListPost"><code><span class="http-method">post</span> /cloud/list</code></a></li>
-  <li><a href="#cloudPost"><code><span class="http-method">post</span> /cloud</code></a></li>
-  <li><a href="#cloudUuidAutoscalegroupGet"><code><span class="http-method">get</span> /cloud/{uuid}/autoscalegroup/</code></a></li>
-  <li><a href="#cloudUuidAutoscalegroupserversGet"><code><span class="http-method">get</span> /cloud/{uuid}/autoscalegroupservers/</code></a></li>
-  <li><a href="#cloudUuidDelete"><code><span class="http-method">delete</span> /cloud/{uuid}</code></a></li>
-  <li><a href="#cloudUuidGcPatch"><code><span class="http-method">patch</span> /cloud/{uuid}/gc/</code></a></li>
-  <li><a href="#cloudUuidGcPut"><code><span class="http-method">put</span> /cloud/{uuid}/gc/</code></a></li>
+  <li><a href="#dELETE /cloud/{uuid}"><code><span class="http-method">delete</span> /cloud/{uuid}</code></a></li>
+  <li><a href="#gET /cloud"><code><span class="http-method">get</span> /cloud</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/autoscalegroup/"><code><span class="http-method">get</span> /cloud/{uuid}/autoscalegroup/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/autoscalegroupservers/"><code><span class="http-method">get</span> /cloud/{uuid}/autoscalegroupservers/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/health/"><code><span class="http-method">get</span> /cloud/{uuid}/health/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/hosts/"><code><span class="http-method">get</span> /cloud/{uuid}/hosts/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/internals/"><code><span class="http-method">get</span> /cloud/{uuid}/internals/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/placement/ineligible/"><code><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/placement/summary/"><code><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></a></li>
+  <li><a href="#gET /cloud/{uuid}/status/"><code><span class="http-method">get</span> /cloud/{uuid}/status/</code></a></li>
+  <li><a href="#pATCH /cloud/{uuid}"><code><span class="http-method">patch</span> /cloud/{uuid}</code></a></li>
+  <li><a href="#pATCH /cloud/{uuid}/gc/"><code><span class="http-method">patch</span> /cloud/{uuid}/gc/</code></a></li>
+  <li><a href="#pOST /cloud"><code><span class="http-method">post</span> /cloud</code></a></li>
+  <li><a href="#pOST /cloud/list"><code><span class="http-method">post</span> /cloud/list</code></a></li>
+  <li><a href="#pUT /cloud/{uuid}"><code><span class="http-method">put</span> /cloud/{uuid}</code></a></li>
+  <li><a href="#pUT /cloud/{uuid}/gc/"><code><span class="http-method">put</span> /cloud/{uuid}/gc/</code></a></li>
   <li><a href="#cloudUuidGet"><code><span class="http-method">get</span> /cloud/{uuid}</code></a></li>
-  <li><a href="#cloudUuidHealthGet"><code><span class="http-method">get</span> /cloud/{uuid}/health/</code></a></li>
-  <li><a href="#cloudUuidHostsGet"><code><span class="http-method">get</span> /cloud/{uuid}/hosts/</code></a></li>
-  <li><a href="#cloudUuidInternalsGet"><code><span class="http-method">get</span> /cloud/{uuid}/internals/</code></a></li>
-  <li><a href="#cloudUuidPatch"><code><span class="http-method">patch</span> /cloud/{uuid}</code></a></li>
-  <li><a href="#cloudUuidPlacementIneligibleGet"><code><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></a></li>
-  <li><a href="#cloudUuidPlacementSummaryGet"><code><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></a></li>
-  <li><a href="#cloudUuidPut"><code><span class="http-method">put</span> /cloud/{uuid}</code></a></li>
-  <li><a href="#cloudUuidStatusGet"><code><span class="http-method">get</span> /cloud/{uuid}/status/</code></a></li>
   </ol>
 
-  <div class="method"><a name="cloudGet"/>
+  <div class="method"><a name="dELETE /cloud/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /cloud/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /cloud/{uuid}</span>)</div>
+    <div class="method-notes">/cloud/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud</span>)</div>
+    <div class="method-notes">/cloud</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -681,13 +739,19 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudListPost"/>
+  <div class="method"><a name="gET /cloud/{uuid}/autoscalegroup/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /cloud/list</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudListPost</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/autoscalegroup/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/autoscalegroup/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/autoscalegroup/</div>
 
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -695,12 +759,6 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
-    </div>  <!-- field-items -->
 
 
 
@@ -733,12 +791,884 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudPost"/>
+  <div class="method"><a name="gET /cloud/{uuid}/autoscalegroupservers/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/autoscalegroupservers/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/autoscalegroupservers/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/autoscalegroupservers/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/health/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/health/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/health/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/health/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/hosts/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/hosts/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/hosts/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/hosts/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/internals/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/internals/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/internals/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/internals/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/placement/ineligible/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/placement/ineligible/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/placement/ineligible/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/placement/summary/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/placement/summary/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/placement/summary/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /cloud/{uuid}/status/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/status/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /cloud/{uuid}/status/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/status/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /cloud/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloud/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /cloud/{uuid}</span>)</div>
+    <div class="method-notes">/cloud/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Cloud object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Cloud">Cloud</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "autoscale_polling_interval" : "",
+  "maintenance_mode" : true,
+  "vtype" : "aeiou",
+  "dns_resolvers" : [ {
+    "min_ttl" : "",
+    "fixed_ttl" : "",
+    "nameserver_ips" : [ {
+      "addr" : "aeiou",
+      "type" : "aeiou"
+    } ],
+    "use_mgmt" : true,
+    "resolver_name" : "aeiou"
+  } ],
+  "ipam_provider_ref" : "aeiou",
+  "state_based_dns_registration" : true,
+  "aws_configuration" : {
+    "access_key_id" : "aeiou",
+    "use_sns_sqs" : true,
+    "iam_assume_role" : "aeiou",
+    "vpc_id" : "aeiou",
+    "ebs_encryption" : {
+      "mode" : "aeiou",
+      "master_key" : "aeiou"
+    },
+    "secret_access_key" : "aeiou",
+    "vpc" : "aeiou",
+    "publish_vip_to_public_zone" : true,
+    "zones" : [ {
+      "availability_zone" : "aeiou",
+      "mgmt_network_name" : "aeiou",
+      "mgmt_network_uuid" : "aeiou"
+    } ],
+    "ttl" : "",
+    "asg_poll_interval" : "",
+    "route53_integration" : true,
+    "s3_encryption" : "",
+    "sqs_encryption" : "",
+    "use_iam_roles" : true,
+    "region" : "aeiou",
+    "free_elasticips" : true
+  },
+  "east_west_ipam_provider_ref" : "aeiou",
+  "gcp_configuration" : {
+    "encryption_keys" : {
+      "gcs_bucket_kms_key_id" : "aeiou",
+      "gcs_objects_kms_key_id" : "aeiou",
+      "se_image_kms_key_id" : "aeiou",
+      "se_disk_kms_key_id" : "aeiou"
+    },
+    "gcs_bucket_name" : "aeiou",
+    "firewall_target_tags" : [ "aeiou" ],
+    "network_config" : {
+      "inband" : {
+        "vpc_network_name" : "aeiou",
+        "vpc_project_id" : "aeiou",
+        "vpc_subnet_name" : "aeiou"
+      },
+      "two_arm" : {
+        "backend_data_vpc_network_name" : "aeiou",
+        "backend_data_vpc_subnet_name" : "aeiou",
+        "frontend_data_vpc_project_id" : "aeiou",
+        "frontend_data_vpc_subnet_name" : "aeiou",
+        "management_vpc_project_id" : "aeiou",
+        "management_vpc_network_name" : "aeiou",
+        "management_vpc_subnet_name" : "aeiou",
+        "frontend_data_vpc_network_name" : "aeiou",
+        "backend_data_vpc_project_id" : "aeiou"
+      },
+      "one_arm" : {
+        "management_vpc_project_id" : "aeiou",
+        "data_vpc_subnet_name" : "aeiou",
+        "management_vpc_network_name" : "aeiou",
+        "management_vpc_subnet_name" : "aeiou",
+        "data_vpc_network_name" : "aeiou",
+        "data_vpc_project_id" : "aeiou"
+      },
+      "config" : "aeiou"
+    },
+    "region_name" : "aeiou",
+    "se_project_id" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "zones" : [ "aeiou" ],
+    "gcp_service_account_email" : "aeiou",
+    "gcs_project_id" : "aeiou",
+    "vip_allocation_strategy" : {
+      "mode" : "aeiou",
+      "routes" : {
+        "match_se_group_subnet" : true,
+        "route_priority" : ""
+      },
+      "ilb" : {
+        "cloud_router_names" : [ "aeiou" ]
+      }
+    }
+  },
+  "uuid" : "aeiou",
+  "_last_modified" : "aeiou",
+  "docker_configuration" : {
+    "feproxy_container_port_as_service" : true,
+    "disable_auto_backend_service_sync" : true,
+    "se_volume" : "aeiou",
+    "http_container_ports" : [ "" ],
+    "se_spawn_rate" : "",
+    "ca_tls_key_and_certificate_ref" : "aeiou",
+    "fleet_endpoint" : "aeiou",
+    "client_tls_key_and_certificate_ref" : "aeiou",
+    "ssh_user_ref" : "aeiou",
+    "use_controller_image" : true,
+    "use_container_ip_port" : true,
+    "container_port_match_http_service" : true,
+    "disable_auto_se_creation" : true,
+    "se_include_attributes" : [ "" ],
+    "se_deployment_method" : "aeiou",
+    "services_accessible_all_interfaces" : true,
+    "disable_auto_frontend_service_sync" : true,
+    "ucp_nodes" : [ "aeiou" ],
+    "app_sync_frequency" : "",
+    "feproxy_vips_enable_proxy_arp" : true,
+    "enable_event_subscription" : true,
+    "coredump_directory" : "aeiou",
+    "docker_registry_se" : {
+      "registry" : "aeiou",
+      "password" : "aeiou",
+      "private" : true,
+      "oshift_registry" : {
+        "registry_vip" : "",
+        "registry_namespace" : "aeiou",
+        "registry_service" : "aeiou"
+      },
+      "username" : "aeiou"
+    },
+    "se_exclude_attributes" : [ {
+      "attribute" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "east_west_placement_subnet" : {
+      "ip_addr" : "",
+      "mask" : 123
+    }
+  },
+  "vca_configuration" : {
+    "vca_password" : "aeiou",
+    "vca_instance" : "aeiou",
+    "vca_orgnization" : "aeiou",
+    "vca_username" : "aeiou",
+    "vca_mgmt_network" : "aeiou",
+    "vca_host" : "aeiou",
+    "vca_vdc" : "aeiou",
+    "privilege" : "aeiou"
+  },
+  "mgmt_ip_v6_enabled" : true,
+  "dns_provider_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "metrics_polling_interval" : "",
+  "proxy_configuration" : {
+    "password" : "aeiou",
+    "port" : "",
+    "host" : "aeiou",
+    "username" : "aeiou"
+  },
+  "enable_vip_on_all_interfaces" : true,
+  "mgmt_ip_v4_enabled" : true,
+  "resolve_fqdn_to_ipv6" : true,
+  "license_type" : "aeiou",
+  "vmc_deployment" : true,
+  "cloudstack_configuration" : {
+    "access_key_id" : "aeiou",
+    "cntr_public_ip" : "aeiou",
+    "api_url" : "aeiou",
+    "hypervisor" : "aeiou",
+    "mgmt_network_name" : "aeiou",
+    "secret_access_key" : "aeiou",
+    "mgmt_network_uuid" : "aeiou"
+  },
+  "ip6_autocfg_enabled" : true,
+  "custom_tags" : [ {
+    "tag_key" : "aeiou",
+    "tag_val" : "aeiou"
+  } ],
+  "enable_vip_static_routes" : true,
+  "east_west_dns_provider_ref" : "aeiou",
+  "url" : "aeiou",
+  "mtu" : "",
+  "dhcp_enabled" : true,
+  "obj_name_prefix" : "aeiou",
+  "openstack_configuration" : {
+    "import_keystone_tenants" : true,
+    "contrail_disable_policy" : true,
+    "provider_vip_networks" : [ {
+      "os_network_uuid" : "aeiou",
+      "os_tenant_uuids" : [ "aeiou" ]
+    } ],
+    "allowed_address_pairs" : true,
+    "hypervisor_properties" : [ {
+      "image_properties" : [ "" ],
+      "hypervisor" : "aeiou"
+    } ],
+    "privilege" : "aeiou",
+    "custom_se_image_properties" : [ {
+      "name" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "mgmt_network_uuid" : "aeiou",
+    "contrail_plugin" : true,
+    "enable_tagging" : true,
+    "anti_affinity" : true,
+    "password" : "aeiou",
+    "enable_os_object_caching" : true,
+    "hypervisor" : "aeiou",
+    "tenant_se" : true,
+    "img_format" : "aeiou",
+    "insecure" : true,
+    "mgmt_network_name" : "aeiou",
+    "admin_tenant_uuid" : "aeiou",
+    "free_floatingips" : true,
+    "name_owner" : true,
+    "contrail_endpoint" : "aeiou",
+    "use_keystone_auth" : true,
+    "keystone_host" : "aeiou",
+    "external_networks" : true,
+    "use_internal_endpoints" : true,
+    "security_groups" : true,
+    "config_drive" : true,
+    "prov_name" : [ "aeiou" ],
+    "map_admin_to_cloudadmin" : true,
+    "neutron_rbac" : true,
+    "admin_tenant" : "aeiou",
+    "vip_port_in_admin_tenant" : true,
+    "role_mapping" : [ {
+      "os_role" : "aeiou",
+      "avi_role" : "aeiou"
+    } ],
+    "use_admin_url" : true,
+    "auth_url" : "aeiou",
+    "region" : "aeiou",
+    "username" : "aeiou"
+  },
+  "nsxt_configuration" : {
+    "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : "",
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
+    "enforcementpoint_id" : "aeiou",
+    "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
+    "nsxt_credentials_ref" : "aeiou",
+    "automate_dfw_rules" : true,
+    "site_id" : "aeiou",
+    "vmc_mode" : true,
+    "vpc_mode" : true
+  },
+  "se_group_template_ref" : "aeiou",
+  "ntp_configuration" : {
+    "ntp_servers" : [ {
+      "key_number" : "",
+      "server" : ""
+    } ],
+    "ntp_authentication_keys" : [ {
+      "key_number" : "",
+      "key" : "aeiou",
+      "algorithm" : "aeiou"
+    } ],
+    "ntp_server_list" : [ "" ]
+  },
+  "dns_resolution_on_se" : true,
+  "tenant_ref" : "aeiou",
+  "azure_configuration" : {
+    "subscription_id" : "aeiou",
+    "use_enhanced_ha" : true,
+    "use_standard_alb" : true,
+    "des_id" : "aeiou",
+    "resource_group" : "aeiou",
+    "use_azure_dns" : true,
+    "availability_zones" : [ "aeiou" ],
+    "use_managed_disks" : true,
+    "location" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "se_storage_account" : "aeiou",
+    "network_info" : [ {
+      "management_network_id" : "aeiou",
+      "se_network_id" : "aeiou",
+      "virtual_network_id" : "aeiou"
+    } ]
+  },
+  "name" : "aeiou",
+  "prefer_static_routes" : true,
+  "vcenter_configuration" : {
+    "management_ip_subnet" : "",
+    "vcenter_template_se_location" : "aeiou",
+    "datacenter" : "aeiou",
+    "management_network" : "aeiou",
+    "vcenter_url" : "aeiou",
+    "privilege" : "aeiou",
+    "content_lib" : {
+      "name" : "aeiou",
+      "id" : "aeiou"
+    },
+    "datacenter_managed_object_id" : "aeiou",
+    "deactivate_vm_discovery" : true,
+    "password" : "aeiou",
+    "is_nsx_environment" : true,
+    "use_content_lib" : true,
+    "username" : "aeiou"
+  },
+  "linuxserver_configuration" : {
+    "ssh_user_ref" : "aeiou",
+    "hosts" : [ {
+      "host_ip" : "",
+      "host_attr" : [ {
+        "attr_val" : "aeiou",
+        "attr_key" : "aeiou"
+      } ],
+      "node_availability_zone" : "aeiou",
+      "se_group_ref" : "aeiou"
+    } ],
+    "se_inband_mgmt" : true,
+    "se_sys_disk_path" : "aeiou",
+    "se_log_disk_size_GB" : "",
+    "se_sys_disk_size_GB" : "",
+    "se_log_disk_path" : "aeiou"
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "rancher_configuration" : {
+    "feproxy_container_port_as_service" : true,
+    "disable_auto_backend_service_sync" : true,
+    "se_volume" : "aeiou",
+    "http_container_ports" : [ "" ],
+    "se_spawn_rate" : "",
+    "nuage_controller" : {
+      "se_zone" : "aeiou",
+      "nuage_username" : "aeiou",
+      "nuage_password" : "aeiou",
+      "nuage_organization" : "aeiou",
+      "nuage_port" : "",
+      "se_domain" : "aeiou",
+      "se_enterprise" : "aeiou",
+      "se_policy_group" : "aeiou",
+      "nuage_vsd_host" : "aeiou",
+      "se_network" : "aeiou",
+      "se_user" : "aeiou"
+    },
+    "fleet_endpoint" : "aeiou",
+    "secret_key" : "aeiou",
+    "ssh_user_ref" : "aeiou",
+    "use_controller_image" : true,
+    "use_container_ip_port" : true,
+    "container_port_match_http_service" : true,
+    "disable_auto_se_creation" : true,
+    "se_include_attributes" : [ "" ],
+    "se_deployment_method" : "aeiou",
+    "services_accessible_all_interfaces" : true,
+    "disable_auto_frontend_service_sync" : true,
+    "app_sync_frequency" : "",
+    "feproxy_vips_enable_proxy_arp" : true,
+    "enable_event_subscription" : true,
+    "coredump_directory" : "aeiou",
+    "docker_registry_se" : "",
+    "rancher_servers" : [ "aeiou" ],
+    "se_exclude_attributes" : [ "" ],
+    "access_key" : "aeiou",
+    "east_west_placement_subnet" : ""
+  },
+  "license_tier" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#Cloud">Cloud</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /cloud/{uuid}/gc/"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloud/{uuid}/gc/</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /cloud/{uuid}/gc/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/gc/</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#String">String</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /cloud"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /cloud</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /cloud</span>)</div>
+    <div class="method-notes">/cloud</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -1177,19 +2107,13 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudUuidAutoscalegroupGet"/>
+  <div class="method"><a name="pOST /cloud/list"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/autoscalegroup/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidAutoscalegroupGet</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /cloud/list</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /cloud/list</span>)</div>
+    <div class="method-notes">/cloud/list</div>
 
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
 
     <h3 class="field-label">Consumes</h3>
     This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
@@ -1197,6 +2121,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; empty </div>
+    </div>  <!-- field-items -->
 
 
 
@@ -1229,12 +2159,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudUuidAutoscalegroupserversGet"/>
+  <div class="method"><a name="pUT /cloud/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/autoscalegroupservers/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidAutoscalegroupserversGet</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /cloud/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /cloud/{uuid}</span>)</div>
+    <div class="method-notes">/cloud/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1249,58 +2179,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /cloud/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
+    <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">uuid (required)</div>
+      <div class="param">body (required)</div>
 
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Cloud object creation </div>
     </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -1313,67 +2197,407 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#Cloud">Cloud</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidGcPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloud/{uuid}/gc/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidGcPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "autoscale_polling_interval" : "",
+  "maintenance_mode" : true,
+  "vtype" : "aeiou",
+  "dns_resolvers" : [ {
+    "min_ttl" : "",
+    "fixed_ttl" : "",
+    "nameserver_ips" : [ {
+      "addr" : "aeiou",
+      "type" : "aeiou"
+    } ],
+    "use_mgmt" : true,
+    "resolver_name" : "aeiou"
+  } ],
+  "ipam_provider_ref" : "aeiou",
+  "state_based_dns_registration" : true,
+  "aws_configuration" : {
+    "access_key_id" : "aeiou",
+    "use_sns_sqs" : true,
+    "iam_assume_role" : "aeiou",
+    "vpc_id" : "aeiou",
+    "ebs_encryption" : {
+      "mode" : "aeiou",
+      "master_key" : "aeiou"
+    },
+    "secret_access_key" : "aeiou",
+    "vpc" : "aeiou",
+    "publish_vip_to_public_zone" : true,
+    "zones" : [ {
+      "availability_zone" : "aeiou",
+      "mgmt_network_name" : "aeiou",
+      "mgmt_network_uuid" : "aeiou"
+    } ],
+    "ttl" : "",
+    "asg_poll_interval" : "",
+    "route53_integration" : true,
+    "s3_encryption" : "",
+    "sqs_encryption" : "",
+    "use_iam_roles" : true,
+    "region" : "aeiou",
+    "free_elasticips" : true
+  },
+  "east_west_ipam_provider_ref" : "aeiou",
+  "gcp_configuration" : {
+    "encryption_keys" : {
+      "gcs_bucket_kms_key_id" : "aeiou",
+      "gcs_objects_kms_key_id" : "aeiou",
+      "se_image_kms_key_id" : "aeiou",
+      "se_disk_kms_key_id" : "aeiou"
+    },
+    "gcs_bucket_name" : "aeiou",
+    "firewall_target_tags" : [ "aeiou" ],
+    "network_config" : {
+      "inband" : {
+        "vpc_network_name" : "aeiou",
+        "vpc_project_id" : "aeiou",
+        "vpc_subnet_name" : "aeiou"
+      },
+      "two_arm" : {
+        "backend_data_vpc_network_name" : "aeiou",
+        "backend_data_vpc_subnet_name" : "aeiou",
+        "frontend_data_vpc_project_id" : "aeiou",
+        "frontend_data_vpc_subnet_name" : "aeiou",
+        "management_vpc_project_id" : "aeiou",
+        "management_vpc_network_name" : "aeiou",
+        "management_vpc_subnet_name" : "aeiou",
+        "frontend_data_vpc_network_name" : "aeiou",
+        "backend_data_vpc_project_id" : "aeiou"
+      },
+      "one_arm" : {
+        "management_vpc_project_id" : "aeiou",
+        "data_vpc_subnet_name" : "aeiou",
+        "management_vpc_network_name" : "aeiou",
+        "management_vpc_subnet_name" : "aeiou",
+        "data_vpc_network_name" : "aeiou",
+        "data_vpc_project_id" : "aeiou"
+      },
+      "config" : "aeiou"
+    },
+    "region_name" : "aeiou",
+    "se_project_id" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "zones" : [ "aeiou" ],
+    "gcp_service_account_email" : "aeiou",
+    "gcs_project_id" : "aeiou",
+    "vip_allocation_strategy" : {
+      "mode" : "aeiou",
+      "routes" : {
+        "match_se_group_subnet" : true,
+        "route_priority" : ""
+      },
+      "ilb" : {
+        "cloud_router_names" : [ "aeiou" ]
+      }
+    }
+  },
+  "uuid" : "aeiou",
+  "_last_modified" : "aeiou",
+  "docker_configuration" : {
+    "feproxy_container_port_as_service" : true,
+    "disable_auto_backend_service_sync" : true,
+    "se_volume" : "aeiou",
+    "http_container_ports" : [ "" ],
+    "se_spawn_rate" : "",
+    "ca_tls_key_and_certificate_ref" : "aeiou",
+    "fleet_endpoint" : "aeiou",
+    "client_tls_key_and_certificate_ref" : "aeiou",
+    "ssh_user_ref" : "aeiou",
+    "use_controller_image" : true,
+    "use_container_ip_port" : true,
+    "container_port_match_http_service" : true,
+    "disable_auto_se_creation" : true,
+    "se_include_attributes" : [ "" ],
+    "se_deployment_method" : "aeiou",
+    "services_accessible_all_interfaces" : true,
+    "disable_auto_frontend_service_sync" : true,
+    "ucp_nodes" : [ "aeiou" ],
+    "app_sync_frequency" : "",
+    "feproxy_vips_enable_proxy_arp" : true,
+    "enable_event_subscription" : true,
+    "coredump_directory" : "aeiou",
+    "docker_registry_se" : {
+      "registry" : "aeiou",
+      "password" : "aeiou",
+      "private" : true,
+      "oshift_registry" : {
+        "registry_vip" : "",
+        "registry_namespace" : "aeiou",
+        "registry_service" : "aeiou"
+      },
+      "username" : "aeiou"
+    },
+    "se_exclude_attributes" : [ {
+      "attribute" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "east_west_placement_subnet" : {
+      "ip_addr" : "",
+      "mask" : 123
+    }
+  },
+  "vca_configuration" : {
+    "vca_password" : "aeiou",
+    "vca_instance" : "aeiou",
+    "vca_orgnization" : "aeiou",
+    "vca_username" : "aeiou",
+    "vca_mgmt_network" : "aeiou",
+    "vca_host" : "aeiou",
+    "vca_vdc" : "aeiou",
+    "privilege" : "aeiou"
+  },
+  "mgmt_ip_v6_enabled" : true,
+  "dns_provider_ref" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "metrics_polling_interval" : "",
+  "proxy_configuration" : {
+    "password" : "aeiou",
+    "port" : "",
+    "host" : "aeiou",
+    "username" : "aeiou"
+  },
+  "enable_vip_on_all_interfaces" : true,
+  "mgmt_ip_v4_enabled" : true,
+  "resolve_fqdn_to_ipv6" : true,
+  "license_type" : "aeiou",
+  "vmc_deployment" : true,
+  "cloudstack_configuration" : {
+    "access_key_id" : "aeiou",
+    "cntr_public_ip" : "aeiou",
+    "api_url" : "aeiou",
+    "hypervisor" : "aeiou",
+    "mgmt_network_name" : "aeiou",
+    "secret_access_key" : "aeiou",
+    "mgmt_network_uuid" : "aeiou"
+  },
+  "ip6_autocfg_enabled" : true,
+  "custom_tags" : [ {
+    "tag_key" : "aeiou",
+    "tag_val" : "aeiou"
+  } ],
+  "enable_vip_static_routes" : true,
+  "east_west_dns_provider_ref" : "aeiou",
+  "url" : "aeiou",
+  "mtu" : "",
+  "dhcp_enabled" : true,
+  "obj_name_prefix" : "aeiou",
+  "openstack_configuration" : {
+    "import_keystone_tenants" : true,
+    "contrail_disable_policy" : true,
+    "provider_vip_networks" : [ {
+      "os_network_uuid" : "aeiou",
+      "os_tenant_uuids" : [ "aeiou" ]
+    } ],
+    "allowed_address_pairs" : true,
+    "hypervisor_properties" : [ {
+      "image_properties" : [ "" ],
+      "hypervisor" : "aeiou"
+    } ],
+    "privilege" : "aeiou",
+    "custom_se_image_properties" : [ {
+      "name" : "aeiou",
+      "value" : "aeiou"
+    } ],
+    "mgmt_network_uuid" : "aeiou",
+    "contrail_plugin" : true,
+    "enable_tagging" : true,
+    "anti_affinity" : true,
+    "password" : "aeiou",
+    "enable_os_object_caching" : true,
+    "hypervisor" : "aeiou",
+    "tenant_se" : true,
+    "img_format" : "aeiou",
+    "insecure" : true,
+    "mgmt_network_name" : "aeiou",
+    "admin_tenant_uuid" : "aeiou",
+    "free_floatingips" : true,
+    "name_owner" : true,
+    "contrail_endpoint" : "aeiou",
+    "use_keystone_auth" : true,
+    "keystone_host" : "aeiou",
+    "external_networks" : true,
+    "use_internal_endpoints" : true,
+    "security_groups" : true,
+    "config_drive" : true,
+    "prov_name" : [ "aeiou" ],
+    "map_admin_to_cloudadmin" : true,
+    "neutron_rbac" : true,
+    "admin_tenant" : "aeiou",
+    "vip_port_in_admin_tenant" : true,
+    "role_mapping" : [ {
+      "os_role" : "aeiou",
+      "avi_role" : "aeiou"
+    } ],
+    "use_admin_url" : true,
+    "auth_url" : "aeiou",
+    "region" : "aeiou",
+    "username" : "aeiou"
+  },
+  "nsxt_configuration" : {
+    "domain_id" : "aeiou",
+    "data_network_config" : {
+      "tz_type" : "aeiou",
+      "tier1_segment_config" : {
+        "segment_config_mode" : "aeiou",
+        "automatic" : {
+          "nsxt_segment_subnet" : "",
+          "num_se_per_segment" : "",
+          "tier1_lr_ids" : [ "aeiou" ]
+        },
+        "manual" : {
+          "tier1_lrs" : [ {
+            "locale_service" : "aeiou",
+            "segment_id" : "aeiou",
+            "tier1_lr_id" : "aeiou"
+          } ]
+        }
+      },
+      "transport_zone" : "aeiou",
+      "vlan_segments" : [ "aeiou" ]
+    },
+    "management_network_config" : {
+      "tz_type" : "aeiou",
+      "overlay_segment" : "",
+      "vlan_segment" : "aeiou",
+      "transport_zone" : "aeiou"
+    },
+    "enforcementpoint_id" : "aeiou",
+    "nsxt_url" : "aeiou",
+    "automate_dfw_objects" : true,
+    "nsxt_credentials_ref" : "aeiou",
+    "automate_dfw_rules" : true,
+    "site_id" : "aeiou",
+    "vmc_mode" : true,
+    "vpc_mode" : true
+  },
+  "se_group_template_ref" : "aeiou",
+  "ntp_configuration" : {
+    "ntp_servers" : [ {
+      "key_number" : "",
+      "server" : ""
+    } ],
+    "ntp_authentication_keys" : [ {
+      "key_number" : "",
+      "key" : "aeiou",
+      "algorithm" : "aeiou"
+    } ],
+    "ntp_server_list" : [ "" ]
+  },
+  "dns_resolution_on_se" : true,
+  "tenant_ref" : "aeiou",
+  "azure_configuration" : {
+    "subscription_id" : "aeiou",
+    "use_enhanced_ha" : true,
+    "use_standard_alb" : true,
+    "des_id" : "aeiou",
+    "resource_group" : "aeiou",
+    "use_azure_dns" : true,
+    "availability_zones" : [ "aeiou" ],
+    "use_managed_disks" : true,
+    "location" : "aeiou",
+    "cloud_credentials_ref" : "aeiou",
+    "se_storage_account" : "aeiou",
+    "network_info" : [ {
+      "management_network_id" : "aeiou",
+      "se_network_id" : "aeiou",
+      "virtual_network_id" : "aeiou"
+    } ]
+  },
+  "name" : "aeiou",
+  "prefer_static_routes" : true,
+  "vcenter_configuration" : {
+    "management_ip_subnet" : "",
+    "vcenter_template_se_location" : "aeiou",
+    "datacenter" : "aeiou",
+    "management_network" : "aeiou",
+    "vcenter_url" : "aeiou",
+    "privilege" : "aeiou",
+    "content_lib" : {
+      "name" : "aeiou",
+      "id" : "aeiou"
+    },
+    "datacenter_managed_object_id" : "aeiou",
+    "deactivate_vm_discovery" : true,
+    "password" : "aeiou",
+    "is_nsx_environment" : true,
+    "use_content_lib" : true,
+    "username" : "aeiou"
+  },
+  "linuxserver_configuration" : {
+    "ssh_user_ref" : "aeiou",
+    "hosts" : [ {
+      "host_ip" : "",
+      "host_attr" : [ {
+        "attr_val" : "aeiou",
+        "attr_key" : "aeiou"
+      } ],
+      "node_availability_zone" : "aeiou",
+      "se_group_ref" : "aeiou"
+    } ],
+    "se_inband_mgmt" : true,
+    "se_sys_disk_path" : "aeiou",
+    "se_log_disk_size_GB" : "",
+    "se_sys_disk_size_GB" : "",
+    "se_log_disk_path" : "aeiou"
+  },
+  "markers" : [ {
+    "values" : [ "aeiou" ],
+    "key" : "aeiou"
+  } ],
+  "rancher_configuration" : {
+    "feproxy_container_port_as_service" : true,
+    "disable_auto_backend_service_sync" : true,
+    "se_volume" : "aeiou",
+    "http_container_ports" : [ "" ],
+    "se_spawn_rate" : "",
+    "nuage_controller" : {
+      "se_zone" : "aeiou",
+      "nuage_username" : "aeiou",
+      "nuage_password" : "aeiou",
+      "nuage_organization" : "aeiou",
+      "nuage_port" : "",
+      "se_domain" : "aeiou",
+      "se_enterprise" : "aeiou",
+      "se_policy_group" : "aeiou",
+      "nuage_vsd_host" : "aeiou",
+      "se_network" : "aeiou",
+      "se_user" : "aeiou"
+    },
+    "fleet_endpoint" : "aeiou",
+    "secret_key" : "aeiou",
+    "ssh_user_ref" : "aeiou",
+    "use_controller_image" : true,
+    "use_container_ip_port" : true,
+    "container_port_match_http_service" : true,
+    "disable_auto_se_creation" : true,
+    "se_include_attributes" : [ "" ],
+    "se_deployment_method" : "aeiou",
+    "services_accessible_all_interfaces" : true,
+    "disable_auto_frontend_service_sync" : true,
+    "app_sync_frequency" : "",
+    "feproxy_vips_enable_proxy_arp" : true,
+    "enable_event_subscription" : true,
+    "coredump_directory" : "aeiou",
+    "docker_registry_se" : "",
+    "rancher_servers" : [ "aeiou" ],
+    "se_exclude_attributes" : [ "" ],
+    "access_key" : "aeiou",
+    "east_west_placement_subnet" : ""
+  },
+  "license_tier" : "aeiou"
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -1385,18 +2609,18 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     OK
-        <a href="#String">String</a>
+        <a href="#Cloud">Cloud</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="cloudUuidGcPut"/>
+  <div class="method"><a name="pUT /cloud/{uuid}/gc/"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /cloud/{uuid}/gc/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidGcPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /cloud/{uuid}/gc/</span>)</div>
+    <div class="method-notes">/cloud/{uuid}/gc/</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -1902,1230 +3126,6 @@ font-style: italic;
     <h4 class="field-label">200</h4>
     OK
         <a href="#Cloud">Cloud</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidHealthGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/health/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidHealthGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidHostsGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/hosts/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidHostsGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidInternalsGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/internals/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidInternalsGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /cloud/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Cloud object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Cloud">Cloud</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "autoscale_polling_interval" : "",
-  "maintenance_mode" : true,
-  "vtype" : "aeiou",
-  "dns_resolvers" : [ {
-    "min_ttl" : "",
-    "fixed_ttl" : "",
-    "nameserver_ips" : [ {
-      "addr" : "aeiou",
-      "type" : "aeiou"
-    } ],
-    "use_mgmt" : true,
-    "resolver_name" : "aeiou"
-  } ],
-  "ipam_provider_ref" : "aeiou",
-  "state_based_dns_registration" : true,
-  "aws_configuration" : {
-    "access_key_id" : "aeiou",
-    "use_sns_sqs" : true,
-    "iam_assume_role" : "aeiou",
-    "vpc_id" : "aeiou",
-    "ebs_encryption" : {
-      "mode" : "aeiou",
-      "master_key" : "aeiou"
-    },
-    "secret_access_key" : "aeiou",
-    "vpc" : "aeiou",
-    "publish_vip_to_public_zone" : true,
-    "zones" : [ {
-      "availability_zone" : "aeiou",
-      "mgmt_network_name" : "aeiou",
-      "mgmt_network_uuid" : "aeiou"
-    } ],
-    "ttl" : "",
-    "asg_poll_interval" : "",
-    "route53_integration" : true,
-    "s3_encryption" : "",
-    "sqs_encryption" : "",
-    "use_iam_roles" : true,
-    "region" : "aeiou",
-    "free_elasticips" : true
-  },
-  "east_west_ipam_provider_ref" : "aeiou",
-  "gcp_configuration" : {
-    "encryption_keys" : {
-      "gcs_bucket_kms_key_id" : "aeiou",
-      "gcs_objects_kms_key_id" : "aeiou",
-      "se_image_kms_key_id" : "aeiou",
-      "se_disk_kms_key_id" : "aeiou"
-    },
-    "gcs_bucket_name" : "aeiou",
-    "firewall_target_tags" : [ "aeiou" ],
-    "network_config" : {
-      "inband" : {
-        "vpc_network_name" : "aeiou",
-        "vpc_project_id" : "aeiou",
-        "vpc_subnet_name" : "aeiou"
-      },
-      "two_arm" : {
-        "backend_data_vpc_network_name" : "aeiou",
-        "backend_data_vpc_subnet_name" : "aeiou",
-        "frontend_data_vpc_project_id" : "aeiou",
-        "frontend_data_vpc_subnet_name" : "aeiou",
-        "management_vpc_project_id" : "aeiou",
-        "management_vpc_network_name" : "aeiou",
-        "management_vpc_subnet_name" : "aeiou",
-        "frontend_data_vpc_network_name" : "aeiou",
-        "backend_data_vpc_project_id" : "aeiou"
-      },
-      "one_arm" : {
-        "management_vpc_project_id" : "aeiou",
-        "data_vpc_subnet_name" : "aeiou",
-        "management_vpc_network_name" : "aeiou",
-        "management_vpc_subnet_name" : "aeiou",
-        "data_vpc_network_name" : "aeiou",
-        "data_vpc_project_id" : "aeiou"
-      },
-      "config" : "aeiou"
-    },
-    "region_name" : "aeiou",
-    "se_project_id" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "zones" : [ "aeiou" ],
-    "gcp_service_account_email" : "aeiou",
-    "gcs_project_id" : "aeiou",
-    "vip_allocation_strategy" : {
-      "mode" : "aeiou",
-      "routes" : {
-        "match_se_group_subnet" : true,
-        "route_priority" : ""
-      },
-      "ilb" : {
-        "cloud_router_names" : [ "aeiou" ]
-      }
-    }
-  },
-  "uuid" : "aeiou",
-  "_last_modified" : "aeiou",
-  "docker_configuration" : {
-    "feproxy_container_port_as_service" : true,
-    "disable_auto_backend_service_sync" : true,
-    "se_volume" : "aeiou",
-    "http_container_ports" : [ "" ],
-    "se_spawn_rate" : "",
-    "ca_tls_key_and_certificate_ref" : "aeiou",
-    "fleet_endpoint" : "aeiou",
-    "client_tls_key_and_certificate_ref" : "aeiou",
-    "ssh_user_ref" : "aeiou",
-    "use_controller_image" : true,
-    "use_container_ip_port" : true,
-    "container_port_match_http_service" : true,
-    "disable_auto_se_creation" : true,
-    "se_include_attributes" : [ "" ],
-    "se_deployment_method" : "aeiou",
-    "services_accessible_all_interfaces" : true,
-    "disable_auto_frontend_service_sync" : true,
-    "ucp_nodes" : [ "aeiou" ],
-    "app_sync_frequency" : "",
-    "feproxy_vips_enable_proxy_arp" : true,
-    "enable_event_subscription" : true,
-    "coredump_directory" : "aeiou",
-    "docker_registry_se" : {
-      "registry" : "aeiou",
-      "password" : "aeiou",
-      "private" : true,
-      "oshift_registry" : {
-        "registry_vip" : "",
-        "registry_namespace" : "aeiou",
-        "registry_service" : "aeiou"
-      },
-      "username" : "aeiou"
-    },
-    "se_exclude_attributes" : [ {
-      "attribute" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "east_west_placement_subnet" : {
-      "ip_addr" : "",
-      "mask" : 123
-    }
-  },
-  "vca_configuration" : {
-    "vca_password" : "aeiou",
-    "vca_instance" : "aeiou",
-    "vca_orgnization" : "aeiou",
-    "vca_username" : "aeiou",
-    "vca_mgmt_network" : "aeiou",
-    "vca_host" : "aeiou",
-    "vca_vdc" : "aeiou",
-    "privilege" : "aeiou"
-  },
-  "mgmt_ip_v6_enabled" : true,
-  "dns_provider_ref" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "metrics_polling_interval" : "",
-  "proxy_configuration" : {
-    "password" : "aeiou",
-    "port" : "",
-    "host" : "aeiou",
-    "username" : "aeiou"
-  },
-  "enable_vip_on_all_interfaces" : true,
-  "mgmt_ip_v4_enabled" : true,
-  "resolve_fqdn_to_ipv6" : true,
-  "license_type" : "aeiou",
-  "vmc_deployment" : true,
-  "cloudstack_configuration" : {
-    "access_key_id" : "aeiou",
-    "cntr_public_ip" : "aeiou",
-    "api_url" : "aeiou",
-    "hypervisor" : "aeiou",
-    "mgmt_network_name" : "aeiou",
-    "secret_access_key" : "aeiou",
-    "mgmt_network_uuid" : "aeiou"
-  },
-  "ip6_autocfg_enabled" : true,
-  "custom_tags" : [ {
-    "tag_key" : "aeiou",
-    "tag_val" : "aeiou"
-  } ],
-  "enable_vip_static_routes" : true,
-  "east_west_dns_provider_ref" : "aeiou",
-  "url" : "aeiou",
-  "mtu" : "",
-  "dhcp_enabled" : true,
-  "obj_name_prefix" : "aeiou",
-  "openstack_configuration" : {
-    "import_keystone_tenants" : true,
-    "contrail_disable_policy" : true,
-    "provider_vip_networks" : [ {
-      "os_network_uuid" : "aeiou",
-      "os_tenant_uuids" : [ "aeiou" ]
-    } ],
-    "allowed_address_pairs" : true,
-    "hypervisor_properties" : [ {
-      "image_properties" : [ "" ],
-      "hypervisor" : "aeiou"
-    } ],
-    "privilege" : "aeiou",
-    "custom_se_image_properties" : [ {
-      "name" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "mgmt_network_uuid" : "aeiou",
-    "contrail_plugin" : true,
-    "enable_tagging" : true,
-    "anti_affinity" : true,
-    "password" : "aeiou",
-    "enable_os_object_caching" : true,
-    "hypervisor" : "aeiou",
-    "tenant_se" : true,
-    "img_format" : "aeiou",
-    "insecure" : true,
-    "mgmt_network_name" : "aeiou",
-    "admin_tenant_uuid" : "aeiou",
-    "free_floatingips" : true,
-    "name_owner" : true,
-    "contrail_endpoint" : "aeiou",
-    "use_keystone_auth" : true,
-    "keystone_host" : "aeiou",
-    "external_networks" : true,
-    "use_internal_endpoints" : true,
-    "security_groups" : true,
-    "config_drive" : true,
-    "prov_name" : [ "aeiou" ],
-    "map_admin_to_cloudadmin" : true,
-    "neutron_rbac" : true,
-    "admin_tenant" : "aeiou",
-    "vip_port_in_admin_tenant" : true,
-    "role_mapping" : [ {
-      "os_role" : "aeiou",
-      "avi_role" : "aeiou"
-    } ],
-    "use_admin_url" : true,
-    "auth_url" : "aeiou",
-    "region" : "aeiou",
-    "username" : "aeiou"
-  },
-  "nsxt_configuration" : {
-    "domain_id" : "aeiou",
-    "data_network_config" : {
-      "tz_type" : "aeiou",
-      "tier1_segment_config" : {
-        "segment_config_mode" : "aeiou",
-        "automatic" : {
-          "nsxt_segment_subnet" : "",
-          "num_se_per_segment" : "",
-          "tier1_lr_ids" : [ "aeiou" ]
-        },
-        "manual" : {
-          "tier1_lrs" : [ {
-            "locale_service" : "aeiou",
-            "segment_id" : "aeiou",
-            "tier1_lr_id" : "aeiou"
-          } ]
-        }
-      },
-      "transport_zone" : "aeiou",
-      "vlan_segments" : [ "aeiou" ]
-    },
-    "management_network_config" : {
-      "tz_type" : "aeiou",
-      "overlay_segment" : "",
-      "vlan_segment" : "aeiou",
-      "transport_zone" : "aeiou"
-    },
-    "enforcementpoint_id" : "aeiou",
-    "nsxt_url" : "aeiou",
-    "automate_dfw_objects" : true,
-    "nsxt_credentials_ref" : "aeiou",
-    "automate_dfw_rules" : true,
-    "site_id" : "aeiou",
-    "vmc_mode" : true,
-    "vpc_mode" : true
-  },
-  "se_group_template_ref" : "aeiou",
-  "ntp_configuration" : {
-    "ntp_servers" : [ {
-      "key_number" : "",
-      "server" : ""
-    } ],
-    "ntp_authentication_keys" : [ {
-      "key_number" : "",
-      "key" : "aeiou",
-      "algorithm" : "aeiou"
-    } ],
-    "ntp_server_list" : [ "" ]
-  },
-  "dns_resolution_on_se" : true,
-  "tenant_ref" : "aeiou",
-  "azure_configuration" : {
-    "subscription_id" : "aeiou",
-    "use_enhanced_ha" : true,
-    "use_standard_alb" : true,
-    "des_id" : "aeiou",
-    "resource_group" : "aeiou",
-    "use_azure_dns" : true,
-    "availability_zones" : [ "aeiou" ],
-    "use_managed_disks" : true,
-    "location" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "se_storage_account" : "aeiou",
-    "network_info" : [ {
-      "management_network_id" : "aeiou",
-      "se_network_id" : "aeiou",
-      "virtual_network_id" : "aeiou"
-    } ]
-  },
-  "name" : "aeiou",
-  "prefer_static_routes" : true,
-  "vcenter_configuration" : {
-    "management_ip_subnet" : "",
-    "vcenter_template_se_location" : "aeiou",
-    "datacenter" : "aeiou",
-    "management_network" : "aeiou",
-    "vcenter_url" : "aeiou",
-    "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
-    "datacenter_managed_object_id" : "aeiou",
-    "deactivate_vm_discovery" : true,
-    "password" : "aeiou",
-    "is_nsx_environment" : true,
-    "use_content_lib" : true,
-    "username" : "aeiou"
-  },
-  "linuxserver_configuration" : {
-    "ssh_user_ref" : "aeiou",
-    "hosts" : [ {
-      "host_ip" : "",
-      "host_attr" : [ {
-        "attr_val" : "aeiou",
-        "attr_key" : "aeiou"
-      } ],
-      "node_availability_zone" : "aeiou",
-      "se_group_ref" : "aeiou"
-    } ],
-    "se_inband_mgmt" : true,
-    "se_sys_disk_path" : "aeiou",
-    "se_log_disk_size_GB" : "",
-    "se_sys_disk_size_GB" : "",
-    "se_log_disk_path" : "aeiou"
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "rancher_configuration" : {
-    "feproxy_container_port_as_service" : true,
-    "disable_auto_backend_service_sync" : true,
-    "se_volume" : "aeiou",
-    "http_container_ports" : [ "" ],
-    "se_spawn_rate" : "",
-    "nuage_controller" : {
-      "se_zone" : "aeiou",
-      "nuage_username" : "aeiou",
-      "nuage_password" : "aeiou",
-      "nuage_organization" : "aeiou",
-      "nuage_port" : "",
-      "se_domain" : "aeiou",
-      "se_enterprise" : "aeiou",
-      "se_policy_group" : "aeiou",
-      "nuage_vsd_host" : "aeiou",
-      "se_network" : "aeiou",
-      "se_user" : "aeiou"
-    },
-    "fleet_endpoint" : "aeiou",
-    "secret_key" : "aeiou",
-    "ssh_user_ref" : "aeiou",
-    "use_controller_image" : true,
-    "use_container_ip_port" : true,
-    "container_port_match_http_service" : true,
-    "disable_auto_se_creation" : true,
-    "se_include_attributes" : [ "" ],
-    "se_deployment_method" : "aeiou",
-    "services_accessible_all_interfaces" : true,
-    "disable_auto_frontend_service_sync" : true,
-    "app_sync_frequency" : "",
-    "feproxy_vips_enable_proxy_arp" : true,
-    "enable_event_subscription" : true,
-    "coredump_directory" : "aeiou",
-    "docker_registry_se" : "",
-    "rancher_servers" : [ "aeiou" ],
-    "se_exclude_attributes" : [ "" ],
-    "access_key" : "aeiou",
-    "east_west_placement_subnet" : ""
-  },
-  "license_tier" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Cloud">Cloud</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidPlacementIneligibleGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/ineligible/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidPlacementIneligibleGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidPlacementSummaryGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/placement/summary/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidPlacementSummaryGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /cloud/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; Cloud object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Cloud">Cloud</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "autoscale_polling_interval" : "",
-  "maintenance_mode" : true,
-  "vtype" : "aeiou",
-  "dns_resolvers" : [ {
-    "min_ttl" : "",
-    "fixed_ttl" : "",
-    "nameserver_ips" : [ {
-      "addr" : "aeiou",
-      "type" : "aeiou"
-    } ],
-    "use_mgmt" : true,
-    "resolver_name" : "aeiou"
-  } ],
-  "ipam_provider_ref" : "aeiou",
-  "state_based_dns_registration" : true,
-  "aws_configuration" : {
-    "access_key_id" : "aeiou",
-    "use_sns_sqs" : true,
-    "iam_assume_role" : "aeiou",
-    "vpc_id" : "aeiou",
-    "ebs_encryption" : {
-      "mode" : "aeiou",
-      "master_key" : "aeiou"
-    },
-    "secret_access_key" : "aeiou",
-    "vpc" : "aeiou",
-    "publish_vip_to_public_zone" : true,
-    "zones" : [ {
-      "availability_zone" : "aeiou",
-      "mgmt_network_name" : "aeiou",
-      "mgmt_network_uuid" : "aeiou"
-    } ],
-    "ttl" : "",
-    "asg_poll_interval" : "",
-    "route53_integration" : true,
-    "s3_encryption" : "",
-    "sqs_encryption" : "",
-    "use_iam_roles" : true,
-    "region" : "aeiou",
-    "free_elasticips" : true
-  },
-  "east_west_ipam_provider_ref" : "aeiou",
-  "gcp_configuration" : {
-    "encryption_keys" : {
-      "gcs_bucket_kms_key_id" : "aeiou",
-      "gcs_objects_kms_key_id" : "aeiou",
-      "se_image_kms_key_id" : "aeiou",
-      "se_disk_kms_key_id" : "aeiou"
-    },
-    "gcs_bucket_name" : "aeiou",
-    "firewall_target_tags" : [ "aeiou" ],
-    "network_config" : {
-      "inband" : {
-        "vpc_network_name" : "aeiou",
-        "vpc_project_id" : "aeiou",
-        "vpc_subnet_name" : "aeiou"
-      },
-      "two_arm" : {
-        "backend_data_vpc_network_name" : "aeiou",
-        "backend_data_vpc_subnet_name" : "aeiou",
-        "frontend_data_vpc_project_id" : "aeiou",
-        "frontend_data_vpc_subnet_name" : "aeiou",
-        "management_vpc_project_id" : "aeiou",
-        "management_vpc_network_name" : "aeiou",
-        "management_vpc_subnet_name" : "aeiou",
-        "frontend_data_vpc_network_name" : "aeiou",
-        "backend_data_vpc_project_id" : "aeiou"
-      },
-      "one_arm" : {
-        "management_vpc_project_id" : "aeiou",
-        "data_vpc_subnet_name" : "aeiou",
-        "management_vpc_network_name" : "aeiou",
-        "management_vpc_subnet_name" : "aeiou",
-        "data_vpc_network_name" : "aeiou",
-        "data_vpc_project_id" : "aeiou"
-      },
-      "config" : "aeiou"
-    },
-    "region_name" : "aeiou",
-    "se_project_id" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "zones" : [ "aeiou" ],
-    "gcp_service_account_email" : "aeiou",
-    "gcs_project_id" : "aeiou",
-    "vip_allocation_strategy" : {
-      "mode" : "aeiou",
-      "routes" : {
-        "match_se_group_subnet" : true,
-        "route_priority" : ""
-      },
-      "ilb" : {
-        "cloud_router_names" : [ "aeiou" ]
-      }
-    }
-  },
-  "uuid" : "aeiou",
-  "_last_modified" : "aeiou",
-  "docker_configuration" : {
-    "feproxy_container_port_as_service" : true,
-    "disable_auto_backend_service_sync" : true,
-    "se_volume" : "aeiou",
-    "http_container_ports" : [ "" ],
-    "se_spawn_rate" : "",
-    "ca_tls_key_and_certificate_ref" : "aeiou",
-    "fleet_endpoint" : "aeiou",
-    "client_tls_key_and_certificate_ref" : "aeiou",
-    "ssh_user_ref" : "aeiou",
-    "use_controller_image" : true,
-    "use_container_ip_port" : true,
-    "container_port_match_http_service" : true,
-    "disable_auto_se_creation" : true,
-    "se_include_attributes" : [ "" ],
-    "se_deployment_method" : "aeiou",
-    "services_accessible_all_interfaces" : true,
-    "disable_auto_frontend_service_sync" : true,
-    "ucp_nodes" : [ "aeiou" ],
-    "app_sync_frequency" : "",
-    "feproxy_vips_enable_proxy_arp" : true,
-    "enable_event_subscription" : true,
-    "coredump_directory" : "aeiou",
-    "docker_registry_se" : {
-      "registry" : "aeiou",
-      "password" : "aeiou",
-      "private" : true,
-      "oshift_registry" : {
-        "registry_vip" : "",
-        "registry_namespace" : "aeiou",
-        "registry_service" : "aeiou"
-      },
-      "username" : "aeiou"
-    },
-    "se_exclude_attributes" : [ {
-      "attribute" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "east_west_placement_subnet" : {
-      "ip_addr" : "",
-      "mask" : 123
-    }
-  },
-  "vca_configuration" : {
-    "vca_password" : "aeiou",
-    "vca_instance" : "aeiou",
-    "vca_orgnization" : "aeiou",
-    "vca_username" : "aeiou",
-    "vca_mgmt_network" : "aeiou",
-    "vca_host" : "aeiou",
-    "vca_vdc" : "aeiou",
-    "privilege" : "aeiou"
-  },
-  "mgmt_ip_v6_enabled" : true,
-  "dns_provider_ref" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "metrics_polling_interval" : "",
-  "proxy_configuration" : {
-    "password" : "aeiou",
-    "port" : "",
-    "host" : "aeiou",
-    "username" : "aeiou"
-  },
-  "enable_vip_on_all_interfaces" : true,
-  "mgmt_ip_v4_enabled" : true,
-  "resolve_fqdn_to_ipv6" : true,
-  "license_type" : "aeiou",
-  "vmc_deployment" : true,
-  "cloudstack_configuration" : {
-    "access_key_id" : "aeiou",
-    "cntr_public_ip" : "aeiou",
-    "api_url" : "aeiou",
-    "hypervisor" : "aeiou",
-    "mgmt_network_name" : "aeiou",
-    "secret_access_key" : "aeiou",
-    "mgmt_network_uuid" : "aeiou"
-  },
-  "ip6_autocfg_enabled" : true,
-  "custom_tags" : [ {
-    "tag_key" : "aeiou",
-    "tag_val" : "aeiou"
-  } ],
-  "enable_vip_static_routes" : true,
-  "east_west_dns_provider_ref" : "aeiou",
-  "url" : "aeiou",
-  "mtu" : "",
-  "dhcp_enabled" : true,
-  "obj_name_prefix" : "aeiou",
-  "openstack_configuration" : {
-    "import_keystone_tenants" : true,
-    "contrail_disable_policy" : true,
-    "provider_vip_networks" : [ {
-      "os_network_uuid" : "aeiou",
-      "os_tenant_uuids" : [ "aeiou" ]
-    } ],
-    "allowed_address_pairs" : true,
-    "hypervisor_properties" : [ {
-      "image_properties" : [ "" ],
-      "hypervisor" : "aeiou"
-    } ],
-    "privilege" : "aeiou",
-    "custom_se_image_properties" : [ {
-      "name" : "aeiou",
-      "value" : "aeiou"
-    } ],
-    "mgmt_network_uuid" : "aeiou",
-    "contrail_plugin" : true,
-    "enable_tagging" : true,
-    "anti_affinity" : true,
-    "password" : "aeiou",
-    "enable_os_object_caching" : true,
-    "hypervisor" : "aeiou",
-    "tenant_se" : true,
-    "img_format" : "aeiou",
-    "insecure" : true,
-    "mgmt_network_name" : "aeiou",
-    "admin_tenant_uuid" : "aeiou",
-    "free_floatingips" : true,
-    "name_owner" : true,
-    "contrail_endpoint" : "aeiou",
-    "use_keystone_auth" : true,
-    "keystone_host" : "aeiou",
-    "external_networks" : true,
-    "use_internal_endpoints" : true,
-    "security_groups" : true,
-    "config_drive" : true,
-    "prov_name" : [ "aeiou" ],
-    "map_admin_to_cloudadmin" : true,
-    "neutron_rbac" : true,
-    "admin_tenant" : "aeiou",
-    "vip_port_in_admin_tenant" : true,
-    "role_mapping" : [ {
-      "os_role" : "aeiou",
-      "avi_role" : "aeiou"
-    } ],
-    "use_admin_url" : true,
-    "auth_url" : "aeiou",
-    "region" : "aeiou",
-    "username" : "aeiou"
-  },
-  "nsxt_configuration" : {
-    "domain_id" : "aeiou",
-    "data_network_config" : {
-      "tz_type" : "aeiou",
-      "tier1_segment_config" : {
-        "segment_config_mode" : "aeiou",
-        "automatic" : {
-          "nsxt_segment_subnet" : "",
-          "num_se_per_segment" : "",
-          "tier1_lr_ids" : [ "aeiou" ]
-        },
-        "manual" : {
-          "tier1_lrs" : [ {
-            "locale_service" : "aeiou",
-            "segment_id" : "aeiou",
-            "tier1_lr_id" : "aeiou"
-          } ]
-        }
-      },
-      "transport_zone" : "aeiou",
-      "vlan_segments" : [ "aeiou" ]
-    },
-    "management_network_config" : {
-      "tz_type" : "aeiou",
-      "overlay_segment" : "",
-      "vlan_segment" : "aeiou",
-      "transport_zone" : "aeiou"
-    },
-    "enforcementpoint_id" : "aeiou",
-    "nsxt_url" : "aeiou",
-    "automate_dfw_objects" : true,
-    "nsxt_credentials_ref" : "aeiou",
-    "automate_dfw_rules" : true,
-    "site_id" : "aeiou",
-    "vmc_mode" : true,
-    "vpc_mode" : true
-  },
-  "se_group_template_ref" : "aeiou",
-  "ntp_configuration" : {
-    "ntp_servers" : [ {
-      "key_number" : "",
-      "server" : ""
-    } ],
-    "ntp_authentication_keys" : [ {
-      "key_number" : "",
-      "key" : "aeiou",
-      "algorithm" : "aeiou"
-    } ],
-    "ntp_server_list" : [ "" ]
-  },
-  "dns_resolution_on_se" : true,
-  "tenant_ref" : "aeiou",
-  "azure_configuration" : {
-    "subscription_id" : "aeiou",
-    "use_enhanced_ha" : true,
-    "use_standard_alb" : true,
-    "des_id" : "aeiou",
-    "resource_group" : "aeiou",
-    "use_azure_dns" : true,
-    "availability_zones" : [ "aeiou" ],
-    "use_managed_disks" : true,
-    "location" : "aeiou",
-    "cloud_credentials_ref" : "aeiou",
-    "se_storage_account" : "aeiou",
-    "network_info" : [ {
-      "management_network_id" : "aeiou",
-      "se_network_id" : "aeiou",
-      "virtual_network_id" : "aeiou"
-    } ]
-  },
-  "name" : "aeiou",
-  "prefer_static_routes" : true,
-  "vcenter_configuration" : {
-    "management_ip_subnet" : "",
-    "vcenter_template_se_location" : "aeiou",
-    "datacenter" : "aeiou",
-    "management_network" : "aeiou",
-    "vcenter_url" : "aeiou",
-    "privilege" : "aeiou",
-    "content_lib" : {
-      "name" : "aeiou",
-      "id" : "aeiou"
-    },
-    "datacenter_managed_object_id" : "aeiou",
-    "deactivate_vm_discovery" : true,
-    "password" : "aeiou",
-    "is_nsx_environment" : true,
-    "use_content_lib" : true,
-    "username" : "aeiou"
-  },
-  "linuxserver_configuration" : {
-    "ssh_user_ref" : "aeiou",
-    "hosts" : [ {
-      "host_ip" : "",
-      "host_attr" : [ {
-        "attr_val" : "aeiou",
-        "attr_key" : "aeiou"
-      } ],
-      "node_availability_zone" : "aeiou",
-      "se_group_ref" : "aeiou"
-    } ],
-    "se_inband_mgmt" : true,
-    "se_sys_disk_path" : "aeiou",
-    "se_log_disk_size_GB" : "",
-    "se_sys_disk_size_GB" : "",
-    "se_log_disk_path" : "aeiou"
-  },
-  "markers" : [ {
-    "values" : [ "aeiou" ],
-    "key" : "aeiou"
-  } ],
-  "rancher_configuration" : {
-    "feproxy_container_port_as_service" : true,
-    "disable_auto_backend_service_sync" : true,
-    "se_volume" : "aeiou",
-    "http_container_ports" : [ "" ],
-    "se_spawn_rate" : "",
-    "nuage_controller" : {
-      "se_zone" : "aeiou",
-      "nuage_username" : "aeiou",
-      "nuage_password" : "aeiou",
-      "nuage_organization" : "aeiou",
-      "nuage_port" : "",
-      "se_domain" : "aeiou",
-      "se_enterprise" : "aeiou",
-      "se_policy_group" : "aeiou",
-      "nuage_vsd_host" : "aeiou",
-      "se_network" : "aeiou",
-      "se_user" : "aeiou"
-    },
-    "fleet_endpoint" : "aeiou",
-    "secret_key" : "aeiou",
-    "ssh_user_ref" : "aeiou",
-    "use_controller_image" : true,
-    "use_container_ip_port" : true,
-    "container_port_match_http_service" : true,
-    "disable_auto_se_creation" : true,
-    "se_include_attributes" : [ "" ],
-    "se_deployment_method" : "aeiou",
-    "services_accessible_all_interfaces" : true,
-    "disable_auto_frontend_service_sync" : true,
-    "app_sync_frequency" : "",
-    "feproxy_vips_enable_proxy_arp" : true,
-    "enable_event_subscription" : true,
-    "coredump_directory" : "aeiou",
-    "docker_registry_se" : "",
-    "rancher_servers" : [ "aeiou" ],
-    "se_exclude_attributes" : [ "" ],
-    "access_key" : "aeiou",
-    "east_west_placement_subnet" : ""
-  },
-  "license_tier" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#Cloud">Cloud</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="cloudUuidStatusGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /cloud/{uuid}/status/</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">cloudUuidStatusGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#String">String</a>
     <h4 class="field-label">401</h4>
     log in failed
         <a href="#"></a>

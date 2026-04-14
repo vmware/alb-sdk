@@ -202,382 +202,26 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#networkInventoryGet"><code><span class="http-method">get</span> /network-inventory</code></a></li>
-  <li><a href="#networkInventoryPost"><code><span class="http-method">post</span> /network-inventory</code></a></li>
-  <li><a href="#networkInventoryUuidDelete"><code><span class="http-method">delete</span> /network-inventory/{uuid}</code></a></li>
   <li><a href="#networkInventoryUuidGet"><code><span class="http-method">get</span> /network-inventory/{uuid}</code></a></li>
-  <li><a href="#networkInventoryUuidPatch"><code><span class="http-method">patch</span> /network-inventory/{uuid}</code></a></li>
-  <li><a href="#networkInventoryUuidPut"><code><span class="http-method">put</span> /network-inventory/{uuid}</code></a></li>
-  <li><a href="#networkruntimeGet"><code><span class="http-method">get</span> /networkruntime</code></a></li>
-  <li><a href="#networkruntimePost"><code><span class="http-method">post</span> /networkruntime</code></a></li>
-  <li><a href="#networkruntimeUuidDelete"><code><span class="http-method">delete</span> /networkruntime/{uuid}</code></a></li>
   <li><a href="#networkruntimeUuidGet"><code><span class="http-method">get</span> /networkruntime/{uuid}</code></a></li>
-  <li><a href="#networkruntimeUuidPatch"><code><span class="http-method">patch</span> /networkruntime/{uuid}</code></a></li>
-  <li><a href="#networkruntimeUuidPut"><code><span class="http-method">put</span> /networkruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrnwruntimeGet"><code><span class="http-method">get</span> /vimgrnwruntime</code></a></li>
-  <li><a href="#vimgrnwruntimePost"><code><span class="http-method">post</span> /vimgrnwruntime</code></a></li>
-  <li><a href="#vimgrnwruntimeUuidDelete"><code><span class="http-method">delete</span> /vimgrnwruntime/{uuid}</code></a></li>
   <li><a href="#vimgrnwruntimeUuidGet"><code><span class="http-method">get</span> /vimgrnwruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrnwruntimeUuidPatch"><code><span class="http-method">patch</span> /vimgrnwruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrnwruntimeUuidPut"><code><span class="http-method">put</span> /vimgrnwruntime/{uuid}</code></a></li>
+  <li><a href="#dELETE /networkInventory/{uuid}"><code><span class="http-method">delete</span> /network-inventory/{uuid}</code></a></li>
+  <li><a href="#gET /networkInventory"><code><span class="http-method">get</span> /network-inventory</code></a></li>
+  <li><a href="#pATCH /networkInventory/{uuid}"><code><span class="http-method">patch</span> /network-inventory/{uuid}</code></a></li>
+  <li><a href="#pOST /networkInventory"><code><span class="http-method">post</span> /network-inventory</code></a></li>
+  <li><a href="#pUT /networkInventory/{uuid}"><code><span class="http-method">put</span> /network-inventory/{uuid}</code></a></li>
+  <li><a href="#dELETE /networkruntime/{uuid}"><code><span class="http-method">delete</span> /networkruntime/{uuid}</code></a></li>
+  <li><a href="#gET /networkruntime"><code><span class="http-method">get</span> /networkruntime</code></a></li>
+  <li><a href="#pATCH /networkruntime/{uuid}"><code><span class="http-method">patch</span> /networkruntime/{uuid}</code></a></li>
+  <li><a href="#pOST /networkruntime"><code><span class="http-method">post</span> /networkruntime</code></a></li>
+  <li><a href="#pUT /networkruntime/{uuid}"><code><span class="http-method">put</span> /networkruntime/{uuid}</code></a></li>
+  <li><a href="#dELETE /vimgrnwruntime/{uuid}"><code><span class="http-method">delete</span> /vimgrnwruntime/{uuid}</code></a></li>
+  <li><a href="#gET /vimgrnwruntime"><code><span class="http-method">get</span> /vimgrnwruntime</code></a></li>
+  <li><a href="#pATCH /vimgrnwruntime/{uuid}"><code><span class="http-method">patch</span> /vimgrnwruntime/{uuid}</code></a></li>
+  <li><a href="#pOST /vimgrnwruntime"><code><span class="http-method">post</span> /vimgrnwruntime</code></a></li>
+  <li><a href="#pUT /vimgrnwruntime/{uuid}"><code><span class="http-method">put</span> /vimgrnwruntime/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="networkInventoryGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /network-inventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkInventoryGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkInventoryApiResponse">NetworkInventoryApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "discovery" : {
-      "dvs" : true,
-      "availability_zone" : "aeiou",
-      "tenant_name" : "aeiou",
-      "interested_nw" : true,
-      "vrf_context_ref" : "aeiou",
-      "vm_refs" : [ "aeiou" ],
-      "vlan_range" : [ {
-        "start" : 123,
-        "end" : 123
-      } ],
-      "host_refs" : [ "aeiou" ],
-      "MgmtNW" : true,
-      "num_ports" : 123,
-      "datacenter_uuid" : "aeiou",
-      "type" : "aeiou",
-      "uuid" : "aeiou",
-      "url" : "aeiou",
-      "_last_modified" : "aeiou",
-      "ip_subnet" : [ {
-        "fip_subnet_uuids" : [ "aeiou" ],
-        "ip_subnet" : "aeiou",
-        "fip_available" : true,
-        "prefix" : "",
-        "name" : "aeiou",
-        "floatingip_subnets" : [ {
-          "prefix" : {
-            "ip_addr" : {
-              "addr" : "aeiou",
-              "type" : "aeiou"
-            },
-            "mask" : 123
-          },
-          "name" : "aeiou",
-          "uuid" : "aeiou"
-        } ],
-        "ref_count" : 123,
-        "uuid" : "aeiou",
-        "se_ref_count" : 123,
-        "primary" : true
-      } ],
-      "vlan" : 123,
-      "cloud_ref" : "aeiou",
-      "tenant_ref" : "aeiou",
-      "name" : "aeiou",
-      "auto_expand" : true,
-      "logical_switch_id" : "aeiou",
-      "switch_name" : "aeiou",
-      "managed_object_id" : "aeiou"
-    },
-    "runtime" : {
-      "subnet_runtime" : [ {
-        "prefix" : "",
-        "ip_range_runtimes" : [ {
-          "free_ip_count" : "",
-          "allocated_ips" : [ {
-            "obj_info" : "aeiou",
-            "ip" : "",
-            "obj_uuid" : "aeiou"
-          } ],
-          "type" : "aeiou",
-          "total_ip_count" : ""
-        } ]
-      } ],
-      "obj_uuids" : [ "aeiou" ],
-      "tenant_ref" : "aeiou",
-      "name" : "aeiou",
-      "uuid" : "aeiou",
-      "url" : "aeiou",
-      "_last_modified" : "aeiou"
-    },
-    "config" : {
-      "dhcp_enabled" : true,
-      "vrf_context_ref" : "aeiou",
-      "exclude_discovered_subnets" : true,
-      "cloud_ref" : "aeiou",
-      "tenant_ref" : "aeiou",
-      "name" : "aeiou",
-      "vimgrnw_ref" : "aeiou",
-      "ip6_autocfg_enabled" : true,
-      "vcenter_dvs" : true,
-      "uuid" : "aeiou",
-      "url" : "aeiou",
-      "synced_from_se" : true
-    },
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkInventoryApiResponse">NetworkInventoryApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkInventoryPost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /network-inventory</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkInventoryPost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkInventory">NetworkInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "discovery" : {
-    "dvs" : true,
-    "availability_zone" : "aeiou",
-    "tenant_name" : "aeiou",
-    "interested_nw" : true,
-    "vrf_context_ref" : "aeiou",
-    "vm_refs" : [ "aeiou" ],
-    "vlan_range" : [ {
-      "start" : 123,
-      "end" : 123
-    } ],
-    "host_refs" : [ "aeiou" ],
-    "MgmtNW" : true,
-    "num_ports" : 123,
-    "datacenter_uuid" : "aeiou",
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "ip_subnet" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "vlan" : 123,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "auto_expand" : true,
-    "logical_switch_id" : "aeiou",
-    "switch_name" : "aeiou",
-    "managed_object_id" : "aeiou"
-  },
-  "runtime" : {
-    "subnet_runtime" : [ {
-      "prefix" : "",
-      "ip_range_runtimes" : [ {
-        "free_ip_count" : "",
-        "allocated_ips" : [ {
-          "obj_info" : "aeiou",
-          "ip" : "",
-          "obj_uuid" : "aeiou"
-        } ],
-        "type" : "aeiou",
-        "total_ip_count" : ""
-      } ]
-    } ],
-    "obj_uuids" : [ "aeiou" ],
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  },
-  "config" : {
-    "dhcp_enabled" : true,
-    "vrf_context_ref" : "aeiou",
-    "exclude_discovered_subnets" : true,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "vimgrnw_ref" : "aeiou",
-    "ip6_autocfg_enabled" : true,
-    "vcenter_dvs" : true,
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "synced_from_se" : true
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkInventory">NetworkInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkInventoryUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /network-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkInventoryUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="networkInventoryUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -733,542 +377,6 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="networkInventoryUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /network-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkInventoryUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkInventory">NetworkInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "discovery" : {
-    "dvs" : true,
-    "availability_zone" : "aeiou",
-    "tenant_name" : "aeiou",
-    "interested_nw" : true,
-    "vrf_context_ref" : "aeiou",
-    "vm_refs" : [ "aeiou" ],
-    "vlan_range" : [ {
-      "start" : 123,
-      "end" : 123
-    } ],
-    "host_refs" : [ "aeiou" ],
-    "MgmtNW" : true,
-    "num_ports" : 123,
-    "datacenter_uuid" : "aeiou",
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "ip_subnet" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "vlan" : 123,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "auto_expand" : true,
-    "logical_switch_id" : "aeiou",
-    "switch_name" : "aeiou",
-    "managed_object_id" : "aeiou"
-  },
-  "runtime" : {
-    "subnet_runtime" : [ {
-      "prefix" : "",
-      "ip_range_runtimes" : [ {
-        "free_ip_count" : "",
-        "allocated_ips" : [ {
-          "obj_info" : "aeiou",
-          "ip" : "",
-          "obj_uuid" : "aeiou"
-        } ],
-        "type" : "aeiou",
-        "total_ip_count" : ""
-      } ]
-    } ],
-    "obj_uuids" : [ "aeiou" ],
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  },
-  "config" : {
-    "dhcp_enabled" : true,
-    "vrf_context_ref" : "aeiou",
-    "exclude_discovered_subnets" : true,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "vimgrnw_ref" : "aeiou",
-    "ip6_autocfg_enabled" : true,
-    "vcenter_dvs" : true,
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "synced_from_se" : true
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkInventory">NetworkInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkInventoryUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /network-inventory/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkInventoryUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkInventory">NetworkInventory</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "discovery" : {
-    "dvs" : true,
-    "availability_zone" : "aeiou",
-    "tenant_name" : "aeiou",
-    "interested_nw" : true,
-    "vrf_context_ref" : "aeiou",
-    "vm_refs" : [ "aeiou" ],
-    "vlan_range" : [ {
-      "start" : 123,
-      "end" : 123
-    } ],
-    "host_refs" : [ "aeiou" ],
-    "MgmtNW" : true,
-    "num_ports" : 123,
-    "datacenter_uuid" : "aeiou",
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "ip_subnet" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "vlan" : 123,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "auto_expand" : true,
-    "logical_switch_id" : "aeiou",
-    "switch_name" : "aeiou",
-    "managed_object_id" : "aeiou"
-  },
-  "runtime" : {
-    "subnet_runtime" : [ {
-      "prefix" : "",
-      "ip_range_runtimes" : [ {
-        "free_ip_count" : "",
-        "allocated_ips" : [ {
-          "obj_info" : "aeiou",
-          "ip" : "",
-          "obj_uuid" : "aeiou"
-        } ],
-        "type" : "aeiou",
-        "total_ip_count" : ""
-      } ]
-    } ],
-    "obj_uuids" : [ "aeiou" ],
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  },
-  "config" : {
-    "dhcp_enabled" : true,
-    "vrf_context_ref" : "aeiou",
-    "exclude_discovered_subnets" : true,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "vimgrnw_ref" : "aeiou",
-    "ip6_autocfg_enabled" : true,
-    "vcenter_dvs" : true,
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "synced_from_se" : true
-  },
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkInventory">NetworkInventory</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkruntimeGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /networkruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkruntimeGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkRuntimeApiResponse">NetworkRuntimeApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "subnet_runtime" : [ {
-      "prefix" : {
-        "ip_addr" : "",
-        "mask" : 123
-      },
-      "ip_range_runtimes" : [ {
-        "free_ip_count" : "",
-        "allocated_ips" : [ {
-          "obj_info" : "aeiou",
-          "ip" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "obj_uuid" : "aeiou"
-        } ],
-        "type" : "aeiou",
-        "total_ip_count" : ""
-      } ]
-    } ],
-    "obj_uuids" : [ "aeiou" ],
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkRuntimeApiResponse">NetworkRuntimeApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkruntimePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /networkruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkruntimePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkRuntime">NetworkRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "subnet_runtime" : [ {
-    "prefix" : {
-      "ip_addr" : "",
-      "mask" : 123
-    },
-    "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
-      "allocated_ips" : [ {
-        "obj_info" : "aeiou",
-        "ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "obj_uuid" : "aeiou"
-      } ],
-      "type" : "aeiou",
-      "total_ip_count" : ""
-    } ]
-  } ],
-  "obj_uuids" : [ "aeiou" ],
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkRuntime">NetworkRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkruntimeUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /networkruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkruntimeUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
   <div class="method"><a name="networkruntimeUuidGet"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -1358,462 +466,6 @@ font-style: italic;
         <a href="#NetworkRuntime">NetworkRuntime</a>
     <h4 class="field-label">401</h4>
     log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkruntimeUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /networkruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkruntimeUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkRuntime">NetworkRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "subnet_runtime" : [ {
-    "prefix" : {
-      "ip_addr" : "",
-      "mask" : 123
-    },
-    "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
-      "allocated_ips" : [ {
-        "obj_info" : "aeiou",
-        "ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "obj_uuid" : "aeiou"
-      } ],
-      "type" : "aeiou",
-      "total_ip_count" : ""
-    } ]
-  } ],
-  "obj_uuids" : [ "aeiou" ],
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkRuntime">NetworkRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="networkruntimeUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /networkruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">networkruntimeUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NetworkRuntime">NetworkRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "subnet_runtime" : [ {
-    "prefix" : {
-      "ip_addr" : "",
-      "mask" : 123
-    },
-    "ip_range_runtimes" : [ {
-      "free_ip_count" : "",
-      "allocated_ips" : [ {
-        "obj_info" : "aeiou",
-        "ip" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "obj_uuid" : "aeiou"
-      } ],
-      "type" : "aeiou",
-      "total_ip_count" : ""
-    } ]
-  } ],
-  "obj_uuids" : [ "aeiou" ],
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NetworkRuntime">NetworkRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrnwruntimeGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrnwruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrnwruntimeGet</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrNWRuntimeApiResponse">VIMgrNWRuntimeApiResponse</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "next" : "aeiou",
-  "count" : 123,
-  "results" : [ {
-    "dvs" : true,
-    "availability_zone" : "aeiou",
-    "tenant_name" : "aeiou",
-    "interested_nw" : true,
-    "vrf_context_ref" : "aeiou",
-    "vm_refs" : [ "aeiou" ],
-    "vlan_range" : [ {
-      "start" : 123,
-      "end" : 123
-    } ],
-    "host_refs" : [ "aeiou" ],
-    "MgmtNW" : true,
-    "num_ports" : 123,
-    "datacenter_uuid" : "aeiou",
-    "type" : "aeiou",
-    "uuid" : "aeiou",
-    "url" : "aeiou",
-    "_last_modified" : "aeiou",
-    "ip_subnet" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "vlan" : 123,
-    "cloud_ref" : "aeiou",
-    "tenant_ref" : "aeiou",
-    "name" : "aeiou",
-    "auto_expand" : true,
-    "logical_switch_id" : "aeiou",
-    "switch_name" : "aeiou",
-    "managed_object_id" : "aeiou"
-  } ]
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrNWRuntimeApiResponse">VIMgrNWRuntimeApiResponse</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrnwruntimePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrnwruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrnwruntimePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrNWRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrNWRuntime">VIMgrNWRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "dvs" : true,
-  "availability_zone" : "aeiou",
-  "tenant_name" : "aeiou",
-  "interested_nw" : true,
-  "vrf_context_ref" : "aeiou",
-  "vm_refs" : [ "aeiou" ],
-  "vlan_range" : [ {
-    "start" : 123,
-    "end" : 123
-  } ],
-  "host_refs" : [ "aeiou" ],
-  "MgmtNW" : true,
-  "num_ports" : 123,
-  "datacenter_uuid" : "aeiou",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "ip_subnet" : [ {
-    "fip_subnet_uuids" : [ "aeiou" ],
-    "ip_subnet" : "aeiou",
-    "fip_available" : true,
-    "prefix" : "",
-    "name" : "aeiou",
-    "floatingip_subnets" : [ {
-      "prefix" : {
-        "ip_addr" : {
-          "addr" : "aeiou",
-          "type" : "aeiou"
-        },
-        "mask" : 123
-      },
-      "name" : "aeiou",
-      "uuid" : "aeiou"
-    } ],
-    "ref_count" : 123,
-    "uuid" : "aeiou",
-    "se_ref_count" : 123,
-    "primary" : true
-  } ],
-  "vlan" : 123,
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "auto_expand" : true,
-  "logical_switch_id" : "aeiou",
-  "switch_name" : "aeiou",
-  "managed_object_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrNWRuntime">VIMgrNWRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrnwruntimeUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrnwruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrnwruntimeUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -1932,12 +584,1259 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrnwruntimeUuidPatch"/>
+  <div class="method"><a name="dELETE /networkInventory/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /network-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /networkInventory/{uuid}</span>)</div>
+    <div class="method-notes">/network-inventory/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /networkInventory"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /network-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /networkInventory</span>)</div>
+    <div class="method-notes">/network-inventory</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkInventoryApiResponse">NetworkInventoryApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "discovery" : {
+      "dvs" : true,
+      "availability_zone" : "aeiou",
+      "tenant_name" : "aeiou",
+      "interested_nw" : true,
+      "vrf_context_ref" : "aeiou",
+      "vm_refs" : [ "aeiou" ],
+      "vlan_range" : [ {
+        "start" : 123,
+        "end" : 123
+      } ],
+      "host_refs" : [ "aeiou" ],
+      "MgmtNW" : true,
+      "num_ports" : 123,
+      "datacenter_uuid" : "aeiou",
+      "type" : "aeiou",
+      "uuid" : "aeiou",
+      "url" : "aeiou",
+      "_last_modified" : "aeiou",
+      "ip_subnet" : [ {
+        "fip_subnet_uuids" : [ "aeiou" ],
+        "ip_subnet" : "aeiou",
+        "fip_available" : true,
+        "prefix" : "",
+        "name" : "aeiou",
+        "floatingip_subnets" : [ {
+          "prefix" : {
+            "ip_addr" : {
+              "addr" : "aeiou",
+              "type" : "aeiou"
+            },
+            "mask" : 123
+          },
+          "name" : "aeiou",
+          "uuid" : "aeiou"
+        } ],
+        "ref_count" : 123,
+        "uuid" : "aeiou",
+        "se_ref_count" : 123,
+        "primary" : true
+      } ],
+      "vlan" : 123,
+      "cloud_ref" : "aeiou",
+      "tenant_ref" : "aeiou",
+      "name" : "aeiou",
+      "auto_expand" : true,
+      "logical_switch_id" : "aeiou",
+      "switch_name" : "aeiou",
+      "managed_object_id" : "aeiou"
+    },
+    "runtime" : {
+      "subnet_runtime" : [ {
+        "prefix" : "",
+        "ip_range_runtimes" : [ {
+          "free_ip_count" : "",
+          "allocated_ips" : [ {
+            "obj_info" : "aeiou",
+            "ip" : "",
+            "obj_uuid" : "aeiou"
+          } ],
+          "type" : "aeiou",
+          "total_ip_count" : ""
+        } ]
+      } ],
+      "obj_uuids" : [ "aeiou" ],
+      "tenant_ref" : "aeiou",
+      "name" : "aeiou",
+      "uuid" : "aeiou",
+      "url" : "aeiou",
+      "_last_modified" : "aeiou"
+    },
+    "config" : {
+      "dhcp_enabled" : true,
+      "vrf_context_ref" : "aeiou",
+      "exclude_discovered_subnets" : true,
+      "cloud_ref" : "aeiou",
+      "tenant_ref" : "aeiou",
+      "name" : "aeiou",
+      "vimgrnw_ref" : "aeiou",
+      "ip6_autocfg_enabled" : true,
+      "vcenter_dvs" : true,
+      "uuid" : "aeiou",
+      "url" : "aeiou",
+      "synced_from_se" : true
+    },
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkInventoryApiResponse">NetworkInventoryApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /networkInventory/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /network-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /networkInventory/{uuid}</span>)</div>
+    <div class="method-notes">/network-inventory/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkInventory">NetworkInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "discovery" : {
+    "dvs" : true,
+    "availability_zone" : "aeiou",
+    "tenant_name" : "aeiou",
+    "interested_nw" : true,
+    "vrf_context_ref" : "aeiou",
+    "vm_refs" : [ "aeiou" ],
+    "vlan_range" : [ {
+      "start" : 123,
+      "end" : 123
+    } ],
+    "host_refs" : [ "aeiou" ],
+    "MgmtNW" : true,
+    "num_ports" : 123,
+    "datacenter_uuid" : "aeiou",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "ip_subnet" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "vlan" : 123,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "auto_expand" : true,
+    "logical_switch_id" : "aeiou",
+    "switch_name" : "aeiou",
+    "managed_object_id" : "aeiou"
+  },
+  "runtime" : {
+    "subnet_runtime" : [ {
+      "prefix" : "",
+      "ip_range_runtimes" : [ {
+        "free_ip_count" : "",
+        "allocated_ips" : [ {
+          "obj_info" : "aeiou",
+          "ip" : "",
+          "obj_uuid" : "aeiou"
+        } ],
+        "type" : "aeiou",
+        "total_ip_count" : ""
+      } ]
+    } ],
+    "obj_uuids" : [ "aeiou" ],
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  },
+  "config" : {
+    "dhcp_enabled" : true,
+    "vrf_context_ref" : "aeiou",
+    "exclude_discovered_subnets" : true,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "vimgrnw_ref" : "aeiou",
+    "ip6_autocfg_enabled" : true,
+    "vcenter_dvs" : true,
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "synced_from_se" : true
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkInventory">NetworkInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /networkInventory"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /network-inventory</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /networkInventory</span>)</div>
+    <div class="method-notes">/network-inventory</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkInventory">NetworkInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "discovery" : {
+    "dvs" : true,
+    "availability_zone" : "aeiou",
+    "tenant_name" : "aeiou",
+    "interested_nw" : true,
+    "vrf_context_ref" : "aeiou",
+    "vm_refs" : [ "aeiou" ],
+    "vlan_range" : [ {
+      "start" : 123,
+      "end" : 123
+    } ],
+    "host_refs" : [ "aeiou" ],
+    "MgmtNW" : true,
+    "num_ports" : 123,
+    "datacenter_uuid" : "aeiou",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "ip_subnet" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "vlan" : 123,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "auto_expand" : true,
+    "logical_switch_id" : "aeiou",
+    "switch_name" : "aeiou",
+    "managed_object_id" : "aeiou"
+  },
+  "runtime" : {
+    "subnet_runtime" : [ {
+      "prefix" : "",
+      "ip_range_runtimes" : [ {
+        "free_ip_count" : "",
+        "allocated_ips" : [ {
+          "obj_info" : "aeiou",
+          "ip" : "",
+          "obj_uuid" : "aeiou"
+        } ],
+        "type" : "aeiou",
+        "total_ip_count" : ""
+      } ]
+    } ],
+    "obj_uuids" : [ "aeiou" ],
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  },
+  "config" : {
+    "dhcp_enabled" : true,
+    "vrf_context_ref" : "aeiou",
+    "exclude_discovered_subnets" : true,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "vimgrnw_ref" : "aeiou",
+    "ip6_autocfg_enabled" : true,
+    "vcenter_dvs" : true,
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "synced_from_se" : true
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkInventory">NetworkInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /networkInventory/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /network-inventory/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /networkInventory/{uuid}</span>)</div>
+    <div class="method-notes">/network-inventory/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkInventory object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkInventory">NetworkInventory</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "discovery" : {
+    "dvs" : true,
+    "availability_zone" : "aeiou",
+    "tenant_name" : "aeiou",
+    "interested_nw" : true,
+    "vrf_context_ref" : "aeiou",
+    "vm_refs" : [ "aeiou" ],
+    "vlan_range" : [ {
+      "start" : 123,
+      "end" : 123
+    } ],
+    "host_refs" : [ "aeiou" ],
+    "MgmtNW" : true,
+    "num_ports" : 123,
+    "datacenter_uuid" : "aeiou",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "ip_subnet" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "vlan" : 123,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "auto_expand" : true,
+    "logical_switch_id" : "aeiou",
+    "switch_name" : "aeiou",
+    "managed_object_id" : "aeiou"
+  },
+  "runtime" : {
+    "subnet_runtime" : [ {
+      "prefix" : "",
+      "ip_range_runtimes" : [ {
+        "free_ip_count" : "",
+        "allocated_ips" : [ {
+          "obj_info" : "aeiou",
+          "ip" : "",
+          "obj_uuid" : "aeiou"
+        } ],
+        "type" : "aeiou",
+        "total_ip_count" : ""
+      } ]
+    } ],
+    "obj_uuids" : [ "aeiou" ],
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  },
+  "config" : {
+    "dhcp_enabled" : true,
+    "vrf_context_ref" : "aeiou",
+    "exclude_discovered_subnets" : true,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "vimgrnw_ref" : "aeiou",
+    "ip6_autocfg_enabled" : true,
+    "vcenter_dvs" : true,
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "synced_from_se" : true
+  },
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkInventory">NetworkInventory</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /networkruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /networkruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /networkruntime/{uuid}</span>)</div>
+    <div class="method-notes">/networkruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /networkruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /networkruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /networkruntime</span>)</div>
+    <div class="method-notes">/networkruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkRuntimeApiResponse">NetworkRuntimeApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "subnet_runtime" : [ {
+      "prefix" : {
+        "ip_addr" : "",
+        "mask" : 123
+      },
+      "ip_range_runtimes" : [ {
+        "free_ip_count" : "",
+        "allocated_ips" : [ {
+          "obj_info" : "aeiou",
+          "ip" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "obj_uuid" : "aeiou"
+        } ],
+        "type" : "aeiou",
+        "total_ip_count" : ""
+      } ]
+    } ],
+    "obj_uuids" : [ "aeiou" ],
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkRuntimeApiResponse">NetworkRuntimeApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /networkruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /networkruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /networkruntime/{uuid}</span>)</div>
+    <div class="method-notes">/networkruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkRuntime">NetworkRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "subnet_runtime" : [ {
+    "prefix" : {
+      "ip_addr" : "",
+      "mask" : 123
+    },
+    "ip_range_runtimes" : [ {
+      "free_ip_count" : "",
+      "allocated_ips" : [ {
+        "obj_info" : "aeiou",
+        "ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "obj_uuid" : "aeiou"
+      } ],
+      "type" : "aeiou",
+      "total_ip_count" : ""
+    } ]
+  } ],
+  "obj_uuids" : [ "aeiou" ],
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkRuntime">NetworkRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /networkruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /networkruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /networkruntime</span>)</div>
+    <div class="method-notes">/networkruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkRuntime">NetworkRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "subnet_runtime" : [ {
+    "prefix" : {
+      "ip_addr" : "",
+      "mask" : 123
+    },
+    "ip_range_runtimes" : [ {
+      "free_ip_count" : "",
+      "allocated_ips" : [ {
+        "obj_info" : "aeiou",
+        "ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "obj_uuid" : "aeiou"
+      } ],
+      "type" : "aeiou",
+      "total_ip_count" : ""
+    } ]
+  } ],
+  "obj_uuids" : [ "aeiou" ],
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkRuntime">NetworkRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /networkruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /networkruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /networkruntime/{uuid}</span>)</div>
+    <div class="method-notes">/networkruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NetworkRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NetworkRuntime">NetworkRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "subnet_runtime" : [ {
+    "prefix" : {
+      "ip_addr" : "",
+      "mask" : 123
+    },
+    "ip_range_runtimes" : [ {
+      "free_ip_count" : "",
+      "allocated_ips" : [ {
+        "obj_info" : "aeiou",
+        "ip" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "obj_uuid" : "aeiou"
+      } ],
+      "type" : "aeiou",
+      "total_ip_count" : ""
+    } ]
+  } ],
+  "obj_uuids" : [ "aeiou" ],
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NetworkRuntime">NetworkRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /vimgrnwruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrnwruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /vimgrnwruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrnwruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /vimgrnwruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrnwruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">gET /vimgrnwruntime</span>)</div>
+    <div class="method-notes">/vimgrnwruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">refers_to (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that refers to another Avi resource. Its syntax is refers_to&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all virtual services referring to pool p1 will be refers_to&#x3D;pool:pool_p1_uuid </div><div class="param">referred_by (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by&#x3D;&lt;obj_type&gt;:&lt;obj_uuid&gt;. Eg. get all pools referred_by virtual service vs1 - referred_by&#x3D;virtualservice:vs_vs1_uuid </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrNWRuntimeApiResponse">VIMgrNWRuntimeApiResponse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "next" : "aeiou",
+  "count" : 123,
+  "results" : [ {
+    "dvs" : true,
+    "availability_zone" : "aeiou",
+    "tenant_name" : "aeiou",
+    "interested_nw" : true,
+    "vrf_context_ref" : "aeiou",
+    "vm_refs" : [ "aeiou" ],
+    "vlan_range" : [ {
+      "start" : 123,
+      "end" : 123
+    } ],
+    "host_refs" : [ "aeiou" ],
+    "MgmtNW" : true,
+    "num_ports" : 123,
+    "datacenter_uuid" : "aeiou",
+    "type" : "aeiou",
+    "uuid" : "aeiou",
+    "url" : "aeiou",
+    "_last_modified" : "aeiou",
+    "ip_subnet" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "vlan" : 123,
+    "cloud_ref" : "aeiou",
+    "tenant_ref" : "aeiou",
+    "name" : "aeiou",
+    "auto_expand" : true,
+    "logical_switch_id" : "aeiou",
+    "switch_name" : "aeiou",
+    "managed_object_id" : "aeiou"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrNWRuntimeApiResponse">VIMgrNWRuntimeApiResponse</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pATCH /vimgrnwruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vimgrnwruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrnwruntimeUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /vimgrnwruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrnwruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -2045,12 +1944,113 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrnwruntimeUuidPut"/>
+  <div class="method"><a name="pOST /vimgrnwruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrnwruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /vimgrnwruntime</span>)</div>
+    <div class="method-notes">/vimgrnwruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrNWRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrNWRuntime">VIMgrNWRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "dvs" : true,
+  "availability_zone" : "aeiou",
+  "tenant_name" : "aeiou",
+  "interested_nw" : true,
+  "vrf_context_ref" : "aeiou",
+  "vm_refs" : [ "aeiou" ],
+  "vlan_range" : [ {
+    "start" : 123,
+    "end" : 123
+  } ],
+  "host_refs" : [ "aeiou" ],
+  "MgmtNW" : true,
+  "num_ports" : 123,
+  "datacenter_uuid" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "ip_subnet" : [ {
+    "fip_subnet_uuids" : [ "aeiou" ],
+    "ip_subnet" : "aeiou",
+    "fip_available" : true,
+    "prefix" : "",
+    "name" : "aeiou",
+    "floatingip_subnets" : [ {
+      "prefix" : {
+        "ip_addr" : {
+          "addr" : "aeiou",
+          "type" : "aeiou"
+        },
+        "mask" : 123
+      },
+      "name" : "aeiou",
+      "uuid" : "aeiou"
+    } ],
+    "ref_count" : 123,
+    "uuid" : "aeiou",
+    "se_ref_count" : 123,
+    "primary" : true
+  } ],
+  "vlan" : 123,
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "auto_expand" : true,
+  "logical_switch_id" : "aeiou",
+  "switch_name" : "aeiou",
+  "managed_object_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrNWRuntime">VIMgrNWRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /vimgrnwruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /vimgrnwruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrnwruntimeUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /vimgrnwruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrnwruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

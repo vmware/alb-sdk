@@ -202,20 +202,168 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#nsxtsegmentruntimeGet"><code><span class="http-method">get</span> /nsxtsegmentruntime</code></a></li>
-  <li><a href="#nsxtsegmentruntimePost"><code><span class="http-method">post</span> /nsxtsegmentruntime</code></a></li>
-  <li><a href="#nsxtsegmentruntimeUuidDelete"><code><span class="http-method">delete</span> /nsxtsegmentruntime/{uuid}</code></a></li>
   <li><a href="#nsxtsegmentruntimeUuidGet"><code><span class="http-method">get</span> /nsxtsegmentruntime/{uuid}</code></a></li>
-  <li><a href="#nsxtsegmentruntimeUuidPatch"><code><span class="http-method">patch</span> /nsxtsegmentruntime/{uuid}</code></a></li>
-  <li><a href="#nsxtsegmentruntimeUuidPut"><code><span class="http-method">put</span> /nsxtsegmentruntime/{uuid}</code></a></li>
+  <li><a href="#dELETE /nsxtsegmentruntime/{uuid}"><code><span class="http-method">delete</span> /nsxtsegmentruntime/{uuid}</code></a></li>
+  <li><a href="#gET /nsxtsegmentruntime"><code><span class="http-method">get</span> /nsxtsegmentruntime</code></a></li>
+  <li><a href="#pATCH /nsxtsegmentruntime/{uuid}"><code><span class="http-method">patch</span> /nsxtsegmentruntime/{uuid}</code></a></li>
+  <li><a href="#pOST /nsxtsegmentruntime"><code><span class="http-method">post</span> /nsxtsegmentruntime</code></a></li>
+  <li><a href="#pUT /nsxtsegmentruntime/{uuid}"><code><span class="http-method">put</span> /nsxtsegmentruntime/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="nsxtsegmentruntimeGet"/>
+  <div class="method"><a name="nsxtsegmentruntimeUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "subnet" : "aeiou",
+  "segment_gw6" : "aeiou",
+  "segname" : "aeiou",
+  "tier1_id" : "aeiou",
+  "vrf_context_ref" : "aeiou",
+  "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
+  "dhcp_ranges" : [ "aeiou" ],
+  "nw_name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "dhcp_enabled" : true,
+  "vlan_ids" : [ "aeiou" ],
+  "nw_ref" : "aeiou",
+  "subnet6" : "aeiou",
+  "dhcp6_ranges" : [ "aeiou" ],
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "security_only_nsxt" : true,
+  "opaque_network_id" : "aeiou",
+  "segment_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /nsxtsegmentruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /nsxtsegmentruntime/{uuid}</span>)</div>
+    <div class="method-notes">/nsxtsegmentruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /nsxtsegmentruntime"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /nsxtsegmentruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /nsxtsegmentruntime</span>)</div>
+    <div class="method-notes">/nsxtsegmentruntime</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -328,236 +476,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="nsxtsegmentruntimePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /nsxtsegmentruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NsxtSegmentRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "subnet" : "aeiou",
-  "segment_gw6" : "aeiou",
-  "segname" : "aeiou",
-  "tier1_id" : "aeiou",
-  "vrf_context_ref" : "aeiou",
-  "segment_gw" : "aeiou",
-  "origin_id" : "aeiou",
-  "dhcp_ranges" : [ "aeiou" ],
-  "nw_name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "dhcp_enabled" : true,
-  "vlan_ids" : [ "aeiou" ],
-  "nw_ref" : "aeiou",
-  "subnet6" : "aeiou",
-  "dhcp6_ranges" : [ "aeiou" ],
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "security_only_nsxt" : true,
-  "opaque_network_id" : "aeiou",
-  "segment_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="nsxtsegmentruntimeUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="nsxtsegmentruntimeUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "subnet" : "aeiou",
-  "segment_gw6" : "aeiou",
-  "segname" : "aeiou",
-  "tier1_id" : "aeiou",
-  "vrf_context_ref" : "aeiou",
-  "segment_gw" : "aeiou",
-  "origin_id" : "aeiou",
-  "dhcp_ranges" : [ "aeiou" ],
-  "nw_name" : "aeiou",
-  "uuid" : "aeiou",
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "dhcp_enabled" : true,
-  "vlan_ids" : [ "aeiou" ],
-  "nw_ref" : "aeiou",
-  "subnet6" : "aeiou",
-  "dhcp6_ranges" : [ "aeiou" ],
-  "cloud_ref" : "aeiou",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "security_only_nsxt" : true,
-  "opaque_network_id" : "aeiou",
-  "segment_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="nsxtsegmentruntimeUuidPatch"/>
+  <div class="method"><a name="pATCH /nsxtsegmentruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /nsxtsegmentruntime/{uuid}</span>)</div>
+    <div class="method-notes">/nsxtsegmentruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -640,12 +564,88 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="nsxtsegmentruntimeUuidPut"/>
+  <div class="method"><a name="pOST /nsxtsegmentruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /nsxtsegmentruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /nsxtsegmentruntime</span>)</div>
+    <div class="method-notes">/nsxtsegmentruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; NsxtSegmentRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "subnet" : "aeiou",
+  "segment_gw6" : "aeiou",
+  "segname" : "aeiou",
+  "tier1_id" : "aeiou",
+  "vrf_context_ref" : "aeiou",
+  "segment_gw" : "aeiou",
+  "origin_id" : "aeiou",
+  "dhcp_ranges" : [ "aeiou" ],
+  "nw_name" : "aeiou",
+  "uuid" : "aeiou",
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "dhcp_enabled" : true,
+  "vlan_ids" : [ "aeiou" ],
+  "nw_ref" : "aeiou",
+  "subnet6" : "aeiou",
+  "dhcp6_ranges" : [ "aeiou" ],
+  "cloud_ref" : "aeiou",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "security_only_nsxt" : true,
+  "opaque_network_id" : "aeiou",
+  "segment_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#NsxtSegmentRuntime">NsxtSegmentRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /nsxtsegmentruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /nsxtsegmentruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">nsxtsegmentruntimeUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /nsxtsegmentruntime/{uuid}</span>)</div>
+    <div class="method-notes">/nsxtsegmentruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">

@@ -202,20 +202,78 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#alertconfigGet"><code><span class="http-method">get</span> /alertconfig</code></a></li>
-  <li><a href="#alertconfigPost"><code><span class="http-method">post</span> /alertconfig</code></a></li>
-  <li><a href="#alertconfigUuidDelete"><code><span class="http-method">delete</span> /alertconfig/{uuid}</code></a></li>
+  <li><a href="#dELETE /alertconfig/{uuid}"><code><span class="http-method">delete</span> /alertconfig/{uuid}</code></a></li>
+  <li><a href="#gET /alertconfig"><code><span class="http-method">get</span> /alertconfig</code></a></li>
+  <li><a href="#pATCH /alertconfig/{uuid}"><code><span class="http-method">patch</span> /alertconfig/{uuid}</code></a></li>
+  <li><a href="#pOST /alertconfig"><code><span class="http-method">post</span> /alertconfig</code></a></li>
+  <li><a href="#pUT /alertconfig/{uuid}"><code><span class="http-method">put</span> /alertconfig/{uuid}</code></a></li>
   <li><a href="#alertconfigUuidGet"><code><span class="http-method">get</span> /alertconfig/{uuid}</code></a></li>
-  <li><a href="#alertconfigUuidPatch"><code><span class="http-method">patch</span> /alertconfig/{uuid}</code></a></li>
-  <li><a href="#alertconfigUuidPut"><code><span class="http-method">put</span> /alertconfig/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="alertconfigGet"/>
+  <div class="method"><a name="dELETE /alertconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /alertconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /alertconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /alertconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertconfigGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /alertconfig</span>)</div>
+    <div class="method-notes">/alertconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -326,12 +384,124 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertconfigPost"/>
+  <div class="method"><a name="pATCH /alertconfig/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /alertconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertconfig/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertConfig object creation </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#AlertConfig">AlertConfig</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "summary" : "aeiou",
+  "throttle" : "",
+  "action_group_ref" : "aeiou",
+  "object_type" : "aeiou",
+  "autoscale_alert" : true,
+  "description" : "aeiou",
+  "recommendation" : "aeiou",
+  "threshold" : "",
+  "source" : "aeiou",
+  "alert_rule" : {
+    "sys_event_rule" : [ {
+      "event_id" : "aeiou",
+      "event_details" : [ {
+        "comparator" : "aeiou",
+        "event_details_key" : "aeiou",
+        "event_details_value" : "aeiou"
+      } ],
+      "not_cond" : true
+    } ],
+    "conn_app_log_rule" : {
+      "filter_action" : "aeiou",
+      "filter_string" : "aeiou"
+    },
+    "metrics_rule" : [ {
+      "duration" : "",
+      "metric_id" : "aeiou",
+      "metric_threshold" : {
+        "comparator" : "aeiou",
+        "threshold" : ""
+      }
+    } ],
+    "event_match_filter" : "aeiou",
+    "operator" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "enabled" : true,
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "rolling_window" : "",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "obj_uuid" : "aeiou",
+  "category" : "aeiou",
+  "expiry_time" : ""
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertConfig">AlertConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pOST /alertconfig"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /alertconfig</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertconfigPost</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pOST /alertconfig</span>)</div>
+    <div class="method-notes">/alertconfig</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -426,12 +596,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="alertconfigUuidDelete"/>
+  <div class="method"><a name="pUT /alertconfig/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /alertconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertconfigUuidDelete</span>)</div>
-    <div class="method-notes"></div>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertconfig/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pUT /alertconfig/{uuid}</span>)</div>
+    <div class="method-notes">/alertconfig/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -446,6 +616,12 @@ font-style: italic;
       <li><code>application/json</code></li>
     </ul>
 
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertConfig object creation </div>
+    </div>  <!-- field-items -->
 
 
     <h3 class="field-label">Query parameters</h3>
@@ -458,15 +634,63 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
+      <a href="#AlertConfig">AlertConfig</a>
       
-      String
     </div>
 
     <!--Todo: process Response Object and its headers, schema, examples -->
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
+    <pre class="example"><code>{
+  "summary" : "aeiou",
+  "throttle" : "",
+  "action_group_ref" : "aeiou",
+  "object_type" : "aeiou",
+  "autoscale_alert" : true,
+  "description" : "aeiou",
+  "recommendation" : "aeiou",
+  "threshold" : "",
+  "source" : "aeiou",
+  "alert_rule" : {
+    "sys_event_rule" : [ {
+      "event_id" : "aeiou",
+      "event_details" : [ {
+        "comparator" : "aeiou",
+        "event_details_key" : "aeiou",
+        "event_details_value" : "aeiou"
+      } ],
+      "not_cond" : true
+    } ],
+    "conn_app_log_rule" : {
+      "filter_action" : "aeiou",
+      "filter_string" : "aeiou"
+    },
+    "metrics_rule" : [ {
+      "duration" : "",
+      "metric_id" : "aeiou",
+      "metric_threshold" : {
+        "comparator" : "aeiou",
+        "threshold" : ""
+      }
+    } ],
+    "event_match_filter" : "aeiou",
+    "operator" : "aeiou"
+  },
+  "uuid" : "aeiou",
+  "enabled" : true,
+  "url" : "aeiou",
+  "_last_modified" : "aeiou",
+  "rolling_window" : "",
+  "tenant_ref" : "aeiou",
+  "name" : "aeiou",
+  "configpb_attributes" : {
+    "version" : ""
+  },
+  "obj_uuid" : "aeiou",
+  "category" : "aeiou",
+  "expiry_time" : ""
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -476,11 +700,11 @@ font-style: italic;
     </ul>
 
     <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#AlertConfig">AlertConfig</a>
+    <h4 class="field-label">401</h4>
+    log in failed
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
@@ -519,230 +743,6 @@ font-style: italic;
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
 
       <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertConfig">AlertConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "summary" : "aeiou",
-  "throttle" : "",
-  "action_group_ref" : "aeiou",
-  "object_type" : "aeiou",
-  "autoscale_alert" : true,
-  "description" : "aeiou",
-  "recommendation" : "aeiou",
-  "threshold" : "",
-  "source" : "aeiou",
-  "alert_rule" : {
-    "sys_event_rule" : [ {
-      "event_id" : "aeiou",
-      "event_details" : [ {
-        "comparator" : "aeiou",
-        "event_details_key" : "aeiou",
-        "event_details_value" : "aeiou"
-      } ],
-      "not_cond" : true
-    } ],
-    "conn_app_log_rule" : {
-      "filter_action" : "aeiou",
-      "filter_string" : "aeiou"
-    },
-    "metrics_rule" : [ {
-      "duration" : "",
-      "metric_id" : "aeiou",
-      "metric_threshold" : {
-        "comparator" : "aeiou",
-        "threshold" : ""
-      }
-    } ],
-    "event_match_filter" : "aeiou",
-    "operator" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "enabled" : true,
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "rolling_window" : "",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "obj_uuid" : "aeiou",
-  "category" : "aeiou",
-  "expiry_time" : ""
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertConfig">AlertConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertconfigUuidPatch"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /alertconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertconfigUuidPatch</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#AlertConfig">AlertConfig</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "summary" : "aeiou",
-  "throttle" : "",
-  "action_group_ref" : "aeiou",
-  "object_type" : "aeiou",
-  "autoscale_alert" : true,
-  "description" : "aeiou",
-  "recommendation" : "aeiou",
-  "threshold" : "",
-  "source" : "aeiou",
-  "alert_rule" : {
-    "sys_event_rule" : [ {
-      "event_id" : "aeiou",
-      "event_details" : [ {
-        "comparator" : "aeiou",
-        "event_details_key" : "aeiou",
-        "event_details_value" : "aeiou"
-      } ],
-      "not_cond" : true
-    } ],
-    "conn_app_log_rule" : {
-      "filter_action" : "aeiou",
-      "filter_string" : "aeiou"
-    },
-    "metrics_rule" : [ {
-      "duration" : "",
-      "metric_id" : "aeiou",
-      "metric_threshold" : {
-        "comparator" : "aeiou",
-        "threshold" : ""
-      }
-    } ],
-    "event_match_filter" : "aeiou",
-    "operator" : "aeiou"
-  },
-  "uuid" : "aeiou",
-  "enabled" : true,
-  "url" : "aeiou",
-  "_last_modified" : "aeiou",
-  "rolling_window" : "",
-  "tenant_ref" : "aeiou",
-  "name" : "aeiou",
-  "configpb_attributes" : {
-    "version" : ""
-  },
-  "obj_uuid" : "aeiou",
-  "category" : "aeiou",
-  "expiry_time" : ""
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#AlertConfig">AlertConfig</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="alertconfigUuidPut"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="put"><code class="huge"><span class="http-method">put</span> /alertconfig/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">alertconfigUuidPut</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; AlertConfig object creation </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
     </div>  <!-- field-items -->
 
 

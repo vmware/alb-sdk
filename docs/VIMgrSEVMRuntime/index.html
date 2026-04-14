@@ -202,20 +202,239 @@ font-style: italic;
   <h2>Table of Contents </h2>
   <div class="method-summary"></div>
   <ol>
-  <li><a href="#vimgrsevmruntimeGet"><code><span class="http-method">get</span> /vimgrsevmruntime</code></a></li>
-  <li><a href="#vimgrsevmruntimePost"><code><span class="http-method">post</span> /vimgrsevmruntime</code></a></li>
-  <li><a href="#vimgrsevmruntimeUuidDelete"><code><span class="http-method">delete</span> /vimgrsevmruntime/{uuid}</code></a></li>
   <li><a href="#vimgrsevmruntimeUuidGet"><code><span class="http-method">get</span> /vimgrsevmruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrsevmruntimeUuidPatch"><code><span class="http-method">patch</span> /vimgrsevmruntime/{uuid}</code></a></li>
-  <li><a href="#vimgrsevmruntimeUuidPut"><code><span class="http-method">put</span> /vimgrsevmruntime/{uuid}</code></a></li>
+  <li><a href="#dELETE /vimgrsevmruntime/{uuid}"><code><span class="http-method">delete</span> /vimgrsevmruntime/{uuid}</code></a></li>
+  <li><a href="#gET /vimgrsevmruntime"><code><span class="http-method">get</span> /vimgrsevmruntime</code></a></li>
+  <li><a href="#pATCH /vimgrsevmruntime/{uuid}"><code><span class="http-method">patch</span> /vimgrsevmruntime/{uuid}</code></a></li>
+  <li><a href="#pOST /vimgrsevmruntime"><code><span class="http-method">post</span> /vimgrsevmruntime</code></a></li>
+  <li><a href="#pUT /vimgrsevmruntime/{uuid}"><code><span class="http-method">put</span> /vimgrsevmruntime/{uuid}</code></a></li>
   </ol>
 
-  <div class="method"><a name="vimgrsevmruntimeGet"/>
+  <div class="method"><a name="vimgrsevmruntimeUuidGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrsevmruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeUuidGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "vcenter_host_ha_state" : "aeiou",
+  "deletion_in_progress" : true,
+  "hostid" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "vcenter_vAppName" : "aeiou",
+  "vcenter_vAppVendor" : "aeiou",
+  "vcenter_datacenter_uuid" : "aeiou",
+  "vcenter_instance_uuid" : "aeiou",
+  "cloud_ref" : "aeiou",
+  "segroup_ref" : "aeiou",
+  "host" : "aeiou",
+  "security_group_uuid" : "aeiou",
+  "disk_gb" : "",
+  "server_group_uuid" : "aeiou",
+  "cookie" : "aeiou",
+  "discovery_response" : "aeiou",
+  "vcenter_ref" : "aeiou",
+  "flavor" : "aeiou",
+  "guest_nic" : [ {
+    "connected" : true,
+    "mac_addr" : "aeiou",
+    "mgmt_vnic" : true,
+    "guest_ip" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "network_name" : "aeiou",
+    "label" : "aeiou",
+    "network_uuid" : "aeiou",
+    "avi_internal_network" : true,
+    "type" : "aeiou",
+    "del_pending" : true,
+    "os_port_uuid" : "aeiou"
+  } ],
+  "discovery_status" : "",
+  "name" : "aeiou",
+  "controller_ip_addr" : "aeiou",
+  "vsphere_ha_inprogress" : true,
+  "vcenter_host_connection_state" : "aeiou",
+  "vsphere_ha_enabled" : true,
+  "vcenter_url" : "aeiou",
+  "connection_state" : "aeiou",
+  "powerstate" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gcp_se_project_id" : "aeiou",
+  "cluster_id" : "aeiou",
+  "creation_in_progress" : true,
+  "hypervisor" : "aeiou",
+  "vcenter_se_type" : "aeiou",
+  "cluster_vmgroup" : "aeiou",
+  "nsxt_no_hotplug" : true,
+  "vcenter_rm_cookie" : "aeiou",
+  "availability_zone" : "aeiou",
+  "cloud_name" : "aeiou",
+  "host_ref" : "aeiou",
+  "last_discovery" : "",
+  "vcpus" : "",
+  "vcenter_vm_type" : "aeiou",
+  "url" : "aeiou",
+  "controller_cluster_uuid" : "aeiou",
+  "init_vnics" : 123,
+  "tenant_ref" : "aeiou",
+  "azure_info" : {
+    "availability_set" : "aeiou",
+    "vm_uuid" : "aeiou",
+    "vnic_id" : "aeiou",
+    "resource_group" : "aeiou",
+    "name" : "aeiou",
+    "subnet_id" : "aeiou",
+    "fault_domain" : "aeiou",
+    "update_domain" : "aeiou"
+  },
+  "memory_mb" : "",
+  "vcenter_template_vm" : true,
+  "managed_object_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="dELETE /vimgrsevmruntime/{uuid}"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrsevmruntime/{uuid}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">dELETE /vimgrsevmruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrsevmruntime/{uuid}</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">uuid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">name (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>"aeiou"</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">204</h4>
+    object deleted
+        <a href="#String">String</a>
+    <h4 class="field-label">404</h4>
+    not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="gET /vimgrsevmruntime"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrsevmruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeGet</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">gET /vimgrsevmruntime</span>)</div>
+    <div class="method-notes">/vimgrsevmruntime</div>
 
 
     <h3 class="field-label">Consumes</h3>
@@ -399,378 +618,12 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrsevmruntimePost"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrsevmruntime</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimePost</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">body (required)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrSEVMRuntime object creation </div>
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "vcenter_host_ha_state" : "aeiou",
-  "deletion_in_progress" : true,
-  "hostid" : "aeiou",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "vcenter_vAppName" : "aeiou",
-  "vcenter_vAppVendor" : "aeiou",
-  "vcenter_datacenter_uuid" : "aeiou",
-  "vcenter_instance_uuid" : "aeiou",
-  "cloud_ref" : "aeiou",
-  "segroup_ref" : "aeiou",
-  "host" : "aeiou",
-  "security_group_uuid" : "aeiou",
-  "disk_gb" : "",
-  "server_group_uuid" : "aeiou",
-  "cookie" : "aeiou",
-  "discovery_response" : "aeiou",
-  "vcenter_ref" : "aeiou",
-  "flavor" : "aeiou",
-  "guest_nic" : [ {
-    "connected" : true,
-    "mac_addr" : "aeiou",
-    "mgmt_vnic" : true,
-    "guest_ip" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "network_name" : "aeiou",
-    "label" : "aeiou",
-    "network_uuid" : "aeiou",
-    "avi_internal_network" : true,
-    "type" : "aeiou",
-    "del_pending" : true,
-    "os_port_uuid" : "aeiou"
-  } ],
-  "discovery_status" : "",
-  "name" : "aeiou",
-  "controller_ip_addr" : "aeiou",
-  "vsphere_ha_inprogress" : true,
-  "vcenter_host_connection_state" : "aeiou",
-  "vsphere_ha_enabled" : true,
-  "vcenter_url" : "aeiou",
-  "connection_state" : "aeiou",
-  "powerstate" : "aeiou",
-  "_last_modified" : "aeiou",
-  "gcp_se_project_id" : "aeiou",
-  "cluster_id" : "aeiou",
-  "creation_in_progress" : true,
-  "hypervisor" : "aeiou",
-  "vcenter_se_type" : "aeiou",
-  "cluster_vmgroup" : "aeiou",
-  "nsxt_no_hotplug" : true,
-  "vcenter_rm_cookie" : "aeiou",
-  "availability_zone" : "aeiou",
-  "cloud_name" : "aeiou",
-  "host_ref" : "aeiou",
-  "last_discovery" : "",
-  "vcpus" : "",
-  "vcenter_vm_type" : "aeiou",
-  "url" : "aeiou",
-  "controller_cluster_uuid" : "aeiou",
-  "init_vnics" : 123,
-  "tenant_ref" : "aeiou",
-  "azure_info" : {
-    "availability_set" : "aeiou",
-    "vm_uuid" : "aeiou",
-    "vnic_id" : "aeiou",
-    "resource_group" : "aeiou",
-    "name" : "aeiou",
-    "subnet_id" : "aeiou",
-    "fault_domain" : "aeiou",
-    "update_domain" : "aeiou"
-  },
-  "memory_mb" : "",
-  "vcenter_template_vm" : true,
-  "managed_object_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrsevmruntimeUuidDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /vimgrsevmruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeUuidDelete</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      
-      String
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>"aeiou"</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">204</h4>
-    object deleted
-        <a href="#String">String</a>
-    <h4 class="field-label">404</h4>
-    not found
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrsevmruntimeUuidGet"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /vimgrsevmruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeUuidGet</span>)</div>
-    <div class="method-notes"></div>
-
-    <h3 class="field-label">Path parameters</h3>
-    <div class="field-items">
-      <div class="param">uuid (required)</div>
-
-      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; UUID of the object to fetch </div>
-    </div>  <!-- field-items -->
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-    <h3 class="field-label">Query parameters</h3>
-    <div class="field-items">
-      <div class="param">name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; object name </div><div class="param">fields (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned. </div><div class="param">include_name (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object. </div><div class="param">skip_default (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Default values are not set. </div><div class="param">join_subresources (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; It automatically returns additional dependent resources like runtime. Eg. join_subresources&#x3D;runtime. </div>
-    </div>  <!-- field-items -->
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "vcenter_host_ha_state" : "aeiou",
-  "deletion_in_progress" : true,
-  "hostid" : "aeiou",
-  "type" : "aeiou",
-  "uuid" : "aeiou",
-  "vcenter_vAppName" : "aeiou",
-  "vcenter_vAppVendor" : "aeiou",
-  "vcenter_datacenter_uuid" : "aeiou",
-  "vcenter_instance_uuid" : "aeiou",
-  "cloud_ref" : "aeiou",
-  "segroup_ref" : "aeiou",
-  "host" : "aeiou",
-  "security_group_uuid" : "aeiou",
-  "disk_gb" : "",
-  "server_group_uuid" : "aeiou",
-  "cookie" : "aeiou",
-  "discovery_response" : "aeiou",
-  "vcenter_ref" : "aeiou",
-  "flavor" : "aeiou",
-  "guest_nic" : [ {
-    "connected" : true,
-    "mac_addr" : "aeiou",
-    "mgmt_vnic" : true,
-    "guest_ip" : [ {
-      "fip_subnet_uuids" : [ "aeiou" ],
-      "ip_subnet" : "aeiou",
-      "fip_available" : true,
-      "prefix" : "",
-      "name" : "aeiou",
-      "floatingip_subnets" : [ {
-        "prefix" : {
-          "ip_addr" : {
-            "addr" : "aeiou",
-            "type" : "aeiou"
-          },
-          "mask" : 123
-        },
-        "name" : "aeiou",
-        "uuid" : "aeiou"
-      } ],
-      "ref_count" : 123,
-      "uuid" : "aeiou",
-      "se_ref_count" : 123,
-      "primary" : true
-    } ],
-    "network_name" : "aeiou",
-    "label" : "aeiou",
-    "network_uuid" : "aeiou",
-    "avi_internal_network" : true,
-    "type" : "aeiou",
-    "del_pending" : true,
-    "os_port_uuid" : "aeiou"
-  } ],
-  "discovery_status" : "",
-  "name" : "aeiou",
-  "controller_ip_addr" : "aeiou",
-  "vsphere_ha_inprogress" : true,
-  "vcenter_host_connection_state" : "aeiou",
-  "vsphere_ha_enabled" : true,
-  "vcenter_url" : "aeiou",
-  "connection_state" : "aeiou",
-  "powerstate" : "aeiou",
-  "_last_modified" : "aeiou",
-  "gcp_se_project_id" : "aeiou",
-  "cluster_id" : "aeiou",
-  "creation_in_progress" : true,
-  "hypervisor" : "aeiou",
-  "vcenter_se_type" : "aeiou",
-  "cluster_vmgroup" : "aeiou",
-  "nsxt_no_hotplug" : true,
-  "vcenter_rm_cookie" : "aeiou",
-  "availability_zone" : "aeiou",
-  "cloud_name" : "aeiou",
-  "host_ref" : "aeiou",
-  "last_discovery" : "",
-  "vcpus" : "",
-  "vcenter_vm_type" : "aeiou",
-  "url" : "aeiou",
-  "controller_cluster_uuid" : "aeiou",
-  "init_vnics" : 123,
-  "tenant_ref" : "aeiou",
-  "azure_info" : {
-    "availability_set" : "aeiou",
-    "vm_uuid" : "aeiou",
-    "vnic_id" : "aeiou",
-    "resource_group" : "aeiou",
-    "name" : "aeiou",
-    "subnet_id" : "aeiou",
-    "fault_domain" : "aeiou",
-    "update_domain" : "aeiou"
-  },
-  "memory_mb" : "",
-  "vcenter_template_vm" : true,
-  "managed_object_id" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    OK
-        <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
-    <h4 class="field-label">401</h4>
-    log in failed
-        <a href="#"></a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="vimgrsevmruntimeUuidPatch"/>
+  <div class="method"><a name="pATCH /vimgrsevmruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="patch"><code class="huge"><span class="http-method">patch</span> /vimgrsevmruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeUuidPatch</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pATCH /vimgrsevmruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrsevmruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
@@ -924,12 +777,159 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="vimgrsevmruntimeUuidPut"/>
+  <div class="method"><a name="pOST /vimgrsevmruntime"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vimgrsevmruntime</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">pOST /vimgrsevmruntime</span>)</div>
+    <div class="method-notes">/vimgrsevmruntime</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; VIMgrSEVMRuntime object creation </div>
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "vcenter_host_ha_state" : "aeiou",
+  "deletion_in_progress" : true,
+  "hostid" : "aeiou",
+  "type" : "aeiou",
+  "uuid" : "aeiou",
+  "vcenter_vAppName" : "aeiou",
+  "vcenter_vAppVendor" : "aeiou",
+  "vcenter_datacenter_uuid" : "aeiou",
+  "vcenter_instance_uuid" : "aeiou",
+  "cloud_ref" : "aeiou",
+  "segroup_ref" : "aeiou",
+  "host" : "aeiou",
+  "security_group_uuid" : "aeiou",
+  "disk_gb" : "",
+  "server_group_uuid" : "aeiou",
+  "cookie" : "aeiou",
+  "discovery_response" : "aeiou",
+  "vcenter_ref" : "aeiou",
+  "flavor" : "aeiou",
+  "guest_nic" : [ {
+    "connected" : true,
+    "mac_addr" : "aeiou",
+    "mgmt_vnic" : true,
+    "guest_ip" : [ {
+      "fip_subnet_uuids" : [ "aeiou" ],
+      "ip_subnet" : "aeiou",
+      "fip_available" : true,
+      "prefix" : "",
+      "name" : "aeiou",
+      "floatingip_subnets" : [ {
+        "prefix" : {
+          "ip_addr" : {
+            "addr" : "aeiou",
+            "type" : "aeiou"
+          },
+          "mask" : 123
+        },
+        "name" : "aeiou",
+        "uuid" : "aeiou"
+      } ],
+      "ref_count" : 123,
+      "uuid" : "aeiou",
+      "se_ref_count" : 123,
+      "primary" : true
+    } ],
+    "network_name" : "aeiou",
+    "label" : "aeiou",
+    "network_uuid" : "aeiou",
+    "avi_internal_network" : true,
+    "type" : "aeiou",
+    "del_pending" : true,
+    "os_port_uuid" : "aeiou"
+  } ],
+  "discovery_status" : "",
+  "name" : "aeiou",
+  "controller_ip_addr" : "aeiou",
+  "vsphere_ha_inprogress" : true,
+  "vcenter_host_connection_state" : "aeiou",
+  "vsphere_ha_enabled" : true,
+  "vcenter_url" : "aeiou",
+  "connection_state" : "aeiou",
+  "powerstate" : "aeiou",
+  "_last_modified" : "aeiou",
+  "gcp_se_project_id" : "aeiou",
+  "cluster_id" : "aeiou",
+  "creation_in_progress" : true,
+  "hypervisor" : "aeiou",
+  "vcenter_se_type" : "aeiou",
+  "cluster_vmgroup" : "aeiou",
+  "nsxt_no_hotplug" : true,
+  "vcenter_rm_cookie" : "aeiou",
+  "availability_zone" : "aeiou",
+  "cloud_name" : "aeiou",
+  "host_ref" : "aeiou",
+  "last_discovery" : "",
+  "vcpus" : "",
+  "vcenter_vm_type" : "aeiou",
+  "url" : "aeiou",
+  "controller_cluster_uuid" : "aeiou",
+  "init_vnics" : 123,
+  "tenant_ref" : "aeiou",
+  "azure_info" : {
+    "availability_set" : "aeiou",
+    "vm_uuid" : "aeiou",
+    "vnic_id" : "aeiou",
+    "resource_group" : "aeiou",
+    "name" : "aeiou",
+    "subnet_id" : "aeiou",
+    "fault_domain" : "aeiou",
+    "update_domain" : "aeiou"
+  },
+  "memory_mb" : "",
+  "vcenter_template_vm" : true,
+  "managed_object_id" : "aeiou"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    OK
+        <a href="#VIMgrSEVMRuntime">VIMgrSEVMRuntime</a>
+    <h4 class="field-label">401</h4>
+    log in failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="pUT /vimgrsevmruntime/{uuid}"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /vimgrsevmruntime/{uuid}</code></pre></div>
-    <div class="method-summary"> (<span class="nickname">vimgrsevmruntimeUuidPut</span>)</div>
-    <div class="method-notes"></div>
+    <div class="method-summary"> (<span class="nickname">pUT /vimgrsevmruntime/{uuid}</span>)</div>
+    <div class="method-notes">/vimgrsevmruntime/{uuid}</div>
 
     <h3 class="field-label">Path parameters</h3>
     <div class="field-items">
