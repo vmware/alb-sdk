@@ -123,183 +123,11 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/LicenseStatusApiResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "LicenseStatus"
-                ],
-                "description": "/licensing/status",
-                "operationId": "POST /licensing/status",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "LicenseStatus object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/LicenseStatus"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
                             "$ref": "#/definitions/LicenseStatus"
                         }
                     },
                     "401": {
                         "description": "log in failed"
-                    }
-                }
-            }
-        },
-        "/licensing/status/{uuid}": {
-            "get": {
-                "tags": [
-                    "LicenseStatus"
-                ],
-                "description": "/licensing/status/{uuid}/{uuid}",
-                "operationId": "GET /licensing/status/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/LicenseStatus"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
                     }
                 }
             },
@@ -307,8 +135,8 @@
                 "tags": [
                     "LicenseStatus"
                 ],
-                "description": "/licensing/status/{uuid}/{uuid}",
-                "operationId": "PUT /licensing/status/{uuid}",
+                "description": "/licensing/status",
+                "operationId": "PUT /licensing/status",
                 "consumes": [
                     "application/json"
                 ],
@@ -359,13 +187,6 @@
                         "schema": {
                             "$ref": "#/definitions/LicenseStatus"
                         }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
                     }
                 ],
                 "security": [
@@ -382,9 +203,6 @@
                     },
                     "401": {
                         "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
                     }
                 }
             },
@@ -392,8 +210,8 @@
                 "tags": [
                     "LicenseStatus"
                 ],
-                "description": "/licensing/status/{uuid}/{uuid}",
-                "operationId": "PATCH /licensing/status/{uuid}",
+                "description": "/licensing/status",
+                "operationId": "PATCH /licensing/status",
                 "consumes": [
                     "application/json"
                 ],
@@ -444,13 +262,6 @@
                         "schema": {
                             "$ref": "#/definitions/LicenseStatus"
                         }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
                     }
                 ],
                 "security": [
@@ -467,82 +278,6 @@
                     },
                     "401": {
                         "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "LicenseStatus"
-                ],
-                "description": "/licensing/status/{uuid}/{uuid}",
-                "operationId": "DELETE /licensing/status/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "object deleted",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "404": {
-                        "description": "object not found"
                     }
                 }
             }
@@ -642,6 +377,11 @@
                     "description": "Pulse license service update. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LicenseServiceUpdate"
                 },
+                "ssp_license_reported_at": {
+                    "description": "Timestamp of last successful license report to SSP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string"
+                },
                 "support_legacy_license": {
                     "description": "Indicates if legacy licenses are supported. When false, legacy licenses have been cleaned up after grace period expiry. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
@@ -663,25 +403,7 @@
         },
         "LicenseStatusApiResponse": {
             "type": "object",
-            "required": [
-                "count",
-                "results"
-            ],
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "results": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/LicenseStatus"
-                    }
-                },
-                "next": {
-                    "type": "string"
-                }
-            }
+            "$ref": "#/definitions/LicenseStatus"
         },
         "OrgServiceUnits": {
             "type": "object",
