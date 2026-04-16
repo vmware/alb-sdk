@@ -696,8 +696,7 @@
             "properties": {
                 "enable_notional_reserve": {
                     "description": "Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming SE\u2019s. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
+                    "type": "boolean"
                 }
             }
         },

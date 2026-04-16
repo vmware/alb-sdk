@@ -1089,6 +1089,11 @@ definitions:
                 type: integer
                 default: 1500
                 format: uint32
+            vs_se_license_reservation_fail:
+                description: "Time to wait before marking license reservation operation for an SE as failed. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30
+                format: uint32
             vs_se_ping_fail:
                 description: " Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
