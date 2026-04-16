@@ -349,6 +349,9 @@ type ControllerProperties struct {
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeCreateFail *uint32 `json:"vs_se_create_fail,omitempty"`
 
+	// Time to wait before marking license reservation operation for an SE as failed. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	VsSeLicenseReservationFail *uint32 `json:"vs_se_license_reservation_fail,omitempty"`
+
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSePingFail *uint32 `json:"vs_se_ping_fail,omitempty"`
 

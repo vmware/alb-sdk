@@ -47,6 +47,12 @@ type ServiceEngineGroupRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryHostTicks *int32 `json:"query_host_ticks,omitempty"`
 
+	// Opaque cookie used to correlate the ReserveLicense RPC response back to this SE group's pending buffer SE spawn. Set alongside reservation_in_progress. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ReservationCookie *string `json:"reservation_cookie,omitempty"`
+
+	// Set to true while an asynchronous ReserveLicense RPC is in flight for buffer SE spawning in this SE group. Cleared by HandleLicenseReservationNotification when the reservation response arrives, allowing the next placement cycle to proceed with the actual SE spawn. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ReservationInProgress *bool `json:"reservation_in_progress,omitempty"`
+
 	//  It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpSe []string `json:"up_se,omitempty"`
 
