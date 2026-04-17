@@ -110,6 +110,9 @@ type SeAgentGraphDBRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Serviceenginegroup *SeAgentGraphDBNodeInfo `json:"serviceenginegroup,omitempty"`
 
+	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Sessionkeyforwarder *SeAgentGraphDBNodeInfo `json:"sessionkeyforwarder,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Sslkeyandcertificate *SeAgentGraphDBNodeInfo `json:"sslkeyandcertificate,omitempty"`
 

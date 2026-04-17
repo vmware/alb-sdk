@@ -206,6 +206,9 @@ type VirtualService struct {
 	// List of Services defined for this Virtual Service. Maximum of 2048 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Services []*Service `json:"services,omitempty"`
 
+	// Session Key Forwarder Profile for the Virtual Service for the Session Key Forwarding. It is a reference to an object of type SessionKeyForwarder. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SessionKeyForwarderRef *string `json:"session_key_forwarder_ref,omitempty"`
+
 	// Sideband configuration to be used for this virtualservice.It can be used for sending traffic to sideband VIPs for external inspection etc. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SidebandProfile *SidebandProfile `json:"sideband_profile,omitempty"`
 
