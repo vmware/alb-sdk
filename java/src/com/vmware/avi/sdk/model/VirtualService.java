@@ -213,6 +213,9 @@ public class VirtualService extends AviRestResource  {
     @JsonProperty("services")
     private List<Service> services;
 
+    @JsonProperty("session_key_forwarder_ref")
+    private String sessionKeyForwarderRef;
+
     @JsonProperty("sideband_profile")
     private SidebandProfile sidebandProfile;
 
@@ -2000,6 +2003,32 @@ public class VirtualService extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Session key forwarder profile for the virtual service for the session key forwarding.
+     * It is a reference to an object of type sessionkeyforwarder.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sessionKeyForwarderRef
+     */
+    public String getSessionKeyForwarderRef() {
+        return sessionKeyForwarderRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Session key forwarder profile for the virtual service for the session key forwarding.
+     * It is a reference to an object of type sessionkeyforwarder.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sessionKeyForwarderRef set the sessionKeyForwarderRef.
+     */
+    public void setSessionKeyForwarderRef(String  sessionKeyForwarderRef) {
+        this.sessionKeyForwarderRef = sessionKeyForwarderRef;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -3004,7 +3033,8 @@ public class VirtualService extends AviRestResource  {
   Objects.equals(this.csrfPolicyRef, objVirtualService.csrfPolicyRef)&&
   Objects.equals(this.snatIp6Addresses, objVirtualService.snatIp6Addresses)&&
   Objects.equals(this.applicationInsightsRef, objVirtualService.applicationInsightsRef)&&
-  Objects.equals(this.positiveSecurityRef, objVirtualService.positiveSecurityRef);
+  Objects.equals(this.positiveSecurityRef, objVirtualService.positiveSecurityRef)&&
+  Objects.equals(this.sessionKeyForwarderRef, objVirtualService.sessionKeyForwarderRef);
     }
 
     @Override
@@ -3075,6 +3105,7 @@ public class VirtualService extends AviRestResource  {
                         sb.append("    serviceMetadata: ").append(toIndentedString(serviceMetadata)).append("\n");
                         sb.append("    servicePoolSelect: ").append(toIndentedString(servicePoolSelect)).append("\n");
                         sb.append("    services: ").append(toIndentedString(services)).append("\n");
+                        sb.append("    sessionKeyForwarderRef: ").append(toIndentedString(sessionKeyForwarderRef)).append("\n");
                         sb.append("    sidebandProfile: ").append(toIndentedString(sidebandProfile)).append("\n");
                         sb.append("    snatIp: ").append(toIndentedString(snatIp)).append("\n");
                         sb.append("    snatIp6Addresses: ").append(toIndentedString(snatIp6Addresses)).append("\n");

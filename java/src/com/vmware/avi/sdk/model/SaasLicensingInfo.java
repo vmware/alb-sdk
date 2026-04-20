@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SaasLicensingInfo  {
     @JsonProperty("enable_notional_reserve")
-    private Boolean enableNotionalReserve = true;
+    private Boolean enableNotionalReserve = false;
 
 
 
@@ -31,7 +31,7 @@ public class SaasLicensingInfo  {
      * Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming se’s.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enableNotionalReserve
      */
     public Boolean getEnableNotionalReserve() {
@@ -43,7 +43,7 @@ public class SaasLicensingInfo  {
      * Enable relaxed reservation norm allowing up to 2x free units( normally constrained to free license units ) to be reserved by upcoming se’s.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enableNotionalReserve set the enableNotionalReserve.
      */
     public void setEnableNotionalReserve(Boolean  enableNotionalReserve) {
