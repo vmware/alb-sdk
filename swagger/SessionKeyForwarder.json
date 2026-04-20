@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "32.2.1",
-        "title": "Avi Role Object API",
+        "title": "Avi SessionKeyForwarder Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi Role object api\n```\n- configure role <key>\n- show role <key>\n```\n\nAPI permission: PERMISSION_ROLE\n"
+        "description": "Avi SessionKeyForwarder object api\n```\n- configure sessionkeyforwarder <key>\n- show sessionkeyforwarder <key>\n```\n\nAPI permission: PERMISSION_SESSIONKEYFORWARDER\n"
     },
     "tags": [
         {
-            "name": "Role"
+            "name": "SessionKeyForwarder"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/role": {
+        "/sessionkeyforwarder": {
             "get": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role",
-                "operationId": "GET /role",
+                "description": "/sessionkeyforwarder",
+                "operationId": "GET /sessionkeyforwarder",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,7 +123,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/RoleApiResponse"
+                            "$ref": "#/definitions/SessionKeyForwarderApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +133,10 @@
             },
             "post": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role",
-                "operationId": "POST /role",
+                "description": "/sessionkeyforwarder",
+                "operationId": "POST /sessionkeyforwarder",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +175,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "SessionKeyForwarder object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     }
                 ],
@@ -191,7 +191,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     "401": {
@@ -200,13 +200,13 @@
                 }
             }
         },
-        "/role/{uuid}": {
+        "/sessionkeyforwarder/{uuid}": {
             "get": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "GET /role/{uuid}",
+                "description": "/sessionkeyforwarder/{uuid}/{uuid}",
+                "operationId": "GET /sessionkeyforwarder/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +292,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     "401": {
@@ -305,10 +305,10 @@
             },
             "put": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "PUT /role/{uuid}",
+                "description": "/sessionkeyforwarder/{uuid}/{uuid}",
+                "operationId": "PUT /sessionkeyforwarder/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +354,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "SessionKeyForwarder object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     {
@@ -377,7 +377,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     "401": {
@@ -390,10 +390,10 @@
             },
             "patch": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "PATCH /role/{uuid}",
+                "description": "/sessionkeyforwarder/{uuid}/{uuid}",
+                "operationId": "PATCH /sessionkeyforwarder/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +439,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Role object creation",
+                        "description": "SessionKeyForwarder object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     {
@@ -462,7 +462,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Role"
+                            "$ref": "#/definitions/SessionKeyForwarder"
                         }
                     },
                     "401": {
@@ -475,10 +475,10 @@
             },
             "delete": {
                 "tags": [
-                    "Role"
+                    "SessionKeyForwarder"
                 ],
-                "description": "/role/{uuid}/{uuid}",
-                "operationId": "DELETE /role/{uuid}",
+                "description": "/sessionkeyforwarder/{uuid}/{uuid}",
+                "operationId": "DELETE /sessionkeyforwarder/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -549,28 +549,49 @@
         }
     },
     "definitions": {
-        "Permission": {
+        "IpAddr": {
             "type": "object",
             "required": [
-                "resource",
+                "addr",
                 "type"
             ],
             "properties": {
-                "resource": {
-                    "description": " Enum options - PERMISSION_CONTROLLER, PERMISSION_INTERNAL, PERMISSION_VIRTUALSERVICE, PERMISSION_POOL, PERMISSION_HEALTHMONITOR, PERMISSION_NETWORKPROFILE, PERMISSION_APPLICATIONPROFILE, PERMISSION_HTTPPOLICYSET, PERMISSION_IPADDRGROUP, PERMISSION_STRINGGROUP, PERMISSION_SSLPROFILE, PERMISSION_SSLKEYANDCERTIFICATE, PERMISSION_NETWORKSECURITYPOLICY, PERMISSION_APPLICATIONPERSISTENCEPROFILE, PERMISSION_ANALYTICSPROFILE, PERMISSION_VSDATASCRIPTSET, PERMISSION_TENANT, PERMISSION_PKIPROFILE, PERMISSION_AUTHPROFILE, PERMISSION_CLOUD, PERMISSION_SERVICEENGINE, PERMISSION_SERVICEENGINEGROUP, PERMISSION_NETWORK, PERMISSION_SYSTEMCONFIGURATION, PERMISSION_VRFCONTEXT, PERMISSION_USER, PERMISSION_ROLE, PERMISSION_ALERT, PERMISSION_ALERTCONFIG, PERMISSION_ALERTEMAILCONFIG, PERMISSION_ALERTSYSLOGCONFIG, PERMISSION_ACTIONGROUPCONFIG, PERMISSION_SNMPTRAPPROFILE, PERMISSION_UPGRADE, PERMISSION_REBOOT, PERMISSION_TECHSUPPORT, PERMISSION_EXEMPT, PERMISSION_VIRTUALSERVICE_MAINTENANCE, PERMISSION_POOL_MAINTENANCE, PERMISSION_TRAFFIC_CAPTURE, PERMISSION_MICROSERVICEGROUP, PERMISSION_IPAMDNSPROVIDERPROFILE, PERMISSION_CERTIFICATEMANAGEMENTPROFILE, PERMISSION_POOLGROUP, PERMISSION_PRIORITYLABELS, PERMISSION_POOLGROUPDEPLOYMENTPOLICY, PERMISSION_GSLB, PERMISSION_GSLBSERVICE, PERMISSION_GSLBGEODBPROFILE, PERMISSION_DNSPOLICY, PERMISSION_TRAFFICCLONEPROFILE, PERMISSION_SE_TOKEN, PERMISSION_WAFPOLICY, PERMISSION_WAFPROFILE, PERMISSION_USER_CREDENTIAL, PERMISSION_AUTOSCALE, PERMISSION_CUSTOMIPAMDNSPROFILE, PERMISSION_ERRORPAGEPROFILE, PERMISSION_ERRORPAGEBODY, PERMISSION_L4POLICYSET, PERMISSION_MICROSERVICE, PERMISSION_HARDWARESECURITYMODULEGROUP, PERMISSION_SECURITYPOLICY, PERMISSION_WAFPOLICYPSMGROUP, PERMISSION_PINGACCESSAGENT, PERMISSION_NETWORKSERVICE, PERMISSION_NATPOLICY, PERMISSION_PROTOCOLPARSER, PERMISSION_SSOPOLICY, PERMISSION_CONTROLLERSITE, PERMISSION_IMAGE, PERMISSION_UPGRADE_OPS, PERMISSION_UPGRADE_SEGROUP_OPS, PERMISSION_TESTSEDATASTORELEVEL1, PERMISSION_TESTSEDATASTORELEVEL2, PERMISSION_TESTSEDATASTORELEVEL3, PERMISSION_FILE_OBJECT, PERMISSION_IPREPUTATIONDB, PERMISSION_ICAP, PERMISSION_GSLBSERVICE_GROUP, PERMISSION_JWTSERVERPROFILE, PERMISSION_GEODB, PERMISSION_BOTDETECTIONPOLICY, PERMISSION_JWTPROFILE, PERMISSION_LABELGROUP, PERMISSION_WAFCRS, PERMISSION_AUTHMAPPINGPROFILE, PERMISSION_ALBSERVICESCONFIG, PERMISSION_ALBSERVICESSTATUS, PERMISSION_ALBSERVICESREG, PERMISSION_LICENSING, PERMISSION_ALBSERVICESUSERINFO, PERMISSION_TENANT_SYSTEM_CONFIGURATION, PERMISSION_CSRFPOLICY, PERMISSION_SERVICEAUTHPROFILE, PERMISSION_SYSTEMREPORT, PERMISSION_CLOUD_API, PERMISSION_TASKJOURNAL, PERMISSION_TELEMETRY_API, PERMISSION_UPGRADEPROFILE, PERMISSION_RETENTIONPOLICY, PERMISSION_APIRATELIMITPROFILE, PERMISSION_TECHSUPPORTPROFILE, PERMISSION_TECHSUPPORTMESSAGE, PERMISSION_ALERTSCRIPTCONFIG, PERMISSION_REPORT, PERMISSION_REPORTPROFILE, PERMISSION_APPLICATIONINSIGHTSPOLICY, PERMISSION_POSITIVESECURITYPOLICY, PERMISSION_TENANTBINDING, PERMISSION_INTELLIGENT_ASSIST, PERMISSION_AKOAMKOCLUSTER, PERMISSION_SESSIONKEYFORWARDER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "addr": {
+                    "description": "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "subresource": {
-                    "description": "Limits the scope of Write Access on the parent resource to modification of only the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/SubResource"
-                },
                 "type": {
-                    "description": " Enum options - NO_ACCESS, READ_ACCESS, WRITE_ACCESS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "Role": {
+        "IpAddrPort": {
+            "type": "object",
+            "required": [
+                "port"
+            ],
+            "properties": {
+                "hostname": {
+                    "description": "Hostname of server. One of IP address or hostname should be set. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ip": {
+                    "description": "IP Address of host. One of IP address or hostname should be set. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
+                "name": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "port": {
+                    "description": "Port number of server. Allowed values are 1-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                }
+            }
+        },
+        "SessionKeyForwarder": {
             "type": "object",
             "required": [
                 "name"
@@ -581,31 +602,36 @@
                     "readOnly": true,
                     "type": "string"
                 },
-                "allow_unlabelled_access": {
-                    "description": "Allow access to unlabelled objects. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "enable": {
+                    "description": "Enable or disable Session Key Forwarder. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
-                "filters": {
-                    "description": "Filters for granular object access control based on object labels. Multiple filters are merged using the AND operator. If empty, all objects according to the privileges will be accessible to the user. Field introduced in 20.1.3. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "ip_ports": {
+                    "description": "IP addresses and ports to be used for connection with Session Key Forwarder. At least one entry required; maximum 16 (matches the per-core stats slot limit). Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/RoleFilter"
+                        "$ref": "#/definitions/IpAddrPort"
                     }
                 },
                 "name": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the Session Key Forwarder Profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
-                "privileges": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Permission"
-                    }
+                "pki_profile_ref": {
+                    "description": "PKI profile used to validate the SSL certificate presented by a server. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ssl_key_and_certificate_ref": {
+                    "description": "Service engines will present this SSL certificate to the server. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ssl_profile_ref": {
+                    "description": "SSL profile defines ciphers and SSL versions to be used for Session Key Forwarder. It is a reference to an object of type SSLProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 },
                 "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant reference for the Session Key Forwarder object. It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -613,13 +639,18 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "use_mgmt": {
+                    "description": "If enabled, Connection with Session Key Forwarder will use the management network. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
                 "uuid": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the Session Key Forwarder Profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
         },
-        "RoleApiResponse": {
+        "SessionKeyForwarderApiResponse": {
             "type": "object",
             "required": [
                 "count",
@@ -633,72 +664,11 @@
                 "results": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/Role"
+                        "$ref": "#/definitions/SessionKeyForwarder"
                     }
                 },
                 "next": {
                     "type": "string"
-                }
-            }
-        },
-        "RoleFilter": {
-            "type": "object",
-            "required": [
-                "match_label"
-            ],
-            "properties": {
-                "enabled": {
-                    "description": "Enable this filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean",
-                    "default": true
-                },
-                "match_label": {
-                    "description": "Label key to match against objects for values. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/RoleFilterMatchLabel"
-                },
-                "match_operation": {
-                    "description": "Label match operation criteria. Enum options - ROLE_FILTER_EQUALS, ROLE_FILTER_DOES_NOT_EQUAL, ROLE_FILTER_GLOB_MATCH, ROLE_FILTER_GLOB_DOES_NOT_MATCH. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string",
-                    "default": "ROLE_FILTER_EQUALS"
-                },
-                "name": {
-                    "description": "Name for the filter. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "RoleFilterMatchLabel": {
-            "type": "object",
-            "required": [
-                "key"
-            ],
-            "properties": {
-                "key": {
-                    "description": "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "values": {
-                    "description": "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "SubResource": {
-            "type": "object",
-            "properties": {
-                "exclude_subresources": {
-                    "description": "Allows modification of all fields except for the specified subresources. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
-                "subresources": {
-                    "description": "Subresources user can modify. Each subresource specifies and individual field. I.e. SUBRESOURCE_POOL_ENABLED allows modification of the enabled field in the Pool object. Enum options - SUBRESOURCE_POOL_ENABLED, SUBRESOURCE_POOL_SERVERS, SUBRESOURCE_POOL_SERVER_ENABLED, SUBRESOURCE_VIRTUALSERVICE_ENABLED, SUBRESOURCE_VIRTUALSERVICE_AUTO_ALLOCATE_FLOATING_IP, SUBRESOURCE_GSLBSERVICE_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUPS, SUBRESOURCE_GSLBSERVICE_GROUP_ENABLED, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBERS, SUBRESOURCE_GSLBSERVICE_GROUP_MEMBER_ENABLED. Field introduced in 20.1.5. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
                 }
             }
         }
