@@ -8,7 +8,7 @@ package models
 // swagger:model IpAdvertisementProfile
 type IPAdvertisementProfile struct {
 
-	// Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 5-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 1-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DefaultPeriodicity *uint32 `json:"default_periodicity,omitempty"`
 
 	// List of IP address types for which periodic IP advertisement (GratARP/NA) is enabled. Supported ip_type values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Applied uniformly to all VRFs in this ServiceEngineGroup. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
