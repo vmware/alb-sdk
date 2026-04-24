@@ -304,8 +304,16 @@ class ApiSession(Session):
                 self.prefix += ':{}'.format(port)
 
         self.timeout = timeout
-        self.key = '%s:%s:%s' % (self.avi_credentials.controller,
-                                 self.avi_credentials.username, k_port)
+        self.key = '%s:%s:%s:%s:%s:%s:%s:%s' % (
+            self.avi_credentials.controller,
+            self.avi_credentials.username,
+            k_port,
+            self.avi_credentials.tenant,
+            self.avi_credentials.tenant_uuid,
+            self.verify,
+            hash(self.avi_credentials.password) if self.avi_credentials.password else '',
+            hash(self.avi_credentials.token) if self.avi_credentials.token else ''
+        )
 
         if self.user_hdrs and 'Authorization' in self.user_hdrs:
             return
@@ -468,8 +476,16 @@ class ApiSession(Session):
         k_port = avi_credentials.port if avi_credentials.port else 443
         if avi_credentials.controller.startswith('http'):
             k_port = 80 if not avi_credentials.port else k_port
-        key = '%s:%s:%s' % (avi_credentials.controller,
-                            avi_credentials.username, k_port)
+        key = '%s:%s:%s:%s:%s:%s:%s:%s' % (
+            avi_credentials.controller,
+            avi_credentials.username,
+            k_port,
+            avi_credentials.tenant,
+            avi_credentials.tenant_uuid,
+            verify,
+            hash(avi_credentials.password) if avi_credentials.password else '',
+            hash(avi_credentials.token) if avi_credentials.token else ''
+        )
         cached_session = sessionDict.get(key)
         if cached_session:
             user_session = cached_session['api']

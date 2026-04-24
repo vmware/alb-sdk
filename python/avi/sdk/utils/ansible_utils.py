@@ -63,8 +63,8 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
                 rsp.status_code, rsp.text, req, api_context))
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
-    key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
-                        api_creds.port)
+    key = '%s:%s:%s:%s' % (api_creds.controller, api_creds.username,
+                           api_creds.port, api_creds.tenant)
     deactivate_fact = module.params.get('avi_deactivate_session_cache_as_fact')
 
     fact_context = None
@@ -348,8 +348,8 @@ def get_api_context(module, api_creds):
         return api_context
     elif api_context and not module.params.get(
             'avi_deactivate_session_cache_as_fact'):
-        key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
-                            api_creds.port)
+        key = '%s:%s:%s:%s' % (api_creds.controller, api_creds.username,
+                               api_creds.port, api_creds.tenant)
         return api_context.get(key)
     else:
         return None
