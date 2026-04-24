@@ -1519,7 +1519,7 @@
             "type": "object",
             "properties": {
                 "default_periodicity": {
-                    "description": "Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 5-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 1-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 10,
                     "format": "uint32"
