@@ -71,8 +71,7 @@ public class AviApi {
 	 */
 	public AviApi(AviCredentials aviCredentials) {
 		this.aviCredentials = aviCredentials;
-		this.sessionKey = aviCredentials.getController() + ":" + aviCredentials.getUsername() + ":"
-				+ aviCredentials.getPort();
+		this.sessionKey = AviRestUtils.getSessionKey(aviCredentials);
 		this.restTemplate = AviRestUtils.getRestTemplate(aviCredentials);
 	}
 
@@ -101,8 +100,7 @@ public class AviApi {
 	 * @throws IOException if get any exception to set session.
 	 */
 	public static AviApi getSession(AviCredentials aviCredentials) throws IOException {
-		String sessionKey = aviCredentials.getController() + ":" + aviCredentials.getUsername() + ":"
-				+ aviCredentials.getPort();
+		String sessionKey = AviRestUtils.getSessionKey(aviCredentials);
 		synchronized (AviApi.class) {
 			if (sessionPool.containsKey(sessionKey)) {
 				return sessionPool.get(sessionKey);
