@@ -4,11 +4,11 @@
 from __future__ import (absolute_import, division, print_function)
 
 __metaclass__ = type
+import logging
+import time
 
 from avi.sdk.avi_api import ApiSession, \
     sessionDict, APIError, AviCredentials
-import logging
-import time
 
 from requests import ConnectionError
 from requests.exceptions import ChunkedEncodingError
