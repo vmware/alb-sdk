@@ -45,6 +45,9 @@ public class UserActivity extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
+    @JsonProperty("password_expiry_time")
+    private String passwordExpiryTime;
+
     @JsonProperty("previous_password")
     private List<String> previousPassword;
 
@@ -248,6 +251,30 @@ public class UserActivity extends AviRestResource  {
     public void setName(String  name) {
         this.name = name;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Timestamp when the user password expire(s/d).
+     * Field introduced in 32.1.2, 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return passwordExpiryTime
+     */
+    public String getPasswordExpiryTime() {
+        return passwordExpiryTime;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Timestamp when the user password expire(s/d).
+     * Field introduced in 32.1.2, 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param passwordExpiryTime set the passwordExpiryTime.
+     */
+    public void setPasswordExpiryTime(String  passwordExpiryTime) {
+        this.passwordExpiryTime = passwordExpiryTime;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Stores the previous n passwords  where n is controllerproperties.max_password_history_count.
@@ -341,7 +368,8 @@ public class UserActivity extends AviRestResource  {
   Objects.equals(this.loggedIn, objUserActivity.loggedIn)&&
   Objects.equals(this.concurrentSessions, objUserActivity.concurrentSessions)&&
   Objects.equals(this.lastPasswordUpdate, objUserActivity.lastPasswordUpdate)&&
-  Objects.equals(this.loginFailureTimestamps, objUserActivity.loginFailureTimestamps);
+  Objects.equals(this.loginFailureTimestamps, objUserActivity.loginFailureTimestamps)&&
+  Objects.equals(this.passwordExpiryTime, objUserActivity.passwordExpiryTime);
     }
 
     @Override
@@ -356,6 +384,7 @@ public class UserActivity extends AviRestResource  {
                         sb.append("    loggedIn: ").append(toIndentedString(loggedIn)).append("\n");
                         sb.append("    loginFailureTimestamps: ").append(toIndentedString(loginFailureTimestamps)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+                        sb.append("    passwordExpiryTime: ").append(toIndentedString(passwordExpiryTime)).append("\n");
                         sb.append("    previousPassword: ").append(toIndentedString(previousPassword)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
