@@ -594,6 +594,10 @@
                     "description": "Name of the user this object refers to. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "password_expiry_time": {
+                    "description": "Timestamp when the user password expire(s/d). Field introduced in 32.1.2, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "previous_password": {
                     "description": "Stores the previous n passwords  where n is ControllerProperties.max_password_history_count. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
