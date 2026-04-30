@@ -30,6 +30,9 @@ public class Backup extends AviRestResource  {
     @JsonProperty("local_file_url")
     private String localFileUrl;
 
+    @JsonProperty("name")
+    private String name;
+
     @JsonProperty("remote_file_url")
     private String remoteFileUrl;
 
@@ -116,6 +119,28 @@ public class Backup extends AviRestResource  {
      */
     public void setLocalFileUrl(String  localFileUrl) {
         this.localFileUrl = localFileUrl;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Name of the backup.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Name of the backup.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param name set the name.
+     */
+    public void setName(String  name) {
+        this.name = name;
     }
 
     /**
@@ -262,6 +287,7 @@ public class Backup extends AviRestResource  {
   Objects.equals(this.remoteFileUrl, objBackup.remoteFileUrl)&&
   Objects.equals(this.schedulerRef, objBackup.schedulerRef)&&
   Objects.equals(this.backupConfigRef, objBackup.backupConfigRef)&&
+  Objects.equals(this.name, objBackup.name)&&
   Objects.equals(this.tenantRef, objBackup.tenantRef);
     }
 
@@ -272,6 +298,7 @@ public class Backup extends AviRestResource  {
                   sb.append("    backupConfigRef: ").append(toIndentedString(backupConfigRef)).append("\n");
                         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
                         sb.append("    localFileUrl: ").append(toIndentedString(localFileUrl)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    remoteFileUrl: ").append(toIndentedString(remoteFileUrl)).append("\n");
                         sb.append("    schedulerRef: ").append(toIndentedString(schedulerRef)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
