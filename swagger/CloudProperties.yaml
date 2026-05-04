@@ -595,9 +595,6 @@ definitions:
             allow_unauthenticated_apis:
                 description: "Allow unauthenticated access for special APIs. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
-            allow_unauthenticated_nodes:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
             api_idle_timeout:
                 description: " Allowed values are 0-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
