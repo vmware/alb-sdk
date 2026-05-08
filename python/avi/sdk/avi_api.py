@@ -25,6 +25,7 @@ from ssl import SSLError
 logger = logging.getLogger(__name__)
 
 sessionDict = {}
+EXCLUDED_PRINT_FIELDS = ['X-CSRFToken', 'Authorization', 'Cookie']
 
 
 def avi_timedelta(td):
@@ -247,13 +248,11 @@ class ApiSession(Session):
             "controller_ip: %s, username: %s, tenant: %s, "
             "tenant_uuid: %s, verify: %s, port: %s, timeout: %s, "
             "api_version: %s, retry_conxn_errors: %s, data_log: %s,"
-            "avi_credentials: %s, session_id: %s, csrftoken: %s,"
-            "lazy_authentication: %s, max_api_retries: %s",
+            "avi_credentials: %s, lazy_authentication: %s, max_api_retries: %s",
             controller_ip, username, tenant,
             tenant_uuid, verify, port,
             timeout, api_version, retry_conxn_errors,
-            data_log, avi_credentials, session_id,
-            csrftoken, lazy_authentication, max_api_retries)
+            data_log, avi_credentials, lazy_authentication, max_api_retries)
         if not avi_credentials:
             tenant = tenant if tenant else "admin"
             self.avi_credentials = AviCredentials(
@@ -702,9 +701,13 @@ class ApiSession(Session):
             logger.error('Error in Requests library %s', e)
             raise
         if not connection_error:
+            log_hdrs = copy.deepcopy(api_hdrs)
+            for k in EXCLUDED_PRINT_FIELDS:
+                if k in log_hdrs:
+                    log_hdrs[k] = '***REDACTED***'
             logger.debug('path: %s http_method: %s hdrs: %s params: '
                          '%s data: %s rsp: %s', fullpath, api_name.upper(),
-                         api_hdrs, kwargs, data,
+                         log_hdrs, kwargs, data,
                          (resp.text if self.data_log else 'None'))
         if connection_error or resp.status_code in (401, 419):
             if 'multipart/form-data' in api_hdrs['Content-Type']:
