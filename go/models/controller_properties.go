@@ -234,6 +234,9 @@ type ControllerProperties struct {
 	// Period for process PKI profile job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessPkiProfileTimeoutPeriod *uint32 `json:"process_pki_profile_timeout_period,omitempty"`
 
+	// Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PromotedLogFields *PromotedLogFields `json:"promoted_log_fields,omitempty"`
+
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryHostFail *uint32 `json:"query_host_fail,omitempty"`
 

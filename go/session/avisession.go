@@ -1239,6 +1239,19 @@ func removeSensitiveFields(data []byte) []byte {
 
 	re = regexp.MustCompile(`("username"\s*:\s*)"[^"]*"`)
 	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****"`)
+
+	re = regexp.MustCompile(`("token"\s*:\s*)"[^"]*"`)
+	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****"`)
+
+	re = regexp.MustCompile(`(?i)(Cookie:\s*)[^\r\n]*`)
+	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****`)
+
+	re = regexp.MustCompile(`(?i)(X-CSRFToken:\s*)[^\r\n]*`)
+	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****`)
+
+	re = regexp.MustCompile(`(?i)(Authorization:\s*)[^\r\n]*`)
+	updatedDataString = re.ReplaceAllString(updatedDataString, `${1}****`)
+
 	return []byte(updatedDataString)
 }
 
