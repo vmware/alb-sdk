@@ -244,6 +244,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("process_pki_profile_timeout_period")
     private Integer processPkiProfileTimeoutPeriod = 1440;
 
+    @JsonProperty("promoted_log_fields")
+    private PromotedLogFields promotedLogFields;
+
     @JsonProperty("query_host_fail")
     private Integer queryHostFail = 180;
 
@@ -2308,6 +2311,36 @@ public class ControllerProperties extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Fields to promote from extended to necessary tier for log indexing.
+     * Promoted fields are indexed in opensearch and included in default api responses.
+     * Supports dot-notation for nested fields (e.g., 'waf_log.status').
+     * Changes require log subsystem restart to take effect.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return promotedLogFields
+     */
+    public PromotedLogFields getPromotedLogFields() {
+        return promotedLogFields;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Fields to promote from extended to necessary tier for log indexing.
+     * Promoted fields are indexed in opensearch and included in default api responses.
+     * Supports dot-notation for nested fields (e.g., 'waf_log.status').
+     * Changes require log subsystem restart to take effect.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param promotedLogFields set the promotedLogFields.
+     */
+    public void setPromotedLogFields(PromotedLogFields promotedLogFields) {
+        this.promotedLogFields = promotedLogFields;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -3574,7 +3607,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.ccUserPasswordRotationJobPeriod, objControllerProperties.ccUserPasswordRotationJobPeriod)&&
   Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
   Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync)&&
-  Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail);
+  Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail)&&
+  Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields);
     }
 
     @Override
@@ -3655,6 +3689,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    postgresVacuumPeriod: ").append(toIndentedString(postgresVacuumPeriod)).append("\n");
                         sb.append("    processLockedUseraccountsTimeoutPeriod: ").append(toIndentedString(processLockedUseraccountsTimeoutPeriod)).append("\n");
                         sb.append("    processPkiProfileTimeoutPeriod: ").append(toIndentedString(processPkiProfileTimeoutPeriod)).append("\n");
+                        sb.append("    promotedLogFields: ").append(toIndentedString(promotedLogFields)).append("\n");
                         sb.append("    queryHostFail: ").append(toIndentedString(queryHostFail)).append("\n");
                         sb.append("    resmgrLogCachingPeriod: ").append(toIndentedString(resmgrLogCachingPeriod)).append("\n");
                         sb.append("    restrictCloudReadAccess: ").append(toIndentedString(restrictCloudReadAccess)).append("\n");
