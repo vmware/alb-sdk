@@ -545,7 +545,7 @@ public class FileObject extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Type of the file.
      * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
-     * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS.
+     * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -559,7 +559,7 @@ public class FileObject extends AviRestResource  {
      * This is the setter method to the attribute.
      * Type of the file.
      * Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE, CRL_DATA,
-     * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS.
+     * IP_REPUTATION_IPV6, GSLB_GEO_DB, CSRF_JS, KNOWN_HOSTS.
      * Field introduced in 20.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
