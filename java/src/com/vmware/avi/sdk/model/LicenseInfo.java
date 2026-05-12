@@ -24,6 +24,9 @@ public class LicenseInfo extends AviRestResource  {
     @JsonProperty("last_updated")
     private Integer lastUpdated;
 
+    @JsonProperty("se_group")
+    private String seGroup;
+
     @JsonProperty("service_cores")
     private Float serviceCores;
 
@@ -60,6 +63,30 @@ public class LicenseInfo extends AviRestResource  {
      */
     public void setLastUpdated(Integer  lastUpdated) {
         this.lastUpdated = lastUpdated;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Se group for this license entry.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seGroup
+     */
+    public String getSeGroup() {
+        return seGroup;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Se group for this license entry.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seGroup set the seGroup.
+     */
+    public void setSeGroup(String  seGroup) {
+        this.seGroup = seGroup;
     }
 
     /**
@@ -174,7 +201,8 @@ public class LicenseInfo extends AviRestResource  {
   Objects.equals(this.tenantUuid, objLicenseInfo.tenantUuid)&&
   Objects.equals(this.tier, objLicenseInfo.tier)&&
   Objects.equals(this.serviceCores, objLicenseInfo.serviceCores)&&
-  Objects.equals(this.lastUpdated, objLicenseInfo.lastUpdated);
+  Objects.equals(this.lastUpdated, objLicenseInfo.lastUpdated)&&
+  Objects.equals(this.seGroup, objLicenseInfo.seGroup);
     }
 
     @Override
@@ -182,6 +210,7 @@ public class LicenseInfo extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class LicenseInfo {\n");
                   sb.append("    lastUpdated: ").append(toIndentedString(lastUpdated)).append("\n");
+                        sb.append("    seGroup: ").append(toIndentedString(seGroup)).append("\n");
                         sb.append("    serviceCores: ").append(toIndentedString(serviceCores)).append("\n");
                         sb.append("    tenantUuid: ").append(toIndentedString(tenantUuid)).append("\n");
                         sb.append("    tier: ").append(toIndentedString(tier)).append("\n");
