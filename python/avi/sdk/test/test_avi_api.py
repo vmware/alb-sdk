@@ -4,7 +4,6 @@
 import json
 import logging
 import unittest
-from multiprocessing.pool import ThreadPool
 import pytest
 from requests_toolbelt import MultipartEncoder
 from avi.sdk.avi_api import (ApiSession, ObjectNotFound, APIError, ApiResponse,
@@ -22,6 +21,7 @@ import copy
 from datetime import timedelta
 from parameterized import parameterized
 from base64 import b64encode
+from avi.sdk.test import conftest
 
 gSAMPLE_CONFIG = None
 api = None
@@ -31,9 +31,9 @@ login_info = None
 urllib3.disable_warnings()
 gapi_version = '17.2.6'
 
-config_file = pytest.config.getoption("--config")
-with open(config_file) as f:
-    cfg = json.load(f)
+# Accessing the data directly from conftest
+# This will be populated because pytest loads conftest before the test files
+cfg = conftest.cfg
 
 ARG_DEFAULT_VALUE = {
     'limit': 1,

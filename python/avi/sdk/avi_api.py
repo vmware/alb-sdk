@@ -248,11 +248,11 @@ class ApiSession(Session):
             "controller_ip: %s, username: %s, tenant: %s, "
             "tenant_uuid: %s, verify: %s, port: %s, timeout: %s, "
             "api_version: %s, retry_conxn_errors: %s, data_log: %s,"
-            "avi_credentials: %s, lazy_authentication: %s, max_api_retries: %s",
+            "lazy_authentication: %s, max_api_retries: %s",
             controller_ip, username, tenant,
             tenant_uuid, verify, port,
             timeout, api_version, retry_conxn_errors,
-            data_log, avi_credentials, lazy_authentication, max_api_retries)
+            data_log, lazy_authentication, max_api_retries)
         if not avi_credentials:
             tenant = tenant if tenant else "admin"
             self.avi_credentials = AviCredentials(

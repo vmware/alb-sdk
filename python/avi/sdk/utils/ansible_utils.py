@@ -59,21 +59,10 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
     if rsp is not None and rsp.status_code > 299 and not \
             any(error in rsp.text for error in SKIP_DELETE_ERROR):
         return module.fail_json(
-            msg='Error %d Msg %s req: %s api_context:%s ' % (
-                rsp.status_code, rsp.text, req, api_context))
+            msg='Error %d Msg %s req: %s ' % (
+                rsp.status_code, rsp.text, req))
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
-    key = '%s:%s:%s:%s' % (api_creds.controller, api_creds.username,
-                           api_creds.port, api_creds.tenant)
-    deactivate_fact = module.params.get('avi_deactivate_session_cache_as_fact')
-
-    fact_context = None
-    if not deactivate_fact:
-        fact_context = module.params.get('api_context', {})
-        if fact_context:
-            fact_context.update({key: api_context})
-        else:
-            fact_context = {key: api_context}
 
     obj_val = rsp.json() if rsp else existing_obj
 
@@ -87,13 +76,9 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
             "state" in obj_val):
         obj_val["obj_state"] = obj_val["state"]
     old_obj_val = existing_obj if changed and existing_obj else None
-    api_context_val = api_context if deactivate_fact else None
-    ansible_facts_val = dict(
-        avi_api_context=fact_context) if not deactivate_fact else {}
 
     return module.exit_json(
-        changed=changed, obj=obj_val, old_obj=old_obj_val,
-        ansible_facts=ansible_facts_val, api_context=api_context_val)
+        changed=changed, obj=obj_val, old_obj=old_obj_val)
 
 
 def purge_optional_fields(obj, module):
@@ -465,7 +450,7 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         # As per API response, name is always same as username regardless of full_name
         obj['name'] = obj['username']
 
-    log.info('passed object %s ', obj)
+    log.info('passed object %s ', { **obj, 'password': None })
 
     if uuid:
         # Get the object based on uuid.
@@ -641,5 +626,5 @@ def avi_common_argument_spec():
         api_version=dict(default='20.1.1', type='str'),
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
-        api_context=dict(type='dict'),
+        api_context=dict(type='dict', no_log=True),
         avi_deactivate_session_cache_as_fact=dict(default=False, type='bool'))
