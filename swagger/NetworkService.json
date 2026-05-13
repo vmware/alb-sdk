@@ -893,6 +893,11 @@
                 "routing_by_linux_ipstack": {
                     "description": "For IP Routing feature, enabling this knob will fallback to routing through Linux, by default routing is done via Service Engine data-path. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                },
+                "routing_segmentation_mss": {
+                    "description": "Maximum Segment Size (MSS) to use for segmentation ofGRO'd/LRO'd TCP packets in routing service. When oversizedpackets with DF bit set exceed egress MTU, they will besegmented using hardware TSO with this MSS value. Allowed values are 536-9000. Special values are 0- auto. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
                 }
             }
         }
