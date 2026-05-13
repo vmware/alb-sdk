@@ -60,6 +60,9 @@ public class RoutingService  {
     @JsonProperty("routing_by_linux_ipstack")
     private Boolean routingByLinuxIpstack = false;
 
+    @JsonProperty("routing_segmentation_mss")
+    private Integer routingSegmentationMss = 0;
+
 
 
     /**
@@ -467,6 +470,38 @@ public class RoutingService  {
         this.routingByLinuxIpstack = routingByLinuxIpstack;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Maximum segment size (mss) to use for segmentation ofgro'd/lro'd tcp packets in routing service.
+     * When oversizedpackets with df bit set exceed egress mtu, they will besegmented using hardware tso with this mss value.
+     * Allowed values are 536-9000.
+     * Special values are 0- auto.
+     * Field introduced in 32.2.1.
+     * Unit is bytes.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @return routingSegmentationMss
+     */
+    public Integer getRoutingSegmentationMss() {
+        return routingSegmentationMss;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Maximum segment size (mss) to use for segmentation ofgro'd/lro'd tcp packets in routing service.
+     * When oversizedpackets with df bit set exceed egress mtu, they will besegmented using hardware tso with this mss value.
+     * Allowed values are 536-9000.
+     * Special values are 0- auto.
+     * Field introduced in 32.2.1.
+     * Unit is bytes.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 0.
+     * @param routingSegmentationMss set the routingSegmentationMss.
+     */
+    public void setRoutingSegmentationMss(Integer  routingSegmentationMss) {
+        this.routingSegmentationMss = routingSegmentationMss;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -489,7 +524,8 @@ public class RoutingService  {
   Objects.equals(this.gracefulRestart, objRoutingService.gracefulRestart)&&
   Objects.equals(this.enableAutoGateway, objRoutingService.enableAutoGateway)&&
   Objects.equals(this.floatingIntfIp6Addresses, objRoutingService.floatingIntfIp6Addresses)&&
-  Objects.equals(this.floatingIntfIp6Se2Addresses, objRoutingService.floatingIntfIp6Se2Addresses);
+  Objects.equals(this.floatingIntfIp6Se2Addresses, objRoutingService.floatingIntfIp6Se2Addresses)&&
+  Objects.equals(this.routingSegmentationMss, objRoutingService.routingSegmentationMss);
     }
 
     @Override
@@ -509,6 +545,7 @@ public class RoutingService  {
                         sb.append("    gracefulRestart: ").append(toIndentedString(gracefulRestart)).append("\n");
                         sb.append("    natPolicyRef: ").append(toIndentedString(natPolicyRef)).append("\n");
                         sb.append("    routingByLinuxIpstack: ").append(toIndentedString(routingByLinuxIpstack)).append("\n");
+                        sb.append("    routingSegmentationMss: ").append(toIndentedString(routingSegmentationMss)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
