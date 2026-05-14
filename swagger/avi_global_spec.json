@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.1.2",
+        "version": "32.1.3",
         "title": "Avi avi_global_spec Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -84590,13 +84590,13 @@
                 }
             }
         },
-        "/upgradestatusinfo": {
+        "/debugvirtualservice": {
             "get": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo",
-                "operationId": "GET /upgradestatusinfo",
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -84676,6 +84676,102 @@
                         "type": "string",
                         "required": false,
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "cloud_uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.name",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "cloud_ref.uuid",
+                        "in": "query",
+                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.contains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.icontains",
+                        "in": "query",
+                        "description": "Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "name.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "uuid.in",
+                        "in": "query",
+                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "isearch",
+                        "in": "query",
+                        "description": "Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "limit_by",
+                        "in": "query",
+                        "description": "Filter to limit the number of objects in the response data. Eg. limit_by=3.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "exclude",
+                        "in": "query",
+                        "description": "Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Parameter to sort the results with respect to a field. Eg. sort=name.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Parameter to specify the desired page number. The page starts from 1 and default is 1.",
+                        "type": "string",
+                        "required": false
+                    },
+                    {
+                        "name": "page_size",
+                        "in": "query",
+                        "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
+                        "type": "string",
+                        "required": false
                     }
                 ],
                 "security": [
@@ -84687,7 +84783,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummaryApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -84697,10 +84793,10 @@
             },
             "post": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo",
-                "operationId": "POST /upgradestatusinfo",
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -84739,10 +84835,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -84755,7 +84851,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -84764,13 +84860,13 @@
                 }
             }
         },
-        "/upgradestatusinfo/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}/{uuid}",
-                "operationId": "GET /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -84856,7 +84952,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -84869,10 +84965,10 @@
             },
             "put": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}/{uuid}",
-                "operationId": "PUT /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -84918,10 +85014,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -84941,7 +85037,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -84954,10 +85050,10 @@
             },
             "patch": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}/{uuid}",
-                "operationId": "PATCH /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -85003,10 +85099,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "UpgradeStatusSummary object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -85026,7 +85122,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/UpgradeStatusSummary"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -85039,10 +85135,10 @@
             },
             "delete": {
                 "tags": [
-                    "UpgradeStatusSummary"
+                    "DebugVirtualService"
                 ],
-                "description": "/upgradestatusinfo/{uuid}/{uuid}",
-                "operationId": "DELETE /upgradestatusinfo/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -90429,13 +90525,13 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/upgradestatusinfo": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "GET /debugvirtualservice",
+                "description": "/upgradestatusinfo",
+                "operationId": "GET /upgradestatusinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -90515,102 +90611,6 @@
                         "type": "string",
                         "required": false,
                         "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "cloud_uuid",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_uuid=cloud-xyz.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "cloud_ref.name",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud usings its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "cloud_ref.uuid",
-                        "in": "query",
-                        "description": "Filter to get objects that belongs to a specific cloud using its uuid. Eg. cloud_ref.uuid=cloud_uuid.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.contains",
-                        "in": "query",
-                        "description": "Filter to get objects with name that contains the parameter. This is a case sensitive search. Eg. name.contains=pool-.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.icontains",
-                        "in": "query",
-                        "description": "Filter to get objects with name that contains the parameter. This is a case insensitive search. Eg. name.icontains=pool-.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "name.in",
-                        "in": "query",
-                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. name.in=pool-1,pool-12.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "uuid.in",
-                        "in": "query",
-                        "description": "Filter to get objects that have a uuid matching any of the values in the parameter list. Each value for this parameter is to comma separated. Eg. uuid.in=<uuid-1>,<uuid-2>.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "description": "Filter to get objects that contains the search string as value for any of its fields. Eg. search=LEAST_CONN. The search filter can also be used to search under a specific field. This is achieved by sending the parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "isearch",
-                        "in": "query",
-                        "description": "Filter to get objects that contains case insensitive search string. Eg. isearch=(name,Vs-Pool-).",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "limit_by",
-                        "in": "query",
-                        "description": "Filter to limit the number of objects in the response data. Eg. limit_by=3.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "exclude",
-                        "in": "query",
-                        "description": "Filter to exclude the uuid(s) contained in the parameter. Eg. uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "sort",
-                        "in": "query",
-                        "description": "Parameter to sort the results with respect to a field. Eg. sort=name.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Parameter to specify the desired page number. The page starts from 1 and default is 1.",
-                        "type": "string",
-                        "required": false
-                    },
-                    {
-                        "name": "page_size",
-                        "in": "query",
-                        "description": "Parameter to specify the maximum number of results to be returned per page. The page_size can range from 1 to 200. Eg. page_size=5.",
-                        "type": "string",
-                        "required": false
                     }
                 ],
                 "security": [
@@ -90622,7 +90622,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/UpgradeStatusSummaryApiResponse"
                         }
                     },
                     "401": {
@@ -90632,10 +90632,10 @@
             },
             "post": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "POST /debugvirtualservice",
+                "description": "/upgradestatusinfo",
+                "operationId": "POST /upgradestatusinfo",
                 "consumes": [
                     "application/json"
                 ],
@@ -90674,10 +90674,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     }
                 ],
@@ -90690,7 +90690,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -90699,13 +90699,13 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/upgradestatusinfo/{uuid}": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "GET /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}/{uuid}",
+                "operationId": "GET /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -90791,7 +90791,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -90804,10 +90804,10 @@
             },
             "put": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PUT /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}/{uuid}",
+                "operationId": "PUT /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -90853,10 +90853,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     {
@@ -90876,7 +90876,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -90889,10 +90889,10 @@
             },
             "patch": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PATCH /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}/{uuid}",
+                "operationId": "PATCH /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -90938,10 +90938,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "UpgradeStatusSummary object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     {
@@ -90961,7 +90961,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/UpgradeStatusSummary"
                         }
                     },
                     "401": {
@@ -90974,10 +90974,10 @@
             },
             "delete": {
                 "tags": [
-                    "DebugVirtualService"
+                    "UpgradeStatusSummary"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "DELETE /debugvirtualservice/{uuid}",
+                "description": "/upgradestatusinfo/{uuid}/{uuid}",
+                "operationId": "DELETE /upgradestatusinfo/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
