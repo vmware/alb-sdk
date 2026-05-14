@@ -392,7 +392,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             token=api_context['csrftoken'],
             port=api_creds.port,
             session_id=api_context['session_id'],
-            csrftoken=api_context['csrftoken'])
+            csrftoken=api_context['csrftoken'],
+            verify=getattr(api_creds, 'verify', False),
+            avi_credentials=api_creds)
     else:
         api = ApiSession.get_session(
             api_creds.controller,
@@ -407,7 +409,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             csp_host=api_creds.csp_host,
             csp_token=api_creds.csp_token,
             ssl_cert=api_creds.ssl_cert,
-            ssl_key=api_creds.ssl_key)
+            ssl_key=api_creds.ssl_key,
+            verify=getattr(api_creds, 'verify', False),
+            avi_credentials=api_creds)
     state = module.params['state']
     # Get the api version.
     avi_update_method = module.params.get('avi_api_update_method', 'put')
@@ -614,7 +618,8 @@ def avi_common_argument_spec():
         csp_host=dict(default='', type='str', no_log=True),
         csp_token=dict(default='', type='str', no_log=True),
         ssl_cert=dict(default='', type='str', no_log=True),
-        ssl_key=dict(default='', type='str', no_log=True)
+        ssl_key=dict(default='', type='str', no_log=True),
+        verify=dict(default=False)
     )
 
     return dict(
@@ -624,6 +629,7 @@ def avi_common_argument_spec():
         tenant=dict(default='admin'),
         tenant_uuid=dict(default=''),
         api_version=dict(default='20.1.1', type='str'),
+        verify=dict(default=False),
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
         api_context=dict(type='dict', no_log=True),
