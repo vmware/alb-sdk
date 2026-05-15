@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 13]
+AVICLONE_VERSION = [2, 0, 14]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -87,7 +87,6 @@ class AviClone:
         'vs-networkprofile': 'network_profile_ref',
         'vs-analyticsprofile': 'analytics_profile_ref',
         'vs-errorpageprofile': 'error_page_profile_ref',
-        'vs-networksecuritypolicy': 'network_security_policy_ref',
         'vs-servernetworkprofile': 'server_network_profile_ref',
         'vs-sslprofile': 'ssl_profile_ref',
         'vs-sslcert': 'ssl_key_and_certificate_refs',
@@ -2058,6 +2057,8 @@ class AviClone:
                                                       self.other_tenant) if
                                            self.other_tenant else ''))
                 vsvip_obj = None
+                old_vsvip_name = ''
+                new_vsvip_name = ''
             elif manual_vsvip:
                 vsvip_obj = self.dest_api.get_object_by_name(
                     'vsvip', manual_vsvip, tenant_uuid=self.otenant_uuid)
@@ -2066,6 +2067,8 @@ class AviClone:
                                        % manual_vsvip)
                 logger.debug('Trying to use existing VsVip "%s":%s' %
                              (manual_vsvip, vsvip_obj['uuid']))
+                old_vsvip_name = vsvip_obj['name']
+                new_vsvip_name = old_vsvip_name
             else:
 
                 new_vsvip_name = 'vsvip-%s-%s' % (new_vs_name,
@@ -2079,6 +2082,8 @@ class AviClone:
                 vsvip_obj = self.api.get(
                     v_obj['vsvip_ref'].split('/api/')[1],
                     tenant_uuid=self.tenant_uuid).json()
+
+                old_vsvip_name = vsvip_obj['name']
 
                 vsvip_obj.pop('uuid', None)
                 vsvip_obj.pop('_last_modified', None)
@@ -2680,6 +2685,25 @@ class AviClone:
                 created_objs.extend(ns_created_objs)
                 warnings.extend(ns_warnings)
 
+            # Clone app insights policy referenced in the VS - AI policies cannot be shared
+
+            if 'application_insights_ref' in v_obj:
+                ai_path = v_obj['application_insights_ref'].split(
+                    '/api/')[1]
+                ai_name = '-'.join(['vs', new_vs_name,
+                                    (c_obj['name']
+                                     if self.oc_obj is None
+                                     else self.oc_obj['name']),
+                                    'ai'])
+                ai_obj, ai_created_objs, ai_warnings = self.clone_object(
+                    old_name=ai_path, new_name=ai_name,
+                    force_clone=force_clone, force_unique_name=True)
+
+                v_obj['application_insights_ref'] = ai_obj['url']
+                created_objs.append(ai_obj)
+                created_objs.extend(ai_created_objs)
+                warnings.extend(ai_warnings)
+
             # Clone any datascripts referenced in the VS unless reuseds flag
             # is true.
 
@@ -2761,10 +2785,14 @@ class AviClone:
                         logger.debug(vsvip_obj)
                         raise RuntimeError(exception_string)
                     created_objs.append(new_vsvip_obj)
-                    self.actions += ['Cloned vsvip "%s"%s'
-                                    % (new_vsvip_obj['name'],
-                                        (' in tenant "%s"' % self.other_tenant)
-                                        if self.other_tenant else '')]
+                    self.actions += ['Cloned VsVip "%s"%s to "%s"%s%s' %
+                                 (old_vsvip_name,
+                                  (' in tenant "%s"' % self.t_obj['name'])
+                                  if self.t_obj else '', new_vsvip_name,
+                                  (' in tenant "%s"' % self.ot_obj['name'])
+                                  if self.ot_obj else '',
+                                  (' in cloud "%s"' % self.oc_obj['name'])
+                                  if self.oc_obj else '')]
                     v_obj['vsvip_ref'] = new_vsvip_obj['url']
 
                     # Set VS VRF Context to match VsVip VRF Context

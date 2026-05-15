@@ -190,9 +190,11 @@ The mapping below will replace Pool Members with IP `10.100.100.1` with IP `10.1
 
 > clone_vs.py -c controller1.example.com vs example cloned-example -v 10.0.0.0/16 -v6 fd00:dead:beef:bad:f00d::/64
 
-### Cloning a VS, attaching the cloned VS to an existing VsVip for VIP sharing scenarios
+### Cloning a VS to a different cloud, attaching the cloned VS to an existing VsVip for VIP sharing scenarios
 
-> clone_vs.py -c controller1.example.com vs example cloned-example -mv example-vsvip
+> clone_vs.py -c controller1.example.com -2c Second-Cloud vs example cloned-example -mv example-vsvip
+
+Note: This will not work within the same cloud because the cloned VS's service ports would be the same as the source VS.
 
 ### Cloning a GSLB Service within a tenant
 
@@ -389,3 +391,7 @@ Changelog:
 2.0.13:
 
 * Add a configuration transform option to allow modification of cloned VS configuration parameters.
+
+2.0.14:
+
+* Always clone Application Insights policy (cannot be shared across VSs)
