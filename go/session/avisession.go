@@ -321,7 +321,7 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 	avisess.csrfToken = ""
 
 	avisess.tenant = ""
-	avisess.insecure = false
+	avisess.insecure = true
 	avisess.scheme = "https"
 	// The default behaviour was for 10 iterations, if client does not init session with specific retry
 	// count option the controller status will be checked 10 times.
@@ -374,12 +374,12 @@ func NewAviSession(host string, username string, options ...func(*AviSession) er
 					return nil, err
 				}
 				avisess.transport = &http.Transport{
-					TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+					TLSClientConfig: &tls.Config{InsecureSkipVerify: avisess.insecure},
 					Proxy:           http.ProxyURL(proxyURL),
 				}
 			} else {
 				avisess.transport = &http.Transport{
-					TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+					TLSClientConfig: &tls.Config{InsecureSkipVerify: avisess.insecure},
 				}
 			}
 		}
@@ -593,6 +593,12 @@ func (avisess *AviSession) setProxyURL(proxyURL string) error {
 // SetInsecure - Use this for NewAviSession option argument for allowing insecure connection to AviController
 func SetInsecure(avisess *AviSession) error {
 	avisess.insecure = true
+	return nil
+}
+
+// SetSecure - Use this for NewAviSession option argument for enforcing strict certificate validation
+func SetSecure(avisess *AviSession) error {
+	avisess.insecure = false
 	return nil
 }
 
