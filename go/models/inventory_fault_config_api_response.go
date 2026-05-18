@@ -7,15 +7,5 @@ package models
 // InventoryFaultConfigAPIResponse inventory fault config Api response
 // swagger:model InventoryFaultConfigApiResponse
 type InventoryFaultConfigAPIResponse struct {
-
-	// count
-	// Required: true
-	Count *int32 `json:"count"`
-
-	// next
-	Next *string `json:"next,omitempty"`
-
-	// results
-	// Required: true
-	Results []*InventoryFaultConfig `json:"results,omitempty"`
+	InventoryFaultConfig
 }

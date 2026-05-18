@@ -7,15 +7,5 @@ package models
 // UpgradeProfileAPIResponse upgrade profile Api response
 // swagger:model UpgradeProfileApiResponse
 type UpgradeProfileAPIResponse struct {
-
-	// count
-	// Required: true
-	Count *int32 `json:"count"`
-
-	// next
-	Next *string `json:"next,omitempty"`
-
-	// results
-	// Required: true
-	Results []*UpgradeProfile `json:"results,omitempty"`
+	UpgradeProfile
 }

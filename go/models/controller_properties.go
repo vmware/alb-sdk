@@ -24,9 +24,6 @@ type ControllerProperties struct {
 	// Allow unauthenticated access for special APIs. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowUnauthenticatedApis *bool `json:"allow_unauthenticated_apis,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AllowUnauthenticatedNodes *bool `json:"allow_unauthenticated_nodes,omitempty"`
-
 	//  Allowed values are 0-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIIDLETimeout *uint32 `json:"api_idle_timeout,omitempty"`
 
@@ -237,6 +234,9 @@ type ControllerProperties struct {
 	// Period for process PKI profile job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessPkiProfileTimeoutPeriod *uint32 `json:"process_pki_profile_timeout_period,omitempty"`
 
+	// Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PromotedLogFields *PromotedLogFields `json:"promoted_log_fields,omitempty"`
+
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryHostFail *uint32 `json:"query_host_fail,omitempty"`
 
@@ -348,6 +348,9 @@ type ControllerProperties struct {
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSeCreateFail *uint32 `json:"vs_se_create_fail,omitempty"`
+
+	// Time to wait before marking license reservation operation for an SE as failed. Field introduced in 32.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	VsSeLicenseReservationFail *uint32 `json:"vs_se_license_reservation_fail,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsSePingFail *uint32 `json:"vs_se_ping_fail,omitempty"`

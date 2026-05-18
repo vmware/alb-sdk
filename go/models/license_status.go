@@ -24,6 +24,10 @@ type LicenseStatus struct {
 	// Pulse license service update. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceUpdate *LicenseServiceUpdate `json:"service_update,omitempty"`
 
+	// Timestamp of last successful license report to SSP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Read Only: true
+	SspLicenseReportedAt *string `json:"ssp_license_reported_at,omitempty"`
+
 	// Indicates if legacy licenses are supported. When false, legacy licenses have been cleaned up after grace period expiry. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SupportLegacyLicense *bool `json:"support_legacy_license,omitempty"`
 

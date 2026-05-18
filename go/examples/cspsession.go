@@ -13,7 +13,7 @@ func main() {
 	// Create a session and a generic client to Avi Controller using csp api token
 
 	aviClient, err := clients.NewAviClient("10.79.169.56", "admin", session.SetCSPHost("console-stg.cloud.vmware.com"),
-		session.SetInsecure, session.SetCSPToken("QOyamgKuBIt3iOf-OvCkw2DmmByRKtYSk7buSZOXOOQ_fKTB"))
+		session.SetInsecure, session.SetCSPToken("<YOUR_CSP_API_TOKEN>"))
 	if err != nil {
 		fmt.Println("Couldn't create session: ", err)
 		return
