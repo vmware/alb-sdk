@@ -309,10 +309,6 @@
                     "description": "Allow unauthenticated access for special APIs. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
-                "allow_unauthenticated_nodes": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
-                },
                 "api_idle_timeout": {
                     "description": " Allowed values are 0-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -704,6 +700,10 @@
                     "default": 1440,
                     "format": "uint32"
                 },
+                "promoted_log_fields": {
+                    "description": "Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/PromotedLogFields"
+                },
                 "query_host_fail": {
                     "description": " Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -1015,6 +1015,32 @@
                 "reference": {
                     "description": "Short named reference for file path. For example, SE_IMG. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "PromotedLogFields": {
+            "type": "object",
+            "properties": {
+                "app_log_fields": {
+                    "description": "Dot-notation field paths to promote for ApplicationLog. Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "conn_log_fields": {
+                    "description": "Dot-notation field paths to promote for ConnectionLog. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "event_log_fields": {
+                    "description": "Dot-notation field paths to promote for EventLog. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
