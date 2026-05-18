@@ -82,7 +82,6 @@ def create_autoscale_connection(aws_settings):
     conn = boto.ec2.autoscale.connect_to_region(
         ec2_region, aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key)
-    print('using: ', aws_access_key_id, aws_secret_access_key, ec2_region)
     return conn
 
 

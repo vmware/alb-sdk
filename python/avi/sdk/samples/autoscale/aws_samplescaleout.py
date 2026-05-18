@@ -92,11 +92,9 @@ def create_aws_connection(aws_settings):
     aws_access_key_id = aws_settings['aws_access_key_id']
     aws_secret_access_key = aws_settings['aws_secret_access_key']
     ec2_region = aws_settings.get('ec2_region', 'us-west-2')
-    print('using: ', aws_access_key_id, aws_secret_access_key, ec2_region)
     conn = boto.ec2.connect_to_region(
         ec2_region, aws_access_key_id=aws_access_key_id,
         aws_secret_access_key=aws_secret_access_key)
-    print('connection obj', conn)
     return conn
 
 

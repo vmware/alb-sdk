@@ -8,6 +8,7 @@ import json
 import logging
 import time
 import ipaddress
+import warnings
 
 if sys.version_info < (3, 5):
     from urlparse import urlparse
@@ -25,6 +26,7 @@ from ssl import SSLError
 logger = logging.getLogger(__name__)
 
 sessionDict = {}
+EXCLUDED_PRINT_FIELDS = ['X-CSRFToken', 'Authorization', 'Cookie']
 
 
 def avi_timedelta(td):
@@ -158,6 +160,7 @@ class AviCredentials(object):
     idp_class = None
     csp_host = None
     csp_token = None
+    verify = False
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
@@ -171,6 +174,9 @@ class AviCredentials(object):
         if m.params.get('avi_credentials'):
             for k, v in m.params['avi_credentials'].items():
                 if hasattr(self, k):
+                    if k == 'verify':
+                        val = str(v).strip().lower()
+                        v = True if val == "true" else False if val == "false" else val
                     setattr(self, k, v)
         if m.params['controller']:
             self.controller = m.params['controller']
@@ -247,13 +253,11 @@ class ApiSession(Session):
             "controller_ip: %s, username: %s, tenant: %s, "
             "tenant_uuid: %s, verify: %s, port: %s, timeout: %s, "
             "api_version: %s, retry_conxn_errors: %s, data_log: %s,"
-            "avi_credentials: %s, session_id: %s, csrftoken: %s,"
             "lazy_authentication: %s, max_api_retries: %s",
             controller_ip, username, tenant,
             tenant_uuid, verify, port,
             timeout, api_version, retry_conxn_errors,
-            data_log, avi_credentials, session_id,
-            csrftoken, lazy_authentication, max_api_retries)
+            data_log, lazy_authentication, max_api_retries)
         if not avi_credentials:
             tenant = tenant if tenant else "admin"
             self.avi_credentials = AviCredentials(
@@ -266,6 +270,16 @@ class ApiSession(Session):
             self.avi_credentials = avi_credentials
         self.headers = {}
         self.verify = verify
+        if str(self.verify).lower() == 'false':
+            warning_msg = (
+                "\n"
+                "********************************************************************************\n"
+                "Strong Recommendation: It is highly recommended to use verify=True \n"
+                "to enable SSL certificate validation and ensure secure communication.\n"
+                "********************************************************************************"
+            )
+            logger.warning(warning_msg)
+            warnings.warn(warning_msg)
         self.retry_conxn_errors = retry_conxn_errors
         self.remote_api_version = {}
         self.user_hdrs = user_hdrs if user_hdrs else {}
@@ -304,8 +318,16 @@ class ApiSession(Session):
                 self.prefix += ':{}'.format(port)
 
         self.timeout = timeout
-        self.key = '%s:%s:%s' % (self.avi_credentials.controller,
-                                 self.avi_credentials.username, k_port)
+        self.key = '%s:%s:%s:%s:%s:%s:%s:%s' % (
+            self.avi_credentials.controller,
+            self.avi_credentials.username,
+            k_port,
+            self.avi_credentials.tenant,
+            self.avi_credentials.tenant_uuid,
+            self.verify,
+            hash(self.avi_credentials.password) if self.avi_credentials.password else '',
+            hash(self.avi_credentials.token) if self.avi_credentials.token else ''
+        )
 
         if self.user_hdrs and 'Authorization' in self.user_hdrs:
             return
@@ -468,8 +490,16 @@ class ApiSession(Session):
         k_port = avi_credentials.port if avi_credentials.port else 443
         if avi_credentials.controller.startswith('http'):
             k_port = 80 if not avi_credentials.port else k_port
-        key = '%s:%s:%s' % (avi_credentials.controller,
-                            avi_credentials.username, k_port)
+        key = '%s:%s:%s:%s:%s:%s:%s:%s' % (
+            avi_credentials.controller,
+            avi_credentials.username,
+            k_port,
+            avi_credentials.tenant,
+            avi_credentials.tenant_uuid,
+            verify,
+            hash(avi_credentials.password) if avi_credentials.password else '',
+            hash(avi_credentials.token) if avi_credentials.token else ''
+        )
         cached_session = sessionDict.get(key)
         if cached_session:
             user_session = cached_session['api']
@@ -686,9 +716,13 @@ class ApiSession(Session):
             logger.error('Error in Requests library %s', e)
             raise
         if not connection_error:
+            log_hdrs = copy.deepcopy(api_hdrs)
+            for k in EXCLUDED_PRINT_FIELDS:
+                if k in log_hdrs:
+                    log_hdrs[k] = '***REDACTED***'
             logger.debug('path: %s http_method: %s hdrs: %s params: '
                          '%s data: %s rsp: %s', fullpath, api_name.upper(),
-                         api_hdrs, kwargs, data,
+                         log_hdrs, kwargs, data,
                          (resp.text if self.data_log else 'None'))
         if connection_error or resp.status_code in (401, 419):
             if 'multipart/form-data' in api_hdrs['Content-Type']:

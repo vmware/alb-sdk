@@ -6,11 +6,13 @@ import pytest
 import vcr
 import unittest
 from avi.sdk.saml_avi_api import ApiSession, OktaSAMLApiSession, OneloginSAMLApiSession, WS1loginSAMLApiSession
+from avi.sdk.test import conftest
 
 api_version = '22.1.3'
-config_file = pytest.config.getoption("--config")
-with open(config_file) as f:
-    cfg = json.load(f)
+
+# Accessing the data directly from conftest
+# This will be populated because pytest loads conftest before the test files
+cfg = conftest.cfg
 
 my_vcr = vcr.VCR(
     cassette_library_dir='python/avi/sdk/test/fixtures/saml_cassettes/',
