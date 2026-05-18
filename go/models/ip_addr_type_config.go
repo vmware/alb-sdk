@@ -12,6 +12,6 @@ type IPAddrTypeConfig struct {
 	// Required: true
 	IPType *string `json:"ip_type"`
 
-	// Periodicity override for this IP type in minutes. If not set, uses ip_advertisement_profile.default_periodicity. Allowed values are 5-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Periodicity override for this IP type in minutes. If not set, uses ip_advertisement_profile.default_periodicity. Allowed values are 1-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Periodicity *uint32 `json:"periodicity,omitempty"`
 }
