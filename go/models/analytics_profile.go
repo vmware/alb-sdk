@@ -277,4 +277,7 @@ type AnalyticsProfile struct {
 
 	// UUID of the analytics profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`
+
+	// Penalty points per disabled orphan/zombie classification in WAAP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	WaapClassificationDisabledPenalty *float64 `json:"waap_classification_disabled_penalty,omitempty"`
 }

@@ -29,6 +29,9 @@ type MatchTarget struct {
 	// Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPReputationType *IPReputationTypeMatch `json:"ip_reputation_type,omitempty"`
 
+	// Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Label *LabelMatch `json:"label,omitempty"`
+
 	// Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Method *MethodMatch `json:"method,omitempty"`
 

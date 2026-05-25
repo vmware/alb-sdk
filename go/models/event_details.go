@@ -32,6 +32,9 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AnomalyDetails *AnomalyEventDetails `json:"anomaly_details,omitempty"`
 
+	// API Policy classification change event details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	APIPolicyClassificationDetails *APIPolicyClassificationDetails `json:"api_policy_classification_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIVersionDeprecated *APIVersionDeprecated `json:"api_version_deprecated,omitempty"`
 
@@ -301,6 +304,9 @@ type EventDetails struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPThreatDbEventData *IPThreatDBEventData `json:"ip_threat_db_event_data,omitempty"`
+
+	// Learning database cleanup event details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	LearningDbCleanupEventDetails *LearningDbCleanupEventDetails `json:"learning_db_cleanup_event_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseDetails *LicenseDetails `json:"license_details,omitempty"`

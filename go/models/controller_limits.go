@@ -8,6 +8,15 @@ package models
 // swagger:model ControllerLimits
 type ControllerLimits struct {
 
+	// Maximum number of API paths per API policy. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	APIPolicyNumPaths *int32 `json:"api_policy_num_paths,omitempty"`
+
+	// Maximum number of API schema objects per API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	APIPolicyNumSchemas *int32 `json:"api_policy_num_schemas,omitempty"`
+
+	// Maximum number of API Policy enabled Virtual Services. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	APIPolicyNumVs *int32 `json:"api_policy_num_vs,omitempty"`
+
 	// BOT system limits. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BotLimits *BOTLimits `json:"bot_limits,omitempty"`
 

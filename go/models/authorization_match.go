@@ -17,6 +17,9 @@ type AuthorizationMatch struct {
 	// Host header value to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HostHdr *HostHdrMatch `json:"host_hdr,omitempty"`
 
+	// Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Label *LabelMatch `json:"label,omitempty"`
+
 	// HTTP methods to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Method *MethodMatch `json:"method,omitempty"`
 
