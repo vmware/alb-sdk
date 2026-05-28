@@ -48,6 +48,9 @@ type OAuthProfile struct {
 	// Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RedirectURI *string `json:"redirect_uri,omitempty"`
 
+	// TLS authentication mode for outbound JWKS connections during token validation. Options  TLS_MODE_DISABLED (no verification, default), TLS_MODE_TLS (server verification), TLS_MODE_MTLS (enforces mTLS with a client certificate), or TLS_MODE_VERIFY_ONLY (certificate chain verification only). Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	TLSMode *string `json:"tls_mode,omitempty"`
+
 	// URL of token exchange server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TokenEndpoint *string `json:"token_endpoint,omitempty"`
 

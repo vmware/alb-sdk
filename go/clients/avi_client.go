@@ -144,6 +144,7 @@ type AviClient struct {
 	SystemConfiguration             *SystemConfigurationClient
 	SystemLimits                    *SystemLimitsClient
 	SystemReport                    *SystemReportClient
+	TLSProfile                      *TLSProfileClient
 	TaskJournal                     *TaskJournalClient
 	TechSupport                     *TechSupportClient
 	TechSupportMessage              *TechSupportMessageClient
@@ -329,6 +330,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SystemConfiguration = NewSystemConfigurationClient(aviSession)
 	aviClient.SystemLimits = NewSystemLimitsClient(aviSession)
 	aviClient.SystemReport = NewSystemReportClient(aviSession)
+	aviClient.TLSProfile = NewTLSProfileClient(aviSession)
 	aviClient.TaskJournal = NewTaskJournalClient(aviSession)
 	aviClient.TechSupport = NewTechSupportClient(aviSession)
 	aviClient.TechSupportMessage = NewTechSupportMessageClient(aviSession)
