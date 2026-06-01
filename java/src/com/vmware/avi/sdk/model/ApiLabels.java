@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The IpAddrTypeConfig is a POJO class extends AviRestResource that used for creating
- * IpAddrTypeConfig.
+ * The ApiLabels is a POJO class extends AviRestResource that used for creating
+ * ApiLabels.
  *
  * @version 1.0
  * @since 
@@ -20,71 +20,79 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class IpAddrTypeConfig  {
-    @JsonProperty("ip_type")
-    private String ipType;
+public class ApiLabels  {
+    @JsonProperty("enabled")
+    private Boolean enabled;
 
-    @JsonProperty("periodicity")
-    private Integer periodicity;
+    @JsonProperty("labels")
+    private List<String> labels;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-     * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-     * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+     * Enables the labels configuration.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipType
+     * @return enabled
      */
-    public String getIpType() {
-        return ipType;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-     * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-     * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+     * Enables the labels configuration.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param ipType set the ipType.
+     * @param enabled set the enabled.
      */
-    public void setIpType(String  ipType) {
-        this.ipType = ipType;
+    public void setEnabled(Boolean  enabled) {
+        this.enabled = enabled;
     }
-
     /**
      * This is the getter method this will return the attribute value.
-     * Periodicity override for this ip type in minutes.
-     * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 1-30.
+     * The list of labels to be applied to the api.
      * Field introduced in 32.2.1.
-     * Unit is min.
+     * Maximum of 256 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return periodicity
+     * @return labels
      */
-    public Integer getPeriodicity() {
-        return periodicity;
+    public List<String> getLabels() {
+        return labels;
     }
 
     /**
-     * This is the setter method to the attribute.
-     * Periodicity override for this ip type in minutes.
-     * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 1-30.
+     * This is the setter method. this will set the labels
+     * The list of labels to be applied to the api.
      * Field introduced in 32.2.1.
-     * Unit is min.
+     * Maximum of 256 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param periodicity set the periodicity.
+     * @return labels
      */
-    public void setPeriodicity(Integer  periodicity) {
-        this.periodicity = periodicity;
+    public void setLabels(List<String>  labels) {
+        this.labels = labels;
+    }
+
+    /**
+     * This is the setter method this will set the labels
+     * The list of labels to be applied to the api.
+     * Field introduced in 32.2.1.
+     * Maximum of 256 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return labels
+     */
+    public ApiLabels addLabelsItem(String labelsItem) {
+      if (this.labels == null) {
+        this.labels = new ArrayList<String>();
+      }
+      this.labels.add(labelsItem);
+      return this;
     }
 
 
@@ -96,17 +104,17 @@ public class IpAddrTypeConfig  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      IpAddrTypeConfig objIpAddrTypeConfig = (IpAddrTypeConfig) o;
-      return   Objects.equals(this.ipType, objIpAddrTypeConfig.ipType)&&
-  Objects.equals(this.periodicity, objIpAddrTypeConfig.periodicity);
+      ApiLabels objApiLabels = (ApiLabels) o;
+      return   Objects.equals(this.enabled, objApiLabels.enabled)&&
+  Objects.equals(this.labels, objApiLabels.labels);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class IpAddrTypeConfig {\n");
-                  sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-                        sb.append("    periodicity: ").append(toIndentedString(periodicity)).append("\n");
+      sb.append("class ApiLabels {\n");
+                  sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+                        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

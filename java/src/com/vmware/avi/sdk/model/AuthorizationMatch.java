@@ -30,6 +30,9 @@ public class AuthorizationMatch  {
     @JsonProperty("host_hdr")
     private HostHdrMatch hostHdr;
 
+    @JsonProperty("label")
+    private LabelMatch label;
+
     @JsonProperty("method")
     private MethodMatch method;
 
@@ -127,6 +130,32 @@ public class AuthorizationMatch  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configure label match for api endpoint labels.
+     * Uses auth scope to match labels attached by the waap module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return label
+     */
+    public LabelMatch getLabel() {
+        return label;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure label match for api endpoint labels.
+     * Uses auth scope to match labels attached by the waap module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param label set the label.
+     */
+    public void setLabel(LabelMatch label) {
+        this.label = label;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Http methods to be matched.
      * Field introduced in 18.2.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -187,7 +216,8 @@ public class AuthorizationMatch  {
   Objects.equals(this.path, objAuthorizationMatch.path)&&
   Objects.equals(this.hostHdr, objAuthorizationMatch.hostHdr)&&
   Objects.equals(this.method, objAuthorizationMatch.method)&&
-  Objects.equals(this.accessToken, objAuthorizationMatch.accessToken);
+  Objects.equals(this.accessToken, objAuthorizationMatch.accessToken)&&
+  Objects.equals(this.label, objAuthorizationMatch.label);
     }
 
     @Override
@@ -197,6 +227,7 @@ public class AuthorizationMatch  {
                   sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
                         sb.append("    attrMatches: ").append(toIndentedString(attrMatches)).append("\n");
                         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+                        sb.append("    label: ").append(toIndentedString(label)).append("\n");
                         sb.append("    method: ").append(toIndentedString(method)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
                   sb.append("}");

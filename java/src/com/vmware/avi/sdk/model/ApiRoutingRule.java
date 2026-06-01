@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The IpAddrTypeConfig is a POJO class extends AviRestResource that used for creating
- * IpAddrTypeConfig.
+ * The ApiRoutingRule is a POJO class extends AviRestResource that used for creating
+ * ApiRoutingRule.
  *
  * @version 1.0
  * @since 
@@ -20,71 +20,63 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class IpAddrTypeConfig  {
-    @JsonProperty("ip_type")
-    private String ipType;
+public class ApiRoutingRule  {
+    @JsonProperty("matches")
+    private MatchTarget matches;
 
-    @JsonProperty("periodicity")
-    private Integer periodicity;
+    @JsonProperty("name")
+    private String name;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-     * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-     * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+     * Match criteria containing only header matches for routing.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return ipType
+     * @return matches
      */
-    public String getIpType() {
-        return ipType;
+    public MatchTarget getMatches() {
+        return matches;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
-     * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
-     * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
+     * Match criteria containing only header matches for routing.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param ipType set the ipType.
+     * @param matches set the matches.
      */
-    public void setIpType(String  ipType) {
-        this.ipType = ipType;
+    public void setMatches(MatchTarget matches) {
+        this.matches = matches;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Periodicity override for this ip type in minutes.
-     * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 1-30.
+     * Name for the routing rule.
+     * Must be unique within api_routing_info.
      * Field introduced in 32.2.1.
-     * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return periodicity
+     * @return name
      */
-    public Integer getPeriodicity() {
-        return periodicity;
+    public String getName() {
+        return name;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Periodicity override for this ip type in minutes.
-     * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 1-30.
+     * Name for the routing rule.
+     * Must be unique within api_routing_info.
      * Field introduced in 32.2.1.
-     * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param periodicity set the periodicity.
+     * @param name set the name.
      */
-    public void setPeriodicity(Integer  periodicity) {
-        this.periodicity = periodicity;
+    public void setName(String  name) {
+        this.name = name;
     }
 
 
@@ -96,17 +88,17 @@ public class IpAddrTypeConfig  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      IpAddrTypeConfig objIpAddrTypeConfig = (IpAddrTypeConfig) o;
-      return   Objects.equals(this.ipType, objIpAddrTypeConfig.ipType)&&
-  Objects.equals(this.periodicity, objIpAddrTypeConfig.periodicity);
+      ApiRoutingRule objApiRoutingRule = (ApiRoutingRule) o;
+      return   Objects.equals(this.name, objApiRoutingRule.name)&&
+  Objects.equals(this.matches, objApiRoutingRule.matches);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class IpAddrTypeConfig {\n");
-                  sb.append("    ipType: ").append(toIndentedString(ipType)).append("\n");
-                        sb.append("    periodicity: ").append(toIndentedString(periodicity)).append("\n");
+      sb.append("class ApiRoutingRule {\n");
+                  sb.append("    matches: ").append(toIndentedString(matches)).append("\n");
+                        sb.append("    name: ").append(toIndentedString(name)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

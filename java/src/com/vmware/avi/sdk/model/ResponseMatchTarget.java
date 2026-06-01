@@ -33,6 +33,9 @@ public class ResponseMatchTarget  {
     @JsonProperty("host_hdr")
     private HostHdrMatch hostHdr;
 
+    @JsonProperty("label")
+    private LabelMatch label;
+
     @JsonProperty("loc_hdr")
     private LocationHdrMatch locHdr;
 
@@ -165,6 +168,30 @@ public class ResponseMatchTarget  {
      */
     public void setHostHdr(HostHdrMatch hostHdr) {
         this.hostHdr = hostHdr;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Configure the label.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return label
+     */
+    public LabelMatch getLabel() {
+        return label;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure the label.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param label set the label.
+     */
+    public void setLabel(LabelMatch label) {
+        this.label = label;
     }
 
     /**
@@ -426,7 +453,8 @@ public class ResponseMatchTarget  {
   Objects.equals(this.locHdr, objResponseMatchTarget.locHdr)&&
   Objects.equals(this.status, objResponseMatchTarget.status)&&
   Objects.equals(this.rspHdrs, objResponseMatchTarget.rspHdrs)&&
-  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp);
+  Objects.equals(this.sourceIp, objResponseMatchTarget.sourceIp)&&
+  Objects.equals(this.label, objResponseMatchTarget.label);
     }
 
     @Override
@@ -437,6 +465,7 @@ public class ResponseMatchTarget  {
                         sb.append("    cookie: ").append(toIndentedString(cookie)).append("\n");
                         sb.append("    hdrs: ").append(toIndentedString(hdrs)).append("\n");
                         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+                        sb.append("    label: ").append(toIndentedString(label)).append("\n");
                         sb.append("    locHdr: ").append(toIndentedString(locHdr)).append("\n");
                         sb.append("    method: ").append(toIndentedString(method)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");

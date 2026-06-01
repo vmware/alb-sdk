@@ -60,6 +60,9 @@ public class OAuthProfile  {
     @JsonProperty("redirect_uri")
     private String redirectUri;
 
+    @JsonProperty("tls_mode")
+    private String tlsMode = "TLS_MODE_DISABLED";
+
     @JsonProperty("token_endpoint")
     private String tokenEndpoint;
 
@@ -396,6 +399,36 @@ public class OAuthProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Tls authentication mode for outbound jwks connections during token validation.
+     * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server verification), tls_mode_mtls (enforces mtls with a client
+     * certificate), or tls_mode_verify_only (certificate chain verification only).
+     * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
+     * @return tlsMode
+     */
+    public String getTlsMode() {
+        return tlsMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls authentication mode for outbound jwks connections during token validation.
+     * Options  tls_mode_disabled (no verification, default), tls_mode_tls (server verification), tls_mode_mtls (enforces mtls with a client
+     * certificate), or tls_mode_verify_only (certificate chain verification only).
+     * Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "TLS_MODE_DISABLED".
+     * @param tlsMode set the tlsMode.
+     */
+    public void setTlsMode(String  tlsMode) {
+        this.tlsMode = tlsMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Url of token exchange server.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -466,7 +499,8 @@ public class OAuthProfile  {
   Objects.equals(this.oauthProfileType, objOAuthProfile.oauthProfileType)&&
   Objects.equals(this.oauthControllerSettings, objOAuthProfile.oauthControllerSettings)&&
   Objects.equals(this.oauthProvider, objOAuthProfile.oauthProvider)&&
-  Objects.equals(this.audience, objOAuthProfile.audience);
+  Objects.equals(this.audience, objOAuthProfile.audience)&&
+  Objects.equals(this.tlsMode, objOAuthProfile.tlsMode);
     }
 
     @Override
@@ -486,6 +520,7 @@ public class OAuthProfile  {
                         sb.append("    oauthRespBufferSz: ").append(toIndentedString(oauthRespBufferSz)).append("\n");
                         sb.append("    poolRef: ").append(toIndentedString(poolRef)).append("\n");
                         sb.append("    redirectUri: ").append(toIndentedString(redirectUri)).append("\n");
+                        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
                         sb.append("    tokenEndpoint: ").append(toIndentedString(tokenEndpoint)).append("\n");
                         sb.append("    userinfoEndpoint: ").append(toIndentedString(userinfoEndpoint)).append("\n");
                   sb.append("}");

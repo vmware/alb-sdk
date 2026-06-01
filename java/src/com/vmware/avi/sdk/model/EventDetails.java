@@ -45,6 +45,9 @@ public class EventDetails  {
     @JsonProperty("anomaly_details")
     private AnomalyEventDetails anomalyDetails;
 
+    @JsonProperty("api_policy_classification_details")
+    private ApiPolicyClassificationDetails apiPolicyClassificationDetails;
+
     @JsonProperty("api_version_deprecated")
     private ApiVersionDeprecated apiVersionDeprecated;
 
@@ -314,6 +317,9 @@ public class EventDetails  {
 
     @JsonProperty("ip_threat_db_event_data")
     private IPThreatDBEventData ipThreatDbEventData;
+
+    @JsonProperty("learning_db_cleanup_event_details")
+    private LearningDbCleanupEventDetails learningDbCleanupEventDetails;
 
     @JsonProperty("license_details")
     private LicenseDetails licenseDetails;
@@ -971,6 +977,30 @@ public class EventDetails  {
      */
     public void setAnomalyDetails(AnomalyEventDetails anomalyDetails) {
         this.anomalyDetails = anomalyDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Api policy classification change event details.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return apiPolicyClassificationDetails
+     */
+    public ApiPolicyClassificationDetails getApiPolicyClassificationDetails() {
+        return apiPolicyClassificationDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Api policy classification change event details.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param apiPolicyClassificationDetails set the apiPolicyClassificationDetails.
+     */
+    public void setApiPolicyClassificationDetails(ApiPolicyClassificationDetails apiPolicyClassificationDetails) {
+        this.apiPolicyClassificationDetails = apiPolicyClassificationDetails;
     }
 
     /**
@@ -2831,6 +2861,30 @@ public class EventDetails  {
      */
     public void setIpThreatDbEventData(IPThreatDBEventData ipThreatDbEventData) {
         this.ipThreatDbEventData = ipThreatDbEventData;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Learning database cleanup event details.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return learningDbCleanupEventDetails
+     */
+    public LearningDbCleanupEventDetails getLearningDbCleanupEventDetails() {
+        return learningDbCleanupEventDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Learning database cleanup event details.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param learningDbCleanupEventDetails set the learningDbCleanupEventDetails.
+     */
+    public void setLearningDbCleanupEventDetails(LearningDbCleanupEventDetails learningDbCleanupEventDetails) {
+        this.learningDbCleanupEventDetails = learningDbCleanupEventDetails;
     }
 
     /**
@@ -6501,6 +6555,8 @@ public class EventDetails  {
   Objects.equals(this.falsePositiveDetails, objEventDetails.falsePositiveDetails)&&
   Objects.equals(this.secMgrUaEventDetails, objEventDetails.secMgrUaEventDetails)&&
   Objects.equals(this.appInsightsDetails, objEventDetails.appInsightsDetails)&&
+  Objects.equals(this.apiPolicyClassificationDetails, objEventDetails.apiPolicyClassificationDetails)&&
+  Objects.equals(this.learningDbCleanupEventDetails, objEventDetails.learningDbCleanupEventDetails)&&
   Objects.equals(this.cloudAsgNotifDetails, objEventDetails.cloudAsgNotifDetails)&&
   Objects.equals(this.cloudAutoscalingConfigFailureDetails, objEventDetails.cloudAutoscalingConfigFailureDetails)&&
   Objects.equals(this.cloudRouteNotifDetails, objEventDetails.cloudRouteNotifDetails)&&
@@ -6547,6 +6603,7 @@ public class EventDetails  {
                         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
                         sb.append("    allSeupgradeEventDetails: ").append(toIndentedString(allSeupgradeEventDetails)).append("\n");
                         sb.append("    anomalyDetails: ").append(toIndentedString(anomalyDetails)).append("\n");
+                        sb.append("    apiPolicyClassificationDetails: ").append(toIndentedString(apiPolicyClassificationDetails)).append("\n");
                         sb.append("    apiVersionDeprecated: ").append(toIndentedString(apiVersionDeprecated)).append("\n");
                         sb.append("    apiserverRequestQueueFullEventInfo: ").append(toIndentedString(apiserverRequestQueueFullEventInfo)).append("\n");
                         sb.append("    apiserverRequestQueueRecoveryEventInfo: ").append(toIndentedString(apiserverRequestQueueRecoveryEventInfo)).append("\n");
@@ -6637,6 +6694,7 @@ public class EventDetails  {
                         sb.append("    hsDetails: ").append(toIndentedString(hsDetails)).append("\n");
                         sb.append("    ipFailDetails: ").append(toIndentedString(ipFailDetails)).append("\n");
                         sb.append("    ipThreatDbEventData: ").append(toIndentedString(ipThreatDbEventData)).append("\n");
+                        sb.append("    learningDbCleanupEventDetails: ").append(toIndentedString(learningDbCleanupEventDetails)).append("\n");
                         sb.append("    licenseDetails: ").append(toIndentedString(licenseDetails)).append("\n");
                         sb.append("    licenseExpiryDetails: ").append(toIndentedString(licenseExpiryDetails)).append("\n");
                         sb.append("    licenseTierSwitchDetails: ").append(toIndentedString(licenseTierSwitchDetails)).append("\n");
