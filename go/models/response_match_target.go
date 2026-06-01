@@ -20,6 +20,9 @@ type ResponseMatchTarget struct {
 	// Configure the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HostHdr *HostHdrMatch `json:"host_hdr,omitempty"`
 
+	// Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Label *LabelMatch `json:"label,omitempty"`
+
 	// Configure the location header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LocHdr *LocationHdrMatch `json:"loc_hdr,omitempty"`
 

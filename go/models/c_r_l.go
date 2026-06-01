@@ -14,6 +14,10 @@ type CRL struct {
 	// Distinguished name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DistinguishedName *string `json:"distinguished_name,omitempty"`
 
+	// Per-block CRL metadata populated automatically when a CRL file is uploaded or refreshed. Each element corresponds to one PEM CRL block in the file in order. A file concatenating CRLs from multiple CAs has one entry per CA. Not settable by API clients. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Read Only: true
+	Entries []*CRLEntry `json:"entries,omitempty"`
+
 	// Cached etag to optimize the download of the CRL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Etag *string `json:"etag,omitempty"`
 

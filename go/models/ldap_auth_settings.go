@@ -33,6 +33,9 @@ type LdapAuthSettings struct {
 	// LDAP full directory configuration with administrator credentials. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Settings *LdapDirectorySettings `json:"settings,omitempty"`
 
+	// TLS authentication mode for outbound LDAP connections. Options  TLS_MODE_DISABLED (no verification, default), TLS_MODE_TLS (server certificate verification), TLS_MODE_MTLS (mTLS with a client certificate), or TLS_MODE_VERIFY_ONLY (certificate chain verification only). TLS_MODE_TLS, TLS_MODE_MTLS, and TLS_MODE_VERIFY_ONLY are effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	TLSMode *string `json:"tls_mode,omitempty"`
+
 	// LDAP anonymous bind configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UserBind *LdapUserBindSettings `json:"user_bind,omitempty"`
 }

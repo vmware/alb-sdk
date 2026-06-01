@@ -8,8 +8,14 @@ package models
 // swagger:model CsrfMetrics
 type CsrfMetrics struct {
 
+	// Number of requests for which VERIFY_CSRF_TOKEN (or VERIFY_ORIGIN_AND_CSRF_TOKEN) action was executed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ActionVerifyExecuted *uint64 `json:"action_verify_executed,omitempty"`
+
 	// Number of requests for which CSRF protection was bypassed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Bypassed *uint64 `json:"bypassed,omitempty"`
+
+	// Number of requests for which a CSRF rule matched on label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	LabelMatchedRequests *uint64 `json:"label_matched_requests,omitempty"`
 
 	// Number of requests for which csrf check passed. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Passed *uint64 `json:"passed,omitempty"`

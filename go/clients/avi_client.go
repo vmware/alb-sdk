@@ -14,7 +14,11 @@ type AviClient struct {
 	ALBServicesFileDownload         *ALBServicesFileDownloadClient
 	ALBServicesFileUpload           *ALBServicesFileUploadClient
 	ALBServicesJob                  *ALBServicesJobClient
+	APIPath                         *APIPathClient
+	APIPolicy                       *APIPolicyClient
 	APIRateLimitProfile             *APIRateLimitProfileClient
+	APISchema                       *APISchemaClient
+	APISpecGenerate                 *APISpecGenerateClient
 	ActionGroupConfig               *ActionGroupConfigClient
 	AkoAmkoCluster                  *AkoAmkoClusterClient
 	Alert                           *AlertClient
@@ -82,6 +86,7 @@ type AviClient struct {
 	JobEntry                        *JobEntryClient
 	L4PolicySet                     *L4PolicySetClient
 	LabelGroup                      *LabelGroupClient
+	LabelProfile                    *LabelProfileClient
 	LicenseLedgerDetails            *LicenseLedgerDetailsClient
 	LicenseStatus                   *LicenseStatusClient
 	LocalWorkerFdsVersion           *LocalWorkerFdsVersionClient
@@ -139,6 +144,7 @@ type AviClient struct {
 	SystemConfiguration             *SystemConfigurationClient
 	SystemLimits                    *SystemLimitsClient
 	SystemReport                    *SystemReportClient
+	TLSProfile                      *TLSProfileClient
 	TaskJournal                     *TaskJournalClient
 	TechSupport                     *TechSupportClient
 	TechSupportMessage              *TechSupportMessageClient
@@ -194,7 +200,11 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ALBServicesFileDownload = NewALBServicesFileDownloadClient(aviSession)
 	aviClient.ALBServicesFileUpload = NewALBServicesFileUploadClient(aviSession)
 	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
+	aviClient.APIPath = NewAPIPathClient(aviSession)
+	aviClient.APIPolicy = NewAPIPolicyClient(aviSession)
 	aviClient.APIRateLimitProfile = NewAPIRateLimitProfileClient(aviSession)
+	aviClient.APISchema = NewAPISchemaClient(aviSession)
+	aviClient.APISpecGenerate = NewAPISpecGenerateClient(aviSession)
 	aviClient.ActionGroupConfig = NewActionGroupConfigClient(aviSession)
 	aviClient.AkoAmkoCluster = NewAkoAmkoClusterClient(aviSession)
 	aviClient.Alert = NewAlertClient(aviSession)
@@ -262,6 +272,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.JobEntry = NewJobEntryClient(aviSession)
 	aviClient.L4PolicySet = NewL4PolicySetClient(aviSession)
 	aviClient.LabelGroup = NewLabelGroupClient(aviSession)
+	aviClient.LabelProfile = NewLabelProfileClient(aviSession)
 	aviClient.LicenseLedgerDetails = NewLicenseLedgerDetailsClient(aviSession)
 	aviClient.LicenseStatus = NewLicenseStatusClient(aviSession)
 	aviClient.LocalWorkerFdsVersion = NewLocalWorkerFdsVersionClient(aviSession)
@@ -319,6 +330,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SystemConfiguration = NewSystemConfigurationClient(aviSession)
 	aviClient.SystemLimits = NewSystemLimitsClient(aviSession)
 	aviClient.SystemReport = NewSystemReportClient(aviSession)
+	aviClient.TLSProfile = NewTLSProfileClient(aviSession)
 	aviClient.TaskJournal = NewTaskJournalClient(aviSession)
 	aviClient.TechSupport = NewTechSupportClient(aviSession)
 	aviClient.TechSupportMessage = NewTechSupportMessageClient(aviSession)

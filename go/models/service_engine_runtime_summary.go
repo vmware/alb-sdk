@@ -32,6 +32,9 @@ type ServiceEngineRuntimeSummary struct {
 	// Number of Service Cores assigned to the SE by License Manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicensedServiceCores *float64 `json:"licensed_service_cores,omitempty"`
 
+	// Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MigrateProgress *SeMigrateProgress `json:"migrate_progress,omitempty"`
+
 	// This state is used to indicate the current state of disable SE process. Enum options - SE_MIGRATE_STATE_IDLE, SE_MIGRATE_STATE_STARTED, SE_MIGRATE_STATE_FINISHED_WITH_FAILURE, SE_MIGRATE_STATE_FINISHED, SE_MIGRATE_STATE_IN_PROGRESS. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MigrateState *string `json:"migrate_state,omitempty"`
 

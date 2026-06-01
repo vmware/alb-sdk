@@ -11,6 +11,15 @@ type SeAgentGraphDBRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Analyticsprofile *SeAgentGraphDBNodeInfo `json:"analyticsprofile,omitempty"`
 
+	//  Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Apipath *SeAgentGraphDBNodeInfo `json:"apipath,omitempty"`
+
+	//  Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Apipolicy *SeAgentGraphDBNodeInfo `json:"apipolicy,omitempty"`
+
+	//  Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Apischema *SeAgentGraphDBNodeInfo `json:"apischema,omitempty"`
+
 	//  Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Applicationinsightspolicy *SeAgentGraphDBNodeInfo `json:"applicationinsightspolicy,omitempty"`
 
@@ -70,6 +79,9 @@ type SeAgentGraphDBRuntime struct {
 
 	//  Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	L4connectionpolicy *SeAgentGraphDBNodeInfo `json:"l4connectionpolicy,omitempty"`
+
+	//  Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Labelprofile *SeAgentGraphDBNodeInfo `json:"labelprofile,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Microservice *SeAgentGraphDBNodeInfo `json:"microservice,omitempty"`

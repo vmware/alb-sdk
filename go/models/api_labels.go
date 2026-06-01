@@ -1,0 +1,16 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
+package models
+
+// This file is auto-generated.
+
+// APILabels Api labels
+// swagger:model ApiLabels
+type APILabels struct {
+
+	// Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Enabled *bool `json:"enabled,omitempty"`
+
+	// The list of labels to be applied to the API. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Labels []string `json:"labels,omitempty"`
+}
