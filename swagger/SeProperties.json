@@ -1111,6 +1111,12 @@
                     "default": 1024,
                     "format": "uint32"
                 },
+                "log_agent_malloc_trim_memory_threshold": {
+                    "description": "RSS threshold in MB beyond which log-agent invokes malloc_trim(0). Set to 0 to disable the periodic RSS monitor entirely. SIGUSR1 always triggers a trim regardless of this setting. Allowed values are 0-1024. Field introduced in 32.2.1. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 300,
+                    "format": "uint32"
+                },
                 "log_agent_max_concurrent_rsync": {
                     "description": "Deprecated in 21.1.1. Maximum concurrent rsync requests initiated from log-agent to the Controller. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -1128,6 +1134,12 @@
                     "type": "number",
                     "default": 20.0,
                     "format": "float"
+                },
+                "log_agent_memory_monitor_interval": {
+                    "description": "Interval in seconds at which log-agent checks RSS against the trim threshold. Allowed values are 10-3600. Field introduced in 32.2.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 600,
+                    "format": "uint32"
                 },
                 "log_agent_min_storage_per_vs": {
                     "description": "Deprecated in 21.1.1. Minimum storage allocated to any given VirtualService on the Service Engine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

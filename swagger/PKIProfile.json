@@ -560,6 +560,14 @@
                     "description": "Distinguished name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "entries": {
+                    "description": "Per-block CRL metadata populated automatically when a CRL file is uploaded or refreshed. Each element corresponds to one PEM CRL block in the file in order. A file concatenating CRLs from multiple CAs has one entry per CA. Not settable by API clients. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CRLEntry"
+                    }
+                },
                 "etag": {
                     "description": "Cached etag to optimize the download of the CRL. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
@@ -593,6 +601,38 @@
                     "type": "integer",
                     "default": 1440,
                     "format": "int32"
+                }
+            }
+        },
+        "CRLEntry": {
+            "type": "object",
+            "properties": {
+                "crl_number": {
+                    "description": "CRL sequence number from the CRL Number extension (RFC 5280 \u00a75.2.3). Empty when the extension is absent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "issuer_cn": {
+                    "description": "Common Name extracted from the CRL issuer DN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "issuer_dn": {
+                    "description": "Full Distinguished Name of the CRL issuer (RFC 5280 Issuer field). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "next_update": {
+                    "description": "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when the next CRL is expected (NextUpdate field, RFC 5280 \u00a75.1.2.5). Empty when the extension is absent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "serial_numbers": {
+                    "description": "Decimal serial numbers of all certificates revoked in this CRL block. Used for revocation status checks against a certificate's serial number. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "this_update": {
+                    "description": "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when this CRL was issued (ThisUpdate field, RFC 5280 \u00a75.1.2.4). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },

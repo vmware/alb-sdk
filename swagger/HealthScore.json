@@ -1885,6 +1885,10 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
+                },
+                "waap_score_data": {
+                    "description": "WAAP security assessment for the VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/WaapScoreData"
                 }
             }
         },
@@ -3105,6 +3109,142 @@
                 "uuid": {
                     "description": " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "WaapApiProtectionPenalty": {
+            "type": "object",
+            "required": [
+                "reason"
+            ],
+            "properties": {
+                "app_composition_sub_score": {
+                    "description": "App composition sub-score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "config_sub_score": {
+                    "description": "Configuration sub-score penalising disabled orphan/zombie API classification. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "orphan_api_ratio": {
+                    "description": "Orphan API ratio. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "orphan_classification_enabled": {
+                    "description": "Whether orphan API classification is enabled in ApiPolicy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "reason": {
+                    "description": "Reason for WAAP Security Penalty. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "reason_attr": {
+                    "description": "Attribute responsible for the penalty. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "shadow_api_ratio": {
+                    "description": "Shadow API ratio. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "sum_waap_hits": {
+                    "description": "Sum of WAAP hits. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "sum_waap_orphan_api_count": {
+                    "description": "Sum of WAAP orphan API count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "sum_waap_shadow_api_count": {
+                    "description": "Sum of WAAP shadow API count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "sum_waap_violation_count": {
+                    "description": "Sum of WAAP violation count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "sum_waap_zombie_api_count": {
+                    "description": "Sum of WAAP zombie API count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "total_requests": {
+                    "description": "Total requests evaluated. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "total_violation_count": {
+                    "description": "Total violation count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "uuid": {
+                    "description": "UUID of the VirtualService. It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "Penalty value for WAAP API Protection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "violation_ratio": {
+                    "description": "Ratio of violations to total requests. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "violation_ratio_sub_score": {
+                    "description": "Violation ratio sub-score. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "waap_enabled": {
+                    "description": "Flag indicating if WAAP is enabled. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "zombie_api_ratio": {
+                    "description": "Zombie API ratio. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "zombie_classification_enabled": {
+                    "description": "Whether zombie API classification is enabled in ApiPolicy. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                }
+            }
+        },
+        "WaapScoreData": {
+            "type": "object",
+            "required": [
+                "reason"
+            ],
+            "properties": {
+                "api_protection_penalty": {
+                    "description": "API Protection penalty assessment. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/WaapApiProtectionPenalty"
+                },
+                "reason": {
+                    "description": "Reason for WAAP Security Penalty. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "reason_attr": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": " It is a reference to an object of type VirtualService. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
                 }
             }
         }

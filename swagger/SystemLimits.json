@@ -326,6 +326,21 @@
         "ControllerLimits": {
             "type": "object",
             "properties": {
+                "api_policy_num_paths": {
+                    "description": "Maximum number of API paths per API policy. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "api_policy_num_schemas": {
+                    "description": "Maximum number of API schema objects per API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "api_policy_num_vs": {
+                    "description": "Maximum number of API Policy enabled Virtual Services. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
                 "bot_limits": {
                     "description": "BOT system limits. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/BOTLimits"

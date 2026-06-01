@@ -590,6 +590,10 @@
                     "description": "Configure the host header. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HostHdrMatch"
                 },
+                "label": {
+                    "description": "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/LabelMatch"
+                },
                 "path": {
                     "description": "Configure request paths. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/PathMatch"
@@ -675,6 +679,10 @@
                 "host_hdr": {
                     "description": "Host header value to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/HostHdrMatch"
+                },
+                "label": {
+                    "description": "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/LabelMatch"
                 },
                 "method": {
                     "description": "HTTP methods to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -934,6 +942,26 @@
                 "value": {
                     "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                }
+            }
+        },
+        "LabelMatch": {
+            "type": "object",
+            "required": [
+                "match_criteria"
+            ],
+            "properties": {
+                "match_criteria": {
+                    "description": "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "IS_IN"
+                },
+                "values": {
+                    "description": "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
