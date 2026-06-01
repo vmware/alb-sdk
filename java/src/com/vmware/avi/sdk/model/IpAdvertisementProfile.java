@@ -33,7 +33,7 @@ public class IpAdvertisementProfile  {
      * This is the getter method this will return the attribute value.
      * Default periodicity for periodic ip advertisement (gratarp/na) in minutes.
      * Used when a per-type periodicity is not specified.
-     * Allowed values are 5-30.
+     * Allowed values are 1-30.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -48,7 +48,7 @@ public class IpAdvertisementProfile  {
      * This is the setter method to the attribute.
      * Default periodicity for periodic ip advertisement (gratarp/na) in minutes.
      * Used when a per-type periodicity is not specified.
-     * Allowed values are 5-30.
+     * Allowed values are 1-30.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
