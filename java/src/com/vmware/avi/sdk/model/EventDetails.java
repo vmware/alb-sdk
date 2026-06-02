@@ -30,9 +30,6 @@ public class EventDetails  {
     @JsonProperty("albservices_case_details")
     private ALBServicesCase albservicesCaseDetails;
 
-    @JsonProperty("albservices_file_download_details")
-    private ALBServicesFileDownload albservicesFileDownloadDetails;
-
     @JsonProperty("albservices_file_upload_details")
     private ALBServicesFileUpload albservicesFileUploadDetails;
 
@@ -873,30 +870,6 @@ public class EventDetails  {
      */
     public void setAlbservicesCaseDetails(ALBServicesCase albservicesCaseDetails) {
         this.albservicesCaseDetails = albservicesCaseDetails;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Albservices file download event details.
-     * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return albservicesFileDownloadDetails
-     */
-    public ALBServicesFileDownload getAlbservicesFileDownloadDetails() {
-        return albservicesFileDownloadDetails;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Albservices file download event details.
-     * Field introduced in 30.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param albservicesFileDownloadDetails set the albservicesFileDownloadDetails.
-     */
-    public void setAlbservicesFileDownloadDetails(ALBServicesFileDownload albservicesFileDownloadDetails) {
-        this.albservicesFileDownloadDetails = albservicesFileDownloadDetails;
     }
 
     /**
@@ -6531,7 +6504,6 @@ public class EventDetails  {
   Objects.equals(this.crsUpdateDetails, objEventDetails.crsUpdateDetails)&&
   Objects.equals(this.ipThreatDbEventData, objEventDetails.ipThreatDbEventData)&&
   Objects.equals(this.appSignatureEventData, objEventDetails.appSignatureEventData)&&
-  Objects.equals(this.albservicesFileDownloadDetails, objEventDetails.albservicesFileDownloadDetails)&&
   Objects.equals(this.nsxtInfo, objEventDetails.nsxtInfo)&&
   Objects.equals(this.nsxtImgDetails, objEventDetails.nsxtImgDetails)&&
   Objects.equals(this.vcenterClusterDetails, objEventDetails.vcenterClusterDetails)&&
@@ -6598,7 +6570,6 @@ public class EventDetails  {
                   sb.append("    adaptreplEvent: ").append(toIndentedString(adaptreplEvent)).append("\n");
                         sb.append("    addNetworksDetails: ").append(toIndentedString(addNetworksDetails)).append("\n");
                         sb.append("    albservicesCaseDetails: ").append(toIndentedString(albservicesCaseDetails)).append("\n");
-                        sb.append("    albservicesFileDownloadDetails: ").append(toIndentedString(albservicesFileDownloadDetails)).append("\n");
                         sb.append("    albservicesFileUploadDetails: ").append(toIndentedString(albservicesFileUploadDetails)).append("\n");
                         sb.append("    albservicesStatusDetails: ").append(toIndentedString(albservicesStatusDetails)).append("\n");
                         sb.append("    allSeupgradeEventDetails: ").append(toIndentedString(allSeupgradeEventDetails)).append("\n");

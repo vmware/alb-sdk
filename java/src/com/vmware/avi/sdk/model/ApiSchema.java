@@ -28,7 +28,7 @@ public class ApiSchema extends AviRestResource  {
     private ApiSimpleSchemaDescription additionalPropertiesSchema;
 
     @JsonProperty("allow_additional_properties")
-    private Boolean allowAdditionalProperties = false;
+    private Boolean allowAdditionalProperties;
 
     @JsonProperty("array_item_type")
     private ApiSimpleSchemaDescription arrayItemType;
@@ -64,7 +64,7 @@ public class ApiSchema extends AviRestResource  {
     private String type;
 
     @JsonProperty("unique_items")
-    private Boolean uniqueItems = false;
+    private Boolean uniqueItems;
 
     @JsonProperty("url")
     private String url = "url";
@@ -129,7 +129,7 @@ public class ApiSchema extends AviRestResource  {
      * Whether this schema allows additional properties.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return allowAdditionalProperties
      */
     public Boolean getAllowAdditionalProperties() {
@@ -141,7 +141,7 @@ public class ApiSchema extends AviRestResource  {
      * Whether this schema allows additional properties.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param allowAdditionalProperties set the allowAdditionalProperties.
      */
     public void setAllowAdditionalProperties(Boolean  allowAdditionalProperties) {
@@ -459,7 +459,7 @@ public class ApiSchema extends AviRestResource  {
      * If true, all items in the array must be unique.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uniqueItems
      */
     public Boolean getUniqueItems() {
@@ -471,7 +471,7 @@ public class ApiSchema extends AviRestResource  {
      * If true, all items in the array must be unique.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uniqueItems set the uniqueItems.
      */
     public void setUniqueItems(Boolean  uniqueItems) {
