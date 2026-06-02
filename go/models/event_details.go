@@ -17,9 +17,6 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AlbservicesCaseDetails *ALBServicesCase `json:"albservices_case_details,omitempty"`
 
-	// ALBservices file download event details. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AlbservicesFileDownloadDetails *ALBServicesFileDownload `json:"albservices_file_download_details,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AlbservicesFileUploadDetails *ALBServicesFileUpload `json:"albservices_file_upload_details,omitempty"`
 
