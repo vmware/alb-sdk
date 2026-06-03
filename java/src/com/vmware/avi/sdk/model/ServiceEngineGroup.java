@@ -315,6 +315,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("instance_flavor")
     private String instanceFlavor;
 
+    @JsonProperty("ip_advertisement_profile")
+    private IpAdvertisementProfile ipAdvertisementProfile;
+
     @JsonProperty("iptables")
     private List<IptableRuleSet> iptables;
 
@@ -881,6 +884,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("vip_asg")
     private VipAutoscaleGroup vipAsg;
+
+    @JsonProperty("vmotion_notification_poll_interval")
+    private Integer vmotionNotificationPollInterval = 5;
 
     @JsonProperty("vnic_dhcp_ip_check_interval")
     private Integer vnicDhcpIpCheckInterval = 6;
@@ -3545,6 +3551,34 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setInstanceFlavor(String  instanceFlavor) {
         this.instanceFlavor = instanceFlavor;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
+     * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
+     * Enable_gratarp_permanent independently controls vip_ip.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return ipAdvertisementProfile
+     */
+    public IpAdvertisementProfile getIpAdvertisementProfile() {
+        return ipAdvertisementProfile;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configuration for periodic ip advertisement (gratarp for ipv4, neighbor advertisement for ipv6).
+     * When configured, the specified ip types will send periodic advertisements to maintain arp/ndp cache entries on network devices.
+     * Enable_gratarp_permanent independently controls vip_ip.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param ipAdvertisementProfile set the ipAdvertisementProfile.
+     */
+    public void setIpAdvertisementProfile(IpAdvertisementProfile ipAdvertisementProfile) {
+        this.ipAdvertisementProfile = ipAdvertisementProfile;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -8592,6 +8626,32 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Interval in seconds to poll vmotion notifications.
+     * Field introduced in 32.1.3.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return vmotionNotificationPollInterval
+     */
+    public Integer getVmotionNotificationPollInterval() {
+        return vmotionNotificationPollInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in seconds to poll vmotion notifications.
+     * Field introduced in 32.1.3.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param vmotionNotificationPollInterval set the vmotionNotificationPollInterval.
+     */
+    public void setVmotionNotificationPollInterval(Integer  vmotionNotificationPollInterval) {
+        this.vmotionNotificationPollInterval = vmotionNotificationPollInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Dhcp ip check interval.
      * Allowed values are 1-1000.
      * Field introduced in 21.1.1.
@@ -9471,7 +9531,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.auditQatHugePages, objServiceEngineGroup.auditQatHugePages)&&
   Objects.equals(this.controlQatHugePages, objServiceEngineGroup.controlQatHugePages)&&
   Objects.equals(this.qatHpageMemPerProcess, objServiceEngineGroup.qatHpageMemPerProcess)&&
-  Objects.equals(this.optimisticPlacement, objServiceEngineGroup.optimisticPlacement);
+  Objects.equals(this.optimisticPlacement, objServiceEngineGroup.optimisticPlacement)&&
+  Objects.equals(this.vmotionNotificationPollInterval, objServiceEngineGroup.vmotionNotificationPollInterval)&&
+  Objects.equals(this.ipAdvertisementProfile, objServiceEngineGroup.ipAdvertisementProfile);
     }
 
     @Override
@@ -9576,6 +9638,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    ingressAccessData: ").append(toIndentedString(ingressAccessData)).append("\n");
                         sb.append("    ingressAccessMgmt: ").append(toIndentedString(ingressAccessMgmt)).append("\n");
                         sb.append("    instanceFlavor: ").append(toIndentedString(instanceFlavor)).append("\n");
+                        sb.append("    ipAdvertisementProfile: ").append(toIndentedString(ipAdvertisementProfile)).append("\n");
                         sb.append("    iptables: ").append(toIndentedString(iptables)).append("\n");
                         sb.append("    kniAllowedServerPorts: ").append(toIndentedString(kniAllowedServerPorts)).append("\n");
                         sb.append("    kvValMaxLen: ").append(toIndentedString(kvValMaxLen)).append("\n");
@@ -9764,6 +9827,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vcenters: ").append(toIndentedString(vcenters)).append("\n");
                         sb.append("    vcpusPerSe: ").append(toIndentedString(vcpusPerSe)).append("\n");
                         sb.append("    vipAsg: ").append(toIndentedString(vipAsg)).append("\n");
+                        sb.append("    vmotionNotificationPollInterval: ").append(toIndentedString(vmotionNotificationPollInterval)).append("\n");
                         sb.append("    vnicDhcpIpCheckInterval: ").append(toIndentedString(vnicDhcpIpCheckInterval)).append("\n");
                         sb.append("    vnicDhcpIpMaxRetries: ").append(toIndentedString(vnicDhcpIpMaxRetries)).append("\n");
                         sb.append("    vnicIpDeleteInterval: ").append(toIndentedString(vnicIpDeleteInterval)).append("\n");
