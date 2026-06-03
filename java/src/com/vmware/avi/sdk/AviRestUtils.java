@@ -266,7 +266,19 @@ public class AviRestUtils {
 	}
 
 	public static String getSessionKey(AviCredentials aviCredentials) {
-		return aviCredentials.getController() + ":" + aviCredentials.getUsername() + ":" + aviCredentials.getPort();
+		StringBuilder sb = new StringBuilder();
+		sb.append(aviCredentials.getController()).append(":");
+		sb.append(aviCredentials.getUsername()).append(":");
+		sb.append(aviCredentials.getPort()).append(":");
+		sb.append(aviCredentials.getTenant()).append(":");
+		sb.append(aviCredentials.getVerify());
+		if (aviCredentials.getPassword() != null) {
+			sb.append(":").append(aviCredentials.getPassword().hashCode());
+		}
+		if (aviCredentials.getToken() != null) {
+			sb.append(":").append(aviCredentials.getToken().hashCode());
+		}
+		return sb.toString();
 	}
 
 	/**
