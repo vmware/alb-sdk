@@ -356,21 +356,6 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
-                "num_vs_completed": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
-                "num_vs_failed": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
-                "num_vs_total": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
                 "reason": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",

@@ -771,6 +771,11 @@ definitions:
             uuid:
                 description: "UUID of the analytics profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            waap_classification_disabled_penalty:
+                description: "Penalty points per disabled orphan/zombie classification in WAAP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                default: 50.0
+                format: double
     AnalyticsProfileApiResponse:
         type: object
         required:

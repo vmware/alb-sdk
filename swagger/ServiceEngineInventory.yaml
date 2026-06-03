@@ -286,18 +286,6 @@ definitions:
             last_changed_time:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
-            num_vs_completed:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            num_vs_failed:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            num_vs_total:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
             reason:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -389,6 +377,21 @@ definitions:
                 description: " Field introduced in 17.2.10,18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+    SeMigrateProgress:
+        type: object
+        properties:
+            num_vs_completed:
+                description: "Number of Virtual Services that have successfully completed migration off this SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_vs_failed:
+                description: "Number of Virtual Services that failed to migrate off this SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            num_vs_total:
+                description: "Total number of Virtual Services that need to be migrated off this SE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     ServerPerformanceScoreData:
         type: object
         required:
@@ -576,6 +579,9 @@ definitions:
                 description: "Number of Service Cores assigned to the SE by License Manager. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
+            migrate_progress:
+                description: "Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeMigrateProgress'
             migrate_state:
                 description: "This state is used to indicate the current state of disable SE process. Enum options - SE_MIGRATE_STATE_IDLE, SE_MIGRATE_STATE_STARTED, SE_MIGRATE_STATE_FINISHED_WITH_FAILURE, SE_MIGRATE_STATE_FINISHED, SE_MIGRATE_STATE_IN_PROGRESS. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

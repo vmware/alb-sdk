@@ -441,7 +441,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             sub_module:
-                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG, SHARD_ORCHESTRATOR_DEBUG, RUNNOTIFICATIONS_DEBUG, JOBMANAGER_DEBUG, DNS_MANAGER_DEBUG, SECURE_KEY_EXCHANGE_DEBUG, SE_DATASTORE_DEBUG, FEDERATED_DATASTORE_DEBUG, SHARD_SERVER_DEBUG, SE_GRPC_AUTH_SERVER_DEBUG, SE_CONTROLLER_INTF_DEBUG, CLUSTER_SERVICES_WATCHER_DEBUG, SEUPGRADE_PARENT_DEBUG, PORTALCONNECTOR_DEBUG, PROCESS_EVENT_FORWARDER_DEBUG, DIFF_COMPACTOR_DEBUG, RES_MGR_GO_DEBUG, PLACEMENT_ORCHESTRATOR_DEBUG, LICENSE_MGR_DEBUG, OCTAVIUS_DEBUG, GSLB_LOCAL_WORKER_DEBUG, GSLB_REMOTE_WORKER_DEBUG, IMAGE_MANAGER_DEBUG, STATEDIFF_SERVICE_DEBUG, REMOTE_TASK_MANAGER_DEBUG, REMOTE_TASK_MANAGER_CLIENT_DEBUG, AVISCP_SERVER_DEBUG, UPGRADE_PORTAL_DEBUG, AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG, CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG, TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG, OPERSTATUS_STREAMER_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG, SHARD_ORCHESTRATOR_DEBUG, RUNNOTIFICATIONS_DEBUG, JOBMANAGER_DEBUG, DNS_MANAGER_DEBUG, SECURE_KEY_EXCHANGE_DEBUG, SE_DATASTORE_DEBUG, FEDERATED_DATASTORE_DEBUG, SHARD_SERVER_DEBUG, SE_GRPC_AUTH_SERVER_DEBUG, SE_CONTROLLER_INTF_DEBUG, CLUSTER_SERVICES_WATCHER_DEBUG, SEUPGRADE_PARENT_DEBUG, PORTALCONNECTOR_DEBUG, PROCESS_EVENT_FORWARDER_DEBUG, DIFF_COMPACTOR_DEBUG, RES_MGR_GO_DEBUG, PLACEMENT_ORCHESTRATOR_DEBUG, LICENSE_MGR_DEBUG, OCTAVIUS_DEBUG, GSLB_LOCAL_WORKER_DEBUG, GSLB_REMOTE_WORKER_DEBUG, IMAGE_MANAGER_DEBUG, STATEDIFF_SERVICE_DEBUG, REMOTE_TASK_MANAGER_DEBUG, REMOTE_TASK_MANAGER_CLIENT_DEBUG, AVISCP_SERVER_DEBUG, UPGRADE_PORTAL_DEBUG, AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG, CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG, TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG, OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
                 description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -513,7 +513,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/StateCacheMgrDebugFilter'
             type:
-                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG, SHARD_ORCHESTRATOR_DEBUG, RUNNOTIFICATIONS_DEBUG, JOBMANAGER_DEBUG, DNS_MANAGER_DEBUG, SECURE_KEY_EXCHANGE_DEBUG, SE_DATASTORE_DEBUG, FEDERATED_DATASTORE_DEBUG, SHARD_SERVER_DEBUG, SE_GRPC_AUTH_SERVER_DEBUG, SE_CONTROLLER_INTF_DEBUG, CLUSTER_SERVICES_WATCHER_DEBUG, SEUPGRADE_PARENT_DEBUG, PORTALCONNECTOR_DEBUG, PROCESS_EVENT_FORWARDER_DEBUG, DIFF_COMPACTOR_DEBUG, RES_MGR_GO_DEBUG, PLACEMENT_ORCHESTRATOR_DEBUG, LICENSE_MGR_DEBUG, OCTAVIUS_DEBUG, GSLB_LOCAL_WORKER_DEBUG, GSLB_REMOTE_WORKER_DEBUG, IMAGE_MANAGER_DEBUG, STATEDIFF_SERVICE_DEBUG, REMOTE_TASK_MANAGER_DEBUG, REMOTE_TASK_MANAGER_CLIENT_DEBUG, AVISCP_SERVER_DEBUG, UPGRADE_PORTAL_DEBUG, AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG, CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG, TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG, OPERSTATUS_STREAMER_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - TASK_QUEUE_DEBUG, RPC_INFRA_DEBUG, JOB_MGR_DEBUG, TRANSACTION_DEBUG, SE_AGENT_DEBUG, SE_AGENT_METRICS_DEBUG, VIRTUALSERVICE_DEBUG, RES_MGR_DEBUG, SE_MGR_DEBUG, VI_MGR_DEBUG, METRICS_MANAGER_DEBUG, METRICS_MGR_DEBUG, EVENT_API_DEBUG, HS_MGR_DEBUG, ALERT_MGR_DEBUG, AUTOSCALE_MGR_DEBUG, APIC_AGENT_DEBUG, REDIS_INFRA_DEBUG, CLOUD_CONNECTOR_DEBUG, MESOS_METRICS_DEBUG, STATECACHE_MGR_DEBUG, NSX_AGENT_DEBUG, SE_AGENT_CPU_UTIL_DEBUG, SE_AGENT_MEM_UTIL_DEBUG, SE_RPC_PROXY_DEBUG, SE_AGENT_GSLB_DEBUG, METRICSAPI_SRV_DEBUG, SECURITYMGR_DEBUG, RES_MGR_READ_DEBUG, LICENSE_VMWSRVR_DEBUG, SE_AGENT_RESOLVERDB_DEBUG, LOGMANAGER_DEBUG, OSYNC_DEBUG, EVENTMANAGER_DEBUG, SHARD_ORCHESTRATOR_DEBUG, RUNNOTIFICATIONS_DEBUG, JOBMANAGER_DEBUG, DNS_MANAGER_DEBUG, SECURE_KEY_EXCHANGE_DEBUG, SE_DATASTORE_DEBUG, FEDERATED_DATASTORE_DEBUG, SHARD_SERVER_DEBUG, SE_GRPC_AUTH_SERVER_DEBUG, SE_CONTROLLER_INTF_DEBUG, CLUSTER_SERVICES_WATCHER_DEBUG, SEUPGRADE_PARENT_DEBUG, PORTALCONNECTOR_DEBUG, PROCESS_EVENT_FORWARDER_DEBUG, DIFF_COMPACTOR_DEBUG, RES_MGR_GO_DEBUG, PLACEMENT_ORCHESTRATOR_DEBUG, LICENSE_MGR_DEBUG, OCTAVIUS_DEBUG, GSLB_LOCAL_WORKER_DEBUG, GSLB_REMOTE_WORKER_DEBUG, IMAGE_MANAGER_DEBUG, STATEDIFF_SERVICE_DEBUG, REMOTE_TASK_MANAGER_DEBUG, REMOTE_TASK_MANAGER_CLIENT_DEBUG, AVISCP_SERVER_DEBUG, UPGRADE_PORTAL_DEBUG, AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG, CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG, TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG, OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vs_debug_filter:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -540,6 +540,42 @@ definitions:
             skip_hs_db_writes:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            vs_security_metrics_batch_size:
+                description: "Batch size for vs security metrics query. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            waap_app_comp_threshold:
+                description: "Sigmoid midpoint for weighted ungoverned ratio. Allowed values are 0.01-1.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_app_comp_weight:
+                description: "Relative weight for app composition sub-score. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_config_weight:
+                description: "Relative weight for WAAP config sub-score. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_orphan_api_weight:
+                description: "Relative risk weight for orphan API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_shadow_api_weight:
+                description: "Relative risk weight for shadow API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_violation_ratio_threshold:
+                description: "Sigmoid midpoint for WAAP violation ratio (violation_count/total_hits at which sub-score is ~50). Allowed values are 0.001-1.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_violation_ratio_weight:
+                description: "Relative weight for violation ratio in combined WAAP penalty. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
+            waap_zombie_api_weight:
+                description: "Relative risk weight for zombie API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: number
+                format: double
     LogManagerDebugFilter:
         type: object
         properties:
@@ -875,13 +911,37 @@ definitions:
                 type: array
                 items:
                     type: string
+            adaptive_sampler_config_cooldown:
+                description: "Cooldown period between adaptive sampling configuration sends to prevent excessive updates. Allowed values are 1-600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 180
+                format: uint32
+            adaptive_sampler_tick_interval:
+                description: "Adaptive sampler tick interval for periodic sampling adjustments. Allowed values are 1-3600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            api_path_markers:
+                description: "Custom API path markers for endpoint classification (e.g., /api/, /v1/, /graphql). If not configured, uses default markers. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
             enable_adaptive_config:
                 description: "Dynamically adapt configuration parameters for Application Learning feature. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            enable_secmgr_api_endpoint_consolidation:
+                description: "[Internal] Toggle API endpoint consolidation - applies to Application Insights, API Protection, Positive Security. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             entity_ref:
                 description: "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            learning_db_cleanup_lookback_period:
+                description: "Lookback period for learning database cleanup. Allowed values are 1-365. Field introduced in 32.2.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30
+                format: uint32
             psm_programming_interval:
                 description: "Dynamically update the interval for rule generation in PSM programming. Allowed values are 1-60. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -891,6 +951,27 @@ definitions:
                 description: "Dynamically update the multiplier for rule ID generation in PSM programming for Learning feature. Allowed values are 10-100000. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
+            secmgr_api_classification_task_periodicity:
+                description: "[Internal] Periodicity at which Orphan/Zombie/Active API determination routine runs. Allowed values are 1-10080. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 360
+                format: uint32
+            secmgr_api_hits_population_interval:
+                description: "[Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 1-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 15
+                format: uint32
+            secmgr_waap_full_sync:
+                description: "Trigger full sync of API specification changes to learning database for all eligible VSes. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            secmgr_waap_full_sync_vs_uuid:
+                description: "Trigger full sync for a specific VS UUID. If set, only this VS will be processed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            static_file_extensions:
+                description: "File extensions considered as static non-API content (e.g., .html, .css, .js, .png). If not configured, uses default extensions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     SeMgrDebugFilter:
         type: object
         properties:

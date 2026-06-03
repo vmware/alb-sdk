@@ -1,0 +1,946 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "32.2.1",
+        "title": "Avi ApiPath Object API",
+        "contact": {
+            "name": "Avi Networks Inc.",
+            "url": "https://avinetworks.com/contact-us",
+            "email": "support@avinetworks.com"
+        },
+        "description": "Avi ApiPath object api\n```\n- configure apipath <key>\n- show apipath <key>\n```\n\nAPI permission: PERMISSION_APIPATH\n"
+    },
+    "tags": [
+        {
+            "name": "ApiPath"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "basic authentication"
+        }
+    },
+    "basePath": "/api",
+    "paths": {
+        "/apipath": {
+            "get": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath",
+                "operationId": "GET /apipath",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "refers_to",
+                        "in": "query",
+                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "referred_by",
+                        "in": "query",
+                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPathApiResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath",
+                "operationId": "POST /apipath",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "ApiPath object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/apipath/{uuid}": {
+            "get": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath/{uuid}/{uuid}",
+                "operationId": "GET /apipath/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath/{uuid}/{uuid}",
+                "operationId": "PUT /apipath/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "ApiPath object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath/{uuid}/{uuid}",
+                "operationId": "PATCH /apipath/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "ApiPath object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPath"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath/{uuid}/{uuid}",
+                "operationId": "DELETE /apipath/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "object deleted",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ApiContentTypeMapping": {
+            "type": "object",
+            "required": [
+                "content_type",
+                "schema"
+            ],
+            "properties": {
+                "content_type": {
+                    "description": "The content type of the request/response. This can be a pattern like application/json* for request. For response, it is the content type of the response. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "schema": {
+                    "description": "The schema for the request/response body. Type must be SCHEMA_TYPE_UNDEFINED (no validation) or SCHEMA_TYPE_REFERENCE pointing to an ApiSchema (object and array bodies are modeled as references). Other ApiSchemaDataType values are not allowed for content type mappings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ApiSimpleSchemaDescription"
+                }
+            }
+        },
+        "ApiEndpoint": {
+            "type": "object",
+            "required": [
+                "http_method"
+            ],
+            "properties": {
+                "active_api_labels": {
+                    "description": "Additional labels for this endpoint, applicable when the endpoint is an active API. By default, this is applied in conjunction with the global active_api_labels defined in ApiPolicy. Set override_global_active_api_labels to true to use only the endpoint-level labels. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ApiLabels"
+                },
+                "deactivated": {
+                    "description": "Endpoint definition is deactivated. When true, this endpoint will not be validated, learned, or labeled. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "description": {
+                    "description": "Describes the functionality of the API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "failed_validation_header_parameter_action": {
+                    "description": "Action on header parameter schema validation failures. Overrides the policy-level failed_validation_header_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                },
+                "failed_validation_path_parameter_action": {
+                    "description": "Action on path parameter value validation failures (e.g., type mismatch). Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys. Overrides the policy-level failed_validation_path_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                },
+                "failed_validation_query_parameter_action": {
+                    "description": "Action on query parameter schema validation failures. Overrides the policy-level failed_validation_query_argument_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                },
+                "header_parameters": {
+                    "description": "Request header parameter definitions for this endpoint, used to validate incoming request headers. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ParameterDescription"
+                    }
+                },
+                "http_method": {
+                    "description": "HTTP method for this API endpoint. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "override_global_active_api_labels": {
+                    "description": "When true, only the endpoint-level active_api_labels are applied to this endpoint, ignoring the global active_api_labels defined in ApiPolicy. When false (default), endpoint-level and global active_api_labels are applied in conjunction. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "path_parameters": {
+                    "description": "Path parameter definitions for this endpoint, used for schema validation. Names must match the placeholders in the path template. Example  for path /pets/{petId}, a path parameter named 'petId' would be listed here. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ParameterDescription"
+                    }
+                },
+                "query_parameters": {
+                    "description": "Query string parameter definitions for this endpoint, used to validate query arguments. Example  for GET /pets?limit=10, a query parameter named 'limit' would be listed here. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ParameterDescription"
+                    }
+                },
+                "request_body": {
+                    "description": "Expected format and schema of the request body, including content-type to schema mappings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ApiRequestBodyDescription"
+                },
+                "responses": {
+                    "description": "Expected response definitions for this endpoint, each associated with an HTTP status code or status code range. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ApiResponse"
+                    }
+                },
+                "type": {
+                    "description": "Configured lifecycle type of this endpoint. Active endpoints are expected to receive traffic; orphan endpoints have not been seen for a predefined duration; zombie endpoints receive only drip-traffic from legacy clients. Defaults to active. Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_TYPE_ACTIVE"
+                },
+                "unknown_status_code_action": {
+                    "description": "Action to take on an unknown status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                }
+            }
+        },
+        "ApiLabels": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "description": "Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "labels": {
+                    "description": "The list of labels to be applied to the API. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ApiPath": {
+            "type": "object",
+            "required": [
+                "name",
+                "path_template"
+            ],
+            "properties": {
+                "_last_modified": {
+                    "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description of this API path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "endpoints": {
+                    "description": "List of API endpoints for this path. Field introduced in 32.2.1. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ApiEndpoint"
+                    }
+                },
+                "name": {
+                    "description": "Name of this object, unique per Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "path_template": {
+                    "description": "The URI path template for the object. Parameters can be defined in curly braces, for example /pet/{pet_id}. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "source": {
+                    "description": "Indicates whether this path was user-defined or imported from an OpenAPI specification file. Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string",
+                    "default": "SOURCE_USER_DEFINED"
+                },
+                "tenant_ref": {
+                    "description": " It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "unknown_http_method_action": {
+                    "description": "Action to take on unknown http method. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                },
+                "url": {
+                    "description": "url",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": "The object UUID. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ApiPathApiResponse": {
+            "type": "object",
+            "required": [
+                "count",
+                "results"
+            ],
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ApiPath"
+                    }
+                },
+                "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApiRequestBodyDescription": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Description of the request body from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "failed_validation_request_body_action": {
+                    "description": "Action on request body schema validation failures. Overrides the policy-level failed_validation_request_body_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                },
+                "mappings": {
+                    "description": "Mapping of the content type to the request body schema. Field introduced in 32.2.1. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ApiContentTypeMapping"
+                    }
+                },
+                "required": {
+                    "description": "Whether the request body is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "unknown_content_type_action": {
+                    "description": "Action to take when the request body's content type is not defined for this endpoint. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                }
+            }
+        },
+        "ApiResponse": {
+            "type": "object",
+            "required": [
+                "status_code"
+            ],
+            "properties": {
+                "content_type_mappings": {
+                    "description": "Content type mappings for response body. Field introduced in 32.2.1. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ApiContentTypeMapping"
+                    }
+                },
+                "description": {
+                    "description": "Description of the response from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "response_header_parameters": {
+                    "description": "Description of response header parameters. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ParameterDescription"
+                    }
+                },
+                "status_code": {
+                    "description": "HTTP status code or status code range. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/HTTPStatusMatch"
+                },
+                "unknown_content_type_action": {
+                    "description": "Action to take when the response body's content type is not defined for this status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "API_ACTION_INHERIT_FROM_API_POLICY"
+                }
+            }
+        },
+        "ApiSimpleSchemaDescription": {
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "max_value": {
+                    "description": "Maximum allowed value for integer and number types (inclusive by default). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "min_value": {
+                    "description": "Minimum allowed value for integer and number types (inclusive by default). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "schema_ref": {
+                    "description": "UUID of the referenced ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "string_enum_values": {
+                    "description": "If set, this is a list of all possible values for this string. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "string_format": {
+                    "description": "Predefined string formats (e.g., email, URI, UUID). Enum options - API_STRING_FORMAT_NONE, API_STRING_FORMAT_ENUM, API_STRING_FORMAT_PATTERN, API_STRING_FORMAT_UUID, API_STRING_FORMAT_IPV4, API_STRING_FORMAT_IPV6, API_STRING_FORMAT_URI, API_STRING_FORMAT_URL, API_STRING_FORMAT_DATE, API_STRING_FORMAT_DATE_TIME, API_STRING_FORMAT_EMAIL, API_STRING_FORMAT_HOSTNAME, API_STRING_FORMAT_PASSWORD, API_STRING_FORMAT_BINARY, API_STRING_FORMAT_BYTE, API_STRING_FORMAT_TIME, API_STRING_FORMAT_DURATION, API_STRING_FORMAT_URI_REFERENCE, API_STRING_FORMAT_URI_TEMPLATE, API_STRING_FORMAT_JSON_POINTER, API_STRING_FORMAT_REGEX. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "string_max_length": {
+                    "description": "Maximum allowed length for string values. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "string_min_length": {
+                    "description": "Minimum allowed length for string values. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "string_pattern": {
+                    "description": "If set, this is a regular expression which must match the string. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The data type for this schema element. Enum options - SCHEMA_TYPE_UNDEFINED, SCHEMA_TYPE_STRING, SCHEMA_TYPE_INTEGER, SCHEMA_TYPE_NUMBER, SCHEMA_TYPE_BOOLEAN, SCHEMA_TYPE_NULL, SCHEMA_TYPE_ARRAY, SCHEMA_TYPE_OBJECT, SCHEMA_TYPE_REFERENCE, SCHEMA_TYPE_ONE_OF, SCHEMA_TYPE_ALL_OF, SCHEMA_TYPE_ANY_OF. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "HTTPStatusMatch": {
+            "type": "object",
+            "required": [
+                "match_criteria"
+            ],
+            "properties": {
+                "match_criteria": {
+                    "description": "Criterion to use for matching the HTTP response status code(s). Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ranges": {
+                    "description": "HTTP response status code range(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HTTPStatusRange"
+                    }
+                },
+                "status_codes": {
+                    "description": "HTTP response status code(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "format": "int32"
+                }
+            }
+        },
+        "HTTPStatusRange": {
+            "type": "object",
+            "required": [
+                "begin",
+                "end"
+            ],
+            "properties": {
+                "begin": {
+                    "description": "Starting HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "end": {
+                    "description": "Ending HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "ParameterDescription": {
+            "type": "object",
+            "required": [
+                "name",
+                "schema"
+            ],
+            "properties": {
+                "allow_empty_value": {
+                    "description": "Whether this parameter allows an empty value. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "deprecated": {
+                    "description": "Marks this parameter as deprecated. When a deprecated parameter is received in a request, it is treated as a schema violation and will be learned but not logged. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "Name of the parameter. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "required": {
+                    "description": "Whether this parameter is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "schema": {
+                    "description": "Schema description for this parameter. If the schema is not known, use SCHEMA_TYPE_UNDEFINED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ApiSimpleSchemaDescription"
+                }
+            }
+        }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
+}
