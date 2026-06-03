@@ -306,6 +306,9 @@ type ServiceEngineGroup struct {
 	// Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InstanceFlavor *string `json:"instance_flavor,omitempty"`
 
+	// Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	IPAdvertisementProfile *IPAdvertisementProfile `json:"ip_advertisement_profile,omitempty"`
+
 	// Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Iptables []*IptableRuleSet `json:"iptables,omitempty"`
 
@@ -874,6 +877,9 @@ type ServiceEngineGroup struct {
 
 	// When vip_asg is set, Vip configuration will be managed by Avi.User will be able to configure vip_asg or Vips individually at the time of create. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VipAsg *VipAutoscaleGroup `json:"vip_asg,omitempty"`
+
+	// Interval in seconds to poll vmotion notifications. Field introduced in 32.1.3. Unit is SECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	VmotionNotificationPollInterval *uint32 `json:"vmotion_notification_poll_interval,omitempty"`
 
 	// DHCP ip check interval. Allowed values are 1-1000. Field introduced in 21.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VnicDhcpIPCheckInterval *uint32 `json:"vnic_dhcp_ip_check_interval,omitempty"`
