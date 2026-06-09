@@ -28,6 +28,7 @@ public class AviSDKTest {
     private static final String PASSWORD = System.getenv("AVI_PASSWORD");
     private static final String VERSION = System.getenv("AVI_VERSION");
     private static final String TENANT = System.getenv("AVI_TENANT");
+    
 
     private static AviCredentials creds = null;
 

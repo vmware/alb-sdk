@@ -208,7 +208,10 @@ public class AviRestUtils {
                     .build();
 
             BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-            credentialsProvider.setCredentials(new AuthScope(null, -1), new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword().toCharArray()));
+            char[] passwordChars = (creds.getPassword() != null) ? creds.getPassword().toCharArray() : new char[0];
+            credentialsProvider.setCredentials
+                    (new AuthScope(null, -1),
+                            new UsernamePasswordCredentials(creds.getUsername(), passwordChars));
 
             clientBuilder = HttpClients.custom()
                     .setConnectionManager(connectionManager)
