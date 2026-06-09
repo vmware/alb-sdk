@@ -7,38 +7,39 @@ package com.vmware.avi.sdk;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.apache.http.Header;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
-import org.apache.http.auth.AuthScope;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.client.CredentialsProvider;
-import org.apache.http.client.HttpRequestRetryHandler;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.conn.HttpHostConnectException;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicCredentialsProvider;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultServiceUnavailableRetryStrategy;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.SSLContexts;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.client5.http.ConnectTimeoutException;
+import org.apache.hc.client5.http.HttpHostConnectException;
+import org.apache.hc.client5.http.HttpRequestRetryStrategy;
+import org.apache.hc.client5.http.auth.AuthScope;
+import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.config.ConnectionConfig;
+import org.apache.hc.client5.http.config.RequestConfig;
+import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
+import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
+import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
+import org.apache.hc.client5.http.ssl.NoopHostnameVerifier;
+import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
+import org.apache.hc.client5.http.ssl.TrustSelfSignedStrategy;
+import org.apache.hc.core5.http.*;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.http.protocol.HttpContext;
+import org.apache.hc.core5.ssl.SSLContexts;
+import org.apache.hc.core5.util.TimeValue;
+import org.apache.hc.core5.util.Timeout;
 import org.json.JSONObject;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
 import javax.net.ssl.SSLContext;
@@ -47,287 +48,326 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.HttpCookie;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class AviRestUtils {
 
-	static final Logger LOGGER = Logger.getLogger(AviRestUtils.class.getName());
-	static final int SOCKET_TIMEOUT = 300000; // 5 Min
-	private static HashMap<String, RestTemplate> sessionPool = new HashMap<String, RestTemplate>();
-	private static final String API_PREFIX = "/api/";
+    static final Logger LOGGER = Logger.getLogger(AviRestUtils.class.getName());
+    static final int SOCKET_TIMEOUT = 300000; // 5 Min
+    private static final String API_PREFIX = "/api/";
+    private static final HashMap<String, RestClient> sessionPool = new HashMap<String, RestClient>();
 
-	public static void clearSession(AviCredentials creds){
-		if (creds != null) {
-			if (sessionPool.containsKey(getSessionKey(creds))) {
-				sessionPool.remove(getSessionKey(creds));
-			}
-		}
-	}
+    public static void clearSession(AviCredentials creds) {
+        if (creds != null) {
+            sessionPool.remove(getSessionKey(creds));
+        }
+    }
 
-	public static RestTemplate getRestTemplate(AviCredentials creds) {
-		LOGGER.info("__INIT__ Rest template initialization..");
-		RestTemplate restTemplate = null;
-		if (creds != null) {
-			if (sessionPool.containsKey(getSessionKey(creds))) {
-				return sessionPool.get(getSessionKey(creds));
-			}
-			try {
-				restTemplate = getInitializedRestTemplate(creds);
-				DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(getControllerURL(creds) + API_PREFIX);
-				restTemplate.setUriTemplateHandler(uriBuilderFactory);
-				List<ClientHttpRequestInterceptor> interceptors = Collections
-						.<ClientHttpRequestInterceptor>singletonList(new AviAuthorizationInterceptor(creds));
-				restTemplate.setInterceptors(interceptors);
-				restTemplate.setMessageConverters(getMessageConverters(restTemplate));
-				AviRestUtils.sessionPool.put(getSessionKey(creds), restTemplate);
-				LOGGER.info("__DONE__ Rest template initialize.");
-				return restTemplate;
-			} catch (Exception e) {
-				LOGGER.severe("Exception during rest template initialization");
+    public static RestClient getRestClient(AviCredentials creds) {
+        LOGGER.info("__INIT__ Rest client initialization..");
+        RestClient restClient = null;
+        if (creds != null) {
+            if (sessionPool.containsKey(getSessionKey(creds))) {
+                return sessionPool.get(getSessionKey(creds));
+            }
+            try {
+                restClient = getInitializedRestClient(creds);
+                AviRestUtils.sessionPool.put(getSessionKey(creds), restClient);
+                LOGGER.info("__DONE__ Rest client initialize.");
+                return restClient;
+            } catch (Exception e) {
+                LOGGER.severe("Exception during rest client initialization");
 
-			}
-		}
-		return restTemplate;
-	}
+            }
+        }
+        return restClient;
+    }
 
-	private static List<HttpMessageConverter<?>> getMessageConverters(RestTemplate restTemplate) {
-		// Get existing message converters
-		List<HttpMessageConverter<?>> messageConverters = restTemplate.getMessageConverters();
-		messageConverters.clear();
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.setSerializationInclusion(Include.NON_NULL);
-		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		MappingJackson2HttpMessageConverter mycov = new MappingJackson2HttpMessageConverter(objectMapper);
-		mycov.setPrettyPrint(true);
-		messageConverters.add(new StringHttpMessageConverter());
-		messageConverters.add(mycov);
-		return messageConverters;
-	}
+    private static List<HttpMessageConverter<?>> getMessageConverters() {
+        List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setSerializationInclusion(Include.NON_NULL);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        MappingJackson2HttpMessageConverter mycov = new MappingJackson2HttpMessageConverter(objectMapper);
+        mycov.setPrettyPrint(true);
+        messageConverters.add(new StringHttpMessageConverter());
+        messageConverters.add(mycov);
+        return messageConverters;
+    }
 
-	private static RestTemplate getInitializedRestTemplate(AviCredentials creds) {
-		try {
-			CloseableHttpClient client = buildHttpClient(creds);
-			HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory();
-			clientHttpRequestFactory.setHttpClient(client);
-			return new RestTemplate(clientHttpRequestFactory);
+    private static RestClient getInitializedRestClient(AviCredentials creds) {
+        try {
+            CloseableHttpClient client = buildHttpClient(creds);
+            HttpComponentsClientHttpRequestFactory clientHttpRequestFactory = new HttpComponentsClientHttpRequestFactory(client);
+            BufferingClientHttpRequestFactory bufferingFactory = new BufferingClientHttpRequestFactory(clientHttpRequestFactory);
+            DefaultUriBuilderFactory uriBuilderFactory = new DefaultUriBuilderFactory(getControllerURL(creds) + API_PREFIX);
 
-		} catch (Exception e) {
-			LOGGER.severe("Exception in creating rest template for AVI connection");
-		}
-		return null;
-	}
+            return RestClient.builder()
+                    .requestFactory(bufferingFactory)
+                    .uriBuilderFactory(uriBuilderFactory)
+                    .requestInterceptors(interceptors -> interceptors.add(new AviAuthorizationInterceptor(creds)))
+                    .messageConverters(converters -> {
+                        converters.clear();
+                        converters.addAll(getMessageConverters());
+                    })
+                    .build();
 
-	/**
-	 * This method sets a custom HttpRequestRetryHandler in order to enable a custom
-	 * exception recovery mechanism.
-	 * 
-	 * @return A HttpRequestRetryHandler representing handling of the retryHandler.
-	 */
-	private static HttpRequestRetryHandler retryHandler(AviCredentials creds) {
-		return (exception, executionCount, context) -> {
-			LOGGER.info("__INIT__ Inside retry_handler..");
-			if (executionCount >= creds.getNumApiRetries()) {
-				// Do not retry if over max retry count
-				return false;
-			}
-			if (exception instanceof InterruptedIOException) {
-				// Timeout
-				return false;
-			}
-			if (exception instanceof UnknownHostException) {
-				// Unknown host
-				return false;
-			}
-			if (exception instanceof SSLException) {
-				// SSL handshake exception
-				return false;
-			}
-			if (exception instanceof HttpHostConnectException) {
-				return true;
-			}
-			HttpClientContext clientContext = HttpClientContext.adapt(context);
-			HttpRequest request = clientContext.getRequest();
-			boolean idempotent = !(request instanceof HttpEntityEnclosingRequest);
-			if (idempotent) {
-				// Retry if the request is considered idempotent
-				return true;
-			}
-			LOGGER.info("__DONE__ Retry handler.");
-			return false;
-		};
-	}
+        } catch (Exception e) {
+            LOGGER.severe("Exception in creating rest client for AVI connection");
+        }
+        return null;
+    }
 
-	public static CloseableHttpClient buildHttpClient(AviCredentials creds) {
-		LOGGER.info("__INIT__ Inside buildHttpClient..");
-		HttpClientBuilder clientBuilder;
-		if (!creds.getVerify()) {
-			SSLContext sslcontext = null;
-			if (creds.getSslContext() != null){
-				sslcontext = creds.getSslContext();
-			} else {
-				try {
-					sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
+    /**
+     * This method sets a custom HttpRequestRetryStrategy in order to enable a custom
+     * exception recovery mechanism.
+     *
+     * @return A HttpRequestRetryStrategy representing handling of the retryHandler.
+     */
+    private static HttpRequestRetryStrategy retryStrategy(AviCredentials creds) {
+        return new HttpRequestRetryStrategy() {
+            @Override
+            public boolean retryRequest(HttpRequest request, IOException exception, int executionCount, HttpContext context) {
+                LOGGER.info("__INIT__ Inside retry_handler..");
+                if (executionCount >= creds.getNumApiRetries()) {
+                    return false;
+                }
+                if (exception instanceof InterruptedIOException) {
+                    return false;
+                }
+                if (exception instanceof UnknownHostException) {
+                    return false;
+                }
+                if (exception instanceof SSLException) {
+                    return false;
+                }
+                if (exception instanceof HttpHostConnectException) {
+                    return true;
+                }
 
-			SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,
-					(s, sslSession) -> true);
-			RequestConfig requestConfig = RequestConfig.custom().
-					setSocketTimeout(SOCKET_TIMEOUT).
-					setConnectionRequestTimeout((creds.getTimeout())*1000).
-					setConnectTimeout((creds.getConnectionTimeout())*1000).
-					build();
+                boolean idempotent = Method.isIdempotent(request.getMethod());
+                if (idempotent) {
+                    return true;
+                }
+                LOGGER.info("__DONE__ Retry handler.");
+                return false;
+            }
 
-			CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-			credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword()));
+            @Override
+            public boolean retryRequest(HttpResponse response, int executionCount, HttpContext context) {
+                if (executionCount >= creds.getNumApiRetries()) {
+                    return false;
+                }
+                return response.getCode() == 503;
+            }
 
-			clientBuilder = HttpClients.custom().
-					setSSLSocketFactory(sslConnectionSocketFactory).
-					setServiceUnavailableRetryStrategy(new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(),
-							creds.getRetryWaitTime())).
-					disableCookieManagement().setDefaultRequestConfig(requestConfig);
-		} else {
-			clientBuilder = HttpClients.custom().setServiceUnavailableRetryStrategy(
-					new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(), creds.getRetryWaitTime()))
-					.disableCookieManagement();
-		}
+            @Override
+            public TimeValue getRetryInterval(HttpResponse response, int executionCount, HttpContext context) {
+                return TimeValue.ofSeconds(creds.getRetryWaitTime());
+            }
+        };
+    }
 
-		clientBuilder.setRetryHandler(retryHandler(creds));
-		LOGGER.info("__DONE__ BuildHttpClient completed");
-		return clientBuilder.build();
-	}
+    public static CloseableHttpClient buildHttpClient(AviCredentials creds) {
+        LOGGER.info("__INIT__ Inside buildHttpClient..");
+        HttpClientBuilder clientBuilder;
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectionRequestTimeout(Timeout.ofSeconds(creds.getTimeout()))
+                .setResponseTimeout(Timeout.ofMilliseconds(SOCKET_TIMEOUT))
+                .build();
 
-	/**
-	 * This method authenticates user based on the credentials and update the
-	 * csrftoken and session id for this session.
-	 */
-	public static void authenticateSession(AviCredentials aviCredentials) throws IOException {
-		LOGGER.info("__INIT__ Inside authentication session for.. " + aviCredentials.getUsername());
-		JSONObject body = new JSONObject();
-		body.put("username", aviCredentials.getUsername());
-		if (aviCredentials.getPassword() != null && !aviCredentials.getPassword().isEmpty()) {
-			body.put("password", aviCredentials.getPassword());
-		} else if (aviCredentials.getToken() != null && !aviCredentials.getToken().isEmpty()) {
-			body.put("token", aviCredentials.getToken());
-		}
-		CloseableHttpClient httpClient = buildHttpClient(aviCredentials);
-		try {
-			String postUrl = getControllerURL(aviCredentials) + "/login";
-			HttpPost postRequest = new HttpPost(postUrl);
-			StringEntity input = new StringEntity(body.toString());
-			input.setContentType("application/json");
-			postRequest.addHeader("X-Avi-Version", aviCredentials.getVersion());
-			postRequest.addHeader("X-Avi-Tenant", aviCredentials.getTenant());
-			postRequest.setEntity(input);
-			HttpResponse response = httpClient.execute(postRequest);
-			int statusCode = response.getStatusLine().getStatusCode();
-			if (statusCode > 299) {
-				LOGGER.severe("Login faild with status code " + statusCode);
-				throw new IOException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
-			}
-			String output = EntityUtils.toString(response.getEntity());
-			JSONObject result = new JSONObject(output);
-			String sessionCookieName = result.get("session_cookie_name").toString();
-			String csrftoken = null;
-			String sessionCookie = null;
-			for (Header header : response.getHeaders("Set-Cookie")) {
-				List<HttpCookie> httpCookies = HttpCookie.parse(header.getValue());
-				for (HttpCookie cookie : httpCookies) {
-					if (cookie.getName().equals("csrftoken")) {
-						csrftoken = cookie.getValue();
-					} else if (cookie.getName().equals(sessionCookieName)) {
-						sessionCookie = cookie.getValue();
-					}
-				}
-			}
-			aviCredentials.setCsrftoken(csrftoken);
-			aviCredentials.setSessionID(sessionCookie);
-			LOGGER.info("__DONE__ Authentication session success for:: " + aviCredentials.getUsername());
-		} catch (ConnectTimeoutException e){
-			throw e;
-		} catch (Exception e) {
-			e.printStackTrace();
+        if (!creds.getVerify()) {
+            SSLContext sslcontext = null;
+            if (creds.getSslContext() != null) {
+                sslcontext = creds.getSslContext();
+            } else {
+                try {
+                    sslcontext = SSLContexts.custom()
+                            .loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            TlsSocketStrategy tlsStrategy = new DefaultClientTlsStrategy(
+                    sslcontext,
+                    NoopHostnameVerifier.INSTANCE
+            );
+            ConnectionConfig connectionConfig = ConnectionConfig.custom()
+                    .setConnectTimeout(Timeout.ofSeconds(creds.getConnectionTimeout()))
+                    .setSocketTimeout(Timeout.ofMilliseconds(SOCKET_TIMEOUT))
+                    .build();
+
+            PoolingHttpClientConnectionManager connectionManager = PoolingHttpClientConnectionManagerBuilder.create()
+                    .setTlsSocketStrategy(tlsStrategy)
+                    .setDefaultConnectionConfig(connectionConfig)
+                    .build();
+
+            BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+            credentialsProvider.setCredentials(new AuthScope(null, -1), new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword().toCharArray()));
+
+            clientBuilder = HttpClients.custom()
+                    .setConnectionManager(connectionManager)
+                    .setDefaultCredentialsProvider(credentialsProvider)
+                    .disableCookieManagement()
+                    .setDefaultRequestConfig(requestConfig);
+        } else {
+            ConnectionConfig connectionConfig = ConnectionConfig.custom()
+                    .setConnectTimeout(Timeout.ofSeconds(creds.getConnectionTimeout()))
+                    .setSocketTimeout(Timeout.ofMilliseconds(SOCKET_TIMEOUT))
+                    .build();
+
+            PoolingHttpClientConnectionManager connectionManager = PoolingHttpClientConnectionManagerBuilder.create()
+                    .setDefaultConnectionConfig(connectionConfig)
+                    .build();
+
+            clientBuilder = HttpClients.custom()
+                    .setConnectionManager(connectionManager)
+                    .disableCookieManagement()
+                    .setDefaultRequestConfig(requestConfig);
+        }
+
+        clientBuilder.setRetryStrategy(retryStrategy(creds));
+        LOGGER.info("__DONE__ BuildHttpClient completed");
+        return clientBuilder.build();
+    }
+
+
+    /**
+     * This method authenticates user based on the credentials and update the
+     * csrftoken and session id for this session.
+     */
+    public static void authenticateSession(AviCredentials aviCredentials) throws IOException {
+        LOGGER.info("__INIT__ Inside authentication session for.. " + aviCredentials.getUsername());
+        JSONObject body = new JSONObject();
+        body.put("username", aviCredentials.getUsername());
+        if (aviCredentials.getPassword() != null && !aviCredentials.getPassword().isEmpty()) {
+            body.put("password", aviCredentials.getPassword());
+        } else if (aviCredentials.getToken() != null && !aviCredentials.getToken().isEmpty()) {
+            body.put("token", aviCredentials.getToken());
+        }
+        CloseableHttpClient httpClient = buildHttpClient(aviCredentials);
+        try {
+            String postUrl = getControllerURL(aviCredentials) + "/login";
+            HttpPost postRequest = new HttpPost(postUrl);
+            StringEntity input = new StringEntity(body.toString(), org.apache.hc.core5.http.ContentType.APPLICATION_JSON);
+            postRequest.addHeader("X-Avi-Version", aviCredentials.getVersion());
+            postRequest.addHeader("X-Avi-Tenant", aviCredentials.getTenant());
+            postRequest.setEntity(input);
+            CloseableHttpResponse response = httpClient.execute(postRequest);
+            try {
+                int statusCode = response.getCode();
+                if (statusCode > 299) {
+                    LOGGER.severe("Login faild with status code " + statusCode);
+                    throw new IOException("Failed : HTTP error code : " + statusCode);
+                }
+                String output = EntityUtils.toString(response.getEntity());
+                JSONObject result = new JSONObject(output);
+                String sessionCookieName = result.get("session_cookie_name").toString();
+                String csrftoken = null;
+                String sessionCookie = null;
+                Header[] headers = response.getHeaders("Set-Cookie");
+                for (Header header : headers) {
+                    List<HttpCookie> httpCookies = HttpCookie.parse(header.getValue());
+                    for (HttpCookie cookie : httpCookies) {
+                        if (cookie.getName().equals("csrftoken")) {
+                            csrftoken = cookie.getValue();
+                        } else if (cookie.getName().equals(sessionCookieName)) {
+                            sessionCookie = cookie.getValue();
+                        }
+                    }
+                }
+                aviCredentials.setCsrftoken(csrftoken);
+                aviCredentials.setSessionID(sessionCookie);
+                LOGGER.info("__DONE__ Authentication session success for:: " + aviCredentials.getUsername());
+            } finally {
+                response.close();
+            }
+        } catch (ConnectTimeoutException e) {
             throw e;
-		} finally {
-			if (null != httpClient) {
-				try {
-					httpClient.close();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+        } catch (org.apache.hc.core5.http.ParseException e) {
+            throw new IOException("Failed to parse response: " + e.getMessage(), e);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            if (null != httpClient) {
+                try {
+                    httpClient.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
-	public static String getSessionKey(AviCredentials aviCredentials) {
-		return aviCredentials.getController() + ":" + aviCredentials.getUsername() + ":" + aviCredentials.getPort();
-	}
+    public static String getSessionKey(AviCredentials aviCredentials) {
+        return aviCredentials.getController() + ":" + aviCredentials.getUsername() + ":" + aviCredentials.getPort();
+    }
 
-	/**
-	 * This method returns the controller URL based on controller IP and controller
-	 * port.
-	 * 
-	 * @return A String representing the controller URL.
-	 */
-	public static String getControllerURL(AviCredentials aviCredentials) {
-		StringBuffer sb = new StringBuffer();
-		if (aviCredentials.getController().startsWith("http")) {
-			if (Arrays.asList(80, 443).contains(aviCredentials.getPort())) {
-				sb.append(aviCredentials.getController());
-			} else {
-				sb.append(aviCredentials.getController());
-				sb.append(":");
-				sb.append(aviCredentials.getPort());
-			}
-		} else {
-			if (aviCredentials.getPort() == 443) {
-				sb.append("https://");
-				sb.append(aviCredentials.getController());
-			} else if (aviCredentials.getPort() == 80) {
-				sb.append("http://");
-				sb.append(aviCredentials.getController());
-			} else {
-				sb.append("https://");
-				sb.append(aviCredentials.getController());
-				sb.append(":");
-				sb.append(aviCredentials.getPort());
-			}
-		}
-		return sb.toString();
-	}
+    /**
+     * This method returns the controller URL based on controller IP and controller
+     * port.
+     *
+     * @return A String representing the controller URL.
+     */
+    public static String getControllerURL(AviCredentials aviCredentials) {
+        StringBuffer sb = new StringBuffer();
+        if (aviCredentials.getController().startsWith("http")) {
+            if (Arrays.asList(80, 443).contains(aviCredentials.getPort())) {
+                sb.append(aviCredentials.getController());
+            } else {
+                sb.append(aviCredentials.getController());
+                sb.append(":");
+                sb.append(aviCredentials.getPort());
+            }
+        } else {
+            if (aviCredentials.getPort() == 443) {
+                sb.append("https://");
+                sb.append(aviCredentials.getController());
+            } else if (aviCredentials.getPort() == 80) {
+                sb.append("http://");
+                sb.append(aviCredentials.getController());
+            } else {
+                sb.append("https://");
+                sb.append(aviCredentials.getController());
+                sb.append(":");
+                sb.append(aviCredentials.getPort());
+            }
+        }
+        return sb.toString();
+    }
 
-	/**
-	 * This method sets all HTTP request headers.
-	 * 
-	 * @param request A HttpRequestBase containing all require headers.
-	 * @throws Exception
-	 */
-	public static void buildHeaders(HttpRequestBase request, HashMap<String, String> userHeaders,
-			AviCredentials aviCredentials) throws Exception {
-		LOGGER.info("__INIT__ Inside buildHeaders..");
-		if (null == aviCredentials.getSessionID() || aviCredentials.getSessionID().isEmpty()) {
-			authenticateSession(aviCredentials);
-		}
-		request.addHeader("Content-Type", "application/json");
-		request.addHeader("X-Avi-Version", aviCredentials.getVersion());
-		request.addHeader("X-Avi-Tenant", aviCredentials.getTenant());
-		request.addHeader("X-CSRFToken", aviCredentials.getCsrftoken());
-		request.addHeader("Referer", getControllerURL(aviCredentials));
+    /**
+     * This method sets all HTTP request headers.
+     *
+     * @param request A ClassicHttpRequest containing all require headers.
+     * @throws Exception
+     */
+    public static void buildHeaders(ClassicHttpRequest request, HashMap<String, String> userHeaders,
+                                    AviCredentials aviCredentials) throws Exception {
+        LOGGER.info("__INIT__ Inside buildHeaders..");
+        if (null == aviCredentials.getSessionID() || aviCredentials.getSessionID().isEmpty()) {
+            authenticateSession(aviCredentials);
+        }
+        request.addHeader("Content-Type", "application/json");
+        request.addHeader("X-Avi-Version", aviCredentials.getVersion());
+        request.addHeader("X-Avi-Tenant", aviCredentials.getTenant());
+        request.addHeader("X-CSRFToken", aviCredentials.getCsrftoken());
+        request.addHeader("Referer", getControllerURL(aviCredentials));
 
-		request.addHeader("Cookie",
-				"csrftoken=" + aviCredentials.getCsrftoken() + "; " + "avi-sessionid=" + aviCredentials.getSessionID());
+        request.addHeader("Cookie",
+                "csrftoken=" + aviCredentials.getCsrftoken() + "; " + "avi-sessionid=" + aviCredentials.getSessionID());
 
-		if ((null != userHeaders) && (!userHeaders.isEmpty())) {
-			for (String key : userHeaders.keySet()) {
-				request.addHeader(key, userHeaders.get(key));
-			}
-		}
-		LOGGER.info("__DONE__ Inside buildHeaders..");
-	}
+        if ((null != userHeaders) && (!userHeaders.isEmpty())) {
+            for (String key : userHeaders.keySet()) {
+                request.addHeader(key, userHeaders.get(key));
+            }
+        }
+        LOGGER.info("__DONE__ Inside buildHeaders..");
+    }
 }
