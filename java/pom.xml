@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.vmware.avi.sdk</groupId>
 	<artifactId>avisdk</artifactId>
-	<version>30.2.7-POST1</version>
+	<version>30.2.7-post1</version>
 	<name>avisdk</name>
 	<description>Avi SDK is a java API which creates a session with controller and perform CRUD operations.</description>
 	<url>https://github.com/vmware/alb-sdk/tree/master/java</url>
@@ -110,13 +110,13 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>3.2.4</version>
 				<configuration>
 					<gpgArguments>
-						<arg>pinentry-mode</arg>
+						<arg>--pinentry-mode</arg>
 						<arg>loopback</arg>
 					</gpgArguments>
 					<useAgent>false</useAgent>
@@ -132,7 +132,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 	<properties>
