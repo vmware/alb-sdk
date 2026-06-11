@@ -52,7 +52,9 @@ jobs:
         id: get_sdk_version
         run: | 
           echo "::set-output name=AVI_VERSION::$(python ./python/version.py)"
+          echo "GITHUB_REF: $GITHUB_REF"
           JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
+          echo "JAVA_VERSION: $JAVA_VERSION"
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
             JAVA_VERSION="${JAVA_VERSION/post/\.}"
