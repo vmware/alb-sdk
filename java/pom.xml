@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vmware.avi.sdk</groupId>
     <artifactId>avisdk</artifactId>
-    <version>32.1.1-Post1</version>
+    <version>32.1.1-post1</version>
     <name>avisdk</name>
     <description>Avi SDK is a java API which creates a session with controller and perform CRUD operations.
     </description>
@@ -117,7 +117,7 @@
                 <version>3.2.4</version>
                 <configuration>
                     <gpgArguments>
-                        <arg>pinentry-mode</arg>
+                        <arg>--pinentry-mode</arg>
                         <arg>loopback</arg>
                     </gpgArguments>
                     <useAgent>false</useAgent>
