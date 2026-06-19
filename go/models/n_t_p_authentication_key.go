@@ -8,7 +8,7 @@ package models
 // swagger:model NTPAuthenticationKey
 type NTPAuthenticationKey struct {
 
-	// Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_MD5. Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_SHA256. Use of MD5 or SHA1 requires allow_legacy_sha1_ntp_auth to be enabled in SystemConfiguration. Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_SHA256. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Algorithm *string `json:"algorithm,omitempty"`
 
 	// NTP Authentication key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
