@@ -1376,7 +1376,7 @@
                     "type": "boolean"
                 },
                 "allow_unauthenticated_nodes": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field deprecated in 31.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "api_idle_timeout": {
