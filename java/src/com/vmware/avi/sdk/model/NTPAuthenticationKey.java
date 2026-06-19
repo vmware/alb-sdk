@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NTPAuthenticationKey  {
     @JsonProperty("algorithm")
-    private String algorithm = "NTP_AUTH_ALGORITHM_MD5";
+    private String algorithm = "NTP_AUTH_ALGORITHM_SHA256";
 
     @JsonProperty("key")
     private String key;
@@ -35,10 +35,11 @@ public class NTPAuthenticationKey  {
     /**
      * This is the getter method this will return the attribute value.
      * Message digest algorithm used for ntp authentication.
-     * Default is ntp_auth_algorithm_md5.
-     * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
+     * Default is ntp_auth_algorithm_sha256.
+     * Use of md5 or sha1 requires allow_legacy_sha1_ntp_auth to be enabled in systemconfiguration.
+     * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_SHA256.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_SHA256".
      * @return algorithm
      */
     public String getAlgorithm() {
@@ -48,10 +49,11 @@ public class NTPAuthenticationKey  {
     /**
      * This is the setter method to the attribute.
      * Message digest algorithm used for ntp authentication.
-     * Default is ntp_auth_algorithm_md5.
-     * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
+     * Default is ntp_auth_algorithm_sha256.
+     * Use of md5 or sha1 requires allow_legacy_sha1_ntp_auth to be enabled in systemconfiguration.
+     * Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_SHA256.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_MD5".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "NTP_AUTH_ALGORITHM_SHA256".
      * @param algorithm set the algorithm.
      */
     public void setAlgorithm(String  algorithm) {
