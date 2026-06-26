@@ -36220,12 +36220,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /gslbsmruntime:
+  /gslbhsmruntime:
     get:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: GET /gslbsmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: GET /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -36302,14 +36302,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntimeApiResponse'
+            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime
-      operationId: POST /gslbsmruntime
+      - GslbHSMRuntime
+      description: /gslbhsmruntime
+      operationId: POST /gslbhsmruntime
       consumes:
       - application/json
       produces:
@@ -36343,25 +36343,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
-  /gslbsmruntime/{uuid}:
+  /gslbhsmruntime/{uuid}:
     get:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbsmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36431,16 +36431,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbsmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36479,10 +36479,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36494,16 +36494,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbsmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -36542,10 +36542,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbSMRuntime object creation
+        description: GslbHSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbSMRuntime'
+          $ref: '#/definitions/GslbHSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -36557,16 +36557,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbSMRuntime'
+            $ref: '#/definitions/GslbHSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbSMRuntime
-      description: /gslbsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbsmruntime/{uuid}
+      - GslbHSMRuntime
+      description: /gslbhsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbhsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37014,12 +37014,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /gslbhsmruntime:
+  /gslbsmruntime:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: GET /gslbhsmruntime
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: GET /gslbsmruntime
       consumes:
       - application/json
       produces:
@@ -37096,14 +37096,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntimeApiResponse'
+            $ref: '#/definitions/GslbSMRuntimeApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime
-      operationId: POST /gslbhsmruntime
+      - GslbSMRuntime
+      description: /gslbsmruntime
+      operationId: POST /gslbsmruntime
       consumes:
       - application/json
       produces:
@@ -37137,25 +37137,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
-  /gslbhsmruntime/{uuid}:
+  /gslbsmruntime/{uuid}:
     get:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: GET /gslbhsmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: GET /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37225,16 +37225,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PUT /gslbhsmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: PUT /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37273,10 +37273,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -37288,16 +37288,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: PATCH /gslbhsmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: PATCH /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -37336,10 +37336,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: GslbHSMRuntime object creation
+        description: GslbSMRuntime object creation
         required: true
         schema:
-          $ref: '#/definitions/GslbHSMRuntime'
+          $ref: '#/definitions/GslbSMRuntime'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -37351,16 +37351,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GslbHSMRuntime'
+            $ref: '#/definitions/GslbSMRuntime'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - GslbHSMRuntime
-      description: /gslbhsmruntime/{uuid}/{uuid}
-      operationId: DELETE /gslbhsmruntime/{uuid}
+      - GslbSMRuntime
+      description: /gslbsmruntime/{uuid}/{uuid}
+      operationId: DELETE /gslbsmruntime/{uuid}
       consumes:
       - application/json
       produces:
@@ -71973,6 +71973,488 @@ paths:
             type: string
         '404':
           description: object not found
+  /debugvirtualservice:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: GET /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: cloud_uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_uuid=cloud-xyz.
+        type: string
+      - name: cloud_ref.name
+        in: query
+        description: Filter to get objects that belongs to a specific cloud usings
+          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
+        type: string
+      - name: cloud_ref.uuid
+        in: query
+        description: Filter to get objects that belongs to a specific cloud using
+          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
+        type: string
+        required: false
+      - name: name.contains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case sensitive search. Eg. name.contains=pool-.
+        type: string
+        required: false
+      - name: name.icontains
+        in: query
+        description: Filter to get objects with name that contains the parameter.
+          This is a case insensitive search. Eg. name.icontains=pool-.
+        type: string
+        required: false
+      - name: name.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. name.in=pool-1,pool-12.
+        type: string
+        required: false
+      - name: uuid.in
+        in: query
+        description: Filter to get objects that have a uuid matching any of the values
+          in the parameter list. Each value for this parameter is to comma separated.
+          Eg. uuid.in=<uuid-1>,<uuid-2>.
+        type: string
+        required: false
+      - name: search
+        in: query
+        description: Filter to get objects that contains the search string as value
+          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
+          be used to search under a specific field. This is achieved by sending the
+          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
+        type: string
+        required: false
+      - name: isearch
+        in: query
+        description: Filter to get objects that contains case insensitive search string.
+          Eg. isearch=(name,Vs-Pool-).
+        type: string
+        required: false
+      - name: limit_by
+        in: query
+        description: Filter to limit the number of objects in the response data. Eg.
+          limit_by=3.
+        type: string
+        required: false
+      - name: exclude
+        in: query
+        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
+          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
+        type: string
+        required: false
+      - name: sort
+        in: query
+        description: Parameter to sort the results with respect to a field. Eg. sort=name.
+        type: string
+        required: false
+      - name: page
+        in: query
+        description: Parameter to specify the desired page number. The page starts
+          from 1 and default is 1.
+        type: string
+        required: false
+      - name: page_size
+        in: query
+        description: Parameter to specify the maximum number of results to be returned
+          per page. The page_size can range from 1 to 200. Eg. page_size=5.
+        type: string
+        required: false
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualServiceApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice
+      operationId: POST /debugvirtualservice
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+  /debugvirtualservice/{uuid}:
+    get:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: GET /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PUT /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: PATCH /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: DebugVirtualService object creation
+        required: true
+        schema:
+          $ref: '#/definitions/DebugVirtualService'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/DebugVirtualService'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - DebugVirtualService
+      description: /debugvirtualservice/{uuid}/{uuid}
+      operationId: DELETE /debugvirtualservice/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /virtualservice:
     get:
       tags:
@@ -75870,488 +76352,6 @@ paths:
             type: string
         '401':
           description: log in failed
-        '404':
-          description: object not found
-  /debugvirtualservice:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: GET /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: cloud_uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_uuid=cloud-xyz.
-        type: string
-      - name: cloud_ref.name
-        in: query
-        description: Filter to get objects that belongs to a specific cloud usings
-          its name. This uses cloud name rather than uuid. Eg. cloud_ref.name=Default-Cloud.
-        type: string
-      - name: cloud_ref.uuid
-        in: query
-        description: Filter to get objects that belongs to a specific cloud using
-          its uuid. Eg. cloud_ref.uuid=cloud_uuid.
-        type: string
-        required: false
-      - name: name.contains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case sensitive search. Eg. name.contains=pool-.
-        type: string
-        required: false
-      - name: name.icontains
-        in: query
-        description: Filter to get objects with name that contains the parameter.
-          This is a case insensitive search. Eg. name.icontains=pool-.
-        type: string
-        required: false
-      - name: name.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. name.in=pool-1,pool-12.
-        type: string
-        required: false
-      - name: uuid.in
-        in: query
-        description: Filter to get objects that have a uuid matching any of the values
-          in the parameter list. Each value for this parameter is to comma separated.
-          Eg. uuid.in=<uuid-1>,<uuid-2>.
-        type: string
-        required: false
-      - name: search
-        in: query
-        description: Filter to get objects that contains the search string as value
-          for any of its fields. Eg. search=LEAST_CONN. The search filter can also
-          be used to search under a specific field. This is achieved by sending the
-          parameter as ?search=(<field>,<value>)|(<field>,<value>). Eg. search=(name,vs-pool-).
-        type: string
-        required: false
-      - name: isearch
-        in: query
-        description: Filter to get objects that contains case insensitive search string.
-          Eg. isearch=(name,Vs-Pool-).
-        type: string
-        required: false
-      - name: limit_by
-        in: query
-        description: Filter to limit the number of objects in the response data. Eg.
-          limit_by=3.
-        type: string
-        required: false
-      - name: exclude
-        in: query
-        description: Filter to exclude the uuid(s) contained in the parameter. Eg.
-          uuid.in=<uuid-1>,<uuid-2>&exclude=uuid.in.
-        type: string
-        required: false
-      - name: sort
-        in: query
-        description: Parameter to sort the results with respect to a field. Eg. sort=name.
-        type: string
-        required: false
-      - name: page
-        in: query
-        description: Parameter to specify the desired page number. The page starts
-          from 1 and default is 1.
-        type: string
-        required: false
-      - name: page_size
-        in: query
-        description: Parameter to specify the maximum number of results to be returned
-          per page. The page_size can range from 1 to 200. Eg. page_size=5.
-        type: string
-        required: false
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualServiceApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice
-      operationId: POST /debugvirtualservice
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-  /debugvirtualservice/{uuid}:
-    get:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: GET /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PUT /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: PATCH /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: DebugVirtualService object creation
-        required: true
-        schema:
-          $ref: '#/definitions/DebugVirtualService'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DebugVirtualService'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - DebugVirtualService
-      description: /debugvirtualservice/{uuid}/{uuid}
-      operationId: DELETE /debugvirtualservice/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
         '404':
           description: object not found
   /inventoryfaultconfig:
@@ -102328,58 +102328,59 @@ definitions:
           USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
           DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
           TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
-          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
-          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
-          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
-          CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
-          CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
-          CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
-          MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED,
-          SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED, SYSTEM_ROLLBACK_STARTED,
-          SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED, CONTROLLER_NODE_DB_REPLICATION_FAILED,
-          CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED, CONTROLLER_MEMORY_BALANCER_DEACTIVATED,
-          CONTROLLER_DISCONTINUOUS_TIME_CHANGE, CONTROLLER_PROCESS_MODE_TRANSITION,
-          CONTROLLER_PROCESS_TREND_TRANSITION, CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION,
-          LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH, USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION,
-          METRIC_THRESHOLD_UP_VIOLATION, LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF,
-          LICENSE_REMOVAL_NOTIF, METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY,
-          METRICS_DBSYNC_FAILURE, METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE,
-          OPENSTACK_ACCESS_SUCCESS, OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS,
-          OPENSTACK_SE_VM_CREATED, OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED,
-          OPENSTACK_VNIC_ADDED, OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED,
-          OPENSTACK_SE_CREATION_FAILURE, OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE,
-          OPENSTACK_VNIC_DELETION_FAILURE, OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE,
-          OPENSTACK_LBPROV_AUDIT_FAILURE, OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE,
-          OPENSTACK_LBPLUGIN_OP_SUCCESS, OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE,
-          OPENSTACK_TENANTS_DELETED, OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE,
-          AWS_ACCESS_SUCCESS, AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS,
-          AWS_SNS_ACCESS_FAILURE, AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE,
-          AWS_SQS_ACCESS_SUCCESS, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE,
-          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE,
-          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_NOTIFICATION_PROCESSING_FAILURE,
-          AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_ADDED,
-          AWS_ASG_NOTIFICATION_INSTANCE_REMOVED, AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS,
-          AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR, AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR,
-          AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED, CLOUD_AUTOSCALING_CONFIG_FAILURE,
-          CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE, CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE,
-          CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE, CLOUD_ROUTE_CREATION_FAILURE,
-          CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE, CLOUD_ROUTE_REMOVE_SUCCESS,
-          CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS, CLOUDSTACK_IMAGE_UPLOAD_FAILURE,
-          CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS, DOCKER_UCP_ACCESS_FAILURE,
-          DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS,
-          VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS, VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS,
-          LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS, LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS,
-          MESOS_ACCESS_SUCCESS, MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE,
-          MESOS_IMAGE_UPLOAD_SUCCESS, MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE,
-          MESOS_CREATE_SE_FAIL, MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE,
-          MESOS_STOP_SE_FAIL, MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS,
-          CC_SE_CREATED, CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE,
-          CC_SE_DELETION_DETECTED, CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED,
-          CC_VNIC_DELETION_FAILURE, CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED,
-          CC_IP_DETACH_FAILURE, CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE,
-          CC_UPDATE_VIP_FAILURE, CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE,
-          CC_GENERIC_FAILURE, CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE,
-          CC_CLUSTER_VIP_DECONFIG_SUCCESS, CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, USER_PASSWORD_CHANGE_ATTEMPT,
+          USER_PASSWORD_EXPIRE_ATTEMPT, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED, SSL_CERT_RENEW,
+          SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED, SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED,
+          CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE, CONTROLLER_LEADER_FAILOVER,
+          CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED, CONTROLLER_SERVICE_CRITICAL_FAILURE,
+          CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED, CLUSTER_CONFIG_FAILED,
+          SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE, MALFORMED_SECURE_KEY_EXCHANGE,
+          CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED, SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED,
+          SYSTEM_ROLLBACK_STARTED, SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED,
+          CONTROLLER_NODE_DB_REPLICATION_FAILED, CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED,
+          CONTROLLER_MEMORY_BALANCER_DEACTIVATED, CONTROLLER_DISCONTINUOUS_TIME_CHANGE,
+          CONTROLLER_PROCESS_MODE_TRANSITION, CONTROLLER_PROCESS_TREND_TRANSITION,
+          CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION, LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH,
+          USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION, METRIC_THRESHOLD_UP_VIOLATION,
+          LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF, LICENSE_REMOVAL_NOTIF,
+          METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY, METRICS_DBSYNC_FAILURE,
+          METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE, OPENSTACK_ACCESS_SUCCESS,
+          OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS, OPENSTACK_SE_VM_CREATED,
+          OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED, OPENSTACK_VNIC_ADDED,
+          OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED, OPENSTACK_SE_CREATION_FAILURE,
+          OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE, OPENSTACK_VNIC_DELETION_FAILURE,
+          OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE, OPENSTACK_LBPROV_AUDIT_FAILURE,
+          OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE, OPENSTACK_LBPLUGIN_OP_SUCCESS,
+          OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE, OPENSTACK_TENANTS_DELETED,
+          OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE, AWS_ACCESS_SUCCESS,
+          AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS, AWS_SNS_ACCESS_FAILURE,
+          AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE, AWS_SQS_ACCESS_SUCCESS,
+          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS,
+          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS,
+          AWS_ASG_NOTIFICATION_PROCESSING_FAILURE, AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS,
+          AWS_ASG_NOTIFICATION_INSTANCE_ADDED, AWS_ASG_NOTIFICATION_INSTANCE_REMOVED,
+          AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR,
+          AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR, AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED,
+          CLOUD_AUTOSCALING_CONFIG_FAILURE, CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE,
+          CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE, CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE,
+          CLOUD_ROUTE_CREATION_FAILURE, CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE,
+          CLOUD_ROUTE_REMOVE_SUCCESS, CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS,
+          CLOUDSTACK_IMAGE_UPLOAD_FAILURE, CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS,
+          DOCKER_UCP_ACCESS_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS,
+          DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS, VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS,
+          VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS, LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS,
+          LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS, MESOS_ACCESS_SUCCESS,
+          MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE, MESOS_IMAGE_UPLOAD_SUCCESS,
+          MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE, MESOS_CREATE_SE_FAIL,
+          MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE, MESOS_STOP_SE_FAIL,
+          MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS, CC_SE_CREATED,
+          CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE, CC_SE_DELETION_DETECTED,
+          CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED, CC_VNIC_DELETION_FAILURE,
+          CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED, CC_IP_DETACH_FAILURE,
+          CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE, CC_UPDATE_VIP_FAILURE,
+          CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE, CC_GENERIC_FAILURE,
+          CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE, CC_CLUSTER_VIP_DECONFIG_SUCCESS,
+          CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
           CC_MARATHON_SERVICE_PORT_ALREADY_IN_USE, CC_VIP_DNS_REGISTER_FAILURE, CC_TENANT_INIT_FAILURE,
           CC_HEALTH_FAILURE, CC_HEALTH_OK, CC_SE_STARTED, CC_SE_START_FAILURE, CC_SE_STOPPED,
           CC_SE_STOP_FAILURE, CC_VIP_PARK_INTF_SUCCESS, CC_VIP_PARK_INTF_FAILURE,
@@ -102482,9 +102483,9 @@ definitions:
           UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
           SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
           SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
-          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID,
+          NTP_WEAK_AUTH_ALGORITHM_CONFIGURED. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       not_cond:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -108707,6 +108708,26 @@ definitions:
           $ref: '#/definitions/CertificateManagementProfile'
       next:
         type: string
+  CertificateSecurityPolicy:
+    type: object
+    properties:
+      blocked_certificate_signature_algorithms:
+        description: Signature algorithm families whose certificates are blocked on
+          new imports. Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1,
+          SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384, SIGNATURE_ALGORITHM_SHA512,
+          SIGNATURE_ALGORITHM_ED25519. Field introduced in 32.1.3. Allowed with any
+          value in Enterprise, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
+      blocked_ocsp_request_hash_algorithms:
+        description: Hash algorithms not allowed for OCSP requests. Enum options -
+          OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field
+          introduced in 32.1.3. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: array
+        items:
+          type: string
   CertJwtStore:
     type: object
     required:
@@ -111084,20 +111105,40 @@ definitions:
     type: object
     properties:
       client_ip:
-        description: client ip. Allowed with any value in Enterprise, Essentials,
+        description: Client IP address. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
+      client_type:
+        description: Type of client used to initiate the operation, e.g. UI, CLI,
+          API. Field introduced in 32.2.1,32.1.3. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: string
+      error_message:
+        description: Error message if the operation failed. Field introduced in 32.2.1,32.1.3.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
+      request_path:
+        description: API request path that triggered the operation. Field introduced
+          in 32.2.1,32.1.3. Allowed with any value in Enterprise, Enterprise with
+          Cloud Services edition.
+        type: string
+      request_user:
+        description: Authenticated principal (actor) that performed the operation,
+          when different from the target user. Field introduced in 32.2.1,32.1.3.
+          Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+        type: string
       status:
-        description: Password link is sent or rejected. Allowed with any value in
-          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Operation status. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       user:
-        description: Matched username of email address. Allowed with any value in
-          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Username. Allowed with any value in Enterprise, Essentials, Basic,
+          Enterprise with Cloud Services edition.
         type: string
       user_email:
-        description: Email address of user. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+        description: Email address of user for password reset request flow. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: string
   ConfigVersionStatus:
     type: object
@@ -117928,6 +117969,11 @@ definitions:
           22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services
           edition.
         $ref: '#/definitions/NsxtT1SegDetails'
+      ntp_weak_auth_algorithm_event_details:
+        description: Details about NTP authentication keys configured with weak algorithms
+          (MD5/SHA1). Field introduced in 32.1.3. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        $ref: '#/definitions/NtpWeakAuthAlgorithmEventDetails'
       nw_subnet_clash_details:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -118585,58 +118631,59 @@ definitions:
           USER_NOT_AUTHORIZED_BY_ANY_RULE, CONFIG_SE_GRP_FLAVOR_UPDATE, API_VERSION_DEPRECATED,
           DNS_QUERY_ERROR, ASYNC_PATCH_STATUS, MERGED_ASYNC_PATCH_STATUS, CONFIG_EXPORT,
           TECHSUPPORT_COLLECTION_STARTED, TECHSUPPORT_COLLECTION_ONGOING, TECHSUPPORT_COLLECTION_SUCCESS,
-          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, SSL_CERT_EXPIRE,
-          SSL_KEY_EXPORTED, SSL_CERT_RENEW, SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED,
-          SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED, CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE,
-          CONTROLLER_LEADER_FAILOVER, CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED,
-          CONTROLLER_SERVICE_CRITICAL_FAILURE, CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED,
-          CLUSTER_CONFIG_FAILED, SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE,
-          MALFORMED_SECURE_KEY_EXCHANGE, CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED,
-          SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED, SYSTEM_ROLLBACK_STARTED,
-          SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED, CONTROLLER_NODE_DB_REPLICATION_FAILED,
-          CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED, CONTROLLER_MEMORY_BALANCER_DEACTIVATED,
-          CONTROLLER_DISCONTINUOUS_TIME_CHANGE, CONTROLLER_PROCESS_MODE_TRANSITION,
-          CONTROLLER_PROCESS_TREND_TRANSITION, CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION,
-          LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH, USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION,
-          METRIC_THRESHOLD_UP_VIOLATION, LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF,
-          LICENSE_REMOVAL_NOTIF, METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY,
-          METRICS_DBSYNC_FAILURE, METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE,
-          OPENSTACK_ACCESS_SUCCESS, OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS,
-          OPENSTACK_SE_VM_CREATED, OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED,
-          OPENSTACK_VNIC_ADDED, OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED,
-          OPENSTACK_SE_CREATION_FAILURE, OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE,
-          OPENSTACK_VNIC_DELETION_FAILURE, OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE,
-          OPENSTACK_LBPROV_AUDIT_FAILURE, OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE,
-          OPENSTACK_LBPLUGIN_OP_SUCCESS, OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE,
-          OPENSTACK_TENANTS_DELETED, OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE,
-          AWS_ACCESS_SUCCESS, AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS,
-          AWS_SNS_ACCESS_FAILURE, AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE,
-          AWS_SQS_ACCESS_SUCCESS, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE,
-          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE,
-          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS, AWS_ASG_NOTIFICATION_PROCESSING_FAILURE,
-          AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_ADDED,
-          AWS_ASG_NOTIFICATION_INSTANCE_REMOVED, AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS,
-          AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR, AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR,
-          AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED, CLOUD_AUTOSCALING_CONFIG_FAILURE,
-          CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE, CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE,
-          CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE, CLOUD_ROUTE_CREATION_FAILURE,
-          CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE, CLOUD_ROUTE_REMOVE_SUCCESS,
-          CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS, CLOUDSTACK_IMAGE_UPLOAD_FAILURE,
-          CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS, DOCKER_UCP_ACCESS_FAILURE,
-          DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS,
-          VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS, VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS,
-          LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS, LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS,
-          MESOS_ACCESS_SUCCESS, MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE,
-          MESOS_IMAGE_UPLOAD_SUCCESS, MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE,
-          MESOS_CREATE_SE_FAIL, MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE,
-          MESOS_STOP_SE_FAIL, MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS,
-          CC_SE_CREATED, CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE,
-          CC_SE_DELETION_DETECTED, CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED,
-          CC_VNIC_DELETION_FAILURE, CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED,
-          CC_IP_DETACH_FAILURE, CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE,
-          CC_UPDATE_VIP_FAILURE, CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE,
-          CC_GENERIC_FAILURE, CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE,
-          CC_CLUSTER_VIP_DECONFIG_SUCCESS, CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
+          TECHSUPPORT_COLLECTION_SUCCESS_WITH_ERROR, WARNING_EVENT, USER_PASSWORD_CHANGE_ATTEMPT,
+          USER_PASSWORD_EXPIRE_ATTEMPT, SSL_CERT_EXPIRE, SSL_KEY_EXPORTED, SSL_CERT_RENEW,
+          SSL_CERT_RENEW_FAILED, SSL_CERT_IGNORED, SSL_CERT_REVOKED, CONTROLLER_NODE_JOINED,
+          CONTROLLER_NODE_LEFT, CONTROLLER_SERVICE_FAILURE, CONTROLLER_LEADER_FAILOVER,
+          CONTROLLER_WARM_REBOOT, CONTROLLER_SERVICE_RESTORED, CONTROLLER_SERVICE_CRITICAL_FAILURE,
+          CONTROLLER_NODE_SHUTDOWN, CONTROLLER_NODE_STARTED, CLUSTER_CONFIG_FAILED,
+          SE_SECURE_KEY_EXCHANGE, CTLR_SECURE_KEY_EXCHANGE, MALFORMED_SECURE_KEY_EXCHANGE,
+          CLUSTIFY_CHECK_EVENT, SYSTEM_UPGRADE_STARTED, SYSTEM_UPGRADE_COMPLETE, SYSTEM_UPGRADE_ABORTED,
+          SYSTEM_ROLLBACK_STARTED, SYSTEM_ROLLBACK_COMPLETE, SYSTEM_ROLLBACK_ABORTED,
+          CONTROLLER_NODE_DB_REPLICATION_FAILED, CONTROLLER_PROCESS_STOPPED, CONTROLLER_MEMORY_BALANCER_DISABLED,
+          CONTROLLER_MEMORY_BALANCER_DEACTIVATED, CONTROLLER_DISCONTINUOUS_TIME_CHANGE,
+          CONTROLLER_PROCESS_MODE_TRANSITION, CONTROLLER_PROCESS_TREND_TRANSITION,
+          CONTROLLER_PROCESS_STOPPED_MEMORY_VIOLATION, LOG_MANAGER_TASKQUEUE_ABNORMAL_GROWTH,
+          USAGE_METERING_REGISTRATION, USAGE_METERING_DE_REGISTRATION, METRIC_THRESHOLD_UP_VIOLATION,
+          LICENSE_EXPIRY, ANOMALY, LICENSE_ADDITION_NOTIF, LICENSE_REMOVAL_NOTIF,
+          METRICS_DB_DISK_FULL, METRICS_DB_QUEUE_FULL, METRICS_DB_QUEUE_HEALTHY, METRICS_DBSYNC_FAILURE,
+          METRICS_GRPC_AUTH_FAILURE, OPENSTACK_ACCESS_FAILURE, OPENSTACK_ACCESS_SUCCESS,
+          OPENSTACK_IMAGE_UPLOAD_FAILURE, OPENSTACK_IMAGE_UPLOAD_SUCCESS, OPENSTACK_SE_VM_CREATED,
+          OPENSTACK_SE_VM_DELETED, OPENSTACK_SE_VM_DELETION_DETECTED, OPENSTACK_VNIC_ADDED,
+          OPENSTACK_VNIC_REMOVED, OPENSTACK_IP_DETACHED, OPENSTACK_IP_ATTACHED, OPENSTACK_SE_CREATION_FAILURE,
+          OPENSTACK_SE_DELETION_FAILURE, OPENSTACK_VNIC_ADDITION_FAILURE, OPENSTACK_VNIC_DELETION_FAILURE,
+          OPENSTACK_IP_DETACH_FAILURE, OPENSTACK_IP_ATTACH_FAILURE, OPENSTACK_LBPROV_AUDIT_FAILURE,
+          OPENSTACK_LBPROV_AUDIT_SUCCESS, OPENSTACK_LBPLUGIN_OP_FAILURE, OPENSTACK_LBPLUGIN_OP_SUCCESS,
+          OPENSTACK_SYNC_SERVICES_SUCCESS, OPENSTACK_SYNC_SERVICES_FAILURE, OPENSTACK_TENANTS_DELETED,
+          OPENSTACK_API_VERSION_CHECK_FAILED, AWS_ACCESS_FAILURE, AWS_ACCESS_SUCCESS,
+          AWS_IMAGE_UPLOAD_FAILURE, AWS_IMAGE_UPLOAD_SUCCESS, AWS_SNS_ACCESS_FAILURE,
+          AWS_SNS_ACCESS_SUCCESS, AWS_SQS_ACCESS_FAILURE, AWS_SQS_ACCESS_SUCCESS,
+          AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_PUT_NOTIFICATION_CONFIGURATION_SUCCESS,
+          AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_FAILURE, AWS_ASG_DELETE_NOTIFICATION_CONFIGURATION_SUCCESS,
+          AWS_ASG_NOTIFICATION_PROCESSING_FAILURE, AWS_ASG_NOTIFICATION_PROCESSING_SUCCESS,
+          AWS_ASG_NOTIFICATION_INSTANCE_ADDED, AWS_ASG_NOTIFICATION_INSTANCE_REMOVED,
+          AWS_ASG_ACCESS_FAILURE, AWS_ASG_ACCESS_SUCCESS, AWS_ASG_NOTIFICATION_INSTANCE_LAUNCH_ERROR,
+          AWS_ASG_NOTIFICATION_INSTANCE_TERMINATE_ERROR, AWS_ASG_NOTIFICATION_AUTOSCALE_GROUP_DELETED,
+          CLOUD_AUTOSCALING_CONFIG_FAILURE, CLOUD_AUTOSCALING_DECONFIG_FAILURE, CLOUD_AUTOSCALING_ASG_ADD_FAILURE,
+          CLOUD_AUTOSCALING_ASG_REMOVE_FAILURE, CLOUD_AUTOSCALING_NOTIFICATION_PROCESSING_FAILURE,
+          CLOUD_ROUTE_CREATION_FAILURE, CLOUD_ROUTE_CREATION_SUCCESS, CLOUD_ROUTE_REMOVE_FAILURE,
+          CLOUD_ROUTE_REMOVE_SUCCESS, CLOUDSTACK_ACCESS_FAILURE, CLOUDSTACK_ACCESS_SUCCESS,
+          CLOUDSTACK_IMAGE_UPLOAD_FAILURE, CLOUDSTACK_IMAGE_UPLOAD_SUCCESS, DOCKER_UCP_ACCESS_SUCCESS,
+          DOCKER_UCP_ACCESS_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_FAILURE, DOCKER_UCP_IMAGE_UPLOAD_SUCCESS,
+          DOCKER_UCP_IMAGE_UPLOAD_IN_PROGRESS, VCA_ACCESS_FAILURE, VCA_ACCESS_SUCCESS,
+          VCA_IMAGE_UPLOAD_FAILURE, VCA_IMAGE_UPLOAD_SUCCESS, LS_ACCESS_FAILURE, LS_ACCESS_SUCCESS,
+          LS_IMAGE_UPLOAD_FAILURE, LS_IMAGE_UPLOAD_SUCCESS, MESOS_ACCESS_SUCCESS,
+          MESOS_ACCESS_FAILURE, MESOS_IMAGE_UPLOAD_FAILURE, MESOS_IMAGE_UPLOAD_SUCCESS,
+          MESOS_IMAGE_UPLOAD_IN_PROGRESS, MESOS_CREATED_SE, MESOS_CREATE_SE_FAIL,
+          MESOS_DELETED_SE, MESOS_DELETE_SE_FAIL, MESOS_STOPPED_SE, MESOS_STOP_SE_FAIL,
+          MESOS_STARTED_SE, MESOS_START_SE_FAIL, MESOS_UPDATED_HOSTS, CC_SE_CREATED,
+          CC_SE_CREATION_FAILURE, CC_SE_DELETED, CC_SE_DELETION_FAILURE, CC_SE_DELETION_DETECTED,
+          CC_VNIC_ADDED, CC_VNIC_ADDITION_FAILURE, CC_VNIC_DELETED, CC_VNIC_DELETION_FAILURE,
+          CC_IP_ATTACHED, CC_IP_ATTACH_FAILURE, CC_IP_DETACHED, CC_IP_DETACH_FAILURE,
+          CC_SYNC_SERVICES_SUCCESS, CC_SYNC_SERVICES_FAILURE, CC_UPDATE_VIP_FAILURE,
+          CC_DELETE_VIP_FAILURE, CC_CONFIG_FAILURE, CC_DECONFIG_FAILURE, CC_GENERIC_FAILURE,
+          CC_CLUSTER_VIP_CONFIG_SUCCESS, CC_CLUSTER_VIP_CONFIG_FAILURE, CC_CLUSTER_VIP_DECONFIG_SUCCESS,
+          CC_CLUSTER_VIP_DECONFIG_FAILURE, CC_MARATHON_SERVICE_PORT_OUTSIDE_VALID_RANGE,
           CC_MARATHON_SERVICE_PORT_ALREADY_IN_USE, CC_VIP_DNS_REGISTER_FAILURE, CC_TENANT_INIT_FAILURE,
           CC_HEALTH_FAILURE, CC_HEALTH_OK, CC_SE_STARTED, CC_SE_START_FAILURE, CC_SE_STOPPED,
           CC_SE_STOP_FAILURE, CC_VIP_PARK_INTF_SUCCESS, CC_VIP_PARK_INTF_FAILURE,
@@ -118739,9 +118786,9 @@ definitions:
           UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
           SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
           SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
-          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.'
+          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID,
+          NTP_WEAK_AUTH_ALGORITHM_CONFIGURED. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
       event_pages:
         description: Pages in which event should come up. Allowed with any value in
@@ -131178,11 +131225,12 @@ definitions:
     properties:
       algorithm:
         description: Message Digest Algorithm used for NTP authentication. Default
-          is NTP_AUTH_ALGORITHM_MD5. Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          is NTP_AUTH_ALGORITHM_SHA256. Use of MD5 or SHA1 requires allow_legacy_sha1_ntp_auth
+          to be enabled in SystemConfiguration. Enum options - NTP_AUTH_ALGORITHM_MD5,
+          NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_SHA256. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
-        default: NTP_AUTH_ALGORITHM_MD5
+        default: NTP_AUTH_ALGORITHM_SHA256
       key:
         description: NTP Authentication key. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
@@ -131230,6 +131278,14 @@ definitions:
         description: IP Address of the NTP Server. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/IpAddr'
+  NtpWeakAuthAlgorithmEventDetails:
+    type: object
+    properties:
+      description:
+        description: Comma-separated list of key numbers using weak NTP auth algorithms
+          (MD5 or SHA1). Field introduced in 32.1.3. Allowed with any value in Enterprise,
+          Enterprise with Cloud Services edition.
+        type: string
   NuageSDNController:
     type: object
     properties:
@@ -131665,6 +131721,14 @@ definitions:
         type: integer
         default: 86400
         format: uint32
+      ocsp_request_hash_algorithms:
+        description: Hash algorithm used to construct the OCSP CertID in requests.
+          Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
+          Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
       ocsp_resp_timeout:
         description: Time in seconds that the system waits for a reply from the OCSP
           responder before dropping the connection. Field introduced in 20.1.1. Unit
@@ -150966,10 +151030,23 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/AdminAuthConfiguration'
+      allow_legacy_sha1_ntp_auth:
+        description: Allow NTP authentication using legacy MD5 or SHA1 algorithms.
+          When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning
+          event is generated in the controller UI. When disabled (default), only SHA256
+          or stronger is accepted and configuring MD5 or SHA1 results in an API error.
+          Field introduced in 32.1.3. Allowed with any value in Enterprise, Enterprise
+          with Cloud Services edition.
+        type: boolean
       avi_email_login_password:
         description: Password for avi_email_login user. Field introduced in 31.2.1.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
         type: string
+      certificate_security_policy:
+        description: Certificate security policy for the system. Field introduced
+          in 32.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services
+          edition.
+        $ref: '#/definitions/CertificateSecurityPolicy'
       common_criteria_mode:
         description: Common criteria mode's current state. Field introduced in 20.1.3.
           Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
