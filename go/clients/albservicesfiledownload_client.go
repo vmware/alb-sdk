@@ -69,14 +69,6 @@ func (client *ALBServicesFileDownloadClient) Create(obj *models.ALBServicesFileD
 	return robj, err
 }
 
-// Update an existing ALBServicesFileDownload object
-func (client *ALBServicesFileDownloadClient) Update(obj *models.ALBServicesFileDownload, options ...session.ApiOptionsParams) (*models.ALBServicesFileDownload, error) {
-	var robj *models.ALBServicesFileDownload
-	path := client.getAPIPath(*obj.UUID)
-	err := client.aviSession.Put(path, obj, &robj, options...)
-	return robj, err
-}
-
 // Patch an existing ALBServicesFileDownload object specified using uuid
 // patchOp: Patch operation - add, replace, or delete
 // patch: Patch payload should be compatible with the models.ALBServicesFileDownload
@@ -95,15 +87,6 @@ func (client *ALBServicesFileDownloadClient) Delete(uuid string, options ...sess
 	} else {
 		return client.aviSession.DeleteObject(client.getAPIPath(uuid), options...)
 	}
-}
-
-// DeleteByName - Delete an existing ALBServicesFileDownload object with a given name
-func (client *ALBServicesFileDownloadClient) DeleteByName(name string, options ...session.ApiOptionsParams) error {
-	res, err := client.GetByName(name, options...)
-	if err != nil {
-		return err
-	}
-	return client.Delete(*res.UUID, options...)
 }
 
 // GetAviSession
