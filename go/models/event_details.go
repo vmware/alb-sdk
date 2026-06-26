@@ -398,6 +398,9 @@ type EventDetails struct {
 	// NSX-T Tier1(s) Segment(s) event details. Field introduced in 22.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	NsxtT1SegDetails *NsxtT1SegDetails `json:"nsxt_t1_seg_details,omitempty"`
 
+	// Details about NTP authentication keys configured with weak algorithms (MD5/SHA1). Field introduced in 32.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	NtpWeakAuthAlgorithmEventDetails *NtpWeakAuthAlgorithmEventDetails `json:"ntp_weak_auth_algorithm_event_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NwSubnetClashDetails *NetworkSubnetClash `json:"nw_subnet_clash_details,omitempty"`
 
