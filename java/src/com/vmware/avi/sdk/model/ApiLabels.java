@@ -1,0 +1,132 @@
+/*
+ * Copyright 2021 VMware, Inc.
+ * SPDX-License-Identifier: Apache License 2.0
+ */
+
+package com.vmware.avi.sdk.model;
+
+import java.util.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+/**
+ * The ApiLabels is a POJO class extends AviRestResource that used for creating
+ * ApiLabels.
+ *
+ * @version 1.0
+ * @since 
+ *
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ApiLabels  {
+    @JsonProperty("enabled")
+    private Boolean enabled;
+
+    @JsonProperty("labels")
+    private List<String> labels;
+
+
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enables the labels configuration.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enables the labels configuration.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param enabled set the enabled.
+     */
+    public void setEnabled(Boolean  enabled) {
+        this.enabled = enabled;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * The list of labels to be applied to the api.
+     * Field introduced in 32.2.1.
+     * Maximum of 256 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return labels
+     */
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    /**
+     * This is the setter method. this will set the labels
+     * The list of labels to be applied to the api.
+     * Field introduced in 32.2.1.
+     * Maximum of 256 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return labels
+     */
+    public void setLabels(List<String>  labels) {
+        this.labels = labels;
+    }
+
+    /**
+     * This is the setter method this will set the labels
+     * The list of labels to be applied to the api.
+     * Field introduced in 32.2.1.
+     * Maximum of 256 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return labels
+     */
+    public ApiLabels addLabelsItem(String labelsItem) {
+      if (this.labels == null) {
+        this.labels = new ArrayList<String>();
+      }
+      this.labels.add(labelsItem);
+      return this;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+      if (this == o) {
+          return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+          return false;
+      }
+      ApiLabels objApiLabels = (ApiLabels) o;
+      return   Objects.equals(this.enabled, objApiLabels.enabled)&&
+  Objects.equals(this.labels, objApiLabels.labels);
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder sb = new StringBuilder();
+      sb.append("class ApiLabels {\n");
+                  sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+                        sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+                  sb.append("}");
+      return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+      if (o == null) {
+          return "null";
+      }
+      return o.toString().replace("\n", "\n    ");
+    }
+}

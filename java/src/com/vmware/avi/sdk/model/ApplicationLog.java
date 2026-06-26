@@ -30,6 +30,12 @@ public class ApplicationLog  {
     @JsonProperty("all_response_headers")
     private String allResponseHeaders;
 
+    @JsonProperty("api_label_ids")
+    private List<Integer> apiLabelIds;
+
+    @JsonProperty("api_log")
+    private ApiLog apiLog;
+
     @JsonProperty("app_response_time")
     private Integer appResponseTime;
 
@@ -492,6 +498,69 @@ public class ApplicationLog  {
      */
     public void setAllResponseHeaders(String  allResponseHeaders) {
         this.allResponseHeaders = allResponseHeaders;
+    }
+    /**
+     * This is the getter method this will return the attribute value.
+     * List of label id's acciciated with this requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return apiLabelIds
+     */
+    public List<Integer> getApiLabelIds() {
+        return apiLabelIds;
+    }
+
+    /**
+     * This is the setter method. this will set the apiLabelIds
+     * List of label id's acciciated with this requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return apiLabelIds
+     */
+    public void setApiLabelIds(List<Integer>  apiLabelIds) {
+        this.apiLabelIds = apiLabelIds;
+    }
+
+    /**
+     * This is the setter method this will set the apiLabelIds
+     * List of label id's acciciated with this requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return apiLabelIds
+     */
+    public ApplicationLog addApiLabelIdsItem(Integer apiLabelIdsItem) {
+      if (this.apiLabelIds == null) {
+        this.apiLabelIds = new ArrayList<Integer>();
+      }
+      this.apiLabelIds.add(apiLabelIdsItem);
+      return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Describe all aspects of the api module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return apiLog
+     */
+    public ApiLog getApiLog() {
+        return apiLog;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Describe all aspects of the api module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param apiLog set the apiLog.
+     */
+    public void setApiLog(ApiLog apiLog) {
+        this.apiLog = apiLog;
     }
 
     /**
@@ -3662,7 +3731,9 @@ public class ApplicationLog  {
   Objects.equals(this.requestBodyUpdated, objApplicationLog.requestBodyUpdated)&&
   Objects.equals(this.sslNamedGroup, objApplicationLog.sslNamedGroup)&&
   Objects.equals(this.sslSignatureAlgorithm, objApplicationLog.sslSignatureAlgorithm)&&
-  Objects.equals(this.learningStatus, objApplicationLog.learningStatus);
+  Objects.equals(this.learningStatus, objApplicationLog.learningStatus)&&
+  Objects.equals(this.apiLabelIds, objApplicationLog.apiLabelIds)&&
+  Objects.equals(this.apiLog, objApplicationLog.apiLog);
     }
 
     @Override
@@ -3672,6 +3743,8 @@ public class ApplicationLog  {
                   sb.append("    adf: ").append(toIndentedString(adf)).append("\n");
                         sb.append("    allRequestHeaders: ").append(toIndentedString(allRequestHeaders)).append("\n");
                         sb.append("    allResponseHeaders: ").append(toIndentedString(allResponseHeaders)).append("\n");
+                        sb.append("    apiLabelIds: ").append(toIndentedString(apiLabelIds)).append("\n");
+                        sb.append("    apiLog: ").append(toIndentedString(apiLog)).append("\n");
                         sb.append("    appResponseTime: ").append(toIndentedString(appResponseTime)).append("\n");
                         sb.append("    authStatus: ").append(toIndentedString(authStatus)).append("\n");
                         sb.append("    avgIngressLatencyBe: ").append(toIndentedString(avgIngressLatencyBe)).append("\n");

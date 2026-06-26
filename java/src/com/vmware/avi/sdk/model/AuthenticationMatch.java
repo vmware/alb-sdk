@@ -27,6 +27,9 @@ public class AuthenticationMatch  {
     @JsonProperty("host_hdr")
     private HostHdrMatch hostHdr;
 
+    @JsonProperty("label")
+    private LabelMatch label;
+
     @JsonProperty("path")
     private PathMatch path;
 
@@ -82,6 +85,32 @@ public class AuthenticationMatch  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configure label match for api endpoint labels.
+     * Uses auth scope to match labels attached by the waap module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return label
+     */
+    public LabelMatch getLabel() {
+        return label;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configure label match for api endpoint labels.
+     * Uses auth scope to match labels attached by the waap module.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param label set the label.
+     */
+    public void setLabel(LabelMatch label) {
+        this.label = label;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Configure request paths.
      * Field introduced in 18.2.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -116,7 +145,8 @@ public class AuthenticationMatch  {
       AuthenticationMatch objAuthenticationMatch = (AuthenticationMatch) o;
       return   Objects.equals(this.clientIp, objAuthenticationMatch.clientIp)&&
   Objects.equals(this.path, objAuthenticationMatch.path)&&
-  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr);
+  Objects.equals(this.hostHdr, objAuthenticationMatch.hostHdr)&&
+  Objects.equals(this.label, objAuthenticationMatch.label);
     }
 
     @Override
@@ -125,6 +155,7 @@ public class AuthenticationMatch  {
       sb.append("class AuthenticationMatch {\n");
                   sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
                         sb.append("    hostHdr: ").append(toIndentedString(hostHdr)).append("\n");
+                        sb.append("    label: ").append(toIndentedString(label)).append("\n");
                         sb.append("    path: ").append(toIndentedString(path)).append("\n");
                   sb.append("}");
       return sb.toString();

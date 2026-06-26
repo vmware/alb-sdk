@@ -61,7 +61,7 @@ public class IpAddrTypeConfig  {
      * This is the getter method this will return the attribute value.
      * Periodicity override for this ip type in minutes.
      * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 5-30.
+     * Allowed values are 1-30.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -76,7 +76,7 @@ public class IpAddrTypeConfig  {
      * This is the setter method to the attribute.
      * Periodicity override for this ip type in minutes.
      * If not set, uses ip_advertisement_profile.default_periodicity.
-     * Allowed values are 5-30.
+     * Allowed values are 1-30.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

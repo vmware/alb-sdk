@@ -285,6 +285,9 @@ public class AnalyticsProfile extends AviRestResource  {
     @JsonProperty("uuid")
     private String uuid;
 
+    @JsonProperty("waap_classification_disabled_penalty")
+    private Float waapClassificationDisabledPenalty = 50.0f;
+
 
 
     /**
@@ -2500,6 +2503,30 @@ public class AnalyticsProfile extends AviRestResource  {
         this.uuid = uuid;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Penalty points per disabled orphan/zombie classification in waap.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.0f.
+     * @return waapClassificationDisabledPenalty
+     */
+    public Float getWaapClassificationDisabledPenalty() {
+        return waapClassificationDisabledPenalty;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Penalty points per disabled orphan/zombie classification in waap.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 50.0f.
+     * @param waapClassificationDisabledPenalty set the waapClassificationDisabledPenalty.
+     */
+    public void setWaapClassificationDisabledPenalty(Float  waapClassificationDisabledPenalty) {
+        this.waapClassificationDisabledPenalty = waapClassificationDisabledPenalty;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -2596,7 +2623,8 @@ public class AnalyticsProfile extends AviRestResource  {
   Objects.equals(this.markers, objAnalyticsProfile.markers)&&
   Objects.equals(this.latencyAuditProps, objAnalyticsProfile.latencyAuditProps)&&
   Objects.equals(this.timeTrackerProps, objAnalyticsProfile.timeTrackerProps)&&
-  Objects.equals(this.excludeConnDropClientSmallWindowAsError, objAnalyticsProfile.excludeConnDropClientSmallWindowAsError);
+  Objects.equals(this.excludeConnDropClientSmallWindowAsError, objAnalyticsProfile.excludeConnDropClientSmallWindowAsError)&&
+  Objects.equals(this.waapClassificationDisabledPenalty, objAnalyticsProfile.waapClassificationDisabledPenalty);
     }
 
     @Override
@@ -2690,6 +2718,7 @@ public class AnalyticsProfile extends AviRestResource  {
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    timeTrackerProps: ").append(toIndentedString(timeTrackerProps)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                        sb.append("    waapClassificationDisabledPenalty: ").append(toIndentedString(waapClassificationDisabledPenalty)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

@@ -129,6 +129,12 @@ public class VserverL7MetricsObj  {
     @JsonProperty("avg_resp_5xx_avi_errors")
     private Float avgResp5XxAviErrors;
 
+    @JsonProperty("avg_responses_2xx_api")
+    private Float avgResponses2XxApi;
+
+    @JsonProperty("avg_responses_2xx_nonapi")
+    private Float avgResponses2XxNonapi;
+
     @JsonProperty("avg_rum_client_data_transfer_time")
     private Float avgRumClientDataTransferTime;
 
@@ -236,6 +242,75 @@ public class VserverL7MetricsObj  {
 
     @JsonProperty("avg_uri_length")
     private Float avgUriLength;
+
+    @JsonProperty("avg_waap_active_api_count")
+    private Float avgWaapActiveApiCount;
+
+    @JsonProperty("avg_waap_active_api_latency")
+    private Float avgWaapActiveApiLatency;
+
+    @JsonProperty("avg_waap_authentication_errors")
+    private Float avgWaapAuthenticationErrors;
+
+    @JsonProperty("avg_waap_hits")
+    private Float avgWaapHits;
+
+    @JsonProperty("avg_waap_orphan_api_count")
+    private Float avgWaapOrphanApiCount;
+
+    @JsonProperty("avg_waap_rate_limiting_errors")
+    private Float avgWaapRateLimitingErrors;
+
+    @JsonProperty("avg_waap_redirects")
+    private Float avgWaapRedirects;
+
+    @JsonProperty("avg_waap_responses_301")
+    private Float avgWaapResponses301;
+
+    @JsonProperty("avg_waap_responses_302")
+    private Float avgWaapResponses302;
+
+    @JsonProperty("avg_waap_responses_303")
+    private Float avgWaapResponses303;
+
+    @JsonProperty("avg_waap_responses_307")
+    private Float avgWaapResponses307;
+
+    @JsonProperty("avg_waap_responses_308")
+    private Float avgWaapResponses308;
+
+    @JsonProperty("avg_waap_responses_400")
+    private Float avgWaapResponses400;
+
+    @JsonProperty("avg_waap_responses_401")
+    private Float avgWaapResponses401;
+
+    @JsonProperty("avg_waap_responses_403")
+    private Float avgWaapResponses403;
+
+    @JsonProperty("avg_waap_responses_407")
+    private Float avgWaapResponses407;
+
+    @JsonProperty("avg_waap_responses_429")
+    private Float avgWaapResponses429;
+
+    @JsonProperty("avg_waap_responses_4xx")
+    private Float avgWaapResponses4Xx;
+
+    @JsonProperty("avg_waap_responses_5xx")
+    private Float avgWaapResponses5Xx;
+
+    @JsonProperty("avg_waap_shadow_api_count")
+    private Float avgWaapShadowApiCount;
+
+    @JsonProperty("avg_waap_shadow_api_latency")
+    private Float avgWaapShadowApiLatency;
+
+    @JsonProperty("avg_waap_violation_count")
+    private Float avgWaapViolationCount;
+
+    @JsonProperty("avg_waap_zombie_api_count")
+    private Float avgWaapZombieApiCount;
 
     @JsonProperty("avg_waf_attacks")
     private Float avgWafAttacks;
@@ -501,6 +576,12 @@ public class VserverL7MetricsObj  {
     @JsonProperty("sum_resp_5xx")
     private Float sumResp5Xx;
 
+    @JsonProperty("sum_responses_2xx_api")
+    private Float sumResponses2XxApi;
+
+    @JsonProperty("sum_responses_2xx_nonapi")
+    private Float sumResponses2XxNonapi;
+
     @JsonProperty("sum_rum_client_data_transfer_time")
     private Float sumRumClientDataTransferTime;
 
@@ -515,6 +596,45 @@ public class VserverL7MetricsObj  {
 
     @JsonProperty("sum_uri_length")
     private Float sumUriLength;
+
+    @JsonProperty("sum_waap_active_api_count")
+    private Float sumWaapActiveApiCount;
+
+    @JsonProperty("sum_waap_active_api_latency")
+    private Float sumWaapActiveApiLatency;
+
+    @JsonProperty("sum_waap_hits")
+    private Float sumWaapHits;
+
+    @JsonProperty("sum_waap_orphan_api_count")
+    private Float sumWaapOrphanApiCount;
+
+    @JsonProperty("sum_waap_responses_400")
+    private Float sumWaapResponses400;
+
+    @JsonProperty("sum_waap_responses_401")
+    private Float sumWaapResponses401;
+
+    @JsonProperty("sum_waap_responses_403")
+    private Float sumWaapResponses403;
+
+    @JsonProperty("sum_waap_responses_4xx")
+    private Float sumWaapResponses4Xx;
+
+    @JsonProperty("sum_waap_responses_5xx")
+    private Float sumWaapResponses5Xx;
+
+    @JsonProperty("sum_waap_shadow_api_count")
+    private Float sumWaapShadowApiCount;
+
+    @JsonProperty("sum_waap_shadow_api_latency")
+    private Float sumWaapShadowApiLatency;
+
+    @JsonProperty("sum_waap_violation_count")
+    private Float sumWaapViolationCount;
+
+    @JsonProperty("sum_waap_zombie_api_count")
+    private Float sumWaapZombieApiCount;
 
     @JsonProperty("sum_waf_attacks")
     private Float sumWafAttacks;
@@ -1405,6 +1525,54 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Average 2xx responses for all apis in this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgResponses2XxApi
+     */
+    public Float getAvgResponses2XxApi() {
+        return avgResponses2XxApi;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average 2xx responses for all apis in this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgResponses2XxApi set the avgResponses2XxApi.
+     */
+    public void setAvgResponses2XxApi(Float  avgResponses2XxApi) {
+        this.avgResponses2XxApi = avgResponses2XxApi;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Average 2xx responses for all non-apis in this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgResponses2XxNonapi
+     */
+    public Float getAvgResponses2XxNonapi() {
+        return avgResponses2XxNonapi;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average 2xx responses for all non-apis in this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgResponses2XxNonapi set the avgResponses2XxNonapi.
+     */
+    public void setAvgResponses2XxNonapi(Float  avgResponses2XxNonapi) {
+        this.avgResponses2XxNonapi = avgResponses2XxNonapi;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Total client data transfer time by client.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2205,6 +2373,558 @@ public class VserverL7MetricsObj  {
      */
     public void setAvgUriLength(Float  avgUriLength) {
         this.avgUriLength = avgUriLength;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of requests matching active api endpoints per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapActiveApiCount
+     */
+    public Float getAvgWaapActiveApiCount() {
+        return avgWaapActiveApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of requests matching active api endpoints per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapActiveApiCount set the avgWaapActiveApiCount.
+     */
+    public void setAvgWaapActiveApiCount(Float  avgWaapActiveApiCount) {
+        this.avgWaapActiveApiCount = avgWaapActiveApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Average client transaction latency for active api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapActiveApiLatency
+     */
+    public Float getAvgWaapActiveApiLatency() {
+        return avgWaapActiveApiLatency;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average client transaction latency for active api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapActiveApiLatency set the avgWaapActiveApiLatency.
+     */
+    public void setAvgWaapActiveApiLatency(Float  avgWaapActiveApiLatency) {
+        this.avgWaapActiveApiLatency = avgWaapActiveApiLatency;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapAuthenticationErrors
+     */
+    public Float getAvgWaapAuthenticationErrors() {
+        return avgWaapAuthenticationErrors;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of authentication errors (401 unauthorized, 403 forbidden, and 407 proxy authentication required responses) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapAuthenticationErrors set the avgWaapAuthenticationErrors.
+     */
+    public void setAvgWaapAuthenticationErrors(Float  avgWaapAuthenticationErrors) {
+        this.avgWaapAuthenticationErrors = avgWaapAuthenticationErrors;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Average waap hits for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapHits
+     */
+    public Float getAvgWaapHits() {
+        return avgWaapHits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average waap hits for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapHits set the avgWaapHits.
+     */
+    public void setAvgWaapHits(Float  avgWaapHits) {
+        this.avgWaapHits = avgWaapHits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of orphan api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapOrphanApiCount
+     */
+    public Float getAvgWaapOrphanApiCount() {
+        return avgWaapOrphanApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of orphan api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapOrphanApiCount set the avgWaapOrphanApiCount.
+     */
+    public void setAvgWaapOrphanApiCount(Float  avgWaapOrphanApiCount) {
+        this.avgWaapOrphanApiCount = avgWaapOrphanApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapRateLimitingErrors
+     */
+    public Float getAvgWaapRateLimitingErrors() {
+        return avgWaapRateLimitingErrors;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of rate limiting errors (429 too many requests responses) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapRateLimitingErrors set the avgWaapRateLimitingErrors.
+     */
+    public void setAvgWaapRateLimitingErrors(Float  avgWaapRateLimitingErrors) {
+        this.avgWaapRateLimitingErrors = avgWaapRateLimitingErrors;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapRedirects
+     */
+    public Float getAvgWaapRedirects() {
+        return avgWaapRedirects;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of http redirect responses (301, 302, 303, 307, 308) for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapRedirects set the avgWaapRedirects.
+     */
+    public void setAvgWaapRedirects(Float  avgWaapRedirects) {
+        this.avgWaapRedirects = avgWaapRedirects;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 301 moved permanently responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses301
+     */
+    public Float getAvgWaapResponses301() {
+        return avgWaapResponses301;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 301 moved permanently responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses301 set the avgWaapResponses301.
+     */
+    public void setAvgWaapResponses301(Float  avgWaapResponses301) {
+        this.avgWaapResponses301 = avgWaapResponses301;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 302 found responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses302
+     */
+    public Float getAvgWaapResponses302() {
+        return avgWaapResponses302;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 302 found responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses302 set the avgWaapResponses302.
+     */
+    public void setAvgWaapResponses302(Float  avgWaapResponses302) {
+        this.avgWaapResponses302 = avgWaapResponses302;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 303 see other responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses303
+     */
+    public Float getAvgWaapResponses303() {
+        return avgWaapResponses303;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 303 see other responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses303 set the avgWaapResponses303.
+     */
+    public void setAvgWaapResponses303(Float  avgWaapResponses303) {
+        this.avgWaapResponses303 = avgWaapResponses303;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 307 temporary redirect responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses307
+     */
+    public Float getAvgWaapResponses307() {
+        return avgWaapResponses307;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 307 temporary redirect responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses307 set the avgWaapResponses307.
+     */
+    public void setAvgWaapResponses307(Float  avgWaapResponses307) {
+        this.avgWaapResponses307 = avgWaapResponses307;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 308 permanent redirect responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses308
+     */
+    public Float getAvgWaapResponses308() {
+        return avgWaapResponses308;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 308 permanent redirect responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses308 set the avgWaapResponses308.
+     */
+    public void setAvgWaapResponses308(Float  avgWaapResponses308) {
+        this.avgWaapResponses308 = avgWaapResponses308;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 400 bad request responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses400
+     */
+    public Float getAvgWaapResponses400() {
+        return avgWaapResponses400;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 400 bad request responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses400 set the avgWaapResponses400.
+     */
+    public void setAvgWaapResponses400(Float  avgWaapResponses400) {
+        this.avgWaapResponses400 = avgWaapResponses400;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 401 unauthorized responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses401
+     */
+    public Float getAvgWaapResponses401() {
+        return avgWaapResponses401;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 401 unauthorized responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses401 set the avgWaapResponses401.
+     */
+    public void setAvgWaapResponses401(Float  avgWaapResponses401) {
+        this.avgWaapResponses401 = avgWaapResponses401;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 403 forbidden responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses403
+     */
+    public Float getAvgWaapResponses403() {
+        return avgWaapResponses403;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 403 forbidden responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses403 set the avgWaapResponses403.
+     */
+    public void setAvgWaapResponses403(Float  avgWaapResponses403) {
+        this.avgWaapResponses403 = avgWaapResponses403;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 407 proxy authentication required responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses407
+     */
+    public Float getAvgWaapResponses407() {
+        return avgWaapResponses407;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 407 proxy authentication required responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses407 set the avgWaapResponses407.
+     */
+    public void setAvgWaapResponses407(Float  avgWaapResponses407) {
+        this.avgWaapResponses407 = avgWaapResponses407;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 429 too many requests responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses429
+     */
+    public Float getAvgWaapResponses429() {
+        return avgWaapResponses429;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 429 too many requests responses for api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses429 set the avgWaapResponses429.
+     */
+    public void setAvgWaapResponses429(Float  avgWaapResponses429) {
+        this.avgWaapResponses429 = avgWaapResponses429;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 4xx responses for api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses4Xx
+     */
+    public Float getAvgWaapResponses4Xx() {
+        return avgWaapResponses4Xx;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 4xx responses for api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses4Xx set the avgWaapResponses4Xx.
+     */
+    public void setAvgWaapResponses4Xx(Float  avgWaapResponses4Xx) {
+        this.avgWaapResponses4Xx = avgWaapResponses4Xx;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of 5xx responses for api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapResponses5Xx
+     */
+    public Float getAvgWaapResponses5Xx() {
+        return avgWaapResponses5Xx;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of 5xx responses for api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapResponses5Xx set the avgWaapResponses5Xx.
+     */
+    public void setAvgWaapResponses5Xx(Float  avgWaapResponses5Xx) {
+        this.avgWaapResponses5Xx = avgWaapResponses5Xx;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of shadow api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapShadowApiCount
+     */
+    public Float getAvgWaapShadowApiCount() {
+        return avgWaapShadowApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of shadow api requests per second.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapShadowApiCount set the avgWaapShadowApiCount.
+     */
+    public void setAvgWaapShadowApiCount(Float  avgWaapShadowApiCount) {
+        this.avgWaapShadowApiCount = avgWaapShadowApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Average client transaction latency for shadow api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapShadowApiLatency
+     */
+    public Float getAvgWaapShadowApiLatency() {
+        return avgWaapShadowApiLatency;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average client transaction latency for shadow api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapShadowApiLatency set the avgWaapShadowApiLatency.
+     */
+    public void setAvgWaapShadowApiLatency(Float  avgWaapShadowApiLatency) {
+        this.avgWaapShadowApiLatency = avgWaapShadowApiLatency;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Average waap violations across all endpoints for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapViolationCount
+     */
+    public Float getAvgWaapViolationCount() {
+        return avgWaapViolationCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Average waap violations across all endpoints for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapViolationCount set the avgWaapViolationCount.
+     */
+    public void setAvgWaapViolationCount(Float  avgWaapViolationCount) {
+        this.avgWaapViolationCount = avgWaapViolationCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Rate of zombie api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return avgWaapZombieApiCount
+     */
+    public Float getAvgWaapZombieApiCount() {
+        return avgWaapZombieApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rate of zombie api requests per second.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param avgWaapZombieApiCount set the avgWaapZombieApiCount.
+     */
+    public void setAvgWaapZombieApiCount(Float  avgWaapZombieApiCount) {
+        this.avgWaapZombieApiCount = avgWaapZombieApiCount;
     }
 
     /**
@@ -4229,6 +4949,54 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Total number of api 2xx responses for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumResponses2XxApi
+     */
+    public Float getSumResponses2XxApi() {
+        return sumResponses2XxApi;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of api 2xx responses for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumResponses2XxApi set the sumResponses2XxApi.
+     */
+    public void setSumResponses2XxApi(Float  sumResponses2XxApi) {
+        this.sumResponses2XxApi = sumResponses2XxApi;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of non-api 2xx responses for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumResponses2XxNonapi
+     */
+    public Float getSumResponses2XxNonapi() {
+        return sumResponses2XxNonapi;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of non-api 2xx responses for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumResponses2XxNonapi set the sumResponses2XxNonapi.
+     */
+    public void setSumResponses2XxNonapi(Float  sumResponses2XxNonapi) {
+        this.sumResponses2XxNonapi = sumResponses2XxNonapi;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Total client data transfer time by client.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -4337,6 +5105,318 @@ public class VserverL7MetricsObj  {
      */
     public void setSumUriLength(Float  sumUriLength) {
         this.sumUriLength = sumUriLength;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of requests matching active api endpoints.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapActiveApiCount
+     */
+    public Float getSumWaapActiveApiCount() {
+        return sumWaapActiveApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of requests matching active api endpoints.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapActiveApiCount set the sumWaapActiveApiCount.
+     */
+    public void setSumWaapActiveApiCount(Float  sumWaapActiveApiCount) {
+        this.sumWaapActiveApiCount = sumWaapActiveApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total client transaction latency for active api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapActiveApiLatency
+     */
+    public Float getSumWaapActiveApiLatency() {
+        return sumWaapActiveApiLatency;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total client transaction latency for active api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapActiveApiLatency set the sumWaapActiveApiLatency.
+     */
+    public void setSumWaapActiveApiLatency(Float  sumWaapActiveApiLatency) {
+        this.sumWaapActiveApiLatency = sumWaapActiveApiLatency;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of waap hits for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapHits
+     */
+    public Float getSumWaapHits() {
+        return sumWaapHits;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of waap hits for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapHits set the sumWaapHits.
+     */
+    public void setSumWaapHits(Float  sumWaapHits) {
+        this.sumWaapHits = sumWaapHits;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of requests matching orphan api endpoints.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapOrphanApiCount
+     */
+    public Float getSumWaapOrphanApiCount() {
+        return sumWaapOrphanApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of requests matching orphan api endpoints.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapOrphanApiCount set the sumWaapOrphanApiCount.
+     */
+    public void setSumWaapOrphanApiCount(Float  sumWaapOrphanApiCount) {
+        this.sumWaapOrphanApiCount = sumWaapOrphanApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total 400 bad request responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapResponses400
+     */
+    public Float getSumWaapResponses400() {
+        return sumWaapResponses400;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total 400 bad request responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapResponses400 set the sumWaapResponses400.
+     */
+    public void setSumWaapResponses400(Float  sumWaapResponses400) {
+        this.sumWaapResponses400 = sumWaapResponses400;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total 401 unauthorized responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapResponses401
+     */
+    public Float getSumWaapResponses401() {
+        return sumWaapResponses401;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total 401 unauthorized responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapResponses401 set the sumWaapResponses401.
+     */
+    public void setSumWaapResponses401(Float  sumWaapResponses401) {
+        this.sumWaapResponses401 = sumWaapResponses401;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total 403 forbidden responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapResponses403
+     */
+    public Float getSumWaapResponses403() {
+        return sumWaapResponses403;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total 403 forbidden responses for api requests.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapResponses403 set the sumWaapResponses403.
+     */
+    public void setSumWaapResponses403(Float  sumWaapResponses403) {
+        this.sumWaapResponses403 = sumWaapResponses403;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total 4xx responses for api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapResponses4Xx
+     */
+    public Float getSumWaapResponses4Xx() {
+        return sumWaapResponses4Xx;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total 4xx responses for api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapResponses4Xx set the sumWaapResponses4Xx.
+     */
+    public void setSumWaapResponses4Xx(Float  sumWaapResponses4Xx) {
+        this.sumWaapResponses4Xx = sumWaapResponses4Xx;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total 5xx responses for api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapResponses5Xx
+     */
+    public Float getSumWaapResponses5Xx() {
+        return sumWaapResponses5Xx;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total 5xx responses for api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapResponses5Xx set the sumWaapResponses5Xx.
+     */
+    public void setSumWaapResponses5Xx(Float  sumWaapResponses5Xx) {
+        this.sumWaapResponses5Xx = sumWaapResponses5Xx;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of requests matching shadow api paths.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapShadowApiCount
+     */
+    public Float getSumWaapShadowApiCount() {
+        return sumWaapShadowApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of requests matching shadow api paths.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapShadowApiCount set the sumWaapShadowApiCount.
+     */
+    public void setSumWaapShadowApiCount(Float  sumWaapShadowApiCount) {
+        this.sumWaapShadowApiCount = sumWaapShadowApiCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total client transaction latency for shadow api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapShadowApiLatency
+     */
+    public Float getSumWaapShadowApiLatency() {
+        return sumWaapShadowApiLatency;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total client transaction latency for shadow api requests.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapShadowApiLatency set the sumWaapShadowApiLatency.
+     */
+    public void setSumWaapShadowApiLatency(Float  sumWaapShadowApiLatency) {
+        this.sumWaapShadowApiLatency = sumWaapShadowApiLatency;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of waap violations across all endpoints for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapViolationCount
+     */
+    public Float getSumWaapViolationCount() {
+        return sumWaapViolationCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of waap violations across all endpoints for this virtualservice.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapViolationCount set the sumWaapViolationCount.
+     */
+    public void setSumWaapViolationCount(Float  sumWaapViolationCount) {
+        this.sumWaapViolationCount = sumWaapViolationCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Total number of requests matching zombie api endpoints.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sumWaapZombieApiCount
+     */
+    public Float getSumWaapZombieApiCount() {
+        return sumWaapZombieApiCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Total number of requests matching zombie api endpoints.
+     * Field introduced in 32.3.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sumWaapZombieApiCount set the sumWaapZombieApiCount.
+     */
+    public void setSumWaapZombieApiCount(Float  sumWaapZombieApiCount) {
+        this.sumWaapZombieApiCount = sumWaapZombieApiCount;
     }
 
     /**
@@ -5136,7 +6216,47 @@ public class VserverL7MetricsObj  {
   Objects.equals(this.sumNumOptionalProcessingAdmitted, objVserverL7MetricsObj.sumNumOptionalProcessingAdmitted)&&
   Objects.equals(this.sumNumOptionalProcessingRefused, objVserverL7MetricsObj.sumNumOptionalProcessingRefused)&&
   Objects.equals(this.effectiveSamplingRate, objVserverL7MetricsObj.effectiveSamplingRate)&&
-  Objects.equals(this.sumOptionalCpuUsage, objVserverL7MetricsObj.sumOptionalCpuUsage);
+  Objects.equals(this.sumOptionalCpuUsage, objVserverL7MetricsObj.sumOptionalCpuUsage)&&
+  Objects.equals(this.sumResponses2XxApi, objVserverL7MetricsObj.sumResponses2XxApi)&&
+  Objects.equals(this.avgResponses2XxApi, objVserverL7MetricsObj.avgResponses2XxApi)&&
+  Objects.equals(this.sumResponses2XxNonapi, objVserverL7MetricsObj.sumResponses2XxNonapi)&&
+  Objects.equals(this.avgResponses2XxNonapi, objVserverL7MetricsObj.avgResponses2XxNonapi)&&
+  Objects.equals(this.sumWaapHits, objVserverL7MetricsObj.sumWaapHits)&&
+  Objects.equals(this.avgWaapHits, objVserverL7MetricsObj.avgWaapHits)&&
+  Objects.equals(this.sumWaapViolationCount, objVserverL7MetricsObj.sumWaapViolationCount)&&
+  Objects.equals(this.avgWaapViolationCount, objVserverL7MetricsObj.avgWaapViolationCount)&&
+  Objects.equals(this.sumWaapActiveApiCount, objVserverL7MetricsObj.sumWaapActiveApiCount)&&
+  Objects.equals(this.avgWaapActiveApiCount, objVserverL7MetricsObj.avgWaapActiveApiCount)&&
+  Objects.equals(this.sumWaapShadowApiCount, objVserverL7MetricsObj.sumWaapShadowApiCount)&&
+  Objects.equals(this.avgWaapShadowApiCount, objVserverL7MetricsObj.avgWaapShadowApiCount)&&
+  Objects.equals(this.sumWaapOrphanApiCount, objVserverL7MetricsObj.sumWaapOrphanApiCount)&&
+  Objects.equals(this.avgWaapOrphanApiCount, objVserverL7MetricsObj.avgWaapOrphanApiCount)&&
+  Objects.equals(this.sumWaapResponses4Xx, objVserverL7MetricsObj.sumWaapResponses4Xx)&&
+  Objects.equals(this.avgWaapResponses4Xx, objVserverL7MetricsObj.avgWaapResponses4Xx)&&
+  Objects.equals(this.sumWaapResponses5Xx, objVserverL7MetricsObj.sumWaapResponses5Xx)&&
+  Objects.equals(this.avgWaapResponses5Xx, objVserverL7MetricsObj.avgWaapResponses5Xx)&&
+  Objects.equals(this.sumWaapActiveApiLatency, objVserverL7MetricsObj.sumWaapActiveApiLatency)&&
+  Objects.equals(this.sumWaapShadowApiLatency, objVserverL7MetricsObj.sumWaapShadowApiLatency)&&
+  Objects.equals(this.avgWaapActiveApiLatency, objVserverL7MetricsObj.avgWaapActiveApiLatency)&&
+  Objects.equals(this.avgWaapShadowApiLatency, objVserverL7MetricsObj.avgWaapShadowApiLatency)&&
+  Objects.equals(this.sumWaapResponses400, objVserverL7MetricsObj.sumWaapResponses400)&&
+  Objects.equals(this.sumWaapResponses401, objVserverL7MetricsObj.sumWaapResponses401)&&
+  Objects.equals(this.sumWaapResponses403, objVserverL7MetricsObj.sumWaapResponses403)&&
+  Objects.equals(this.avgWaapResponses400, objVserverL7MetricsObj.avgWaapResponses400)&&
+  Objects.equals(this.avgWaapResponses401, objVserverL7MetricsObj.avgWaapResponses401)&&
+  Objects.equals(this.avgWaapResponses403, objVserverL7MetricsObj.avgWaapResponses403)&&
+  Objects.equals(this.sumWaapZombieApiCount, objVserverL7MetricsObj.sumWaapZombieApiCount)&&
+  Objects.equals(this.avgWaapZombieApiCount, objVserverL7MetricsObj.avgWaapZombieApiCount)&&
+  Objects.equals(this.avgWaapResponses407, objVserverL7MetricsObj.avgWaapResponses407)&&
+  Objects.equals(this.avgWaapResponses429, objVserverL7MetricsObj.avgWaapResponses429)&&
+  Objects.equals(this.avgWaapResponses301, objVserverL7MetricsObj.avgWaapResponses301)&&
+  Objects.equals(this.avgWaapResponses302, objVserverL7MetricsObj.avgWaapResponses302)&&
+  Objects.equals(this.avgWaapResponses303, objVserverL7MetricsObj.avgWaapResponses303)&&
+  Objects.equals(this.avgWaapResponses307, objVserverL7MetricsObj.avgWaapResponses307)&&
+  Objects.equals(this.avgWaapResponses308, objVserverL7MetricsObj.avgWaapResponses308)&&
+  Objects.equals(this.avgWaapAuthenticationErrors, objVserverL7MetricsObj.avgWaapAuthenticationErrors)&&
+  Objects.equals(this.avgWaapRateLimitingErrors, objVserverL7MetricsObj.avgWaapRateLimitingErrors)&&
+  Objects.equals(this.avgWaapRedirects, objVserverL7MetricsObj.avgWaapRedirects);
     }
 
     @Override
@@ -5179,6 +6299,8 @@ public class VserverL7MetricsObj  {
                         sb.append("    avgResp4XxAviErrors: ").append(toIndentedString(avgResp4XxAviErrors)).append("\n");
                         sb.append("    avgResp5Xx: ").append(toIndentedString(avgResp5Xx)).append("\n");
                         sb.append("    avgResp5XxAviErrors: ").append(toIndentedString(avgResp5XxAviErrors)).append("\n");
+                        sb.append("    avgResponses2XxApi: ").append(toIndentedString(avgResponses2XxApi)).append("\n");
+                        sb.append("    avgResponses2XxNonapi: ").append(toIndentedString(avgResponses2XxNonapi)).append("\n");
                         sb.append("    avgRumClientDataTransferTime: ").append(toIndentedString(avgRumClientDataTransferTime)).append("\n");
                         sb.append("    avgSatisfactoryResponses: ").append(toIndentedString(avgSatisfactoryResponses)).append("\n");
                         sb.append("    avgServerRtt: ").append(toIndentedString(avgServerRtt)).append("\n");
@@ -5215,6 +6337,29 @@ public class VserverL7MetricsObj  {
                         sb.append("    avgTotalHttp2Requests: ").append(toIndentedString(avgTotalHttp2Requests)).append("\n");
                         sb.append("    avgTotalRequests: ").append(toIndentedString(avgTotalRequests)).append("\n");
                         sb.append("    avgUriLength: ").append(toIndentedString(avgUriLength)).append("\n");
+                        sb.append("    avgWaapActiveApiCount: ").append(toIndentedString(avgWaapActiveApiCount)).append("\n");
+                        sb.append("    avgWaapActiveApiLatency: ").append(toIndentedString(avgWaapActiveApiLatency)).append("\n");
+                        sb.append("    avgWaapAuthenticationErrors: ").append(toIndentedString(avgWaapAuthenticationErrors)).append("\n");
+                        sb.append("    avgWaapHits: ").append(toIndentedString(avgWaapHits)).append("\n");
+                        sb.append("    avgWaapOrphanApiCount: ").append(toIndentedString(avgWaapOrphanApiCount)).append("\n");
+                        sb.append("    avgWaapRateLimitingErrors: ").append(toIndentedString(avgWaapRateLimitingErrors)).append("\n");
+                        sb.append("    avgWaapRedirects: ").append(toIndentedString(avgWaapRedirects)).append("\n");
+                        sb.append("    avgWaapResponses301: ").append(toIndentedString(avgWaapResponses301)).append("\n");
+                        sb.append("    avgWaapResponses302: ").append(toIndentedString(avgWaapResponses302)).append("\n");
+                        sb.append("    avgWaapResponses303: ").append(toIndentedString(avgWaapResponses303)).append("\n");
+                        sb.append("    avgWaapResponses307: ").append(toIndentedString(avgWaapResponses307)).append("\n");
+                        sb.append("    avgWaapResponses308: ").append(toIndentedString(avgWaapResponses308)).append("\n");
+                        sb.append("    avgWaapResponses400: ").append(toIndentedString(avgWaapResponses400)).append("\n");
+                        sb.append("    avgWaapResponses401: ").append(toIndentedString(avgWaapResponses401)).append("\n");
+                        sb.append("    avgWaapResponses403: ").append(toIndentedString(avgWaapResponses403)).append("\n");
+                        sb.append("    avgWaapResponses407: ").append(toIndentedString(avgWaapResponses407)).append("\n");
+                        sb.append("    avgWaapResponses429: ").append(toIndentedString(avgWaapResponses429)).append("\n");
+                        sb.append("    avgWaapResponses4Xx: ").append(toIndentedString(avgWaapResponses4Xx)).append("\n");
+                        sb.append("    avgWaapResponses5Xx: ").append(toIndentedString(avgWaapResponses5Xx)).append("\n");
+                        sb.append("    avgWaapShadowApiCount: ").append(toIndentedString(avgWaapShadowApiCount)).append("\n");
+                        sb.append("    avgWaapShadowApiLatency: ").append(toIndentedString(avgWaapShadowApiLatency)).append("\n");
+                        sb.append("    avgWaapViolationCount: ").append(toIndentedString(avgWaapViolationCount)).append("\n");
+                        sb.append("    avgWaapZombieApiCount: ").append(toIndentedString(avgWaapZombieApiCount)).append("\n");
                         sb.append("    avgWafAttacks: ").append(toIndentedString(avgWafAttacks)).append("\n");
                         sb.append("    avgWafDisabled: ").append(toIndentedString(avgWafDisabled)).append("\n");
                         sb.append("    avgWafEvaluated: ").append(toIndentedString(avgWafEvaluated)).append("\n");
@@ -5303,11 +6448,26 @@ public class VserverL7MetricsObj  {
                         sb.append("    sumResp3Xx: ").append(toIndentedString(sumResp3Xx)).append("\n");
                         sb.append("    sumResp4Xx: ").append(toIndentedString(sumResp4Xx)).append("\n");
                         sb.append("    sumResp5Xx: ").append(toIndentedString(sumResp5Xx)).append("\n");
+                        sb.append("    sumResponses2XxApi: ").append(toIndentedString(sumResponses2XxApi)).append("\n");
+                        sb.append("    sumResponses2XxNonapi: ").append(toIndentedString(sumResponses2XxNonapi)).append("\n");
                         sb.append("    sumRumClientDataTransferTime: ").append(toIndentedString(sumRumClientDataTransferTime)).append("\n");
                         sb.append("    sumServerRtt: ").append(toIndentedString(sumServerRtt)).append("\n");
                         sb.append("    sumServiceTime: ").append(toIndentedString(sumServiceTime)).append("\n");
                         sb.append("    sumTotalResponses: ").append(toIndentedString(sumTotalResponses)).append("\n");
                         sb.append("    sumUriLength: ").append(toIndentedString(sumUriLength)).append("\n");
+                        sb.append("    sumWaapActiveApiCount: ").append(toIndentedString(sumWaapActiveApiCount)).append("\n");
+                        sb.append("    sumWaapActiveApiLatency: ").append(toIndentedString(sumWaapActiveApiLatency)).append("\n");
+                        sb.append("    sumWaapHits: ").append(toIndentedString(sumWaapHits)).append("\n");
+                        sb.append("    sumWaapOrphanApiCount: ").append(toIndentedString(sumWaapOrphanApiCount)).append("\n");
+                        sb.append("    sumWaapResponses400: ").append(toIndentedString(sumWaapResponses400)).append("\n");
+                        sb.append("    sumWaapResponses401: ").append(toIndentedString(sumWaapResponses401)).append("\n");
+                        sb.append("    sumWaapResponses403: ").append(toIndentedString(sumWaapResponses403)).append("\n");
+                        sb.append("    sumWaapResponses4Xx: ").append(toIndentedString(sumWaapResponses4Xx)).append("\n");
+                        sb.append("    sumWaapResponses5Xx: ").append(toIndentedString(sumWaapResponses5Xx)).append("\n");
+                        sb.append("    sumWaapShadowApiCount: ").append(toIndentedString(sumWaapShadowApiCount)).append("\n");
+                        sb.append("    sumWaapShadowApiLatency: ").append(toIndentedString(sumWaapShadowApiLatency)).append("\n");
+                        sb.append("    sumWaapViolationCount: ").append(toIndentedString(sumWaapViolationCount)).append("\n");
+                        sb.append("    sumWaapZombieApiCount: ").append(toIndentedString(sumWaapZombieApiCount)).append("\n");
                         sb.append("    sumWafAttacks: ").append(toIndentedString(sumWafAttacks)).append("\n");
                         sb.append("    sumWafDisabled: ").append(toIndentedString(sumWafDisabled)).append("\n");
                         sb.append("    sumWafEvaluatedRequestBodyPhase: ").append(toIndentedString(sumWafEvaluatedRequestBodyPhase)).append("\n");

@@ -27,6 +27,9 @@ public class LogAgentEventDetail  {
     @JsonProperty("rapid_connection")
     private LogAgentTCPConnEstRateExcdEvent rapidConnection;
 
+    @JsonProperty("streaming_event_detail")
+    private LogAgentStreamingEventDetail streamingEventDetail;
+
     @JsonProperty("tcp_detail")
     private LogAgentTCPClientEventDetail tcpDetail;
 
@@ -38,7 +41,7 @@ public class LogAgentEventDetail  {
     /**
      * This is the getter method this will return the attribute value.
      * Protocol used for communication to the external entity.
-     * Enum options - TCP_CONN.
+     * Enum options - TCP_CONN, UDP_CONN.
      * Field introduced in 20.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -51,7 +54,7 @@ public class LogAgentEventDetail  {
     /**
      * This is the setter method to the attribute.
      * Protocol used for communication to the external entity.
-     * Enum options - TCP_CONN.
+     * Enum options - TCP_CONN, UDP_CONN.
      * Field introduced in 20.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -83,6 +86,30 @@ public class LogAgentEventDetail  {
      */
     public void setRapidConnection(LogAgentTCPConnEstRateExcdEvent rapidConnection) {
         this.rapidConnection = rapidConnection;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Event details for any streaming event.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return streamingEventDetail
+     */
+    public LogAgentStreamingEventDetail getStreamingEventDetail() {
+        return streamingEventDetail;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Event details for any streaming event.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param streamingEventDetail set the streamingEventDetail.
+     */
+    public void setStreamingEventDetail(LogAgentStreamingEventDetail streamingEventDetail) {
+        this.streamingEventDetail = streamingEventDetail;
     }
 
     /**
@@ -148,7 +175,8 @@ public class LogAgentEventDetail  {
       return   Objects.equals(this.type, objLogAgentEventDetail.type)&&
   Objects.equals(this.protocol, objLogAgentEventDetail.protocol)&&
   Objects.equals(this.tcpDetail, objLogAgentEventDetail.tcpDetail)&&
-  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection);
+  Objects.equals(this.rapidConnection, objLogAgentEventDetail.rapidConnection)&&
+  Objects.equals(this.streamingEventDetail, objLogAgentEventDetail.streamingEventDetail);
     }
 
     @Override
@@ -157,6 +185,7 @@ public class LogAgentEventDetail  {
       sb.append("class LogAgentEventDetail {\n");
                   sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
                         sb.append("    rapidConnection: ").append(toIndentedString(rapidConnection)).append("\n");
+                        sb.append("    streamingEventDetail: ").append(toIndentedString(streamingEventDetail)).append("\n");
                         sb.append("    tcpDetail: ").append(toIndentedString(tcpDetail)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");
                   sb.append("}");
