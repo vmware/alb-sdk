@@ -24,7 +24,7 @@ type ControllerProperties struct {
 	// Allow unauthenticated access for special APIs. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowUnauthenticatedApis *bool `json:"allow_unauthenticated_apis,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field deprecated in 31.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowUnauthenticatedNodes *bool `json:"allow_unauthenticated_nodes,omitempty"`
 
 	//  Allowed values are 0-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
