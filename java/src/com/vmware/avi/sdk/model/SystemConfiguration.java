@@ -25,8 +25,14 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("admin_auth_configuration")
     private AdminAuthConfiguration adminAuthConfiguration;
 
+    @JsonProperty("allow_legacy_sha1_ntp_auth")
+    private Boolean allowLegacySha1NtpAuth = false;
+
     @JsonIgnore
     private String aviEmailLoginPassword;
+
+    @JsonProperty("certificate_security_policy")
+    private CertificateSecurityPolicy certificateSecurityPolicy;
 
     @JsonProperty("common_criteria_mode")
     private Boolean commonCriteriaMode = false;
@@ -169,6 +175,34 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Allow ntp authentication using legacy md5 or sha1 algorithms.
+     * When enabled, configuring md5 or sha1 ntp keys is permitted but a warning event is generated in the controller ui.
+     * When disabled (default), only sha256 or stronger is accepted and configuring md5 or sha1 results in an api error.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return allowLegacySha1NtpAuth
+     */
+    public Boolean getAllowLegacySha1NtpAuth() {
+        return allowLegacySha1NtpAuth;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allow ntp authentication using legacy md5 or sha1 algorithms.
+     * When enabled, configuring md5 or sha1 ntp keys is permitted but a warning event is generated in the controller ui.
+     * When disabled (default), only sha256 or stronger is accepted and configuring md5 or sha1 results in an api error.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param allowLegacySha1NtpAuth set the allowLegacySha1NtpAuth.
+     */
+    public void setAllowLegacySha1NtpAuth(Boolean  allowLegacySha1NtpAuth) {
+        this.allowLegacySha1NtpAuth = allowLegacySha1NtpAuth;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Password for avi_email_login user.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, enterprise with cloud services edition.
@@ -189,6 +223,30 @@ public class SystemConfiguration extends AviRestResource  {
      */
     public void setAviEmailLoginPassword(String  aviEmailLoginPassword) {
         this.aviEmailLoginPassword = aviEmailLoginPassword;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Certificate security policy for the system.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return certificateSecurityPolicy
+     */
+    public CertificateSecurityPolicy getCertificateSecurityPolicy() {
+        return certificateSecurityPolicy;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Certificate security policy for the system.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param certificateSecurityPolicy set the certificateSecurityPolicy.
+     */
+    public void setCertificateSecurityPolicy(CertificateSecurityPolicy certificateSecurityPolicy) {
+        this.certificateSecurityPolicy = certificateSecurityPolicy;
     }
 
     /**
@@ -1244,7 +1302,9 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
   Objects.equals(this.enableLicenseQuota, objSystemConfiguration.enableLicenseQuota)&&
   Objects.equals(this.serviceAuthConfigurations, objSystemConfiguration.serviceAuthConfigurations)&&
-  Objects.equals(this.passwordPolicyManagedAtOps, objSystemConfiguration.passwordPolicyManagedAtOps);
+  Objects.equals(this.passwordPolicyManagedAtOps, objSystemConfiguration.passwordPolicyManagedAtOps)&&
+  Objects.equals(this.allowLegacySha1NtpAuth, objSystemConfiguration.allowLegacySha1NtpAuth)&&
+  Objects.equals(this.certificateSecurityPolicy, objSystemConfiguration.certificateSecurityPolicy);
     }
 
     @Override
@@ -1252,7 +1312,9 @@ public class SystemConfiguration extends AviRestResource  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SystemConfiguration {\n");
                   sb.append("    adminAuthConfiguration: ").append(toIndentedString(adminAuthConfiguration)).append("\n");
+                        sb.append("    allowLegacySha1NtpAuth: ").append(toIndentedString(allowLegacySha1NtpAuth)).append("\n");
                         sb.append("    aviEmailLoginPassword: ").append(toIndentedString(aviEmailLoginPassword)).append("\n");
+                        sb.append("    certificateSecurityPolicy: ").append(toIndentedString(certificateSecurityPolicy)).append("\n");
                         sb.append("    commonCriteriaMode: ").append(toIndentedString(commonCriteriaMode)).append("\n");
                         sb.append("    controllerAnalyticsPolicy: ").append(toIndentedString(controllerAnalyticsPolicy)).append("\n");
                         sb.append("    defaultLicenseTier: ").append(toIndentedString(defaultLicenseTier)).append("\n");
