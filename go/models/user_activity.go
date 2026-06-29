@@ -36,7 +36,7 @@ type UserActivity struct {
 	// Name of the user this object refers to. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Name *string `json:"name,omitempty"`
 
-	// Timestamp when the user password expire(s/d). Field introduced in 32.1.2, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Timestamp when the user password expire(s/d). Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PasswordExpiryTime *string `json:"password_expiry_time,omitempty"`
 
 	// Stores the previous n passwords  where n is ControllerProperties.max_password_history_count. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

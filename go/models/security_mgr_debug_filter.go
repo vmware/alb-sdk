@@ -41,7 +41,7 @@ type SecurityMgrDebugFilter struct {
 	// [Internal] Periodicity at which Orphan/Zombie/Active API determination routine runs. Allowed values are 1-10080. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecmgrAPIClassificationTaskPeriodicity *uint32 `json:"secmgr_api_classification_task_periodicity,omitempty"`
 
-	// [Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 1-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// [Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 5-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SecmgrAPIHitsPopulationInterval *uint32 `json:"secmgr_api_hits_population_interval,omitempty"`
 
 	// Trigger full sync of API specification changes to learning database for all eligible VSes. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

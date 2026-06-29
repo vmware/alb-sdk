@@ -39,7 +39,7 @@ type APIEndpoint struct {
 	// Path parameter definitions for this endpoint, used for schema validation. Names must match the placeholders in the path template. Example  for path /pets/{petId}, a path parameter named 'petId' would be listed here. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PathParameters []*ParameterDescription `json:"path_parameters,omitempty"`
 
-	// Query *string parameter definitions for this endpoint, used to validate query arguments. Example  for GET /pets?limit=10, a query parameter named 'limit' would be listed here. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Query *string parameter definitions for this endpoint, used to validate query arguments. Example  for GET /pets?limit=10, a query parameter named 'limit' would be listed here. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryParameters []*ParameterDescription `json:"query_parameters,omitempty"`
 
 	// Expected format and schema of the request body, including content-type to schema mappings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
