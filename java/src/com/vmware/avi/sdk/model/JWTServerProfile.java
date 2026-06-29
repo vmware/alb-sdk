@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JWTServerProfile extends AviRestResource  {
+    @JsonProperty("allowed_algorithms")
+    private List<String> allowedAlgorithms;
+
     @JsonProperty("controller_internal_auth")
     private ControllerInternalAuth controllerInternalAuth;
 
@@ -52,6 +55,63 @@ public class JWTServerProfile extends AviRestResource  {
     private String uuid;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed signing algorithms when the matched jwk omits the 'alg' field (rfc 7517 §4.4).
+     * If the jwk carries 'alg', that value always wins and this list is ignored.
+     * An empty list rejects all such tokens (secure default).
+     * Only applicable when jwt profile type is client_auth.
+     * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
+     * JWS_ALG_ES512.
+     * Field introduced in 32.2.1.
+     * Maximum of 9 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedAlgorithms
+     */
+    public List<String> getAllowedAlgorithms() {
+        return allowedAlgorithms;
+    }
+
+    /**
+     * This is the setter method. this will set the allowedAlgorithms
+     * Allowed signing algorithms when the matched jwk omits the 'alg' field (rfc 7517 §4.4).
+     * If the jwk carries 'alg', that value always wins and this list is ignored.
+     * An empty list rejects all such tokens (secure default).
+     * Only applicable when jwt profile type is client_auth.
+     * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
+     * JWS_ALG_ES512.
+     * Field introduced in 32.2.1.
+     * Maximum of 9 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedAlgorithms
+     */
+    public void setAllowedAlgorithms(List<String>  allowedAlgorithms) {
+        this.allowedAlgorithms = allowedAlgorithms;
+    }
+
+    /**
+     * This is the setter method this will set the allowedAlgorithms
+     * Allowed signing algorithms when the matched jwk omits the 'alg' field (rfc 7517 §4.4).
+     * If the jwk carries 'alg', that value always wins and this list is ignored.
+     * An empty list rejects all such tokens (secure default).
+     * Only applicable when jwt profile type is client_auth.
+     * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
+     * JWS_ALG_ES512.
+     * Field introduced in 32.2.1.
+     * Maximum of 9 items allowed.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return allowedAlgorithms
+     */
+    public JWTServerProfile addAllowedAlgorithmsItem(String allowedAlgorithmsItem) {
+      if (this.allowedAlgorithms == null) {
+        this.allowedAlgorithms = new ArrayList<String>();
+      }
+      this.allowedAlgorithms.add(allowedAlgorithmsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -314,14 +374,16 @@ public class JWTServerProfile extends AviRestResource  {
   Objects.equals(this.isFederated, objJWTServerProfile.isFederated)&&
   Objects.equals(this.jwtProfileType, objJWTServerProfile.jwtProfileType)&&
   Objects.equals(this.controllerInternalAuth, objJWTServerProfile.controllerInternalAuth)&&
-  Objects.equals(this.protectedResourceConfig, objJWTServerProfile.protectedResourceConfig);
+  Objects.equals(this.protectedResourceConfig, objJWTServerProfile.protectedResourceConfig)&&
+  Objects.equals(this.allowedAlgorithms, objJWTServerProfile.allowedAlgorithms);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class JWTServerProfile {\n");
-                  sb.append("    controllerInternalAuth: ").append(toIndentedString(controllerInternalAuth)).append("\n");
+                  sb.append("    allowedAlgorithms: ").append(toIndentedString(allowedAlgorithms)).append("\n");
+                        sb.append("    controllerInternalAuth: ").append(toIndentedString(controllerInternalAuth)).append("\n");
                         sb.append("    isFederated: ").append(toIndentedString(isFederated)).append("\n");
                         sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
                         sb.append("    jwksKeys: ").append(toIndentedString(jwksKeys)).append("\n");

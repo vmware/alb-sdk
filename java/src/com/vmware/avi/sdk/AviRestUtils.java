@@ -20,16 +20,22 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.HttpHostConnectException;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.DefaultHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultServiceUnavailableRetryStrategy;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
@@ -41,17 +47,32 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
+import javax.net.ssl.SSLSession;
+
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.HttpCookie;
 import java.net.UnknownHostException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyFactory;
+import java.security.KeyStore;
+import java.security.PrivateKey;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.UUID;
 
 public class AviRestUtils {
 
@@ -161,48 +182,183 @@ public class AviRestUtils {
 		};
 	}
 
-	public static CloseableHttpClient buildHttpClient(AviCredentials creds) {
+    /**
+     * Configures and builds a custom, secure HTTP client for communicating with the Avi Controller.
+     * This method sets up connection timeouts, basic user credentials, auto-retry logic, and 
+     * configures SSL/TLS settings—including server certificate verification and client-side 
+     * certificates based on the provided credentials.
+     * 
+     * @param creds The configuration object containing URLs, user credentials, timeouts, and SSL certificates.
+     * @return A configured CloseableHttpClient ready to make secure API requests.
+     * @throws IOException If the secure SSL context or connection manager fails to initialize.
+     */
+	public static CloseableHttpClient buildHttpClient(AviCredentials creds) throws IOException {
 		LOGGER.info("__INIT__ Inside buildHttpClient..");
-		HttpClientBuilder clientBuilder;
-		if (!creds.getVerify()) {
-			SSLContext sslcontext = null;
-			if (creds.getSslContext() != null){
-				sslcontext = creds.getSslContext();
-			} else {
-				try {
-					sslcontext = SSLContexts.custom().loadTrustMaterial(null, new TrustSelfSignedStrategy()).build();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-
-			SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,
-					(s, sslSession) -> true);
-			RequestConfig requestConfig = RequestConfig.custom().
-					setSocketTimeout(SOCKET_TIMEOUT).
-					setConnectionRequestTimeout((creds.getTimeout())*1000).
-					setConnectTimeout((creds.getConnectionTimeout())*1000).
-					build();
-
-			CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
-			credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword()));
-
-			clientBuilder = HttpClients.custom().
-					setSSLSocketFactory(sslConnectionSocketFactory).
-					setServiceUnavailableRetryStrategy(new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(),
-							creds.getRetryWaitTime())).
-					disableCookieManagement().setDefaultRequestConfig(requestConfig);
+		HttpClientBuilder clientBuilder = HttpClients.custom();
+		RequestConfig requestConfig = RequestConfig.custom()
+									.setConnectionRequestTimeout(creds.getTimeout() * 1000)
+									.setSocketTimeout(SOCKET_TIMEOUT)
+									.setConnectTimeout(creds.getConnectionTimeout() * 1000)
+									.build();
+		SSLContext sslcontext = null;
+		HostnameVerifier hostnameVerifier = null;
+		if (creds.getSslContext() != null) {
+			// If found fully configured SSLContext - use it directly.
+			sslcontext = creds.getSslContext();
 		} else {
-			clientBuilder = HttpClients.custom().setServiceUnavailableRetryStrategy(
-					new DefaultServiceUnavailableRetryStrategy(creds.getNumApiRetries(), creds.getRetryWaitTime()))
-					.disableCookieManagement();
+			try {
+				SSLContextBuilder sslBuilder = SSLContexts.custom();
+				// Handle Server Trust (Accepting Untrusted/Self-Signed Targets)
+				if (creds.getVerify()) {
+					hostnameVerifier = new HostnameVerifier() {
+						private final DefaultHostnameVerifier defaultVerifier = new DefaultHostnameVerifier();
+						@Override
+						public boolean verify(String hostname, SSLSession session) {
+							return creds.getController().equals(hostname) || defaultVerifier.verify(hostname, session);
+						}
+					};
+
+					if (creds.getSslCertificate() != null) {
+						// If it contains the Controller's CA, validation will succeed.
+						KeyStore trustStore = loadTrustStoreFromCert(creds.getSslCertificate());
+						sslBuilder.loadTrustMaterial(trustStore, null);
+						LOGGER.info("Using sslCertificate file as TrustStore for server validation.");
+
+						// Client identity / mTLS
+						if (creds.getSslPrivateKey() != null) {
+							char[] keyPassword = UUID.randomUUID().toString().toCharArray();
+							KeyStore clientKeyStore = loadClientKeyStore(
+									creds.getSslCertificate(),
+									creds.getSslPrivateKey(),
+									keyPassword);
+							sslBuilder.loadKeyMaterial(clientKeyStore, keyPassword);
+							LOGGER.info("Client certificate loaded successfully.");
+						}
+					}
+				} else {
+					LOGGER.warning(
+							"\n********************************************************************************\n" +
+									" WARNING: SSL certificate verification is DISABLED (verify=false).\n" +
+									" Any TLS certificate will be accepted. Vulnerable to MITM attacks.\n" +
+							"********************************************************************************\n");
+					sslBuilder.loadTrustMaterial(null, (chain, authType) -> true);
+					hostnameVerifier = new HostnameVerifier() {
+					private final DefaultHostnameVerifier defaultVerifier = new DefaultHostnameVerifier();
+					@Override
+					public boolean verify(String hostname, SSLSession session) {
+						if (!defaultVerifier.verify(hostname, session)) {
+							LOGGER.warning(String.format(
+								"\n********************************************************************************\n" +
+								" As verify=false | Hostname or IP '%s' failed strict DefaultHostnameVerifier validation.\n" +
+								"********************************************************************************\n",
+								hostname)
+							);
+						}
+						return true;
+						}
+					};
+				}
+				sslcontext = sslBuilder.build();
+			} catch (Exception e) {
+				LOGGER.severe("Failed to build SSL context: " + e.getMessage());
+				throw new IOException("Failed to initialize SSL context", e);
+			}
 		}
 
-		clientBuilder.setRetryHandler(retryHandler(creds));
+		SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(sslcontext,hostnameVerifier);
+		Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
+				.register("https", sslConnectionSocketFactory)
+				.register("http", PlainConnectionSocketFactory.getSocketFactory())
+				.build();
+
+		PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager(registry);
+
+		CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
+		credentialsProvider.setCredentials(AuthScope.ANY,
+				new UsernamePasswordCredentials(creds.getUsername(), creds.getPassword()));
+
+		clientBuilder.setConnectionManager(connectionManager)
+				.setDefaultCredentialsProvider(credentialsProvider)
+				.disableCookieManagement()
+				.setDefaultRequestConfig(requestConfig)
+				.setServiceUnavailableRetryStrategy(
+						new DefaultServiceUnavailableRetryStrategy(
+								creds.getNumApiRetries(), creds.getRetryWaitTime()))
+				.setRetryHandler(retryHandler(creds));
 		LOGGER.info("__DONE__ BuildHttpClient completed");
 		return clientBuilder.build();
 	}
 
+    /**
+     * Creates an in-memory KeyStore containing a client's security certificate and private key.
+     * This method reads the certificate chain and private key files from your computer,
+     * pairs them together, and protects the final package with a password so it can be 
+     * used for secure network communication (like SSL/TLS client authentication).
+     * 
+     * @param certPath    The file path to your security certificate.
+     * @param keyPath     The file path to your private security key.
+     * @param keyPassword The password to protect the key inside the KeyStore.
+     * @return A ready-to-use KeyStore containing the key and certificate.
+     * @throws Exception If a file cannot be read or the keys are invalid.
+     */
+	public static KeyStore loadClientKeyStore(String certPath, String keyPath, char[] keyPassword) throws Exception {
+        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+
+        // Read ALL certificates in the file (handles full chains)
+        Collection<? extends Certificate> certs;
+        try (FileInputStream fis = new FileInputStream(certPath)) {
+            certs = cf.generateCertificates(fis);
+        }
+        Certificate[] chain = certs.toArray(new Certificate[0]);
+
+        // Read and clean the Private Key
+        String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)))
+                .replaceAll("-----.*?-----", "")
+                .replaceAll("\\s+", "");
+        byte[] keyBytes = Base64.getDecoder().decode(keyPem);
+        PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
+
+        PrivateKey privateKey;
+        try {
+            privateKey = KeyFactory.getInstance("RSA").generatePrivate(keySpec);
+        } catch (Exception e) {
+            privateKey = KeyFactory.getInstance("EC").generatePrivate(keySpec);
+        }
+
+        KeyStore ks = KeyStore.getInstance("PKCS12");
+        ks.load(null, null);
+        // password: Uses a random password string to encrypt this specific key entry for secure storage.
+        ks.setKeyEntry("client", privateKey, keyPassword, chain);
+        return ks;
+    }
+
+    /**
+     * Creates an in-memory TrustStore containing a list of trusted certificates.
+     * This method reads a certificate file from your computer (including files with 
+     * multiple certificates) and adds each one to a secure list so your application 
+     * knows it can safely trust and connect to those remote servers.
+     * 
+     * @param certPath The file path to the trusted certificate(s).
+     * @return A ready-to-use TrustStore populated with the certificates.
+     * @throws Exception If the file cannot be read or the certificates are invalid.
+     */
+    public static KeyStore loadTrustStoreFromCert(String certPath) throws Exception {
+        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+        Collection<? extends Certificate> certs;
+        try (FileInputStream fis = new FileInputStream(certPath)) {
+            certs = cf.generateCertificates(fis);
+        }
+        KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+        ks.load(null, null);
+
+        int index = 1;
+        for (Certificate cert : certs) {
+            ks.setCertificateEntry("avi-trusted-cert-" + index, cert);
+            index++;
+        }
+        return ks;
+    }
+	
 	/**
 	 * This method authenticates user based on the credentials and update the
 	 * csrftoken and session id for this session.

@@ -30,6 +30,9 @@ public class LogManagerDebugFilter  {
     @JsonProperty("batch_worker_count")
     private Integer batchWorkerCount = 8;
 
+    @JsonProperty("bulk_payload_buffer_percent")
+    private Integer bulkPayloadBufferPercent = 5;
+
     @JsonProperty("bulk_payload_string_size")
     private Integer bulkPayloadStringSize = 11000000;
 
@@ -237,6 +240,36 @@ public class LogManagerDebugFilter  {
      */
     public void setBatchWorkerCount(Integer  batchWorkerCount) {
         this.batchWorkerCount = batchWorkerCount;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Percentage of bulk_payload_string_size to reserve as buffer for ip group string replacement.
+     * This buffer accounts for cases where short ip addresses are replaced with longer ip group names during batch processing.
+     * Default is 5%.
+     * Allowed values are 0-20.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return bulkPayloadBufferPercent
+     */
+    public Integer getBulkPayloadBufferPercent() {
+        return bulkPayloadBufferPercent;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Percentage of bulk_payload_string_size to reserve as buffer for ip group string replacement.
+     * This buffer accounts for cases where short ip addresses are replaced with longer ip group names during batch processing.
+     * Default is 5%.
+     * Allowed values are 0-20.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param bulkPayloadBufferPercent set the bulkPayloadBufferPercent.
+     */
+    public void setBulkPayloadBufferPercent(Integer  bulkPayloadBufferPercent) {
+        this.bulkPayloadBufferPercent = bulkPayloadBufferPercent;
     }
 
     /**
@@ -1382,7 +1415,8 @@ public class LogManagerDebugFilter  {
   Objects.equals(this.indexStatusQueueBufferSize, objLogManagerDebugFilter.indexStatusQueueBufferSize)&&
   Objects.equals(this.cacheCleanupDelayMs, objLogManagerDebugFilter.cacheCleanupDelayMs)&&
   Objects.equals(this.logRecordsIncrementalTimeoutMs, objLogManagerDebugFilter.logRecordsIncrementalTimeoutMs)&&
-  Objects.equals(this.incrementalTimeoutBufferMs, objLogManagerDebugFilter.incrementalTimeoutBufferMs);
+  Objects.equals(this.incrementalTimeoutBufferMs, objLogManagerDebugFilter.incrementalTimeoutBufferMs)&&
+  Objects.equals(this.bulkPayloadBufferPercent, objLogManagerDebugFilter.bulkPayloadBufferPercent);
     }
 
     @Override
@@ -1392,6 +1426,7 @@ public class LogManagerDebugFilter  {
                   sb.append("    adfProtectionTimeMinutes: ").append(toIndentedString(adfProtectionTimeMinutes)).append("\n");
                         sb.append("    batchQueueBufferSize: ").append(toIndentedString(batchQueueBufferSize)).append("\n");
                         sb.append("    batchWorkerCount: ").append(toIndentedString(batchWorkerCount)).append("\n");
+                        sb.append("    bulkPayloadBufferPercent: ").append(toIndentedString(bulkPayloadBufferPercent)).append("\n");
                         sb.append("    bulkPayloadStringSize: ").append(toIndentedString(bulkPayloadStringSize)).append("\n");
                         sb.append("    cacheCleanupDelayMs: ").append(toIndentedString(cacheCleanupDelayMs)).append("\n");
                         sb.append("    clientIndexOpTimeoutSeconds: ").append(toIndentedString(clientIndexOpTimeoutSeconds)).append("\n");

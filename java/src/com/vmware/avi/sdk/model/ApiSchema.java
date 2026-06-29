@@ -175,7 +175,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of types that are part of the oneof, any_of or all_of.
      * Field introduced in 32.2.1.
-     * Maximum of 32 items allowed.
+     * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return compositeTypes
@@ -188,7 +188,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the setter method. this will set the compositeTypes
      * List of types that are part of the oneof, any_of or all_of.
      * Field introduced in 32.2.1.
-     * Maximum of 32 items allowed.
+     * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return compositeTypes
@@ -201,7 +201,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the setter method this will set the compositeTypes
      * List of types that are part of the oneof, any_of or all_of.
      * Field introduced in 32.2.1.
-     * Maximum of 32 items allowed.
+     * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return compositeTypes
@@ -337,7 +337,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * List of properties for this object schema.
      * Field introduced in 32.2.1.
-     * Maximum of 256 items allowed.
+     * Maximum of 512 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectProperties
@@ -350,7 +350,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the setter method. this will set the objectProperties
      * List of properties for this object schema.
      * Field introduced in 32.2.1.
-     * Maximum of 256 items allowed.
+     * Maximum of 512 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectProperties
@@ -363,7 +363,7 @@ public class ApiSchema extends AviRestResource  {
      * This is the setter method this will set the objectProperties
      * List of properties for this object schema.
      * Field introduced in 32.2.1.
-     * Maximum of 256 items allowed.
+     * Maximum of 512 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return objectProperties

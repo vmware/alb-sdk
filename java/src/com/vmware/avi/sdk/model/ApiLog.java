@@ -97,7 +97,7 @@ public class ApiLog  {
      * This is the getter method this will return the attribute value.
      * List of api validation checks that were performed on this request.
      * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
-     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE.
+     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -111,7 +111,7 @@ public class ApiLog  {
      * This is the setter method. this will set the enabledApiChecks
      * List of api validation checks that were performed on this request.
      * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
-     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE.
+     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -125,7 +125,7 @@ public class ApiLog  {
      * This is the setter method this will set the enabledApiChecks
      * List of api validation checks that were performed on this request.
      * Enum options - API_LOG_CHECK_UNSPECIFIED, API_LOG_CHECK_PATH_PARAMETER, API_LOG_CHECK_QUERY_PARAMETER, API_LOG_CHECK_REQUEST_CONTENT_TYPE,
-     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE.
+     * API_LOG_CHECK_REQUEST_BODY, API_LOG_CHECK_RESPONSE_STATUS_CODE, API_LOG_CHECK_RESPONSE_CONTENT_TYPE, API_LOG_CHECK_REQUEST_HEADER.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
