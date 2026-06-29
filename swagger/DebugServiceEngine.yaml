@@ -743,6 +743,10 @@ definitions:
             objsync:
                 description: "Objsync specific debug options. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugServiceEngineObjSync'
+            pcap_ng:
+                description: "Enable PcapNg for packet capture. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
             seagent_debug:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array

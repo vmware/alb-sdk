@@ -3,8 +3,7 @@ window.loadFile = function(fileName) {
 
     if (fileName && fileName.indexOf('.') === -1) {
       $('#objectTypeSelector')
-        .val(fileName)
-        .trigger('chosen:updated');
+        .val(fileName);
 
       url = '/swagger/' + fileName + '.yaml';
     } else {
@@ -95,10 +94,7 @@ window.init = function() {
       $selectorNode.append(option);
     });
 
-    $selectorNode.chosen();
-
     window.loadFile(fileName);
   };
 
-$(window.init);
-  
+$(window.init);  

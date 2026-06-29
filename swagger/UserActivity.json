@@ -595,7 +595,7 @@
                     "type": "string"
                 },
                 "password_expiry_time": {
-                    "description": "Timestamp when the user password expire(s/d). Field introduced in 32.1.2, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Timestamp when the user password expire(s/d). Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "previous_password": {

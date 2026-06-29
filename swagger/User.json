@@ -618,7 +618,7 @@
                     "type": "boolean"
                 },
                 "local_password_managed_externally": {
-                    "description": "Indicates that this local user's password is managed externally (e.g. by VCF/SDDC Manager) rather than by Avi. Field introduced in 32.1.2, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Indicates that this local user's password is managed externally (e.g. by VCF/SDDC Manager) rather than by Avi. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "logged_in": {

@@ -832,6 +832,12 @@
                     "default": 8,
                     "format": "uint32"
                 },
+                "bulk_payload_buffer_percent": {
+                    "description": "Percentage of bulk_payload_string_size to reserve as buffer for IP group string replacement. This buffer accounts for cases where short IP addresses are replaced with longer IP group names during batch processing. Default is 5%. Allowed values are 0-20. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 5,
+                    "format": "uint32"
+                },
                 "bulk_payload_string_size": {
                     "description": "Size of bulk payload buffer. This is the max bulk payload size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -1290,7 +1296,7 @@
                     "format": "uint32"
                 },
                 "secmgr_api_hits_population_interval": {
-                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 1-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 5-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
                     "format": "uint32"

@@ -374,6 +374,19 @@ definitions:
                 type: array
                 items:
                     type: string
+    CertificateSecurityPolicy:
+        type: object
+        properties:
+            blocked_certificate_signature_algorithms:
+                description: "Signature algorithm families whose certificates are blocked on new imports. Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384, SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519. Field introduced in 32.2.1, 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            blocked_ocsp_request_hash_algorithms:
+                description: "Hash algorithms not allowed for OCSP requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.2.1, 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
     ControllerAnalyticsPolicy:
         type: object
         properties:
@@ -513,7 +526,7 @@ definitions:
             -   metrics_event_threshold_type
         properties:
             metrics_event_threshold_type:
-                description: "Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD, CONTROLLER_MEM_THRESHOLD, CONTROLLER_DISK_THRESHOLD. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Type of the metrics event threshold. This value will decide which metric rule (or rules) use configured thresholds. Enum options - THRESHOLD_TYPE_STATIC, SE_CPU_THRESHOLD, SE_MEM_THRESHOLD, SE_DISK_THRESHOLD, CONTROLLER_CPU_THRESHOLD, CONTROLLER_MEM_THRESHOLD, CONTROLLER_DISK_THRESHOLD, SE_SHM_MEM_THRESHOLD, SE_CONN_MEM_THRESHOLD. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             reset_threshold:
                 description: "This value is used to reset the event state machine. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -550,9 +563,9 @@ definitions:
             -   key_number
         properties:
             algorithm:
-                description: "Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_MD5. Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Message Digest Algorithm used for NTP authentication. Default is NTP_AUTH_ALGORITHM_SHA256. Use of MD5 or SHA1 requires allow_legacy_sha1_ntp_auth to be enabled in SystemConfiguration. Enum options - NTP_AUTH_ALGORITHM_MD5, NTP_AUTH_ALGORITHM_SHA1, NTP_AUTH_ALGORITHM_SHA256. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-                default: "NTP_AUTH_ALGORITHM_MD5"
+                default: "NTP_AUTH_ALGORITHM_SHA256"
             key:
                 description: "NTP Authentication key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -768,9 +781,18 @@ definitions:
             admin_auth_configuration:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AdminAuthConfiguration'
+            allow_legacy_sha1_ntp_auth:
+                description: "Allow NTP authentication using legacy MD5 or SHA1 algorithms. When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning event is generated in the controller UI. When disabled (default), only SHA256 or stronger is accepted and configuring MD5 or SHA1 results in an API error. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            allow_private_ips:
+                description: "Allow usage of private IPs in CRL server, SAML metadata URL. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
             avi_email_login_password:
                 description: "Password for avi_email_login user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            certificate_security_policy:
+                description: "Certificate security policy for the system. Field introduced in 32.2.1, 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/CertificateSecurityPolicy'
             common_criteria_mode:
                 description: "Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean

@@ -115,36 +115,6 @@ html {
     color: #fafafa;
   }
 
-  /* Style chosen dropdown for dark theme (if chosen.js is used) */
-  #header .chosen-container-single .chosen-single {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    color: #fafafa;
-    height: 28px;
-    line-height: 26px;
-    box-shadow: none;
-    padding: 0 10px;
-  }
-
-  #header .chosen-container-single .chosen-single span {
-    color: #fafafa;
-  }
-
-  #header .chosen-container-single .chosen-single div b {
-    background-position: 0 5px;
-    filter: brightness(0) invert(1);
-  }
-
-  #header .chosen-container-active.chosen-with-drop .chosen-single div b {
-    background-position: -18px 5px;
-    filter: brightness(0) invert(1);
-  }
-
-  #header .chosen-container {
-    width: 160px !important;
-  }
-
   /* @AI-Modified: 2026-02-04 - Spec file section */
   #header .spec {
     display: flex;
