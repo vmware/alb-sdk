@@ -562,7 +562,7 @@
                     "default": "API_PROPERTY_ACCESS_READ_WRITE"
                 },
                 "deprecated": {
-                    "description": "Whether this property is deprecated. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Marks this property as deprecated. Requests containing this property are treated as a schema violation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "name": {
@@ -570,11 +570,11 @@
                     "type": "string"
                 },
                 "nullable": {
-                    "description": "Whether this property is nullable. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When true, this property accepts a null value in addition to its declared type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "required": {
-                    "description": "Whether this property is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Marks this property as required within its parent object schema. A request body object missing this property is treated as a violation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "schema": {
@@ -601,11 +601,11 @@
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
                 "additional_properties_schema": {
-                    "description": "Schema for the additional properties. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Type constraint for additional properties not defined in object_properties. When set, unknown keys must conform to this schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ApiSimpleSchemaDescription"
                 },
                 "allow_additional_properties": {
-                    "description": "Whether this schema allows additional properties. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When true, object keys not defined in object_properties are permitted. Corresponds to OpenAPI additionalProperties  true. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "array_item_type": {
@@ -613,7 +613,7 @@
                     "$ref": "#/definitions/ApiSimpleSchemaDescription"
                 },
                 "composite_types": {
-                    "description": "List of types that are part of the oneof, any_of or all_of. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Sub-schemas for this composite type (oneOf, anyOf, or allOf). Each entry must be a SCHEMA_TYPE_REFERENCE pointing to an ApiSchema. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ApiSimpleSchemaDescription"
@@ -624,7 +624,7 @@
                     "type": "string"
                 },
                 "discriminator": {
-                    "description": "Discriminator for the composite types. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Property used to distinguish between sub-schemas in oneOf/anyOf composite types. Maps a discriminator property value to the matching schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/DiscriminatorDescription"
                 },
                 "max_items": {
@@ -649,7 +649,7 @@
                     }
                 },
                 "source": {
-                    "description": "Source of the API schema. Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Indicates whether this schema was user-defined or imported from an OpenAPI specification file. Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string",
                     "default": "SOURCE_USER_DEFINED"
@@ -716,7 +716,7 @@
                     "format": "double"
                 },
                 "schema_ref": {
-                    "description": "UUID of the referenced ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reference to the ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "string_enum_values": {
@@ -762,7 +762,7 @@
                     }
                 },
                 "property_name": {
-                    "description": "Property name of the discriminator. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the JSON property whose value determines which sub-schema applies. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -771,7 +771,7 @@
             "type": "object",
             "properties": {
                 "discriminator_key": {
-                    "description": "Key of the discriminator. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Discriminator property value that maps to the referenced schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "schema_ref": {

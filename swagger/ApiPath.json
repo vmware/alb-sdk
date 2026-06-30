@@ -709,7 +709,7 @@
                     "type": "string"
                 },
                 "unknown_http_method_action": {
-                    "description": "Action to take on unknown http method. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action to take when a request matches this path but uses an HTTP method not defined for this path. Overrides the policy-level unknown_http_method_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
@@ -766,7 +766,7 @@
                     }
                 },
                 "required": {
-                    "description": "Whether the request body is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Marks the request body as required. A missing body is treated as a violation; enforcement depends on the configured body validation actions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "unknown_content_type_action": {
@@ -783,7 +783,7 @@
             ],
             "properties": {
                 "content_type_mappings": {
-                    "description": "Content type mappings for response body. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Mapping of response content types to their corresponding schemas. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ApiContentTypeMapping"
@@ -794,7 +794,7 @@
                     "type": "string"
                 },
                 "response_header_parameters": {
-                    "description": "Description of response header parameters. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Response header parameter definitions for this status code. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ParameterDescription"
@@ -828,7 +828,7 @@
                     "format": "double"
                 },
                 "schema_ref": {
-                    "description": "UUID of the referenced ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reference to the ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "string_enum_values": {
@@ -917,7 +917,7 @@
             ],
             "properties": {
                 "allow_empty_value": {
-                    "description": "Whether this parameter allows an empty value. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When false, a parameter present with an empty value (e.g. ?foo=) is treated as a schema violation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -930,7 +930,7 @@
                     "type": "string"
                 },
                 "required": {
-                    "description": "Whether this parameter is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Marks this parameter as mandatory. A missing parameter is treated as a violation; enforcement depends on the missing-mandatory action configured for its location (query or header). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "schema": {
