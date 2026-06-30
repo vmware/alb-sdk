@@ -290,6 +290,7 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
         y.pop('_last_modified', None)
         x.pop('api_version', None)
         y.pop('api_verison', None)
+        x.pop('verify', None)
         d_xks = [k for k in x.keys() if k in sensitive_fields]
 
         if d_xks:
