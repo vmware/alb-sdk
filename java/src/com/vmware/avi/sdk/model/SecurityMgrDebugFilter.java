@@ -395,7 +395,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
-     * Allowed values are 1-1440.
+     * Allowed values are 5-1440.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -409,7 +409,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the setter method to the attribute.
      * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
-     * Allowed values are 1-1440.
+     * Allowed values are 5-1440.
      * Field introduced in 32.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

@@ -12,16 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TLSProfileApiResponse
+ * ALBServicesStatusApiResponse
  */
-public class TLSProfileApiResponse {
+public class ALBServicesStatusApiResponse {
   @JsonProperty("count")
   private Integer count = null;
 
   @JsonProperty("results")
-  private List<TLSProfile> results = new ArrayList<TLSProfile>();
+  private List<ALBServicesStatus> results = new ArrayList<ALBServicesStatus>();
 
-  public TLSProfileApiResponse count(Integer count) {
+  public ALBServicesStatusApiResponse count(Integer count) {
     this.count = count;
     return this;
   }
@@ -39,12 +39,12 @@ public class TLSProfileApiResponse {
     this.count = count;
   }
 
-  public TLSProfileApiResponse results(List<TLSProfile> results) {
+  public ALBServicesStatusApiResponse results(List<ALBServicesStatus> results) {
     this.results = results;
     return this;
   }
 
-  public TLSProfileApiResponse addResultsItem(TLSProfile resultsItem) {
+  public ALBServicesStatusApiResponse addResultsItem(ALBServicesStatus resultsItem) {
     this.results.add(resultsItem);
     return this;
   }
@@ -54,11 +54,11 @@ public class TLSProfileApiResponse {
    * @return results
   **/
   @Schema(required = true, description = "")
-  public List<TLSProfile> getResults() {
+  public List<ALBServicesStatus> getResults() {
     return results;
   }
 
-  public void setResults(List<TLSProfile> results) {
+  public void setResults(List<ALBServicesStatus> results) {
     this.results = results;
   }
 
@@ -70,9 +70,9 @@ public class TLSProfileApiResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TLSProfileApiResponse tLSProfileApiResponse = (TLSProfileApiResponse) o;
-    return Objects.equals(this.count, tLSProfileApiResponse.count) &&
-        Objects.equals(this.results, tLSProfileApiResponse.results);
+    ALBServicesStatusApiResponse aLBServicesStatusApiResponse = (ALBServicesStatusApiResponse) o;
+    return Objects.equals(this.count, aLBServicesStatusApiResponse.count) &&
+        Objects.equals(this.results, aLBServicesStatusApiResponse.results);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class TLSProfileApiResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TLSProfileApiResponse {\n");
+    sb.append("class ALBServicesStatusApiResponse {\n");
     
     sb.append("    count: ").append(toIndentedString(count)).append("\n");
     sb.append("    results: ").append(toIndentedString(results)).append("\n");

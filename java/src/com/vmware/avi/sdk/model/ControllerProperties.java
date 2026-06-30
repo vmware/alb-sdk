@@ -187,6 +187,12 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("ignore_vrf_in_networksubnetlist")
     private Boolean ignoreVrfInNetworksubnetlist = false;
 
+    @JsonProperty("ipgls_client_cache_size")
+    private Integer ipglsClientCacheSize = 10000;
+
+    @JsonProperty("ipgls_client_cache_ttl_minutes")
+    private Integer ipglsClientCacheTtlMinutes = 5;
+
     @JsonProperty("log_records_allocated_size")
     private Integer logRecordsAllocatedSize;
 
@@ -1819,6 +1825,70 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setIgnoreVrfInNetworksubnetlist(Boolean  ignoreVrfInNetworksubnetlist) {
         this.ignoreVrfInNetworksubnetlist = ignoreVrfInNetworksubnetlist;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Size of the ipgls client cache.
+     * This cache stores country code lookups for ip addresses to reduce grpc calls to the ipgls service.
+     * Set to 0 to disable caching.
+     * Allowed values are 0-1000000.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+     * @return ipglsClientCacheSize
+     */
+    public Integer getIpglsClientCacheSize() {
+        return ipglsClientCacheSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Size of the ipgls client cache.
+     * This cache stores country code lookups for ip addresses to reduce grpc calls to the ipgls service.
+     * Set to 0 to disable caching.
+     * Allowed values are 0-1000000.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+     * @param ipglsClientCacheSize set the ipglsClientCacheSize.
+     */
+    public void setIpglsClientCacheSize(Integer  ipglsClientCacheSize) {
+        this.ipglsClientCacheSize = ipglsClientCacheSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Ttl for entries in the ipgls client cache.
+     * After this duration, cached ip geolocation data will expire and require a fresh lookup.
+     * Lower values provide fresher data but increase load on ipgls service.
+     * Higher values reduce load but may serve stale geolocation data.
+     * Allowed values are 1-1440.
+     * Field introduced in 32.2.1.
+     * Unit is min.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @return ipglsClientCacheTtlMinutes
+     */
+    public Integer getIpglsClientCacheTtlMinutes() {
+        return ipglsClientCacheTtlMinutes;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Ttl for entries in the ipgls client cache.
+     * After this duration, cached ip geolocation data will expire and require a fresh lookup.
+     * Lower values provide fresher data but increase load on ipgls service.
+     * Higher values reduce load but may serve stale geolocation data.
+     * Allowed values are 1-1440.
+     * Field introduced in 32.2.1.
+     * Unit is min.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5.
+     * @param ipglsClientCacheTtlMinutes set the ipglsClientCacheTtlMinutes.
+     */
+    public void setIpglsClientCacheTtlMinutes(Integer  ipglsClientCacheTtlMinutes) {
+        this.ipglsClientCacheTtlMinutes = ipglsClientCacheTtlMinutes;
     }
 
     /**
@@ -3608,7 +3678,9 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.ccUserPasswordExpiryDays, objControllerProperties.ccUserPasswordExpiryDays)&&
   Objects.equals(this.enableStreamingBasedNsxIpGroupSync, objControllerProperties.enableStreamingBasedNsxIpGroupSync)&&
   Objects.equals(this.vsSeLicenseReservationFail, objControllerProperties.vsSeLicenseReservationFail)&&
-  Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields);
+  Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields)&&
+  Objects.equals(this.ipglsClientCacheSize, objControllerProperties.ipglsClientCacheSize)&&
+  Objects.equals(this.ipglsClientCacheTtlMinutes, objControllerProperties.ipglsClientCacheTtlMinutes);
     }
 
     @Override
@@ -3670,6 +3742,8 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    gslbPurgeBatchSize: ").append(toIndentedString(gslbPurgeBatchSize)).append("\n");
                         sb.append("    gslbPurgeSleepTimeMs: ").append(toIndentedString(gslbPurgeSleepTimeMs)).append("\n");
                         sb.append("    ignoreVrfInNetworksubnetlist: ").append(toIndentedString(ignoreVrfInNetworksubnetlist)).append("\n");
+                        sb.append("    ipglsClientCacheSize: ").append(toIndentedString(ipglsClientCacheSize)).append("\n");
+                        sb.append("    ipglsClientCacheTtlMinutes: ").append(toIndentedString(ipglsClientCacheTtlMinutes)).append("\n");
                         sb.append("    logRecordsAllocatedSize: ").append(toIndentedString(logRecordsAllocatedSize)).append("\n");
                         sb.append("    logRecordsAllocationPercentageForEvents: ").append(toIndentedString(logRecordsAllocationPercentageForEvents)).append("\n");
                         sb.append("    logRecordsCleanupTargetPercentage: ").append(toIndentedString(logRecordsCleanupTargetPercentage)).append("\n");

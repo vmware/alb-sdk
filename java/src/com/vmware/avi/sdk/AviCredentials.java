@@ -162,6 +162,8 @@ public class AviCredentials
     private Integer connectionTimeout = 60; // 1 min default
     private Boolean isUnAuthenticatedApi = false;// for unauthenticated apis
     private SSLContext sslContext; // for sslContext
+    private String sslCertificate; // path to PEM client certificate
+    private String sslPrivateKey; // path to PEM PKCS8 private key
 
     /**
      * Gets the controller's IP.
@@ -552,14 +554,51 @@ public class AviCredentials
         this.sslContext = sslContext;
     }
 
+    /**
+	 * Sets the sslCertificate.
+	 *
+	 * @param sslCertificate  containing SSLCertificate.
+	 */
+    public void setSslCertificate(String sslCertificate) {
+        this.sslCertificate = sslCertificate;
+    }
+
+    /**
+     * Gets ssl certificate.
+     * 
+     * @return sslCertificate representing SSLCertificate.
+     */
+    public String getSslCertificate() {
+        return sslCertificate;
+    }
+
+    /**
+	 * Sets the sslPrivateKey.
+	 *
+	 * @param sslPrivateKey  containing SSLPrivateKey.
+	 */
+    public void setSslPrivateKey(String sslPrivateKey) {
+        this.sslPrivateKey = sslPrivateKey;
+    }
+
+    /**
+     * Gets ssl privateKey.
+     * 
+     * @return sslPrivateKey representing SSLPrivateKey.
+     */
+    public String getSslPrivateKey() {
+        return sslPrivateKey;
+    }
+
 	@Override
 	public String toString() {
-		return "AviCredentials [controller=" + controller + ", username=" + username + ", password=" + password
+		return "AviCredentials [controller=" + controller + ", username=" + username + ", password=***"
 				+ ", tenant=" + tenant + ", version=" + version + ", tenantUuid=" + tenantUuid + ", port=" + port
-				+ ", timeout=" + timeout + ", connectionTimeout=" + connectionTimeout + ", sessionID=" + sessionID
-                + ", csrftoken=" + csrftoken + ", token=" + token + ", verify=" + verify
+				+ ", timeout=" + timeout + ", connectionTimeout=" + connectionTimeout + ", sessionID=***"
+                + ", csrftoken=***" + ", token=***" + ", verify=" + verify
                 + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
 				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication
-                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext + "]";
+                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext
+                + ", sslCertificate=***" + ", sslPrivateKey=***]";
 	}
 }

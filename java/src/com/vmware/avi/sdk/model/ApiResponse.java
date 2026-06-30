@@ -41,7 +41,7 @@ public class ApiResponse  {
      * This is the getter method this will return the attribute value.
      * Content type mappings for response body.
      * Field introduced in 32.2.1.
-     * Maximum of 16 items allowed.
+     * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentTypeMappings
@@ -54,7 +54,7 @@ public class ApiResponse  {
      * This is the setter method. this will set the contentTypeMappings
      * Content type mappings for response body.
      * Field introduced in 32.2.1.
-     * Maximum of 16 items allowed.
+     * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentTypeMappings
@@ -67,7 +67,7 @@ public class ApiResponse  {
      * This is the setter method this will set the contentTypeMappings
      * Content type mappings for response body.
      * Field introduced in 32.2.1.
-     * Maximum of 16 items allowed.
+     * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return contentTypeMappings
