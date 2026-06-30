@@ -8,7 +8,7 @@ package models
 // swagger:model ApiSpecServer
 type APISpecServer struct {
 
-	// Description of the server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Description of this server entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
 	// Server URL or relative path. May be an absolute URL (e.g. 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g. '/v1', '/'). When populated from an OpenAPI spec, server URL template variables are resolved to concrete URLs at import time before being stored here. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -7,13 +7,13 @@ package models
 // APIResponse is the response to an API call.
 type APIResponse struct {
 
-	// Content type mappings for response body. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Mapping of response content types to their corresponding schemas. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ContentTypeMappings []*APIContentTypeMapping `json:"content_type_mappings,omitempty"`
 
 	// Description of the response from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Description of response header parameters. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Response header parameter definitions for this status code. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResponseHeaderParameters []*ParameterDescription `json:"response_header_parameters,omitempty"`
 
 	// HTTP status code or status code range. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
