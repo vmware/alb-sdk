@@ -24,7 +24,7 @@ type APISchema struct {
 	// If the type is array, this is the type of the array items. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ArrayItemType *APISimpleSchemaDescription `json:"array_item_type,omitempty"`
 
-	// List of types that are part of the oneof, any_of or all_of. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// List of types that are part of the oneof, any_of or all_of. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CompositeTypes []*APISimpleSchemaDescription `json:"composite_types,omitempty"`
 
 	// Description of this API schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -43,7 +43,7 @@ type APISchema struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// List of properties for this object schema. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// List of properties for this object schema. Field introduced in 32.2.1. Maximum of 512 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ObjectProperties []*APIObjectProperties `json:"object_properties,omitempty"`
 
 	// Source of the API schema. Enum options - SOURCE_USER_DEFINED, SOURCE_API_SPEC, SOURCE_DISCOVERED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

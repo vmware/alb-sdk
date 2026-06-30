@@ -14,6 +14,7 @@ type AviClient struct {
 	ALBServicesFileDownload         *ALBServicesFileDownloadClient
 	ALBServicesFileUpload           *ALBServicesFileUploadClient
 	ALBServicesJob                  *ALBServicesJobClient
+	ALBServicesStatus               *ALBServicesStatusClient
 	APIPath                         *APIPathClient
 	APIPolicy                       *APIPolicyClient
 	APIRateLimitProfile             *APIRateLimitProfileClient
@@ -144,7 +145,6 @@ type AviClient struct {
 	SystemConfiguration             *SystemConfigurationClient
 	SystemLimits                    *SystemLimitsClient
 	SystemReport                    *SystemReportClient
-	TLSProfile                      *TLSProfileClient
 	TaskJournal                     *TaskJournalClient
 	TechSupport                     *TechSupportClient
 	TechSupportMessage              *TechSupportMessageClient
@@ -200,6 +200,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ALBServicesFileDownload = NewALBServicesFileDownloadClient(aviSession)
 	aviClient.ALBServicesFileUpload = NewALBServicesFileUploadClient(aviSession)
 	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
+	aviClient.ALBServicesStatus = NewALBServicesStatusClient(aviSession)
 	aviClient.APIPath = NewAPIPathClient(aviSession)
 	aviClient.APIPolicy = NewAPIPolicyClient(aviSession)
 	aviClient.APIRateLimitProfile = NewAPIRateLimitProfileClient(aviSession)
@@ -330,7 +331,6 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SystemConfiguration = NewSystemConfigurationClient(aviSession)
 	aviClient.SystemLimits = NewSystemLimitsClient(aviSession)
 	aviClient.SystemReport = NewSystemReportClient(aviSession)
-	aviClient.TLSProfile = NewTLSProfileClient(aviSession)
 	aviClient.TaskJournal = NewTaskJournalClient(aviSession)
 	aviClient.TechSupport = NewTechSupportClient(aviSession)
 	aviClient.TechSupportMessage = NewTechSupportMessageClient(aviSession)

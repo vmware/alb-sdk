@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// TLSProfileAPIResponse TLS profile Api response
-// swagger:model TLSProfileApiResponse
-type TLSProfileAPIResponse struct {
+// ALBServicesStatusAPIResponse a l b services status Api response
+// swagger:model ALBServicesStatusApiResponse
+type ALBServicesStatusAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type TLSProfileAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*TLSProfile `json:"results,omitempty"`
+	Results []*ALBServicesStatus `json:"results,omitempty"`
 }
