@@ -4,11 +4,11 @@
 from __future__ import (absolute_import, division, print_function)
 
 __metaclass__ = type
+import logging
+import time
 
 from avi.sdk.avi_api import ApiSession, \
     sessionDict, APIError, AviCredentials
-import logging
-import time
 
 from requests import ConnectionError
 from requests.exceptions import ChunkedEncodingError
@@ -51,8 +51,8 @@ class CSPApiSession(ApiSession):
             body["api_token"] = self.avi_credentials.csp_token
         else:
             raise APIError("CSP API Token is not provided for csp login %s" % self.csp_prefix)
-        logger.debug('authenticating using api token %s prefix %s',
-                     self.avi_credentials.csp_token, self.csp_prefix)
+        logger.debug('authenticating using api token prefix %s',
+                     self.csp_prefix)
         self.cookies.clear()
         err = None
         try:
@@ -64,8 +64,7 @@ class CSPApiSession(ApiSession):
                 self.num_session_retries = 0
                 authorization_token = {"Authorization": "Bearer %s" % (rsp.json().get('access_token'))}
                 self.headers.update(authorization_token)
-                logger.debug("authentication success for user %s",
-                             self.avi_credentials.csp_token)
+                logger.debug("authentication success")
                 return
             # Check for bad request and invalid credentials response code
             elif rsp.status_code in [401, 403]:
