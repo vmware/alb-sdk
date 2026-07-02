@@ -17,7 +17,7 @@ type APIRequestBodyDescription struct {
 	// Mapping of the content type to the request body schema. Field introduced in 32.2.1. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Mappings []*APIContentTypeMapping `json:"mappings,omitempty"`
 
-	// Whether the request body is required. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Marks the request body as required. A missing body is treated as a violation; enforcement depends on the configured body validation actions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Required *bool `json:"required,omitempty"`
 
 	// Action to take when the request body's content type is not defined for this endpoint. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

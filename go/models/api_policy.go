@@ -22,7 +22,7 @@ type APIPolicy struct {
 	// Description of this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// UUID of the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reference to the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileObjectRefs []string `json:"file_object_refs,omitempty"`
 
 	// Mapping of labels to API policy actions. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -14,7 +14,7 @@ type TaskEventHistory struct {
 	// State of the file object for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *FileObjectState `json:"state,omitempty"`
 
-	// File Object processing events for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Processing events for this version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskEvents []*TaskEventMap `json:"task_events,omitempty"`
 
 	// Version of the file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -14,7 +14,7 @@ type APISimpleSchemaDescription struct {
 	// Minimum allowed value for integer and number types (inclusive by default). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinValue *float64 `json:"min_value,omitempty"`
 
-	// UUID of the referenced ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reference to the ApiSchema object. Used when type is SCHEMA_TYPE_REFERENCE, equivalent to $ref in OpenAPI. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SchemaRef *string `json:"schema_ref,omitempty"`
 
 	// If set, this is a list of all possible values for this string. Field introduced in 32.2.1. Maximum of 1024 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
