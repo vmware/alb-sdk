@@ -553,7 +553,7 @@
             "type": "object",
             "properties": {
                 "path_refs": {
-                    "description": "API path UUIDs. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "References to ApiPath objects created from this specification. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "array",
                     "items": {
@@ -561,7 +561,7 @@
                     }
                 },
                 "schema_refs": {
-                    "description": "API schema UUIDs. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "References to ApiSchema objects created from this specification. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "array",
                     "items": {
@@ -569,7 +569,7 @@
                     }
                 },
                 "spec_info": {
-                    "description": "API specification information. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Metadata extracted from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "$ref": "#/definitions/ApiSpecInfo"
                 }
@@ -633,7 +633,7 @@
             ],
             "properties": {
                 "description": {
-                    "description": "Description of the server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Description of this server entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -764,7 +764,7 @@
                     "type": "string"
                 },
                 "api_spec_detail": {
-                    "description": "Further details about the file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API specification details extracted from the file, populated for OPEN_API_SPEC type only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "$ref": "#/definitions/ApiSpecDetail"
                 },
@@ -780,7 +780,7 @@
                     }
                 },
                 "completed_events": {
-                    "description": "Number of completed events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of processing events that have completed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -806,7 +806,7 @@
                     "format": "uint32"
                 },
                 "end_time": {
-                    "description": "End time. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "End time of the file object processing operation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "events": {
@@ -866,7 +866,7 @@
                     "format": "uint64"
                 },
                 "start_time": {
-                    "description": "Start time. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Start time of the file object processing operation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
@@ -885,7 +885,7 @@
                     "type": "string"
                 },
                 "total_events": {
-                    "description": "Total number of events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of processing events for this file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
@@ -980,11 +980,11 @@
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "reason": {
-                    "description": "Reason for the state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Human-readable explanation of why the file object is in its current state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "state": {
-                    "description": "State of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Current processing state of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1055,7 +1055,7 @@
                     "$ref": "#/definitions/FileObjectState"
                 },
                 "task_events": {
-                    "description": "File Object processing events for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Processing events for this version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/TaskEventMap"

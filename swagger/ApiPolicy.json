@@ -590,7 +590,7 @@
                     "type": "string"
                 },
                 "file_object_refs": {
-                    "description": "UUID of the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reference to the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -819,7 +819,7 @@
             ],
             "properties": {
                 "description": {
-                    "description": "Description of the server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Description of this server entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -1496,7 +1496,7 @@
                     "default": "INTERVAL_DAYS"
                 },
                 "inspection_interval_value": {
-                    "description": "Duration of the zombie inspection interval in the specified time unit. Allowed values are 1-365. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Duration of the zombie inspection interval in the specified time unit. An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie. Allowed values are 1-365. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
