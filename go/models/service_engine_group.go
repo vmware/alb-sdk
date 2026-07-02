@@ -402,6 +402,9 @@ type ServiceEngineGroup struct {
 	// Maximum number of file names in a log message. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogMessageMaxFileListSize *uint32 `json:"log_message_max_file_list_size,omitempty"`
 
+	// TLS configuration for log streaming connections from this Service Engine Group. Effective only for LOG_STREAMING_PROTOCOL_TLS and LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	LogStreamingTLSConfig *TLSConfig `json:"log_streaming_tls_config,omitempty"`
+
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
