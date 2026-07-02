@@ -88,6 +88,7 @@ public class ZombieApiClassificationSettings  {
     /**
      * This is the getter method this will return the attribute value.
      * Duration of the zombie inspection interval in the specified time unit.
+     * An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie.
      * Allowed values are 1-365.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -101,6 +102,7 @@ public class ZombieApiClassificationSettings  {
     /**
      * This is the setter method to the attribute.
      * Duration of the zombie inspection interval in the specified time unit.
+     * An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie.
      * Allowed values are 1-365.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

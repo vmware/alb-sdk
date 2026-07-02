@@ -39,7 +39,7 @@ public class ApiResponse  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Content type mappings for response body.
+     * Mapping of response content types to their corresponding schemas.
      * Field introduced in 32.2.1.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -52,7 +52,7 @@ public class ApiResponse  {
 
     /**
      * This is the setter method. this will set the contentTypeMappings
-     * Content type mappings for response body.
+     * Mapping of response content types to their corresponding schemas.
      * Field introduced in 32.2.1.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -65,7 +65,7 @@ public class ApiResponse  {
 
     /**
      * This is the setter method this will set the contentTypeMappings
-     * Content type mappings for response body.
+     * Mapping of response content types to their corresponding schemas.
      * Field introduced in 32.2.1.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -105,7 +105,7 @@ public class ApiResponse  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Description of response header parameters.
+     * Response header parameter definitions for this status code.
      * Field introduced in 32.2.1.
      * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -118,7 +118,7 @@ public class ApiResponse  {
 
     /**
      * This is the setter method. this will set the responseHeaderParameters
-     * Description of response header parameters.
+     * Response header parameter definitions for this status code.
      * Field introduced in 32.2.1.
      * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -131,7 +131,7 @@ public class ApiResponse  {
 
     /**
      * This is the setter method this will set the responseHeaderParameters
-     * Description of response header parameters.
+     * Response header parameter definitions for this status code.
      * Field introduced in 32.2.1.
      * Maximum of 64 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.

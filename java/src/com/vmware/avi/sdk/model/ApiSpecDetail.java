@@ -33,7 +33,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Api path uuids.
+     * References to apipath objects created from this specification.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -45,7 +45,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the setter method. this will set the pathRefs
-     * Api path uuids.
+     * References to apipath objects created from this specification.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -57,7 +57,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the setter method this will set the pathRefs
-     * Api path uuids.
+     * References to apipath objects created from this specification.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -72,7 +72,7 @@ public class ApiSpecDetail  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * Api schema uuids.
+     * References to apischema objects created from this specification.
      * It is a reference to an object of type apischema.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -84,7 +84,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the setter method. this will set the schemaRefs
-     * Api schema uuids.
+     * References to apischema objects created from this specification.
      * It is a reference to an object of type apischema.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -96,7 +96,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the setter method this will set the schemaRefs
-     * Api schema uuids.
+     * References to apischema objects created from this specification.
      * It is a reference to an object of type apischema.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -112,7 +112,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Api specification information.
+     * Metadata extracted from the openapi specification.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return specInfo
@@ -123,7 +123,7 @@ public class ApiSpecDetail  {
 
     /**
      * This is the setter method to the attribute.
-     * Api specification information.
+     * Metadata extracted from the openapi specification.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param specInfo set the specInfo.

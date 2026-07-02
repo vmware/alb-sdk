@@ -411,6 +411,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("log_message_max_file_list_size")
     private Integer logMessageMaxFileListSize = 64;
 
+    @JsonProperty("log_streaming_tls_config")
+    private TlsConfig logStreamingTlsConfig;
+
     @JsonProperty("markers")
     private List<RoleFilterMatchLabel> markers;
 
@@ -4389,6 +4392,32 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setLogMessageMaxFileListSize(Integer  logMessageMaxFileListSize) {
         this.logMessageMaxFileListSize = logMessageMaxFileListSize;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tls configuration for log streaming connections from this service engine group.
+     * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return logStreamingTlsConfig
+     */
+    public TlsConfig getLogStreamingTlsConfig() {
+        return logStreamingTlsConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls configuration for log streaming connections from this service engine group.
+     * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param logStreamingTlsConfig set the logStreamingTlsConfig.
+     */
+    public void setLogStreamingTlsConfig(TlsConfig logStreamingTlsConfig) {
+        this.logStreamingTlsConfig = logStreamingTlsConfig;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -9549,7 +9578,8 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.vmotionNotificationPollInterval, objServiceEngineGroup.vmotionNotificationPollInterval)&&
   Objects.equals(this.ipAdvertisementProfile, objServiceEngineGroup.ipAdvertisementProfile)&&
   Objects.equals(this.logAgentUdpFqdnResolveInterval, objServiceEngineGroup.logAgentUdpFqdnResolveInterval)&&
-  Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount);
+  Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount)&&
+  Objects.equals(this.logStreamingTlsConfig, objServiceEngineGroup.logStreamingTlsConfig);
     }
 
     @Override
@@ -9686,6 +9716,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
                         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
                         sb.append("    logMessageMaxFileListSize: ").append(toIndentedString(logMessageMaxFileListSize)).append("\n");
+                        sb.append("    logStreamingTlsConfig: ").append(toIndentedString(logStreamingTlsConfig)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    maxConcurrentExternalHm: ").append(toIndentedString(maxConcurrentExternalHm)).append("\n");
                         sb.append("    maxCpuLoadAdaptiveSampling: ").append(toIndentedString(maxCpuLoadAdaptiveSampling)).append("\n");
