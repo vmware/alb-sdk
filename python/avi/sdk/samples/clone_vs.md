@@ -390,8 +390,12 @@ Changelog:
 
 2.0.13:
 
-* Add a configuration transform option to allow modification of cloned VS configuration parameters.
+* Add a configuration transform option to allow modification of cloned VS configuration parameters
 
 2.0.14:
 
 * Always clone Application Insights policy (cannot be shared across VSs)
+
+2.0.15:
+
+* Fix a corner-case with manual VsVip, NSX Cloud and older Avi releases due to tier1_lr / vrfcontext handling

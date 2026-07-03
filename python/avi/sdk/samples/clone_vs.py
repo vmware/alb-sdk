@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 
 urllib3.disable_warnings()
 
-AVICLONE_VERSION = [2, 0, 14]
+AVICLONE_VERSION = [2, 0, 15]
 
 # Try to obtain the terminal width to allow spprint() to wrap output neatly.
 # If unable to determine, assume terminal width is 70 characters
@@ -2767,8 +2767,13 @@ class AviClone:
 
             if vsvip_obj:
                 if manual_vsvip:
+                    if 'tier1_lr' in vsvip_obj:
+                        # If target is NSX-T Cloud with overlay, allow
+                        # Controller to manage VS's VRF from VsVip tier_1 config
+                        v_obj['tier1_lr'] = vsvip_obj['tier1_lr']
+                    else:
+                        v_obj['vrf_context_ref'] = vsvip_obj['vrf_context_ref']
                     v_obj['vsvip_ref'] = vsvip_obj['url']
-                    v_obj['vrf_context_ref'] = vsvip_obj['vrf_context_ref']
                 else:
                     # Create new vsvip object
 
