@@ -2810,6 +2810,10 @@
                     "default": 64,
                     "format": "uint32"
                 },
+                "log_streaming_tls_config": {
+                    "description": "TLS configuration for log streaming connections from this Service Engine Group. Effective only for LOG_STREAMING_PROTOCOL_TLS and LOG_STREAMING_PROTOCOL_SYSLOG_OVER_TLS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/TlsConfig"
+                },
                 "markers": {
                     "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -3948,6 +3952,19 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
+                }
+            }
+        },
+        "TlsConfig": {
+            "type": "object",
+            "properties": {
+                "client_cert_ref": {
+                    "description": "Client certificate for mutual TLS authentication. Required when tls_mode is TLS_MODE_MTLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "tls_mode": {
+                    "description": "TLS authentication mode for outbound connections. TLS_MODE_DISABLED  no TLS. TLS_MODE_TLS  server certificate verification. TLS_MODE_MTLS  mutual TLS; client_cert_uuid must be provided. TLS_MODE_VERIFY_ONLY  certificate chain verification without a full TLS session. Enum options - TLS_MODE_DISABLED, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_VERIFY_ONLY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
