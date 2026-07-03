@@ -31,7 +31,7 @@ public class ApiSpecServer  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Description of the server.
+     * Description of this server entry.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -43,7 +43,7 @@ public class ApiSpecServer  {
 
     /**
      * This is the setter method to the attribute.
-     * Description of the server.
+     * Description of this server entry.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

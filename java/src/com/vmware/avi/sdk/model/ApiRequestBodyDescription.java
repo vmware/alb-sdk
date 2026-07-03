@@ -134,7 +134,8 @@ public class ApiRequestBodyDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Whether the request body is required.
+     * Marks the request body as required.
+     * A missing body is treated as a violation; enforcement depends on the configured body validation actions.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
@@ -146,7 +147,8 @@ public class ApiRequestBodyDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Whether the request body is required.
+     * Marks the request body as required.
+     * A missing body is treated as a violation; enforcement depends on the configured body validation actions.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.

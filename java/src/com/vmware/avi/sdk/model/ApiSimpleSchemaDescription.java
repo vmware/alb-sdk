@@ -100,7 +100,7 @@ public class ApiSimpleSchemaDescription  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Uuid of the referenced apischema object.
+     * Reference to the apischema object.
      * Used when type is schema_type_reference, equivalent to $ref in openapi.
      * It is a reference to an object of type apischema.
      * Field introduced in 32.2.1.
@@ -114,7 +114,7 @@ public class ApiSimpleSchemaDescription  {
 
     /**
      * This is the setter method to the attribute.
-     * Uuid of the referenced apischema object.
+     * Reference to the apischema object.
      * Used when type is schema_type_reference, equivalent to $ref in openapi.
      * It is a reference to an object of type apischema.
      * Field introduced in 32.2.1.
