@@ -38,20 +38,22 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.methods.RequestBuilder;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.client5.http.ClientProtocolException;
+import org.apache.hc.client5.http.classic.methods.HttpDelete;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.classic.methods.HttpPut;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.ClassicHttpRequest;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.ParseException;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.apache.hc.core5.http.io.support.ClassicRequestBuilder;
 import org.json.JSONObject;
 import org.junit.Before;
 import org.junit.Rule;
@@ -72,14 +74,14 @@ public class AviSDKMockTest {
 	@Rule
 	public WireMockRule wireMockRule = new WireMockRule(8090);
 
-	private HttpResponse httpGetCall() throws IOException {
+	private CloseableHttpResponse httpGetCall() throws IOException {
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpGet request = new HttpGet("http://localhost:8090/api/pool/pool-0a70a98c-0b7b-4f32-9c93-13a74fcf8201");
 		request.addHeader("Accept", "text/html");
 		return httpClient.execute(request);
 	}
 
-	private HttpResponse httpPostCall() throws IOException {
+	private CloseableHttpResponse httpPostCall() throws IOException {
 		String content = readFile("InputFile.json", StandardCharsets.UTF_8);
 		JSONObject obj = new JSONObject(content);
 		JSONObject postInput = (JSONObject) obj.get("postInput");
@@ -106,23 +108,22 @@ public class AviSDKMockTest {
 
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpPost request = new HttpPost("http://localhost:8090/api/login");
-		StringEntity input = new StringEntity(body.toString());
-		input.setContentType("application/json");
+		StringEntity input = new StringEntity(body.toString(),ContentType.APPLICATION_JSON);
 		request.addHeader("X-Avi-Version", avicredentials.getVersion());
 		request.addHeader("X-Avi-Tenant", avicredentials.getTenant());
 		request.setEntity(input);
-		HttpResponse response = httpClient.execute(request);
+		CloseableHttpResponse response = httpClient.execute(request);
 		verify(postRequestedFor(urlPathEqualTo("/api/login")));
-		int statusCode = response.getStatusLine().getStatusCode();
+		int statusCode = response.getCode();
 		if (statusCode > 299) {
 			LOGGER.severe("Login faild with status code " + statusCode);
-			throw new IOException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
+			throw new IOException("Failed : HTTP error code : " + response.getCode());
 		}
 	}
 
 	@Test
 	public void testPostCall200()
-			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException {
+			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException, ParseException {
 		String content = readFile("InputFile.json", StandardCharsets.UTF_8);
 		JSONObject obj = new JSONObject(content);
 		JSONObject postInput = (JSONObject) obj.get("postInput");
@@ -131,9 +132,9 @@ public class AviSDKMockTest {
 				.withRequestBody(containing(poolstr))
 				.willReturn(aResponse().withStatus(200).withHeader("Content-Type", "application/json")));
 
-		HttpResponse httpResponse = httpPostCall();
+		CloseableHttpResponse httpResponse = httpPostCall();
 		verify(postRequestedFor(urlEqualTo("/api/pool")).withHeader("Content-Type", equalTo("application/json")));
-		int responseCode = httpResponse.getStatusLine().getStatusCode();
+		int responseCode = httpResponse.getCode();
 		if (responseCode > 299) {
 			StringBuffer errMessage = new StringBuffer();
 			errMessage.append("Failed : HTTP error code : ");
@@ -158,23 +159,23 @@ public class AviSDKMockTest {
 		stubFor(post(urlEqualTo("/api/pool")).withHeader("Content-Type", equalTo("application/json"))
 				.withRequestBody(containing(poolstr)).willReturn(aResponse().withStatus(503)
 						.withHeader("Content-Type", "application/json").withBody("Service Unavailable")));
-		HttpResponse httpResponse = httpPostCall();
+		CloseableHttpResponse httpResponse = httpPostCall();
 		String stringResponse = convertHttpResponseToString(httpResponse);
 		verify(postRequestedFor(urlEqualTo("/api/pool")).withHeader("Content-Type", equalTo("application/json")));
-		assertEquals(503, httpResponse.getStatusLine().getStatusCode());
+		assertEquals(503, httpResponse.getCode());
 		assertEquals("Service Unavailable", stringResponse);
 
 	}
 
 	@Test
-	public void testGetCall200() throws ClientProtocolException, IOException, AviApiException {
+	public void testGetCall200() throws ClientProtocolException, IOException, AviApiException, ParseException {
 		stubFor(get(urlPathMatching("/api/pool/([a-z0-9-]*)"))
 				.willReturn(aResponse().withStatus(200).withHeader("Content-Type", "application/json")));
 
-		HttpResponse httpResponse = httpGetCall();
+		CloseableHttpResponse httpResponse = httpGetCall();
 		verify(getRequestedFor(urlPathMatching("/api/pool/pool-0a70a98c-0b7b-4f32-9c93-13a74fcf8201")));
 		assertEquals("application/json", httpResponse.getFirstHeader("Content-Type").getValue());
-		int responseCode = httpResponse.getStatusLine().getStatusCode();
+		int responseCode = httpResponse.getCode();
 		if (responseCode > 299) {
 			StringBuffer errMessage = new StringBuffer();
 			errMessage.append("Failed : HTTP error code : ");
@@ -193,10 +194,10 @@ public class AviSDKMockTest {
 		stubFor(get(urlPathMatching("/api/pool/([a-z0-9-]*)")).withHeader("Accept", matching("text/.*")).willReturn(
 				aResponse().withStatus(503).withHeader("Content-Type", "text/html").withBody("Service Unavailable")));
 
-		HttpResponse httpResponse = httpGetCall();
+		CloseableHttpResponse httpResponse = httpGetCall();
 		String stringResponse = convertHttpResponseToString(httpResponse);
 		verify(getRequestedFor(urlPathMatching("/api/pool/pool-0a70a98c-0b7b-4f32-9c93-13a74fcf8201")));
-		assertEquals(503, httpResponse.getStatusLine().getStatusCode());
+		assertEquals(503, httpResponse.getCode());
 		assertEquals("text/html", httpResponse.getFirstHeader("Content-Type").getValue());
 		assertEquals("Service Unavailable", stringResponse);
 
@@ -204,7 +205,7 @@ public class AviSDKMockTest {
 
 	@Test
 	public void testPutCall()
-			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException {
+			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException, ParseException {
 		String content = readFile("InputFile.json", StandardCharsets.UTF_8);
 		JSONObject obj = new JSONObject(content);
 		JSONObject postInput = (JSONObject) obj.get("postInput");
@@ -219,9 +220,9 @@ public class AviSDKMockTest {
 		HttpPut request = new HttpPut("http://localhost:8090/api/pool");
 		request.addHeader("Content-Type", "application/json");
 		request.setEntity(entity);
-		HttpResponse httpResponse = httpClient.execute(request);
+		CloseableHttpResponse httpResponse = httpClient.execute(request);
 		verify(putRequestedFor(urlEqualTo("/api/pool")).withHeader("Content-Type", equalTo("application/json")));
-		int responseCode = httpResponse.getStatusLine().getStatusCode();
+		int responseCode = httpResponse.getCode();
 		if (responseCode > 299) {
 			StringBuffer errMessage = new StringBuffer();
 			errMessage.append("Failed : HTTP error code : ");
@@ -237,15 +238,15 @@ public class AviSDKMockTest {
 
 	@Test
 	public void testDeleteCall()
-			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException {
+			throws ClientProtocolException, IOException, NoSuchMethodException, SecurityException, AviApiException, ParseException {
 		stubFor(delete(urlPathMatching("/api/pool/([a-z0-9-]*)")).willReturn(ok().withStatus(204)));
 
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 		HttpDelete request = new HttpDelete("http://localhost:8090/api/pool/pool-0a70a98c-0b7b-4f32-9c93-13a74fcf8201");
 		request.addHeader("Content-Type", "application/json");
-		HttpResponse httpResponse = httpClient.execute(request);
+		CloseableHttpResponse httpResponse = httpClient.execute(request);
 		verify(deleteRequestedFor(urlPathMatching("/api/pool/pool-0a70a98c-0b7b-4f32-9c93-13a74fcf8201")));
-		int responseCode = httpResponse.getStatusLine().getStatusCode();
+		int responseCode = httpResponse.getCode();
 		if (responseCode > 299) {
 			StringBuffer errMessage = new StringBuffer();
 			errMessage.append("Failed : HTTP error code : ");
@@ -259,7 +260,7 @@ public class AviSDKMockTest {
 	}
 
 	@Test
-	public void testPostFileUpload() throws org.apache.http.ParseException, IOException, AviApiException {
+	public void testPostFileUpload() throws ParseException, IOException, AviApiException {
 		File f = new File("/mnt/files/hsmpackages/safenet.tar");
 		CloseableHttpClient httpClient = HttpClients.createDefault();
 
@@ -268,15 +269,15 @@ public class AviSDKMockTest {
 				.withMultipartRequestBody(aMultipart().withName("file").withBody(binaryEqualTo(f.getName().getBytes())))
 				.willReturn(ok()));
 
-		HttpUriRequest request = RequestBuilder
+		ClassicHttpRequest request = ClassicRequestBuilder
 				.post("http://localhost:8090/api/fileservice/hsmpackages?hsmtype=safenet")
 				.setEntity(MultipartEntityBuilder.create()
 						.addTextBody("uri", "controller://hsmpackages", ContentType.TEXT_PLAIN)
 						.addBinaryBody("file", f.getName().getBytes()).build())
 				.build();
-		HttpResponse response = httpClient.execute(request);
+		CloseableHttpResponse response = httpClient.execute(request);
 		verify(postRequestedFor(urlEqualTo("/api/fileservice/hsmpackages?hsmtype=safenet")));
-		int responseCode = response.getStatusLine().getStatusCode();
+		int responseCode = response.getCode();
 		if (responseCode > 299) {
 			StringBuffer errMessage = new StringBuffer();
 			errMessage.append("Failed : HTTP error code : ");
@@ -289,7 +290,7 @@ public class AviSDKMockTest {
 		}
 	}
 
-	private String convertHttpResponseToString(HttpResponse httpResponse) throws IOException {
+	private String convertHttpResponseToString(CloseableHttpResponse httpResponse) throws IOException {
 		InputStream inputStream = httpResponse.getEntity().getContent();
 		return convertInputStreamToString(inputStream);
 	}
