@@ -22,16 +22,16 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SnmpV3UserParams  {
     @JsonProperty("auth_passphrase")
-    private String authPassphrase = "avinetworks";
+    private String authPassphrase;
 
     @JsonProperty("auth_type")
-    private String authType = "SNMP_V3_AUTH_MD5";
+    private String authType = "SNMP_V3_AUTH_SHA_256";
 
     @JsonProperty("priv_passphrase")
-    private String privPassphrase = "avinetworks";
+    private String privPassphrase;
 
     @JsonProperty("priv_type")
-    private String privType = "SNMP_V3_PRIV_DES";
+    private String privType = "SNMP_V3_PRIV_AES";
 
     @JsonProperty("username")
     private String username;
@@ -43,7 +43,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 authentication passphrase.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return authPassphrase
      */
     public String getAuthPassphrase() {
@@ -55,7 +55,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 authentication passphrase.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param authPassphrase set the authPassphrase.
      */
     public void setAuthPassphrase(String  authPassphrase) {
@@ -68,7 +68,7 @@ public class SnmpV3UserParams  {
      * Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_MD5".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_SHA_256".
      * @return authType
      */
     public String getAuthType() {
@@ -81,7 +81,7 @@ public class SnmpV3UserParams  {
      * Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_MD5".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_AUTH_SHA_256".
      * @param authType set the authType.
      */
     public void setAuthType(String  authType) {
@@ -93,7 +93,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 privacy passphrase.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return privPassphrase
      */
     public String getPrivPassphrase() {
@@ -105,7 +105,7 @@ public class SnmpV3UserParams  {
      * Snmp v3 privacy passphrase.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "avinetworks".
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param privPassphrase set the privPassphrase.
      */
     public void setPrivPassphrase(String  privPassphrase) {
@@ -118,7 +118,7 @@ public class SnmpV3UserParams  {
      * Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_DES".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_AES".
      * @return privType
      */
     public String getPrivType() {
@@ -131,7 +131,7 @@ public class SnmpV3UserParams  {
      * Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_DES".
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SNMP_V3_PRIV_AES".
      * @param privType set the privType.
      */
     public void setPrivType(String  privType) {

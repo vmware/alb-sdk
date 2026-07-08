@@ -218,7 +218,7 @@ public class ApiPath extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Action to take when a request matches this path but uses an http method not defined for this path.
      * Overrides the policy-level unknown_http_method_action when not inherit.
-     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
@@ -232,7 +232,7 @@ public class ApiPath extends AviRestResource  {
      * This is the setter method to the attribute.
      * Action to take when a request matches this path but uses an http method not defined for this path.
      * Overrides the policy-level unknown_http_method_action when not inherit.
-     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT.
+     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
