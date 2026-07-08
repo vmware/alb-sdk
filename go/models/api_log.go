@@ -8,7 +8,7 @@ package models
 // swagger:model ApiLog
 type APILog struct {
 
-	// Overall action taken based on the API violations. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Overall action taken based on the API violations. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Action *string `json:"action,omitempty"`
 
 	// Comma-separated WAAP label names effective for this request Set only when avi.waap.enable_label_logging() DataScript runs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

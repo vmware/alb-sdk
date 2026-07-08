@@ -8,7 +8,7 @@ package models
 // swagger:model ApiViolation
 type APIViolation struct {
 
-	// Action performed based on this violation, such as flag or reject. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action performed based on this violation, such as flag or reject. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Action *string `json:"action,omitempty"`
 
 	// Location where the API violation was detected, such as path, query args, or request body. Enum options - API_LOG_VIOLATION_LOCATION_UNSPECIFIED, API_LOG_VIOLATION_LOCATION_PATH, API_LOG_VIOLATION_LOCATION_METHOD, API_LOG_VIOLATION_LOCATION_QUERY_ARGS, API_LOG_VIOLATION_LOCATION_REQUEST_HEADER, API_LOG_VIOLATION_LOCATION_REQUEST_CONTENT_TYPE, API_LOG_VIOLATION_LOCATION_REQUEST_BODY, API_LOG_VIOLATION_LOCATION_RESPONSE_STATUS_CODE, API_LOG_VIOLATION_LOCATION_REPONSE_HEADER, API_LOG_VIOLATION_LOCATION_RESPONSE_CONTENT_TYPE, API_LOG_VIOLATION_LOCATION_RESPONSE_BODY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

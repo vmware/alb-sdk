@@ -657,6 +657,9 @@ type EventDetails struct {
 	SslExpireDetails *SSLExpireDetails `json:"ssl_expire_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SslExpiredDetails *SSLExpiredDetails `json:"ssl_expired_details,omitempty"`
+
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslExportDetails *SSLExportDetails `json:"ssl_export_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

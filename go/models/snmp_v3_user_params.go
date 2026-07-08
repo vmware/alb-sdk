@@ -9,13 +9,15 @@ package models
 type SnmpV3UserParams struct {
 
 	// SNMP V3 authentication passphrase. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AuthPassphrase *string `json:"auth_passphrase,omitempty"`
+	// Required: true
+	AuthPassphrase *string `json:"auth_passphrase"`
 
 	// SNMP V3 user authentication type. Enum options - SNMP_V3_AUTH_MD5, SNMP_V3_AUTH_SHA, SNMP_V3_AUTH_SHA_224, SNMP_V3_AUTH_SHA_256, SNMP_V3_AUTH_SHA_384, SNMP_V3_AUTH_SHA_512. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AuthType *string `json:"auth_type,omitempty"`
 
 	// SNMP V3 privacy passphrase. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PrivPassphrase *string `json:"priv_passphrase,omitempty"`
+	// Required: true
+	PrivPassphrase *string `json:"priv_passphrase"`
 
 	// SNMP V3 privacy setting. Enum options - SNMP_V3_PRIV_DES, SNMP_V3_PRIV_AES. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PrivType *string `json:"priv_type,omitempty"`
