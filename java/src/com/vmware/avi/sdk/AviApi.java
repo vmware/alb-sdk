@@ -5,7 +5,6 @@
 package com.vmware.avi.sdk;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,30 +19,28 @@ import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Logger;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.entity.mime.FileBody;
+import org.apache.hc.client5.http.entity.mime.HttpMultipartMode;
+import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.core5.http.ContentType;
+import org.apache.hc.core5.http.NameValuePair;
+import org.apache.hc.core5.http.ParseException;
+import org.apache.hc.core5.http.io.entity.EntityUtils;
+import org.apache.hc.core5.http.message.BasicNameValuePair;
+import org.apache.hc.core5.net.URIBuilder;
+import org.apache.hc.core5.http.HttpEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import com.vmware.avi.sdk.model.AviApiResponse;
 
 /**
  * This class creates a session with controller and facilitates CRUD operations.
@@ -72,7 +69,7 @@ public class AviApi {
 	public AviApi(AviCredentials aviCredentials) {
 		this.aviCredentials = aviCredentials;
 		this.sessionKey = AviRestUtils.getSessionKey(aviCredentials);
-		this.restTemplate = AviRestUtils.getRestTemplate(aviCredentials);
+		this.restClient = AviRestUtils.getRestClient(aviCredentials);
 	}
 
 	/**
@@ -89,7 +86,7 @@ public class AviApi {
 	 */
 	private String sessionKey;
 
-	private RestTemplate restTemplate;
+	private RestClient restClient;
 
 	/**
 	 * This static factory method to create session if not present in the pool if
@@ -133,7 +130,7 @@ public class AviApi {
 		String path = objClass.getSimpleName().toLowerCase();
 		String getUrl = path + "/" + objectUUid;
 
-		T aviObj = (T) this.restTemplate.getForObject(getUrl, objClass);
+		T aviObj = this.restClient.get().uri(getUrl).retrieve().body(objClass);
 		LOGGER.info("__DONE__Executing getForObject is completed..");
 		return aviObj;
 	}
@@ -143,7 +140,7 @@ public class AviApi {
 		String path = objClass.getSimpleName().toLowerCase();
 		String getUrl = buildApiParams(path.split("apiresponse")[0], params);
 
-		T aviObj = (T) this.restTemplate.getForObject(getUrl, objClass, params);
+		T aviObj = this.restClient.get().uri(getUrl).retrieve().body(objClass);
 		LOGGER.info("__DONE__Executing getForObject is completed..");
 		return aviObj;
 	}
@@ -155,9 +152,9 @@ public class AviApi {
 
 		T aviObj = null;
 		if (params != null) {
-			aviObj = (T) this.restTemplate.getForObject(getUrl, objClass, params);
+			aviObj = this.restClient.get().uri(getUrl).retrieve().body(objClass);
 		} else {
-			aviObj = (T) this.restTemplate.getForObject(getUrl, objClass);
+			aviObj = this.restClient.get().uri(getUrl).retrieve().body(objClass);
 		}
 		LOGGER.info("__DONE__Executing getForObjectList is completed..");
 		return aviObj;
@@ -166,7 +163,9 @@ public class AviApi {
 	public String buildApiParams(String path, Map<String, String> params) {
 		LOGGER.info("__INIT__ Inside buildApiParams..");
 		UriComponentsBuilder uriBuilder = UriComponentsBuilder
-				.fromHttpUrl(restTemplate.getUriTemplateHandler().expand("/").toString().concat(path));
+				.fromUriString(AviRestUtils.getControllerURL(this.aviCredentials))
+				.path("/api/")
+				.path(path);
 		if (null != params) {
 			for (String key : params.keySet()) {
 				uriBuilder.queryParam(key, params.get(key));
@@ -197,18 +196,15 @@ public class AviApi {
 			if (params != null) {
 				getUrl = buildApiParams(path, params);
 			}
-			HttpEntity requestEntity = null;
+			RestClient.RequestHeadersSpec<?> requestSpec = this.restClient.get().uri(getUrl);
 			if (userHeaders != null) {
 				HttpHeaders headers = setHeaders(userHeaders);
-				requestEntity = new HttpEntity(headers);
+				requestSpec.headers(h -> h.addAll(headers));
 			}
+			ResponseEntity<String> response = requestSpec.retrieve().toEntity(String.class);
 			if (path.contains("/")) {
-				ResponseEntity<String> response = restTemplate.exchange(getUrl, HttpMethod.GET, requestEntity,
-						String.class);
 				jsonObject = new JSONObject(response.getBody());
 			} else {
-				ResponseEntity<AviApiResponse> response = restTemplate.exchange(getUrl, HttpMethod.GET, requestEntity,
-						AviApiResponse.class);
 				jsonObject = new JSONObject(response.getBody());
 			}
 			LOGGER.info("__DONE__Executing GET is completed..");
@@ -241,35 +237,48 @@ public class AviApi {
 		return this.put(path, body, null);
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> ResponseEntity<T> put(T aviObj, String objectUUid) throws JSONException, AviApiException, IOException {
 		LOGGER.info("__INIT__ Inside executing PUT..");
 		String path = aviObj.getClass().getSimpleName().toLowerCase();
 		String getUrl = path + "/" + objectUUid;
 
-		HttpEntity<T> requestEntity = new HttpEntity<T>(aviObj);
-		ResponseEntity<T> response = (ResponseEntity<T>) restTemplate.exchange(getUrl, HttpMethod.PUT, requestEntity,
-				aviObj.getClass());
+		ResponseEntity<T> response = (ResponseEntity<T>) restClient.put()
+				.uri(getUrl)
+				.contentType(MediaType.APPLICATION_JSON)
+				.body(aviObj)
+				.retrieve()
+				.toEntity(aviObj.getClass());
 		LOGGER.info("__DONE__Executing PUT is completed..");
 		return response;
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> ResponseEntity<T> post(T aviObj) throws JSONException, AviApiException, IOException {
 		LOGGER.info("__INIT__ Inside executing POST..");
 		String path = aviObj.getClass().getSimpleName().toLowerCase();
 		String getUrl = path;
-		ResponseEntity<T> responseEntity = (ResponseEntity<T>) this.restTemplate.postForEntity(getUrl, aviObj,
-				aviObj.getClass());
+		ResponseEntity<T> responseEntity = (ResponseEntity<T>) this.restClient.post()
+				.uri(getUrl)
+				.contentType(MediaType.APPLICATION_JSON)
+				.body(aviObj)
+				.retrieve()
+				.toEntity(aviObj.getClass());
 		LOGGER.info("__DONE__Executing POST is completed..");
 		return responseEntity;
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> ResponseEntity<T> delete(Class<T> objClass, String objUUid)
 			throws JSONException, AviApiException, IOException {
 		LOGGER.info("__INIT__ Inside executing DELETE..");
 		String path = objClass.getSimpleName().toLowerCase();
 		String getUrl = path + "/" + objUUid;
 
-		ResponseEntity<T> responseEntity = restTemplate.exchange(getUrl, HttpMethod.DELETE, null, objClass);
+		ResponseEntity<T> responseEntity = (ResponseEntity<T>) this.restClient.delete()
+				.uri(getUrl)
+				.retrieve()
+				.toEntity(objClass);
 		LOGGER.info("__DONE__Executing DELETE is completed..");
 		return responseEntity;
 	}
@@ -326,15 +335,12 @@ public class AviApi {
 				putUrl = path.toLowerCase().concat("/" + objectUuid);
 			}
 
-			HttpEntity<String> requestEntity;
+			RestClient.RequestBodySpec requestSpec = this.restClient.put().uri(putUrl);
 			if (userHeaders != null) {
 				HttpHeaders headers = setHeaders(userHeaders);
-				requestEntity = new HttpEntity<String>(body.toString(), headers);
-			} else {
-				requestEntity = new HttpEntity<String>(body.toString());
-			}
-			ResponseEntity<String> response = (ResponseEntity<String>) restTemplate.exchange(putUrl, HttpMethod.PUT,
-					requestEntity, String.class);
+				requestSpec.headers(h -> h.addAll(headers));
+			} 
+			ResponseEntity<String> response = requestSpec.body(body.toString()).retrieve().toEntity(String.class);
 
 			JSONObject jsonObject = null;
 			if (response.getBody() != null) {
@@ -390,15 +396,12 @@ public class AviApi {
 		try {
 			LOGGER.info("__INIT__ Inside executing POST..");
 
-			HttpEntity<String> requestEntity;
+			RestClient.RequestBodySpec requestSpec = this.restClient.post().uri(path);
 			if (userHeaders != null) {
 				HttpHeaders headers = setHeaders(userHeaders);
-				requestEntity = new HttpEntity<String>(body.toString(), headers);
-			} else {
-				requestEntity = new HttpEntity<String>(body.toString());
-			}
-			ResponseEntity<String> response = (ResponseEntity<String>) restTemplate.exchange(path, HttpMethod.POST,
-					requestEntity, String.class);
+				requestSpec.headers(h -> h.addAll(headers));
+			} 
+			ResponseEntity<String> response = requestSpec.body(body.toString()).retrieve().toEntity(String.class);
 
 			JSONObject jsonObject = new JSONObject(response.getBody());
 			LOGGER.info("__DONE__Executing POST is completed..");
@@ -466,13 +469,12 @@ public class AviApi {
 	public JSONObject delete(String path, String uuid, HashMap<String, String> userHeaders) throws AviApiException {
 		LOGGER.info("__INIT__ Inside executing DELETE..");
 		String deleteUrl = AviRestUtils.getControllerURL(this.aviCredentials) + "/api/" + path + "/" + uuid;
-		if (userHeaders == null) {
-			this.restTemplate.delete(deleteUrl);
-		} else {
-            HttpHeaders headers = setHeaders(userHeaders);
-			HttpEntity<String> requestEntity = new HttpEntity<String>(headers);
-			this.restTemplate.exchange(deleteUrl, HttpMethod.DELETE, requestEntity, String.class);
-		}
+		RestClient.RequestHeadersSpec<?> requestSpec = this.restClient.delete().uri(deleteUrl);
+		if (userHeaders != null) {
+             HttpHeaders headers = setHeaders(userHeaders);
+             requestSpec.headers(h -> h.addAll(headers));
+        }
+		requestSpec.retrieve().toBodilessEntity();
 		LOGGER.info("__DONE__Executing DELETE is completed..");
 		return new JSONObject();
 	}
@@ -500,14 +502,14 @@ public class AviApi {
 			// This attaches the file to the POST:
 			File f = new File(filePath);
 			FileBody fileBody = new FileBody(f, ContentType.MULTIPART_FORM_DATA);
-			MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create().setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+			MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create().setMode(HttpMultipartMode.EXTENDED);
 			entityBuilder.addPart("file", fileBody);
 			entityBuilder.setBoundary(boundary);
-			org.apache.http.HttpEntity entity = entityBuilder.build();
+			HttpEntity entity = entityBuilder.build();
 
 			request.setEntity(entity);
 			CloseableHttpResponse response = httpClient.execute(request);
-			int responseCode = response.getStatusLine().getStatusCode();
+			int responseCode = response.getCode();
 			if (responseCode > 299) {
 				StringBuffer errMessage = new StringBuffer();
 				errMessage.append("Failed : HTTP error code : ");
@@ -522,6 +524,10 @@ public class AviApi {
 		} catch (HttpClientErrorException e) {
 			String errorMsg = e.getResponseBodyAsString();
 			LOGGER.severe("Exception in FileUpload : " + errorMsg);
+			throw new AviApiException(errorMsg);
+		} catch(ParseException e){
+			String errorMsg = e.getMessage();
+			LOGGER.severe("ParseException in FileUpload : " + errorMsg);
 			throw new AviApiException(errorMsg);
 		} catch (Exception e) {
 			StringWriter sw = new StringWriter();
@@ -558,7 +564,7 @@ public class AviApi {
 		FileOutputStream fileOutputStream = null;
 		String filePath = null;
 		try {
-			HttpResponse response = null;
+			CloseableHttpResponse response = null;
 			httpClient = AviRestUtils.buildHttpClient(this.aviCredentials);
 			LOGGER.info("Inside download file :: Path is :" + path);
 			String getUrl = AviRestUtils.getControllerURL(this.aviCredentials) + "/api/" + path;
