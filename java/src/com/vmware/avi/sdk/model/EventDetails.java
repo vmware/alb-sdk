@@ -669,6 +669,9 @@ public class EventDetails  {
     @JsonProperty("ssl_expire_details")
     private SSLExpireDetails sslExpireDetails;
 
+    @JsonProperty("ssl_expired_details")
+    private SSLExpiredDetails sslExpiredDetails;
+
     @JsonProperty("ssl_export_details")
     private SSLExportDetails sslExportDetails;
 
@@ -5337,6 +5340,26 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return sslExpiredDetails
+     */
+    public SSLExpiredDetails getSslExpiredDetails() {
+        return sslExpiredDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param sslExpiredDetails set the sslExpiredDetails.
+     */
+    public void setSslExpiredDetails(SSLExpiredDetails sslExpiredDetails) {
+        this.sslExpiredDetails = sslExpiredDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return sslExportDetails
      */
     public SSLExportDetails getSslExportDetails() {
@@ -6439,6 +6462,7 @@ public class EventDetails  {
   Objects.equals(this.sslRenewFailedDetails, objEventDetails.sslRenewFailedDetails)&&
   Objects.equals(this.sslIgnoredDetails, objEventDetails.sslIgnoredDetails)&&
   Objects.equals(this.sslRevokedDetails, objEventDetails.sslRevokedDetails)&&
+  Objects.equals(this.sslExpiredDetails, objEventDetails.sslExpiredDetails)&&
   Objects.equals(this.samlMetadataFailedEvents, objEventDetails.samlMetadataFailedEvents)&&
   Objects.equals(this.clusterNodeAddDetails, objEventDetails.clusterNodeAddDetails)&&
   Objects.equals(this.clusterNodeRemoveDetails, objEventDetails.clusterNodeRemoveDetails)&&
@@ -6811,6 +6835,7 @@ public class EventDetails  {
                         sb.append("    seupgradeScaleoutDetails: ").append(toIndentedString(seupgradeScaleoutDetails)).append("\n");
                         sb.append("    spawnSeDetails: ").append(toIndentedString(spawnSeDetails)).append("\n");
                         sb.append("    sslExpireDetails: ").append(toIndentedString(sslExpireDetails)).append("\n");
+                        sb.append("    sslExpiredDetails: ").append(toIndentedString(sslExpiredDetails)).append("\n");
                         sb.append("    sslExportDetails: ").append(toIndentedString(sslExportDetails)).append("\n");
                         sb.append("    sslIgnoredDetails: ").append(toIndentedString(sslIgnoredDetails)).append("\n");
                         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");
