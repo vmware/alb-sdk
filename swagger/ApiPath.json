@@ -585,17 +585,17 @@
                     "type": "string"
                 },
                 "failed_validation_header_parameter_action": {
-                    "description": "Action on header parameter schema validation failures. Overrides the policy-level failed_validation_header_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action on header parameter schema validation failures. Overrides the policy-level failed_validation_header_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
                 "failed_validation_path_parameter_action": {
-                    "description": "Action on path parameter value validation failures (e.g., type mismatch). Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys. Overrides the policy-level failed_validation_path_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action on path parameter value validation failures (e.g., type mismatch). Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys. Overrides the policy-level failed_validation_path_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
                 "failed_validation_query_parameter_action": {
-                    "description": "Action on query parameter schema validation failures. Overrides the policy-level failed_validation_query_argument_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action on query parameter schema validation failures. Overrides the policy-level failed_validation_query_argument_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
@@ -645,7 +645,7 @@
                     "default": "API_TYPE_ACTIVE"
                 },
                 "unknown_status_code_action": {
-                    "description": "Action to take on an unknown status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action to take on an unknown status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 }
@@ -709,7 +709,7 @@
                     "type": "string"
                 },
                 "unknown_http_method_action": {
-                    "description": "Action to take when a request matches this path but uses an HTTP method not defined for this path. Overrides the policy-level unknown_http_method_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action to take when a request matches this path but uses an HTTP method not defined for this path. Overrides the policy-level unknown_http_method_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
@@ -754,7 +754,7 @@
                     "type": "string"
                 },
                 "failed_validation_request_body_action": {
-                    "description": "Action on request body schema validation failures. Overrides the policy-level failed_validation_request_body_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action on request body schema validation failures. Overrides the policy-level failed_validation_request_body_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 },
@@ -770,7 +770,7 @@
                     "type": "boolean"
                 },
                 "unknown_content_type_action": {
-                    "description": "Action to take when the request body's content type is not defined for this endpoint. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action to take when the request body's content type is not defined for this endpoint. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 }
@@ -805,7 +805,7 @@
                     "$ref": "#/definitions/HTTPStatusMatch"
                 },
                 "unknown_content_type_action": {
-                    "description": "Action to take when the response body's content type is not defined for this status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Action to take when the response body's content type is not defined for this status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "API_ACTION_INHERIT_FROM_API_POLICY"
                 }

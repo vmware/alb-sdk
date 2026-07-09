@@ -417,7 +417,7 @@ definitions:
                 readOnly: True
                 type: string
             additional_object_key_action:
-                description: "Action to take on unspecified keys in an object. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take on unspecified keys in an object. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_INHERIT_FROM_API_POLICY"
             additional_properties_schema:
