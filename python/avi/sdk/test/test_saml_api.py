@@ -3,7 +3,6 @@
 
 import json
 import pytest
-import vcr
 import unittest
 from avi.sdk.saml_avi_api import ApiSession, OktaSAMLApiSession, OneloginSAMLApiSession, WS1loginSAMLApiSession
 from avi.sdk.test import conftest
@@ -14,13 +13,7 @@ api_version = '22.1.3'
 # This will be populated because pytest loads conftest before the test files
 cfg = conftest.cfg
 
-my_vcr = vcr.VCR(
-    cassette_library_dir='python/avi/sdk/test/fixtures/saml_cassettes/',
-    serializer='yaml',
-    match_on= ['method','url']
-)
 
-@my_vcr.use_cassette()
 def setUpModule():
     global gSAMPLE_CONFIG
     gSAMPLE_CONFIG = cfg
@@ -74,8 +67,6 @@ def setUpModule():
 class TestSaml(unittest.TestCase):
 
     @pytest.mark.travis
-    @my_vcr.use_cassette()
-
     @pytest.mark.TCID1_48_1548_2_0
     def test_basic_vs_using_okta(self):
         basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
@@ -99,8 +90,6 @@ class TestSaml(unittest.TestCase):
         assert resp.status_code in (200, 204)
 
     @pytest.mark.travis
-    @my_vcr.use_cassette()
-
     @pytest.mark.TCID1_48_1548_3_0
     def test_basic_vs_using_onelogin(self):
         basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
@@ -124,8 +113,6 @@ class TestSaml(unittest.TestCase):
         assert resp.status_code in (200, 204)
 
     @pytest.mark.travis
-    @my_vcr.use_cassette()
-
     def test_basic_vs_using_ws1(self):
         basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
         vs_obj = basic_vs_cfg["vs_obj"]
@@ -152,8 +139,6 @@ class TestSaml(unittest.TestCase):
         assert resp.status_code in (200, 204)
 
     @pytest.mark.travis
-    @my_vcr.use_cassette()
-
     @pytest.mark.TCID1_48_1548_1_0
     def test_basic_vs_using_ApiSession(self):
         basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
