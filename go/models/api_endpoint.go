@@ -17,13 +17,13 @@ type APIEndpoint struct {
 	// Describes the functionality of the API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Action on header parameter schema validation failures. Overrides the policy-level failed_validation_header_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action on header parameter schema validation failures. Overrides the policy-level failed_validation_header_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailedValidationHeaderParameterAction *string `json:"failed_validation_header_parameter_action,omitempty"`
 
-	// Action on path parameter value validation failures (e.g., type mismatch). Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys. Overrides the policy-level failed_validation_path_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action on path parameter value validation failures (e.g., type mismatch). Path parameters are value-only (key is defined by the path template), so this covers schema violations, not unknown keys. Overrides the policy-level failed_validation_path_parameter_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailedValidationPathParameterAction *string `json:"failed_validation_path_parameter_action,omitempty"`
 
-	// Action on query parameter schema validation failures. Overrides the policy-level failed_validation_query_argument_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action on query parameter schema validation failures. Overrides the policy-level failed_validation_query_argument_action when not INHERIT. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FailedValidationQueryParameterAction *string `json:"failed_validation_query_parameter_action,omitempty"`
 
 	// Request header parameter definitions for this endpoint, used to validate incoming request headers. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -51,6 +51,6 @@ type APIEndpoint struct {
 	// Configured lifecycle type of this endpoint. Active endpoints are expected to receive traffic; orphan endpoints have not been seen for a predefined duration; zombie endpoints receive only drip-traffic from legacy clients. Defaults to active. Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Type *string `json:"type,omitempty"`
 
-	// Action to take on an unknown status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action to take on an unknown status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UnknownStatusCodeAction *string `json:"unknown_status_code_action,omitempty"`
 }

@@ -20,6 +20,6 @@ type APIResponse struct {
 	// Required: true
 	StatusCode *HttpstatusMatch `json:"status_code"`
 
-	// Action to take when the response body's content type is not defined for this status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_LEARN, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Action to take when the response body's content type is not defined for this status code. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UnknownContentTypeAction *string `json:"unknown_content_type_action,omitempty"`
 }
