@@ -286,6 +286,16 @@ Note: If the source VS is an SNI child, the cloned VS will inherit its SSL profi
 
 Note: A VsVip ("example-vsvip" in this example) must be manually created in advance. If the source VS is an SNI child, the cloned VS will inherit its SSL profile and certificates and the services will be configured for port 443 (SSL). If the source VS is an EVH child, the cloned VS is created as a non-SSL VS using port 80 (no SSL).
 
+### Cloning a VS to NSX Cloud in VPC mode
+
+To clone a VS to a VPC-enabled NSX Cloud for project my-project and VPC vpc-1 with VIP allocated from public IP pool:
+
+> clone_vs.py -c controller.example.com -2c NSX-Cloud-VPC -2v /orgs/default/projects/my-project/vpcs/vpc-1 -2t my-project vs example example-cloned -v 0.0.0.0/0/my-project_AVISEPARATOR_vpc-1_AVISEPARATOR_PUBLIC -g Default-Group
+
+To clone a VS to a VPC-enabled NSX Cloud for project my-project and VPC vpc-1 with VIP allocated from private IP pool:
+
+> clone_vs.py -c controller.example.com -2c NSX-Cloud-VPC -2v /orgs/default/projects/my-project/vpcs/vpc-1 -2t my-project vs example example-cloned -v 0.0.0.0/32/my-project_AVISEPARATOR_vpc-1_AVISEPARATOR_PRIVATE -g Default-Group
+
 ### Arbitrarily modifying cloned VS configuration
 
 The -tf (--vstransform) option allows the arbitrary modification of the cloned VS configuration by updating the cloned VS object with a user-supplied JSON blob.
