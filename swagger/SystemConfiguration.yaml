@@ -772,6 +772,27 @@ definitions:
             username:
                 description: "SNMP username to be used by SNMP clients for performing SNMP walk. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    SyslogServerConfig:
+        type: object
+        required:
+            -   server
+        properties:
+            format:
+                description: "Syslog output format  SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, or SYSLOG_RFC5425_ENHANCED. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "SYSLOG_LEGACY"
+            port:
+                description: "The destination Syslog server's service port. Allowed values are 1-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 514
+                format: uint32
+            server:
+                description: "IP Address or FQDN of the syslog server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
+            udp:
+                description: "UDP transport (default true); set to false to use TCP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
     SystemConfiguration:
         type: object
         properties:
@@ -905,11 +926,11 @@ definitions:
             sync_syslog_to_se:
                 description: "Ability to sync the syslog server config to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
-            syslog_servers:
-                description: "The destination Syslog server IP(v4/v6) address or FQDN. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+            syslog_server_settings:
+                description: "Syslog server destinations including address, port, transport protocol, and output format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
-                    $ref: '#/definitions/IpAddr'
+                    $ref: '#/definitions/SyslogServerConfig'
             telemetry_configuration:
                 description: "Telemetry configuration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TelemetryConfiguration'
