@@ -13,6 +13,7 @@ from avi.sdk.avi_api import (ApiSession, ObjectNotFound, APIError, ApiResponse,
 from avi.sdk.utils.api_utils import ApiUtils
 from avi.sdk.samples.common import get_sample_ssl_params
 from avi.sdk.samples.clone_vs import AviClone
+from avi.sdk.test import conftest as test_conftest
 from requests.packages import urllib3
 from requests import Response
 from multiprocessing import Pool, Process
@@ -31,9 +32,16 @@ login_info = None
 urllib3.disable_warnings()
 gapi_version = '17.2.6'
 
-config_file = pytest.config.getoption("--config")
-with open(config_file) as f:
-    cfg = json.load(f)
+# Config is set by conftest.pytest_configure when pytest runs; fallback to load from file if needed
+config_file = getattr(test_conftest, '_config_file', None)
+cfg = getattr(test_conftest, '_cfg', None)
+if cfg is None and config_file:
+    with open(config_file) as f:
+        cfg = json.load(f)
+if cfg is None:
+    raise pytest.UsageError(
+        "Missing required --config option. Use: pytest --config=path/to/config.json ..."
+    )
 
 ARG_DEFAULT_VALUE = {
     'limit': 1,

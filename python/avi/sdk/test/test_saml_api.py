@@ -6,11 +6,19 @@ import pytest
 import vcr
 import unittest
 from avi.sdk.saml_avi_api import ApiSession, OktaSAMLApiSession, OneloginSAMLApiSession, WS1loginSAMLApiSession
+from avi.sdk.test import conftest as test_conftest
 
 api_version = '22.1.3'
-config_file = pytest.config.getoption("--config")
-with open(config_file) as f:
-    cfg = json.load(f)
+# Config is set by conftest.pytest_configure when pytest runs; fallback to load from file if needed
+config_file = getattr(test_conftest, '_config_file', None)
+cfg = getattr(test_conftest, '_cfg', None)
+if cfg is None and config_file:
+    with open(config_file) as f:
+        cfg = json.load(f)
+if cfg is None:
+    raise pytest.UsageError(
+        "Missing required --config option. Use: pytest --config=path/to/config.json ..."
+    )
 
 my_vcr = vcr.VCR(
     cassette_library_dir='python/avi/sdk/test/fixtures/saml_cassettes/',
