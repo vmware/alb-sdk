@@ -136,8 +136,8 @@ public class SystemConfiguration extends AviRestResource  {
     @JsonProperty("sync_syslog_to_se")
     private Boolean syncSyslogToSe = false;
 
-    @JsonProperty("syslog_servers")
-    private List<IpAddr> syslogServers;
+    @JsonProperty("syslog_server_settings")
+    private List<SyslogServerConfig> syslogServerSettings;
 
     @JsonProperty("telemetry_configuration")
     private TelemetryConfiguration telemetryConfiguration;
@@ -1108,41 +1108,41 @@ public class SystemConfiguration extends AviRestResource  {
     }
     /**
      * This is the getter method this will return the attribute value.
-     * The destination syslog server ip(v4/v6) address or fqdn.
-     * Field introduced in 31.2.1.
+     * Syslog server destinations including address, port, transport protocol, and output format.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return syslogServers
+     * @return syslogServerSettings
      */
-    public List<IpAddr> getSyslogServers() {
-        return syslogServers;
+    public List<SyslogServerConfig> getSyslogServerSettings() {
+        return syslogServerSettings;
     }
 
     /**
-     * This is the setter method. this will set the syslogServers
-     * The destination syslog server ip(v4/v6) address or fqdn.
-     * Field introduced in 31.2.1.
+     * This is the setter method. this will set the syslogServerSettings
+     * Syslog server destinations including address, port, transport protocol, and output format.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return syslogServers
+     * @return syslogServerSettings
      */
-    public void setSyslogServers(List<IpAddr>  syslogServers) {
-        this.syslogServers = syslogServers;
+    public void setSyslogServerSettings(List<SyslogServerConfig>  syslogServerSettings) {
+        this.syslogServerSettings = syslogServerSettings;
     }
 
     /**
-     * This is the setter method this will set the syslogServers
-     * The destination syslog server ip(v4/v6) address or fqdn.
-     * Field introduced in 31.2.1.
+     * This is the setter method this will set the syslogServerSettings
+     * Syslog server destinations including address, port, transport protocol, and output format.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return syslogServers
+     * @return syslogServerSettings
      */
-    public SystemConfiguration addSyslogServersItem(IpAddr syslogServersItem) {
-      if (this.syslogServers == null) {
-        this.syslogServers = new ArrayList<IpAddr>();
+    public SystemConfiguration addSyslogServerSettingsItem(SyslogServerConfig syslogServerSettingsItem) {
+      if (this.syslogServerSettings == null) {
+        this.syslogServerSettings = new ArrayList<SyslogServerConfig>();
       }
-      this.syslogServers.add(syslogServersItem);
+      this.syslogServerSettings.add(syslogServerSettingsItem);
       return this;
     }
 
@@ -1350,7 +1350,6 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.truststorePkiprofileRef, objSystemConfiguration.truststorePkiprofileRef)&&
   Objects.equals(this.legacySslSupport, objSystemConfiguration.legacySslSupport)&&
   Objects.equals(this.aviEmailLoginPassword, objSystemConfiguration.aviEmailLoginPassword)&&
-  Objects.equals(this.syslogServers, objSystemConfiguration.syslogServers)&&
   Objects.equals(this.syncKexHostToSe, objSystemConfiguration.syncKexHostToSe)&&
   Objects.equals(this.syncSyslogToSe, objSystemConfiguration.syncSyslogToSe)&&
   Objects.equals(this.licenseQuota, objSystemConfiguration.licenseQuota)&&
@@ -1360,7 +1359,8 @@ public class SystemConfiguration extends AviRestResource  {
   Objects.equals(this.intelligentAssistEnabled, objSystemConfiguration.intelligentAssistEnabled)&&
   Objects.equals(this.allowLegacySha1NtpAuth, objSystemConfiguration.allowLegacySha1NtpAuth)&&
   Objects.equals(this.certificateSecurityPolicy, objSystemConfiguration.certificateSecurityPolicy)&&
-  Objects.equals(this.allowPrivateIps, objSystemConfiguration.allowPrivateIps);
+  Objects.equals(this.allowPrivateIps, objSystemConfiguration.allowPrivateIps)&&
+  Objects.equals(this.syslogServerSettings, objSystemConfiguration.syslogServerSettings);
     }
 
     @Override
@@ -1405,7 +1405,7 @@ public class SystemConfiguration extends AviRestResource  {
                         sb.append("    sshHmacs: ").append(toIndentedString(sshHmacs)).append("\n");
                         sb.append("    syncKexHostToSe: ").append(toIndentedString(syncKexHostToSe)).append("\n");
                         sb.append("    syncSyslogToSe: ").append(toIndentedString(syncSyslogToSe)).append("\n");
-                        sb.append("    syslogServers: ").append(toIndentedString(syslogServers)).append("\n");
+                        sb.append("    syslogServerSettings: ").append(toIndentedString(syslogServerSettings)).append("\n");
                         sb.append("    telemetryConfiguration: ").append(toIndentedString(telemetryConfiguration)).append("\n");
                         sb.append("    trustedHostProfilesRefs: ").append(toIndentedString(trustedHostProfilesRefs)).append("\n");
                         sb.append("    truststorePkiprofileRef: ").append(toIndentedString(truststorePkiprofileRef)).append("\n");
