@@ -3724,12 +3724,12 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-    /httppolicyset:
+    /pool:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: GET /httppolicyset
+                - Pool
+            description: /pool
+            operationId: GET /pool
             consumes:
                 -   application/json
             produces:
@@ -3792,14 +3792,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySetApiResponse"
+                        $ref: "#/definitions/PoolApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: POST /httppolicyset
+                - Pool
+            description: /pool
+            operationId: POST /pool
             consumes:
                 -   application/json
             produces:
@@ -3827,25 +3827,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
-    /httppolicyset/{uuid}:
+    /pool/{uuid}:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: GET /httppolicyset/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: GET /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3905,16 +3905,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PUT /httppolicyset/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PUT /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3947,10 +3947,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -3962,16 +3962,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PATCH /httppolicyset/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: PATCH /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4004,10 +4004,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: Pool object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4019,16 +4019,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/Pool"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: DELETE /httppolicyset/{uuid}
+                - Pool
+            description: /pool/{uuid}/{uuid}
+            operationId: DELETE /pool/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4426,12 +4426,12 @@ paths:
                     description: object not found
 
 
-    /pool:
+    /httppolicyset:
         get:
             tags:
-                - Pool
-            description: /pool
-            operationId: GET /pool
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: GET /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -4494,14 +4494,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/PoolApiResponse"
+                        $ref: "#/definitions/HTTPPolicySetApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - Pool
-            description: /pool
-            operationId: POST /pool
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: POST /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -4529,25 +4529,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
-    /pool/{uuid}:
+    /httppolicyset/{uuid}:
         get:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: GET /pool/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: GET /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4607,16 +4607,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PUT /pool/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PUT /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4649,10 +4649,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4664,16 +4664,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: PATCH /pool/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PATCH /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4706,10 +4706,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: Pool object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4721,16 +4721,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/Pool"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - Pool
-            description: /pool/{uuid}/{uuid}
-            operationId: DELETE /pool/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: DELETE /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
