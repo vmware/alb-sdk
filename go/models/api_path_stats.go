@@ -11,9 +11,15 @@ type APIPathStats struct {
 	// Total number of requests received for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Hits *uint64 `json:"hits,omitempty"`
 
-	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	NodeObjID *string `json:"node_obj_id"`
+
+	// Name of the ApiPath object for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PathName *string `json:"path_name,omitempty"`
+
+	// Path template for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PathTemplate *string `json:"path_template,omitempty"`
 
 	// Total number of 1XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses1xx *uint64 `json:"responses_1xx,omitempty"`
