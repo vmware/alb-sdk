@@ -1177,6 +1177,30 @@
                     "description": "Periodicity in hours of saving operational stats of metrics API server to a log file. Allowed values are 1-12. Special values are 0- Stop periodic saving of last-N metrics API server queries.. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
+                },
+                "metrics_db_rd_boundary_window_min": {
+                    "description": "First N minutes of each hour treated as the rollup window (BALANCED mode bypasses the freshness gate here). 0 disables the bypass. Allowed values are 0-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "metrics_db_rd_check_interval_sec": {
+                    "description": "Follower health-probe cadence. Allowed values are 10-600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "metrics_db_rd_lag_stale_after_sec": {
+                    "description": "Probe-recency gate  distrust the cached follower probe if older than this. Must be >= metrics_db_rd_check_interval_sec. Allowed values are 30-1800. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "metrics_db_rd_lag_threshold_sec": {
+                    "description": "Max now - last_replay_ts (worst-case follower staleness) for the freshness gate. Allowed values are 5-3600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "metrics_db_rd_routing_mode": {
+                    "description": "Follower-routing mode for metrics reads  BALANCED (default), DISABLED (always leader), FRESHNESS_ONLY, or FORCE_FOLLOWER_NON_RT. Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY, METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
