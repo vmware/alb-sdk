@@ -51,9 +51,6 @@ type ControllerProperties struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AttachIPRetryLimit *uint32 `json:"attach_ip_retry_limit,omitempty"`
 
-	// Use Ansible for SE creation in baremetal. Field introduced in 17.2.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	BmUseAnsible *bool `json:"bm_use_ansible,omitempty"`
-
 	// Number of days after which CloudConnectorUser (service account) password expires. Rotation is triggered 5 days before expiry. Set to 0 to disable automatic rotation. Allowed values are 1-730. Special values are 0 - Disabled. Field introduced in 32.1.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CcUserPasswordExpiryDays *uint32 `json:"cc_user_password_expiry_days,omitempty"`
 

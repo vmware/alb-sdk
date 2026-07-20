@@ -18,9 +18,6 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllResponseHeaders *string `json:"all_response_headers,omitempty"`
 
-	// List of label ID's acciciated with this requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	APILabelIds []int64 `json:"api_label_ids,omitempty,omitempty"`
-
 	// Describe all aspects of the API module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APILog *APILog `json:"api_log,omitempty"`
 
