@@ -21,7 +21,7 @@ type SspInstance struct {
 	// Description of the onboarded SSP feature instance. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Type of the SSP feature instance. Enum options - SSP_INTELLIGENT_ASSIST, SSP_CENTRAL_LICENSING_SERVICE. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Type of the SSP feature instance. Enum options - SSP_AVI_OPERATIONS, SSP_CENTRAL_LICENSING_SERVICE. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Feature *string `json:"feature"`
 

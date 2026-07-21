@@ -8,7 +8,7 @@ package models
 // swagger:model ApiPolicyClassificationDetails
 type APIPolicyClassificationDetails struct {
 
-	// API Endpoint classification details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API Policy Classification details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIEndpointClassificationDetails []*APIEndpointClassificationDetails `json:"api_endpoint_classification_details,omitempty"`
 
 	// Event description for the API Policy classification change. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -15,6 +15,9 @@ type SystemConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AdminAuthConfiguration *AdminAuthConfiguration `json:"admin_auth_configuration,omitempty"`
 
+	// Enable or disable AI Assistant feature on the Controller. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	AiAssistantEnabled *bool `json:"ai_assistant_enabled,omitempty"`
+
 	// Allow NTP authentication using legacy MD5 or SHA1 algorithms. When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning event is generated in the controller UI. When disabled (default), only SHA256 or stronger is accepted and configuring MD5 or SHA1 results in an API error. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowLegacySha1NtpAuth *bool `json:"allow_legacy_sha1_ntp_auth,omitempty"`
 
@@ -65,9 +68,6 @@ type SystemConfiguration struct {
 
 	// Users can specify comma separated list of deprecated host key algorithm.If nothing is specified, all known algorithms provided by OpenSSH will be supported.This change could only apply on the controller node. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HostKeyAlgorithmExclude *string `json:"host_key_algorithm_exclude,omitempty"`
-
-	// Enable or disable Intelligent Assist feature on the Controller. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IntelligentAssistEnabled *bool `json:"intelligent_assist_enabled,omitempty"`
 
 	// Users can specify comma separated list of deprecated key exchange algorithm.If nothing is specified, all known algorithms provided by OpenSSH will be supported.This change could only apply on the controller node. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KexAlgorithmExclude *string `json:"kex_algorithm_exclude,omitempty"`
