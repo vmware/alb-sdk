@@ -793,8 +793,23 @@
                     "description": " It is a reference to an object of type SSLKeyAndCertificate. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "issuer": {
+                    "description": "Common name of the CA certificate issuer. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string"
+                },
                 "name": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "not_after": {
+                    "description": "Expiry date of the CA certificate in UTC string form. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "subject": {
+                    "description": "Common name of the CA certificate subject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
                     "type": "string"
                 }
             }
