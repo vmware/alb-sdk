@@ -33,6 +33,9 @@ public class LdapAuthSettings  {
     @JsonProperty("full_name_attribute")
     private String fullNameAttribute = "name";
 
+    @JsonProperty("pki_profile_ref")
+    private String pkiProfileRef;
+
     @JsonProperty("port")
     private Integer port = 389;
 
@@ -141,6 +144,34 @@ public class LdapAuthSettings  {
      */
     public void setFullNameAttribute(String  fullNameAttribute) {
         this.fullNameAttribute = fullNameAttribute;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Pki profile used to validate the ldap server certificate.
+     * Effective only when security_mode is auth_ldap_secure_use_ldaps.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return pkiProfileRef
+     */
+    public String getPkiProfileRef() {
+        return pkiProfileRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Pki profile used to validate the ldap server certificate.
+     * Effective only when security_mode is auth_ldap_secure_use_ldaps.
+     * It is a reference to an object of type pkiprofile.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param pkiProfileRef set the pkiProfileRef.
+     */
+    public void setPkiProfileRef(String  pkiProfileRef) {
+        this.pkiProfileRef = pkiProfileRef;
     }
 
     /**
@@ -320,7 +351,8 @@ public class LdapAuthSettings  {
   Objects.equals(this.userBind, objLdapAuthSettings.userBind)&&
   Objects.equals(this.emailAttribute, objLdapAuthSettings.emailAttribute)&&
   Objects.equals(this.fullNameAttribute, objLdapAuthSettings.fullNameAttribute)&&
-  Objects.equals(this.tlsConfig, objLdapAuthSettings.tlsConfig);
+  Objects.equals(this.tlsConfig, objLdapAuthSettings.tlsConfig)&&
+  Objects.equals(this.pkiProfileRef, objLdapAuthSettings.pkiProfileRef);
     }
 
     @Override
@@ -331,6 +363,7 @@ public class LdapAuthSettings  {
                         sb.append("    bindAsAdministrator: ").append(toIndentedString(bindAsAdministrator)).append("\n");
                         sb.append("    emailAttribute: ").append(toIndentedString(emailAttribute)).append("\n");
                         sb.append("    fullNameAttribute: ").append(toIndentedString(fullNameAttribute)).append("\n");
+                        sb.append("    pkiProfileRef: ").append(toIndentedString(pkiProfileRef)).append("\n");
                         sb.append("    port: ").append(toIndentedString(port)).append("\n");
                         sb.append("    securityMode: ").append(toIndentedString(securityMode)).append("\n");
                         sb.append("    server: ").append(toIndentedString(server)).append("\n");
