@@ -6,6 +6,8 @@ Created on Aug 16, 2016
 
 @author: Gaurav Rastogi (grastogi@avinetworks.com)
 """
+
+import hashlib
 import os
 import re
 import yaml
@@ -16,6 +18,12 @@ from avi.sdk.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
     AviCredentials
 from avi.sdk.csp_avi_api import CSPApiSession
 from avi.sdk.saml_avi_api import OneloginSAMLApiSession, OktaSAMLApiSession
+
+try:
+    from requests_toolbelt import MultipartEncoder
+    HAS_TOOLBELT = True
+except ImportError:
+    HAS_TOOLBELT = False
 
 if os.environ.get('AVI_LOG_HANDLER', '') != 'syslog':
     log = logging.getLogger(__name__)
@@ -455,7 +463,102 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         # As per API response, name is always same as username regardless of full_name
         obj['name'] = obj['username']
 
-    log.info('passed object %s ', { **obj, 'password': None })
+    log.info('passed object %s ', {**obj, 'password': None})
+
+    file_path = obj.pop('file_path', None)
+    is_fileObject_endpoint = obj_type == "fileobject/upload"
+    upload_timeout = obj.pop('timeout', None) if is_fileObject_endpoint else None
+
+    if is_fileObject_endpoint and state != 'absent':
+        if not HAS_TOOLBELT:
+            return module.fail_json(
+                msg='requests_toolbelt is required for file uploads. '
+                    'Install it with: pip install requests_toolbelt')
+        if file_path and not os.path.exists(file_path):
+            return module.fail_json(msg='File not found: %s' % file_path)
+
+        base_obj_type = obj_type.split('/')[0]
+        existing_obj = api.get_object_by_name(
+            base_obj_type, name,
+            tenant=tenant, tenant_uuid=tenant_uuid,
+            params={'include_refs': '', 'include_name': ''},
+            api_version=api_version) if name else None
+
+        # Idempotency for URL-mode uploads: compare the requested fields
+        # against the stored object and skip the POST when nothing changed.
+        if not file_path and existing_obj:
+            comp_obj = existing_obj.copy()
+            crl_info = existing_obj.get("crl_info", {})
+            if "server_url" in crl_info:
+                comp_obj["url"] = crl_info["server_url"]
+            if "update_interval" in crl_info:
+                comp_obj["update_interval"] = crl_info["update_interval"]
+            if avi_obj_cmp(obj, comp_obj, sensitive_fields):
+                log.debug('EXISTING OBJ %s', existing_obj)
+                log.debug('NEW OBJ %s', obj)
+                return ansible_return(module, None, False,
+                                      existing_obj=existing_obj,
+                                      api_context=api.get_context())
+
+        # Build multipart form fields.  The module exposes 'url' for the CRL
+        # server address, but the fileobject/upload form schema uses 'server_url'.
+        fields = {}
+        for k, v in obj.items():
+            fields['server_url' if k == 'url' else k] = str(v)
+
+        rsp = None
+        if file_path:
+            try:
+                MAX_UPLOAD_BYTES = 8 * 1024 * 1024 * 1024  # 8 GB
+                file_size = os.path.getsize(file_path)
+                if file_size > MAX_UPLOAD_BYTES:
+                    return module.fail_json(msg="File size is more than the allowed limit (8 GB).")
+                estimated_time = file_size / (1024 * 1024)  # Assume ~1MB/sec upload speed
+                timeout_limit = upload_timeout or 300
+                if estimated_time > timeout_limit * 0.8:  # 80% safety margin
+                    return module.fail_json(f"File size ({file_size}MB) may exceed timeout ({timeout_limit}s). Consider increasing timeout parameter.")
+            except OSError as e:
+                return module.fail_json(msg=f"Cannot determine file size: {e}")
+            file_name = os.path.basename(file_path)
+            with open(file_path, 'rb') as fh:
+                fields['file'] = (file_name, fh, 'application/octet-stream')
+                if existing_obj:
+                    hash_sha1 = hashlib.sha1(usedforsecurity=False)
+                    for chunk in iter(lambda: fh.read(65536), b''):
+                        hash_sha1.update(chunk)
+                    fh.seek(0)
+                    comp_obj = fields.copy()
+                    comp_obj.pop("file", None)
+                    comp_obj["checksum"] = hash_sha1.hexdigest()
+                    if comp_obj["type"] == "CRL_DATA":
+                        comp_obj["is_federated"] = comp_obj.get("is_federated", "false").lower() == "true"
+                    else:
+                        comp_obj.pop("is_federated")
+                    if avi_obj_cmp(comp_obj, existing_obj, sensitive_fields):
+                        log.debug('EXISTING OBJ %s', existing_obj)
+                        log.debug('NEW OBJ %s', obj)
+                        return ansible_return(module, None, False,
+                                              existing_obj=existing_obj,
+                                              api_context=api.get_context())
+                encoder = MultipartEncoder(fields=fields)
+                headers = {'Content-Type': encoder.content_type}
+                rsp = api.post(
+                    obj_type, data=encoder, headers=headers,
+                    tenant=tenant, tenant_uuid=tenant_uuid,
+                    api_version=api_version,
+                    timeout=upload_timeout or 300)
+        else:
+            encoder = MultipartEncoder(fields=fields)
+            headers = {'Content-Type': encoder.content_type}
+            rsp = api.post(
+                obj_type, data=encoder, headers=headers,
+                tenant=tenant, tenant_uuid=tenant_uuid,
+                api_version=api_version,
+                timeout=upload_timeout or 300)
+
+        return ansible_return(module, rsp, True,
+                              existing_obj=existing_obj,
+                              api_context=api.get_context())
 
     if uuid:
         # Get the object based on uuid.
@@ -542,11 +645,10 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         if avi_update_method == 'put':
             # Merge with existing object to preserve unspecified fields
             merged_obj = deepcopy(existing_obj)
-            
             for key, value in obj.items():
                 if value is not None:
                     merged_obj[key] = value
-            
+
             changed = not avi_obj_cmp(merged_obj, existing_obj, sensitive_fields)
             obj = cleanup_absent_fields(merged_obj)
             if changed:
@@ -614,7 +716,7 @@ def avi_common_argument_spec():
         controller=dict(default=os.environ.get('AVI_CONTROLLER', '')),
         username=dict(default=os.environ.get('AVI_USERNAME', '')),
         password=dict(default=os.environ.get('AVI_PASSWORD', ''), no_log=True),
-        api_version=dict(default='20.1.1', type='str'),
+        api_version=dict(default=os.environ.get('API_VERSION', '')),
         tenant=dict(default='admin'),
         tenant_uuid=dict(default='', type='str'),
         port=dict(type='int'),
@@ -636,7 +738,7 @@ def avi_common_argument_spec():
         password=dict(default=os.environ.get('AVI_PASSWORD', ''), no_log=True),
         tenant=dict(default='admin'),
         tenant_uuid=dict(default=''),
-        api_version=dict(default='20.1.1', type='str'),
+        api_version=dict(default=os.environ.get('API_VERSION', '')),
         verify=dict(default=False),
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
