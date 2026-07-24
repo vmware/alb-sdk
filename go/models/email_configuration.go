@@ -35,4 +35,7 @@ type EmailConfiguration struct {
 	// Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SMTPType *string `json:"smtp_type"`
+
+	// TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
 }

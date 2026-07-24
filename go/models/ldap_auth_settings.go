@@ -20,6 +20,9 @@ type LdapAuthSettings struct {
 	// LDAP attribute that refers to user's full name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FullNameAttribute *string `json:"full_name_attribute,omitempty"`
 
+	// PKI Profile used to validate the LDAP server certificate. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PkiProfileRef *string `json:"pki_profile_ref,omitempty"`
+
 	// Query the LDAP servers on this port. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Port *uint32 `json:"port,omitempty"`
 
