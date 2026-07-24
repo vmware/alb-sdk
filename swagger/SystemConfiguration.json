@@ -620,6 +620,10 @@
                     "description": "Type of SMTP Mail Service. Enum options - SMTP_NONE, SMTP_LOCAL_HOST, SMTP_SERVER, SMTP_ANONYMOUS_SERVER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "SMTP_LOCAL_HOST"
+                },
+                "tls_config": {
+                    "description": "TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/TlsConfig"
                 }
             }
         },
@@ -1414,6 +1418,19 @@
                 "tenant_vrf": {
                     "description": "When 'Per Tenant IP Domain' is selected, each tenant gets its own routing domain that is not shared with any other tenant. When 'Share IP Domain across all tenants' is selected, all tenants share the same routing domain. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                }
+            }
+        },
+        "TlsConfig": {
+            "type": "object",
+            "properties": {
+                "client_cert_ref": {
+                    "description": "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "tls_mode": {
+                    "description": "Select how TLS is used to establish a secure connection. Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         }
