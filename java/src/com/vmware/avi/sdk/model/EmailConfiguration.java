@@ -48,6 +48,9 @@ public class EmailConfiguration  {
     @JsonProperty("smtp_type")
     private String smtpType = "SMTP_LOCAL_HOST";
 
+    @JsonProperty("tls_config")
+    private TlsConfig tlsConfig;
+
 
 
     /**
@@ -264,6 +267,34 @@ public class EmailConfiguration  {
         this.smtpType = smtpType;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tls mode and optional client certificate for outbound smtp connections.
+     * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+     * When unset, no starttls is attempted regardless of disable_tls.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tlsConfig
+     */
+    public TlsConfig getTlsConfig() {
+        return tlsConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls mode and optional client certificate for outbound smtp connections.
+     * Ca trust is always sourced from systemconfiguration.truststore_pkiprofile_uuid.
+     * When unset, no starttls is attempted regardless of disable_tls.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tlsConfig set the tlsConfig.
+     */
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -281,6 +312,7 @@ public class EmailConfiguration  {
   Objects.equals(this.authUsername, objEmailConfiguration.authUsername)&&
   Objects.equals(this.authPassword, objEmailConfiguration.authPassword)&&
   Objects.equals(this.disableTls, objEmailConfiguration.disableTls)&&
+  Objects.equals(this.tlsConfig, objEmailConfiguration.tlsConfig)&&
   Objects.equals(this.emailTimezone, objEmailConfiguration.emailTimezone)&&
   Objects.equals(this.fromName, objEmailConfiguration.fromName);
     }
@@ -298,6 +330,7 @@ public class EmailConfiguration  {
                         sb.append("    mailServerName: ").append(toIndentedString(mailServerName)).append("\n");
                         sb.append("    mailServerPort: ").append(toIndentedString(mailServerPort)).append("\n");
                         sb.append("    smtpType: ").append(toIndentedString(smtpType)).append("\n");
+                        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

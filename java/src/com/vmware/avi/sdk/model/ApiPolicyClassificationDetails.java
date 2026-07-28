@@ -30,7 +30,7 @@ public class ApiPolicyClassificationDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Api endpoint classification details.
+     * Api policy classification details.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -42,7 +42,7 @@ public class ApiPolicyClassificationDetails  {
 
     /**
      * This is the setter method. this will set the apiEndpointClassificationDetails
-     * Api endpoint classification details.
+     * Api policy classification details.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -54,7 +54,7 @@ public class ApiPolicyClassificationDetails  {
 
     /**
      * This is the setter method this will set the apiEndpointClassificationDetails
-     * Api endpoint classification details.
+     * Api policy classification details.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

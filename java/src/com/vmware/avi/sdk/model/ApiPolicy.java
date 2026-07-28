@@ -36,6 +36,9 @@ public class ApiPolicy extends AviRestResource  {
     @JsonProperty("label_mappings")
     private List<ApiPolicyLabelActionMapping> labelMappings;
 
+    @JsonProperty("log_labels")
+    private Boolean logLabels = true;
+
     @JsonProperty("name")
     private String name;
 
@@ -244,6 +247,30 @@ public class ApiPolicy extends AviRestResource  {
       }
       this.labelMappings.add(labelMappingsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return logLabels
+     */
+    public Boolean getLogLabels() {
+        return logLabels;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Enables logging of waap labels effective for a request into apilog.effective_labels in the application log.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param logLabels set the logLabels.
+     */
+    public void setLogLabels(Boolean  logLabels) {
+        this.logLabels = logLabels;
     }
 
     /**
@@ -646,6 +673,7 @@ public class ApiPolicy extends AviRestResource  {
   Objects.equals(this.orphanApiLabels, objApiPolicy.orphanApiLabels)&&
   Objects.equals(this.zombieApiLabels, objApiPolicy.zombieApiLabels)&&
   Objects.equals(this.nonApiUrlLabels, objApiPolicy.nonApiUrlLabels)&&
+  Objects.equals(this.logLabels, objApiPolicy.logLabels)&&
   Objects.equals(this.pathRefs, objApiPolicy.pathRefs)&&
   Objects.equals(this.tenantRef, objApiPolicy.tenantRef);
     }
@@ -659,6 +687,7 @@ public class ApiPolicy extends AviRestResource  {
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    fileObjectRefs: ").append(toIndentedString(fileObjectRefs)).append("\n");
                         sb.append("    labelMappings: ").append(toIndentedString(labelMappings)).append("\n");
+                        sb.append("    logLabels: ").append(toIndentedString(logLabels)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    nonApiUrlLabels: ").append(toIndentedString(nonApiUrlLabels)).append("\n");
                         sb.append("    orphanApiClassificationSettings: ").append(toIndentedString(orphanApiClassificationSettings)).append("\n");
