@@ -398,6 +398,10 @@ definitions:
             local_file_url:
                 description: "URL to download the backup file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            name:
+                description: "Name of the backup. Field introduced in 31.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                readOnly: True
+                type: string
             remote_file_url:
                 description: "URL to download the backup file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
