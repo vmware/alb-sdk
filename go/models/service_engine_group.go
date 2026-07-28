@@ -375,6 +375,12 @@ type ServiceEngineGroup struct {
 	// Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine. Field introduced in 21.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LogAgentTraceEnabled *bool `json:"log_agent_trace_enabled,omitempty"`
 
+	// Interval in seconds at which the Service Engine re-resolves the DNS for FQDN-based UDP log streaming endpoints. Prevents streaming to stale IPs when DNS records change. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 60-86400. Field introduced in 31.2.3. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogAgentUDPFqdnResolveInterval *uint32 `json:"log_agent_udp_fqdn_resolve_interval,omitempty"`
+
+	// Number of UDP log messages sent before re-resolving the FQDN. Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked before time. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 100-100000. Field introduced in 31.2.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogAgentUDPFqdnResolveLogCount *uint32 `json:"log_agent_udp_fqdn_resolve_log_count,omitempty"`
+
 	// Timeout to purge unknown Virtual Service logs from the Service Engine. Field introduced in 21.1.1. Unit is SEC. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	LogAgentUnknownVsTimer *uint32 `json:"log_agent_unknown_vs_timer,omitempty"`
 
