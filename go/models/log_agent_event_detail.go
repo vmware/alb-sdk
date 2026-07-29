@@ -8,12 +8,15 @@ package models
 // swagger:model LogAgentEventDetail
 type LogAgentEventDetail struct {
 
-	// Protocol used for communication to the external entity. Enum options - TCP_CONN. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	// Protocol used for communication to the external entity. Enum options - TCP_CONN, UDP_CONN. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	// Required: true
 	Protocol *string `json:"protocol"`
 
 	// Event for TCP connection restablishment rate exceeds configured threshold. Field introduced in 30.1.1. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	RapidConnection *LogAgentTCPConnEstRateExcdEvent `json:"rapid_connection,omitempty"`
+
+	// Event details for any streaming event. Field introduced in 32.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	StreamingEventDetail *LogAgentStreamingEventDetail `json:"streaming_event_detail,omitempty"`
 
 	// Event details for TCP connection event. Field introduced in 20.1.3. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
 	TCPDetail *LogAgentTCPClientEventDetail `json:"tcp_detail,omitempty"`

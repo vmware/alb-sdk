@@ -92,6 +92,9 @@ type SeRuntimeProperties struct {
 	//  Deprecated in 21.1.1. Minimum storage allocated for logs irrespective of memory and cores. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentLogStorageMinSz *uint32 `json:"log_agent_log_storage_min_sz,omitempty"`
 
+	// RSS threshold in MB beyond which log-agent invokes malloc_trim(0). Set to 0 to disable the periodic RSS monitor entirely. SIGUSR1 always triggers a trim regardless of this setting. Allowed values are 0-1024. Field introduced in 32.1.3. Unit is MB. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogAgentMallocTrimMemoryThreshold *uint32 `json:"log_agent_malloc_trim_memory_threshold,omitempty"`
+
 	// Deprecated in 21.1.1. Maximum concurrent rsync requests initiated from log-agent to the Controller. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentMaxConcurrentRsync *uint32 `json:"log_agent_max_concurrent_rsync,omitempty"`
 
@@ -100,6 +103,9 @@ type SeRuntimeProperties struct {
 
 	// Deprecated in 21.1.1. Maximum storage on the disk not allocated for logs on the Service Engine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentMaxStorageIgnorePercent *float32 `json:"log_agent_max_storage_ignore_percent,omitempty"`
+
+	// Interval in seconds at which log-agent checks RSS against the trim threshold. Allowed values are 10-3600. Field introduced in 32.1.3. Unit is SECONDS. Allowed with any value in Enterprise, Enterprise with Cloud Services edition.
+	LogAgentMemoryMonitorInterval *uint32 `json:"log_agent_memory_monitor_interval,omitempty"`
 
 	// Deprecated in 21.1.1. Minimum storage allocated to any given VirtualService on the Service Engine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentMinStoragePerVs *uint32 `json:"log_agent_min_storage_per_vs,omitempty"`
