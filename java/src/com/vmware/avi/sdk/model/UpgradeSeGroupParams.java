@@ -39,6 +39,9 @@ public class UpgradeSeGroupParams  {
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;
 
+    @JsonProperty("url")
+    private String url = "url";
+
 
 
     /**
@@ -209,6 +212,23 @@ public class UpgradeSeGroupParams  {
     public void setSkipWarnings(Boolean  skipWarnings) {
         this.skipWarnings = skipWarnings;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Avi controller URL of the object.
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+   /**
+    * This is the setter method. this will set the url
+    * Avi controller URL of the object.
+    * @return url
+    */
+   public void setUrl(String  url) {
+     this.url = url;
+   }
 
 
     @Override
@@ -238,7 +258,7 @@ public class UpgradeSeGroupParams  {
                         sb.append("    seGroupRefs: ").append(toIndentedString(seGroupRefs)).append("\n");
                         sb.append("    sePatchRef: ").append(toIndentedString(sePatchRef)).append("\n");
                         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
-                  sb.append("}");
+                              sb.append("}");
       return sb.toString();
     }
 

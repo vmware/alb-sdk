@@ -84,6 +84,9 @@ public class Gslb extends AviRestResource  {
     @JsonProperty("third_party_sites")
     private List<GslbThirdPartySite> thirdPartySites;
 
+    @JsonProperty("tls_config")
+    private TlsConfig tlsConfig;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -681,6 +684,32 @@ public class Gslb extends AviRestResource  {
       this.thirdPartySites.add(thirdPartySitesItem);
       return this;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tls configuration for the site-to-site gslb federation channel (peer site login and remotesitewatcherrpc replication stream).
+     * Tls_mode_no_verify (default) preserves legacy behavior of not verifying the peer site's certificate.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tlsConfig
+     */
+    public TlsConfig getTlsConfig() {
+        return tlsConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls configuration for the site-to-site gslb federation channel (peer site login and remotesitewatcherrpc replication stream).
+     * Tls_mode_no_verify (default) preserves legacy behavior of not verifying the peer site's certificate.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tlsConfig set the tlsConfig.
+     */
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -777,7 +806,8 @@ public class Gslb extends AviRestResource  {
   Objects.equals(this.gsMemberFqdnResolutionOnSe, objGslb.gsMemberFqdnResolutionOnSe)&&
   Objects.equals(this.shortProbeInterval, objGslb.shortProbeInterval)&&
   Objects.equals(this.autoTuneSendInterval, objGslb.autoTuneSendInterval)&&
-  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo);
+  Objects.equals(this.leaderChangeInfo, objGslb.leaderChangeInfo)&&
+  Objects.equals(this.tlsConfig, objGslb.tlsConfig);
     }
 
     @Override
@@ -805,6 +835,7 @@ public class Gslb extends AviRestResource  {
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    tenantScoped: ").append(toIndentedString(tenantScoped)).append("\n");
                         sb.append("    thirdPartySites: ").append(toIndentedString(thirdPartySites)).append("\n");
+                        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    viewId: ").append(toIndentedString(viewId)).append("\n");
                   sb.append("}");

@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
- * The TlsConfig is a POJO class extends AviRestResource that used for creating
- * TlsConfig.
+ * The ApiLearningLimits is a POJO class extends AviRestResource that used for creating
+ * ApiLearningLimits.
  *
  * @version 1.0
  * @since 
@@ -20,69 +20,65 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TlsConfig  {
-    @JsonProperty("client_cert_ref")
-    private String clientCertRef;
+public class ApiLearningLimits  {
+    @JsonProperty("num_api_params")
+    private Integer numApiParams;
 
-    @JsonProperty("tls_mode")
-    private String tlsMode;
+    @JsonProperty("num_apis")
+    private Integer numApis;
 
 
 
     /**
      * This is the getter method this will return the attribute value.
-     * Client certificate for mutual tls connection.
-     * Required when tls mode is mutual tls.
-     * It is a reference to an object of type sslkeyandcertificate.
+     * Maximum total number of api parameters stored across all endpoints in the system.
+     * Enabling applicationinsights on a virtual service is rejected at config time if adding its parameter budget would exceed this limit.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return clientCertRef
+     * @return numApiParams
      */
-    public String getClientCertRef() {
-        return clientCertRef;
+    public Integer getNumApiParams() {
+        return numApiParams;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Client certificate for mutual tls connection.
-     * Required when tls mode is mutual tls.
-     * It is a reference to an object of type sslkeyandcertificate.
+     * Maximum total number of api parameters stored across all endpoints in the system.
+     * Enabling applicationinsights on a virtual service is rejected at config time if adding its parameter budget would exceed this limit.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param clientCertRef set the clientCertRef.
+     * @param numApiParams set the numApiParams.
      */
-    public void setClientCertRef(String  clientCertRef) {
-        this.clientCertRef = clientCertRef;
+    public void setNumApiParams(Integer  numApiParams) {
+        this.numApiParams = numApiParams;
     }
 
     /**
      * This is the getter method this will return the attribute value.
-     * Select how tls is used to establish a secure outbound connection.
-     * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
-     * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
+     * Maximum total number of api endpoints stored across the system.
+     * Enabling applicationinsights on a virtual service is rejected at config time if adding its endpoint budget would exceed this limit.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return tlsMode
+     * @return numApis
      */
-    public String getTlsMode() {
-        return tlsMode;
+    public Integer getNumApis() {
+        return numApis;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Select how tls is used to establish a secure outbound connection.
-     * Certificate validation uses the trust store configured in system configuration (truststore pki profile).
-     * Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY.
+     * Maximum total number of api endpoints stored across the system.
+     * Enabling applicationinsights on a virtual service is rejected at config time if adding its endpoint budget would exceed this limit.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param tlsMode set the tlsMode.
+     * @param numApis set the numApis.
      */
-    public void setTlsMode(String  tlsMode) {
-        this.tlsMode = tlsMode;
+    public void setNumApis(Integer  numApis) {
+        this.numApis = numApis;
     }
 
 
@@ -94,17 +90,17 @@ public class TlsConfig  {
       if (o == null || getClass() != o.getClass()) {
           return false;
       }
-      TlsConfig objTlsConfig = (TlsConfig) o;
-      return   Objects.equals(this.tlsMode, objTlsConfig.tlsMode)&&
-  Objects.equals(this.clientCertRef, objTlsConfig.clientCertRef);
+      ApiLearningLimits objApiLearningLimits = (ApiLearningLimits) o;
+      return   Objects.equals(this.numApis, objApiLearningLimits.numApis)&&
+  Objects.equals(this.numApiParams, objApiLearningLimits.numApiParams);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("class TlsConfig {\n");
-                  sb.append("    clientCertRef: ").append(toIndentedString(clientCertRef)).append("\n");
-                        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
+      sb.append("class ApiLearningLimits {\n");
+                  sb.append("    numApiParams: ").append(toIndentedString(numApiParams)).append("\n");
+                        sb.append("    numApis: ").append(toIndentedString(numApis)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

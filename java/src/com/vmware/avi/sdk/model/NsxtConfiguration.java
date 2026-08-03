@@ -55,7 +55,7 @@ public class NsxtConfiguration  {
     private String siteId = "default";
 
     @JsonProperty("verify_certificate")
-    private Boolean verifyCertificate = false;
+    private Boolean verifyCertificate = true;
 
     @JsonProperty("vmc_mode")
     private Boolean vmcMode = false;
@@ -346,7 +346,7 @@ public class NsxtConfiguration  {
      * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter and nsx-t manager.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return verifyCertificate
      */
     public Boolean getVerifyCertificate() {
@@ -358,7 +358,7 @@ public class NsxtConfiguration  {
      * Flag is used to indicate whether tls certificate verificationbe done when establishing a connection to a vcenter and nsx-t manager.
      * Field introduced in 31.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param verifyCertificate set the verifyCertificate.
      */
     public void setVerifyCertificate(Boolean  verifyCertificate) {

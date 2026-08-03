@@ -30,6 +30,9 @@ public class SeVersion  {
     @JsonProperty("patch")
     private String patch;
 
+    @JsonProperty("url")
+    private String url = "url";
+
     @JsonProperty("version")
     private String version;
 
@@ -102,6 +105,23 @@ public class SeVersion  {
     public void setPatch(String  patch) {
         this.patch = patch;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Avi controller URL of the object.
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+   /**
+    * This is the setter method. this will set the url
+    * Avi controller URL of the object.
+    * @return url
+    */
+   public void setUrl(String  url) {
+     this.url = url;
+   }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -146,7 +166,7 @@ public class SeVersion  {
                   sb.append("    fipsMode: ").append(toIndentedString(fipsMode)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    patch: ").append(toIndentedString(patch)).append("\n");
-                        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+                                    sb.append("    version: ").append(toIndentedString(version)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

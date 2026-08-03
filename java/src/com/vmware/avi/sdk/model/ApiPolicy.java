@@ -381,7 +381,7 @@ public class ApiPolicy extends AviRestResource  {
      * If oas fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the oas fileobject.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
-     * Maximum of 5000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pathRefs
@@ -397,7 +397,7 @@ public class ApiPolicy extends AviRestResource  {
      * If oas fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the oas fileobject.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
-     * Maximum of 5000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pathRefs
@@ -413,7 +413,7 @@ public class ApiPolicy extends AviRestResource  {
      * If oas fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the oas fileobject.
      * It is a reference to an object of type apipath.
      * Field introduced in 32.2.1.
-     * Maximum of 5000 items allowed.
+     * Maximum of 2000 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return pathRefs

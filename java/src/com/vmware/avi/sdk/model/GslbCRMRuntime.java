@@ -54,6 +54,9 @@ public class GslbCRMRuntime extends AviRestResource  {
     @JsonProperty("tenant_ref")
     private String tenantRef;
 
+    @JsonProperty("tls_connection_err")
+    private String tlsConnectionErr;
+
     @JsonProperty("url")
     private String url = "url";
 
@@ -344,6 +347,30 @@ public class GslbCRMRuntime extends AviRestResource  {
     public void setTenantRef(String  tenantRef) {
         this.tenantRef = tenantRef;
     }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * This field will provide error information if any in gslb tls connection between sites.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tlsConnectionErr
+     */
+    public String getTlsConnectionErr() {
+        return tlsConnectionErr;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * This field will provide error information if any in gslb tls connection between sites.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tlsConnectionErr set the tlsConnectionErr.
+     */
+    public void setTlsConnectionErr(String  tlsConnectionErr) {
+        this.tlsConnectionErr = tlsConnectionErr;
+    }
     /**
      * This is the getter method this will return the attribute value.
      * Avi controller URL of the object.
@@ -407,6 +434,7 @@ public class GslbCRMRuntime extends AviRestResource  {
   Objects.equals(this.remoteInfo, objGslbCRMRuntime.remoteInfo)&&
   Objects.equals(this.localInfo, objGslbCRMRuntime.localInfo)&&
   Objects.equals(this.events, objGslbCRMRuntime.events)&&
+  Objects.equals(this.tlsConnectionErr, objGslbCRMRuntime.tlsConnectionErr)&&
   Objects.equals(this.tenantRef, objGslbCRMRuntime.tenantRef);
     }
 
@@ -425,6 +453,7 @@ public class GslbCRMRuntime extends AviRestResource  {
                         sb.append("    siteName: ").append(toIndentedString(siteName)).append("\n");
                         sb.append("    statusInfo: ").append(toIndentedString(statusInfo)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
+                        sb.append("    tlsConnectionErr: ").append(toIndentedString(tlsConnectionErr)).append("\n");
                                     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                   sb.append("}");
       return sb.toString();
