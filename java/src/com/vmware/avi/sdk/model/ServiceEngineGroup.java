@@ -384,6 +384,12 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("log_agent_trace_enabled")
     private Boolean logAgentTraceEnabled = true;
 
+    @JsonProperty("log_agent_udp_fqdn_resolve_interval")
+    private Integer logAgentUdpFqdnResolveInterval = 900;
+
+    @JsonProperty("log_agent_udp_fqdn_resolve_log_count")
+    private Integer logAgentUdpFqdnResolveLogCount = 5000;
+
     @JsonProperty("log_agent_unknown_vs_timer")
     private Integer logAgentUnknownVsTimer = 1800;
 
@@ -4154,6 +4160,70 @@ public class ServiceEngineGroup extends AviRestResource  {
      */
     public void setLogAgentTraceEnabled(Boolean  logAgentTraceEnabled) {
         this.logAgentTraceEnabled = logAgentTraceEnabled;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Interval in seconds at which the service engine re-resolves the dns for fqdn-based udp log streaming endpoints.
+     * Prevents streaming to stale ips when dns records change.
+     * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
+     * Allowed values are 60-86400.
+     * Field introduced in 31.2.3.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 900.
+     * @return logAgentUdpFqdnResolveInterval
+     */
+    public Integer getLogAgentUdpFqdnResolveInterval() {
+        return logAgentUdpFqdnResolveInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in seconds at which the service engine re-resolves the dns for fqdn-based udp log streaming endpoints.
+     * Prevents streaming to stale ips when dns records change.
+     * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
+     * Allowed values are 60-86400.
+     * Field introduced in 31.2.3.
+     * Unit is sec.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 900.
+     * @param logAgentUdpFqdnResolveInterval set the logAgentUdpFqdnResolveInterval.
+     */
+    public void setLogAgentUdpFqdnResolveInterval(Integer  logAgentUdpFqdnResolveInterval) {
+        this.logAgentUdpFqdnResolveInterval = logAgentUdpFqdnResolveInterval;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Number of udp log messages sent before re-resolving the fqdn.
+     * Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked
+     * before time.
+     * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
+     * Allowed values are 100-100000.
+     * Field introduced in 31.2.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+     * @return logAgentUdpFqdnResolveLogCount
+     */
+    public Integer getLogAgentUdpFqdnResolveLogCount() {
+        return logAgentUdpFqdnResolveLogCount;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Number of udp log messages sent before re-resolving the fqdn.
+     * Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked
+     * before time.
+     * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
+     * Allowed values are 100-100000.
+     * Field introduced in 31.2.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+     * @param logAgentUdpFqdnResolveLogCount set the logAgentUdpFqdnResolveLogCount.
+     */
+    public void setLogAgentUdpFqdnResolveLogCount(Integer  logAgentUdpFqdnResolveLogCount) {
+        this.logAgentUdpFqdnResolveLogCount = logAgentUdpFqdnResolveLogCount;
     }
 
     /**
@@ -9387,7 +9457,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.autoRebalanceRaiseEventsForActions, objServiceEngineGroup.autoRebalanceRaiseEventsForActions)&&
   Objects.equals(this.autoRebalanceDryRunEnabled, objServiceEngineGroup.autoRebalanceDryRunEnabled)&&
   Objects.equals(this.licenseQuota, objServiceEngineGroup.licenseQuota)&&
-  Objects.equals(this.seKernelRss, objServiceEngineGroup.seKernelRss);
+  Objects.equals(this.seKernelRss, objServiceEngineGroup.seKernelRss)&&
+  Objects.equals(this.logAgentUdpFqdnResolveInterval, objServiceEngineGroup.logAgentUdpFqdnResolveInterval)&&
+  Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount);
     }
 
     @Override
@@ -9515,6 +9587,8 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
                         sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
                         sb.append("    logAgentTraceEnabled: ").append(toIndentedString(logAgentTraceEnabled)).append("\n");
+                        sb.append("    logAgentUdpFqdnResolveInterval: ").append(toIndentedString(logAgentUdpFqdnResolveInterval)).append("\n");
+                        sb.append("    logAgentUdpFqdnResolveLogCount: ").append(toIndentedString(logAgentUdpFqdnResolveLogCount)).append("\n");
                         sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");
                         sb.append("    logDisksz: ").append(toIndentedString(logDisksz)).append("\n");
                         sb.append("    logMallocFailure: ").append(toIndentedString(logMallocFailure)).append("\n");
