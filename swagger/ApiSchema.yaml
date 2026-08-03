@@ -383,6 +383,7 @@ paths:
 definitions:
     ApiObjectProperties:
         type: object
+        description: "Definition of an object schema property, including property name, schema constraints, requirement status, access mode, nullability, and deprecation status."
         required:
             -   name
             -   schema
@@ -408,6 +409,7 @@ definitions:
                 $ref: '#/definitions/ApiSimpleSchemaDescription'
     ApiSchema:
         type: object
+        description: "Reusable schema definition for complex data structures (objects or arrays) referenced across multiple API endpoints for payload validation."
         required:
             -   name
             -   type
@@ -494,6 +496,7 @@ definitions:
                 type: string
     ApiSimpleSchemaDescription:
         type: object
+        description: "Schema specification for scalar types, arrays, or schema references, defining data types and validation constraints for non-object properties."
         required:
             -   type
         properties:
@@ -533,6 +536,7 @@ definitions:
                 default: "SCHEMA_TYPE_UNDEFINED"
     DiscriminatorDescription:
         type: object
+        description: "Discriminator configuration used within composite schemas (oneOf/anyOf) to select the matching sub-schema based on payload property values."
         properties:
             mapping:
                 description: "Mapping of discriminator values to their corresponding schema descriptions. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

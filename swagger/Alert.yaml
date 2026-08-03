@@ -380,12 +380,12 @@ paths:
                     description: object not found
 
 
-    /debugvirtualservice:
+    /gslbhsmruntime:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: GET /debugvirtualservice
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: GET /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -448,14 +448,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: POST /debugvirtualservice
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: POST /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -483,25 +483,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /gslbhsmruntime/{uuid}:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: GET /debugvirtualservice/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: GET /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -561,16 +561,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PUT /debugvirtualservice/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -603,10 +603,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -618,16 +618,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PATCH /debugvirtualservice/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -660,10 +660,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -675,16 +675,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: DELETE /debugvirtualservice/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1082,12 +1082,12 @@ paths:
                     description: object not found
 
 
-    /gslbcrmruntime:
+    /albservicesfiledownload:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: GET /gslbcrmruntime
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload
+            operationId: GET /albservicesfiledownload
             consumes:
                 -   application/json
             produces:
@@ -1150,14 +1150,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
+                        $ref: "#/definitions/ALBServicesFileDownloadApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: POST /gslbcrmruntime
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload
+            operationId: POST /albservicesfiledownload
             consumes:
                 -   application/json
             produces:
@@ -1185,25 +1185,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 "401":
                     description: log in failed
-    /gslbcrmruntime/{uuid}:
+    /albservicesfiledownload/{uuid}:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: GET /gslbcrmruntime/{uuid}
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}/{uuid}
+            operationId: GET /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1263,16 +1263,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbcrmruntime/{uuid}
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}/{uuid}
+            operationId: PUT /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1305,10 +1305,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1320,16 +1320,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbcrmruntime/{uuid}
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}/{uuid}
+            operationId: PATCH /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1362,10 +1362,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: ALBServicesFileDownload object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1377,1771 +1377,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/ALBServicesFileDownload"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbcrmruntime/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
-    /virtualservice:
-        get:
-            tags:
-                - VirtualService
-            description: /virtualservice
-            operationId: GET /virtualservice
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/VirtualServiceApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - VirtualService
-            description: /virtualservice
-            operationId: POST /virtualservice
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: VirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                "401":
-                    description: log in failed
-    /virtualservice/{uuid}:
-        get:
-            tags:
-                - VirtualService
-            description: /virtualservice/{uuid}/{uuid}
-            operationId: GET /virtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - VirtualService
-            description: /virtualservice/{uuid}/{uuid}
-            operationId: PUT /virtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: VirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - VirtualService
-            description: /virtualservice/{uuid}/{uuid}
-            operationId: PATCH /virtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: VirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/VirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - VirtualService
-            description: /virtualservice/{uuid}/{uuid}
-            operationId: DELETE /virtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
-    /taskjournal:
-        get:
-            tags:
-                - TaskJournal
-            description: /taskjournal
-            operationId: GET /taskjournal
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TaskJournalApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - TaskJournal
-            description: /taskjournal
-            operationId: POST /taskjournal
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TaskJournal object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                "401":
-                    description: log in failed
-    /taskjournal/{uuid}:
-        get:
-            tags:
-                - TaskJournal
-            description: /taskjournal/{uuid}/{uuid}
-            operationId: GET /taskjournal/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - TaskJournal
-            description: /taskjournal/{uuid}/{uuid}
-            operationId: PUT /taskjournal/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TaskJournal object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - TaskJournal
-            description: /taskjournal/{uuid}/{uuid}
-            operationId: PATCH /taskjournal/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TaskJournal object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TaskJournal"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - TaskJournal
-            description: /taskjournal/{uuid}/{uuid}
-            operationId: DELETE /taskjournal/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
-    /upgradestatusinfo:
-        get:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo
-            operationId: GET /upgradestatusinfo
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo
-            operationId: POST /upgradestatusinfo
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: UpgradeStatusInfo object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                "401":
-                    description: log in failed
-    /upgradestatusinfo/{uuid}:
-        get:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: GET /upgradestatusinfo/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: PUT /upgradestatusinfo/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: UpgradeStatusInfo object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: PATCH /upgradestatusinfo/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: UpgradeStatusInfo object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/UpgradeStatusInfo"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - UpgradeStatusInfo
-            description: /upgradestatusinfo/{uuid}/{uuid}
-            operationId: DELETE /upgradestatusinfo/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
-    /systemreport:
-        get:
-            tags:
-                - SystemReport
-            description: /systemreport
-            operationId: GET /systemreport
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/SystemReportApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - SystemReport
-            description: /systemreport
-            operationId: POST /systemreport
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: SystemReport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                "401":
-                    description: log in failed
-    /systemreport/{uuid}:
-        get:
-            tags:
-                - SystemReport
-            description: /systemreport/{uuid}/{uuid}
-            operationId: GET /systemreport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - SystemReport
-            description: /systemreport/{uuid}/{uuid}
-            operationId: PUT /systemreport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: SystemReport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - SystemReport
-            description: /systemreport/{uuid}/{uuid}
-            operationId: PATCH /systemreport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: SystemReport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/SystemReport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - SystemReport
-            description: /systemreport/{uuid}/{uuid}
-            operationId: DELETE /systemreport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
-    /techsupport:
-        get:
-            tags:
-                - TechSupport
-            description: /techsupport
-            operationId: GET /techsupport
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TechSupportApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - TechSupport
-            description: /techsupport
-            operationId: POST /techsupport
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TechSupport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                "401":
-                    description: log in failed
-    /techsupport/{uuid}:
-        get:
-            tags:
-                - TechSupport
-            description: /techsupport/{uuid}/{uuid}
-            operationId: GET /techsupport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - TechSupport
-            description: /techsupport/{uuid}/{uuid}
-            operationId: PUT /techsupport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TechSupport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - TechSupport
-            description: /techsupport/{uuid}/{uuid}
-            operationId: PATCH /techsupport/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: TechSupport object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/TechSupport"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - TechSupport
-            description: /techsupport/{uuid}/{uuid}
-            operationId: DELETE /techsupport/{uuid}
+                - ALBServicesFileDownload
+            description: /albservicesfiledownload/{uuid}/{uuid}
+            operationId: DELETE /albservicesfiledownload/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -3890,12 +2135,12 @@ paths:
                     description: object not found
 
 
-    /albservicesfiledownload:
+    /gslbcrmruntime:
         get:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload
-            operationId: GET /albservicesfiledownload
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: GET /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -3958,14 +2203,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownloadApiResponse"
+                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload
-            operationId: POST /albservicesfiledownload
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: POST /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -3993,25 +2238,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
-    /albservicesfiledownload/{uuid}:
+    /gslbcrmruntime/{uuid}:
         get:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload/{uuid}/{uuid}
-            operationId: GET /albservicesfiledownload/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: GET /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4071,16 +2316,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload/{uuid}/{uuid}
-            operationId: PUT /albservicesfiledownload/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4113,10 +2358,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4128,16 +2373,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload/{uuid}/{uuid}
-            operationId: PATCH /albservicesfiledownload/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4170,10 +2415,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: ALBServicesFileDownload object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4185,16 +2430,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/ALBServicesFileDownload"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - ALBServicesFileDownload
-            description: /albservicesfiledownload/{uuid}/{uuid}
-            operationId: DELETE /albservicesfiledownload/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4241,12 +2486,12 @@ paths:
                     description: object not found
 
 
-    /gslbhsmruntime:
+    /systemreport:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: GET /gslbhsmruntime
+                - SystemReport
+            description: /systemreport
+            operationId: GET /systemreport
             consumes:
                 -   application/json
             produces:
@@ -4309,14 +2554,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
+                        $ref: "#/definitions/SystemReportApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: POST /gslbhsmruntime
+                - SystemReport
+            description: /systemreport
+            operationId: POST /systemreport
             consumes:
                 -   application/json
             produces:
@@ -4344,25 +2589,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 "401":
                     description: log in failed
-    /gslbhsmruntime/{uuid}:
+    /systemreport/{uuid}:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: GET /gslbhsmruntime/{uuid}
+                - SystemReport
+            description: /systemreport/{uuid}/{uuid}
+            operationId: GET /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4422,16 +2667,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbhsmruntime/{uuid}
+                - SystemReport
+            description: /systemreport/{uuid}/{uuid}
+            operationId: PUT /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4464,10 +2709,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4479,16 +2724,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbhsmruntime/{uuid}
+                - SystemReport
+            description: /systemreport/{uuid}/{uuid}
+            operationId: PATCH /systemreport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4521,10 +2766,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: SystemReport object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4536,16 +2781,1771 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/SystemReport"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbhsmruntime/{uuid}
+                - SystemReport
+            description: /systemreport/{uuid}/{uuid}
+            operationId: DELETE /systemreport/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
+    /upgradestatusinfo:
+        get:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo
+            operationId: GET /upgradestatusinfo
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfoApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo
+            operationId: POST /upgradestatusinfo
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: UpgradeStatusInfo object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                "401":
+                    description: log in failed
+    /upgradestatusinfo/{uuid}:
+        get:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: GET /upgradestatusinfo/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: PUT /upgradestatusinfo/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: UpgradeStatusInfo object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: PATCH /upgradestatusinfo/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: UpgradeStatusInfo object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/UpgradeStatusInfo"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - UpgradeStatusInfo
+            description: /upgradestatusinfo/{uuid}/{uuid}
+            operationId: DELETE /upgradestatusinfo/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
+    /virtualservice:
+        get:
+            tags:
+                - VirtualService
+            description: /virtualservice
+            operationId: GET /virtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/VirtualServiceApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - VirtualService
+            description: /virtualservice
+            operationId: POST /virtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: VirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                "401":
+                    description: log in failed
+    /virtualservice/{uuid}:
+        get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/{uuid}
+            operationId: GET /virtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/{uuid}
+            operationId: PUT /virtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: VirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/{uuid}
+            operationId: PATCH /virtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: VirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/VirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/{uuid}
+            operationId: DELETE /virtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
+    /taskjournal:
+        get:
+            tags:
+                - TaskJournal
+            description: /taskjournal
+            operationId: GET /taskjournal
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TaskJournalApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - TaskJournal
+            description: /taskjournal
+            operationId: POST /taskjournal
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TaskJournal object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                "401":
+                    description: log in failed
+    /taskjournal/{uuid}:
+        get:
+            tags:
+                - TaskJournal
+            description: /taskjournal/{uuid}/{uuid}
+            operationId: GET /taskjournal/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - TaskJournal
+            description: /taskjournal/{uuid}/{uuid}
+            operationId: PUT /taskjournal/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TaskJournal object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - TaskJournal
+            description: /taskjournal/{uuid}/{uuid}
+            operationId: PATCH /taskjournal/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TaskJournal object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TaskJournal"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - TaskJournal
+            description: /taskjournal/{uuid}/{uuid}
+            operationId: DELETE /taskjournal/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
+    /debugvirtualservice:
+        get:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: GET /debugvirtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: POST /debugvirtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+    /debugvirtualservice/{uuid}:
+        get:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: GET /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PUT /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PATCH /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: DELETE /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
+    /techsupport:
+        get:
+            tags:
+                - TechSupport
+            description: /techsupport
+            operationId: GET /techsupport
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TechSupportApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - TechSupport
+            description: /techsupport
+            operationId: POST /techsupport
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TechSupport object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                "401":
+                    description: log in failed
+    /techsupport/{uuid}:
+        get:
+            tags:
+                - TechSupport
+            description: /techsupport/{uuid}/{uuid}
+            operationId: GET /techsupport/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - TechSupport
+            description: /techsupport/{uuid}/{uuid}
+            operationId: PUT /techsupport/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TechSupport object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - TechSupport
+            description: /techsupport/{uuid}/{uuid}
+            operationId: PATCH /techsupport/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: TechSupport object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/TechSupport"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - TechSupport
+            description: /techsupport/{uuid}/{uuid}
+            operationId: DELETE /techsupport/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -10220,6 +10220,9 @@ definitions:
                 $ref: '#/definitions/OperationalStatus'
             tenant_ref:
                 description: "Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            tls_connection_err:
+                description: "This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -17391,7 +17394,7 @@ definitions:
                 type: integer
                 format: int32
             limit:
-                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, API_POLICY_NUM_PATHS, API_POLICY_NUM_VS, API_POLICY_NUM_SCHEMAS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY, NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS, NUM_API_METRICS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             limit_description:
                 description: "Description of the system limit. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

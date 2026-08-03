@@ -383,6 +383,7 @@ paths:
 definitions:
     ApiContentTypeMapping:
         type: object
+        description: "Association between a MIME content type (e.g., application/json) and the schema enforced for request or response payloads."
         required:
             -   content_type
             -   schema
@@ -395,6 +396,7 @@ definitions:
                 $ref: '#/definitions/ApiSimpleSchemaDescription'
     ApiEndpoint:
         type: object
+        description: "A single API operation identified by an HTTP method on a path template. Defines validation parameters, request/response body schemas, and endpoint-level label overrides."
         required:
             -   http_method
         properties:
@@ -458,6 +460,7 @@ definitions:
                 default: "API_ACTION_INHERIT_FROM_API_POLICY"
     ApiLabels:
         type: object
+        description: "Configuration of labels applied to endpoints belonging to a specific classification category, such as active or orphan."
         properties:
             enabled:
                 description: "Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -469,6 +472,7 @@ definitions:
                     type: string
     ApiPath:
         type: object
+        description: "A URI path template defining available operations and endpoints for an API. Paths can be manually defined or imported and synchronized from an OpenAPI specification."
         required:
             -   name
             -   path_template
@@ -527,6 +531,7 @@ definitions:
                 type: string
     ApiRequestBodyDescription:
         type: object
+        description: "Specification of the expected request body format, accepted content types, associated schemas, and requirement status for an operation."
         properties:
             description:
                 description: "Description of the request body from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -549,6 +554,7 @@ definitions:
                 default: "API_ACTION_INHERIT_FROM_API_POLICY"
     ApiResponse:
         type: object
+        description: "Specification of expected response parameters and schemas associated with an HTTP status code or status code range."
         required:
             -   status_code
         properties:
@@ -574,6 +580,7 @@ definitions:
                 default: "API_ACTION_INHERIT_FROM_API_POLICY"
     ApiSimpleSchemaDescription:
         type: object
+        description: "Schema specification for scalar types, arrays, or schema references, defining data types and validation constraints for non-object properties."
         required:
             -   type
         properties:
@@ -646,6 +653,7 @@ definitions:
                 format: int32
     ParameterDescription:
         type: object
+        description: "Definition of a parameter residing in a path, query string, or header, including parameter name, mandatory status, and schema constraints."
         required:
             -   name
             -   schema

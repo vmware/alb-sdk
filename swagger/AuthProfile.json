@@ -711,6 +711,10 @@
                     "type": "boolean",
                     "default": true
                 },
+                "client_cert_ref": {
+                    "description": "Client certificate for mutual TLS connection. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "email_attribute": {
                     "description": "LDAP attribute that refers to user email. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
@@ -747,9 +751,9 @@
                     "description": "LDAP full directory configuration with administrator credentials. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LdapDirectorySettings"
                 },
-                "tls_config": {
-                    "description": "TLS configuration for outbound LDAP connections. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/TlsConfig"
+                "skip_hostname_verification": {
+                    "description": "Skip hostname verification against the LDAP server certificate. The certificate chain is still validated using pki_profile_uuid. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
                 },
                 "user_bind": {
                     "description": "LDAP anonymous bind configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -1017,6 +1021,10 @@
                 "periodic_download": {
                     "description": "Enable Periodic Metadata Download. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
+                },
+                "tls_config": {
+                    "description": "TLS configuration for outbound SAML IDP connections. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/TlsConfig"
                 }
             }
         },
@@ -1143,7 +1151,7 @@
                     "type": "string"
                 },
                 "tls_mode": {
-                    "description": "Select how TLS is used to establish a secure connection. Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
