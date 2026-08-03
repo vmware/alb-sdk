@@ -48,7 +48,7 @@ type RancherConfiguration struct {
 	FleetEndpoint *string `json:"fleet_endpoint,omitempty"`
 
 	// List of container ports that create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Defaults to 80. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty,omitempty"`
+	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty"`
 
 	// Nuage Overlay SDN Controller information. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NuageController *NuageSDNController `json:"nuage_controller,omitempty"`

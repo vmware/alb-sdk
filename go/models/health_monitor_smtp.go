@@ -21,5 +21,5 @@ type HealthMonitorSMTP struct {
 	SenderID *string `json:"sender_id,omitempty"`
 
 	// SSL attributes for SMTPS monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
+	SslAttributes *HealthMonitorSSLAttributes `json:"ssl_attributes,omitempty"`
 }

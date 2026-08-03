@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIValidationSettings Api validation settings
+// APIValidationSettings Default validation actions enforced when requests or responses violate policy specifications. These actions can be overridden at the path or endpoint level.
 // swagger:model ApiValidationSettings
 type APIValidationSettings struct {
 

@@ -13,7 +13,7 @@ type PortMatchGeneric struct {
 	MatchCriteria *string `json:"match_criteria"`
 
 	// Listening TCP port(s). Allowed values are 1-65535. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ports []int64 `json:"ports,omitempty,omitempty"`
+	Ports []int64 `json:"ports,omitempty"`
 
 	// A port range defined by a start and end, including both. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ranges []*PortRange `json:"ranges,omitempty"`

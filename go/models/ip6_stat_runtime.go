@@ -10,127 +10,127 @@ type Ip6StatRuntime struct {
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadlen *uint64 `json:"ip6s_badlen"`
+	Ip6sBadlen *uint64 `json:"ip6s_badlen"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadoptions *uint64 `json:"ip6s_badoptions"`
+	Ip6sBadoptions *uint64 `json:"ip6s_badoptions"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadscope *uint64 `json:"ip6s_badscope"`
+	Ip6sBadscope *uint64 `json:"ip6s_badscope"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadtcpsum *uint64 `json:"ip6s_badtcpsum"`
+	Ip6sBadtcpsum *uint64 `json:"ip6s_badtcpsum"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadudpsum *uint64 `json:"ip6s_badudpsum"`
+	Ip6sBadudpsum *uint64 `json:"ip6s_badudpsum"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SBadvers *uint64 `json:"ip6s_badvers"`
+	Ip6sBadvers *uint64 `json:"ip6s_badvers"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SCantforward *uint64 `json:"ip6s_cantforward"`
+	Ip6sCantforward *uint64 `json:"ip6s_cantforward"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SCantfrag *uint64 `json:"ip6s_cantfrag"`
+	Ip6sCantfrag *uint64 `json:"ip6s_cantfrag"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SDelivered *uint64 `json:"ip6s_delivered"`
+	Ip6sDelivered *uint64 `json:"ip6s_delivered"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SExthdrtoolong *uint64 `json:"ip6s_exthdrtoolong"`
+	Ip6sExthdrtoolong *uint64 `json:"ip6s_exthdrtoolong"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFastforward *uint64 `json:"ip6s_fastforward"`
+	Ip6sFastforward *uint64 `json:"ip6s_fastforward"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SForward *uint64 `json:"ip6s_forward"`
+	Ip6sForward *uint64 `json:"ip6s_forward"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFragdropped *uint64 `json:"ip6s_fragdropped"`
+	Ip6sFragdropped *uint64 `json:"ip6s_fragdropped"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFragmented *uint64 `json:"ip6s_fragmented"`
+	Ip6sFragmented *uint64 `json:"ip6s_fragmented"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFragments *uint64 `json:"ip6s_fragments"`
+	Ip6sFragments *uint64 `json:"ip6s_fragments"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFragoverflow *uint64 `json:"ip6s_fragoverflow"`
+	Ip6sFragoverflow *uint64 `json:"ip6s_fragoverflow"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SFragtimeout *uint64 `json:"ip6s_fragtimeout"`
+	Ip6sFragtimeout *uint64 `json:"ip6s_fragtimeout"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SLocalout *uint64 `json:"ip6s_localout"`
+	Ip6sLocalout *uint64 `json:"ip6s_localout"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SNoroute *uint64 `json:"ip6s_noroute"`
+	Ip6sNoroute *uint64 `json:"ip6s_noroute"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SNotmember *uint64 `json:"ip6s_notmember"`
+	Ip6sNotmember *uint64 `json:"ip6s_notmember"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SOdropped *uint64 `json:"ip6s_odropped"`
+	Ip6sOdropped *uint64 `json:"ip6s_odropped"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SOfragments *uint64 `json:"ip6s_ofragments"`
+	Ip6sOfragments *uint64 `json:"ip6s_ofragments"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SRawout *uint64 `json:"ip6s_rawout"`
+	Ip6sRawout *uint64 `json:"ip6s_rawout"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SReassembled *uint64 `json:"ip6s_reassembled"`
+	Ip6sReassembled *uint64 `json:"ip6s_reassembled"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SRedirectsent *uint64 `json:"ip6s_redirectsent"`
+	Ip6sRedirectsent *uint64 `json:"ip6s_redirectsent"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6STcpsumLarge *uint64 `json:"ip6s_tcpsum_large"`
+	Ip6sTcpsumLarge *uint64 `json:"ip6s_tcpsum_large"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SToomanyhdr *uint64 `json:"ip6s_toomanyhdr"`
+	Ip6sToomanyhdr *uint64 `json:"ip6s_toomanyhdr"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6STooshort *uint64 `json:"ip6s_tooshort"`
+	Ip6sTooshort *uint64 `json:"ip6s_tooshort"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SToosmall *uint64 `json:"ip6s_toosmall"`
+	Ip6sToosmall *uint64 `json:"ip6s_toosmall"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6STotal *uint64 `json:"ip6s_total"`
+	Ip6sTotal *uint64 `json:"ip6s_total"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IP6SUdpsumLarge *uint64 `json:"ip6s_udpsum_large"`
+	Ip6sUdpsumLarge *uint64 `json:"ip6s_udpsum_large"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcID *string `json:"proc_id,omitempty"`

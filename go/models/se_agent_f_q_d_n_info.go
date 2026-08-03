@@ -48,7 +48,7 @@ type SeAgentFQDNInfo struct {
 	Resolved *bool `json:"resolved,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Stats *FQDnstats `json:"stats,omitempty"`
+	Stats *FQDNStats `json:"stats,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TTL *uint32 `json:"ttl,omitempty"`

@@ -277,16 +277,16 @@ type VserverL7Stats struct {
 	SslVerSsl30 *uint64 `json:"ssl_ver_ssl30,omitempty"`
 
 	// Total number of TLS v1.0 handshakes served. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS10 *uint64 `json:"ssl_ver_tls10,omitempty"`
+	SslVerTls10 *uint64 `json:"ssl_ver_tls10,omitempty"`
 
 	// Total number of TLS v1.1 handshakes served. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS11 *uint64 `json:"ssl_ver_tls11,omitempty"`
+	SslVerTls11 *uint64 `json:"ssl_ver_tls11,omitempty"`
 
 	// Total number of TLS v1.2 handshakes served. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS12 *uint64 `json:"ssl_ver_tls12,omitempty"`
+	SslVerTls12 *uint64 `json:"ssl_ver_tls12,omitempty"`
 
 	// Total number of TLS v1.3 connections. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS13 *uint64 `json:"ssl_ver_tls13,omitempty"`
+	SslVerTls13 *uint64 `json:"ssl_ver_tls13,omitempty"`
 
 	// Number of client connections that timed out. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TimeoutError *uint64 `json:"timeout_error,omitempty"`

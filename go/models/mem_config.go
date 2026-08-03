@@ -14,7 +14,7 @@ type MemConfig struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumberOfCpus *uint32 `json:"number_of_CPUs"`
+	NumberOfCPUs *uint32 `json:"number_of_CPUs"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

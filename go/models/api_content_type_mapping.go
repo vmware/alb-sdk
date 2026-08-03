@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIContentTypeMapping Api content type mapping
+// APIContentTypeMapping Association between a MIME content type (e.g., application/json) and the schema enforced for request or response payloads.
 // swagger:model ApiContentTypeMapping
 type APIContentTypeMapping struct {
 

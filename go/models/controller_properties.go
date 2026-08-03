@@ -25,7 +25,7 @@ type ControllerProperties struct {
 	AllowUnauthenticatedApis *bool `json:"allow_unauthenticated_apis,omitempty"`
 
 	//  Allowed values are 0-1440. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	APIIDLETimeout *uint32 `json:"api_idle_timeout,omitempty"`
+	APIIdleTimeout *uint32 `json:"api_idle_timeout,omitempty"`
 
 	// Threshold to log request timing in portal_performance.log and Server-Timing response header. Any stage taking longer than 1% of the threshold will be included in the Server-Timing header. Field introduced in 18.1.4, 18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIPerfLoggingThreshold *uint32 `json:"api_perf_logging_threshold,omitempty"`
@@ -298,7 +298,7 @@ type ControllerProperties struct {
 	SoftMinMemPerSeLimit *uint32 `json:"soft_min_mem_per_se_limit,omitempty"`
 
 	// Number of days for SSL Certificate expiry warning. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty,omitempty"`
+	SslCertificateExpiryWarningDays []int64 `json:"ssl_certificate_expiry_warning_days,omitempty"`
 
 	// Configure statecache behavior for Config, SE, ResMgr. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatecacheProperties *SCProperties `json:"statecache_properties,omitempty"`

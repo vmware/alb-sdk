@@ -12,7 +12,7 @@ type SeAgentResolvDBRuntimeSummary struct {
 	DNSResolutionOnSe *bool `json:"dns_resolution_on_se,omitempty"`
 
 	// FQDN Summary. Field introduced in 20.1.5, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Fqdns []*SeAgentFQDnsummary `json:"fqdns,omitempty"`
+	Fqdns []*SeAgentFQDNSummary `json:"fqdns,omitempty"`
 
 	// Resolve the Gslb Service group/pool member FQDNs on SE. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GsMemberFqdnResolutionOnSe *bool `json:"gs_member_fqdn_resolution_on_se,omitempty"`

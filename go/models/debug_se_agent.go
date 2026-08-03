@@ -9,7 +9,7 @@ package models
 type DebugSeAgent struct {
 
 	// Log every nth message. Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	LogEveryN *uint32 `json:"log_every_n,omitempty"`
+	LogEveryn *uint32 `json:"log_every_n,omitempty"`
 
 	//  Enum options - LOG_LEVEL_DISABLED, LOG_LEVEL_INFO, LOG_LEVEL_WARNING, LOG_LEVEL_ERROR, LOG_LEVEL_DEBUG. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

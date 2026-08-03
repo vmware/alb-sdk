@@ -12,7 +12,7 @@ type UberEnumMessage1 struct {
 	Rm []*UberEnumMessage2 `json:"rm,omitempty"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Rv []int64 `json:"rv,omitempty,omitempty"`
+	Rv []int64 `json:"rv,omitempty"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	V *uint64 `json:"v,omitempty"`

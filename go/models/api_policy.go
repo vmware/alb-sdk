@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIPolicy Api policy
+// APIPolicy Top-level configuration for API protection and validation. Traffic for defined APIs is evaluated and validated against configured path templates, server scopes, and endpoint usage classifications.
 // swagger:model ApiPolicy
 type APIPolicy struct {
 
@@ -44,7 +44,7 @@ type APIPolicy struct {
 	// List of labels applied to orphan API endpoints. An orphan API is an endpoint that is specified in the API-Spec but has not been seen in the datapath for a predefined duration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OrphanAPILabels *APILabels `json:"orphan_api_labels,omitempty"`
 
-	// List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Maximum of 5000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Maximum of 2000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PathRefs []string `json:"path_refs,omitempty"`
 
 	// Optional header-based routing configuration for EVH child VS selection. When set, the rules inside are used in addition to server FQDNs (host match) and server_info.path_prefix (path match) to determine which child VS handles a request. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

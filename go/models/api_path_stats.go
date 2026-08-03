@@ -63,6 +63,9 @@ type APIPathStats struct {
 	// Total number of violations for this API endpoint with violation type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationRequestHeader *uint64 `json:"violation_count_location_request_header,omitempty"`
 
+	// Total number of violations for this API endpoint with violation type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationResponseContentType *uint64 `json:"violation_count_location_response_content_type,omitempty"`
+
 	// Total number of violations for this API endpoint with violation type location_response_status_code. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationResponseStatusCode *uint64 `json:"violation_count_location_response_status_code,omitempty"`
 

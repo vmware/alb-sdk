@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APISimpleSchemaDescription Api simple schema description
+// APISimpleSchemaDescription Schema specification for scalar types, arrays, or schema references, defining data types and validation constraints for non-object properties.
 // swagger:model ApiSimpleSchemaDescription
 type APISimpleSchemaDescription struct {
 

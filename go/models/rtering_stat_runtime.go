@@ -45,10 +45,10 @@ type RteringStatRuntime struct {
 	ProcID *string `json:"proc_id,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SbQFull *uint32 `json:"sb_q_full,omitempty"`
+	SbqFull *uint32 `json:"sb_q_full,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SbQSent *uint32 `json:"sb_q_sent,omitempty"`
+	SbqSent *uint32 `json:"sb_q_sent,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeUUID *string `json:"se_uuid,omitempty"`

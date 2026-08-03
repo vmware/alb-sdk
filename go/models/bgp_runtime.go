@@ -18,7 +18,7 @@ type BgpRuntime struct {
 	Name *string `json:"name,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PeerBmp []int64 `json:"peer_bmp,omitempty,omitempty"`
+	PeerBmp []int64 `json:"peer_bmp,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Peers []*BgpPeerRuntime `json:"peers,omitempty"`

@@ -117,10 +117,10 @@ type L7VirtualServiceStatsRuntime struct {
 	Http2TrailersReceived *uint64 `json:"http2_trailers_received,omitempty"`
 
 	// Number of invalid HTTP/1.x requests received on this Virtual Service. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InvalidHTTPV1Requests *uint64 `json:"invalid_httpv1_requests,omitempty"`
+	InvalidHttpv1Requests *uint64 `json:"invalid_httpv1_requests,omitempty"`
 
 	// Number of invalid HTTP/2 requests received on this Virtual Service. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InvalidHTTPV2Requests *uint64 `json:"invalid_httpv2_requests,omitempty"`
+	InvalidHttpv2Requests *uint64 `json:"invalid_httpv2_requests,omitempty"`
 
 	// Number of requests with algorithm mismatch. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	JwtAlgMismatch *uint64 `json:"jwt_alg_mismatch,omitempty"`

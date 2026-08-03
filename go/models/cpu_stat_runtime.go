@@ -24,7 +24,7 @@ type CPUStatRuntime struct {
 	FreeMemory *uint32 `json:"free_memory,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IDLECPU *float64 `json:"idle_cpu,omitempty"`
+	IdleCPU *float64 `json:"idle_cpu,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessCPUUtilization []*ProcCPUStat `json:"process_cpu_utilization,omitempty"`

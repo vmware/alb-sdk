@@ -21,7 +21,7 @@ type DebugServiceEngineSustainedCPUSpike struct {
 	ManualStart *bool `json:"manual_start,omitempty"`
 
 	// List of process' pid(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Pids []int64 `json:"pids,omitempty,omitempty"`
+	Pids []int64 `json:"pids,omitempty"`
 
 	// List of process' name(s) for which debug data should be recorded. Field introduced in 31.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessNames []string `json:"process_names,omitempty"`

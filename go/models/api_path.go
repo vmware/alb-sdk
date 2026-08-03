@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIPath Api path
+// APIPath A URI path template defining available operations and endpoints for an API. Paths can be manually defined or imported and synchronized from an OpenAPI specification.
 // swagger:model ApiPath
 type APIPath struct {
 

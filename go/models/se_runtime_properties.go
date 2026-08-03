@@ -216,7 +216,7 @@ type SeRuntimeProperties struct {
 	UpstreamConnpoolCacheThresh *int32 `json:"upstream_connpool_cache_thresh,omitempty"`
 
 	// Idle timeout value for a connection in the upstream connection pool, when the current cache size is above the threshold. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UpstreamConnpoolConnIDLEThreshTmo *int32 `json:"upstream_connpool_conn_idle_thresh_tmo,omitempty"`
+	UpstreamConnpoolConnIdleThreshTmo *int32 `json:"upstream_connpool_conn_idle_thresh_tmo,omitempty"`
 
 	// L7 Upstream Connection pool max cache size per core. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpstreamConnpoolCoreMaxCache *int32 `json:"upstream_connpool_core_max_cache,omitempty"`

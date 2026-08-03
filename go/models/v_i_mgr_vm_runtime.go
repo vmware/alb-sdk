@@ -104,10 +104,10 @@ type VIMgrVMRuntime struct {
 	VcenterTemplateVM *bool `json:"vcenter_template_vm,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	VcenterVAppName *string `json:"vcenter_vAppName,omitempty"`
+	VcentervAppName *string `json:"vcenter_vAppName,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	VcenterVAppVendor *string `json:"vcenter_vAppVendor,omitempty"`
+	VcentervAppVendor *string `json:"vcenter_vAppVendor,omitempty"`
 
 	//  Enum options - VMTYPE_SE_VM, VMTYPE_POOL_SRVR. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterVMType *string `json:"vcenter_vm_type,omitempty"`

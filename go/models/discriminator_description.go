@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// DiscriminatorDescription discriminator description
+// DiscriminatorDescription Discriminator configuration used within composite schemas (oneOf/anyOf) to select the matching sub-schema based on payload property values.
 // swagger:model DiscriminatorDescription
 type DiscriminatorDescription struct {
 

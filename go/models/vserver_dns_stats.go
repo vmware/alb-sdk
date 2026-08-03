@@ -35,7 +35,7 @@ type VserverDNSStats struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	ReqTypeA *uint64 `json:"req_type_a"`
+	ReqTypea *uint64 `json:"req_type_a"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -66,7 +66,7 @@ type VserverDNSStats struct {
 	ReqTypeTxt *uint64 `json:"req_type_txt,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	RespTypeA *uint64 `json:"resp_type_a,omitempty"`
+	RespTypea *uint64 `json:"resp_type_a,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RespTypeAaaa *uint64 `json:"resp_type_aaaa,omitempty"`

@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// SecureChannelAvailableLocalIps secure channel available local ips
+// SecureChannelAvailableLocalIPs secure channel available local IPs
 // swagger:model SecureChannelAvailableLocalIPs
-type SecureChannelAvailableLocalIps struct {
+type SecureChannelAvailableLocalIPs struct {
 
 	// UNIX time since epoch in microseconds. Units(MICROSECONDS).
 	// Read Only: true
@@ -16,7 +16,7 @@ type SecureChannelAvailableLocalIps struct {
 	End *uint32 `json:"end,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	FreeIps []int64 `json:"free_ips,omitempty,omitempty"`
+	FreeIps []int64 `json:"free_ips,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

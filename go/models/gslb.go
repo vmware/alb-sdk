@@ -77,6 +77,9 @@ type Gslb struct {
 	// Third party site member belonging to this Gslb. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ThirdPartySites []*GslbThirdPartySite `json:"third_party_sites,omitempty"`
 
+	// TLS configuration for the site-to-site Gslb federation channel (peer site login and RemoteSiteWatcherRpc replication stream). TLS_MODE_NO_VERIFY (default) preserves legacy behavior of not verifying the peer site's certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
+
 	// url
 	// Read Only: true
 	URL *string `json:"url,omitempty"`

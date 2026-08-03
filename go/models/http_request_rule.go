@@ -39,5 +39,5 @@ type HTTPRequestRule struct {
 	RewriteURLAction *HTTPRewriteURLAction `json:"rewrite_url_action,omitempty"`
 
 	// Content switching action. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SwitchingAction *HttpswitchingAction `json:"switching_action,omitempty"`
+	SwitchingAction *HTTPSwitchingAction `json:"switching_action,omitempty"`
 }

@@ -53,7 +53,7 @@ type VSDataScriptSet struct {
 	RateLimiters []*RateLimiter `json:"rate_limiters,omitempty"`
 
 	// IPv6 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SnatIP6S []*IPAddr `json:"snat_ip6s,omitempty"`
+	SnatIp6s []*IPAddr `json:"snat_ip6s,omitempty"`
 
 	// IPv4 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SnatIps []*IPAddr `json:"snat_ips,omitempty"`

@@ -207,16 +207,16 @@ type VserverL7MetricsObj struct {
 	AvgSslVerSsl30 *float64 `json:"avg_ssl_ver_ssl30,omitempty"`
 
 	// Average SSL Sessions with TLS version 1.0. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AvgSslVerTLS10 *float64 `json:"avg_ssl_ver_tls10,omitempty"`
+	AvgSslVerTls10 *float64 `json:"avg_ssl_ver_tls10,omitempty"`
 
 	// Average SSL Sessions with TLS version 1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AvgSslVerTLS11 *float64 `json:"avg_ssl_ver_tls11,omitempty"`
+	AvgSslVerTls11 *float64 `json:"avg_ssl_ver_tls11,omitempty"`
 
 	// Average SSL Sessions with TLS version 1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AvgSslVerTLS12 *float64 `json:"avg_ssl_ver_tls12,omitempty"`
+	AvgSslVerTls12 *float64 `json:"avg_ssl_ver_tls12,omitempty"`
 
 	// Average SSL Sessions with TLS version 1.3. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AvgSslVerTLS13 *float64 `json:"avg_ssl_ver_tls13,omitempty"`
+	AvgSslVerTls13 *float64 `json:"avg_ssl_ver_tls13,omitempty"`
 
 	// Avg number of HTTP requests that completed within tolerated latency. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgToleratedResponses *float64 `json:"avg_tolerated_responses,omitempty"`

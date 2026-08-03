@@ -9,7 +9,7 @@ package models
 type UberEnumMessage2 struct {
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	L []int64 `json:"l,omitempty,omitempty"`
+	L []int64 `json:"l,omitempty"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	V *uint64 `json:"v,omitempty"`

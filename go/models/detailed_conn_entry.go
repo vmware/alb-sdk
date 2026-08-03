@@ -36,8 +36,8 @@ type DetailedConnEntry struct {
 	SocketInfo *SocketInfo `json:"socket_info,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	TCPCBInfo *TCPCBInfo `json:"tcpcb_info,omitempty"`
+	TcpcbInfo *TcpcbInfo `json:"tcpcb_info,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	TCPTWInfo *TCPTWInfo `json:"tcptw_info,omitempty"`
+	TcptwInfo *TcptwInfo `json:"tcptw_info,omitempty"`
 }

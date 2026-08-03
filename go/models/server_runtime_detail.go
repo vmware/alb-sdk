@@ -18,10 +18,10 @@ type ServerRuntimeDetail struct {
 	CapestData []*CapestData `json:"capest_data,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	CapestRandMaxConnHist []int64 `json:"capest_rand_max_conn_hist,omitempty,omitempty"`
+	CapestRandMaxConnHist []int64 `json:"capest_rand_max_conn_hist,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	CapestScaleHist []float64 `json:"capest_scale_hist,omitempty,omitempty"`
+	CapestScaleHist []float64 `json:"capest_scale_hist,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

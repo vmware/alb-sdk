@@ -12,7 +12,7 @@ type MesosMetricsDebugFilter struct {
 	MesosMaster *string `json:"mesos_master,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	MesosSLAVE *string `json:"mesos_slave,omitempty"`
+	MesosSlave *string `json:"mesos_slave,omitempty"`
 
 	//  Enum options - VSERVER_METRICS_ENTITY, VM_METRICS_ENTITY, SE_METRICS_ENTITY, CONTROLLER_METRICS_ENTITY, APPLICATION_METRICS_ENTITY, TENANT_METRICS_ENTITY, POOL_METRICS_ENTITY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricEntity *string `json:"metric_entity,omitempty"`

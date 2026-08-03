@@ -9,7 +9,7 @@ package models
 type SeHighIngressProcLatencyEventDetails struct {
 
 	// Dispatcher core which received the packet. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	DispatcherCore []int64 `json:"dispatcher_core,omitempty,omitempty"`
+	DispatcherCore []int64 `json:"dispatcher_core,omitempty"`
 
 	// Number of events in a 30 second interval. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventCount *uint64 `json:"event_count,omitempty"`

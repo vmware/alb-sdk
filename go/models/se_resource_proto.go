@@ -92,7 +92,7 @@ type SeResourceProto struct {
 	IPMacAddr []string `json:"ip_mac_addr,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPMasks []int64 `json:"ip_masks,omitempty,omitempty"`
+	IPMasks []int64 `json:"ip_masks,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Ips []*IPAddr `json:"ips,omitempty"`

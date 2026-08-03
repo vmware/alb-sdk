@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// Label label
+// Label A single tag applied to an API endpoint. User-defined labels can be created to organize endpoints, while built-in labels can be used to enable specific protections such as bot blocking or check deactivation.
 // swagger:model Label
 type Label struct {
 

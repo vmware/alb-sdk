@@ -16,5 +16,5 @@ type MetricsEventThreshold struct {
 	ResetThreshold *float64 `json:"reset_threshold,omitempty"`
 
 	// Threshold value for which event in raised. There can be multiple thresholds defined.Health score degrades when the the target is higher than this threshold. Allowed values are 1-100. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	WatermarkThresholds []int64 `json:"watermark_thresholds,omitempty,omitempty"`
+	WatermarkThresholds []int64 `json:"watermark_thresholds,omitempty"`
 }

@@ -21,7 +21,7 @@ type InpcbFastInfo struct {
 	InpFastState *uint32 `json:"inp_fast_state,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InpIDLETimeout *uint32 `json:"inp_idle_timeout,omitempty"`
+	InpIdleTimeout *uint32 `json:"inp_idle_timeout,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InpLastPktTick *uint32 `json:"inp_last_pkt_tick,omitempty"`

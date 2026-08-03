@@ -36,7 +36,7 @@ type HealthMonitorHTTP struct {
 	HTTPResponseCode []string `json:"http_response_code,omitempty"`
 
 	// Match or look for this HTTP response code indicating server maintenance.  A successful match results in the server being marked down. Allowed values are 101-599. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	MaintenanceCode []int64 `json:"maintenance_code,omitempty,omitempty"`
+	MaintenanceCode []int64 `json:"maintenance_code,omitempty"`
 
 	// Match or look for this keyword in the first 2KB of server header and body response indicating server maintenance.  A successful match results in the server being marked down. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaintenanceResponse *string `json:"maintenance_response,omitempty"`
@@ -45,5 +45,5 @@ type HealthMonitorHTTP struct {
 	ResponseSize *uint32 `json:"response_size,omitempty"`
 
 	// SSL attributes for HTTPS health monitor. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
+	SslAttributes *HealthMonitorSSLAttributes `json:"ssl_attributes,omitempty"`
 }

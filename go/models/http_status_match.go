@@ -1,0 +1,20 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
+package models
+
+// This file is auto-generated.
+
+// HTTPStatusMatch HTTP status match
+// swagger:model HTTPStatusMatch
+type HTTPStatusMatch struct {
+
+	// Criterion to use for matching the HTTP response status code(s). Enum options - IS_IN, IS_NOT_IN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Required: true
+	MatchCriteria *string `json:"match_criteria"`
+
+	// HTTP response status code range(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Ranges []*HTTPStatusRange `json:"ranges,omitempty"`
+
+	// HTTP response status code(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	StatusCodes []int64 `json:"status_codes,omitempty"`
+}

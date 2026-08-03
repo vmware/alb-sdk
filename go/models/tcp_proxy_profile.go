@@ -33,10 +33,10 @@ type TCPProxyProfile struct {
 	DelayedAckTimerDelay *uint32 `json:"delayed_ack_timer_delay,omitempty"`
 
 	// The duration for keepalive probes or session idle timeout. Max value is 14400 seconds, min is 5.  Set to 0 to allow infinite idle time. Allowed values are 5-14400. Special values are 0 - infinite. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IDLEConnectionTimeout *int32 `json:"idle_connection_timeout,omitempty"`
+	IdleConnectionTimeout *int32 `json:"idle_connection_timeout,omitempty"`
 
 	// Controls the behavior of idle connections. Enum options - KEEP_ALIVE, CLOSE_IDLE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IDLEConnectionType *string `json:"idle_connection_type,omitempty"`
+	IdleConnectionType *string `json:"idle_connection_type,omitempty"`
 
 	// A new SYN is accepted from the same 4-tuple even if there is already a connection in TIME_WAIT state.  This is equivalent of setting Time Wait Delay to 0. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreTimeWait *bool `json:"ignore_time_wait,omitempty"`

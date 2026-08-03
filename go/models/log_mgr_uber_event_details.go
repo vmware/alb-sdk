@@ -30,5 +30,5 @@ type LogMgrUberEventDetails struct {
 	XStr *string `json:"x_str,omitempty"`
 
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	XX []int64 `json:"x_x,omitempty,omitempty"`
+	Xx []int64 `json:"x_x,omitempty"`
 }

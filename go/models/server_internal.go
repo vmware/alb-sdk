@@ -46,7 +46,7 @@ type ServerInternal struct {
 	IPAddr *IPAddr `json:"ip_addr"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPV4PrstID *uint32 `json:"ipv4_prst_id,omitempty"`
+	IPv4PrstID *uint32 `json:"ipv4_prst_id,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	L7cpStats *ConnpoolStats `json:"l7cp_stats,omitempty"`
