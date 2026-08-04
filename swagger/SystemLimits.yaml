@@ -203,6 +203,43 @@ paths:
         
 
 definitions:
+    ApiConfigLimits:
+        type: object
+        properties:
+            num_api_paths_per_policy:
+                description: "Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_api_schemas_per_policy:
+                description: "Maximum number of API schema objects that can be associated with a single API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_apis:
+                description: "Maximum total number of API endpoints allowed across the system. Each ApiPath can have up to 7 ApiEndpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_schema_nesting:
+                description: "Maximum allowed nesting depth of JSON schema definitions within an API policy. Schema structures that exceed this depth will be rejected at config time. In the datapath, JSON payloads with greater nesting depth will not be parsed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+    ApiLearningLimits:
+        type: object
+        properties:
+            num_api_params:
+                description: "Maximum total number of API parameters stored across all endpoints in the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its parameter budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_apis:
+                description: "Maximum total number of API endpoints stored across the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its endpoint budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+    ApiMetricsLimits:
+        type: object
+        properties:
+            num_apis:
+                description: "Maximum number of API endpoints for which metrics are tracked across the system. Associating an ApiPolicy with a virtual service is rejected at config time if adding its metrics budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
     BOTLimits:
         type: object
         properties:
@@ -235,18 +272,6 @@ definitions:
     ControllerLimits:
         type: object
         properties:
-            api_policy_num_paths:
-                description: "Maximum number of API paths per API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-            api_policy_num_schemas:
-                description: "Maximum number of API schema objects per API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-            api_policy_num_vs:
-                description: "Maximum number of API Policy enabled Virtual Services. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
             bot_limits:
                 description: "BOT system limits. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/BOTLimits'
@@ -352,6 +377,18 @@ definitions:
                 description: "Minimum memory required. Field introduced in 20.1.1. Unit is GB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
+    ControllerSizingApiLimits:
+        type: object
+        properties:
+            config_limits:
+                description: "API configuration limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ApiConfigLimits'
+            learning_limits:
+                description: "API learning limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ApiLearningLimits'
+            metrics_limits:
+                description: "API metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ApiMetricsLimits'
     ControllerSizingCloudLimits:
         type: object
         properties:
@@ -365,6 +402,9 @@ definitions:
     ControllerSizingLimits:
         type: object
         properties:
+            api_limits:
+                description: "API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ControllerSizingApiLimits'
             controller_sizing_cloud_limits:
                 description: "Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
@@ -403,14 +443,6 @@ definitions:
                 format: int32
             num_virtualservices:
                 description: "Maximum number of virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-            num_virtualservices_application_insights:
-                description: "Maximum number of virtualservices configured with Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: int32
-            num_virtualservices_positive_security:
-                description: "Maximum number of virtualservices configured with Positive Security Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_virtualservices_rt_metrics:

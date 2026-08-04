@@ -383,6 +383,7 @@ paths:
 definitions:
     ApiLabels:
         type: object
+        description: "Configuration of labels applied to endpoints belonging to a specific classification category, such as active or orphan."
         properties:
             enabled:
                 description: "Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -394,6 +395,7 @@ definitions:
                     type: string
     ApiPolicy:
         type: object
+        description: "Top-level configuration for API protection and validation. Traffic for defined APIs is evaluated and validated against configured path templates, server scopes, and endpoint usage classifications."
         required:
             -   name
         properties:
@@ -438,7 +440,7 @@ definitions:
                 description: "List of labels applied to orphan API endpoints. An orphan API is an endpoint that is specified in the API-Spec but has not been seen in the datapath for a predefined duration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
             path_refs:
-                description: "List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Maximum of 5000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Maximum of 2000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -487,6 +489,7 @@ definitions:
                 type: string
     ApiPolicyLabelActionMapping:
         type: object
+        description: "Mapping of a label to specific validation checks that are deactivated for matching requests, allowing selective relaxation of policy enforcement."
         required:
             -   api_policy_actions
             -   label
@@ -505,6 +508,7 @@ definitions:
                 type: string
     ApiRoutingInfo:
         type: object
+        description: "Header-based routing rules used in conjunction with configured servers and paths to direct requests to the appropriate Virtual Service. Evaluation matches if any rule passes, with all conditions within a rule required to pass."
         required:
             -   rules
         properties:
@@ -515,6 +519,7 @@ definitions:
                     $ref: '#/definitions/ApiRoutingRule'
     ApiRoutingRule:
         type: object
+        description: "A named rule that matches requests based on header values to route specific API traffic. All conditions defined within the rule must be satisfied for the rule to be applied."
         required:
             -   matches
             -   name
@@ -605,6 +610,7 @@ definitions:
                 type: string
     ApiValidationSettings:
         type: object
+        description: "Default validation actions enforced when requests or responses violate policy specifications. These actions can be overridden at the path or endpoint level."
         properties:
             failed_validation_header_parameter_action:
                 description: "Action to take when a header parameter fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -949,6 +955,7 @@ definitions:
                     type: string
     OrphanApiClassificationSettings:
         type: object
+        description: "Classification settings that define when an API endpoint is marked as orphan due to the absence of observed traffic over a specified duration."
         properties:
             enabled:
                 description: "Enables orphan API classification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1062,6 +1069,7 @@ definitions:
                     type: string
     ZombieApiClassificationSettings:
         type: object
+        description: "Classification settings that define when an API endpoint is marked as zombie based on a minimum throughput threshold and duration."
         properties:
             enabled:
                 description: "Enables zombie API classification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

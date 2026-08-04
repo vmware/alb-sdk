@@ -551,6 +551,7 @@
     "definitions": {
         "ApiContentTypeMapping": {
             "type": "object",
+            "description": "Association between a MIME content type (e.g., application/json) and the schema enforced for request or response payloads.",
             "required": [
                 "content_type",
                 "schema"
@@ -568,6 +569,7 @@
         },
         "ApiEndpoint": {
             "type": "object",
+            "description": "A single API operation identified by an HTTP method on a path template. Defines validation parameters, request/response body schemas, and endpoint-level label overrides.",
             "required": [
                 "http_method"
             ],
@@ -653,6 +655,7 @@
         },
         "ApiLabels": {
             "type": "object",
+            "description": "Configuration of labels applied to endpoints belonging to a specific classification category, such as active or orphan.",
             "properties": {
                 "enabled": {
                     "description": "Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -669,6 +672,7 @@
         },
         "ApiPath": {
             "type": "object",
+            "description": "A URI path template defining available operations and endpoints for an API. Paths can be manually defined or imported and synchronized from an OpenAPI specification.",
             "required": [
                 "name",
                 "path_template"
@@ -748,6 +752,7 @@
         },
         "ApiRequestBodyDescription": {
             "type": "object",
+            "description": "Specification of the expected request body format, accepted content types, associated schemas, and requirement status for an operation.",
             "properties": {
                 "description": {
                     "description": "Description of the request body from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -778,6 +783,7 @@
         },
         "ApiResponse": {
             "type": "object",
+            "description": "Specification of expected response parameters and schemas associated with an HTTP status code or status code range.",
             "required": [
                 "status_code"
             ],
@@ -813,6 +819,7 @@
         },
         "ApiSimpleSchemaDescription": {
             "type": "object",
+            "description": "Schema specification for scalar types, arrays, or schema references, defining data types and validation constraints for non-object properties.",
             "required": [
                 "type"
             ],
@@ -911,6 +918,7 @@
         },
         "ParameterDescription": {
             "type": "object",
+            "description": "Definition of a parameter residing in a path, query string, or header, including parameter name, mandatory status, and schema constraints.",
             "required": [
                 "name",
                 "schema"
