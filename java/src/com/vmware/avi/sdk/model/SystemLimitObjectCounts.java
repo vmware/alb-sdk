@@ -24,6 +24,9 @@ public class SystemLimitObjectCounts  {
     @JsonProperty("object_counts")
     private List<SystemLimitObjectCount> objectCounts;
 
+    @JsonProperty("url")
+    private String url = "url";
+
 
     /**
      * This is the getter method this will return the attribute value.
@@ -64,6 +67,23 @@ public class SystemLimitObjectCounts  {
       this.objectCounts.add(objectCountsItem);
       return this;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Avi controller URL of the object.
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+   /**
+    * This is the setter method. this will set the url
+    * Avi controller URL of the object.
+    * @return url
+    */
+   public void setUrl(String  url) {
+     this.url = url;
+   }
 
 
     @Override
@@ -83,7 +103,7 @@ public class SystemLimitObjectCounts  {
       StringBuilder sb = new StringBuilder();
       sb.append("class SystemLimitObjectCounts {\n");
                   sb.append("    objectCounts: ").append(toIndentedString(objectCounts)).append("\n");
-                  sb.append("}");
+                              sb.append("}");
       return sb.toString();
     }
 

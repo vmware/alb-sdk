@@ -33,6 +33,9 @@ public class SamlIdentityProviderSettings  {
     @JsonProperty("periodic_download")
     private Boolean periodicDownload = false;
 
+    @JsonProperty("tls_config")
+    private TlsConfig tlsConfig;
+
 
 
     /**
@@ -135,6 +138,30 @@ public class SamlIdentityProviderSettings  {
         this.periodicDownload = periodicDownload;
     }
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tls configuration for outbound saml idp connections.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return tlsConfig
+     */
+    public TlsConfig getTlsConfig() {
+        return tlsConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls configuration for outbound saml idp connections.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param tlsConfig set the tlsConfig.
+     */
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,7 +175,8 @@ public class SamlIdentityProviderSettings  {
       return   Objects.equals(this.metadata, objSamlIdentityProviderSettings.metadata)&&
   Objects.equals(this.metadataUrl, objSamlIdentityProviderSettings.metadataUrl)&&
   Objects.equals(this.metaDataDownloadInterval, objSamlIdentityProviderSettings.metaDataDownloadInterval)&&
-  Objects.equals(this.periodicDownload, objSamlIdentityProviderSettings.periodicDownload);
+  Objects.equals(this.periodicDownload, objSamlIdentityProviderSettings.periodicDownload)&&
+  Objects.equals(this.tlsConfig, objSamlIdentityProviderSettings.tlsConfig);
     }
 
     @Override
@@ -159,6 +187,7 @@ public class SamlIdentityProviderSettings  {
                         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
                         sb.append("    metadataUrl: ").append(toIndentedString(metadataUrl)).append("\n");
                         sb.append("    periodicDownload: ").append(toIndentedString(periodicDownload)).append("\n");
+                        sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
                   sb.append("}");
       return sb.toString();
     }

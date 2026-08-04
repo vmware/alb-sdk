@@ -27,6 +27,9 @@ public class RollbackPatchControllerParams  {
     @JsonProperty("skip_warnings")
     private Boolean skipWarnings = false;
 
+    @JsonProperty("url")
+    private String url = "url";
+
 
 
     /**
@@ -76,6 +79,23 @@ public class RollbackPatchControllerParams  {
     public void setSkipWarnings(Boolean  skipWarnings) {
         this.skipWarnings = skipWarnings;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Avi controller URL of the object.
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+   /**
+    * This is the setter method. this will set the url
+    * Avi controller URL of the object.
+    * @return url
+    */
+   public void setUrl(String  url) {
+     this.url = url;
+   }
 
 
     @Override
@@ -97,7 +117,7 @@ public class RollbackPatchControllerParams  {
       sb.append("class RollbackPatchControllerParams {\n");
                   sb.append("    prechecksOnly: ").append(toIndentedString(prechecksOnly)).append("\n");
                         sb.append("    skipWarnings: ").append(toIndentedString(skipWarnings)).append("\n");
-                  sb.append("}");
+                              sb.append("}");
       return sb.toString();
     }
 

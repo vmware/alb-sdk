@@ -24,6 +24,9 @@ public class DiskUsageInfo  {
     @JsonProperty("disk_usage_on_nodes")
     private List<DiskUsagePerNode> diskUsageOnNodes;
 
+    @JsonProperty("url")
+    private String url = "url";
+
 
     /**
      * This is the getter method this will return the attribute value.
@@ -64,6 +67,23 @@ public class DiskUsageInfo  {
       this.diskUsageOnNodes.add(diskUsageOnNodesItem);
       return this;
     }
+    /**
+     * This is the getter method this will return the attribute value.
+     * Avi controller URL of the object.
+     * @return url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+   /**
+    * This is the setter method. this will set the url
+    * Avi controller URL of the object.
+    * @return url
+    */
+   public void setUrl(String  url) {
+     this.url = url;
+   }
 
 
     @Override
@@ -83,7 +103,7 @@ public class DiskUsageInfo  {
       StringBuilder sb = new StringBuilder();
       sb.append("class DiskUsageInfo {\n");
                   sb.append("    diskUsageOnNodes: ").append(toIndentedString(diskUsageOnNodes)).append("\n");
-                  sb.append("}");
+                              sb.append("}");
       return sb.toString();
     }
 
