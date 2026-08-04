@@ -10,17 +10,17 @@ import (
 	"github.com/vmware/alb-sdk/go/session"
 )
 
-// PKIprofileClient is a client for avi PKIprofile resource
-type PKIprofileClient struct {
+// PKIProfileClient is a client for avi PKIProfile resource
+type PKIProfileClient struct {
 	aviSession *session.AviSession
 }
 
-// NewPKIprofileClient creates a new client for PKIprofile resource
-func NewPKIprofileClient(aviSession *session.AviSession) *PKIprofileClient {
-	return &PKIprofileClient{aviSession: aviSession}
+// NewPKIProfileClient creates a new client for PKIProfile resource
+func NewPKIProfileClient(aviSession *session.AviSession) *PKIProfileClient {
+	return &PKIProfileClient{aviSession: aviSession}
 }
 
-func (client *PKIprofileClient) getAPIPath(uuid string) string {
+func (client *PKIProfileClient) getAPIPath(uuid string) string {
 	path := "api/pkiprofile"
 	if uuid != "" {
 		path += "/" + uuid
@@ -28,31 +28,31 @@ func (client *PKIprofileClient) getAPIPath(uuid string) string {
 	return path
 }
 
-// GetAll is a collection API to get a list of PKIprofile objects
-func (client *PKIprofileClient) GetAll(options ...session.ApiOptionsParams) ([]*models.PKIprofile, error) {
-	var plist []*models.PKIprofile
+// GetAll is a collection API to get a list of PKIProfile objects
+func (client *PKIProfileClient) GetAll(options ...session.ApiOptionsParams) ([]*models.PKIProfile, error) {
+	var plist []*models.PKIProfile
 	err := client.aviSession.GetCollection(client.getAPIPath(""), &plist, options...)
 	return plist, err
 }
 
-// Get an existing PKIprofile by uuid
-func (client *PKIprofileClient) Get(uuid string, options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var obj *models.PKIprofile
+// Get an existing PKIProfile by uuid
+func (client *PKIProfileClient) Get(uuid string, options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var obj *models.PKIProfile
 	err := client.aviSession.Get(client.getAPIPath(uuid), &obj, options...)
 	return obj, err
 }
 
-// GetByName - Get an existing PKIprofile by name
-func (client *PKIprofileClient) GetByName(name string, options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var obj *models.PKIprofile
+// GetByName - Get an existing PKIProfile by name
+func (client *PKIProfileClient) GetByName(name string, options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var obj *models.PKIProfile
 	err := client.aviSession.GetObjectByName("pkiprofile", name, &obj, options...)
 	return obj, err
 }
 
-// GetObject - Get an existing PKIprofile by filters like name, cloud, tenant
-// Api creates PKIprofile object with every call.
-func (client *PKIprofileClient) GetObject(options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var obj *models.PKIprofile
+// GetObject - Get an existing PKIProfile by filters like name, cloud, tenant
+// Api creates PKIProfile object with every call.
+func (client *PKIProfileClient) GetObject(options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var obj *models.PKIProfile
 	newOptions := make([]session.ApiOptionsParams, len(options)+1)
 	for i, p := range options {
 		newOptions[i] = p
@@ -62,34 +62,34 @@ func (client *PKIprofileClient) GetObject(options ...session.ApiOptionsParams) (
 	return obj, err
 }
 
-// Create a new PKIprofile object
-func (client *PKIprofileClient) Create(obj *models.PKIprofile, options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var robj *models.PKIprofile
+// Create a new PKIProfile object
+func (client *PKIProfileClient) Create(obj *models.PKIProfile, options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var robj *models.PKIProfile
 	err := client.aviSession.Post(client.getAPIPath(""), obj, &robj, options...)
 	return robj, err
 }
 
-// Update an existing PKIprofile object
-func (client *PKIprofileClient) Update(obj *models.PKIprofile, options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var robj *models.PKIprofile
+// Update an existing PKIProfile object
+func (client *PKIProfileClient) Update(obj *models.PKIProfile, options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var robj *models.PKIProfile
 	path := client.getAPIPath(*obj.UUID)
 	err := client.aviSession.Put(path, obj, &robj, options...)
 	return robj, err
 }
 
-// Patch an existing PKIprofile object specified using uuid
+// Patch an existing PKIProfile object specified using uuid
 // patchOp: Patch operation - add, replace, or delete
-// patch: Patch payload should be compatible with the models.PKIprofile
+// patch: Patch payload should be compatible with the models.PKIProfile
 // or it should be json compatible of form map[string]interface{}
-func (client *PKIprofileClient) Patch(uuid string, patch interface{}, patchOp string, options ...session.ApiOptionsParams) (*models.PKIprofile, error) {
-	var robj *models.PKIprofile
+func (client *PKIProfileClient) Patch(uuid string, patch interface{}, patchOp string, options ...session.ApiOptionsParams) (*models.PKIProfile, error) {
+	var robj *models.PKIProfile
 	path := client.getAPIPath(uuid)
 	err := client.aviSession.Patch(path, patch, patchOp, &robj, options...)
 	return robj, err
 }
 
-// Delete an existing PKIprofile object with a given UUID
-func (client *PKIprofileClient) Delete(uuid string, options ...session.ApiOptionsParams) error {
+// Delete an existing PKIProfile object with a given UUID
+func (client *PKIProfileClient) Delete(uuid string, options ...session.ApiOptionsParams) error {
 	if len(options) == 0 {
 		return client.aviSession.Delete(client.getAPIPath(uuid))
 	} else {
@@ -97,8 +97,8 @@ func (client *PKIprofileClient) Delete(uuid string, options ...session.ApiOption
 	}
 }
 
-// DeleteByName - Delete an existing PKIprofile object with a given name
-func (client *PKIprofileClient) DeleteByName(name string, options ...session.ApiOptionsParams) error {
+// DeleteByName - Delete an existing PKIProfile object with a given name
+func (client *PKIProfileClient) DeleteByName(name string, options ...session.ApiOptionsParams) error {
 	res, err := client.GetByName(name, options...)
 	if err != nil {
 		return err
@@ -107,6 +107,6 @@ func (client *PKIprofileClient) DeleteByName(name string, options ...session.Api
 }
 
 // GetAviSession
-func (client *PKIprofileClient) GetAviSession() *session.AviSession {
+func (client *PKIProfileClient) GetAviSession() *session.AviSession {
 	return client.aviSession
 }

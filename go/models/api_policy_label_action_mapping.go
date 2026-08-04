@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIPolicyLabelActionMapping Api policy label action mapping
+// APIPolicyLabelActionMapping Mapping of a label to specific validation checks that are deactivated for matching requests, allowing selective relaxation of policy enforcement.
 // swagger:model ApiPolicyLabelActionMapping
 type APIPolicyLabelActionMapping struct {
 

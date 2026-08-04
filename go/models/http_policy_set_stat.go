@@ -19,7 +19,7 @@ type HTTPPolicySetStat struct {
 	ResponsePolicyStat *HTTPResponsePolicyStat `json:"response_policy_stat,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SecurityPolicyStat *HttpsecurityPolicyStat `json:"security_policy_stat,omitempty"`
+	SecurityPolicyStat *HTTPSecurityPolicyStat `json:"security_policy_stat,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UUID *string `json:"uuid,omitempty"`

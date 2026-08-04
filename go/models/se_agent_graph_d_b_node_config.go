@@ -66,7 +66,7 @@ type SeAgentGraphDBNodeConfig struct {
 	HTTPResponsePolicy *HTTPResponsePolicy `json:"http_response_policy,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPSecurityPolicy *HttpsecurityPolicy `json:"http_security_policy,omitempty"`
+	HTTPSecurityPolicy *HTTPSecurityPolicy `json:"http_security_policy,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPAddrGroup *IPAddrGroup `json:"ip_addr_group,omitempty"`
@@ -90,7 +90,7 @@ type SeAgentGraphDBNodeConfig struct {
 	Networkservice *NetworkService `json:"networkservice,omitempty"`
 
 	//  Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Pkiprofile *PKIprofile `json:"pkiprofile,omitempty"`
+	Pkiprofile *PKIProfile `json:"pkiprofile,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Pool *Pool `json:"pool,omitempty"`

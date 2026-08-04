@@ -141,7 +141,7 @@ type VirtualServiceInternal struct {
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 
 	//  Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PlacementCore []int64 `json:"placement_core,omitempty,omitempty"`
+	PlacementCore []int64 `json:"placement_core,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcID *string `json:"proc_id,omitempty"`

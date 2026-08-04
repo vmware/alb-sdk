@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIRoutingInfo Api routing info
+// APIRoutingInfo Header-based routing rules used in conjunction with configured servers and paths to direct requests to the appropriate Virtual Service. Evaluation matches if any rule passes, with all conditions within a rule required to pass.
 // swagger:model ApiRoutingInfo
 type APIRoutingInfo struct {
 

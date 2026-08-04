@@ -9,5 +9,5 @@ package models
 type RepeatedUints struct {
 
 	//  Field introduced in 17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Vals []int64 `json:"vals,omitempty,omitempty"`
+	Vals []int64 `json:"vals,omitempty"`
 }

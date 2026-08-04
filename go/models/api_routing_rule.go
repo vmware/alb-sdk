@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIRoutingRule Api routing rule
+// APIRoutingRule A named rule that matches requests based on header values to route specific API traffic. All conditions defined within the rule must be satisfied for the rule to be applied.
 // swagger:model ApiRoutingRule
 type APIRoutingRule struct {
 

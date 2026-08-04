@@ -30,10 +30,10 @@ type SessionKeyForwarderStats struct {
 	KeylogSent *uint64 `json:"keylog_sent,omitempty"`
 
 	// Total number of TLS 1.2 keylog messages successfully sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	KeylogSentTLS12 *uint64 `json:"keylog_sent_tls12,omitempty"`
+	KeylogSentTls12 *uint64 `json:"keylog_sent_tls12,omitempty"`
 
 	// Total number of TLS 1.3 keylog messages successfully sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	KeylogSentTLS13 *uint64 `json:"keylog_sent_tls13,omitempty"`
+	KeylogSentTls13 *uint64 `json:"keylog_sent_tls13,omitempty"`
 
 	// Total number of session key forwarder profiles that are using this IP Port. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumProfiles *uint64 `json:"num_profiles,omitempty"`

@@ -22,5 +22,5 @@ type HealthMonitorLdap struct {
 	Scope *string `json:"scope,omitempty"`
 
 	// SSL attributes for LDAPS monitor. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
+	SslAttributes *HealthMonitorSSLAttributes `json:"ssl_attributes,omitempty"`
 }

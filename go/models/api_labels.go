@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APILabels Api labels
+// APILabels Configuration of labels applied to endpoints belonging to a specific classification category, such as active or orphan.
 // swagger:model ApiLabels
 type APILabels struct {
 

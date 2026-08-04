@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// OrphanAPIClassificationSettings orphan Api classification settings
+// OrphanAPIClassificationSettings Classification settings that define when an API endpoint is marked as orphan due to the absence of observed traffic over a specified duration.
 // swagger:model OrphanApiClassificationSettings
 type OrphanAPIClassificationSettings struct {
 

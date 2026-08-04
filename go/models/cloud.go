@@ -116,7 +116,7 @@ type Cloud struct {
 	RancherConfiguration *RancherConfiguration `json:"rancher_configuration,omitempty"`
 
 	// Resolve IPv6 address for pool member FQDNs. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ResolveFqdnToIPV6 *bool `json:"resolve_fqdn_to_ipv6,omitempty"`
+	ResolveFqdnToIPv6 *bool `json:"resolve_fqdn_to_ipv6,omitempty"`
 
 	// The Service Engine Group to use as template. It is a reference to an object of type ServiceEngineGroup. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroupTemplateRef *string `json:"se_group_template_ref,omitempty"`

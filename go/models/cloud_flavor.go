@@ -25,7 +25,7 @@ type CloudFlavor struct {
 	IsRecommended *bool `json:"is_recommended,omitempty"`
 
 	// Maximum number of IPv6 addresses that can be configured per NIC. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	MaxIP6SPerNic *uint32 `json:"max_ip6s_per_nic,omitempty"`
+	MaxIp6sPerNic *uint32 `json:"max_ip6s_per_nic,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxIpsPerNic *uint32 `json:"max_ips_per_nic,omitempty"`

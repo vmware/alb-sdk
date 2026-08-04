@@ -8,6 +8,9 @@ package models
 // swagger:model ControllerSizingLimits
 type ControllerSizingLimits struct {
 
+	// API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	APILimits *ControllerSizingAPILimits `json:"api_limits,omitempty"`
+
 	// Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerSizingCloudLimits []*ControllerSizingCloudLimits `json:"controller_sizing_cloud_limits,omitempty"`
 
@@ -37,12 +40,6 @@ type ControllerSizingLimits struct {
 
 	// Maximum number of virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumVirtualservices *int32 `json:"num_virtualservices,omitempty"`
-
-	// Maximum number of virtualservices configured with Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NumVirtualservicesApplicationInsights *int32 `json:"num_virtualservices_application_insights,omitempty"`
-
-	// Maximum number of virtualservices configured with Positive Security Policy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NumVirtualservicesPositiveSecurity *int32 `json:"num_virtualservices_positive_security,omitempty"`
 
 	// Maximum number of virtualservices with realtime metrics enabled. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumVirtualservicesRtMetrics *int32 `json:"num_virtualservices_rt_metrics,omitempty"`

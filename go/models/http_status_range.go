@@ -1,0 +1,18 @@
+// Copyright 2021 VMware, Inc.
+// SPDX-License-Identifier: Apache License 2.0
+package models
+
+// This file is auto-generated.
+
+// HTTPStatusRange HTTP status range
+// swagger:model HTTPStatusRange
+type HTTPStatusRange struct {
+
+	// Starting HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Required: true
+	Begin *int32 `json:"begin"`
+
+	// Ending HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Required: true
+	End *int32 `json:"end"`
+}

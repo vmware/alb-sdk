@@ -48,8 +48,8 @@ type MetricsControllerTargetStats struct {
 	NumMetricsDataMsgsSent *uint32 `json:"num_metrics_data_msgs_sent,omitempty"`
 
 	// Total number of messages dequeued from secondary queue of the grpc channel. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NumMsgsDequeuedFromTargetQ *uint32 `json:"num_msgs_dequeued_from_target_q,omitempty"`
+	NumMsgsDequeuedFromTargetq *uint32 `json:"num_msgs_dequeued_from_target_q,omitempty"`
 
 	// Total number of messages queued to the secondary queue of the grpc channel. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NumMsgsQueuedToTargetQ *uint32 `json:"num_msgs_queued_to_target_q,omitempty"`
+	NumMsgsQueuedToTargetq *uint32 `json:"num_msgs_queued_to_target_q,omitempty"`
 }

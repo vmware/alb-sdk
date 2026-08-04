@@ -9,16 +9,16 @@ package models
 type BgpDebugInfo struct {
 
 	//  Field introduced in 17.2.8,18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPV4RouteInfo *string `json:"ipv4_route_info,omitempty"`
+	IPv4RouteInfo *string `json:"ipv4_route_info,omitempty"`
 
 	//  Field introduced in 17.2.8,18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPV4Summary *string `json:"ipv4_summary,omitempty"`
+	IPv4Summary *string `json:"ipv4_summary,omitempty"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPV6RouteInfo *string `json:"ipv6_route_info,omitempty"`
+	IPv6RouteInfo *string `json:"ipv6_route_info,omitempty"`
 
 	//  Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IPV6Summary *string `json:"ipv6_summary,omitempty"`
+	IPv6Summary *string `json:"ipv6_summary,omitempty"`
 
 	//  Field introduced in 17.2.8,18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NeighborInfo *string `json:"neighbor_info,omitempty"`

@@ -66,7 +66,7 @@ type OShiftK8SConfiguration struct {
 	FeproxyVipsEnableProxyArp *bool `json:"feproxy_vips_enable_proxy_arp,omitempty"`
 
 	// List of container ports that create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Defaults to 80, 8080, 443 and 8443. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty,omitempty"`
+	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty"`
 
 	// Do not sync applications only for ingress that have these exclude attributes configured. Field introduced in 17.2.15, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IngExcludeAttributes []*IngAttribute `json:"ing_exclude_attributes,omitempty"`

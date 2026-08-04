@@ -393,7 +393,7 @@ type EventDetails struct {
 	NsxtIPGroupMembersLimitExceeded *NsxtIPGroupMembersLimitExceeded `json:"nsxt_ip_group_members_limit_exceeded,omitempty"`
 
 	// NSX-T ServiceInsertion RedirectPolicy event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NsxtPolicyDetails *NsxtSIpolicyDetails `json:"nsxt_policy_details,omitempty"`
+	NsxtPolicyDetails *NsxtSIPolicyDetails `json:"nsxt_policy_details,omitempty"`
 
 	// NSX-T ServiceInsertion RedirectRule event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtRuleDetails *NsxtSIRuleDetails `json:"nsxt_rule_details,omitempty"`
@@ -444,7 +444,7 @@ type EventDetails struct {
 	PasswordRotationDetails *PasswordRotationDetails `json:"password_rotation_details,omitempty"`
 
 	// PKIProfile event. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PkiprofileDetails *PKIprofileDetails `json:"pkiprofile_details,omitempty"`
+	PkiprofileDetails *PKIProfileDetails `json:"pkiprofile_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolDeploymentFailureInfo *PoolDeploymentFailureInfo `json:"pool_deployment_failure_info,omitempty"`
@@ -543,7 +543,7 @@ type EventDetails struct {
 	SeHmVsDetails *SeHmEventVsDetails `json:"se_hm_vs_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SeIp6DadFailedEventDetails *SeIp6DadFailedEventDetails `json:"se_ip6_dad_failed_event_details,omitempty"`
+	SeIp6DadFailedEventDetails *SeIP6DadFailedEventDetails `json:"se_ip6_dad_failed_event_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeIPAddedEventDetails *SeIPAddedEventDetails `json:"se_ip_added_event_details,omitempty"`

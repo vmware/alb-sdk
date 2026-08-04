@@ -12,5 +12,5 @@ type HealthMonitorImap struct {
 	Folder *string `json:"folder,omitempty"`
 
 	// SSL attributes for IMAPS monitor. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslAttributes *HealthMonitorSSlattributes `json:"ssl_attributes,omitempty"`
+	SslAttributes *HealthMonitorSSLAttributes `json:"ssl_attributes,omitempty"`
 }

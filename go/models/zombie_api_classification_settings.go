@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// ZombieAPIClassificationSettings zombie Api classification settings
+// ZombieAPIClassificationSettings Classification settings that define when an API endpoint is marked as zombie based on a minimum throughput threshold and duration.
 // swagger:model ZombieApiClassificationSettings
 type ZombieAPIClassificationSettings struct {
 

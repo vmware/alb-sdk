@@ -16,11 +16,11 @@ type UDPStatRuntime struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	UDPPSPcbcachemiss *uint64 `json:"udpps_pcbcachemiss"`
+	UdppsPcbcachemiss *uint64 `json:"udpps_pcbcachemiss"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	UDPPSPcbhashmiss *uint64 `json:"udpps_pcbhashmiss"`
+	UdppsPcbhashmiss *uint64 `json:"udpps_pcbhashmiss"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -65,7 +65,7 @@ type UDPStatRuntime struct {
 	UdpsDNSPolicyDrops *uint64 `json:"udps_dns_policy_drops,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UdpsDNSQueryA *uint64 `json:"udps_dns_query_a,omitempty"`
+	UdpsDNSQuerya *uint64 `json:"udps_dns_query_a,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UdpsDNSQueryAaaa *uint64 `json:"udps_dns_query_aaaa,omitempty"`
@@ -101,7 +101,7 @@ type UDPStatRuntime struct {
 	UdpsDNSQueryWithEdns *uint64 `json:"udps_dns_query_with_edns,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	UdpsDNSResponseA *uint64 `json:"udps_dns_response_a,omitempty"`
+	UdpsDNSResponsea *uint64 `json:"udps_dns_response_a,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UdpsDNSResponseAaaa *uint64 `json:"udps_dns_response_aaaa,omitempty"`

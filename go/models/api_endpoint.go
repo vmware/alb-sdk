@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIEndpoint Api endpoint
+// APIEndpoint A single API operation identified by an HTTP method on a path template. Defines validation parameters, request/response body schemas, and endpoint-level label overrides.
 // swagger:model ApiEndpoint
 type APIEndpoint struct {
 

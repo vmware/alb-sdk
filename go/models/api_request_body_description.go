@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIRequestBodyDescription Api request body description
+// APIRequestBodyDescription Specification of the expected request body format, accepted content types, associated schemas, and requirement status for an operation.
 // swagger:model ApiRequestBodyDescription
 type APIRequestBodyDescription struct {
 

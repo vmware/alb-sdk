@@ -49,7 +49,7 @@ type ConnpoolStats struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NumIDLEEvicts *uint64 `json:"num_idle_evicts"`
+	NumIdleEvicts *uint64 `json:"num_idle_evicts"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

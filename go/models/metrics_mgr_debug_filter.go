@@ -21,7 +21,7 @@ type MetricsMgrDebugFilter struct {
 	LicenseGracePeriod *string `json:"license_grace_period,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	LogFirstN *string `json:"log_first_n,omitempty"`
+	LogFirstn *string `json:"log_first_n,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LoggingFreq *string `json:"logging_freq,omitempty"`

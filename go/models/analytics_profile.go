@@ -106,7 +106,7 @@ type AnalyticsProfile struct {
 	ExcludeGsDownAsError *bool `json:"exclude_gs_down_as_error,omitempty"`
 
 	// List of HTTP status codes to be excluded from being classified as an error.  Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a DoS attack. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ExcludeHTTPErrorCodes []int64 `json:"exclude_http_error_codes,omitempty,omitempty"`
+	ExcludeHTTPErrorCodes []int64 `json:"exclude_http_error_codes,omitempty"`
 
 	// Exclude dns queries to domains outside the domains configured in the DNS application profile from the list of errors. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExcludeInvalidDNSDomainAsError *bool `json:"exclude_invalid_dns_domain_as_error,omitempty"`
@@ -136,7 +136,7 @@ type AnalyticsProfile struct {
 	ExcludeServerTCPResetAsError *bool `json:"exclude_server_tcp_reset_as_error,omitempty"`
 
 	// List of SIP status codes to be excluded from being classified as an error. Field introduced in 17.2.13, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ExcludeSipErrorCodes []int64 `json:"exclude_sip_error_codes,omitempty,omitempty"`
+	ExcludeSipErrorCodes []int64 `json:"exclude_sip_error_codes,omitempty"`
 
 	// Exclude the Stale OCSP certificate status responses from the list of errors. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExcludeStaleOcspResponsesAsError *bool `json:"exclude_stale_ocsp_responses_as_error,omitempty"`
@@ -226,16 +226,16 @@ type AnalyticsProfile struct {
 	HsSecuritySsl30Score *float64 `json:"hs_security_ssl30_score,omitempty"`
 
 	// Score assigned when supporting TLS1.0 encryption protocol. Allowed values are 0-5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HsSecurityTLS10Score *float64 `json:"hs_security_tls10_score,omitempty"`
+	HsSecurityTls10Score *float64 `json:"hs_security_tls10_score,omitempty"`
 
 	// Score assigned when supporting TLS1.1 encryption protocol. Allowed values are 0-5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HsSecurityTLS11Score *float64 `json:"hs_security_tls11_score,omitempty"`
+	HsSecurityTls11Score *float64 `json:"hs_security_tls11_score,omitempty"`
 
 	// Score assigned when supporting TLS1.2 encryption protocol. Allowed values are 0-5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HsSecurityTLS12Score *float64 `json:"hs_security_tls12_score,omitempty"`
+	HsSecurityTls12Score *float64 `json:"hs_security_tls12_score,omitempty"`
 
 	// Score assigned when supporting TLS1.3 encryption protocol. Allowed values are 0-5. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HsSecurityTLS13Score *float64 `json:"hs_security_tls13_score,omitempty"`
+	HsSecurityTls13Score *float64 `json:"hs_security_tls13_score,omitempty"`
 
 	// Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HsSecurityWeakSignatureAlgoPenalty *float64 `json:"hs_security_weak_signature_algo_penalty,omitempty"`
@@ -251,10 +251,10 @@ type AnalyticsProfile struct {
 	Name *string `json:"name"`
 
 	// This flag sets the time duration of no live data traffic after which Virtual Service metrics processing is suspended. It is applicable only when enable_ondemand_metrics is set to false. Field introduced in 18.1.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	OndemandMetricsIDLETimeout *uint32 `json:"ondemand_metrics_idle_timeout,omitempty"`
+	OndemandMetricsIdleTimeout *uint32 `json:"ondemand_metrics_idle_timeout,omitempty"`
 
 	// List of HTTP status code ranges to be excluded from being classified as an error. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ranges []*HttpstatusRange `json:"ranges,omitempty"`
+	Ranges []*HTTPStatusRange `json:"ranges,omitempty"`
 
 	// Block of HTTP response codes to be excluded from being classified as an error. Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RespCodeBlock []string `json:"resp_code_block,omitempty"`

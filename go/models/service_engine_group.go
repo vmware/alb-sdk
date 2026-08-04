@@ -55,7 +55,7 @@ type ServiceEngineGroup struct {
 	AutoRebalance *bool `json:"auto_rebalance,omitempty"`
 
 	// Capacities of SE for auto rebalance for each criteria. Field introduced in 17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AutoRebalanceCapacityPerSe []int64 `json:"auto_rebalance_capacity_per_se,omitempty,omitempty"`
+	AutoRebalanceCapacityPerSe []int64 `json:"auto_rebalance_capacity_per_se,omitempty"`
 
 	// The time in minutes controller waits before rebalancing the Vs again after a scalein/scaleout. Field introduced in 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoRebalanceCoolDownTime *uint32 `json:"auto_rebalance_cool_down_time,omitempty"`
@@ -133,7 +133,7 @@ type ServiceEngineGroup struct {
 	DatascriptTimeout *uint64 `json:"datascript_timeout,omitempty"`
 
 	// If activated, IPv6 address and route discovery are deactivated.Requires SE reboot. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	DeactivateIPV6Discovery *bool `json:"deactivate_ipv6_discovery,omitempty"`
+	DeactivateIPv6Discovery *bool `json:"deactivate_ipv6_discovery,omitempty"`
 
 	// Deactivate filtering of packets to KNI interface. To be used under surveillance of Avi Support. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DeactivateKniFilteringAtDispatcher *bool `json:"deactivate_kni_filtering_at_dispatcher,omitempty"`

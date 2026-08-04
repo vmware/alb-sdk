@@ -13,5 +13,5 @@ type PortMatch struct {
 	MatchCriteria *string `json:"match_criteria"`
 
 	// Listening TCP port(s). Allowed values are 1-65535. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Ports []int64 `json:"ports,omitempty,omitempty"`
+	Ports []int64 `json:"ports,omitempty"`
 }

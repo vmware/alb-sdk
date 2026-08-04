@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// LabelProfile label profile
+// LabelProfile A named set of labels that can be applied to APIs and referenced in security policies to allow, block, or apply custom handling to traffic.
 // swagger:model LabelProfile
 type LabelProfile struct {
 

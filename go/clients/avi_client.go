@@ -103,7 +103,7 @@ type AviClient struct {
 	NetworkSecurityPolicy           *NetworkSecurityPolicyClient
 	NetworkService                  *NetworkServiceClient
 	NsxtSegmentRuntime              *NsxtSegmentRuntimeClient
-	PKIprofile                      *PKIprofileClient
+	PKIProfile                      *PKIProfileClient
 	Pool                            *PoolClient
 	PoolGroup                       *PoolGroupClient
 	PoolGroupDeploymentPolicy       *PoolGroupDeploymentPolicyClient
@@ -124,7 +124,7 @@ type AviClient struct {
 	SSOPolicy                       *SSOPolicyClient
 	Scheduler                       *SchedulerClient
 	SeProperties                    *SePropertiesClient
-	SecureChannelAvailableLocalIps  *SecureChannelAvailableLocalIpsClient
+	SecureChannelAvailableLocalIPs  *SecureChannelAvailableLocalIPsClient
 	SecureChannelMapping            *SecureChannelMappingClient
 	SecureChannelToken              *SecureChannelTokenClient
 	SecurityManagerData             *SecurityManagerDataClient
@@ -289,7 +289,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.NetworkSecurityPolicy = NewNetworkSecurityPolicyClient(aviSession)
 	aviClient.NetworkService = NewNetworkServiceClient(aviSession)
 	aviClient.NsxtSegmentRuntime = NewNsxtSegmentRuntimeClient(aviSession)
-	aviClient.PKIprofile = NewPKIprofileClient(aviSession)
+	aviClient.PKIProfile = NewPKIProfileClient(aviSession)
 	aviClient.Pool = NewPoolClient(aviSession)
 	aviClient.PoolGroup = NewPoolGroupClient(aviSession)
 	aviClient.PoolGroupDeploymentPolicy = NewPoolGroupDeploymentPolicyClient(aviSession)
@@ -310,7 +310,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.SSOPolicy = NewSSOPolicyClient(aviSession)
 	aviClient.Scheduler = NewSchedulerClient(aviSession)
 	aviClient.SeProperties = NewSePropertiesClient(aviSession)
-	aviClient.SecureChannelAvailableLocalIps = NewSecureChannelAvailableLocalIpsClient(aviSession)
+	aviClient.SecureChannelAvailableLocalIPs = NewSecureChannelAvailableLocalIPsClient(aviSession)
 	aviClient.SecureChannelMapping = NewSecureChannelMappingClient(aviSession)
 	aviClient.SecureChannelToken = NewSecureChannelTokenClient(aviSession)
 	aviClient.SecurityManagerData = NewSecurityManagerDataClient(aviSession)

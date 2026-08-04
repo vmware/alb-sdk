@@ -75,7 +75,7 @@ type HTTPApplicationProfile struct {
 	HstsSubdomainsEnabled *bool `json:"hsts_subdomains_enabled,omitempty"`
 
 	// Specifies the HTTP/2 specific application profile parameters. Field introduced in 18.2.10, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Http2Profile *Http2ApplicationProfile `json:"http2_profile,omitempty"`
+	Http2Profile *HTTP2ApplicationProfile `json:"http2_profile,omitempty"`
 
 	// Client requests received via HTTP will be redirected to HTTPS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPToHTTPS *bool `json:"http_to_https,omitempty"`
@@ -126,7 +126,7 @@ type HTTPApplicationProfile struct {
 	MaxRpsURI *uint32 `json:"max_rps_uri,omitempty"`
 
 	// Pass through X-ACCEL headers. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PassThroughXAccelHeaders *bool `json:"pass_through_x_accel_headers,omitempty"`
+	PassThroughxAccelHeaders *bool `json:"pass_through_x_accel_headers,omitempty"`
 
 	// Select the PKI profile to be associated with the Virtual Service. This profile defines the Certificate Authority and Revocation List. It is a reference to an object of type PKIProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PkiProfileRef *string `json:"pki_profile_ref,omitempty"`
@@ -147,7 +147,7 @@ type HTTPApplicationProfile struct {
 	ServerSideRedirectToHTTPS *bool `json:"server_side_redirect_to_https,omitempty"`
 
 	// HTTP session configuration. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SessionConfig *HttpsessionConfig `json:"session_config,omitempty"`
+	SessionConfig *HTTPSessionConfig `json:"session_config,omitempty"`
 
 	// Set of match/action rules that govern what happens when the client certificate request is enabled. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslClientCertificateAction *SSLClientCertificateAction `json:"ssl_client_certificate_action,omitempty"`

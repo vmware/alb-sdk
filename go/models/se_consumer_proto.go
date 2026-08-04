@@ -123,7 +123,7 @@ type SeConsumerProto struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	NotifyQName *string `json:"notify_q_name"`
+	NotifyqName *string `json:"notify_q_name"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -273,7 +273,7 @@ type SeConsumerProto struct {
 	SvcObjUUID *string `json:"svc_obj_uuid,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SvcQName *string `json:"svc_q_name,omitempty"`
+	SvcqName *string `json:"svc_q_name,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantUUID *string `json:"tenant_uuid,omitempty"`

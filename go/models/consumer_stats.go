@@ -27,7 +27,7 @@ type ConsumerStats struct {
 	NumFullyPlaced *uint32 `json:"num_fully_placed,omitempty"`
 
 	// Count of VSs which are idle and not placed on the requested number of SEs. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	NumIDLE *uint32 `json:"num_idle,omitempty"`
+	NumIdle *uint32 `json:"num_idle,omitempty"`
 
 	// Count of VSs with ign_pool_net_reach. Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumIgnPoolNetReach *uint32 `json:"num_ign_pool_net_reach,omitempty"`

@@ -10,7 +10,7 @@ type ConnpoolConfig struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
-	IDLETimeout *int32 `json:"idle_timeout"`
+	IdleTimeout *int32 `json:"idle_timeout"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

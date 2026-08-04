@@ -12,5 +12,5 @@ type SCTPFastPathProfile struct {
 	EnableInitChunkProtection *bool `json:"enable_init_chunk_protection,omitempty"`
 
 	// SCTP autoclose timeout. 0 means autoclose deactivated. Allowed values are 0-247483647. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	IDLETimeout *int32 `json:"idle_timeout,omitempty"`
+	IdleTimeout *int32 `json:"idle_timeout,omitempty"`
 }

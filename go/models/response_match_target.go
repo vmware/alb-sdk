@@ -45,7 +45,7 @@ type ResponseMatchTarget struct {
 	SourceIP *IPAddrMatch `json:"source_ip,omitempty"`
 
 	// Configure the HTTP status code(s). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Status *HttpstatusMatch `json:"status,omitempty"`
+	Status *HTTPStatusMatch `json:"status,omitempty"`
 
 	// Configure versions of the HTTP protocol. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Version *HTTPVersionMatch `json:"version,omitempty"`

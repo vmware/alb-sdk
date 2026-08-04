@@ -104,7 +104,7 @@ type Pool struct {
 	HostCheckEnabled *bool `json:"host_check_enabled,omitempty"`
 
 	// HTTP2 pool properties. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Http2Properties *Http2PoolProperties `json:"http2_properties,omitempty"`
+	Http2Properties *HTTP2PoolProperties `json:"http2_properties,omitempty"`
 
 	// Ignore the server port in building the load balancing state.Applicable only for consistent hash load balancing algorithm or Disable Port translation (use_service_port) use cases. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreServerPort *bool `json:"ignore_server_port,omitempty"`
@@ -189,7 +189,7 @@ type Pool struct {
 	ServerName *string `json:"server_name,omitempty"`
 
 	// Server reselect configuration for HTTP requests. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ServerReselect *HttpserverReselect `json:"server_reselect,omitempty"`
+	ServerReselect *HTTPServerReselect `json:"server_reselect,omitempty"`
 
 	// Timeout for backend server connection and data reception. This setting controls two timeouts  First, the maximum time allowed to establish a TCP connection to the backend server. Second, the maximum idle time while receiving data - the timer resets each time data arrives, so the backend can take as long as needed to send the complete response as long as it doesn't stop sending data for longer than this timeout. Value of 0 (default) inherits from the Service Engine Group's upstream_read_timeout and upstream_connect_timeout properties. It applies only to L7 (HTTP) virtual services. Allowed values are 0-21600000. Field introduced in 18.1.5,18.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServerTimeout *uint32 `json:"server_timeout,omitempty"`

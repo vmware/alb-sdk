@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APISchema Api schema
+// APISchema Reusable schema definition for complex data structures (objects or arrays) referenced across multiple API endpoints for payload validation.
 // swagger:model ApiSchema
 type APISchema struct {
 

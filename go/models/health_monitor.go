@@ -43,7 +43,7 @@ type HealthMonitor struct {
 	Http2Monitor *HealthMonitorHTTP `json:"http2_monitor,omitempty"`
 
 	// Health monitor for HTTP2S. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTP2SMonitor *HealthMonitorHTTP `json:"http2s_monitor,omitempty"`
+	Http2sMonitor *HealthMonitorHTTP `json:"http2s_monitor,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	HTTPMonitor *HealthMonitorHTTP `json:"http_monitor,omitempty"`

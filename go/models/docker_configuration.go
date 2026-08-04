@@ -51,7 +51,7 @@ type DockerConfiguration struct {
 	FleetEndpoint *string `json:"fleet_endpoint,omitempty"`
 
 	// List of container ports that create a HTTP Virtualservice instead of a TCP/UDP VirtualService. Defaults to 80. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty,omitempty"`
+	HTTPContainerPorts []int64 `json:"http_container_ports,omitempty"`
 
 	// Use Fleet/SSH for SE deployment. Enum options - SE_CREATE_FLEET, SE_CREATE_SSH, SE_CREATE_POD. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeDeploymentMethod *string `json:"se_deployment_method,omitempty"`

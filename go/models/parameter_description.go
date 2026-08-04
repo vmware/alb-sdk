@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// ParameterDescription parameter description
+// ParameterDescription Definition of a parameter residing in a path, query string, or header, including parameter name, mandatory status, and schema constraints.
 // swagger:model ParameterDescription
 type ParameterDescription struct {
 

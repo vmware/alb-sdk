@@ -9,10 +9,10 @@ package models
 type IPReputationConfig struct {
 
 	// Enable IPv4 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EnableIPV4Reputation *bool `json:"enable_ipv4_reputation,omitempty"`
+	EnableIPv4Reputation *bool `json:"enable_ipv4_reputation,omitempty"`
 
 	// Enable IPv6 Reputation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EnableIPV6Reputation *bool `json:"enable_ipv6_reputation,omitempty"`
+	EnableIPv6Reputation *bool `json:"enable_ipv6_reputation,omitempty"`
 
 	// IP reputation db file object expiry duration in days. Allowed values are 1-7. Field introduced in 20.1.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPReputationFileObjectExpiryDuration *uint32 `json:"ip_reputation_file_object_expiry_duration,omitempty"`

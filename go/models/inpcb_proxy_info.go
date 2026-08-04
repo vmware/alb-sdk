@@ -12,7 +12,7 @@ type InpcbProxyInfo struct {
 	InpProxyIPMinttl *uint32 `json:"inp_proxy_ip_minttl,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InpProxyIPP *uint32 `json:"inp_proxy_ip_p,omitempty"`
+	InpProxyIPp *uint32 `json:"inp_proxy_ip_p,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InpProxyIPTos *uint32 `json:"inp_proxy_ip_tos,omitempty"`

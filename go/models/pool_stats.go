@@ -48,10 +48,10 @@ type PoolStats struct {
 	InlhmSkipBypassed *uint32 `json:"inlhm_skip_bypassed,omitempty"`
 
 	// HTTP/1.x invalid reponses. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InvalidHTTPV1Responses *uint64 `json:"invalid_httpv1_responses,omitempty"`
+	InvalidHttpv1Responses *uint64 `json:"invalid_httpv1_responses,omitempty"`
 
 	// HTTP/2 invalid responses. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	InvalidHTTPV2Responses *uint64 `json:"invalid_httpv2_responses,omitempty"`
+	InvalidHttpv2Responses *uint64 `json:"invalid_httpv2_responses,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LbFailAddPending *uint32 `json:"lb_fail_add_pending,omitempty"`
@@ -222,16 +222,16 @@ type PoolStats struct {
 	SslVerSsl30 *uint64 `json:"ssl_ver_ssl30,omitempty"`
 
 	//  Field introduced in 16.4.8,17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS10 *uint64 `json:"ssl_ver_tls10,omitempty"`
+	SslVerTls10 *uint64 `json:"ssl_ver_tls10,omitempty"`
 
 	//  Field introduced in 16.4.8,17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS11 *uint64 `json:"ssl_ver_tls11,omitempty"`
+	SslVerTls11 *uint64 `json:"ssl_ver_tls11,omitempty"`
 
 	//  Field introduced in 16.4.8,17.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS12 *uint64 `json:"ssl_ver_tls12,omitempty"`
+	SslVerTls12 *uint64 `json:"ssl_ver_tls12,omitempty"`
 
 	// Upstream TLS1.3 connections. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SslVerTLS13 *uint64 `json:"ssl_ver_tls13,omitempty"`
+	SslVerTls13 *uint64 `json:"ssl_ver_tls13,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalConnections *uint64 `json:"total_connections,omitempty"`

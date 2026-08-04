@@ -15,7 +15,7 @@ type SeHighEgressProcLatencyEventDetails struct {
 	EventCount *uint64 `json:"event_count,omitempty"`
 
 	// Proxy core which processed the packet. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	FlowCore []int64 `json:"flow_core,omitempty,omitempty"`
+	FlowCore []int64 `json:"flow_core,omitempty"`
 
 	// Proxy dequeue latency. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxProxyToDispQueingDelay *uint32 `json:"max_proxy_to_disp_queing_delay,omitempty"`

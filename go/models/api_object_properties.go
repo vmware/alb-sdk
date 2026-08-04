@@ -4,7 +4,7 @@ package models
 
 // This file is auto-generated.
 
-// APIObjectProperties Api object properties
+// APIObjectProperties Definition of an object schema property, including property name, schema constraints, requirement status, access mode, nullability, and deprecation status.
 // swagger:model ApiObjectProperties
 type APIObjectProperties struct {
 

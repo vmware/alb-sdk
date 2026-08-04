@@ -21,7 +21,7 @@ type RoutingServiceRuntime struct {
 	EnableVipOnAllInterfaces *bool `json:"enable_vip_on_all_interfaces,omitempty"`
 
 	// Use Virtual MAC address for interfaces on which floating interface IPs are placed. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	EnableVMAC *bool `json:"enable_vmac,omitempty"`
+	EnableVmac *bool `json:"enable_vmac,omitempty"`
 
 	// Floating Interface IPs for the RoutingService. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FloatingIntfIP []*IPAddr `json:"floating_intf_ip,omitempty"`

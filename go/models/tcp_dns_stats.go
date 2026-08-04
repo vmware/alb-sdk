@@ -42,7 +42,7 @@ type TCPDNSStats struct {
 	PassThroughErrors *uint64 `json:"pass_through_errors,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QueryA *uint64 `json:"query_a,omitempty"`
+	Querya *uint64 `json:"query_a,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QueryAaaa *uint64 `json:"query_aaaa,omitempty"`
@@ -78,7 +78,7 @@ type TCPDNSStats struct {
 	QueryWithEdns *uint64 `json:"query_with_edns,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ResponseA *uint64 `json:"response_a,omitempty"`
+	Responsea *uint64 `json:"response_a,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResponseAaaa *uint64 `json:"response_aaaa,omitempty"`

@@ -37,19 +37,19 @@ type EthStats struct {
 	Opackets *uint64 `json:"opackets"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QErrors []int64 `json:"q_errors,omitempty,omitempty"`
+	QErrors []int64 `json:"q_errors,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QIbytes []int64 `json:"q_ibytes,omitempty,omitempty"`
+	QIbytes []int64 `json:"q_ibytes,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QIpackets []int64 `json:"q_ipackets,omitempty,omitempty"`
+	QIpackets []int64 `json:"q_ipackets,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QObytes []int64 `json:"q_obytes,omitempty,omitempty"`
+	QObytes []int64 `json:"q_obytes,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QOpackets []int64 `json:"q_opackets,omitempty,omitempty"`
+	QOpackets []int64 `json:"q_opackets,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true

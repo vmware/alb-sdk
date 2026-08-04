@@ -66,7 +66,7 @@ type ConnectionLog struct {
 	DNSFqdn *string `json:"dns_fqdn,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	DNSIps []int64 `json:"dns_ips,omitempty,omitempty"`
+	DNSIps []int64 `json:"dns_ips,omitempty"`
 
 	// DNS policy or Topology policy name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DNSPolicy *string `json:"dns_policy,omitempty"`

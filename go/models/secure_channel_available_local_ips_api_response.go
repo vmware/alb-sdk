@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// SecureChannelAvailableLocalIpsAPIResponse secure channel available local ips Api response
+// SecureChannelAvailableLocalIPsAPIResponse secure channel available local IPs Api response
 // swagger:model SecureChannelAvailableLocalIPsApiResponse
-type SecureChannelAvailableLocalIpsAPIResponse struct {
+type SecureChannelAvailableLocalIPsAPIResponse struct {
 
 	// count
 	// Required: true
@@ -17,5 +17,5 @@ type SecureChannelAvailableLocalIpsAPIResponse struct {
 
 	// results
 	// Required: true
-	Results []*SecureChannelAvailableLocalIps `json:"results,omitempty"`
+	Results []*SecureChannelAvailableLocalIPs `json:"results,omitempty"`
 }

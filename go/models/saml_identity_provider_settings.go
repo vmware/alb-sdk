@@ -19,4 +19,7 @@ type SamlIdentityProviderSettings struct {
 
 	// Enable Periodic Metadata Download. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PeriodicDownload *bool `json:"periodic_download,omitempty"`
+
+	// TLS configuration for outbound SAML IDP connections. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
 }
