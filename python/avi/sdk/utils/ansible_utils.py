@@ -64,8 +64,8 @@ def ansible_return(module, rsp, changed, req=None, existing_obj=None,
                 rsp.status_code, rsp.text, req, api_context))
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
-    key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
-                        api_creds.port)
+    key = '%s:%s:%s:%s' % (api_creds.controller, api_creds.username,
+                           api_creds.port, api_creds.tenant)
     deactivate_fact = module.params.get('avi_deactivate_session_cache_as_fact')
 
     fact_context = None
@@ -290,6 +290,7 @@ def avi_obj_cmp(x, y, sensitive_fields=None):
         y.pop('_last_modified', None)
         x.pop('api_version', None)
         y.pop('api_verison', None)
+        x.pop('verify', None)
         d_xks = [k for k in x.keys() if k in sensitive_fields]
 
         if d_xks:
@@ -350,8 +351,8 @@ def get_api_context(module, api_creds):
         return api_context
     elif api_context and not module.params.get(
             'avi_deactivate_session_cache_as_fact'):
-        key = '%s:%s:%s' % (api_creds.controller, api_creds.username,
-                            api_creds.port)
+        key = '%s:%s:%s:%s' % (api_creds.controller, api_creds.username,
+                               api_creds.port, api_creds.tenant)
         return api_context.get(key)
     else:
         return None
@@ -409,7 +410,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             token=api_context['csrftoken'],
             port=api_creds.port,
             session_id=api_context['session_id'],
-            csrftoken=api_context['csrftoken'])
+            csrftoken=api_context['csrftoken'],
+            verify=getattr(api_creds, 'verify', False),
+            avi_credentials=api_creds)
     else:
         api = ApiSession.get_session(
             api_creds.controller,
@@ -424,7 +427,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             csp_host=api_creds.csp_host,
             csp_token=api_creds.csp_token,
             ssl_cert=api_creds.ssl_cert,
-            ssl_key=api_creds.ssl_key)
+            ssl_key=api_creds.ssl_key,
+            verify=getattr(api_creds, 'verify', False),
+            avi_credentials=api_creds)
     state = module.params['state']
     # Get the api version.
     avi_update_method = module.params.get('avi_api_update_method', 'put')
@@ -631,7 +636,8 @@ def avi_common_argument_spec():
         csp_host=dict(default='', type='str', no_log=True),
         csp_token=dict(default='', type='str', no_log=True),
         ssl_cert=dict(default='', type='str', no_log=True),
-        ssl_key=dict(default='', type='str', no_log=True)
+        ssl_key=dict(default='', type='str', no_log=True),
+        verify=dict(default=False)
     )
 
     return dict(
@@ -641,6 +647,7 @@ def avi_common_argument_spec():
         tenant=dict(default='admin'),
         tenant_uuid=dict(default=''),
         api_version=dict(default='20.1.1', type='str'),
+        verify=dict(default=False),
         avi_credentials=dict(default=None, type='dict',
                              options=credentials_spec),
         api_context=dict(type='dict'),
