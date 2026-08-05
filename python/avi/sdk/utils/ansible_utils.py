@@ -495,11 +495,7 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
                 comp_obj["update_interval"] = crl_info["update_interval"]
             if avi_obj_cmp(obj, comp_obj, sensitive_fields):
                 log.debug('EXISTING OBJ %s', existing_obj)
-                redacted_obj = obj.copy()
-                for sensitive_key in ('password', 'obj_password', 'token', 'api_key', 'secret'):
-                    if sensitive_key in redacted_obj:
-                        redacted_obj[sensitive_key] = None
-                log.debug('NEW OBJ %s', redacted_obj)
+                log.debug('NEW OBJ %s', obj)
                 return ansible_return(module, None, False,
                                       existing_obj=existing_obj,
                                       api_context=api.get_context())
