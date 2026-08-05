@@ -90,6 +90,9 @@ public class SSLKeyAndCertificate extends AviRestResource  {
     @JsonProperty("ocsp_response_info")
     private OCSPResponseInfo ocspResponseInfo;
 
+    @JsonProperty("skip_auto_chain")
+    private Boolean skipAutoChain = false;
+
     @JsonProperty("status")
     private String status = "SSL_CERTIFICATE_FINISHED";
 
@@ -696,6 +699,34 @@ public class SSLKeyAndCertificate extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * When set to true, disables automatic ca certificate chain discovery based on issuer common name (cn).
+     * The user must explicitly specify the desired ca certificates via the ca_certs field.
+     * Not allowed for ca-type certificates.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return skipAutoChain
+     */
+    public Boolean getSkipAutoChain() {
+        return skipAutoChain;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When set to true, disables automatic ca certificate chain discovery based on issuer common name (cn).
+     * The user must explicitly specify the desired ca certificates via the ca_certs field.
+     * Not allowed for ca-type certificates.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param skipAutoChain set the skipAutoChain.
+     */
+    public void setSkipAutoChain(Boolean  skipAutoChain) {
+        this.skipAutoChain = skipAutoChain;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SSL_CERTIFICATE_FINISHED".
@@ -835,7 +866,8 @@ public class SSLKeyAndCertificate extends AviRestResource  {
   Objects.equals(this.ocspErrorStatus, objSSLKeyAndCertificate.ocspErrorStatus)&&
   Objects.equals(this.markers, objSSLKeyAndCertificate.markers)&&
   Objects.equals(this.importKeyToHsm, objSSLKeyAndCertificate.importKeyToHsm)&&
-  Objects.equals(this.isFederated, objSSLKeyAndCertificate.isFederated);
+  Objects.equals(this.isFederated, objSSLKeyAndCertificate.isFederated)&&
+  Objects.equals(this.skipAutoChain, objSSLKeyAndCertificate.skipAutoChain);
     }
 
     @Override
@@ -865,6 +897,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
                         sb.append("    ocspErrorStatus: ").append(toIndentedString(ocspErrorStatus)).append("\n");
                         sb.append("    ocspResponderUrlListFromCerts: ").append(toIndentedString(ocspResponderUrlListFromCerts)).append("\n");
                         sb.append("    ocspResponseInfo: ").append(toIndentedString(ocspResponseInfo)).append("\n");
+                        sb.append("    skipAutoChain: ").append(toIndentedString(skipAutoChain)).append("\n");
                         sb.append("    status: ").append(toIndentedString(status)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                         sb.append("    type: ").append(toIndentedString(type)).append("\n");

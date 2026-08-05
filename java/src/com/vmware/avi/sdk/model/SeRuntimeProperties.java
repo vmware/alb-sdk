@@ -105,6 +105,9 @@ public class SeRuntimeProperties  {
     @JsonProperty("log_agent_log_storage_min_sz")
     private Integer logAgentLogStorageMinSz = 1024;
 
+    @JsonProperty("log_agent_malloc_trim_memory_threshold")
+    private Integer logAgentMallocTrimMemoryThreshold = 300;
+
     @JsonProperty("log_agent_max_concurrent_rsync")
     private Integer logAgentMaxConcurrentRsync = 1024;
 
@@ -113,6 +116,9 @@ public class SeRuntimeProperties  {
 
     @JsonProperty("log_agent_max_storage_ignore_percent")
     private Float logAgentMaxStorageIgnorePercent = 20.0f;
+
+    @JsonProperty("log_agent_memory_monitor_interval")
+    private Integer logAgentMemoryMonitorInterval = 600;
 
     @JsonProperty("log_agent_min_storage_per_vs")
     private Integer logAgentMinStoragePerVs = 10;
@@ -932,6 +938,38 @@ public class SeRuntimeProperties  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Rss threshold in mb beyond which log-agent invokes malloc_trim(0).
+     * Set to 0 to disable the periodic rss monitor entirely.
+     * Sigusr1 always triggers a trim regardless of this setting.
+     * Allowed values are 0-1024.
+     * Field introduced in 32.1.3.
+     * Unit is mb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return logAgentMallocTrimMemoryThreshold
+     */
+    public Integer getLogAgentMallocTrimMemoryThreshold() {
+        return logAgentMallocTrimMemoryThreshold;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Rss threshold in mb beyond which log-agent invokes malloc_trim(0).
+     * Set to 0 to disable the periodic rss monitor entirely.
+     * Sigusr1 always triggers a trim regardless of this setting.
+     * Allowed values are 0-1024.
+     * Field introduced in 32.1.3.
+     * Unit is mb.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param logAgentMallocTrimMemoryThreshold set the logAgentMallocTrimMemoryThreshold.
+     */
+    public void setLogAgentMallocTrimMemoryThreshold(Integer  logAgentMallocTrimMemoryThreshold) {
+        this.logAgentMallocTrimMemoryThreshold = logAgentMallocTrimMemoryThreshold;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Deprecated in 21.1.1.
      * Maximum concurrent rsync requests initiated from log-agent to the controller.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -1000,6 +1038,34 @@ public class SeRuntimeProperties  {
      */
     public void setLogAgentMaxStorageIgnorePercent(Float  logAgentMaxStorageIgnorePercent) {
         this.logAgentMaxStorageIgnorePercent = logAgentMaxStorageIgnorePercent;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Interval in seconds at which log-agent checks rss against the trim threshold.
+     * Allowed values are 10-3600.
+     * Field introduced in 32.1.3.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+     * @return logAgentMemoryMonitorInterval
+     */
+    public Integer getLogAgentMemoryMonitorInterval() {
+        return logAgentMemoryMonitorInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in seconds at which log-agent checks rss against the trim threshold.
+     * Allowed values are 10-3600.
+     * Field introduced in 32.1.3.
+     * Unit is seconds.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 600.
+     * @param logAgentMemoryMonitorInterval set the logAgentMemoryMonitorInterval.
+     */
+    public void setLogAgentMemoryMonitorInterval(Integer  logAgentMemoryMonitorInterval) {
+        this.logAgentMemoryMonitorInterval = logAgentMemoryMonitorInterval;
     }
 
     /**
@@ -2133,7 +2199,9 @@ public class SeRuntimeProperties  {
   Objects.equals(this.userDefinedMetricAge, objSeRuntimeProperties.userDefinedMetricAge)&&
   Objects.equals(this.enableHsmLog, objSeRuntimeProperties.enableHsmLog)&&
   Objects.equals(this.seDumpCoreOnAssert, objSeRuntimeProperties.seDumpCoreOnAssert)&&
-  Objects.equals(this.adminSshEnabled, objSeRuntimeProperties.adminSshEnabled);
+  Objects.equals(this.adminSshEnabled, objSeRuntimeProperties.adminSshEnabled)&&
+  Objects.equals(this.logAgentMallocTrimMemoryThreshold, objSeRuntimeProperties.logAgentMallocTrimMemoryThreshold)&&
+  Objects.equals(this.logAgentMemoryMonitorInterval, objSeRuntimeProperties.logAgentMemoryMonitorInterval);
     }
 
     @Override
@@ -2168,9 +2236,11 @@ public class SeRuntimeProperties  {
                         sb.append("    logAgentFileSzDebug: ").append(toIndentedString(logAgentFileSzDebug)).append("\n");
                         sb.append("    logAgentFileSzEvent: ").append(toIndentedString(logAgentFileSzEvent)).append("\n");
                         sb.append("    logAgentLogStorageMinSz: ").append(toIndentedString(logAgentLogStorageMinSz)).append("\n");
+                        sb.append("    logAgentMallocTrimMemoryThreshold: ").append(toIndentedString(logAgentMallocTrimMemoryThreshold)).append("\n");
                         sb.append("    logAgentMaxConcurrentRsync: ").append(toIndentedString(logAgentMaxConcurrentRsync)).append("\n");
                         sb.append("    logAgentMaxStorageExcessPercent: ").append(toIndentedString(logAgentMaxStorageExcessPercent)).append("\n");
                         sb.append("    logAgentMaxStorageIgnorePercent: ").append(toIndentedString(logAgentMaxStorageIgnorePercent)).append("\n");
+                        sb.append("    logAgentMemoryMonitorInterval: ").append(toIndentedString(logAgentMemoryMonitorInterval)).append("\n");
                         sb.append("    logAgentMinStoragePerVs: ").append(toIndentedString(logAgentMinStoragePerVs)).append("\n");
                         sb.append("    logAgentSleepInterval: ").append(toIndentedString(logAgentSleepInterval)).append("\n");
                         sb.append("    logAgentUnknownVsTimer: ").append(toIndentedString(logAgentUnknownVsTimer)).append("\n");

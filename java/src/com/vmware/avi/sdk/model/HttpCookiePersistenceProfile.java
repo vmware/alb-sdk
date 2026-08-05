@@ -39,6 +39,9 @@ public class HttpCookiePersistenceProfile  {
     @JsonProperty("key")
     private List<HttpCookiePersistenceKey> key;
 
+    @JsonProperty("samesite")
+    private String samesite = "SAMESITE_NONE";
+
     @JsonProperty("timeout")
     private Integer timeout;
 
@@ -201,6 +204,34 @@ public class HttpCookiePersistenceProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Samesite attribute for the persistence cookie.
+     * Allowed values  none (default, emitted only on ssl connections), lax, strict.
+     * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_NONE".
+     * @return samesite
+     */
+    public String getSamesite() {
+        return samesite;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Samesite attribute for the persistence cookie.
+     * Allowed values  none (default, emitted only on ssl connections), lax, strict.
+     * Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT.
+     * Field introduced in 32.1.3.
+     * Allowed with any value in enterprise, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SAMESITE_NONE".
+     * @param samesite set the samesite.
+     */
+    public void setSamesite(String  samesite) {
+        this.samesite = samesite;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The maximum lifetime of any session cookie.
      * No value or 'zero' indicates no timeout.
      * Allowed values are 1-14400.
@@ -245,7 +276,8 @@ public class HttpCookiePersistenceProfile  {
   Objects.equals(this.timeout, objHttpCookiePersistenceProfile.timeout)&&
   Objects.equals(this.alwaysSendCookie, objHttpCookiePersistenceProfile.alwaysSendCookie)&&
   Objects.equals(this.httpOnly, objHttpCookiePersistenceProfile.httpOnly)&&
-  Objects.equals(this.isPersistentCookie, objHttpCookiePersistenceProfile.isPersistentCookie);
+  Objects.equals(this.isPersistentCookie, objHttpCookiePersistenceProfile.isPersistentCookie)&&
+  Objects.equals(this.samesite, objHttpCookiePersistenceProfile.samesite);
     }
 
     @Override
@@ -258,6 +290,7 @@ public class HttpCookiePersistenceProfile  {
                         sb.append("    httpOnly: ").append(toIndentedString(httpOnly)).append("\n");
                         sb.append("    isPersistentCookie: ").append(toIndentedString(isPersistentCookie)).append("\n");
                         sb.append("    key: ").append(toIndentedString(key)).append("\n");
+                        sb.append("    samesite: ").append(toIndentedString(samesite)).append("\n");
                         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
                   sb.append("}");
       return sb.toString();
