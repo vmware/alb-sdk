@@ -14,6 +14,9 @@ type WaapStats struct {
 	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ActiveAPILatency *uint64 `json:"active_api_latency,omitempty"`
 
+	// Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	FlagCount *uint64 `json:"flag_count,omitempty"`
+
 	// Total number of requests received for all API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Hits *uint64 `json:"hits,omitempty"`
 
@@ -68,6 +71,9 @@ type WaapStats struct {
 	// Total number of 5XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OrphanResponses5xx *uint64 `json:"orphan_responses_5xx,omitempty"`
 
+	// Total number of requests rejected by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RejectCount *uint64 `json:"reject_count,omitempty"`
+
 	// Total number of 1XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses1xx *uint64 `json:"responses_1xx,omitempty"`
 
@@ -80,37 +86,37 @@ type WaapStats struct {
 	// Total 2XX responses for non-API requests to this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses2xxNonapi *uint64 `json:"responses_2xx_nonapi,omitempty"`
 
-	// Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses301 *uint64 `json:"responses_301,omitempty"`
 
-	// Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses302 *uint64 `json:"responses_302,omitempty"`
 
-	// Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses303 *uint64 `json:"responses_303,omitempty"`
 
-	// Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses307 *uint64 `json:"responses_307,omitempty"`
 
-	// Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses308 *uint64 `json:"responses_308,omitempty"`
 
 	// Total number of 3XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses3xx *uint64 `json:"responses_3xx,omitempty"`
 
-	// Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses400 *uint64 `json:"responses_400,omitempty"`
 
-	// Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses401 *uint64 `json:"responses_401,omitempty"`
 
-	// Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses403 *uint64 `json:"responses_403,omitempty"`
 
-	// Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses407 *uint64 `json:"responses_407,omitempty"`
 
-	// Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.3.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses429 *uint64 `json:"responses_429,omitempty"`
 
 	// Total number of 4XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -149,17 +155,47 @@ type WaapStats struct {
 	// Total number of violations for all API endpoints with violation type location_path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationPath *uint64 `json:"violation_count_location_path,omitempty"`
 
+	// VS-level violations at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationPathFailedValidation *uint64 `json:"violation_count_location_path_failed_validation,omitempty"`
+
 	// Total number of violations for all API endpoints with violation type location_query_args. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationQueryArgs *uint64 `json:"violation_count_location_query_args,omitempty"`
 
+	// VS-level violations at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationQueryArgsFailedValidation *uint64 `json:"violation_count_location_query_args_failed_validation,omitempty"`
+
+	// VS-level violations at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationQueryArgsMissing *uint64 `json:"violation_count_location_query_args_missing,omitempty"`
+
+	// VS-level violations at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationQueryArgsUnexpected *uint64 `json:"violation_count_location_query_args_unexpected,omitempty"`
+
 	// Total number of violations for all API endpoints with violation type location_request_body. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationRequestBody *uint64 `json:"violation_count_location_request_body,omitempty"`
+
+	// VS-level violations at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestBodyFailedValidation *uint64 `json:"violation_count_location_request_body_failed_validation,omitempty"`
+
+	// VS-level violations at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestBodyMissing *uint64 `json:"violation_count_location_request_body_missing,omitempty"`
+
+	// VS-level violations at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestBodyUnexpected *uint64 `json:"violation_count_location_request_body_unexpected,omitempty"`
 
 	// Total number of violations for all API endpoints with violation type location_request_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationRequestContentType *uint64 `json:"violation_count_location_request_content_type,omitempty"`
 
 	// Total number of violations for all API endpoints with violation type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationRequestHeader *uint64 `json:"violation_count_location_request_header,omitempty"`
+
+	// VS-level violations at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestHeaderFailedValidation *uint64 `json:"violation_count_location_request_header_failed_validation,omitempty"`
+
+	// VS-level violations at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestHeaderMissing *uint64 `json:"violation_count_location_request_header_missing,omitempty"`
+
+	// VS-level violations at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ViolationCountLocationRequestHeaderUnexpected *uint64 `json:"violation_count_location_request_header_unexpected,omitempty"`
 
 	// Total number of violations for all API endpoints with violation type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ViolationCountLocationResponseContentType *uint64 `json:"violation_count_location_response_content_type,omitempty"`
