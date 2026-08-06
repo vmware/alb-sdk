@@ -50,6 +50,9 @@ type DNSServiceApplicationProfile struct {
 	// Specifies the number of IP addresses returned by the DNS Service. Enter 0 to return all IP addresses. Allowed values are 1-20. Special values are 0- Return all IP addresses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumDNSIP *uint32 `json:"num_dns_ip,omitempty"`
 
+	// If enabled, SOA record is sent in the Authority section for NODATA responses per RFC 2308. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RfcCompliantSoaResponse *bool `json:"rfc_compliant_soa_response,omitempty"`
+
 	// Specifies the TTL value (in seconds) for records served by DNS Service. Allowed values are 0-86400. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TTL *uint32 `json:"ttl,omitempty"`
 }
