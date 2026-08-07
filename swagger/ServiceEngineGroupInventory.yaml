@@ -1827,12 +1827,12 @@ definitions:
                 type: boolean
                 default: True
             log_agent_udp_fqdn_resolve_interval:
-                description: "Interval in seconds at which the Service Engine re-resolves the DNS for FQDN-based UDP log streaming endpoints. Prevents streaming to stale IPs when DNS records change. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 60-86400. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Interval in seconds at which the Service Engine re-resolves the DNS for FQDN-based UDP log streaming endpoints. Prevents streaming to stale IPs when DNS records change. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 60-86400. Field introduced in 32.1.3, 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 900
                 format: uint32
             log_agent_udp_fqdn_resolve_log_count:
-                description: "Number of UDP log messages sent before re-resolving the FQDN. Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked before time. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 100-100000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of UDP log messages sent before re-resolving the FQDN. Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked before time. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 100-100000. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5000
                 format: uint32
@@ -2400,6 +2400,10 @@ definitions:
                 type: integer
                 default: 256
                 format: uint32
+            seg_mode:
+                description: "Operating mode for this SE Group. SEG_MODE_WAAP requires waap_mode_config to also be set; VirtualServices with API Protection enabled can only be placed on an SE Group in that mode. This field cannot change after creation. Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "SEG_MODE_NORMAL"
             self_se_election:
                 description: "Enable SEs to elect a primary amongst themselves in the absence of a connectivity to controller. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -2623,6 +2627,9 @@ definitions:
             vss_placement_enabled:
                 description: "If set, Virtual Services will be placed on only a subset of the cores of an SE. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            waap_mode_config:
+                description: "Configuration for API Protection (WAAP) mode. Required when seg_mode is SEG_MODE_WAAP. Whether this field is set or unset cannot change after creation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/WaapModeConfig'
             waf_mempool:
                 description: "Enable memory pool for WAF.Requires SE Reboot. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
@@ -3009,3 +3016,9 @@ definitions:
                 type: integer
                 default: 4
                 format: uint32
+    WaapModeConfig:
+        type: object
+        properties:
+            se_size:
+                description: "WAAP sizing tier for this SE Group. Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
