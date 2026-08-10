@@ -932,7 +932,7 @@ definitions:
                 readOnly: True
                 $ref: '#/definitions/OCSPResponseInfo'
             skip_auto_chain:
-                description: "Skip automatic chain selection for the certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Skip automatic chain selection for the certificate. Not applicable for CA/Intermediate certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             status:
                 description: " Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

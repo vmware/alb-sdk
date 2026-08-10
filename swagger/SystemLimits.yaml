@@ -573,6 +573,29 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/ServiceEngineCloudLimits'
+            serviceengine_waap_limits:
+                description: "Per-tier WAAP SE sizing limits (SMALL, MEDIUM, LARGE). Defines the min_vcpus, min_memory, and max_vs_per_se for each tier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ServiceEngineSizingWaapLimits'
+    ServiceEngineSizingWaapLimits:
+        type: object
+        properties:
+            max_vs_per_se:
+                description: "Maximum number of VirtualServices allowed per SE for this tier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            min_memory:
+                description: "Minimum memory per SE (MiB) for this tier. SEs in a WAAP-mode SE Group of this size must have at least this much memory. Field introduced in 32.2.1. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            min_vcpus:
+                description: "Minimum vCPUs per SE for this tier. SEs in a WAAP-mode SE Group of this size must have at least this many vCPUs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            waap_se_size:
+                description: "Size tier this entry describes (SMALL, MEDIUM, or LARGE). Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     SystemLimits:
         type: object
         properties:
