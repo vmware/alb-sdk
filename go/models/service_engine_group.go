@@ -384,10 +384,10 @@ type ServiceEngineGroup struct {
 	// Enable trace logs by default on Service Engine. Configuration operations are logged along with other important logs by Service Engine. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentTraceEnabled *bool `json:"log_agent_trace_enabled,omitempty"`
 
-	// Interval in seconds at which the Service Engine re-resolves the DNS for FQDN-based UDP log streaming endpoints. Prevents streaming to stale IPs when DNS records change. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 60-86400. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Interval in seconds at which the Service Engine re-resolves the DNS for FQDN-based UDP log streaming endpoints. Prevents streaming to stale IPs when DNS records change. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 60-86400. Field introduced in 32.1.3, 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentUDPFqdnResolveInterval *uint32 `json:"log_agent_udp_fqdn_resolve_interval,omitempty"`
 
-	// Number of UDP log messages sent before re-resolving the FQDN. Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked before time. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 100-100000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of UDP log messages sent before re-resolving the FQDN. Re-resolution also happens on the time interval (log_agent_udp_fqdn_resolve_interval); whichever trigger fires first wins, with log count checked before time. Only applies when the streaming endpoint is configured as an FQDN, not a literal IP. Allowed values are 100-100000. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LogAgentUDPFqdnResolveLogCount *uint32 `json:"log_agent_udp_fqdn_resolve_log_count,omitempty"`
 
 	// Timeout to purge unknown Virtual Service logs from the Service Engine. Field introduced in 21.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -787,6 +787,9 @@ type ServiceEngineGroup struct {
 	// Maximum number of virtualservices for which heartbeat messages are aggregated in one packet. Allowed values are 1-1024. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeVsHbMaxVsInPkt *uint32 `json:"se_vs_hb_max_vs_in_pkt,omitempty"`
 
+	// Operating mode for this SE Group. SEG_MODE_WAAP requires waap_mode_config to also be set; VirtualServices with API Protection enabled can only be placed on an SE Group in that mode. This field cannot change after creation. Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SegMode *string `json:"seg_mode,omitempty"`
+
 	// Enable SEs to elect a primary amongst themselves in the absence of a connectivity to controller. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SelfSeElection *bool `json:"self_se_election,omitempty"`
 
@@ -943,6 +946,9 @@ type ServiceEngineGroup struct {
 
 	// If set, Virtual Services will be placed on only a subset of the cores of an SE. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VssPlacementEnabled *bool `json:"vss_placement_enabled,omitempty"`
+
+	// Configuration for API Protection (WAAP) mode. Required when seg_mode is SEG_MODE_WAAP. Whether this field is set or unset cannot change after creation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	WaapModeConfig *WaapModeConfig `json:"waap_mode_config,omitempty"`
 
 	// Enable memory pool for WAF.Requires SE Reboot. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WafMempool *bool `json:"waf_mempool,omitempty"`
