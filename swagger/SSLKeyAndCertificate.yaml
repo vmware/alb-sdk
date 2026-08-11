@@ -682,7 +682,7 @@ definitions:
                 default: 86400
                 format: uint32
             ocsp_request_hash_algorithms:
-                description: "Hash algorithm used to construct the OCSP CertID in requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.2.1, 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Hash algorithm used to construct the OCSP CertID in requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
