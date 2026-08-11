@@ -29,6 +29,9 @@ type HTTPApplicationProfile struct {
 	// Maximum size in Kbytes of all the client HTTP request headers.This value can be overriden by client_max_header_size if that is larger. Allowed values are 1-256. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientMaxRequestSize *int32 `json:"client_max_request_size,omitempty"`
 
+	// Close client-side connection when an error response is sent to the client while the client's request body has not been fully received. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	CloseClientSideConnectionOnError *bool `json:"close_client_side_connection_on_error,omitempty"`
+
 	// Close server-side connection when an error response is received. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloseServerSideConnectionOnError *bool `json:"close_server_side_connection_on_error,omitempty"`
 
@@ -49,6 +52,9 @@ type HTTPApplicationProfile struct {
 
 	// Disable strict check between TLS servername and HTTP Host name. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DisableSniHostnameCheck *bool `json:"disable_sni_hostname_check,omitempty"`
+
+	// While a 100-Continue response has been sent to the client and its request body is still being uploaded, peek at the upstream response status line so a non-2xx (error or redirect) response is forwarded to the client immediately instead of waiting for the body upload to finish; a 2xx response is still deferred until the upload completes. Only applicable when respond_with_100_continue is enabled. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Enable100ContinueUpstreamPeek *bool `json:"enable_100_continue_upstream_peek,omitempty"`
 
 	// Enable chunk body merge for chunked transfer encoding response. Field introduced in 18.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableChunkMerge *bool `json:"enable_chunk_merge,omitempty"`
