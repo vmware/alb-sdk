@@ -557,8 +557,15 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             obj_uuid = existing_obj['uuid']
             obj_path = '%s/%s' % (obj_type, obj_uuid)
         if avi_update_method == 'put':
-            changed = not avi_obj_cmp(obj, existing_obj, sensitive_fields)
-            obj = cleanup_absent_fields(obj)
+            # Merge with existing object to preserve unspecified fields
+            merged_obj = deepcopy(existing_obj)
+            
+            for key, value in obj.items():
+                if value is not None:
+                    merged_obj[key] = value
+            
+            changed = not avi_obj_cmp(merged_obj, existing_obj, sensitive_fields)
+            obj = cleanup_absent_fields(merged_obj)
             if changed:
                 req = obj
                 if check_mode:
