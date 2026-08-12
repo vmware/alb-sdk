@@ -794,7 +794,7 @@
                     "type": "string"
                 },
                 "issuer": {
-                    "description": "Common name of the CA certificate issuer. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Common name of the CA certificate issuer. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
@@ -803,12 +803,12 @@
                     "type": "string"
                 },
                 "not_after": {
-                    "description": "Expiry date of the CA certificate in UTC string form. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Expiry date of the CA certificate in UTC string form. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 },
                 "subject": {
-                    "description": "Common name of the CA certificate subject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Common name of the CA certificate subject. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "readOnly": true,
                     "type": "string"
                 }
@@ -1288,7 +1288,7 @@
                     "$ref": "#/definitions/OCSPResponseInfo"
                 },
                 "skip_auto_chain": {
-                    "description": "Skip automatic chain selection for the certificate. Not applicable for CA/Intermediate certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When set to true, disables automatic CA certificate chain discovery based on issuer common name (CN). The user must explicitly specify the desired CA certificates via the ca_certs field. Not allowed for CA/Intermediate type certificates. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "status": {

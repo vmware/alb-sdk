@@ -5628,13 +5628,13 @@
                 }
             }
         },
-        "/httppolicyset": {
+        "/pool": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "GET /httppolicyset",
+                "description": "/pool",
+                "operationId": "GET /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -5725,7 +5725,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
+                            "$ref": "#/definitions/PoolApiResponse"
                         }
                     },
                     "401": {
@@ -5735,10 +5735,10 @@
             },
             "post": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "POST /httppolicyset",
+                "description": "/pool",
+                "operationId": "POST /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -5777,10 +5777,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     }
                 ],
@@ -5793,7 +5793,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -5802,13 +5802,13 @@
                 }
             }
         },
-        "/httppolicyset/{uuid}": {
+        "/pool/{uuid}": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "GET /httppolicyset/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "GET /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5894,7 +5894,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -5907,10 +5907,10 @@
             },
             "put": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PUT /httppolicyset/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PUT /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -5956,10 +5956,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -5979,7 +5979,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -5992,10 +5992,10 @@
             },
             "patch": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PATCH /httppolicyset/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PATCH /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6041,10 +6041,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -6064,7 +6064,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6077,10 +6077,10 @@
             },
             "delete": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "Pool"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "DELETE /httppolicyset/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "DELETE /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6670,13 +6670,13 @@
                 }
             }
         },
-        "/pool": {
+        "/httppolicyset": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool",
-                "operationId": "GET /pool",
+                "description": "/httppolicyset",
+                "operationId": "GET /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -6767,7 +6767,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PoolApiResponse"
+                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
                         }
                     },
                     "401": {
@@ -6777,10 +6777,10 @@
             },
             "post": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool",
-                "operationId": "POST /pool",
+                "description": "/httppolicyset",
+                "operationId": "POST /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -6819,10 +6819,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     }
                 ],
@@ -6835,7 +6835,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6844,13 +6844,13 @@
                 }
             }
         },
-        "/pool/{uuid}": {
+        "/httppolicyset/{uuid}": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "GET /pool/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "GET /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6936,7 +6936,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6949,10 +6949,10 @@
             },
             "put": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PUT /pool/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PUT /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6998,10 +6998,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -7021,7 +7021,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7034,10 +7034,10 @@
             },
             "patch": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PATCH /pool/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PATCH /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7083,10 +7083,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -7106,7 +7106,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7119,10 +7119,10 @@
             },
             "delete": {
                 "tags": [
-                    "Pool"
+                    "HTTPPolicySet"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "DELETE /pool/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "DELETE /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
