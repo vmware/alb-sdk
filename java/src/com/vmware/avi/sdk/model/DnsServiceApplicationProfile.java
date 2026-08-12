@@ -63,6 +63,9 @@ public class DnsServiceApplicationProfile  {
     @JsonProperty("num_dns_ip")
     private Integer numDnsIp = 1;
 
+    @JsonProperty("rfc_compliant_soa_response")
+    private Boolean rfcCompliantSoaResponse = false;
+
     @JsonProperty("ttl")
     private Integer ttl = 30;
 
@@ -488,6 +491,30 @@ public class DnsServiceApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * If enabled, soa record is sent in the authority section for nodata responses per rfc 2308.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return rfcCompliantSoaResponse
+     */
+    public Boolean getRfcCompliantSoaResponse() {
+        return rfcCompliantSoaResponse;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, soa record is sent in the authority section for nodata responses per rfc 2308.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param rfcCompliantSoaResponse set the rfcCompliantSoaResponse.
+     */
+    public void setRfcCompliantSoaResponse(Boolean  rfcCompliantSoaResponse) {
+        this.rfcCompliantSoaResponse = rfcCompliantSoaResponse;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Specifies the ttl value (in seconds) for records served by dns service.
      * Allowed values are 0-86400.
      * Unit is sec.
@@ -536,7 +563,8 @@ public class DnsServiceApplicationProfile  {
   Objects.equals(this.adminEmail, objDnsServiceApplicationProfile.adminEmail)&&
   Objects.equals(this.dnsZones, objDnsServiceApplicationProfile.dnsZones)&&
   Objects.equals(this.closeTcpConnectionPostResponse, objDnsServiceApplicationProfile.closeTcpConnectionPostResponse)&&
-  Objects.equals(this.clientDnsTcpRequestTimeout, objDnsServiceApplicationProfile.clientDnsTcpRequestTimeout);
+  Objects.equals(this.clientDnsTcpRequestTimeout, objDnsServiceApplicationProfile.clientDnsTcpRequestTimeout)&&
+  Objects.equals(this.rfcCompliantSoaResponse, objDnsServiceApplicationProfile.rfcCompliantSoaResponse);
     }
 
     @Override
@@ -557,6 +585,7 @@ public class DnsServiceApplicationProfile  {
                         sb.append("    nameServer: ").append(toIndentedString(nameServer)).append("\n");
                         sb.append("    negativeCachingTtl: ").append(toIndentedString(negativeCachingTtl)).append("\n");
                         sb.append("    numDnsIp: ").append(toIndentedString(numDnsIp)).append("\n");
+                        sb.append("    rfcCompliantSoaResponse: ").append(toIndentedString(rfcCompliantSoaResponse)).append("\n");
                         sb.append("    ttl: ").append(toIndentedString(ttl)).append("\n");
                   sb.append("}");
       return sb.toString();

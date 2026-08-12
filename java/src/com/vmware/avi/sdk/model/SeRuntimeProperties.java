@@ -930,7 +930,7 @@ public class SeRuntimeProperties  {
      * Set to 0 to disable the periodic rss monitor entirely.
      * Sigusr1 always triggers a trim regardless of this setting.
      * Allowed values are 0-1024.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is mb.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -946,7 +946,7 @@ public class SeRuntimeProperties  {
      * Set to 0 to disable the periodic rss monitor entirely.
      * Sigusr1 always triggers a trim regardless of this setting.
      * Allowed values are 0-1024.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is mb.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 300.
@@ -1032,7 +1032,7 @@ public class SeRuntimeProperties  {
      * This is the getter method this will return the attribute value.
      * Interval in seconds at which log-agent checks rss against the trim threshold.
      * Allowed values are 10-3600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is seconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.
@@ -1046,7 +1046,7 @@ public class SeRuntimeProperties  {
      * This is the setter method to the attribute.
      * Interval in seconds at which log-agent checks rss against the trim threshold.
      * Allowed values are 10-3600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is seconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 600.

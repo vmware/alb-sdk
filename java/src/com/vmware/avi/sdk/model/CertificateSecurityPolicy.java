@@ -33,7 +33,7 @@ public class CertificateSecurityPolicy  {
      * Signature algorithm families whose certificates are blocked on new imports.
      * Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384,
      * SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedCertificateSignatureAlgorithms
@@ -47,7 +47,7 @@ public class CertificateSecurityPolicy  {
      * Signature algorithm families whose certificates are blocked on new imports.
      * Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384,
      * SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedCertificateSignatureAlgorithms
@@ -61,7 +61,7 @@ public class CertificateSecurityPolicy  {
      * Signature algorithm families whose certificates are blocked on new imports.
      * Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384,
      * SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedCertificateSignatureAlgorithms
@@ -77,7 +77,7 @@ public class CertificateSecurityPolicy  {
      * This is the getter method this will return the attribute value.
      * Hash algorithms not allowed for ocsp requests.
      * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedOcspRequestHashAlgorithms
@@ -90,7 +90,7 @@ public class CertificateSecurityPolicy  {
      * This is the setter method. this will set the blockedOcspRequestHashAlgorithms
      * Hash algorithms not allowed for ocsp requests.
      * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedOcspRequestHashAlgorithms
@@ -103,7 +103,7 @@ public class CertificateSecurityPolicy  {
      * This is the setter method this will set the blockedOcspRequestHashAlgorithms
      * Hash algorithms not allowed for ocsp requests.
      * Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512.
-     * Field introduced in 32.2.1, 32.1.3.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return blockedOcspRequestHashAlgorithms

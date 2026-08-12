@@ -62,7 +62,7 @@ public class MemoryUsage  {
     /**
      * This is the getter method this will return the attribute value.
      * Effective total memory used by memory balancer to make decisions for stopping processes.
-     * Field introduced in 31.2.1.
+     * Field introduced in 30.2.6, 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return effectiveCtlrMemUsedPercent
@@ -74,7 +74,7 @@ public class MemoryUsage  {
     /**
      * This is the setter method to the attribute.
      * Effective total memory used by memory balancer to make decisions for stopping processes.
-     * Field introduced in 31.2.1.
+     * Field introduced in 30.2.6, 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param effectiveCtlrMemUsedPercent set the effectiveCtlrMemUsedPercent.

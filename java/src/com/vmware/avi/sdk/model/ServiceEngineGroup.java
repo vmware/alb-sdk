@@ -795,6 +795,9 @@ public class ServiceEngineGroup extends AviRestResource  {
     @JsonProperty("se_vs_hb_max_vs_in_pkt")
     private Integer seVsHbMaxVsInPkt = 256;
 
+    @JsonProperty("seg_mode")
+    private String segMode = "SEG_MODE_NORMAL";
+
     @JsonProperty("self_se_election")
     private Boolean selfSeElection = false;
 
@@ -950,6 +953,9 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     @JsonProperty("vss_placement_enabled")
     private Boolean vssPlacementEnabled = false;
+
+    @JsonProperty("waap_mode_config")
+    private WaapModeConfig waapModeConfig;
 
     @JsonProperty("waf_mempool")
     private Boolean wafMempool = true;
@@ -4236,7 +4242,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Prevents streaming to stale ips when dns records change.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 60-86400.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -4252,7 +4258,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Prevents streaming to stale ips when dns records change.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 60-86400.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -4269,7 +4275,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * before time.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 100-100000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @return logAgentUdpFqdnResolveLogCount
@@ -4285,7 +4291,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * before time.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 100-100000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @param logAgentUdpFqdnResolveLogCount set the logAgentUdpFqdnResolveLogCount.
@@ -7800,6 +7806,38 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Operating mode for this se group.
+     * Seg_mode_waap requires waap_mode_config to also be set; virtualservices with api protection enabled can only be placed on an se group in that
+     * mode.
+     * This field cannot change after creation.
+     * Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SEG_MODE_NORMAL".
+     * @return segMode
+     */
+    public String getSegMode() {
+        return segMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Operating mode for this se group.
+     * Seg_mode_waap requires waap_mode_config to also be set; virtualservices with api protection enabled can only be placed on an se group in that
+     * mode.
+     * This field cannot change after creation.
+     * Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "SEG_MODE_NORMAL".
+     * @param segMode set the segMode.
+     */
+    public void setSegMode(String  segMode) {
+        this.segMode = segMode;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable ses to elect a primary amongst themselves in the absence of a connectivity to controller.
      * Field introduced in 18.1.2.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -9184,6 +9222,34 @@ public class ServiceEngineGroup extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Configuration for api protection (waap) mode.
+     * Required when seg_mode is seg_mode_waap.
+     * Whether this field is set or unset cannot change after creation.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return waapModeConfig
+     */
+    public WaapModeConfig getWaapModeConfig() {
+        return waapModeConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Configuration for api protection (waap) mode.
+     * Required when seg_mode is seg_mode_waap.
+     * Whether this field is set or unset cannot change after creation.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param waapModeConfig set the waapModeConfig.
+     */
+    public void setWaapModeConfig(WaapModeConfig waapModeConfig) {
+        this.waapModeConfig = waapModeConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Enable memory pool for waf.requires se reboot.
      * Field introduced in 17.2.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -9579,7 +9645,9 @@ public class ServiceEngineGroup extends AviRestResource  {
   Objects.equals(this.ipAdvertisementProfile, objServiceEngineGroup.ipAdvertisementProfile)&&
   Objects.equals(this.logAgentUdpFqdnResolveInterval, objServiceEngineGroup.logAgentUdpFqdnResolveInterval)&&
   Objects.equals(this.logAgentUdpFqdnResolveLogCount, objServiceEngineGroup.logAgentUdpFqdnResolveLogCount)&&
-  Objects.equals(this.logStreamingTlsConfig, objServiceEngineGroup.logStreamingTlsConfig);
+  Objects.equals(this.logStreamingTlsConfig, objServiceEngineGroup.logStreamingTlsConfig)&&
+  Objects.equals(this.waapModeConfig, objServiceEngineGroup.waapModeConfig)&&
+  Objects.equals(this.segMode, objServiceEngineGroup.segMode);
     }
 
     @Override
@@ -9844,6 +9912,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    seVnicTxSwQueueSize: ").append(toIndentedString(seVnicTxSwQueueSize)).append("\n");
                         sb.append("    seVsHbMaxPktsInBatch: ").append(toIndentedString(seVsHbMaxPktsInBatch)).append("\n");
                         sb.append("    seVsHbMaxVsInPkt: ").append(toIndentedString(seVsHbMaxVsInPkt)).append("\n");
+                        sb.append("    segMode: ").append(toIndentedString(segMode)).append("\n");
                         sb.append("    selfSeElection: ").append(toIndentedString(selfSeElection)).append("\n");
                         sb.append("    sendSeReadyTimeout: ").append(toIndentedString(sendSeReadyTimeout)).append("\n");
                         sb.append("    serviceIp6Subnets: ").append(toIndentedString(serviceIp6Subnets)).append("\n");
@@ -9895,6 +9964,7 @@ public class ServiceEngineGroup extends AviRestResource  {
                         sb.append("    vsphereStoragePolicies: ").append(toIndentedString(vsphereStoragePolicies)).append("\n");
                         sb.append("    vssPlacement: ").append(toIndentedString(vssPlacement)).append("\n");
                         sb.append("    vssPlacementEnabled: ").append(toIndentedString(vssPlacementEnabled)).append("\n");
+                        sb.append("    waapModeConfig: ").append(toIndentedString(waapModeConfig)).append("\n");
                         sb.append("    wafMempool: ").append(toIndentedString(wafMempool)).append("\n");
                         sb.append("    wafMempoolSize: ").append(toIndentedString(wafMempoolSize)).append("\n");
                         sb.append("    wafUseJitForPcre: ").append(toIndentedString(wafUseJitForPcre)).append("\n");

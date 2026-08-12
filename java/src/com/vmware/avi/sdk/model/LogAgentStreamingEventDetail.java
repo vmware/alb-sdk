@@ -37,7 +37,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorCode
@@ -48,7 +48,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorCode set the errorCode.
@@ -59,7 +59,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorReason
@@ -70,7 +70,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorReason set the errorReason.
@@ -81,7 +81,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return host
@@ -92,7 +92,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param host set the host.
@@ -103,7 +103,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
@@ -114,7 +114,7 @@ public class LogAgentStreamingEventDetail  {
 
     /**
      * This is the setter method to the attribute.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3, 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.
