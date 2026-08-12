@@ -921,6 +921,11 @@
                     "type": "boolean",
                     "default": true
                 },
+                "auto_window_growth_without_timestamp": {
+                    "description": "Controls whether receive window auto growth is allowed to fall back to an RTT-based estimate when the TCP timestamp option is not negotiated on the connection. Only takes effect when auto_window_growth is also enabled. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
                 "automatic": {
                     "description": "Dynamically pick the relevant parameters for connections. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
