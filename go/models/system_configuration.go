@@ -27,7 +27,7 @@ type SystemConfiguration struct {
 	// Password for avi_email_login user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AviEmailLoginPassword *string `json:"avi_email_login_password,omitempty"`
 
-	// Certificate security policy for the system. Field introduced in 32.2.1, 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Certificate security policy for the system. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CertificateSecurityPolicy *CertificateSecurityPolicy `json:"certificate_security_policy,omitempty"`
 
 	// Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
