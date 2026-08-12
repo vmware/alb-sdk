@@ -494,8 +494,6 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
             if "update_interval" in crl_info:
                 comp_obj["update_interval"] = crl_info["update_interval"]
             if avi_obj_cmp(obj, comp_obj, sensitive_fields):
-                log.debug('EXISTING OBJ %s', existing_obj)
-                log.debug('NEW OBJ %s', obj)
                 return ansible_return(module, None, False,
                                       existing_obj=existing_obj,
                                       api_context=api.get_context())
@@ -535,8 +533,6 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
                     else:
                         comp_obj.pop("is_federated")
                     if avi_obj_cmp(comp_obj, existing_obj, sensitive_fields):
-                        log.debug('EXISTING OBJ %s', existing_obj)
-                        log.debug('NEW OBJ %s', obj)
                         return ansible_return(module, None, False,
                                               existing_obj=existing_obj,
                                               api_context=api.get_context())
@@ -692,9 +688,6 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
                     changed = False
                     if avi_patch_op == 'delete':
                         rsp = None
-        if changed:
-            log.debug('EXISTING OBJ %s', existing_obj)
-            log.debug('NEW OBJ %s', obj)
     else:
         changed = True
         req = obj
