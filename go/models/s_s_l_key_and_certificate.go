@@ -86,7 +86,7 @@ type SSLKeyAndCertificate struct {
 	// Read Only: true
 	OcspResponseInfo *OCSPResponseInfo `json:"ocsp_response_info,omitempty"`
 
-	// Skip automatic chain selection for the certificate. Not applicable for CA/Intermediate certificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// When set to true, disables automatic CA certificate chain discovery based on issuer common name (CN). The user must explicitly specify the desired CA certificates via the ca_certs field. Not allowed for CA/Intermediate type certificates. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SkipAutoChain *bool `json:"skip_auto_chain,omitempty"`
 
 	//  Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
