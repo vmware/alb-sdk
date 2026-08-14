@@ -293,8 +293,8 @@ type VserverL7MetricsObj struct {
 	// Average client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapShadowAPILatency *float64 `json:"avg_waap_shadow_api_latency,omitempty"`
 
-	// Average WAAP violations across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	AvgWaapViolationCount *float64 `json:"avg_waap_violation_count,omitempty"`
+	// Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	AvgWaapValidationFailCount *float64 `json:"avg_waap_validation_fail_count,omitempty"`
 
 	// Rate of zombie API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapZombieAPICount *float64 `json:"avg_waap_zombie_api_count,omitempty"`
@@ -624,8 +624,8 @@ type VserverL7MetricsObj struct {
 	// Total client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapShadowAPILatency *float64 `json:"sum_waap_shadow_api_latency,omitempty"`
 
-	// Total number of WAAP violations across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	SumWaapViolationCount *float64 `json:"sum_waap_violation_count,omitempty"`
+	// Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SumWaapValidationFailCount *float64 `json:"sum_waap_validation_fail_count,omitempty"`
 
 	// Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapZombieAPICount *float64 `json:"sum_waap_zombie_api_count,omitempty"`

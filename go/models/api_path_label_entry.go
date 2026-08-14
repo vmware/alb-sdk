@@ -25,4 +25,7 @@ type APIPathLabelEntry struct {
 
 	// Computed once per label name; every entry for the same label reports the identical status. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Status *LabelStatus `json:"status,omitempty"`
+
+	// System-defined or user-defined, from this label's own definition. Omitted when this label is not defined in any LabelProfile reachable from this ApiPath. Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Type *string `json:"type,omitempty"`
 }

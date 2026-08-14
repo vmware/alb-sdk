@@ -363,8 +363,8 @@ type VserverL7Stats struct {
 	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapShadowAPILatency *uint64 `json:"waap_shadow_api_latency,omitempty"`
 
-	// Total number of API violations across all endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	WaapViolationCount *uint64 `json:"waap_violation_count,omitempty"`
+	// Total number of API validation failures across all endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	WaapValidationFailCount *uint64 `json:"waap_validation_fail_count,omitempty"`
 
 	// Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapZombieAPICount *uint64 `json:"waap_zombie_api_count,omitempty"`
