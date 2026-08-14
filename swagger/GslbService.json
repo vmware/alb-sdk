@@ -2736,8 +2736,8 @@
                     "type": "number",
                     "format": "double"
                 },
-                "avg_waap_violation_count": {
-                    "description": "Average WAAP violations across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "avg_waap_validation_fail_count": {
+                    "description": "Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -3285,8 +3285,8 @@
                     "type": "number",
                     "format": "double"
                 },
-                "sum_waap_violation_count": {
-                    "description": "Total number of WAAP violations across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "sum_waap_validation_fail_count": {
+                    "description": "Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
