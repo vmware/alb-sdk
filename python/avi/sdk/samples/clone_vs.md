@@ -68,6 +68,24 @@ Specify the VIP as a subnet/mask. This must match an auto-allocation subnet in I
 
 > -v 10.10.10.0/24
 
+### Auto-allocated VIP by subnet with subnet UUID
+
+In some cloud types (e.g. Azure or NSX Cloud in VPC mode), a subnet_uuid should also be provided:
+
+> -v 10.10.10.0/24/lb_subnet
+
+### Auto-allocated VIP by subnet with preferred IP
+
+Auto-allocation requesting a preferred IP if available is also supported.
+
+For example, to request the specific IP 10.10.10.100 from IPAM:
+
+> -v 10.10.10.0/24/lb_subnet/10.10.10.100
+
+If the cloud does not require subnet_uuid to be provided, it can be omitted:
+
+> -v 10.10.10.0/24//10.10.10.100
+
 ### Auto-allocated VIP in same allocation network as the source
 
 If the source VIP was auto-allocated, the target can simply inherit the auto-allocation network:
@@ -296,6 +314,10 @@ To clone a VS to a VPC-enabled NSX Cloud for project my-project and VPC vpc-1 wi
 
 > clone_vs.py -c controller.example.com -2c NSX-Cloud-VPC -2v /orgs/default/projects/my-project/vpcs/vpc-1 -2t my-project vs example example-cloned -v 0.0.0.0/32/my-project_AVISEPARATOR_vpc-1_AVISEPARATOR_PRIVATE -g Default-Group
 
+To clone a VS to a VPC-enabled NSX Cloud for project my-project and VPC vpc-1 with a preferred VIP allocated from private IP pool:
+
+> clone_vs.py -c controller.example.com -2c NSX-Cloud-VPC -2v /orgs/default/projects/my-project/vpcs/vpc-1 -2t my-project vs example example-cloned -v 0.0.0.0/32/my-project_AVISEPARATOR_vpc-1_AVISEPARATOR_PRIVATE/10.10.10.100 -g Default-Group
+
 ### Arbitrarily modifying cloned VS configuration
 
 The -tf (--vstransform) option allows the arbitrary modification of the cloned VS configuration by updating the cloned VS object with a user-supplied JSON blob.
@@ -409,3 +431,7 @@ Changelog:
 2.0.15:
 
 * Fix a corner-case with manual VsVip, NSX Cloud and older Avi releases due to tier1_lr / vrfcontext handling
+
+2.0.16:
+
+* Add preferred IP support for auto-allocation

@@ -2148,6 +2148,8 @@ class AviClone:
                                 subnet = new_vs_vip.split('/')
                                 subnet_uuid = (subnet[2] if len(subnet) > 2
                                             else None)
+                                preferred_ip = (subnet[3] if len(subnet) > 3
+                                            else None)
                                 if use_internal_ipam:
                                     new_vip['ipam_network_subnet'] = {
                                         'subnet': {
@@ -2165,6 +2167,9 @@ class AviClone:
                                         'mask': int(subnet[1])}
                                     if subnet_uuid:
                                         new_vip['subnet_uuid'] = subnet_uuid
+                                if preferred_ip:
+                                    new_vip['ip_address'] = {'type': 'V4',
+                                                        'addr': preferred_ip}
                             else:
                                 # New VIP is an individual IP so do not
                                 # do auto-allocation
@@ -2182,6 +2187,8 @@ class AviClone:
 
                                 subnet = new_vs_v6vip.split('/')
                                 subnet_uuid = (subnet[2] if len(subnet) > 2
+                                            else None)
+                                preferred_ip = (subnet[3] if len(subnet) > 3
                                             else None)
                                 if use_internal_ipam:
                                     new_vip['ipam_network_subnet'] = {
@@ -2201,6 +2208,9 @@ class AviClone:
                                         'mask': int(subnet[1])}
                                     if subnet_uuid:
                                         new_vip['subnet6_uuid'] = subnet_uuid
+                                if preferred_ip:
+                                    new_vip['ip6_address'] = {'type': 'V6',
+                                                        'addr': preferred_ip}
                             else:
                                 # New VIP is an individual IP so do not
                                 # do auto-allocation
@@ -2954,11 +2964,13 @@ if __name__ == '__main__':
                            help='Name(s) to be assigned to the cloned Virtual Service(s)')
     vs_parser.add_argument('-v', '--vips',
                            help='The new VIP or list of VIPs (optionally specify list of FIPs '
-                           'after ;) or auto or subnet/mask[/subnet_uuid] for auto-allocation',
+                           'after ;) or auto or subnet/mask[/subnet_uuid[/preferred_ip]] '
+                           'for auto-allocation',
                            metavar='VIPs')
     vs_parser.add_argument('-v6', '--v6vips',
                            help='The new IP V6 VIP or list of VIPs '
-                           'or auto or subnet/mask[/subnet_uuid] for auto-allocation',
+                           'or auto or subnet/mask[/subnet_uuid[/preferred_ip]] '
+                           'for auto-allocation',
                            metavar='V6VIPs')
     vs_parser.add_argument('-int', '--internalipam',
                            help='For auto-allocation specifying subnet/mask, allocate '
