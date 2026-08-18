@@ -182,10 +182,10 @@ type SeAgentStateRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeUUID *string `json:"se_uuid,omitempty"`
 
-	// Number of VRFs on the SE with TGW VXLAN attribute set. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of VRFs on the SE with TGW VXLAN attribute set. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VrfWithNsxVxlanCount *uint32 `json:"vrf_with_nsx_vxlan_count,omitempty"`
 
-	// Number of VRFs on the SE with vMotion GARP enabled (EVPN or garp_on_vmotion attribute). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of VRFs on the SE with vMotion GARP enabled (EVPN or garp_on_vmotion attribute). Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VrfWithVmotionGarpCount *uint32 `json:"vrf_with_vmotion_garp_count,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

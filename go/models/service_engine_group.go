@@ -252,7 +252,7 @@ type ServiceEngineGroup struct {
 	// Timeout in seconds that SE waits for a grpc channel to connect to server, before it retries. Allowed values are 5-45. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GrpcChannelConnectTimeout *uint32 `json:"grpc_channel_connect_timeout,omitempty"`
 
-	// Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE's. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE's. Field introduced in 30.2.3, 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GveEnabled *bool `json:"gve_enabled,omitempty"`
 
 	// High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -306,7 +306,7 @@ type ServiceEngineGroup struct {
 	// Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	InstanceFlavor *string `json:"instance_flavor,omitempty"`
 
-	// Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPAdvertisementProfile *IPAdvertisementProfile `json:"ip_advertisement_profile,omitempty"`
 
 	// Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -589,7 +589,7 @@ type ServiceEngineGroup struct {
 	// SDB pipeline flush interval. Allowed values are 1-10000. Field introduced in 21.1.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SdbFlushInterval *uint32 `json:"sdb_flush_interval,omitempty"`
 
-	// The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 30.2.4. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 30.2.4, 31.1.2, 31.2.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SdbKeyTimeout *uint32 `json:"sdb_key_timeout,omitempty"`
 
 	// SDB pipeline size. Allowed values are 1-10000. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

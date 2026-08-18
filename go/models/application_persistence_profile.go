@@ -44,7 +44,7 @@ type ApplicationPersistenceProfile struct {
 	// Required: true
 	PersistenceType *string `json:"persistence_type"`
 
-	// Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4, 31.1.2, 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PersistenceUpdateInterval *uint32 `json:"persistence_update_interval,omitempty"`
 
 	// Specifies behavior when a persistent server has been marked down by a health monitor. Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
