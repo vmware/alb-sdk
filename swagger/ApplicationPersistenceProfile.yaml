@@ -488,7 +488,7 @@ definitions:
                 type: string
                 default: "PERSISTENCE_TYPE_CLIENT_IP_ADDRESS"
             persistence_update_interval:
-                description: "Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Interval in minutes at which refreshed persistence entries are synced to peer SEs. If not set, it willsync at an interval of timeout/2. Allowed values are 1-30. Field introduced in 30.2.4, 31.1.2, 31.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             server_hm_down_recovery:

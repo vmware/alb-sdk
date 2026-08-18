@@ -398,7 +398,7 @@ definitions:
                 default: 60
                 format: uint32
             event_manager_file_modified_ts_filter:
-                description: "Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 30.2.6, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 180
                 format: uint32

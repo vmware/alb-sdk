@@ -1127,7 +1127,7 @@
                     "type": "boolean"
                 },
                 "allow_legacy_sha1_ntp_auth": {
-                    "description": "Allow NTP authentication using legacy MD5 or SHA1 algorithms. When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning event is generated in the controller UI. When disabled (default), only SHA256 or stronger is accepted and configuring MD5 or SHA1 results in an API error. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Allow NTP authentication using legacy MD5 or SHA1 algorithms. When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning event is generated in the controller UI. When disabled (default), only SHA256 or stronger is accepted and configuring MD5 or SHA1 results in an API error. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "allow_private_ips": {

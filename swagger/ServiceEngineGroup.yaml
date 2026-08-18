@@ -1003,22 +1003,22 @@ definitions:
             -   ip_type
         properties:
             ip_type:
-                description: "IP address type for which periodic IP advertisement (GratARP/NA) is enabled. Supported values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP address type for which periodic IP advertisement (GratARP/NA) is enabled. Supported values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             periodicity:
-                description: "Periodicity override for this IP type in minutes. If not set, uses ip_advertisement_profile.default_periodicity. Allowed values are 1-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Periodicity override for this IP type in minutes. If not set, uses ip_advertisement_profile.default_periodicity. Allowed values are 1-30. Field introduced in 32.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     IpAdvertisementProfile:
         type: object
         properties:
             default_periodicity:
-                description: "Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 1-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Default periodicity for periodic IP advertisement (GratARP/NA) in minutes. Used when a per-type periodicity is not specified. Allowed values are 1-30. Field introduced in 32.1.3. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: uint32
             ip_types:
-                description: "List of IP address types for which periodic IP advertisement (GratARP/NA) is enabled. Supported ip_type values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Applied uniformly to all VRFs in this ServiceEngineGroup. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of IP address types for which periodic IP advertisement (GratARP/NA) is enabled. Supported ip_type values are VIP_IP, SNAT_IP, FLOATING_INTF_IP, and PRIMARY_INTF_IP. Applied uniformly to all VRFs in this ServiceEngineGroup. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/IpAddrTypeConfig'
@@ -1845,7 +1845,7 @@ definitions:
                 default: 15
                 format: uint32
             gve_enabled:
-                description: "Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE's. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Deploys Google Virtual Ethernet (gve) - gVNIC for all supported intances types in GCP. Applies only to newly created SE's. Field introduced in 30.2.3, 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ha_mode:
                 description: "High Availability mode for all the Virtual Services using this Service Engine group. Enum options - HA_MODE_SHARED_PAIR, HA_MODE_SHARED, HA_MODE_LEGACY_ACTIVE_STANDBY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1911,7 +1911,7 @@ definitions:
                 description: "Instance/Flavor name for SE instance. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ip_advertisement_profile:
-                description: "Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configuration for periodic IP advertisement (GratARP for IPv4, Neighbor Advertisement for IPv6). When configured, the specified IP types will send periodic advertisements to maintain ARP/NDP cache entries on network devices. enable_gratarp_permanent independently controls VIP_IP. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAdvertisementProfile'
             iptables:
                 description: "Iptable Rules. Maximum of 128 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -2322,7 +2322,7 @@ definitions:
                 default: 100
                 format: uint32
             sdb_key_timeout:
-                description: "The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 30.2.4. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The time in seconds controller redis server persists the key. Allowed values are 60-600. Field introduced in 30.2.4, 31.1.2, 31.2.1. Unit is SECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
