@@ -18,6 +18,9 @@ type LabelProfile struct {
 	// Labels available in this profile. Label names must be unique (case-insensitive). Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LabelDefinitions []*Label `json:"label_definitions,omitempty"`
 
+	// Enables logging of WAAP labels effective for a request into ApiLog.effective_labels in the application log. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	LogLabels *bool `json:"log_labels,omitempty"`
+
 	// Name of this object, unique per Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`

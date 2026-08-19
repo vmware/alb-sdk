@@ -8,6 +8,6 @@ package models
 // swagger:model NtpWeakAuthAlgorithmEventDetails
 type NtpWeakAuthAlgorithmEventDetails struct {
 
-	// Comma-separated list of key numbers using weak NTP auth algorithms (MD5 or SHA1). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Comma-separated list of key numbers using weak NTP auth algorithms (MD5 or SHA1). Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 }

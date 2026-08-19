@@ -51,60 +51,60 @@ type APIPathStats struct {
 	// Total number of 5XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses5xx *uint64 `json:"responses_5xx,omitempty"`
 
-	// Total number of violations for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCount *uint64 `json:"violation_count,omitempty"`
+	// Total number of validation failures for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCount *uint64 `json:"validation_fail_count,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationPath *uint64 `json:"violation_count_location_path,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationPath *uint64 `json:"validation_fail_count_location_path,omitempty"`
 
-	// Violations at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationPathFailedValidation *uint64 `json:"violation_count_location_path_failed_validation,omitempty"`
+	// Validation failures at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationPathFailedValidation *uint64 `json:"validation_fail_count_location_path_failed_validation,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_query_args. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationQueryArgs *uint64 `json:"violation_count_location_query_args,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_query_args. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationQueryArgs *uint64 `json:"validation_fail_count_location_query_args,omitempty"`
 
-	// Violations at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationQueryArgsFailedValidation *uint64 `json:"violation_count_location_query_args_failed_validation,omitempty"`
+	// Validation failures at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationQueryArgsFailedValidation *uint64 `json:"validation_fail_count_location_query_args_failed_validation,omitempty"`
 
-	// Violations at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationQueryArgsMissing *uint64 `json:"violation_count_location_query_args_missing,omitempty"`
+	// Validation failures at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationQueryArgsMissing *uint64 `json:"validation_fail_count_location_query_args_missing,omitempty"`
 
-	// Violations at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationQueryArgsUnexpected *uint64 `json:"violation_count_location_query_args_unexpected,omitempty"`
+	// Validation failures at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationQueryArgsUnexpected *uint64 `json:"validation_fail_count_location_query_args_unexpected,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_request_body. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestBody *uint64 `json:"violation_count_location_request_body,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_request_body. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestBody *uint64 `json:"validation_fail_count_location_request_body,omitempty"`
 
-	// Violations at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestBodyFailedValidation *uint64 `json:"violation_count_location_request_body_failed_validation,omitempty"`
+	// Validation failures at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestBodyFailedValidation *uint64 `json:"validation_fail_count_location_request_body_failed_validation,omitempty"`
 
-	// Violations at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestBodyMissing *uint64 `json:"violation_count_location_request_body_missing,omitempty"`
+	// Validation failures at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestBodyMissing *uint64 `json:"validation_fail_count_location_request_body_missing,omitempty"`
 
-	// Violations at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestBodyUnexpected *uint64 `json:"violation_count_location_request_body_unexpected,omitempty"`
+	// Validation failures at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestBodyUnexpected *uint64 `json:"validation_fail_count_location_request_body_unexpected,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_request_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestContentType *uint64 `json:"violation_count_location_request_content_type,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_request_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestContentType *uint64 `json:"validation_fail_count_location_request_content_type,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestHeader *uint64 `json:"violation_count_location_request_header,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestHeader *uint64 `json:"validation_fail_count_location_request_header,omitempty"`
 
-	// Violations at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestHeaderFailedValidation *uint64 `json:"violation_count_location_request_header_failed_validation,omitempty"`
+	// Validation failures at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestHeaderFailedValidation *uint64 `json:"validation_fail_count_location_request_header_failed_validation,omitempty"`
 
-	// Violations at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestHeaderMissing *uint64 `json:"violation_count_location_request_header_missing,omitempty"`
+	// Validation failures at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestHeaderMissing *uint64 `json:"validation_fail_count_location_request_header_missing,omitempty"`
 
-	// Violations at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationRequestHeaderUnexpected *uint64 `json:"violation_count_location_request_header_unexpected,omitempty"`
+	// Validation failures at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationRequestHeaderUnexpected *uint64 `json:"validation_fail_count_location_request_header_unexpected,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationResponseContentType *uint64 `json:"violation_count_location_response_content_type,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationResponseContentType *uint64 `json:"validation_fail_count_location_response_content_type,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type location_response_status_code. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountLocationResponseStatusCode *uint64 `json:"violation_count_location_response_status_code,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type location_response_status_code. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountLocationResponseStatusCode *uint64 `json:"validation_fail_count_location_response_status_code,omitempty"`
 
-	// Total number of violations for this API endpoint with violation type V01. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ViolationCountUnspecified *uint64 `json:"violation_count_unspecified,omitempty"`
+	// Total number of validation failures for this API endpoint with validation failure type V01. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ValidationFailCountUnspecified *uint64 `json:"validation_fail_count_unspecified,omitempty"`
 }
