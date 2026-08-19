@@ -121,6 +121,7 @@ def _get_ips_by_host(auth_params, record_name, ip_type='V4_V6'):
     """
     Function to return ips for a given record name.
     """
+    record_name = record_name.lower()
     username = auth_params.get('username',None)
     password = auth_params.get('password',None)
     server = auth_params.get('server',None)
@@ -205,6 +206,7 @@ def _create_dns_record(auth_params, record_name, ips):
     """
     Function to create a DNS record.
     """
+    record_name = record_name.lower()
     username = auth_params.get('username',None)
     password = auth_params.get('password',None)
     server = auth_params.get('server',None)
@@ -285,6 +287,7 @@ def _update_dns_record(auth_params, record_name, ips):
     """
     Function to update a given DNS record.
     """
+    record_name = record_name.lower()
     username = auth_params.get('username',None)
     password = auth_params.get('password',None)
     server = auth_params.get('server',None)
@@ -421,6 +424,7 @@ def _delete_dns_record(auth_params, record_name, expected_ips=None):
             If provided, only matching IPs are removed. If all IPs match or no expected_ips,
             the entire record is deleted.
     """
+    record_name = record_name.lower()
     username = auth_params.get('username',None)
     password = auth_params.get('password',None)
     server = auth_params.get('server',None)
