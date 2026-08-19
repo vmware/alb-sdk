@@ -1485,7 +1485,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
      * Allowed values are 1-1800.
-     * Field introduced in 31.2.1.
+     * Field introduced in 30.2.6, 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -1499,7 +1499,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Stated time duration beyond which event manager disregards files whose modified timestamp from current time is later.
      * Allowed values are 1-1800.
-     * Field introduced in 31.2.1.
+     * Field introduced in 30.2.6, 31.2.1.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.

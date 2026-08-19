@@ -385,7 +385,7 @@ public class HTTPApplicationProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Close client-side connection when an error response is sent to the client while the client's request body has not been fully received.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return closeClientSideConnectionOnError
@@ -397,7 +397,7 @@ public class HTTPApplicationProfile  {
     /**
      * This is the setter method to the attribute.
      * Close client-side connection when an error response is sent to the client while the client's request body has not been fully received.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param closeClientSideConnectionOnError set the closeClientSideConnectionOnError.
@@ -588,7 +588,7 @@ public class HTTPApplicationProfile  {
      * so a non-2xx (error or redirect) response is forwarded to the client immediately instead of waiting for the body upload to finish; a 2xx response
      * is still deferred until the upload completes.
      * Only applicable when respond_with_100_continue is enabled.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return enable100ContinueUpstreamPeek
@@ -603,7 +603,7 @@ public class HTTPApplicationProfile  {
      * so a non-2xx (error or redirect) response is forwarded to the client immediately instead of waiting for the body upload to finish; a 2xx response
      * is still deferred until the upload completes.
      * Only applicable when respond_with_100_continue is enabled.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param enable100ContinueUpstreamPeek set the enable100ContinueUpstreamPeek.

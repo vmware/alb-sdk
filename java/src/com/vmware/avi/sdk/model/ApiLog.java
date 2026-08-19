@@ -73,7 +73,7 @@ public class ApiLog  {
     /**
      * This is the getter method this will return the attribute value.
      * Comma-separated waap label names effective for this request.
-     * Populated only when the request's apipolicy has log_labels enabled.
+     * Populated only when the request's labelprofile has log_labels enabled.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -86,7 +86,7 @@ public class ApiLog  {
     /**
      * This is the setter method to the attribute.
      * Comma-separated waap label names effective for this request.
-     * Populated only when the request's apipolicy has log_labels enabled.
+     * Populated only when the request's labelprofile has log_labels enabled.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

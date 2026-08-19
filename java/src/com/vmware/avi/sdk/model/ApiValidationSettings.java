@@ -45,14 +45,14 @@ public class ApiValidationSettings  {
     @JsonProperty("request_outside_path_prefix_action")
     private String requestOutsidePathPrefixAction = "API_ACTION_PASS";
 
-    @JsonProperty("unexpected_header_parameter_action")
-    private String unexpectedHeaderParameterAction = "API_ACTION_PASS";
-
     @JsonProperty("unexpected_query_argument_action")
     private String unexpectedQueryArgumentAction = "API_ACTION_FLAG";
 
     @JsonProperty("unexpected_request_body_parameter_action")
     private String unexpectedRequestBodyParameterAction = "API_ACTION_FLAG";
+
+    @JsonProperty("unexpected_request_header_action")
+    private String unexpectedRequestHeaderAction = "API_ACTION_PASS";
 
     @JsonProperty("unknown_content_type_action")
     private String unknownContentTypeAction = "API_ACTION_PASS";
@@ -281,32 +281,6 @@ public class ApiValidationSettings  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Action to take when a header parameter is present but not defined in the schema.
-     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
-     * @return unexpectedHeaderParameterAction
-     */
-    public String getUnexpectedHeaderParameterAction() {
-        return unexpectedHeaderParameterAction;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Action to take when a header parameter is present but not defined in the schema.
-     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
-     * @param unexpectedHeaderParameterAction set the unexpectedHeaderParameterAction.
-     */
-    public void setUnexpectedHeaderParameterAction(String  unexpectedHeaderParameterAction) {
-        this.unexpectedHeaderParameterAction = unexpectedHeaderParameterAction;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Action to take when a query argument is present but not defined in the schema.
      * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
      * Field introduced in 32.2.1.
@@ -355,6 +329,32 @@ public class ApiValidationSettings  {
      */
     public void setUnexpectedRequestBodyParameterAction(String  unexpectedRequestBodyParameterAction) {
         this.unexpectedRequestBodyParameterAction = unexpectedRequestBodyParameterAction;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Action to take when a header parameter is present but not defined in the schema.
+     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
+     * @return unexpectedRequestHeaderAction
+     */
+    public String getUnexpectedRequestHeaderAction() {
+        return unexpectedRequestHeaderAction;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Action to take when a header parameter is present but not defined in the schema.
+     * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_PASS".
+     * @param unexpectedRequestHeaderAction set the unexpectedRequestHeaderAction.
+     */
+    public void setUnexpectedRequestHeaderAction(String  unexpectedRequestHeaderAction) {
+        this.unexpectedRequestHeaderAction = unexpectedRequestHeaderAction;
     }
 
     /**
@@ -513,7 +513,7 @@ public class ApiValidationSettings  {
   Objects.equals(this.missingMandatoryHeaderParameterAction, objApiValidationSettings.missingMandatoryHeaderParameterAction)&&
   Objects.equals(this.missingMandatoryRequestBodyParameterAction, objApiValidationSettings.missingMandatoryRequestBodyParameterAction)&&
   Objects.equals(this.unexpectedQueryArgumentAction, objApiValidationSettings.unexpectedQueryArgumentAction)&&
-  Objects.equals(this.unexpectedHeaderParameterAction, objApiValidationSettings.unexpectedHeaderParameterAction)&&
+  Objects.equals(this.unexpectedRequestHeaderAction, objApiValidationSettings.unexpectedRequestHeaderAction)&&
   Objects.equals(this.unexpectedRequestBodyParameterAction, objApiValidationSettings.unexpectedRequestBodyParameterAction);
     }
 
@@ -529,9 +529,9 @@ public class ApiValidationSettings  {
                         sb.append("    missingMandatoryQueryArgumentAction: ").append(toIndentedString(missingMandatoryQueryArgumentAction)).append("\n");
                         sb.append("    missingMandatoryRequestBodyParameterAction: ").append(toIndentedString(missingMandatoryRequestBodyParameterAction)).append("\n");
                         sb.append("    requestOutsidePathPrefixAction: ").append(toIndentedString(requestOutsidePathPrefixAction)).append("\n");
-                        sb.append("    unexpectedHeaderParameterAction: ").append(toIndentedString(unexpectedHeaderParameterAction)).append("\n");
                         sb.append("    unexpectedQueryArgumentAction: ").append(toIndentedString(unexpectedQueryArgumentAction)).append("\n");
                         sb.append("    unexpectedRequestBodyParameterAction: ").append(toIndentedString(unexpectedRequestBodyParameterAction)).append("\n");
+                        sb.append("    unexpectedRequestHeaderAction: ").append(toIndentedString(unexpectedRequestHeaderAction)).append("\n");
                         sb.append("    unknownContentTypeAction: ").append(toIndentedString(unknownContentTypeAction)).append("\n");
                         sb.append("    unknownHttpMethodAction: ").append(toIndentedString(unknownHttpMethodAction)).append("\n");
                         sb.append("    unknownPathAction: ").append(toIndentedString(unknownPathAction)).append("\n");

@@ -211,7 +211,7 @@ public class SystemConfiguration extends AviRestResource  {
      * Allow ntp authentication using legacy md5 or sha1 algorithms.
      * When enabled, configuring md5 or sha1 ntp keys is permitted but a warning event is generated in the controller ui.
      * When disabled (default), only sha256 or stronger is accepted and configuring md5 or sha1 results in an api error.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return allowLegacySha1NtpAuth
@@ -225,7 +225,7 @@ public class SystemConfiguration extends AviRestResource  {
      * Allow ntp authentication using legacy md5 or sha1 algorithms.
      * When enabled, configuring md5 or sha1 ntp keys is permitted but a warning event is generated in the controller ui.
      * When disabled (default), only sha256 or stronger is accepted and configuring md5 or sha1 results in an api error.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param allowLegacySha1NtpAuth set the allowLegacySha1NtpAuth.
