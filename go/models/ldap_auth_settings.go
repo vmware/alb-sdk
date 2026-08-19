@@ -14,7 +14,7 @@ type LdapAuthSettings struct {
 	// LDAP administrator credentials are used to search for users and group memberships. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BindAsAdministrator *bool `json:"bind_as_administrator,omitempty"`
 
-	// Client certificate for mutual TLS connection. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Client certificate for mutual TLS connection. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not supported on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientCertRef *string `json:"client_cert_ref,omitempty"`
 
 	// LDAP attribute that refers to user email. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -39,7 +39,7 @@ type LdapAuthSettings struct {
 	// LDAP full directory configuration with administrator credentials. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Settings *LdapDirectorySettings `json:"settings,omitempty"`
 
-	// Skip hostname verification against the LDAP server certificate. The certificate chain is still validated using pki_profile_uuid. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Skip hostname verification against the LDAP server certificate. The certificate chain is still validated using pki_profile_uuid. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not honored on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SkipHostnameVerification *bool `json:"skip_hostname_verification,omitempty"`
 
 	// LDAP anonymous bind configuration. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

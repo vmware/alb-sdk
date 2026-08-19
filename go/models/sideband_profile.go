@@ -11,6 +11,9 @@ type SidebandProfile struct {
 	// IP Address of the sideband server. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IP []*IPAddr `json:"ip,omitempty"`
 
+	// PKI profile used to verify the TLS certificate of the sideband server. Required when the sideband server presents a certificate signed by a private CA. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PkiProfileRef *string `json:"pki_profile_ref,omitempty"`
+
 	// Maximum size of the request body that will be sent on the sideband. Allowed values are 0-16384. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SidebandMaxRequestBodySize *int32 `json:"sideband_max_request_body_size,omitempty"`
 }

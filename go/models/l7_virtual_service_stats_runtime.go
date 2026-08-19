@@ -89,7 +89,7 @@ type L7VirtualServiceStatsRuntime struct {
 	// Number of HTTP/2 data frame floods detected. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Http2QueuedFramesFloodErrors *uint64 `json:"http2_queued_frames_flood_errors,omitempty"`
 
-	// Number of HTTP/2 refused frame floods detected. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of HTTP/2 refused frame floods detected. Field introduced in 30.1.2, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Http2RefusedFrameFloodErrors *uint64 `json:"http2_refused_frame_flood_errors,omitempty"`
 
 	// Number of HTTP/2 refused stream errors detected. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -98,7 +98,7 @@ type L7VirtualServiceStatsRuntime struct {
 	// Number of HTTP/2 requests handled. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Http2RequestsHandled *uint64 `json:"http2_requests_handled,omitempty"`
 
-	// Number of HTTP/2 reset frame floods detected. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of HTTP/2 reset frame floods detected. Field introduced in 30.1.2, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Http2ResetFrameFloodErrors *uint64 `json:"http2_reset_frame_flood_errors,omitempty"`
 
 	// Number of responses with a status code of 2XX (Success) received over HTTP/2. Field introduced in 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
