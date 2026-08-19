@@ -3165,8 +3165,8 @@
                     "type": "number",
                     "format": "double"
                 },
-                "sum_waap_violation_count": {
-                    "description": "Sum of WAAP violation count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "sum_waap_validation_fail_count": {
+                    "description": "Sum of WAAP validation failure count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },

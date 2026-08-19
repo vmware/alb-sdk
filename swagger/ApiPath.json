@@ -546,6 +546,77 @@
                     }
                 }
             }
+        },
+        "/apipath/{uuid}/labels/": {
+            "get": {
+                "tags": [
+                    "ApiPath"
+                ],
+                "description": "/apipath/{uuid}/labels/",
+                "operationId": "GET /apipath/{uuid}/labels/",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ApiPathLabelEntry"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -750,6 +821,39 @@
                 }
             }
         },
+        "ApiPathLabelEntry": {
+            "type": "object",
+            "properties": {
+                "apipolicy_uuid": {
+                    "description": "UUID of the ApiPolicy this entry is attributed to. Omitted only when no ApiPolicy references this ApiPath at all. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "This entry's own enabled toggle  the endpoint's own toggle when inherited is false, or the matched ApiPolicy container's toggle when inherited is true. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "http_method": {
+                    "description": "HTTP method of the endpoint this label applies to. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "inherited": {
+                    "description": "false when set directly on the endpoint, true when inherited from the parent ApiPolicy's type-based container. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "The label name. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Computed once per label name; every entry for the same label reports the identical status. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/LabelStatus"
+                },
+                "type": {
+                    "description": "System-defined or user-defined, from this label's own definition. Omitted when this label is not defined in any LabelProfile reachable from this ApiPath. Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
         "ApiRequestBodyDescription": {
             "type": "object",
             "description": "Specification of the expected request body format, accepted content types, associated schemas, and requirement status for an operation.",
@@ -913,6 +1017,19 @@
                     "description": "Ending HTTP response status code. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
+                }
+            }
+        },
+        "LabelStatus": {
+            "type": "object",
+            "properties": {
+                "reason": {
+                    "description": "Explains the INACTIVE state  what applying or enforcing this label is missing or disabled. Omitted for ACTIVE/UNUSED/DANGLING, which are self-explanatory. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Computed enforcement state for this label. Enum options - LABEL_ACTIVE, LABEL_INACTIVE, LABEL_UNUSED, LABEL_DANGLING. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
                 }
             }
         },
