@@ -2510,7 +2510,7 @@
                     "type": "string"
                 },
                 "health_monitor_info": {
-                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -2972,7 +2972,7 @@
                     "type": "string"
                 },
                 "health_monitor_info": {
-                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "replication_stats": {
@@ -3606,7 +3606,7 @@
             "type": "object",
             "properties": {
                 "health_monitor_info": {
-                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "site_info": {
