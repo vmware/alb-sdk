@@ -42,6 +42,9 @@ public class HTTPApplicationProfile  {
     @JsonProperty("client_max_request_size")
     private Integer clientMaxRequestSize = 48;
 
+    @JsonProperty("close_client_side_connection_on_error")
+    private Boolean closeClientSideConnectionOnError = false;
+
     @JsonProperty("close_server_side_connection_on_error")
     private Boolean closeServerSideConnectionOnError = false;
 
@@ -62,6 +65,9 @@ public class HTTPApplicationProfile  {
 
     @JsonProperty("disable_sni_hostname_check")
     private Boolean disableSniHostnameCheck = false;
+
+    @JsonProperty("enable_100_continue_upstream_peek")
+    private Boolean enable100ContinueUpstreamPeek = false;
 
     @JsonProperty("enable_chunk_merge")
     private Boolean enableChunkMerge = true;
@@ -378,6 +384,30 @@ public class HTTPApplicationProfile  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Close client-side connection when an error response is sent to the client while the client's request body has not been fully received.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return closeClientSideConnectionOnError
+     */
+    public Boolean getCloseClientSideConnectionOnError() {
+        return closeClientSideConnectionOnError;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Close client-side connection when an error response is sent to the client while the client's request body has not been fully received.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param closeClientSideConnectionOnError set the closeClientSideConnectionOnError.
+     */
+    public void setCloseClientSideConnectionOnError(Boolean  closeClientSideConnectionOnError) {
+        this.closeClientSideConnectionOnError = closeClientSideConnectionOnError;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Close server-side connection when an error response is received.
      * Field introduced in 30.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -550,6 +580,36 @@ public class HTTPApplicationProfile  {
      */
     public void setDisableSniHostnameCheck(Boolean  disableSniHostnameCheck) {
         this.disableSniHostnameCheck = disableSniHostnameCheck;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * While a 100-continue response has been sent to the client and its request body is still being uploaded, peek at the upstream response status line
+     * so a non-2xx (error or redirect) response is forwarded to the client immediately instead of waiting for the body upload to finish; a 2xx response
+     * is still deferred until the upload completes.
+     * Only applicable when respond_with_100_continue is enabled.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enable100ContinueUpstreamPeek
+     */
+    public Boolean getEnable100ContinueUpstreamPeek() {
+        return enable100ContinueUpstreamPeek;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * While a 100-continue response has been sent to the client and its request body is still being uploaded, peek at the upstream response status line
+     * so a non-2xx (error or redirect) response is forwarded to the client immediately instead of waiting for the body upload to finish; a 2xx response
+     * is still deferred until the upload completes.
+     * Only applicable when respond_with_100_continue is enabled.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enable100ContinueUpstreamPeek set the enable100ContinueUpstreamPeek.
+     */
+    public void setEnable100ContinueUpstreamPeek(Boolean  enable100ContinueUpstreamPeek) {
+        this.enable100ContinueUpstreamPeek = enable100ContinueUpstreamPeek;
     }
 
     /**
@@ -1714,7 +1774,9 @@ public class HTTPApplicationProfile  {
   Objects.equals(this.collectClientTlsFingerprint, objHTTPApplicationProfile.collectClientTlsFingerprint)&&
   Objects.equals(this.maxHeaderCount, objHTTPApplicationProfile.maxHeaderCount)&&
   Objects.equals(this.sessionConfig, objHTTPApplicationProfile.sessionConfig)&&
-  Objects.equals(this.closeServerSideConnectionOnError, objHTTPApplicationProfile.closeServerSideConnectionOnError);
+  Objects.equals(this.closeServerSideConnectionOnError, objHTTPApplicationProfile.closeServerSideConnectionOnError)&&
+  Objects.equals(this.closeClientSideConnectionOnError, objHTTPApplicationProfile.closeClientSideConnectionOnError)&&
+  Objects.equals(this.enable100ContinueUpstreamPeek, objHTTPApplicationProfile.enable100ContinueUpstreamPeek);
     }
 
     @Override
@@ -1728,6 +1790,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    clientMaxBodySize: ").append(toIndentedString(clientMaxBodySize)).append("\n");
                         sb.append("    clientMaxHeaderSize: ").append(toIndentedString(clientMaxHeaderSize)).append("\n");
                         sb.append("    clientMaxRequestSize: ").append(toIndentedString(clientMaxRequestSize)).append("\n");
+                        sb.append("    closeClientSideConnectionOnError: ").append(toIndentedString(closeClientSideConnectionOnError)).append("\n");
                         sb.append("    closeServerSideConnectionOnError: ").append(toIndentedString(closeServerSideConnectionOnError)).append("\n");
                         sb.append("    collectClientTlsFingerprint: ").append(toIndentedString(collectClientTlsFingerprint)).append("\n");
                         sb.append("    compressionProfile: ").append(toIndentedString(compressionProfile)).append("\n");
@@ -1735,6 +1798,7 @@ public class HTTPApplicationProfile  {
                         sb.append("    detectNtlmApp: ").append(toIndentedString(detectNtlmApp)).append("\n");
                         sb.append("    disableKeepalivePostsMsie6: ").append(toIndentedString(disableKeepalivePostsMsie6)).append("\n");
                         sb.append("    disableSniHostnameCheck: ").append(toIndentedString(disableSniHostnameCheck)).append("\n");
+                        sb.append("    enable100ContinueUpstreamPeek: ").append(toIndentedString(enable100ContinueUpstreamPeek)).append("\n");
                         sb.append("    enableChunkMerge: ").append(toIndentedString(enableChunkMerge)).append("\n");
                         sb.append("    enableFireAndForget: ").append(toIndentedString(enableFireAndForget)).append("\n");
                         sb.append("    enableRequestBodyBuffering: ").append(toIndentedString(enableRequestBodyBuffering)).append("\n");
