@@ -687,7 +687,7 @@ definitions:
                 description: "The GSLB service to which this member belongs. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             health_monitor_info:
-                description: "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field will provide information on origin(site name) of the health monitoring information. Field introduced in 22.1.5, 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -887,7 +887,7 @@ definitions:
             -   type
         properties:
             fallback_cname:
-                description: "Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1, 22.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Fallback CNAME to use in response to the client query when the GSLB service is DOWN. Field introduced in 30.2.1, 22.1.5, 30.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             fallback_ip:
                 description: "Fallback IP address to use in A response to the client query when the GSLB service is DOWN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

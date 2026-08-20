@@ -1684,6 +1684,50 @@
                 }
             }
         },
+        "PendingLicResInfo": {
+            "type": "object",
+            "properties": {
+                "consumer_uuid": {
+                    "description": "UUID of the consumer (VS) whose license reservation is currently in flight for this SE group. Valid only while source == SE_CREATE_SOURCE_CONSUMER. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "cookie": {
+                    "description": "Cookie of the in-flight license reservation for this SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "flavor": {
+                    "description": "CloudFlavor the license reservation was sized for, computed when it was fired. Non-vCenter clouds only. Re-checked against the current value before the deferred spawn runs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/CloudFlavor"
+                },
+                "memory": {
+                    "description": "Memory (MB) the license reservation was sized for, computed when it was fired. Re-checked against the current value before the deferred spawn runs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "skip_non_ha_hosts": {
+                    "description": "skip_non_ha_hosts, preserved across the license reservation window and re-applied when the deferred spawn runs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "source": {
+                    "description": "Source of the in-flight license reservation for this SE group  consumer-driven (VS) or SE-group-driven (buffer SE). Enum options - SE_CREATE_SOURCE_CONSUMER, SE_CREATE_SOURCE_SERVICEENGINEGROUP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "spawn_on_host_uuid": {
+                    "description": "Caller-requested host to force this SE onto, preserved across the license reservation window and re-applied when the deferred spawn runs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ticks": {
+                    "description": "Tick at which the in-flight license reservation for this SE group was fired. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint64"
+                },
+                "vcpus": {
+                    "description": "vCPU count the license reservation was sized for, computed when it was fired. Re-checked against the current value before the deferred spawn runs, since the SE group's sizing may have changed while the reservation was in flight. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
         "PlacementIneligibleReasonConsumers": {
             "type": "object",
             "properties": {
@@ -3850,6 +3894,10 @@
                         "type": "string"
                     }
                 },
+                "license_reservation_pending": {
+                    "description": "Set to true while an asynchronous ReserveLicense RPC is in flight for an SE create (VS-driven or buffer) in this SE group. Blocks further placement/spawn in the group until HandleLicenseReservationNotification clears it on the reservation response. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "license_stats": {
                     "description": "Licensed service cores stats. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeLicenseStats"
@@ -3858,15 +3906,29 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeVnicStats"
                 },
+                "next_license_reserve_ticks": {
+                    "description": "Next tick at which placement may be retried for this SE group after a license reservation failure. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint64"
+                },
                 "next_se_spawn_ticks": {
                     "description": "Next tick for SE spawn retry. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
+                "num_license_reserve_fail": {
+                    "description": "Number of consecutive times a license reservation for this SE group has failed with insufficient license or quota limit exceeded. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
                 "num_se_spawn_fail": {
                     "description": "Number of SE spawn fails. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
+                },
+                "pending_lic_res_info": {
+                    "description": "In-flight license reservation information for this SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/PendingLicResInfo"
                 },
                 "query_host_cookie": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -3880,14 +3942,6 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
-                },
-                "reservation_cookie": {
-                    "description": "Opaque cookie used to correlate the ReserveLicense RPC response back to this SE group's pending buffer SE spawn. Set alongside reservation_in_progress. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "reservation_in_progress": {
-                    "description": "Set to true while an asynchronous ReserveLicense RPC is in flight for buffer SE spawning in this SE group. Cleared by HandleLicenseReservationNotification when the reservation response arrives, allowing the next placement cycle to proceed with the actual SE spawn. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "up_se": {
                     "description": " It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
