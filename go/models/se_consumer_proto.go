@@ -209,9 +209,6 @@ type SeConsumerProto struct {
 	// Required: true
 	ResTotal *VsResProfile `json:"res_total"`
 
-	// Set to true while an asynchronous ReserveLicense RPC is in flight for this consumer. Cleared by HandleLicenseReservationNotification when the reservation response arrives, allowing the next placement cycle to proceed with the actual SE spawn. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ReservationInProgress *bool `json:"reservation_in_progress,omitempty"`
-
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResourcesConsumed []*SeResourceConsumedProto `json:"resources_consumed,omitempty"`
 
