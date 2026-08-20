@@ -893,7 +893,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time in minutes to wait between consecutive cloud discovery cycles.
      * Allowed values are 1-1440.
-     * Field introduced in 22.1.5, 30.2.1.
+     * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -907,7 +907,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time in minutes to wait between consecutive cloud discovery cycles.
      * Allowed values are 1-1440.
-     * Field introduced in 22.1.5, 30.2.1.
+     * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -945,7 +945,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Time in minutes to wait between consecutive cloud reconcile cycles.
      * Allowed values are 1-1440.
-     * Field introduced in 22.1.5, 30.2.1.
+     * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -959,7 +959,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Time in minutes to wait between consecutive cloud reconcile cycles.
      * Allowed values are 1-1440.
-     * Field introduced in 22.1.5, 30.2.1.
+     * Field introduced in 22.1.5, 30.1.2, 30.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
