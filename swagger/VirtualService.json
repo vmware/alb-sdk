@@ -6291,13 +6291,13 @@
                 }
             }
         },
-        "/networksecuritypolicy": {
+        "/httppolicyset": {
             "get": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy",
-                "operationId": "GET /networksecuritypolicy",
+                "description": "/httppolicyset",
+                "operationId": "GET /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -6388,7 +6388,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicyApiResponse"
+                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
                         }
                     },
                     "401": {
@@ -6398,10 +6398,10 @@
             },
             "post": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy",
-                "operationId": "POST /networksecuritypolicy",
+                "description": "/httppolicyset",
+                "operationId": "POST /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -6440,10 +6440,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     }
                 ],
@@ -6456,7 +6456,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6465,13 +6465,13 @@
                 }
             }
         },
-        "/networksecuritypolicy/{uuid}": {
+        "/httppolicyset/{uuid}": {
             "get": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "GET /networksecuritypolicy/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "GET /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6557,7 +6557,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6570,10 +6570,10 @@
             },
             "put": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "PUT /networksecuritypolicy/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PUT /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6619,10 +6619,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -6642,7 +6642,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6655,10 +6655,10 @@
             },
             "patch": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "PATCH /networksecuritypolicy/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PATCH /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6704,10 +6704,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -6727,7 +6727,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -6740,10 +6740,10 @@
             },
             "delete": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "HTTPPolicySet"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "DELETE /networksecuritypolicy/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "DELETE /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7333,13 +7333,13 @@
                 }
             }
         },
-        "/httppolicyset": {
+        "/networksecuritypolicy": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "GET /httppolicyset",
+                "description": "/networksecuritypolicy",
+                "operationId": "GET /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -7430,7 +7430,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
+                            "$ref": "#/definitions/NetworkSecurityPolicyApiResponse"
                         }
                     },
                     "401": {
@@ -7440,10 +7440,10 @@
             },
             "post": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "POST /httppolicyset",
+                "description": "/networksecuritypolicy",
+                "operationId": "POST /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -7482,10 +7482,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     }
                 ],
@@ -7498,7 +7498,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7507,13 +7507,13 @@
                 }
             }
         },
-        "/httppolicyset/{uuid}": {
+        "/networksecuritypolicy/{uuid}": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "GET /httppolicyset/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "GET /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7599,7 +7599,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7612,10 +7612,10 @@
             },
             "put": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PUT /httppolicyset/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PUT /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7661,10 +7661,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     {
@@ -7684,7 +7684,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7697,10 +7697,10 @@
             },
             "patch": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PATCH /httppolicyset/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PATCH /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7746,10 +7746,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     {
@@ -7769,7 +7769,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7782,10 +7782,10 @@
             },
             "delete": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "DELETE /httppolicyset/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "DELETE /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],

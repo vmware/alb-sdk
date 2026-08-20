@@ -914,7 +914,7 @@
                     "format": "uint32"
                 },
                 "cloud_discovery_interval": {
-                    "description": "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
@@ -925,7 +925,7 @@
                     "default": true
                 },
                 "cloud_reconcile_interval": {
-                    "description": "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
