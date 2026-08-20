@@ -34,7 +34,7 @@ public class IpAdvertisementProfile  {
      * Default periodicity for periodic ip advertisement (gratarp/na) in minutes.
      * Used when a per-type periodicity is not specified.
      * Allowed values are 1-30.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -49,7 +49,7 @@ public class IpAdvertisementProfile  {
      * Default periodicity for periodic ip advertisement (gratarp/na) in minutes.
      * Used when a per-type periodicity is not specified.
      * Allowed values are 1-30.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -63,7 +63,7 @@ public class IpAdvertisementProfile  {
      * List of ip address types for which periodic ip advertisement (gratarp/na) is enabled.
      * Supported ip_type values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
      * Applied uniformly to all vrfs in this serviceenginegroup.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipTypes
@@ -77,7 +77,7 @@ public class IpAdvertisementProfile  {
      * List of ip address types for which periodic ip advertisement (gratarp/na) is enabled.
      * Supported ip_type values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
      * Applied uniformly to all vrfs in this serviceenginegroup.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipTypes
@@ -91,7 +91,7 @@ public class IpAdvertisementProfile  {
      * List of ip address types for which periodic ip advertisement (gratarp/na) is enabled.
      * Supported ip_type values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
      * Applied uniformly to all vrfs in this serviceenginegroup.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipTypes

@@ -34,7 +34,7 @@ public class IpAddrTypeConfig  {
      * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
      * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
      * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipType
@@ -48,7 +48,7 @@ public class IpAddrTypeConfig  {
      * Ip address type for which periodic ip advertisement (gratarp/na) is enabled.
      * Supported values are vip_ip, snat_ip, floating_intf_ip, and primary_intf_ip.
      * Enum options - NAT_IP, VIP_IP, SNAT_IP, FLOATING_INTF_IP, PRIMARY_INTF_IP.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipType set the ipType.
@@ -62,7 +62,7 @@ public class IpAddrTypeConfig  {
      * Periodicity override for this ip type in minutes.
      * If not set, uses ip_advertisement_profile.default_periodicity.
      * Allowed values are 1-30.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -77,7 +77,7 @@ public class IpAddrTypeConfig  {
      * Periodicity override for this ip type in minutes.
      * If not set, uses ip_advertisement_profile.default_periodicity.
      * Allowed values are 1-30.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

@@ -306,8 +306,8 @@ public class VserverL7MetricsObj  {
     @JsonProperty("avg_waap_shadow_api_latency")
     private Float avgWaapShadowApiLatency;
 
-    @JsonProperty("avg_waap_violation_count")
-    private Float avgWaapViolationCount;
+    @JsonProperty("avg_waap_validation_fail_count")
+    private Float avgWaapValidationFailCount;
 
     @JsonProperty("avg_waap_zombie_api_count")
     private Float avgWaapZombieApiCount;
@@ -636,8 +636,8 @@ public class VserverL7MetricsObj  {
     @JsonProperty("sum_waap_shadow_api_latency")
     private Float sumWaapShadowApiLatency;
 
-    @JsonProperty("sum_waap_violation_count")
-    private Float sumWaapViolationCount;
+    @JsonProperty("sum_waap_validation_fail_count")
+    private Float sumWaapValidationFailCount;
 
     @JsonProperty("sum_waap_zombie_api_count")
     private Float sumWaapZombieApiCount;
@@ -2887,26 +2887,26 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Average waap violations across all endpoints for this virtualservice.
+     * Average waap validation failures across all endpoints for this virtualservice.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return avgWaapViolationCount
+     * @return avgWaapValidationFailCount
      */
-    public Float getAvgWaapViolationCount() {
-        return avgWaapViolationCount;
+    public Float getAvgWaapValidationFailCount() {
+        return avgWaapValidationFailCount;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Average waap violations across all endpoints for this virtualservice.
+     * Average waap validation failures across all endpoints for this virtualservice.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param avgWaapViolationCount set the avgWaapViolationCount.
+     * @param avgWaapValidationFailCount set the avgWaapValidationFailCount.
      */
-    public void setAvgWaapViolationCount(Float  avgWaapViolationCount) {
-        this.avgWaapViolationCount = avgWaapViolationCount;
+    public void setAvgWaapValidationFailCount(Float  avgWaapValidationFailCount) {
+        this.avgWaapValidationFailCount = avgWaapValidationFailCount;
     }
 
     /**
@@ -5427,26 +5427,26 @@ public class VserverL7MetricsObj  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Total number of waap violations across all endpoints for this virtualservice.
+     * Total number of waap validation failures across all endpoints for this virtualservice.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return sumWaapViolationCount
+     * @return sumWaapValidationFailCount
      */
-    public Float getSumWaapViolationCount() {
-        return sumWaapViolationCount;
+    public Float getSumWaapValidationFailCount() {
+        return sumWaapValidationFailCount;
     }
 
     /**
      * This is the setter method to the attribute.
-     * Total number of waap violations across all endpoints for this virtualservice.
+     * Total number of waap validation failures across all endpoints for this virtualservice.
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param sumWaapViolationCount set the sumWaapViolationCount.
+     * @param sumWaapValidationFailCount set the sumWaapValidationFailCount.
      */
-    public void setSumWaapViolationCount(Float  sumWaapViolationCount) {
-        this.sumWaapViolationCount = sumWaapViolationCount;
+    public void setSumWaapValidationFailCount(Float  sumWaapValidationFailCount) {
+        this.sumWaapValidationFailCount = sumWaapValidationFailCount;
     }
 
     /**
@@ -6277,8 +6277,8 @@ public class VserverL7MetricsObj  {
   Objects.equals(this.avgResponses2XxNonapi, objVserverL7MetricsObj.avgResponses2XxNonapi)&&
   Objects.equals(this.sumWaapHits, objVserverL7MetricsObj.sumWaapHits)&&
   Objects.equals(this.avgWaapHits, objVserverL7MetricsObj.avgWaapHits)&&
-  Objects.equals(this.sumWaapViolationCount, objVserverL7MetricsObj.sumWaapViolationCount)&&
-  Objects.equals(this.avgWaapViolationCount, objVserverL7MetricsObj.avgWaapViolationCount)&&
+  Objects.equals(this.sumWaapValidationFailCount, objVserverL7MetricsObj.sumWaapValidationFailCount)&&
+  Objects.equals(this.avgWaapValidationFailCount, objVserverL7MetricsObj.avgWaapValidationFailCount)&&
   Objects.equals(this.sumWaapActiveApiCount, objVserverL7MetricsObj.sumWaapActiveApiCount)&&
   Objects.equals(this.avgWaapActiveApiCount, objVserverL7MetricsObj.avgWaapActiveApiCount)&&
   Objects.equals(this.sumWaapShadowApiCount, objVserverL7MetricsObj.sumWaapShadowApiCount)&&
@@ -6414,7 +6414,7 @@ public class VserverL7MetricsObj  {
                         sb.append("    avgWaapResponses5Xx: ").append(toIndentedString(avgWaapResponses5Xx)).append("\n");
                         sb.append("    avgWaapShadowApiCount: ").append(toIndentedString(avgWaapShadowApiCount)).append("\n");
                         sb.append("    avgWaapShadowApiLatency: ").append(toIndentedString(avgWaapShadowApiLatency)).append("\n");
-                        sb.append("    avgWaapViolationCount: ").append(toIndentedString(avgWaapViolationCount)).append("\n");
+                        sb.append("    avgWaapValidationFailCount: ").append(toIndentedString(avgWaapValidationFailCount)).append("\n");
                         sb.append("    avgWaapZombieApiCount: ").append(toIndentedString(avgWaapZombieApiCount)).append("\n");
                         sb.append("    avgWafAttacks: ").append(toIndentedString(avgWafAttacks)).append("\n");
                         sb.append("    avgWafDisabled: ").append(toIndentedString(avgWafDisabled)).append("\n");
@@ -6524,7 +6524,7 @@ public class VserverL7MetricsObj  {
                         sb.append("    sumWaapResponses5Xx: ").append(toIndentedString(sumWaapResponses5Xx)).append("\n");
                         sb.append("    sumWaapShadowApiCount: ").append(toIndentedString(sumWaapShadowApiCount)).append("\n");
                         sb.append("    sumWaapShadowApiLatency: ").append(toIndentedString(sumWaapShadowApiLatency)).append("\n");
-                        sb.append("    sumWaapViolationCount: ").append(toIndentedString(sumWaapViolationCount)).append("\n");
+                        sb.append("    sumWaapValidationFailCount: ").append(toIndentedString(sumWaapValidationFailCount)).append("\n");
                         sb.append("    sumWaapZombieApiCount: ").append(toIndentedString(sumWaapZombieApiCount)).append("\n");
                         sb.append("    sumWafAttacks: ").append(toIndentedString(sumWafAttacks)).append("\n");
                         sb.append("    sumWafDisabled: ").append(toIndentedString(sumWafDisabled)).append("\n");

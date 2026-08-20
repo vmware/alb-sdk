@@ -598,7 +598,6 @@ public class AviCredentials
                 + ", csrftoken=***" + ", token=***" + ", verify=" + verify
                 + ", retryConxnErrors=" + retryConxnErrors + ", numApiRetries=" + numApiRetries
 				+ ", retryWaitTime=" + retryWaitTime + ", lazyAuthentication=" + lazyAuthentication
-                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext
-                + ", sslCertificate=***" + ", sslPrivateKey=***]";
+                + ", isUnauthenticatedApi=" + isUnAuthenticatedApi + ", sslContext=" + sslContext + "]";
 	}
 }

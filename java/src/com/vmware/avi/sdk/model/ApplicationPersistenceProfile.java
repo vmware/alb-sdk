@@ -320,7 +320,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * Interval in minutes at which refreshed persistence entries are synced to peer ses.
      * If not set, it willsync at an interval of timeout/2.
      * Allowed values are 1-30.
-     * Field introduced in 30.2.4.
+     * Field introduced in 30.2.4, 31.1.2, 31.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -335,7 +335,7 @@ public class ApplicationPersistenceProfile extends AviRestResource  {
      * Interval in minutes at which refreshed persistence entries are synced to peer ses.
      * If not set, it willsync at an interval of timeout/2.
      * Allowed values are 1-30.
-     * Field introduced in 30.2.4.
+     * Field introduced in 30.2.4, 31.1.2, 31.2.1.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
