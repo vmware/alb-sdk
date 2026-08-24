@@ -30,7 +30,7 @@ public class WaapModeConfig  {
      * This is the getter method this will return the attribute value.
      * Waap sizing tier for this se group.
      * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seSize
@@ -43,7 +43,7 @@ public class WaapModeConfig  {
      * This is the setter method to the attribute.
      * Waap sizing tier for this se group.
      * Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seSize set the seSize.

@@ -35,7 +35,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Kubernetes namespace where ako/amko is deployed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return namespace
@@ -47,7 +47,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the setter method to the attribute.
      * Kubernetes namespace where ako/amko is deployed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param namespace set the namespace.
@@ -59,7 +59,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Pod name for identification.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return podName
@@ -71,7 +71,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the setter method to the attribute.
      * Pod name for identification.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param podName set the podName.
@@ -83,7 +83,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of replicas in the deployment.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return replicaCount
@@ -95,7 +95,7 @@ public class AkoAmkoClusterDeploymentInfo  {
     /**
      * This is the setter method to the attribute.
      * Number of replicas in the deployment.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param replicaCount set the replicaCount.

@@ -105,7 +105,7 @@ public class CRL  {
      * Each element corresponds to one pem crl block in the file in order.
      * A file concatenating crls from multiple cas has one entry per ca.
      * Not settable by api clients.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return entries
      */
@@ -119,7 +119,7 @@ public class CRL  {
      * Each element corresponds to one pem crl block in the file in order.
      * A file concatenating crls from multiple cas has one entry per ca.
      * Not settable by api clients.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return entries
      */
@@ -133,7 +133,7 @@ public class CRL  {
      * Each element corresponds to one pem crl block in the file in order.
      * A file concatenating crls from multiple cas has one entry per ca.
      * Not settable by api clients.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return entries
      */

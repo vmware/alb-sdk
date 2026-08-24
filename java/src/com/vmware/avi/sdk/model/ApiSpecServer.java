@@ -32,7 +32,7 @@ public class ApiSpecServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Description of this server entry.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
@@ -44,7 +44,7 @@ public class ApiSpecServer  {
     /**
      * This is the setter method to the attribute.
      * Description of this server entry.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
@@ -59,7 +59,7 @@ public class ApiSpecServer  {
      * 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g.
      * '/v1', '/').
      * When populated from an openapi spec, server url template variables are resolved to concrete urls at import time before being stored here.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return url
@@ -75,7 +75,7 @@ public class ApiSpecServer  {
     * 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g.
     * '/v1', '/').
     * When populated from an openapi spec, server url template variables are resolved to concrete urls at import time before being stored here.
-    * Field introduced in 32.2.1.
+    * Field introduced in 32.1.4.
     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
     * Default value when not specified in API or module is interpreted by Avi Controller as null.
     * @return url

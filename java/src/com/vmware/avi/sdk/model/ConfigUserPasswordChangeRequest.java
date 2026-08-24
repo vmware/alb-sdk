@@ -73,7 +73,7 @@ public class ConfigUserPasswordChangeRequest  {
      * This is the getter method this will return the attribute value.
      * Type of client used to initiate the operation, e.g.
      * Ui, cli, api.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientType
@@ -86,7 +86,7 @@ public class ConfigUserPasswordChangeRequest  {
      * This is the setter method to the attribute.
      * Type of client used to initiate the operation, e.g.
      * Ui, cli, api.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientType set the clientType.
@@ -98,7 +98,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the getter method this will return the attribute value.
      * Error message if the operation failed.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorMessage
@@ -110,7 +110,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the setter method to the attribute.
      * Error message if the operation failed.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorMessage set the errorMessage.
@@ -122,7 +122,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the getter method this will return the attribute value.
      * Api request path that triggered the operation.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestPath
@@ -134,7 +134,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the setter method to the attribute.
      * Api request path that triggered the operation.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestPath set the requestPath.
@@ -146,7 +146,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the getter method this will return the attribute value.
      * Authenticated principal (actor) that performed the operation, when different from the target user.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return requestUser
@@ -158,7 +158,7 @@ public class ConfigUserPasswordChangeRequest  {
     /**
      * This is the setter method to the attribute.
      * Authenticated principal (actor) that performed the operation, when different from the target user.
-     * Field introduced in 32.2.1,32.1.3.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param requestUser set the requestUser.

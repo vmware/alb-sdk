@@ -1459,7 +1459,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
      * Allowed values are 1-10000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @return eventManagerApiRateLimitPerMin
@@ -1472,7 +1472,7 @@ public class ControllerProperties extends AviRestResource  {
      * This is the setter method to the attribute.
      * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
      * Allowed values are 1-10000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
      * @param eventManagerApiRateLimitPerMin set the eventManagerApiRateLimitPerMin.
@@ -1835,7 +1835,7 @@ public class ControllerProperties extends AviRestResource  {
      * This cache stores country code lookups for ip addresses to reduce grpc calls to the ipgls service.
      * Set to 0 to disable caching.
      * Allowed values are 0-1000000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @return ipglsClientCacheSize
@@ -1850,7 +1850,7 @@ public class ControllerProperties extends AviRestResource  {
      * This cache stores country code lookups for ip addresses to reduce grpc calls to the ipgls service.
      * Set to 0 to disable caching.
      * Allowed values are 0-1000000.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10000.
      * @param ipglsClientCacheSize set the ipglsClientCacheSize.
@@ -1866,7 +1866,7 @@ public class ControllerProperties extends AviRestResource  {
      * Lower values provide fresher data but increase load on ipgls service.
      * Higher values reduce load but may serve stale geolocation data.
      * Allowed values are 1-1440.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -1883,7 +1883,7 @@ public class ControllerProperties extends AviRestResource  {
      * Lower values provide fresher data but increase load on ipgls service.
      * Higher values reduce load but may serve stale geolocation data.
      * Allowed values are 1-1440.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -2387,7 +2387,7 @@ public class ControllerProperties extends AviRestResource  {
      * Promoted fields are indexed in opensearch and included in default api responses.
      * Supports dot-notation for nested fields (e.g., 'waf_log.status').
      * Changes require log subsystem restart to take effect.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return promotedLogFields
@@ -2402,7 +2402,7 @@ public class ControllerProperties extends AviRestResource  {
      * Promoted fields are indexed in opensearch and included in default api responses.
      * Supports dot-notation for nested fields (e.g., 'waf_log.status').
      * Changes require log subsystem restart to take effect.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param promotedLogFields set the promotedLogFields.

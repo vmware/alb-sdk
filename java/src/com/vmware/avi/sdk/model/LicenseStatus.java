@@ -149,7 +149,7 @@ public class LicenseStatus extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Timestamp of last successful license report to ssp.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return sspLicenseReportedAt
      */
@@ -160,7 +160,7 @@ public class LicenseStatus extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Timestamp of last successful license report to ssp.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param sspLicenseReportedAt set the sspLicenseReportedAt.
      */
