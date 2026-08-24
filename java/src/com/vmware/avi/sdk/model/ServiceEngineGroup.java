@@ -4242,7 +4242,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Prevents streaming to stale ips when dns records change.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 60-86400.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -4258,7 +4258,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Prevents streaming to stale ips when dns records change.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 60-86400.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 900.
@@ -4275,7 +4275,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * before time.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 100-100000.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @return logAgentUdpFqdnResolveLogCount
@@ -4291,7 +4291,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * before time.
      * Only applies when the streaming endpoint is configured as an fqdn, not a literal ip.
      * Allowed values are 100-100000.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5000.
      * @param logAgentUdpFqdnResolveLogCount set the logAgentUdpFqdnResolveLogCount.
@@ -4404,7 +4404,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tls configuration for log streaming connections from this service engine group.
      * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return logStreamingTlsConfig
@@ -4417,7 +4417,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tls configuration for log streaming connections from this service engine group.
      * Effective only for log_streaming_protocol_tls and log_streaming_protocol_syslog_over_tls.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param logStreamingTlsConfig set the logStreamingTlsConfig.
@@ -7811,7 +7811,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * mode.
      * This field cannot change after creation.
      * Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEG_MODE_NORMAL".
      * @return segMode
@@ -7827,7 +7827,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * mode.
      * This field cannot change after creation.
      * Enum options - SEG_MODE_NORMAL, SEG_MODE_WAAP.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SEG_MODE_NORMAL".
      * @param segMode set the segMode.
@@ -8710,7 +8710,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Interval in seconds to poll vmotion notifications.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is seconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -8723,7 +8723,7 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Interval in seconds to poll vmotion notifications.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is seconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
@@ -9225,7 +9225,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configuration for api protection (waap) mode.
      * Required when seg_mode is seg_mode_waap.
      * Whether this field is set or unset cannot change after creation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return waapModeConfig
@@ -9239,7 +9239,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * Configuration for api protection (waap) mode.
      * Required when seg_mode is seg_mode_waap.
      * Whether this field is set or unset cannot change after creation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param waapModeConfig set the waapModeConfig.

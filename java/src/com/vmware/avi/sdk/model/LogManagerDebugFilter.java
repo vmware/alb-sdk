@@ -248,7 +248,7 @@ public class LogManagerDebugFilter  {
      * This buffer accounts for cases where short ip addresses are replaced with longer ip group names during batch processing.
      * Default is 5%.
      * Allowed values are 0-20.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @return bulkPayloadBufferPercent
@@ -263,7 +263,7 @@ public class LogManagerDebugFilter  {
      * This buffer accounts for cases where short ip addresses are replaced with longer ip group names during batch processing.
      * Default is 5%.
      * Allowed values are 0-20.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 5.
      * @param bulkPayloadBufferPercent set the bulkPayloadBufferPercent.

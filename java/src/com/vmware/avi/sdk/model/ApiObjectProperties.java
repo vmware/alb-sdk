@@ -46,7 +46,7 @@ public class ApiObjectProperties  {
      * Access mode for this property.
      * Determines whether the property is read-write, read-only, or write-only.
      * Enum options - API_PROPERTY_ACCESS_READ_WRITE, API_PROPERTY_ACCESS_READ_ONLY, API_PROPERTY_ACCESS_WRITE_ONLY.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_PROPERTY_ACCESS_READ_WRITE".
      * @return accessMode
@@ -60,7 +60,7 @@ public class ApiObjectProperties  {
      * Access mode for this property.
      * Determines whether the property is read-write, read-only, or write-only.
      * Enum options - API_PROPERTY_ACCESS_READ_WRITE, API_PROPERTY_ACCESS_READ_ONLY, API_PROPERTY_ACCESS_WRITE_ONLY.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_PROPERTY_ACCESS_READ_WRITE".
      * @param accessMode set the accessMode.
@@ -73,7 +73,7 @@ public class ApiObjectProperties  {
      * This is the getter method this will return the attribute value.
      * Marks this property as deprecated.
      * Requests containing this property are treated as a schema violation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return deprecated
@@ -86,7 +86,7 @@ public class ApiObjectProperties  {
      * This is the setter method to the attribute.
      * Marks this property as deprecated.
      * Requests containing this property are treated as a schema violation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param deprecated set the deprecated.
@@ -98,7 +98,7 @@ public class ApiObjectProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Property name.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -110,7 +110,7 @@ public class ApiObjectProperties  {
     /**
      * This is the setter method to the attribute.
      * Property name.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
@@ -122,7 +122,7 @@ public class ApiObjectProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * When true, this property accepts a null value in addition to its declared type.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nullable
@@ -134,7 +134,7 @@ public class ApiObjectProperties  {
     /**
      * This is the setter method to the attribute.
      * When true, this property accepts a null value in addition to its declared type.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nullable set the nullable.
@@ -147,7 +147,7 @@ public class ApiObjectProperties  {
      * This is the getter method this will return the attribute value.
      * Marks this property as required within its parent object schema.
      * A request body object missing this property is treated as a violation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return required
@@ -160,7 +160,7 @@ public class ApiObjectProperties  {
      * This is the setter method to the attribute.
      * Marks this property as required within its parent object schema.
      * A request body object missing this property is treated as a violation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param required set the required.
@@ -172,7 +172,7 @@ public class ApiObjectProperties  {
     /**
      * This is the getter method this will return the attribute value.
      * Schema description for this property, including type and validation rules.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return schema
@@ -184,7 +184,7 @@ public class ApiObjectProperties  {
     /**
      * This is the setter method to the attribute.
      * Schema description for this property, including type and validation rules.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param schema set the schema.

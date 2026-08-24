@@ -37,7 +37,7 @@ public class ApiPolicyLabelActionMapping  {
      * Each entry turns off an entire validation check category for requests carrying this label.
      * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
      * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 16 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -53,7 +53,7 @@ public class ApiPolicyLabelActionMapping  {
      * Each entry turns off an entire validation check category for requests carrying this label.
      * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
      * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 16 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -69,7 +69,7 @@ public class ApiPolicyLabelActionMapping  {
      * Each entry turns off an entire validation check category for requests carrying this label.
      * Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK,
      * API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 16 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -86,7 +86,7 @@ public class ApiPolicyLabelActionMapping  {
     /**
      * This is the getter method this will return the attribute value.
      * Enables this label-to-action mapping.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
@@ -98,7 +98,7 @@ public class ApiPolicyLabelActionMapping  {
     /**
      * This is the setter method to the attribute.
      * Enables this label-to-action mapping.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
@@ -110,7 +110,7 @@ public class ApiPolicyLabelActionMapping  {
     /**
      * This is the getter method this will return the attribute value.
      * The name of the label.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return label
@@ -122,7 +122,7 @@ public class ApiPolicyLabelActionMapping  {
     /**
      * This is the setter method to the attribute.
      * The name of the label.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param label set the label.

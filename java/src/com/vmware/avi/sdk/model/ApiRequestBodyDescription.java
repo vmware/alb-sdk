@@ -41,7 +41,7 @@ public class ApiRequestBodyDescription  {
     /**
      * This is the getter method this will return the attribute value.
      * Description of the request body from the openapi specification.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
@@ -53,7 +53,7 @@ public class ApiRequestBodyDescription  {
     /**
      * This is the setter method to the attribute.
      * Description of the request body from the openapi specification.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
@@ -67,7 +67,7 @@ public class ApiRequestBodyDescription  {
      * Action on request body schema validation failures.
      * Overrides the policy-level failed_validation_request_body_parameter_action when not inherit.
      * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
      * @return failedValidationRequestBodyAction
@@ -81,7 +81,7 @@ public class ApiRequestBodyDescription  {
      * Action on request body schema validation failures.
      * Overrides the policy-level failed_validation_request_body_parameter_action when not inherit.
      * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
      * @param failedValidationRequestBodyAction set the failedValidationRequestBodyAction.
@@ -92,7 +92,7 @@ public class ApiRequestBodyDescription  {
     /**
      * This is the getter method this will return the attribute value.
      * Mapping of the content type to the request body schema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -105,7 +105,7 @@ public class ApiRequestBodyDescription  {
     /**
      * This is the setter method. this will set the mappings
      * Mapping of the content type to the request body schema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -118,7 +118,7 @@ public class ApiRequestBodyDescription  {
     /**
      * This is the setter method this will set the mappings
      * Mapping of the content type to the request body schema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 128 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -136,7 +136,7 @@ public class ApiRequestBodyDescription  {
      * This is the getter method this will return the attribute value.
      * Marks the request body as required.
      * A missing body is treated as a violation; enforcement depends on the configured body validation actions.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return required
@@ -149,7 +149,7 @@ public class ApiRequestBodyDescription  {
      * This is the setter method to the attribute.
      * Marks the request body as required.
      * A missing body is treated as a violation; enforcement depends on the configured body validation actions.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param required set the required.
@@ -162,7 +162,7 @@ public class ApiRequestBodyDescription  {
      * This is the getter method this will return the attribute value.
      * Action to take when the request body's content type is not defined for this endpoint.
      * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
      * @return unknownContentTypeAction
@@ -175,7 +175,7 @@ public class ApiRequestBodyDescription  {
      * This is the setter method to the attribute.
      * Action to take when the request body's content type is not defined for this endpoint.
      * Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_ACTION_INHERIT_FROM_API_POLICY".
      * @param unknownContentTypeAction set the unknownContentTypeAction.

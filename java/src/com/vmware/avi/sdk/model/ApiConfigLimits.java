@@ -38,7 +38,7 @@ public class ApiConfigLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of api path definitions (unique url path patterns) that can be configured for a single api policy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numApiPathsPerPolicy
@@ -50,7 +50,7 @@ public class ApiConfigLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of api path definitions (unique url path patterns) that can be configured for a single api policy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numApiPathsPerPolicy set the numApiPathsPerPolicy.
@@ -62,7 +62,7 @@ public class ApiConfigLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of api schema objects that can be associated with a single api policy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numApiSchemasPerPolicy
@@ -74,7 +74,7 @@ public class ApiConfigLimits  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of api schema objects that can be associated with a single api policy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numApiSchemasPerPolicy set the numApiSchemasPerPolicy.
@@ -87,7 +87,7 @@ public class ApiConfigLimits  {
      * This is the getter method this will return the attribute value.
      * Maximum total number of api endpoints allowed across the system.
      * Each apipath can have up to 7 apiendpoints.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numApis
@@ -100,7 +100,7 @@ public class ApiConfigLimits  {
      * This is the setter method to the attribute.
      * Maximum total number of api endpoints allowed across the system.
      * Each apipath can have up to 7 apiendpoints.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numApis set the numApis.
@@ -114,7 +114,7 @@ public class ApiConfigLimits  {
      * Maximum allowed nesting depth of json schema definitions within an api policy.
      * Schema structures that exceed this depth will be rejected at config time.
      * In the datapath, json payloads with greater nesting depth will not be parsed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return numSchemaNesting
@@ -128,7 +128,7 @@ public class ApiConfigLimits  {
      * Maximum allowed nesting depth of json schema definitions within an api policy.
      * Schema structures that exceed this depth will be rejected at config time.
      * In the datapath, json payloads with greater nesting depth will not be parsed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param numSchemaNesting set the numSchemaNesting.

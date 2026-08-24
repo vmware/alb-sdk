@@ -35,7 +35,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Api configuration limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return configLimits
@@ -47,7 +47,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the setter method to the attribute.
      * Api configuration limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param configLimits set the configLimits.
@@ -59,7 +59,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Api learning limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return learningLimits
@@ -71,7 +71,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the setter method to the attribute.
      * Api learning limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param learningLimits set the learningLimits.
@@ -83,7 +83,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the getter method this will return the attribute value.
      * Api metrics limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return metricsLimits
@@ -95,7 +95,7 @@ public class ControllerSizingApiLimits  {
     /**
      * This is the setter method to the attribute.
      * Api metrics limits for this controller sizing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param metricsLimits set the metricsLimits.

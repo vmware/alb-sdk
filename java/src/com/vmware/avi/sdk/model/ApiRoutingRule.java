@@ -32,7 +32,7 @@ public class ApiRoutingRule  {
     /**
      * This is the getter method this will return the attribute value.
      * Match criteria containing only header matches for routing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return matches
@@ -44,7 +44,7 @@ public class ApiRoutingRule  {
     /**
      * This is the setter method to the attribute.
      * Match criteria containing only header matches for routing.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param matches set the matches.
@@ -57,7 +57,7 @@ public class ApiRoutingRule  {
      * This is the getter method this will return the attribute value.
      * Name for the routing rule.
      * Must be unique within api_routing_info.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -70,7 +70,7 @@ public class ApiRoutingRule  {
      * This is the setter method to the attribute.
      * Name for the routing rule.
      * Must be unique within api_routing_info.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.

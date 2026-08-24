@@ -2506,7 +2506,7 @@ public class AnalyticsProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Penalty points per disabled orphan/zombie classification in waap.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.0f.
      * @return waapClassificationDisabledPenalty
@@ -2518,7 +2518,7 @@ public class AnalyticsProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Penalty points per disabled orphan/zombie classification in waap.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 50.0f.
      * @param waapClassificationDisabledPenalty set the waapClassificationDisabledPenalty.

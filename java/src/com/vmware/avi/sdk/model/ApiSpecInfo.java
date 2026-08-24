@@ -50,7 +50,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of schemas defined in the components/schemas section of the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return componentSchemaCount
      */
@@ -61,7 +61,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Number of schemas defined in the components/schemas section of the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param componentSchemaCount set the componentSchemaCount.
      */
@@ -72,7 +72,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Description of the openapi document from the info object.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return description
      */
@@ -83,7 +83,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Description of the openapi document from the info object.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param description set the description.
      */
@@ -95,7 +95,7 @@ public class ApiSpecInfo  {
      * This is the getter method this will return the attribute value.
      * Number of complex inline schemas promoted to top-level apischema objects during import.
      * Schemas are promoted when they contain object properties, array constraints, or composite types (oneof/anyof/allof).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return inlineSchemaCount
      */
@@ -107,7 +107,7 @@ public class ApiSpecInfo  {
      * This is the setter method to the attribute.
      * Number of complex inline schemas promoted to top-level apischema objects during import.
      * Schemas are promoted when they contain object properties, array constraints, or composite types (oneof/anyof/allof).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param inlineSchemaCount set the inlineSchemaCount.
      */
@@ -118,7 +118,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Openapi specification version.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return oasVersion
      */
@@ -129,7 +129,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Openapi specification version.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param oasVersion set the oasVersion.
      */
@@ -140,7 +140,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of paths in the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return pathCount
      */
@@ -151,7 +151,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Number of paths in the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param pathCount set the pathCount.
      */
@@ -161,7 +161,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * List of server urls extracted from the openapi document's servers section.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 100 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return servers
@@ -173,7 +173,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method. this will set the servers
      * List of server urls extracted from the openapi document's servers section.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 100 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return servers
@@ -185,7 +185,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method this will set the servers
      * List of server urls extracted from the openapi document's servers section.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 100 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return servers
@@ -201,7 +201,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Title of the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return title
      */
@@ -212,7 +212,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Title of the openapi document.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param title set the title.
      */
@@ -223,7 +223,7 @@ public class ApiSpecInfo  {
     /**
      * This is the getter method this will return the attribute value.
      * Version of the openapi document, which is distinct from the openapi specification version (oas_version).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return version
      */
@@ -234,7 +234,7 @@ public class ApiSpecInfo  {
     /**
      * This is the setter method to the attribute.
      * Version of the openapi document, which is distinct from the openapi specification version (oas_version).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param version set the version.
      */
