@@ -135,7 +135,7 @@ type ControllerProperties struct {
 	// When set to true, Avi Controller will attempt to automatically sync NSX Groups with AVI IP Groups provided the IP group is configured with an NSX Group path and NSX Dynamic streaming is enabled and active. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableStreamingBasedNsxIPGroupSync *bool `json:"enable_streaming_based_nsx_ip_group_sync,omitempty"`
 
-	// Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerAPIRateLimitPerMin *uint32 `json:"event_manager_api_rate_limit_per_min,omitempty"`
 
 	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 30.2.6, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -177,10 +177,10 @@ type ControllerProperties struct {
 	// Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IgnoreVrfInNetworksubnetlist *bool `json:"ignore_vrf_in_networksubnetlist,omitempty"`
 
-	// Size of the IPGLS client cache. This cache stores country code lookups for IP addresses to reduce gRPC calls to the IPGLS service. Set to 0 to disable caching. Allowed values are 0-1000000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Size of the IPGLS client cache. This cache stores country code lookups for IP addresses to reduce gRPC calls to the IPGLS service. Set to 0 to disable caching. Allowed values are 0-1000000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IpglsClientCacheSize *uint32 `json:"ipgls_client_cache_size,omitempty"`
 
-	// TTL for entries in the IPGLS client cache. After this duration, cached IP geolocation data will expire and require a fresh lookup. Lower values provide fresher data but increase load on IPGLS service. Higher values reduce load but may serve stale geolocation data. Allowed values are 1-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// TTL for entries in the IPGLS client cache. After this duration, cached IP geolocation data will expire and require a fresh lookup. Lower values provide fresher data but increase load on IPGLS service. Higher values reduce load but may serve stale geolocation data. Allowed values are 1-1440. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IpglsClientCacheTTLMinutes *uint32 `json:"ipgls_client_cache_ttl_minutes,omitempty"`
 
 	// Disk size to be allocated [1MB to 500GB] to store logs on a controller vm. Allowed values are 1000-500000000. Field introduced in 31.2.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -240,7 +240,7 @@ type ControllerProperties struct {
 	// Period for process PKI profile job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProcessPkiProfileTimeoutPeriod *uint32 `json:"process_pki_profile_timeout_period,omitempty"`
 
-	// Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PromotedLogFields *PromotedLogFields `json:"promoted_log_fields,omitempty"`
 
 	//  Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

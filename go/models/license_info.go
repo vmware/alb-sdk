@@ -12,7 +12,7 @@ type LicenseInfo struct {
 	// Required: true
 	LastUpdated *int64 `json:"last_updated"`
 
-	// SE group for this license entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SE group for this license entry. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeGroup *string `json:"se_group,omitempty"`
 
 	// Quantity of service cores. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

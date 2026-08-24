@@ -29,7 +29,7 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AnomalyDetails *AnomalyEventDetails `json:"anomaly_details,omitempty"`
 
-	// API Policy classification change event details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API Policy classification change event details. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APIPolicyClassificationDetails *APIPolicyClassificationDetails `json:"api_policy_classification_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -302,7 +302,7 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IPThreatDbEventData *IPThreatDBEventData `json:"ip_threat_db_event_data,omitempty"`
 
-	// Learning database cleanup event details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Learning database cleanup event details. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningDbCleanupEventDetails *LearningDbCleanupEventDetails `json:"learning_db_cleanup_event_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -389,7 +389,7 @@ type EventDetails struct {
 	// NSX-T IP group sync event. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtIPGroup *NsxtIPGroup `json:"nsxt_ip_group,omitempty"`
 
-	// NSX-T IP group members limit exceeded event. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// NSX-T IP group members limit exceeded event. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NsxtIPGroupMembersLimitExceeded *NsxtIPGroupMembersLimitExceeded `json:"nsxt_ip_group_members_limit_exceeded,omitempty"`
 
 	// NSX-T ServiceInsertion RedirectPolicy event. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -566,7 +566,7 @@ type EventDetails struct {
 	//  Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeObjsyncPeerDownDetails *SeObjsyncPeerDownDetails `json:"se_objsync_peer_down_details,omitempty"`
 
-	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SePcapModeEventDetails *SePcapModeEventDetails `json:"se_pcap_mode_event_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

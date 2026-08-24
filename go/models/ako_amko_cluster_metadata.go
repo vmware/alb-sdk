@@ -8,9 +8,9 @@ package models
 // swagger:model AkoAmkoClusterMetadata
 type AkoAmkoClusterMetadata struct {
 
-	// Container Network Interface (CNI) type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Container Network Interface (CNI) type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Cni *string `json:"cni,omitempty"`
 
-	// Number of nodes in the Kubernetes cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of nodes in the Kubernetes cluster. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NodeCount *int32 `json:"node_count,omitempty"`
 }

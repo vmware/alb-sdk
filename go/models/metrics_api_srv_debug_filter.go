@@ -38,18 +38,18 @@ type MetricsAPISrvDebugFilter struct {
 	// Periodicity in hours of saving operational stats of metrics API server to a log file. Allowed values are 1-12. Special values are 0- Stop periodic saving of last-N metrics API server queries.. Field introduced in 32.1.1. Unit is HOURS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MapiStatsLogPeriodHours *uint32 `json:"mapi_stats_log_period_hours,omitempty"`
 
-	// First N minutes of each hour treated as the rollup window (BALANCED mode bypasses the freshness gate here). 0 disables the bypass. Allowed values are 0-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// First N minutes of each hour treated as the rollup window (BALANCED mode bypasses the freshness gate here). 0 disables the bypass. Allowed values are 0-30. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsDbRdBoundaryWindowMin *uint32 `json:"metrics_db_rd_boundary_window_min,omitempty"`
 
-	// Follower health-probe cadence. Allowed values are 10-600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Follower health-probe cadence. Allowed values are 10-600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsDbRdCheckIntervalSec *uint32 `json:"metrics_db_rd_check_interval_sec,omitempty"`
 
-	// Probe-recency gate  distrust the cached follower probe if older than this. Must be >= metrics_db_rd_check_interval_sec. Allowed values are 30-1800. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Probe-recency gate  distrust the cached follower probe if older than this. Must be >= metrics_db_rd_check_interval_sec. Allowed values are 30-1800. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsDbRdLagStaleAfterSec *uint32 `json:"metrics_db_rd_lag_stale_after_sec,omitempty"`
 
-	// Max now - last_replay_ts (worst-case follower staleness) for the freshness gate. Allowed values are 5-3600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Max now - last_replay_ts (worst-case follower staleness) for the freshness gate. Allowed values are 5-3600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsDbRdLagThresholdSec *uint32 `json:"metrics_db_rd_lag_threshold_sec,omitempty"`
 
-	// Follower-routing mode for metrics reads  BALANCED (default), DISABLED (always leader), FRESHNESS_ONLY, or FORCE_FOLLOWER_NON_RT. Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY, METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Follower-routing mode for metrics reads  BALANCED (default), DISABLED (always leader), FRESHNESS_ONLY, or FORCE_FOLLOWER_NON_RT. Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY, METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsDbRdRoutingMode *string `json:"metrics_db_rd_routing_mode,omitempty"`
 }

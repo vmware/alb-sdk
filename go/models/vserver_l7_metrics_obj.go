@@ -116,10 +116,10 @@ type VserverL7MetricsObj struct {
 	// Rate of 5xx HTTP responses as errors sent by avi. It does not include any error codes excluded in the analytics profile and pool server errors. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgResp5xxAviErrors *float64 `json:"avg_resp_5xx_avi_errors,omitempty"`
 
-	// Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgResponses2xxAPI *float64 `json:"avg_responses_2xx_api,omitempty"`
 
-	// Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgResponses2xxNonapi *float64 `json:"avg_responses_2xx_nonapi,omitempty"`
 
 	// Total client data transfer time by client. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -230,73 +230,73 @@ type VserverL7MetricsObj struct {
 	// Average length of HTTP URI per request. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgURILength *float64 `json:"avg_uri_length,omitempty"`
 
-	// Rate of requests matching active API endpoints per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of requests matching active API endpoints per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapActiveAPICount *float64 `json:"avg_waap_active_api_count,omitempty"`
 
-	// Average client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapActiveAPILatency *float64 `json:"avg_waap_active_api_latency,omitempty"`
 
-	// Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapAuthenticationErrors *float64 `json:"avg_waap_authentication_errors,omitempty"`
 
-	// Average WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapHits *float64 `json:"avg_waap_hits,omitempty"`
 
-	// Rate of orphan API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of orphan API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapOrphanAPICount *float64 `json:"avg_waap_orphan_api_count,omitempty"`
 
-	// Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapRateLimitingErrors *float64 `json:"avg_waap_rate_limiting_errors,omitempty"`
 
-	// Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapRedirects *float64 `json:"avg_waap_redirects,omitempty"`
 
-	// Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses301 *float64 `json:"avg_waap_responses_301,omitempty"`
 
-	// Rate of 302 Found responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 302 Found responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses302 *float64 `json:"avg_waap_responses_302,omitempty"`
 
-	// Rate of 303 See Other responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 303 See Other responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses303 *float64 `json:"avg_waap_responses_303,omitempty"`
 
-	// Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses307 *float64 `json:"avg_waap_responses_307,omitempty"`
 
-	// Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses308 *float64 `json:"avg_waap_responses_308,omitempty"`
 
-	// Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses400 *float64 `json:"avg_waap_responses_400,omitempty"`
 
-	// Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses401 *float64 `json:"avg_waap_responses_401,omitempty"`
 
-	// Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses403 *float64 `json:"avg_waap_responses_403,omitempty"`
 
-	// Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses407 *float64 `json:"avg_waap_responses_407,omitempty"`
 
-	// Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses429 *float64 `json:"avg_waap_responses_429,omitempty"`
 
-	// Rate of 4XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 4XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses4xx *float64 `json:"avg_waap_responses_4xx,omitempty"`
 
-	// Rate of 5XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of 5XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapResponses5xx *float64 `json:"avg_waap_responses_5xx,omitempty"`
 
-	// Rate of shadow API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of shadow API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapShadowAPICount *float64 `json:"avg_waap_shadow_api_count,omitempty"`
 
-	// Average client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapShadowAPILatency *float64 `json:"avg_waap_shadow_api_latency,omitempty"`
 
-	// Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapValidationFailCount *float64 `json:"avg_waap_validation_fail_count,omitempty"`
 
-	// Rate of zombie API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Rate of zombie API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AvgWaapZombieAPICount *float64 `json:"avg_waap_zombie_api_count,omitempty"`
 
 	// Average number of transactions per second identified by WAF as attacks. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -564,10 +564,10 @@ type VserverL7MetricsObj struct {
 	// Total number of HTTP 5XX error responses. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumResp5xx *float64 `json:"sum_resp_5xx,omitempty"`
 
-	// Total number of API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumResponses2xxAPI *float64 `json:"sum_responses_2xx_api,omitempty"`
 
-	// Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumResponses2xxNonapi *float64 `json:"sum_responses_2xx_nonapi,omitempty"`
 
 	// Total client data transfer time by client. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -585,49 +585,49 @@ type VserverL7MetricsObj struct {
 	// Total length of HTTP request URIs. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumURILength *float64 `json:"sum_uri_length,omitempty"`
 
-	// Total number of requests matching active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapActiveAPICount *float64 `json:"sum_waap_active_api_count,omitempty"`
 
-	// Total client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapActiveAPILatency *float64 `json:"sum_waap_active_api_latency,omitempty"`
 
-	// Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapFlagCount *float64 `json:"sum_waap_flag_count,omitempty"`
 
-	// Total number of WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapHits *float64 `json:"sum_waap_hits,omitempty"`
 
-	// Total number of requests matching orphan API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching orphan API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapOrphanAPICount *float64 `json:"sum_waap_orphan_api_count,omitempty"`
 
-	// Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapRejectCount *float64 `json:"sum_waap_reject_count,omitempty"`
 
-	// Total 400 Bad Request responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 400 Bad Request responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapResponses400 *float64 `json:"sum_waap_responses_400,omitempty"`
 
-	// Total 401 Unauthorized responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 401 Unauthorized responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapResponses401 *float64 `json:"sum_waap_responses_401,omitempty"`
 
-	// Total 403 Forbidden responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 403 Forbidden responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapResponses403 *float64 `json:"sum_waap_responses_403,omitempty"`
 
-	// Total 4XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 4XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapResponses4xx *float64 `json:"sum_waap_responses_4xx,omitempty"`
 
-	// Total 5XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 5XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapResponses5xx *float64 `json:"sum_waap_responses_5xx,omitempty"`
 
-	// Total number of requests matching shadow API paths. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapShadowAPICount *float64 `json:"sum_waap_shadow_api_count,omitempty"`
 
-	// Total client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapShadowAPILatency *float64 `json:"sum_waap_shadow_api_latency,omitempty"`
 
-	// Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapValidationFailCount *float64 `json:"sum_waap_validation_fail_count,omitempty"`
 
-	// Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching zombie API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SumWaapZombieAPICount *float64 `json:"sum_waap_zombie_api_count,omitempty"`
 
 	// Total number of transactions identified by WAF as attacks. Field introduced in 17.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

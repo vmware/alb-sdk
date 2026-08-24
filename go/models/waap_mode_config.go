@@ -8,6 +8,6 @@ package models
 // swagger:model WaapModeConfig
 type WaapModeConfig struct {
 
-	// WAAP sizing tier for this SE Group. Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// WAAP sizing tier for this SE Group. Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeSize *string `json:"se_size,omitempty"`
 }

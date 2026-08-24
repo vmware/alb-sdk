@@ -11,13 +11,13 @@ type SeAgentGraphDBNodeConfig struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AnalyticsProfile *AnalyticsProfile `json:"analytics_profile,omitempty"`
 
-	// Configuration for API Path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Configuration for API Path. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Apipath *APIPath `json:"apipath,omitempty"`
 
-	// Configuration for API Policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Configuration for API Policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Apipolicy *APIPolicy `json:"apipolicy,omitempty"`
 
-	// Configuration for API Schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Configuration for API Schema. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Apischema *APISchema `json:"apischema,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -74,7 +74,7 @@ type SeAgentGraphDBNodeConfig struct {
 	//  Field introduced in 17.2.7. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	L4ConnectionPolicy *L4ConnectionPolicy `json:"l4_connection_policy,omitempty"`
 
-	// Configuration for Label Profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Configuration for Label Profile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Labelprofile *LabelProfile `json:"labelprofile,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

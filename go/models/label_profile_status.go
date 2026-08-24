@@ -8,6 +8,6 @@ package models
 // swagger:model LabelProfileStatus
 type LabelProfileStatus struct {
 
-	// One entry per label defined in the LabelProfile. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// One entry per label defined in the LabelProfile. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Labels []*LabelStatusEntry `json:"labels,omitempty"`
 }

@@ -48,7 +48,7 @@ type OAuthProfile struct {
 	// Redirect URI specified in the request to Authorization Server. Field introduced in 30.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RedirectURI *string `json:"redirect_uri,omitempty"`
 
-	// TLS configuration for outbound JWKS connections during OAuth token validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// TLS configuration for outbound JWKS connections during OAuth token validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
 
 	// URL of token exchange server. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

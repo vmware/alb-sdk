@@ -162,10 +162,10 @@ type VserverL7Stats struct {
 	// Total number of 5XX responses sent by Avi Vantage. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Resp5xxAviErrors *uint64 `json:"resp_5xx_avi_errors,omitempty"`
 
-	// Total number of 2XX responses for all APIs in this Virtualservice. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of 2XX responses for all APIs in this Virtualservice. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses2xxAPI *uint64 `json:"responses_2xx_api,omitempty"`
 
-	// Total number of 2XX responses for all Non-APIs in this Virtualservice. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of 2XX responses for all Non-APIs in this Virtualservice. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Responses2xxNonapi *uint64 `json:"responses_2xx_nonapi,omitempty"`
 
 	// Number of requests that are actively sampled for Real User Monitoring. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -303,70 +303,70 @@ type VserverL7Stats struct {
 	// HTTP request URI length in bytes. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	URILength *uint64 `json:"uri_length,omitempty"`
 
-	// Total number of requests matching active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapActiveAPICount *uint64 `json:"waap_active_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapActiveAPILatency *uint64 `json:"waap_active_api_latency,omitempty"`
 
-	// Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapFlagCount *uint64 `json:"waap_flag_count,omitempty"`
 
-	// Total number of requests to WAAP-enabled API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests to WAAP-enabled API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapHits *uint64 `json:"waap_hits,omitempty"`
 
-	// Total number of requests matching orphan API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching orphan API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapOrphanAPICount *uint64 `json:"waap_orphan_api_count,omitempty"`
 
-	// Total number of requests rejected by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests rejected by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapRejectCount *uint64 `json:"waap_reject_count,omitempty"`
 
-	// Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses301 *uint64 `json:"waap_responses_301,omitempty"`
 
-	// Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses302 *uint64 `json:"waap_responses_302,omitempty"`
 
-	// Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses303 *uint64 `json:"waap_responses_303,omitempty"`
 
-	// Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses307 *uint64 `json:"waap_responses_307,omitempty"`
 
-	// Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses308 *uint64 `json:"waap_responses_308,omitempty"`
 
-	// Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses400 *uint64 `json:"waap_responses_400,omitempty"`
 
-	// Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses401 *uint64 `json:"waap_responses_401,omitempty"`
 
-	// Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses403 *uint64 `json:"waap_responses_403,omitempty"`
 
-	// Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses407 *uint64 `json:"waap_responses_407,omitempty"`
 
-	// Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses429 *uint64 `json:"waap_responses_429,omitempty"`
 
-	// Total 4XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 4XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses4xx *uint64 `json:"waap_responses_4xx,omitempty"`
 
-	// Total 5XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total 5XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapResponses5xx *uint64 `json:"waap_responses_5xx,omitempty"`
 
-	// Total number of requests matching shadow API paths. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapShadowAPICount *uint64 `json:"waap_shadow_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapShadowAPILatency *uint64 `json:"waap_shadow_api_latency,omitempty"`
 
-	// Total number of API validation failures across all endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of API validation failures across all endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapValidationFailCount *uint64 `json:"waap_validation_fail_count,omitempty"`
 
-	// Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total number of requests matching zombie API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapZombieAPICount *uint64 `json:"waap_zombie_api_count,omitempty"`
 
 	// Number of requests bypassing WAF. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
