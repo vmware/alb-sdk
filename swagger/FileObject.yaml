@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi FileObject Object API
     contact:
         name: Avi Networks Inc.
@@ -390,59 +390,59 @@ definitions:
         type: object
         properties:
             path_refs:
-                description: "References to ApiPath objects created from this specification. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "References to ApiPath objects created from this specification. It is a reference to an object of type ApiPath. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
                     type: string
             schema_refs:
-                description: "References to ApiSchema objects created from this specification. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "References to ApiSchema objects created from this specification. It is a reference to an object of type ApiSchema. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
                     type: string
             spec_info:
-                description: "Metadata extracted from the OpenAPI specification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Metadata extracted from the OpenAPI specification. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 $ref: '#/definitions/ApiSpecInfo'
     ApiSpecInfo:
         type: object
         properties:
             component_schema_count:
-                description: "Number of schemas defined in the components/schemas section of the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of schemas defined in the components/schemas section of the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             description:
-                description: "Description of the OpenAPI document from the info object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of the OpenAPI document from the info object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             inline_schema_count:
-                description: "Number of complex inline schemas promoted to top-level ApiSchema objects during import. Schemas are promoted when they contain object properties, array constraints, or composite types (oneOf/anyOf/allOf). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of complex inline schemas promoted to top-level ApiSchema objects during import. Schemas are promoted when they contain object properties, array constraints, or composite types (oneOf/anyOf/allOf). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             oas_version:
-                description: "OpenAPI Specification version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "OpenAPI Specification version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             path_count:
-                description: "Number of paths in the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of paths in the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             servers:
-                description: "List of server URLs extracted from the OpenAPI document's servers section. Field introduced in 32.2.1. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of server URLs extracted from the OpenAPI document's servers section. Field introduced in 32.1.4. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
                     $ref: '#/definitions/ApiSpecServer'
             title:
-                description: "Title of the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Title of the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             version:
-                description: "Version of the OpenAPI document, which is distinct from the OpenAPI Specification version (oas_version). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Version of the OpenAPI document, which is distinct from the OpenAPI Specification version (oas_version). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
     ApiSpecServer:
@@ -451,10 +451,10 @@ definitions:
             -   url
         properties:
             description:
-                description: "Description of this server entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of this server entry. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
-                description: "Server URL or relative path. May be an absolute URL (e.g. 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g. '/v1', '/'). When populated from an OpenAPI spec, server URL template variables are resolved to concrete URLs at import time before being stored here. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server URL or relative path. May be an absolute URL (e.g. 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g. '/v1', '/'). When populated from an OpenAPI spec, server URL template variables are resolved to concrete URLs at import time before being stored here. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiSpecServerApiResponse:
         type: object
@@ -481,7 +481,7 @@ definitions:
                 description: "Distinguished name of the issuer in the Certificate Revocation list. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             entries:
-                description: "Per-block CRL metadata populated automatically when a CRL file is uploaded or refreshed. Each element corresponds to one PEM CRL block in the file in order. A file concatenating CRLs from multiple CAs has one entry per CA. Not settable by API clients. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Per-block CRL metadata populated automatically when a CRL file is uploaded or refreshed. Each element corresponds to one PEM CRL block in the file in order. A file concatenating CRLs from multiple CAs has one entry per CA. Not settable by API clients. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
@@ -516,24 +516,24 @@ definitions:
         type: object
         properties:
             crl_number:
-                description: "CRL sequence number from the CRL Number extension (RFC 5280 §5.2.3). Empty when the extension is absent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "CRL sequence number from the CRL Number extension (RFC 5280 §5.2.3). Empty when the extension is absent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             issuer_cn:
-                description: "Common Name extracted from the CRL issuer DN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Common Name extracted from the CRL issuer DN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             issuer_dn:
-                description: "Full Distinguished Name of the CRL issuer (RFC 5280 Issuer field). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Full Distinguished Name of the CRL issuer (RFC 5280 Issuer field). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             next_update:
-                description: "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when the next CRL is expected (NextUpdate field, RFC 5280 §5.1.2.5). Empty when the extension is absent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when the next CRL is expected (NextUpdate field, RFC 5280 §5.1.2.5). Empty when the extension is absent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             serial_numbers:
-                description: "Decimal serial numbers of all certificates revoked in this CRL block. Used for revocation status checks against a certificate's serial number. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Decimal serial numbers of all certificates revoked in this CRL block. Used for revocation status checks against a certificate's serial number. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             this_update:
-                description: "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when this CRL was issued (ThisUpdate field, RFC 5280 §5.1.2.4). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Milliseconds since the Unix epoch (1970-01-01 00 00 00 UTC) when this CRL was issued (ThisUpdate field, RFC 5280 §5.1.2.4). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     FileObject:
         type: object
@@ -546,7 +546,7 @@ definitions:
                 readOnly: True
                 type: string
             api_spec_detail:
-                description: "API specification details extracted from the file, populated for OPEN_API_SPEC type only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API specification details extracted from the file, populated for OPEN_API_SPEC type only. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 $ref: '#/definitions/ApiSpecDetail'
             checksum:
@@ -558,7 +558,7 @@ definitions:
                 items:
                     type: string
             completed_events:
-                description: "Number of processing events that have completed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of processing events that have completed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             compressed:
@@ -574,11 +574,11 @@ definitions:
                 description: "Description of the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             duration:
-                description: "Time taken to complete the operation in seconds. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time taken to complete the operation in seconds. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             end_time:
-                description: "End time of the file object processing operation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "End time of the file object processing operation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             events:
                 description: "List of all FileObject events. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -595,7 +595,7 @@ definitions:
                 description: "This field indicates if the the given FileObjecthas a parent FileObject or not. . Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             history:
-                description: "File Object processing events history for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "File Object processing events history for the version specified. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/TaskEventHistory'
@@ -609,7 +609,7 @@ definitions:
                 description: "Path to the file. . Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             progress:
-                description: "Percentage of completed events. Allowed values are 0-100. Field introduced in 32.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Percentage of completed events. Allowed values are 0-100. Field introduced in 32.1.4. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             read_only:
@@ -623,13 +623,13 @@ definitions:
                 type: integer
                 format: uint64
             start_time:
-                description: "Start time of the file object processing operation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Start time of the file object processing operation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "State of the file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "State of the file object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/FileObjectState'
             task_events:
-                description: "File Object processing events for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "File Object processing events for the version specified. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/TaskEventMap'
@@ -637,7 +637,7 @@ definitions:
                 description: "Tenant that this object belongs to. It is a reference to an object of type Tenant. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             total_events:
-                description: "Total number of processing events for this file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of processing events for this file object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             type:
@@ -702,13 +702,13 @@ definitions:
         type: object
         properties:
             last_changed_time:
-                description: "The last time the state changed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The last time the state changed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             reason:
-                description: "Human-readable explanation of why the file object is in its current state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Human-readable explanation of why the file object is in its current state. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Current processing state of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Current processing state of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddr:
         type: object
@@ -753,18 +753,18 @@ definitions:
         type: object
         properties:
             spec_info:
-                description: "API specification information captured at the time of processing. Populated for Open API Specification file objects only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API specification information captured at the time of processing. Populated for Open API Specification file objects only. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "State of the file object for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "State of the file object for the version specified. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/FileObjectState'
             task_events:
-                description: "Processing events for this version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Processing events for this version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/TaskEventMap'
             version:
-                description: "Version of the file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Version of the file object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     TaskEventMap:
         type: object

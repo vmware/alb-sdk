@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi LicenseStatus Object API
     contact:
         name: Avi Networks Inc.
@@ -272,7 +272,7 @@ definitions:
                 description: "Pulse license service update. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LicenseServiceUpdate'
             ssp_license_reported_at:
-                description: "Timestamp of last successful license report to SSP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp of last successful license report to SSP. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             support_legacy_license:

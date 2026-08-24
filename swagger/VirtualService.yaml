@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi VirtualService Object API
     contact:
         name: Avi Networks Inc.
@@ -3865,357 +3865,6 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-    /debugvirtualservice:
-        get:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: GET /debugvirtualservice
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: refers_to
-                    in: query
-                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
-                    type: string
-                -   name: referred_by
-                    in: query
-                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
-                "401":
-                    description: log in failed
-        post:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: POST /debugvirtualservice
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: DebugVirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                "401":
-                    description: log in failed
-    /debugvirtualservice/{uuid}:
-        get:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: GET /debugvirtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: name
-                    in: query
-                    description: object name
-                    required: false
-                    type: string
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: uuid
-                    in: path
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-                -   name: fields
-                    in: query
-                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
-                    type: string
-                -   name: include_name
-                    in: query
-                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
-                    required: false
-                    type: boolean
-                -   name: skip_default
-                    in: query
-                    description: Default values are not set.
-                    required: false
-                    type: boolean
-                -   name: join_subresources
-                    in: query
-                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PUT /debugvirtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: DebugVirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PATCH /debugvirtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: DebugVirtualService object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugVirtualService"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        delete:
-            tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: DELETE /debugvirtualservice/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "204":
-                    description: object deleted
-                    schema:
-                        type: string
-                "404":
-                    description: object not found
-
-
     /networksecuritypolicy:
         get:
             tags:
@@ -5269,6 +4918,357 @@ paths:
                     description: object not found
 
 
+    /debugvirtualservice:
+        get:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: GET /debugvirtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: POST /debugvirtualservice
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+    /debugvirtualservice/{uuid}:
+        get:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: GET /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PUT /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PATCH /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: DebugVirtualService object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/DebugVirtualService"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: DELETE /debugvirtualservice/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
 definitions:
     AbPool:
         type: object
@@ -5353,38 +5353,38 @@ definitions:
         type: object
         properties:
             configured_active_count:
-                description: "Number of API endpoints configured as active. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints configured as active. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             configured_orphan_count:
-                description: "Number of API endpoints configured as orphan — defined but not seen in traffic for a while. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints configured as orphan — defined but not seen in traffic for a while. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             configured_zombie_count:
-                description: "Number of API endpoints configured as zombie — seeing only occasional, trickle traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints configured as zombie — seeing only occasional, trickle traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             observed_active_count:
-                description: "Number of API endpoints currently seeing active traffic, based on live traffic analysis. This can differ from the configured count if traffic patterns have changed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints currently seeing active traffic, based on live traffic analysis. This can differ from the configured count if traffic patterns have changed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             observed_counts_available:
-                description: "False if live traffic data isn't available yet — for example, because Application Insights isn't set up. Distinguishes 'not available' from a genuine zero. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "False if live traffic data isn't available yet — for example, because Application Insights isn't set up. Distinguishes 'not available' from a genuine zero. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             observed_non_api_count:
-                description: "Number of requests seen that aren't API traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests seen that aren't API traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             observed_orphan_count:
-                description: "Number of API endpoints currently classified as orphan, based on live traffic analysis. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints currently classified as orphan, based on live traffic analysis. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             observed_shadow_count:
-                description: "Number of requests seen for API paths that aren't configured at all. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests seen for API paths that aren't configured at all. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             observed_zombie_count:
-                description: "Number of API endpoints currently classified as zombie, based on live traffic analysis. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints currently classified as zombie, based on live traffic analysis. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     ApiPathStats:
@@ -5393,158 +5393,158 @@ definitions:
             -   node_obj_id
         properties:
             flag_count:
-                description: "Requests flagged (but not rejected) by API Policy for this endpoint (counted once per request). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Requests flagged (but not rejected) by API Policy for this endpoint (counted once per request). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             hits:
-                description: "Total number of requests received for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests received for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             node_obj_id:
-                description: " Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path_name:
-                description: "Name of the ApiPath object for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the ApiPath object for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path_template:
-                description: "Path template for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Path template for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             reject_count:
-                description: "Requests rejected by API Policy for this endpoint (counted once per request). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Requests rejected by API Policy for this endpoint (counted once per request). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_1xx:
-                description: "Total number of 1XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_2xx:
-                description: "Total number of 2XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_3xx:
-                description: "Total number of 3XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_400:
-                description: "Total number of 400 Bad Request responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 400 Bad Request responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_401:
-                description: "Total number of 401 Unauthorized responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 401 Unauthorized responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_403:
-                description: "Total number of 403 Forbidden responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 403 Forbidden responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_4xx:
-                description: "Total number of 4XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_5xx:
-                description: "Total number of 5XX responses for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count:
-                description: "Total number of validation failures for this API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_path:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_path. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_path_failed_validation:
-                description: "Validation failures at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_query_args. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_query_args. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_failed_validation:
-                description: "Validation failures at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_missing:
-                description: "Validation failures at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_unexpected:
-                description: "Validation failures at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_request_body. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_request_body. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_failed_validation:
-                description: "Validation failures at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_missing:
-                description: "Validation failures at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_unexpected:
-                description: "Validation failures at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_content_type:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_request_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_request_content_type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_request_header. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_failed_validation:
-                description: "Validation failures at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_missing:
-                description: "Validation failures at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_unexpected:
-                description: "Validation failures at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation failures at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_response_content_type:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_response_content_type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_response_status_code:
-                description: "Total number of validation failures for this API endpoint with validation failure type location_response_status_code. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type location_response_status_code. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_unspecified:
-                description: "Total number of validation failures for this API endpoint with validation failure type V01. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for this API endpoint with validation failure type V01. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     ApiPolicyDetail:
         type: object
         properties:
             api_policy_ref:
-                description: "The API policy associated with this Virtual Service. Unset if none is configured. It is a reference to an object of type ApiPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The API policy associated with this Virtual Service. Unset if none is configured. It is a reference to an object of type ApiPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             endpoint_categories:
-                description: "How this Virtual Service's API endpoints are classified, both by configuration and by observed traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "How this Virtual Service's API endpoints are classified, both by configuration and by observed traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiEndpointCategoryCounts'
             file_object:
-                description: "The uploaded OpenAPI specification file associated with this API policy, and its processing status. Unset if no file is associated. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The uploaded OpenAPI specification file associated with this API policy, and its processing status. Unset if no file is associated. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiPolicyFileObjectDetail'
             label_mapping_count:
-                description: "Number of labels configured to turn off specific validation checks on this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of labels configured to turn off specific validation checks on this API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     ApiPolicyFileObjectDetail:
         type: object
         properties:
             file_object_ref:
-                description: "The uploaded OpenAPI specification file associated with this API policy. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The uploaded OpenAPI specification file associated with this API policy. It is a reference to an object of type FileObject. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Processing status of the uploaded file. If processing failed, the API policy keeps enforcing the last version that processed successfully. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Processing status of the uploaded file. If processing failed, the API policy keeps enforcing the last version that processed successfully. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/FileObjectState'
     AppInfo:
         type: object
@@ -5562,20 +5562,20 @@ definitions:
         type: object
         properties:
             application_insights_ref:
-                description: "The Application Insights configuration associated with this Virtual Service. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Application Insights configuration associated with this Virtual Service. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             learn_from_bots_enabled:
-                description: "Whether traffic learning includes requests identified as bots. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether traffic learning includes requests identified as bots. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             learning_enabled:
-                description: "Whether Application Insights is turned on for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether Application Insights is turned on for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             max_sampling_percent:
-                description: "Maximum percentage of traffic sampled for learning. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum percentage of traffic sampled for learning. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             per_uri_learning_enabled:
-                description: "Whether traffic learning happens per URI path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether traffic learning happens per URI path. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     ApplicationProfileRefCnt:
         type: object
@@ -5633,7 +5633,7 @@ definitions:
                 description: "Configure the host header. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             path:
                 description: "Configure request paths. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -5706,7 +5706,7 @@ definitions:
                 description: "Host header value to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "HTTP methods to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -5943,7 +5943,7 @@ definitions:
         type: object
         properties:
             capture_ipc_filters:
-                description: "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaptureIPC'
             capture_tcp_filters:
                 description: "TCP Params filter. And'ed internally and Or'ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -5951,7 +5951,7 @@ definitions:
                 items:
                     $ref: '#/definitions/CaptureTCPFilter'
             client_ip:
-                description: "Filters all packets of a complete transaction (client and server side), based on client ip. Supported for Virtual Service only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Filters all packets of a complete transaction (client and server side), based on client ip. Supported for Virtual Service only. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugIpAddr'
     CaptureTCPFilter:
         type: object
@@ -6874,7 +6874,7 @@ definitions:
         type: object
         properties:
             action_verify_executed:
-                description: "Number of requests for which VERIFY_CSRF_TOKEN (or VERIFY_ORIGIN_AND_CSRF_TOKEN) action was executed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests for which VERIFY_CSRF_TOKEN (or VERIFY_ORIGIN_AND_CSRF_TOKEN) action was executed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             bypassed:
@@ -6882,7 +6882,7 @@ definitions:
                 type: integer
                 format: uint64
             label_matched_requests:
-                description: "Number of requests for which a CSRF rule matched on label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests for which a CSRF rule matched on label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             passed:
@@ -6917,7 +6917,7 @@ definitions:
                 type: integer
                 format: uint64
             l4_lb_event_errors:
-                description: "This is incremented when datascript attached at L4 Loadbalancing events encounters error. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This is incremented when datascript attached at L4 Loadbalancing events encounters error. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             request_event_errors:
@@ -6929,7 +6929,7 @@ definitions:
                 type: integer
                 format: uint64
             server_ssl_event_errors:
-                description: "This is incremented when datascript attached at Server-side SSL Handshake events encounters error. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This is incremented when datascript attached at Server-side SSL Handshake events encounters error. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             ssl_done_event_errors:
@@ -7660,13 +7660,13 @@ definitions:
         type: object
         properties:
             last_changed_time:
-                description: "The last time the state changed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The last time the state changed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             reason:
-                description: "Human-readable explanation of why the file object is in its current state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Human-readable explanation of why the file object is in its current state. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Current processing state of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Current processing state of the file object. Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     FullClientLogs:
         type: object
@@ -9695,59 +9695,59 @@ definitions:
         type: object
         properties:
             bot_detection_policy:
-                description: "Details for the bot detection policy applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the bot detection policy applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             csrf_policy:
-                description: "Details for the CSRF protection policy applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the CSRF protection policy applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             http_request_policy:
-                description: "Details for the HTTP request rules applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the HTTP request rules applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             http_response_policy:
-                description: "Details for the HTTP response rules applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the HTTP response rules applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             http_security_policy:
-                description: "Details for the HTTP security rules applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the HTTP security rules applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             sso_policy:
-                description: "Details for the single sign-on authentication and authorization rules applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the single sign-on authentication and authorization rules applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
             waf_policy:
-                description: "Details for the WAF policy applied to this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details for the WAF policy applied to this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PolicyDetail'
     L7PolicyDetail:
         type: object
         properties:
             bot_detection_policy_ref:
-                description: "The Bot Detection Policy this detail describes. It is a reference to an object of type BotDetectionPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Bot Detection Policy this detail describes. It is a reference to an object of type BotDetectionPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             csrf_policy_ref:
-                description: "The CSRF Policy this detail describes. It is a reference to an object of type CSRFPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The CSRF Policy this detail describes. It is a reference to an object of type CSRFPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enabled_label_matched_rule_count:
-                description: "Number of label-checking rules in this policy that are turned on. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of label-checking rules in this policy that are turned on. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             enabled_rule_count:
-                description: "Number of rules in this policy that are turned on. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of rules in this policy that are turned on. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             http_policy_set_ref:
-                description: "The HTTP Policy Set this detail describes. It is a reference to an object of type HTTPPolicySet. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The HTTP Policy Set this detail describes. It is a reference to an object of type HTTPPolicySet. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             label_matched_rule_count:
-                description: "Number of rules in this policy that check for a WAAP label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of rules in this policy that check for a WAAP label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             rule_count:
-                description: "Total number of rules in this policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of rules in this policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             sso_policy_ref:
-                description: "The SSO Policy this detail describes. It is a reference to an object of type SSOPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The SSO Policy this detail describes. It is a reference to an object of type SSOPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             waf_policy_ref:
-                description: "The WAF Policy this detail describes. It is a reference to an object of type WafPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The WAF Policy this detail describes. It is a reference to an object of type WafPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     L7VirtualServiceStatsRuntime:
         type: object
@@ -10367,11 +10367,11 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "IS_IN"
             values:
-                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -10379,29 +10379,29 @@ definitions:
         type: object
         properties:
             label_count:
-                description: "Number of labels defined in the label profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of labels defined in the label profile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             label_profile_ref:
-                description: "The label profile associated with this Virtual Service. It is a reference to an object of type LabelProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The label profile associated with this Virtual Service. It is a reference to an object of type LabelProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             label_statuses:
-                description: "Usage status for each label defined in the label profile. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Usage status for each label defined in the label profile. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VirtualServiceOverviewLabelStatus'
             unused_label_count:
-                description: "Number of labels that are defined but not applied to any traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of labels that are defined but not applied to any traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     LabelStatus:
         type: object
         properties:
             reason:
-                description: "Explains the INACTIVE state  what applying or enforcing this label is missing or disabled. Omitted for ACTIVE/UNUSED/DANGLING, which are self-explanatory. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Explains the INACTIVE state  what applying or enforcing this label is missing or disabled. Omitted for ACTIVE/UNUSED/DANGLING, which are self-explanatory. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Computed enforcement state for this label. Enum options - LABEL_ACTIVE, LABEL_INACTIVE, LABEL_UNUSED, LABEL_DANGLING. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Computed enforcement state for this label. Enum options - LABEL_ACTIVE, LABEL_INACTIVE, LABEL_UNUSED, LABEL_DANGLING. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LbServer:
         type: object
@@ -10632,7 +10632,7 @@ definitions:
                 description: "Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -12573,7 +12573,7 @@ definitions:
                 description: "Configure the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             loc_hdr:
                 description: "Configure the location header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -13866,7 +13866,7 @@ definitions:
                 description: "Timestamp at which this VS was determined to be ineligible for placement. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             placement_last_change_time:
-                description: "Wall-clock time when this consumer's placement state was last committed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Wall-clock time when this consumer's placement state was last committed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             placement_resolution_info:
                 description: "Information on issues with VIP or server resolution. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -14862,7 +14862,7 @@ definitions:
                 type: integer
                 format: uint32
             ck_prst_id_64:
-                description: "Server id for persistence. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server id for persistence. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             current_open_conns:
@@ -15785,7 +15785,7 @@ definitions:
                 items:
                     $ref: '#/definitions/IpAddr'
             pki_profile_ref:
-                description: "PKI profile used to verify the TLS certificate of the sideband server. Required when the sideband server presents a certificate signed by a private CA. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "PKI profile used to verify the TLS certificate of the sideband server. Required when the sideband server presents a certificate signed by a private CA. It is a reference to an object of type PKIProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             sideband_max_request_body_size:
                 description: "Maximum size of the request body that will be sent on the sideband. Allowed values are 0-16384. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -15892,11 +15892,11 @@ definitions:
                 type: integer
                 format: uint64
             keylog_sent_tls12:
-                description: "Number of TLS 1.2 keylogs sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of TLS 1.2 keylogs sent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             keylog_sent_tls13:
-                description: "Number of TLS 1.3 keylogs sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of TLS 1.3 keylogs sent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             ocsp_status_requests:
@@ -17785,7 +17785,7 @@ definitions:
                 description: "Specifies settings related to analytics. It is a reference to an object of type AnalyticsProfile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             api_policy_ref:
-                description: "API Policy Configuration for the Virtual Service to apply API protection. It is a reference to an object of type ApiPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API Policy Configuration for the Virtual Service to apply API protection. It is a reference to an object of type ApiPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             application_insights_ref:
                 description: "Application Insights Configuration for the Virtual Service to learn application data. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -17908,7 +17908,7 @@ definitions:
                 items:
                     $ref: '#/definitions/L4Policies'
             label_profile_ref:
-                description: "Label Profile Configuration for the Virtual Service to categorize API endpoints. It is a reference to an object of type LabelProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Label Profile Configuration for the Virtual Service to categorize API endpoints. It is a reference to an object of type LabelProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             ldap_vs_config:
                 description: "Application-specific LDAP config. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -17994,7 +17994,7 @@ definitions:
                 items:
                     $ref: '#/definitions/Service'
             session_key_forwarder_ref:
-                description: "Session Key Forwarder Profile for the Virtual Service for the Session Key Forwarding. It is a reference to an object of type SessionKeyForwarder. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Session Key Forwarder Profile for the Virtual Service for the Session Key Forwarding. It is a reference to an object of type SessionKeyForwarder. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             sideband_profile:
                 description: "Sideband configuration to be used for this virtualservice.It can be used for sending traffic to sideband VIPs for external inspection etc. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -18651,140 +18651,140 @@ definitions:
         type: object
         properties:
             api_policy_ref:
-                description: "The API Policy that contains this rule. It is a reference to an object of type ApiPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The API Policy that contains this rule. It is a reference to an object of type ApiPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             bot_detection_policy_ref:
-                description: "The Bot Detection Policy that contains this rule. It is a reference to an object of type BotDetectionPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Bot Detection Policy that contains this rule. It is a reference to an object of type BotDetectionPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             csrf_policy_ref:
-                description: "The CSRF Policy that contains this rule. It is a reference to an object of type CSRFPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The CSRF Policy that contains this rule. It is a reference to an object of type CSRFPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enabled:
-                description: "Whether the rule itself is turned on. A disabled rule still shows up here, but has no effect until it's enabled. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether the rule itself is turned on. A disabled rule still shows up here, but has no effect until it's enabled. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             http_policy_set_ref:
-                description: "The HTTP Policy Set that contains this rule. It is a reference to an object of type HTTPPolicySet. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The HTTP Policy Set that contains this rule. It is a reference to an object of type HTTPPolicySet. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             rule_index:
-                description: "Position of this rule within its policy's rule list. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Position of this rule within its policy's rule list. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             rule_name:
-                description: "Name of the rule. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the rule. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             scope:
-                description: "The type of policy this reference points to. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The type of policy this reference points to. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             sso_policy_ref:
-                description: "The SSO Policy that contains this rule. It is a reference to an object of type SSOPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The SSO Policy that contains this rule. It is a reference to an object of type SSOPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             waf_policy_ref:
-                description: "The WAF Policy that contains this rule. It is a reference to an object of type WafPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The WAF Policy that contains this rule. It is a reference to an object of type WafPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VirtualServiceOverviewAssociations:
         type: object
         properties:
             api_policy_ref:
-                description: "The API policy associated with this Virtual Service, if any. It is a reference to an object of type ApiPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The API policy associated with this Virtual Service, if any. It is a reference to an object of type ApiPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             application_insights_ref:
-                description: "The Application Insights configuration associated with this Virtual Service, if any. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Application Insights configuration associated with this Virtual Service, if any. It is a reference to an object of type ApplicationInsightsPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             label_profile_ref:
-                description: "The label profile associated with this Virtual Service, if any. It is a reference to an object of type LabelProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The label profile associated with this Virtual Service, if any. It is a reference to an object of type LabelProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VirtualServiceOverviewDetail:
         type: object
         properties:
             api_policy:
-                description: "Details about the API policy configured for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details about the API policy configured for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiPolicyDetail'
             application_insights:
-                description: "Details about the Application Insights configuration for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details about the Application Insights configuration for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApplicationInsightsDetail'
             l7_policies:
-                description: "Details about every policy that can act on WAAP labels. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details about every policy that can act on WAAP labels. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/L7PoliciesDetail'
             label_profile:
-                description: "Details about the label profile and how its labels are being used. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Details about the label profile and how its labels are being used. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelProfileDetail'
     VirtualServiceOverviewLabelStatus:
         type: object
         properties:
             action_defined:
-                description: "True if at least one active rule acts on this label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if at least one active rule acts on this label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             action_locations:
-                description: "Every rule that refers to this label, including disabled ones, so they're easy to find and review. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Every rule that refers to this label, including disabled ones, so they're easy to find and review. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VirtualServiceOverviewActionLocation'
             action_without_application:
-                description: "True if a rule refers to this label, but the label isn't applied to any traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if a rule refers to this label, but the label isn't applied to any traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             applied_to_endpoints:
-                description: "True if this label is currently applied to at least one API endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if this label is currently applied to at least one API endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             applied_without_action:
-                description: "True if this label is applied to traffic, but no rule acts on it. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if this label is applied to traffic, but no rule acts on it. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             endpoint_count:
-                description: "Number of API endpoints this label is directly applied to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of API endpoints this label is directly applied to. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             label_name:
-                description: "Name of the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             status:
-                description: "Computed enforcement state for this label, shared with the Label Visibility APIs (label_visibility.proto). A UI reads state for a status badge and, when state is LABEL_INACTIVE, reason for what's missing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Computed enforcement state for this label, shared with the Label Visibility APIs (label_visibility.proto). A UI reads state for a status badge and, when state is LABEL_INACTIVE, reason for what's missing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelStatus'
             unused:
-                description: "True if this label is defined but not applied anywhere. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if this label is defined but not applied anywhere. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     VirtualServiceOverviewResponse:
         type: object
         properties:
             detail:
-                description: "Full details about how WAAP is configured on this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Full details about how WAAP is configured on this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceOverviewDetail'
             health:
-                description: "Whether this Virtual Service and its Service Engines are currently up. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether this Virtual Service and its Service Engines are currently up. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VsHealth'
             recommendations:
-                description: "A list of recommendations, ordered by urgency. Field introduced in 32.2.1. Maximum of 512 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "A list of recommendations, ordered by urgency. Field introduced in 32.1.4. Maximum of 512 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VsRecommendation'
             summary:
-                description: "A quick overview — overall status and headline counts. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "A quick overview — overall status and headline counts. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceOverviewSummary'
             virtualservice_ref:
-                description: "The Virtual Service this summary is for. It is a reference to an object of type VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Virtual Service this summary is for. It is a reference to an object of type VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VirtualServiceOverviewSummary:
         type: object
         properties:
             action_without_application_count:
-                description: "Number of labels that a rule refers to, but that aren't applied to any traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of labels that a rule refers to, but that aren't applied to any traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             applied_without_action_count:
-                description: "Number of labels that are applied to traffic but aren't used by any rule. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of labels that are applied to traffic but aren't used by any rule. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             associations:
-                description: "The label profile, API policy, and Application Insights configuration associated with this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The label profile, API policy, and Application Insights configuration associated with this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/VirtualServiceOverviewAssociations'
             recommendation_count:
-                description: "Number of recommendations listed in recommendations. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of recommendations listed in recommendations. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             status:
-                description: "Overall health for this Virtual Service, at a glance. Enum options - VS_NOT_CONFIGURED, VS_HEALTHY, VS_NEEDS_ATTENTION, VS_ALARM, VS_CRITICAL. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Overall health for this Virtual Service, at a glance. Enum options - VS_NOT_CONFIGURED, VS_HEALTHY, VS_NEEDS_ATTENTION, VS_ALARM, VS_CRITICAL. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             unknown_action_label_count:
-                description: "Number of label names referenced by a rule that don't exist in the label profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of label names referenced by a rule that don't exist in the label profile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     VirtualServiceRefCnt:
@@ -19833,7 +19833,7 @@ definitions:
                 type: integer
                 format: uint64
             l4_lb_event_errors:
-                description: "Number of DS errors in the L4 Loadbalancing events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of DS errors in the L4 Loadbalancing events. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             num_reads_skipped_from_socket:
@@ -19857,7 +19857,7 @@ definitions:
                 type: integer
                 format: uint64
             server_ssl_event_errors:
-                description: "Number of DS errors in the Server SSL Hello and Handshake-done events. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of DS errors in the Server SSL Hello and Handshake-done events. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             ssl_done_event_errors:
@@ -20512,11 +20512,11 @@ definitions:
                 type: integer
                 format: uint64
             responses_2xx_api:
-                description: "Total number of 2XX responses for all APIs in this Virtualservice. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for all APIs in this Virtualservice. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_2xx_nonapi:
-                description: "Total number of 2XX responses for all Non-APIs in this Virtualservice. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for all Non-APIs in this Virtualservice. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             rum_active_sampled_reqs:
@@ -20700,91 +20700,91 @@ definitions:
                 type: integer
                 format: uint64
             waap_active_api_count:
-                description: "Total number of requests matching active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_active_api_latency:
-                description: "Cumulative client transaction latency in ms for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_flag_count:
-                description: "Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_hits:
-                description: "Total number of requests to WAAP-enabled API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests to WAAP-enabled API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_orphan_api_count:
-                description: "Total number of requests matching orphan API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching orphan API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_reject_count:
-                description: "Total number of requests rejected by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests rejected by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_301:
-                description: "Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_302:
-                description: "Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_303:
-                description: "Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_307:
-                description: "Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_308:
-                description: "Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_400:
-                description: "Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_401:
-                description: "Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_403:
-                description: "Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_407:
-                description: "Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_429:
-                description: "Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_4xx:
-                description: "Total 4XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 4XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_responses_5xx:
-                description: "Total 5XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 5XX responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_shadow_api_count:
-                description: "Total number of requests matching shadow API paths. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_shadow_api_latency:
-                description: "Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_validation_fail_count:
-                description: "Total number of API validation failures across all endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of API validation failures across all endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waap_zombie_api_count:
-                description: "Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching zombie API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             waf_disabled:
@@ -20905,15 +20905,15 @@ definitions:
         type: object
         properties:
             se_statuses:
-                description: "Status of every Service Engine currently serving this Virtual Service. Field introduced in 32.2.1. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Status of every Service Engine currently serving this Virtual Service. Field introduced in 32.1.4. Maximum of 64 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/VsSeStatus'
             vs_config_status:
-                description: "Whether this Virtual Service's configuration has been fully applied. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether this Virtual Service's configuration has been fully applied. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ConfigurationStatus'
             vs_oper_status:
-                description: "Whether this Virtual Service is currently up. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether this Virtual Service is currently up. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OperationalStatus'
     VsLogStatsDisAggr:
         type: object
@@ -20992,10 +20992,10 @@ definitions:
         type: object
         properties:
             message:
-                description: "A ready-to-display description of the recommendation, e.g. 'Application Insights is not configured — endpoint learning will not run for this VS.' Names the specific label and/or policy the recommendation is about, if applicable. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "A ready-to-display description of the recommendation, e.g. 'Application Insights is not configured — endpoint learning will not run for this VS.' Names the specific label and/or policy the recommendation is about, if applicable. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             severity:
-                description: "How urgently this recommendation needs attention. Enum options - RECOMMENDATION_SEVERITY_CRITICAL, RECOMMENDATION_SEVERITY_ALARM, RECOMMENDATION_SEVERITY_WARNING, RECOMMENDATION_SEVERITY_NOTICE, RECOMMENDATION_SEVERITY_INFO. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "How urgently this recommendation needs attention. Enum options - RECOMMENDATION_SEVERITY_CRITICAL, RECOMMENDATION_SEVERITY_ALARM, RECOMMENDATION_SEVERITY_WARNING, RECOMMENDATION_SEVERITY_NOTICE, RECOMMENDATION_SEVERITY_INFO. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VsResProfile:
         type: object
@@ -21089,13 +21089,13 @@ definitions:
         type: object
         properties:
             oper_status:
-                description: "Whether this Service Engine is up and serving traffic for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether this Service Engine is up and serving traffic for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OperationalStatus'
             role:
-                description: "Whether this Service Engine is the primary or standby for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Whether this Service Engine is the primary or standby for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_ref:
-                description: "The Service Engine this status is for. It is a reference to an object of type ServiceEngine. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The Service Engine this status is for. It is a reference to an object of type ServiceEngine. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     VsSeVnic:
         type: object
@@ -21130,334 +21130,334 @@ definitions:
         type: object
         properties:
             classification:
-                description: "Config-time classification of this endpoint (ACTIVE, ORPHAN, or ZOMBIE). Enum options - API, API_WITH_VIOLATIONS, NON_API, API_ACTIVE, API_SHADOW, API_ORPHAN, API_ZOMBIE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Config-time classification of this endpoint (ACTIVE, ORPHAN, or ZOMBIE). Enum options - API, API_WITH_VIOLATIONS, NON_API, API_ACTIVE, API_SHADOW, API_ORPHAN, API_ZOMBIE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             labels:
-                description: "Effective labels for this endpoint. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Effective labels for this endpoint. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WaapPathTreeLabel'
             method:
-                description: "HTTP method for this endpoint. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "HTTP method for this endpoint. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             schema_compiled:
-                description: "True if this endpoint has a compiled path/query parameter schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if this endpoint has a compiled path/query parameter schema. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
     WaapPathTreeLabel:
         type: object
         properties:
             local_override:
-                description: "True if this label is attached directly on this endpoint (override_global_labels), overriding the ApiPolicy/label-profile-wide label set. False if inherited from that global set. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "True if this label is attached directly on this endpoint (override_global_labels), overriding the ApiPolicy/label-profile-wide label set. False if inherited from that global set. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             name:
-                description: "Label name. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Label name. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             scope:
-                description: "Policy scope this label is valid for (APIPOLICY, WAFPOLICY, etc). Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Policy scope this label is valid for (APIPOLICY, WAFPOLICY, etc). Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     WaapPathTreeNode:
         type: object
         properties:
             endpoints:
-                description: "HTTP methods configured on this path template. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "HTTP methods configured on this path template. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/WaapPathTreeEndpoint'
             path_name:
-                description: "Name of the ApiPath object for this path template. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the ApiPath object for this path template. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path_template:
-                description: "Path template for this ApiPath object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Path template for this ApiPath object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     WaapStats:
         type: object
         properties:
             active_api_count:
-                description: "Total number of active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             active_api_latency:
-                description: "Cumulative client transaction latency in ms for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             flag_count:
-                description: "Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             hits:
-                description: "Total number of requests received for all API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests received for all API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_delete_requests:
-                description: "Total number of DELETE requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of DELETE requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_get_requests:
-                description: "Total number of GET requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of GET requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_other_requests:
-                description: "Total number of other method requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of other method requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_patch_requests:
-                description: "Total number of PATCH requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of PATCH requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_post_requests:
-                description: "Total number of POST requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of POST requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             method_put_requests:
-                description: "Total number of PUT requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of PUT requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             non_api_count:
-                description: "Total number of non-API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of non-API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             nonapi_responses_1xx:
-                description: "Total number of 1XX responses for non-API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for non-API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             nonapi_responses_3xx:
-                description: "Total number of 3XX responses for non-API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for non-API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             nonapi_responses_4xx:
-                description: "Total number of 4XX responses for non-API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for non-API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             nonapi_responses_5xx:
-                description: "Total number of 5XX responses for non-API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for non-API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_api_count:
-                description: "Total number of orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_responses_1xx:
-                description: "Total number of 1XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_responses_2xx:
-                description: "Total number of 2XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_responses_3xx:
-                description: "Total number of 3XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_responses_4xx:
-                description: "Total number of 4XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_responses_5xx:
-                description: "Total number of 5XX responses for orphan API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for orphan API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             reject_count:
-                description: "Total number of requests rejected by API Policy validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests rejected by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_1xx:
-                description: "Total number of 1XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_2xx:
-                description: "Total number of 2XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_2xx_api:
-                description: "Sum of 2XX responses across all API types (Active + Shadow + Orphan + Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Sum of 2XX responses across all API types (Active + Shadow + Orphan + Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_2xx_nonapi:
-                description: "Total 2XX responses for non-API requests to this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 2XX responses for non-API requests to this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_301:
-                description: "Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 301 Moved Permanently responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_302:
-                description: "Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 302 Found responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_303:
-                description: "Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 303 See Other responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_307:
-                description: "Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 307 Temporary Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_308:
-                description: "Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 308 Permanent Redirect responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_3xx:
-                description: "Total number of 3XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_400:
-                description: "Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 400 Bad Request responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_401:
-                description: "Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 401 Unauthorized responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_403:
-                description: "Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 403 Forbidden responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_407:
-                description: "Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 407 Proxy Authentication Required responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_429:
-                description: "Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 429 Too Many Requests responses for all API endpoints (Active+Shadow+Orphan+Zombie). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_4xx:
-                description: "Total number of 4XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             responses_5xx:
-                description: "Total number of 5XX responses for active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_api_count:
-                description: "Total number of shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_api_latency:
-                description: "Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_responses_1xx:
-                description: "Total number of 1XX responses for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_responses_2xx:
-                description: "Total number of 2XX responses for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_responses_3xx:
-                description: "Total number of 3XX responses for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_responses_4xx:
-                description: "Total number of 4XX responses for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             shadow_responses_5xx:
-                description: "Total number of 5XX responses for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count:
-                description: "Total number of validation failures for all API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_method:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_method. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_method. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_path:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_path. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_path. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_path_failed_validation:
-                description: "VS-level validation failures at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at path parameter location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_query_args. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_query_args. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_failed_validation:
-                description: "VS-level validation failures at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at query args location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_missing:
-                description: "VS-level validation failures at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at query args location with type Missing Mandatory Query Argument (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_query_args_unexpected:
-                description: "VS-level validation failures at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at query args location with type Unexpected Query Argument (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_request_body. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_request_body. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_failed_validation:
-                description: "VS-level validation failures at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request body location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_missing:
-                description: "VS-level validation failures at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request body location with type Missing Mandatory Request Body Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_body_unexpected:
-                description: "VS-level validation failures at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request body location with type Unexpected Request Body Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_content_type:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_request_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_request_content_type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_request_header. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_request_header. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_failed_validation:
-                description: "VS-level validation failures at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request header location with type Failed Validation (INVALID_TYPE, VALUE_OUT_OF_RANGE, or FORMAT_MISMATCH). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_missing:
-                description: "VS-level validation failures at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request header location with type Missing Mandatory Header Parameter (MISSING_REQUIRED_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_request_header_unexpected:
-                description: "VS-level validation failures at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "VS-level validation failures at request header location with type Unexpected Header Parameter (UNEXPECTED_ADDITIONAL_PROPERTY). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_response_content_type:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_response_content_type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_response_content_type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_location_response_status_code:
-                description: "Total number of validation failures for all API endpoints with validation failure type location_response_status_code. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type location_response_status_code. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             validation_fail_count_unspecified:
-                description: "Total number of validation failures for all API endpoints with validation failure type V01. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of validation failures for all API endpoints with validation failure type V01. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_api_count:
-                description: "Total number of zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_responses_1xx:
-                description: "Total number of 1XX responses for zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 1XX responses for zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_responses_2xx:
-                description: "Total number of 2XX responses for zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 2XX responses for zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_responses_3xx:
-                description: "Total number of 3XX responses for zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 3XX responses for zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_responses_4xx:
-                description: "Total number of 4XX responses for zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 4XX responses for zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             zombie_responses_5xx:
-                description: "Total number of 5XX responses for zombie API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of 5XX responses for zombie API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     WriteOpDisabledState:

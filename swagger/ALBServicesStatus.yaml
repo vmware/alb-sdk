@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi ALBServicesStatus Object API
     contact:
         name: Avi Networks Inc.
@@ -429,7 +429,7 @@ definitions:
                 description: "Descriptive error message. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the ALBServicesStatus object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the ALBServicesStatus object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             registration_status:
                 description: "Registration status of the controller with ALBServices. Enum options - ALBSERVICES_REGISTRATION_UNKNOWN, ALBSERVICES_REGISTERED, ALBSERVICES_DEREGISTERED. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

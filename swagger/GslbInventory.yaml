@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi GslbInventory Object API
     contact:
         name: Avi Networks Inc.
@@ -171,12 +171,12 @@ paths:
                     description: object not found
 
 
-    /gslbhsmruntime:
+    /gslbcrmruntime:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: GET /gslbhsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: GET /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -239,14 +239,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime
-            operationId: POST /gslbhsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: POST /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -274,25 +274,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
-    /gslbhsmruntime/{uuid}:
+    /gslbcrmruntime/{uuid}:
         get:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: GET /gslbhsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: GET /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -352,16 +352,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbhsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -394,10 +394,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -409,16 +409,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbhsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -451,10 +451,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbHSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -466,16 +466,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbHSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbHSMRuntime
-            description: /gslbhsmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbhsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -873,12 +873,12 @@ paths:
                     description: object not found
 
 
-    /gslbcrmruntime:
+    /gslbhsmruntime:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: GET /gslbcrmruntime
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: GET /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -941,14 +941,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbHSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: POST /gslbcrmruntime
+                - GslbHSMRuntime
+            description: /gslbhsmruntime
+            operationId: POST /gslbhsmruntime
             consumes:
                 -   application/json
             produces:
@@ -976,25 +976,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
-    /gslbcrmruntime/{uuid}:
+    /gslbhsmruntime/{uuid}:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: GET /gslbcrmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: GET /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1054,16 +1054,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbcrmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1096,10 +1096,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1111,16 +1111,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbcrmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1153,10 +1153,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbHSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1168,16 +1168,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbHSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbcrmruntime/{uuid}
+                - GslbHSMRuntime
+            description: /gslbhsmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbhsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1475,7 +1475,7 @@ definitions:
                 description: "Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tls_connection_err:
-                description: "This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -3446,11 +3446,11 @@ definitions:
                 type: number
                 format: double
             avg_responses_2xx_api:
-                description: "Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_responses_2xx_nonapi:
-                description: "Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_rum_client_data_transfer_time:
@@ -3598,95 +3598,95 @@ definitions:
                 type: number
                 format: double
             avg_waap_active_api_count:
-                description: "Rate of requests matching active API endpoints per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of requests matching active API endpoints per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_active_api_latency:
-                description: "Average client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_authentication_errors:
-                description: "Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_hits:
-                description: "Average WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_orphan_api_count:
-                description: "Rate of orphan API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of orphan API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_rate_limiting_errors:
-                description: "Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_redirects:
-                description: "Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_301:
-                description: "Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_302:
-                description: "Rate of 302 Found responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 302 Found responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_303:
-                description: "Rate of 303 See Other responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 303 See Other responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_307:
-                description: "Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_308:
-                description: "Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_400:
-                description: "Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_401:
-                description: "Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_403:
-                description: "Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_407:
-                description: "Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_429:
-                description: "Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_4xx:
-                description: "Rate of 4XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 4XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_responses_5xx:
-                description: "Rate of 5XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of 5XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_shadow_api_count:
-                description: "Rate of shadow API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of shadow API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_shadow_api_latency:
-                description: "Average client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_validation_fail_count:
-                description: "Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waap_zombie_api_count:
-                description: "Rate of zombie API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Rate of zombie API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             avg_waf_attacks:
@@ -4041,11 +4041,11 @@ definitions:
                 type: number
                 format: double
             sum_responses_2xx_api:
-                description: "Total number of API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_responses_2xx_nonapi:
-                description: "Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_rum_client_data_transfer_time:
@@ -4069,63 +4069,63 @@ definitions:
                 type: number
                 format: double
             sum_waap_active_api_count:
-                description: "Total number of requests matching active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_active_api_latency:
-                description: "Total client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_flag_count:
-                description: "Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_hits:
-                description: "Total number of WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_orphan_api_count:
-                description: "Total number of requests matching orphan API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching orphan API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_reject_count:
-                description: "Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_responses_400:
-                description: "Total 400 Bad Request responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 400 Bad Request responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_responses_401:
-                description: "Total 401 Unauthorized responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 401 Unauthorized responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_responses_403:
-                description: "Total 403 Forbidden responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 403 Forbidden responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_responses_4xx:
-                description: "Total 4XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 4XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_responses_5xx:
-                description: "Total 5XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total 5XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_shadow_api_count:
-                description: "Total number of requests matching shadow API paths. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_shadow_api_latency:
-                description: "Total client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_validation_fail_count:
-                description: "Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waap_zombie_api_count:
-                description: "Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of requests matching zombie API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             sum_waf_attacks:
