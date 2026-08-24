@@ -17,7 +17,7 @@ type TCPProxyProfile struct {
 	// Controls whether the windows are static or supports autogrowth. Maximum that it can grow to is limited to 4MB. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoWindowGrowth *bool `json:"auto_window_growth,omitempty"`
 
-	// Controls whether receive window auto growth is allowed to fall back to an RTT-based estimate when the TCP timestamp option is not negotiated on the connection. Only takes effect when auto_window_growth is also enabled. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Controls whether receive window auto growth is allowed to fall back to an RTT-based estimate when the TCP timestamp option is not negotiated on the connection. Only takes effect when auto_window_growth is also enabled. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AutoWindowGrowthWithoutTimestamp *bool `json:"auto_window_growth_without_timestamp,omitempty"`
 
 	// Dynamically pick the relevant parameters for connections. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

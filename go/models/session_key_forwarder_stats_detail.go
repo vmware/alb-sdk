@@ -8,6 +8,6 @@ package models
 // swagger:model SessionKeyForwarderStatsDetail
 type SessionKeyForwarderStatsDetail struct {
 
-	// One stats row per Session Key Forwarder endpoint (ip_port). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// One stats row per Session Key Forwarder endpoint (ip_port). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Stats []*SessionKeyForwarderStats `json:"stats,omitempty"`
 }

@@ -66,7 +66,7 @@ type DebugServiceEngine struct {
 	// Objsync specific debug options. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Objsync *DebugServiceEngineObjSync `json:"objsync,omitempty"`
 
-	// Enable PcapNg for packet capture. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable PcapNg for packet capture. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PcapNg *bool `json:"pcap_ng,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

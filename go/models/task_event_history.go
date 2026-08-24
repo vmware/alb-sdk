@@ -8,15 +8,15 @@ package models
 // swagger:model TaskEventHistory
 type TaskEventHistory struct {
 
-	// API specification information captured at the time of processing. Populated for Open API Specification file objects only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API specification information captured at the time of processing. Populated for Open API Specification file objects only. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SpecInfo *string `json:"spec_info,omitempty"`
 
-	// State of the file object for the version specified. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// State of the file object for the version specified. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *FileObjectState `json:"state,omitempty"`
 
-	// Processing events for this version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Processing events for this version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TaskEvents []*TaskEventMap `json:"task_events,omitempty"`
 
-	// Version of the file object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Version of the file object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Version *string `json:"version,omitempty"`
 }

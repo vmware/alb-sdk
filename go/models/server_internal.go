@@ -14,7 +14,7 @@ type ServerInternal struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CkPrstID *uint32 `json:"ck_prst_id,omitempty"`
 
-	// Server id for persistence. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Server id for persistence. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CkPrstID64 *uint64 `json:"ck_prst_id_64,omitempty"`
 
 	//  Field introduced in 17.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

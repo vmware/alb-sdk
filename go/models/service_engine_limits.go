@@ -26,6 +26,6 @@ type ServiceEngineLimits struct {
 	// Serviceengine system limits specific to cloud type. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceengineCloudLimits []*ServiceEngineCloudLimits `json:"serviceengine_cloud_limits,omitempty"`
 
-	// Per-tier WAAP SE sizing limits (SMALL, MEDIUM, LARGE). Defines the min_vcpus, min_memory, and max_vs_per_se for each tier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Per-tier WAAP SE sizing limits (SMALL, MEDIUM, LARGE). Defines the min_vcpus, min_memory, and max_vs_per_se for each tier. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ServiceengineWaapLimits []*ServiceEngineSizingWaapLimits `json:"serviceengine_waap_limits,omitempty"`
 }

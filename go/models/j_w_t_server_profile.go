@@ -12,7 +12,7 @@ type JWTServerProfile struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// Allowed signing algorithms when the matched JWK omits the 'alg' field (RFC 7517 §4.4). If the JWK carries 'alg', that value always wins and this list is ignored. An empty list rejects all such tokens (secure default). Only applicable when JWT Profile type is CLIENT_AUTH. Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384, JWS_ALG_ES512. Field introduced in 32.2.1. Maximum of 9 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Allowed signing algorithms when the matched JWK omits the 'alg' field (RFC 7517 §4.4). If the JWK carries 'alg', that value always wins and this list is ignored. An empty list rejects all such tokens (secure default). Only applicable when JWT Profile type is CLIENT_AUTH. Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384, JWS_ALG_ES512. Field introduced in 32.1.4. Maximum of 9 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowedAlgorithms []string `json:"allowed_algorithms,omitempty"`
 
 	// JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

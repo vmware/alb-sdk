@@ -8,7 +8,7 @@ package models
 // swagger:model QatInfo
 type QatInfo struct {
 
-	// LIBUSDM Version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// LIBUSDM Version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LibusdmVersion *string `json:"libusdm_version,omitempty"`
 
 	// QAT Engine Version. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -32,10 +32,10 @@ type QatInfo struct {
 	// QAT Software Acceleration. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatSwAcceleration *bool `json:"qat_sw_acceleration,omitempty"`
 
-	// QATLIB-SERVICE Version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// QATLIB-SERVICE Version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatlibServiceVersion *string `json:"qatlib_service_version,omitempty"`
 
-	// QATLib Version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// QATLib Version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatlibVersion *string `json:"qatlib_version,omitempty"`
 
 	// UUID of the Service Engine. It is a reference to an object of type ServiceEngine. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -47,6 +47,6 @@ type RoutingService struct {
 	// For IP Routing feature, enabling this knob will fallback to routing through Linux, by default routing is done via Service Engine data-path. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RoutingByLinuxIpstack *bool `json:"routing_by_linux_ipstack,omitempty"`
 
-	// Maximum Segment Size (MSS) to use for segmentation ofGRO'd/LRO'd TCP packets in routing service. When oversizedpackets with DF bit set exceed egress MTU, they will besegmented using hardware TSO with this MSS value. Allowed values are 536-9000. Special values are 0- auto. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Maximum Segment Size (MSS) to use for segmentation ofGRO'd/LRO'd TCP packets in routing service. When oversizedpackets with DF bit set exceed egress MTU, they will besegmented using hardware TSO with this MSS value. Allowed values are 536-9000. Special values are 0- auto. Field introduced in 32.1.4. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RoutingSegmentationMss *uint32 `json:"routing_segmentation_mss,omitempty"`
 }

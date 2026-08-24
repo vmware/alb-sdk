@@ -45,7 +45,7 @@ type GslbCRMRuntime struct {
 	// Uuid of the tenant. It is a reference to an object of type Tenant. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 
-	// This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TLSConnectionErr *string `json:"tls_connection_err,omitempty"`
 
 	// url

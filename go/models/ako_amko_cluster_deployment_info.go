@@ -8,12 +8,12 @@ package models
 // swagger:model AkoAmkoClusterDeploymentInfo
 type AkoAmkoClusterDeploymentInfo struct {
 
-	// Kubernetes namespace where AKO/AMKO is deployed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Kubernetes namespace where AKO/AMKO is deployed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Namespace *string `json:"namespace,omitempty"`
 
-	// Pod name for identification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Pod name for identification. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PodName *string `json:"pod_name,omitempty"`
 
-	// Number of replicas in the deployment. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of replicas in the deployment. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ReplicaCount *int32 `json:"replica_count,omitempty"`
 }

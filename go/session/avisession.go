@@ -301,7 +301,7 @@ type AviSession struct {
 	proxyURL string
 }
 
-const DEFAULT_AVI_VERSION = "20.1.7"
+const DEFAULT_AVI_VERSION = "30.2.1"
 const DEFAULT_API_TIMEOUT = time.Duration(60 * time.Second)
 const DEFAULT_API_TENANT = "admin"
 const DEFAULT_MAX_API_RETRIES = 3

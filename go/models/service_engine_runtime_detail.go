@@ -56,7 +56,7 @@ type ServiceEngineRuntimeDetail struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeConnected *bool `json:"se_connected,omitempty"`
 
-	// Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeDpStartTime *TimeStamp `json:"se_dp_start_time,omitempty"`
 
 	// Indicates SE reboot following SE group change is pending. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

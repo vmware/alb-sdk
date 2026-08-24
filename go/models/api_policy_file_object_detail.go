@@ -8,9 +8,9 @@ package models
 // swagger:model ApiPolicyFileObjectDetail
 type APIPolicyFileObjectDetail struct {
 
-	// The uploaded OpenAPI specification file associated with this API policy. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The uploaded OpenAPI specification file associated with this API policy. It is a reference to an object of type FileObject. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	FileObjectRef *string `json:"file_object_ref,omitempty"`
 
-	// Processing status of the uploaded file. If processing failed, the API policy keeps enforcing the last version that processed successfully. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Processing status of the uploaded file. If processing failed, the API policy keeps enforcing the last version that processed successfully. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *FileObjectState `json:"state,omitempty"`
 }
