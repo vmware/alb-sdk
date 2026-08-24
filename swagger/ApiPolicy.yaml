@@ -386,10 +386,10 @@ definitions:
         description: "Configuration of labels applied to endpoints belonging to a specific classification category, such as active or orphan."
         properties:
             enabled:
-                description: "Enables the labels configuration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enables the labels configuration. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             labels:
-                description: "The list of labels to be applied to the API. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The list of labels to be applied to the API. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -404,69 +404,69 @@ definitions:
                 readOnly: True
                 type: string
             active_api_labels:
-                description: "List of labels applied to active API endpoints. An active API is an endpoint whose type is API_ACTIVE. Endpoints defined in the policy are active by default. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of labels applied to active API endpoints. An active API is an endpoint whose type is API_ACTIVE. Endpoints defined in the policy are active by default. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
             api_spec_info:
-                description: "API specification metadata extracted from the associated OpenAPI specification. Automatically populated when a FileObject is associated with this policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API specification metadata extracted from the associated OpenAPI specification. Automatically populated when a FileObject is associated with this policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 $ref: '#/definitions/ApiSpecInfo'
             description:
-                description: "Description of this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of this API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             file_object_refs:
-                description: "Reference to the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Reference to the uploaded OpenAPI specification file associated with this policy. Only one file is supported at a time. It is a reference to an object of type FileObject. Field introduced in 32.1.4. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             label_mappings:
-                description: "Mapping of labels to API policy actions. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Mapping of labels to API policy actions. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ApiPolicyLabelActionMapping'
             name:
-                description: "Name of this object, unique per Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of this object, unique per Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             non_api_url_labels:
-                description: "List of labels applied to non-API URL requests. Non-API URLs are methods and URLs that are outside the scope of the policy. These are usually used to retrieve static information that are not tied to back-end business logic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of labels applied to non-API URL requests. Non-API URLs are methods and URLs that are outside the scope of the policy. These are usually used to retrieve static information that are not tied to back-end business logic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
             orphan_api_classification_settings:
-                description: "Orphan API Classification settings for this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Orphan API Classification settings for this API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OrphanApiClassificationSettings'
             orphan_api_labels:
-                description: "List of labels applied to orphan API endpoints. An orphan API is an endpoint that is specified in the API-Spec but has not been seen in the datapath for a predefined duration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of labels applied to orphan API endpoints. An orphan API is an endpoint that is specified in the API-Spec but has not been seen in the datapath for a predefined duration. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
             path_refs:
-                description: "List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.2.1. Maximum of 2000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of path specifications. When an OAS fileobject is associated to this ApiPolicy, the paths defined in the OAS fileobject will be automatically added to this list. If OAS fileobject has a path that is already defined in the list, the existing path in the list will be updated as per the OAS fileobject. It is a reference to an object of type ApiPath. Field introduced in 32.1.4. Maximum of 2000 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             routing_info:
-                description: "Optional header-based routing configuration for EVH child VS selection. When set, the rules inside are used in addition to server FQDNs (host match) and server_info.path_prefix (path match) to determine which child VS handles a request. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Optional header-based routing configuration for EVH child VS selection. When set, the rules inside are used in addition to server FQDNs (host match) and server_info.path_prefix (path match) to determine which child VS handles a request. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiRoutingInfo'
             server_info:
-                description: "Server list defining the scope of this API policy. Requests not matching any server URL are treated as non-API traffic. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server list defining the scope of this API policy. Requests not matching any server URL are treated as non-API traffic. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiServerInfo'
             shadow_api_labels:
-                description: "List of labels applied to shadow API endpoints. A shadow API is an endpoint that is not specified in the API-Spec but is inside the scope of this policy (matching the server URL and path prefix) and is seen in the datapath. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of labels applied to shadow API endpoints. A shadow API is an endpoint that is not specified in the API-Spec but is inside the scope of this policy (matching the server URL and path prefix) and is seen in the datapath. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "The object UUID. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The object UUID. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             validation_settings:
-                description: "Validation settings for this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Validation settings for this API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiValidationSettings'
             zombie_api_classification_settings:
-                description: "Zombie API Classification settings for this API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Zombie API Classification settings for this API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ZombieApiClassificationSettings'
             zombie_api_labels:
-                description: "List of labels applied to zombie API endpoints. A zombie API is an endpoint that is specified in the API-Spec but is seen in the datapath only as drip-traffic over a predefined duration. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of labels applied to zombie API endpoints. A zombie API is an endpoint that is specified in the API-Spec but is seen in the datapath only as drip-traffic over a predefined duration. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiLabels'
     ApiPolicyApiResponse:
         type: object
@@ -491,16 +491,16 @@ definitions:
             -   label
         properties:
             api_policy_actions:
-                description: "Check-disable toggle actions for this label. Each entry turns off an entire validation check category for requests carrying this label. Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK. Field introduced in 32.2.1. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Check-disable toggle actions for this label. Each entry turns off an entire validation check category for requests carrying this label. Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK. Field introduced in 32.1.4. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             enabled:
-                description: "Enables this label-to-action mapping. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enables this label-to-action mapping. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             label:
-                description: "The name of the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The name of the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiRoutingInfo:
         type: object
@@ -509,7 +509,7 @@ definitions:
             -   rules
         properties:
             rules:
-                description: "Header-based routing rules for API policy selection. Rules are ORed  a request matches if any rule matches. Header conditions within a rule are ANDed  all must match. Example  a rule named 'v1-route' with an HDR_EQUALS match on X-API-Version='v1' matches only requests carrying that header. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Header-based routing rules for API policy selection. Rules are ORed  a request matches if any rule matches. Header conditions within a rule are ANDed  all must match. Example  a rule named 'v1-route' with an HDR_EQUALS match on X-API-Version='v1' matches only requests carrying that header. Field introduced in 32.1.4. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ApiRoutingRule'
@@ -521,20 +521,20 @@ definitions:
             -   name
         properties:
             matches:
-                description: "Match criteria containing only header matches for routing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Match criteria containing only header matches for routing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MatchTarget'
             name:
-                description: "Name for the routing rule. Must be unique within api_routing_info. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name for the routing rule. Must be unique within api_routing_info. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiServerInfo:
         type: object
         properties:
             path_prefix:
-                description: "Common URL path prefix derived from server URLs. Automatically populated by pbresolve from the path sections of servers[].url. All server URLs must share the same path section. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Common URL path prefix derived from server URLs. Automatically populated by pbresolve from the path sections of servers[].url. All server URLs must share the same path section. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             servers:
-                description: "List of servers that define the scope of this API policy. A request that does not match any server URL is considered outside this policy's scope and is treated as non-API traffic. In EVH deployments, each server URL is used to generate a VHMatch entry that selects the correct child VS by matching the request hostname and path prefix. Field introduced in 32.2.1. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of servers that define the scope of this API policy. A request that does not match any server URL is considered outside this policy's scope and is treated as non-API traffic. In EVH deployments, each server URL is used to generate a VHMatch entry that selects the correct child VS by matching the request hostname and path prefix. Field introduced in 32.1.4. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ApiSpecServer'
@@ -542,40 +542,40 @@ definitions:
         type: object
         properties:
             component_schema_count:
-                description: "Number of schemas defined in the components/schemas section of the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of schemas defined in the components/schemas section of the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             description:
-                description: "Description of the OpenAPI document from the info object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of the OpenAPI document from the info object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             inline_schema_count:
-                description: "Number of complex inline schemas promoted to top-level ApiSchema objects during import. Schemas are promoted when they contain object properties, array constraints, or composite types (oneOf/anyOf/allOf). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of complex inline schemas promoted to top-level ApiSchema objects during import. Schemas are promoted when they contain object properties, array constraints, or composite types (oneOf/anyOf/allOf). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             oas_version:
-                description: "OpenAPI Specification version. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "OpenAPI Specification version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             path_count:
-                description: "Number of paths in the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of paths in the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: integer
                 format: uint32
             servers:
-                description: "List of server URLs extracted from the OpenAPI document's servers section. Field introduced in 32.2.1. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "List of server URLs extracted from the OpenAPI document's servers section. Field introduced in 32.1.4. Maximum of 100 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: array
                 items:
                     $ref: '#/definitions/ApiSpecServer'
             title:
-                description: "Title of the OpenAPI document. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Title of the OpenAPI document. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
             version:
-                description: "Version of the OpenAPI document, which is distinct from the OpenAPI Specification version (oas_version). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Version of the OpenAPI document, which is distinct from the OpenAPI Specification version (oas_version). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
     ApiSpecServer:
@@ -584,10 +584,10 @@ definitions:
             -   url
         properties:
             description:
-                description: "Description of this server entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of this server entry. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
-                description: "Server URL or relative path. May be an absolute URL (e.g. 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g. '/v1', '/'). When populated from an OpenAPI spec, server URL template variables are resolved to concrete URLs at import time before being stored here. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server URL or relative path. May be an absolute URL (e.g. 'https //api.example.com/v1', 'https //api.example.com 8443/v1') or a relative path (e.g. '/v1', '/'). When populated from an OpenAPI spec, server URL template variables are resolved to concrete URLs at import time before being stored here. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiSpecServerApiResponse:
         type: object
@@ -609,67 +609,67 @@ definitions:
         description: "Default validation actions enforced when requests or responses violate policy specifications. These actions can be overridden at the path or endpoint level."
         properties:
             failed_validation_header_parameter_action:
-                description: "Action to take when a header parameter fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a header parameter fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             failed_validation_path_parameter_action:
-                description: "Action to take when a path parameter fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a path parameter fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             failed_validation_query_argument_action:
-                description: "Action to take when a query argument fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a query argument fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             failed_validation_request_body_parameter_action:
-                description: "Action to take when the request body fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when the request body fails schema validation. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             missing_mandatory_header_parameter_action:
-                description: "Action to take when a mandatory header parameter is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a mandatory header parameter is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             missing_mandatory_query_argument_action:
-                description: "Action to take when a mandatory query argument is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a mandatory query argument is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             missing_mandatory_request_body_parameter_action:
-                description: "Action to take when a mandatory request body parameter is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a mandatory request body parameter is missing. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             request_outside_path_prefix_action:
-                description: "Action to take when a request does not match any server URL defined in this policy. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a request does not match any server URL defined in this policy. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_PASS"
             unexpected_query_argument_action:
-                description: "Action to take when a query argument is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a query argument is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             unexpected_request_body_parameter_action:
-                description: "Action to take when a request body parameter is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a request body parameter is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             unexpected_request_header_action:
-                description: "Action to take when a header parameter is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a header parameter is present but not defined in the schema. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_PASS"
             unknown_content_type_action:
-                description: "Action to take on an unknown request content type, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take on an unknown request content type, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_PASS"
             unknown_http_method_action:
-                description: "Action to take when a request matches a defined path but uses an HTTP method not defined for that path. Can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a request matches a defined path but uses an HTTP method not defined for that path. Can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             unknown_path_action:
-                description: "Action to take when a request matches a server URL but does not match any defined API path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take when a request matches a server URL but does not match any defined API path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             unknown_response_content_type_action:
-                description: "Action to take on unknown response content type, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take on unknown response content type, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
             unknown_response_status_code_action:
-                description: "Action to take on unknown response status code, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Action to take on unknown response status code, can be overridden per path. Enum options - API_ACTION_INHERIT_FROM_API_POLICY, API_ACTION_PASS, API_ACTION_FLAG, API_ACTION_REJECT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_ACTION_FLAG"
     BotClassification:
@@ -873,11 +873,11 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "IS_IN"
             values:
-                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -910,7 +910,7 @@ definitions:
                 description: "Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -954,15 +954,15 @@ definitions:
         description: "Classification settings that define when an API endpoint is marked as orphan due to the absence of observed traffic over a specified duration."
         properties:
             enabled:
-                description: "Enables orphan API classification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enables orphan API classification. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             inspection_interval_unit:
-                description: "Time unit for the orphan inspection interval. Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time unit for the orphan inspection interval. Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "INTERVAL_DAYS"
             inspection_interval_value:
-                description: "Duration of the orphan inspection interval in the specified time unit. An endpoint not seen in traffic for this duration is classified as orphan. Allowed values are 1-365. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Duration of the orphan inspection interval in the specified time unit. An endpoint not seen in traffic for this duration is classified as orphan. Allowed values are 1-365. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: uint32
@@ -1068,20 +1068,20 @@ definitions:
         description: "Classification settings that define when an API endpoint is marked as zombie based on a minimum throughput threshold and duration."
         properties:
             enabled:
-                description: "Enables zombie API classification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enables zombie API classification. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             inspection_interval_unit:
-                description: "Time unit for the zombie inspection interval. Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time unit for the zombie inspection interval. Enum options - INTERVAL_MINUTES, INTERVAL_HOURS, INTERVAL_DAYS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "INTERVAL_DAYS"
             inspection_interval_value:
-                description: "Duration of the zombie inspection interval in the specified time unit. An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie. Allowed values are 1-365. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Duration of the zombie inspection interval in the specified time unit. An endpoint whose traffic falls below the zombie threshold for this duration is classified as zombie. Allowed values are 1-365. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 30
                 format: uint32
             min_percent:
-                description: "Per-API throughput percentage threshold relative to the aggregated throughput below which APIs are designated as Zombie. Allowed values are 0-100. Field introduced in 32.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Per-API throughput percentage threshold relative to the aggregated throughput below which APIs are designated as Zombie. Allowed values are 0-100. Field introduced in 32.1.4. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 default: 1.0
                 format: double

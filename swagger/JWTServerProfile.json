@@ -771,7 +771,7 @@
                     "type": "string"
                 },
                 "allowed_algorithms": {
-                    "description": "Allowed signing algorithms when the matched JWK omits the 'alg' field (RFC 7517 \u00a74.4). If the JWK carries 'alg', that value always wins and this list is ignored. An empty list rejects all such tokens (secure default). Only applicable when JWT Profile type is CLIENT_AUTH. Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384, JWS_ALG_ES512. Field introduced in 32.2.1. Maximum of 9 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Allowed signing algorithms when the matched JWK omits the 'alg' field (RFC 7517 \u00a74.4). If the JWK carries 'alg', that value always wins and this list is ignored. An empty list rejects all such tokens (secure default). Only applicable when JWT Profile type is CLIENT_AUTH. Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384, JWS_ALG_ES512. Field introduced in 32.1.4. Maximum of 9 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

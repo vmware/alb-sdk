@@ -506,7 +506,7 @@ definitions:
                 description: "Configure the host header. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             path:
                 description: "Configure request paths. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -560,7 +560,7 @@ definitions:
                 description: "Host header value to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure label match for API endpoint labels. Uses Auth scope to match labels attached by the WAAP module. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "HTTP methods to be matched. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1207,18 +1207,18 @@ definitions:
             -   name
         properties:
             description:
-                description: "Description of this label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of this label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             match_action_scopes:
-                description: "Defines the policy scope where this label can be used. When specified, the label is restricted to configuration within that policy type only. For example, if set to 'WafPolicy', this label can only be configured and referenced within WAF policies. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Defines the policy scope where this label can be used. When specified, the label is restricted to configuration within that policy type only. For example, if set to 'WafPolicy', this label can only be configured and referenced within WAF policies. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             name:
-                description: "Label name used as a match condition in policies. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Label name used as a match condition in policies. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             type:
-                description: "The type of this label (system-defined or user-defined). Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The type of this label (system-defined or user-defined). Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "LABEL_USER_DEFINED"
     LabelL7PolicyRule:
@@ -1254,11 +1254,11 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "IS_IN"
             values:
-                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1273,29 +1273,29 @@ definitions:
                 readOnly: True
                 type: string
             description:
-                description: "Description of this label profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Description of this label profile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             label_definitions:
-                description: "Labels available in this profile. Label names must be unique (case-insensitive). Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Labels available in this profile. Label names must be unique (case-insensitive). Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/Label'
             log_labels:
-                description: "Enables logging of WAAP labels effective for a request into ApiLog.effective_labels in the application log. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enables logging of WAAP labels effective for a request into ApiLog.effective_labels in the application log. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             name:
-                description: "Name of this object, unique per Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of this object, unique per Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: "The object UUID. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The object UUID. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LabelProfileApiResponse:
         type: object
@@ -1316,7 +1316,7 @@ definitions:
         type: object
         properties:
             labels:
-                description: "One entry per label defined in the LabelProfile. Field introduced in 32.2.1. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "One entry per label defined in the LabelProfile. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/LabelStatusEntry'
@@ -1324,70 +1324,70 @@ definitions:
         type: object
         properties:
             reason:
-                description: "Explains the INACTIVE state  what applying or enforcing this label is missing or disabled. Omitted for ACTIVE/UNUSED/DANGLING, which are self-explanatory. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Explains the INACTIVE state  what applying or enforcing this label is missing or disabled. Omitted for ACTIVE/UNUSED/DANGLING, which are self-explanatory. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Computed enforcement state for this label. Enum options - LABEL_ACTIVE, LABEL_INACTIVE, LABEL_UNUSED, LABEL_DANGLING. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Computed enforcement state for this label. Enum options - LABEL_ACTIVE, LABEL_INACTIVE, LABEL_UNUSED, LABEL_DANGLING. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LabelStatusEntry:
         type: object
         properties:
             name:
-                description: "The label's name. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The label's name. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             scope:
-                description: "The policy scope this label is restricted to. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The policy scope this label is restricted to. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             status:
-                description: "Computed status for this label. state is never LABEL_DANGLING here, since every label in this list is defined in this LabelProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Computed status for this label. state is never LABEL_DANGLING here, since every label in this list is defined in this LabelProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelStatus'
             type:
-                description: "System-defined or user-defined, from this label's own definition. Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "System-defined or user-defined, from this label's own definition. Enum options - LABEL_SYSTEM_DEFINED, LABEL_USER_DEFINED. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LabelUsageEntry:
         type: object
         properties:
             apipath_uuid:
-                description: "UUID of the ApiPath. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the ApiPath. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enabled:
-                description: "This entry's own enabled/disabled toggle  the endpoint, container, mapping, or rule's own enabled state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "This entry's own enabled/disabled toggle  the endpoint, container, mapping, or rule's own enabled state. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             endpoint_count:
-                description: "Number of endpoints this container currently reaches. Omitted for shadow_api_labels/non_api_url_labels. Set when location is LOCATION_API_POLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of endpoints this container currently reaches. Omitted for shadow_api_labels/non_api_url_labels. Set when location is LOCATION_API_POLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             endpoint_type:
-                description: "OZA classification of the endpoint. Set when location is LOCATION_API_ENDPOINT. Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "OZA classification of the endpoint. Set when location is LOCATION_API_ENDPOINT. Enum options - API_TYPE_ACTIVE, API_TYPE_ORPHAN, API_TYPE_ZOMBIE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             http_method:
-                description: "HTTP method of the endpoint. Set when location is LOCATION_API_ENDPOINT. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "HTTP method of the endpoint. Set when location is LOCATION_API_ENDPOINT. Enum options - HTTP_METHOD_GET, HTTP_METHOD_HEAD, HTTP_METHOD_PUT, HTTP_METHOD_DELETE, HTTP_METHOD_POST, HTTP_METHOD_OPTIONS, HTTP_METHOD_TRACE, HTTP_METHOD_CONNECT, HTTP_METHOD_PATCH, HTTP_METHOD_PROPFIND, HTTP_METHOD_PROPPATCH, HTTP_METHOD_MKCOL, HTTP_METHOD_COPY, HTTP_METHOD_MOVE, HTTP_METHOD_LOCK, HTTP_METHOD_UNLOCK. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             inherited:
-                description: "false when the label is set directly on the endpoint, true when inherited from the parent ApiPolicy. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "false when the label is set directly on the endpoint, true when inherited from the parent ApiPolicy. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             label_mapping_actions:
-                description: "ApiPolicyLabelMappingAction values this mapping enables. Set when location is LOCATION_API_POLICY_MAPPING. Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK. Field introduced in 32.2.1. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "ApiPolicyLabelMappingAction values this mapping enables. Set when location is LOCATION_API_POLICY_MAPPING. Enum options - API_POLICY_LABEL_ACTION_DEACTIVATE_PATH_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_QUERY_PARAM_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_HEADER_CHECK, API_POLICY_LABEL_ACTION_DEACTIVATE_REQUEST_BODY_CHECK. Field introduced in 32.1.4. Maximum of 16 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             location:
-                description: "Which of the four locations this entry represents. Enum options - LOCATION_API_ENDPOINT, LOCATION_API_POLICY, LOCATION_API_POLICY_MAPPING, LOCATION_POLICY_RULE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Which of the four locations this entry represents. Enum options - LOCATION_API_ENDPOINT, LOCATION_API_POLICY, LOCATION_API_POLICY_MAPPING, LOCATION_POLICY_RULE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             path_template:
-                description: "URI path template, for readability only. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "URI path template, for readability only. Set when location is LOCATION_API_ENDPOINT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             policy_field:
-                description: "The ApiPolicy label container this entry is from  active_api_labels, shadow_api_labels, orphan_api_labels, zombie_api_labels, or non_api_url_labels. Set when location is LOCATION_API_POLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The ApiPolicy label container this entry is from  active_api_labels, shadow_api_labels, orphan_api_labels, zombie_api_labels, or non_api_url_labels. Set when location is LOCATION_API_POLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             policy_uuid:
-                description: "UUID of the owning top-level policy object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the owning top-level policy object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             rule:
-                description: "The complete rule whose LabelMatch references this label — including its own name, match criteria, and action. Set when location is LOCATION_POLICY_RULE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The complete rule whose LabelMatch references this label — including its own name, match criteria, and action. Set when location is LOCATION_POLICY_RULE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelL7PolicyRule'
             scope:
-                description: "The policy scope this entry belongs to  MATCH_ACTION_SCOPE_APIPOLICY for every location except policy_rule, which reports the specific scope of the matched rule's own policy. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The policy scope this entry belongs to  MATCH_ACTION_SCOPE_APIPOLICY for every location except policy_rule, which reports the specific scope of the matched rule's own policy. Enum options - MATCH_ACTION_SCOPE_GENERIC, MATCH_ACTION_SCOPE_APIPOLICY, MATCH_ACTION_SCOPE_WAFPOLICY, MATCH_ACTION_SCOPE_HTTPSECURITYPOLICY, MATCH_ACTION_SCOPE_HTTPREQUESTPOLICY, MATCH_ACTION_SCOPE_HTTPRESPONSEPOLICY, MATCH_ACTION_SCOPE_CSRFPOLICY, MATCH_ACTION_SCOPE_AUTHPROFILE, MATCH_ACTION_SCOPE_VSDATASCRIPTSET, MATCH_ACTION_SCOPE_BOTDETECTIONPOLICY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     LocationHdrMatch:
         type: object
@@ -1435,7 +1435,7 @@ definitions:
                 description: "Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1649,7 +1649,7 @@ definitions:
                 description: "Configure the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             loc_hdr:
                 description: "Configure the location header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

@@ -5501,7 +5501,7 @@ definitions:
                 type: integer
                 format: uint32
             ck_prst_id_64:
-                description: "Server id for persistence. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server id for persistence. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             current_open_conns:

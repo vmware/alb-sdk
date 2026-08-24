@@ -236,527 +236,6 @@
                 }
             }
         },
-        "/gslbcrmruntime": {
-            "get": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime",
-                "operationId": "GET /gslbcrmruntime",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "refers_to",
-                        "in": "query",
-                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "referred_by",
-                        "in": "query",
-                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime",
-                "operationId": "POST /gslbcrmruntime",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    }
-                }
-            }
-        },
-        "/gslbcrmruntime/{uuid}": {
-            "get": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "GET /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "name",
-                        "in": "query",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "X-Avi-Tenant",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "name": "uuid",
-                        "in": "path",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "fields",
-                        "in": "query",
-                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
-                        "type": "string"
-                    },
-                    {
-                        "name": "include_name",
-                        "in": "query",
-                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "skip_default",
-                        "in": "query",
-                        "description": "Default values are not set.",
-                        "required": false,
-                        "type": "boolean"
-                    },
-                    {
-                        "name": "join_subresources",
-                        "in": "query",
-                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PUT /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
-                    }
-                }
-            },
-            "patch": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "PATCH /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "GslbCRMRuntime object creation",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/GslbCRMRuntime"
-                        }
-                    },
-                    "401": {
-                        "description": "log in failed"
-                    },
-                    "404": {
-                        "description": "object not found"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "GslbCRMRuntime"
-                ],
-                "description": "/gslbcrmruntime/{uuid}/{uuid}",
-                "operationId": "DELETE /gslbcrmruntime/{uuid}",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "name",
-                        "description": "object name",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "in": "header",
-                        "name": "X-Avi-Tenant",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header"
-                    },
-                    {
-                        "name": "X-Avi-Tenant-UUID",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Tenant Header UUID"
-                    },
-                    {
-                        "name": "X-Avi-Version",
-                        "in": "header",
-                        "type": "string",
-                        "required": true,
-                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
-                    },
-                    {
-                        "name": "X-CSRFToken",
-                        "in": "header",
-                        "type": "string",
-                        "required": false,
-                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
-                    },
-                    {
-                        "in": "path",
-                        "name": "uuid",
-                        "description": "UUID of the object to fetch",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "security": [
-                    {
-                        "basicAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "object deleted",
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    "404": {
-                        "description": "object not found"
-                    }
-                }
-            }
-        },
         "/gslbsmruntime": {
             "get": {
                 "tags": [
@@ -1798,6 +1277,527 @@
                     }
                 }
             }
+        },
+        "/gslbcrmruntime": {
+            "get": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime",
+                "operationId": "GET /gslbcrmruntime",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "refers_to",
+                        "in": "query",
+                        "description": "Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "referred_by",
+                        "in": "query",
+                        "description": "Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid",
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntimeApiResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime",
+                "operationId": "POST /gslbcrmruntime",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/gslbcrmruntime/{uuid}": {
+            "get": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "GET /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-Avi-Tenant",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fields",
+                        "in": "query",
+                        "description": "List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.",
+                        "type": "string"
+                    },
+                    {
+                        "name": "include_name",
+                        "in": "query",
+                        "description": "All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "skip_default",
+                        "in": "query",
+                        "description": "Default values are not set.",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "join_subresources",
+                        "in": "query",
+                        "description": "It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.",
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PUT /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "PATCH /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "GslbCRMRuntime object creation",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GslbCRMRuntime"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "GslbCRMRuntime"
+                ],
+                "description": "/gslbcrmruntime/{uuid}/{uuid}",
+                "operationId": "DELETE /gslbcrmruntime/{uuid}",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "name",
+                        "description": "object name",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "path",
+                        "name": "uuid",
+                        "description": "UUID of the object to fetch",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "object deleted",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": "object not found"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -2140,7 +2140,7 @@
                     "type": "string"
                 },
                 "tls_connection_err": {
-                    "description": "This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "This field will provide error information if any in gslb tls connection between sites. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -4748,12 +4748,12 @@
                     "format": "double"
                 },
                 "avg_responses_2xx_api": {
-                    "description": "Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average 2xx responses for all APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_responses_2xx_nonapi": {
-                    "description": "Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average 2xx responses for all Non-APIs in this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -4938,117 +4938,117 @@
                     "format": "double"
                 },
                 "avg_waap_active_api_count": {
-                    "description": "Rate of requests matching active API endpoints per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of requests matching active API endpoints per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_active_api_latency": {
-                    "description": "Average client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_authentication_errors": {
-                    "description": "Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of authentication errors (401 Unauthorized, 403 Forbidden, and 407 Proxy Authentication Required responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_hits": {
-                    "description": "Average WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_orphan_api_count": {
-                    "description": "Rate of orphan API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of orphan API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_rate_limiting_errors": {
-                    "description": "Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of rate limiting errors (429 Too Many Requests responses) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_redirects": {
-                    "description": "Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of HTTP redirect responses (301, 302, 303, 307, 308) for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_301": {
-                    "description": "Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 301 Moved Permanently responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_302": {
-                    "description": "Rate of 302 Found responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 302 Found responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_303": {
-                    "description": "Rate of 303 See Other responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 303 See Other responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_307": {
-                    "description": "Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 307 Temporary Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_308": {
-                    "description": "Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 308 Permanent Redirect responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_400": {
-                    "description": "Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 400 Bad Request responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_401": {
-                    "description": "Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 401 Unauthorized responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_403": {
-                    "description": "Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 403 Forbidden responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_407": {
-                    "description": "Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 407 Proxy Authentication Required responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_429": {
-                    "description": "Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 429 Too Many Requests responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_4xx": {
-                    "description": "Rate of 4XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 4XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_responses_5xx": {
-                    "description": "Rate of 5XX responses for API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of 5XX responses for API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_shadow_api_count": {
-                    "description": "Rate of shadow API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of shadow API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_shadow_api_latency": {
-                    "description": "Average client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_validation_fail_count": {
-                    "description": "Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Average WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "avg_waap_zombie_api_count": {
-                    "description": "Rate of zombie API requests per second. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Rate of zombie API requests per second. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -5492,12 +5492,12 @@
                     "format": "double"
                 },
                 "sum_responses_2xx_api": {
-                    "description": "Total number of API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_responses_2xx_nonapi": {
-                    "description": "Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of Non-API 2XX responses for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
@@ -5527,77 +5527,77 @@
                     "format": "double"
                 },
                 "sum_waap_active_api_count": {
-                    "description": "Total number of requests matching active API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_active_api_latency": {
-                    "description": "Total client transaction latency for active API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total client transaction latency for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_flag_count": {
-                    "description": "Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests flagged (but not rejected) by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_hits": {
-                    "description": "Total number of WAAP hits for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of WAAP hits for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_orphan_api_count": {
-                    "description": "Total number of requests matching orphan API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests matching orphan API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_reject_count": {
-                    "description": "Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests rejected by API Policy validation for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_responses_400": {
-                    "description": "Total 400 Bad Request responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total 400 Bad Request responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_responses_401": {
-                    "description": "Total 401 Unauthorized responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total 401 Unauthorized responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_responses_403": {
-                    "description": "Total 403 Forbidden responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total 403 Forbidden responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_responses_4xx": {
-                    "description": "Total 4XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total 4XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_responses_5xx": {
-                    "description": "Total 5XX responses for API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total 5XX responses for API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_shadow_api_count": {
-                    "description": "Total number of requests matching shadow API paths. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_shadow_api_latency": {
-                    "description": "Total client transaction latency for shadow API requests. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total client transaction latency for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_validation_fail_count": {
-                    "description": "Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of WAAP validation failures across all endpoints for this VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "sum_waap_zombie_api_count": {
-                    "description": "Total number of requests matching zombie API endpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total number of requests matching zombie API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },

@@ -712,7 +712,7 @@
                     "default": true
                 },
                 "client_cert_ref": {
-                    "description": "Client certificate for mutual TLS connection. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not supported on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Client certificate for mutual TLS connection. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not supported on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "email_attribute": {
@@ -726,7 +726,7 @@
                     "default": "name"
                 },
                 "pki_profile_ref": {
-                    "description": "PKI Profile used to validate the LDAP server certificate. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "PKI Profile used to validate the LDAP server certificate. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "port": {
@@ -752,7 +752,7 @@
                     "$ref": "#/definitions/LdapDirectorySettings"
                 },
                 "skip_hostname_verification": {
-                    "description": "Skip hostname verification against the LDAP server certificate. The certificate chain is still validated using pki_profile_uuid. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not honored on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Skip hostname verification against the LDAP server certificate. The certificate chain is still validated using pki_profile_uuid. Effective only when security_mode is AUTH_LDAP_SECURE_USE_LDAPS. Not honored on the Service Engine data path; has no effect when this Auth Profile is used for Virtual Service client authentication. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "user_bind": {
@@ -947,7 +947,7 @@
                     "type": "string"
                 },
                 "tls_config": {
-                    "description": "TLS configuration for outbound JWKS connections during OAuth token validation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TLS configuration for outbound JWKS connections during OAuth token validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TlsConfig"
                 },
                 "token_endpoint": {
@@ -1023,7 +1023,7 @@
                     "type": "boolean"
                 },
                 "tls_config": {
-                    "description": "TLS configuration for outbound SAML IDP connections. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TLS configuration for outbound SAML IDP connections. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TlsConfig"
                 }
             }
@@ -1147,11 +1147,11 @@
             "type": "object",
             "properties": {
                 "client_cert_ref": {
-                    "description": "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tls_mode": {
-                    "description": "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

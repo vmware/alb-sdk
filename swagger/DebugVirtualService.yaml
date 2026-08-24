@@ -546,7 +546,7 @@ definitions:
         type: object
         properties:
             capture_ipc_filters:
-                description: "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Capture filter for SE IPC. Not applicable for Debug Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CaptureIPC'
             capture_tcp_filters:
                 description: "TCP Params filter. And'ed internally and Or'ed amongst each other. . Field introduced in 30.2.1. Maximum of 20 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -554,7 +554,7 @@ definitions:
                 items:
                     $ref: '#/definitions/CaptureTCPFilter'
             client_ip:
-                description: "Filters all packets of a complete transaction (client and server side), based on client ip. Supported for Virtual Service only. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Filters all packets of a complete transaction (client and server side), based on client ip. Supported for Virtual Service only. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/DebugIpAddr'
     CaptureTCPFilter:
         type: object

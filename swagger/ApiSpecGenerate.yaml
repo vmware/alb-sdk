@@ -392,45 +392,45 @@ definitions:
                 readOnly: True
                 type: string
             completed_events:
-                description: "Number of tasks completed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of tasks completed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             duration:
-                description: "Spec generation duration in seconds. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Spec generation duration in seconds. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             end_time:
-                description: "Time the spec generation completed or failed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time the spec generation completed or failed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             name:
-                description: "Name of the spec generation object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the spec generation object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             params:
-                description: "Parameters for the spec generation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Parameters for the spec generation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiSpecGenerateParams'
             path:
-                description: "Path to the generated spec file. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Path to the generated spec file. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             progress:
-                description: "Overall spec generation progress percentage. Allowed values are 0-100. Field introduced in 32.2.1. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Overall spec generation progress percentage. Allowed values are 0-100. Field introduced in 32.1.4. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             start_time:
-                description: "Time the spec generation started. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time the spec generation started. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Current lifecycle state of the spec generation. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Current lifecycle state of the spec generation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApiSpecGenerateState'
             task_events:
-                description: "Per-task status and event details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Per-task status and event details. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/TaskEventMap'
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " It is a reference to an object of type Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             total_events:
-                description: "Total number of tasks. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total number of tasks. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             url:
@@ -438,7 +438,7 @@ definitions:
                 readOnly: True
                 type: string
             uuid:
-                description: "UUID of the spec generation object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the spec generation object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiSpecGenerateApiResponse:
         type: object
@@ -459,29 +459,29 @@ definitions:
         type: object
         properties:
             api_policy_ref:
-                description: "API policy to generate api spec from. It is a reference to an object of type ApiPolicy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API policy to generate api spec from. It is a reference to an object of type ApiPolicy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             file_object_ref:
-                description: "File object to generate api spec from. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "File object to generate api spec from. It is a reference to an object of type FileObject. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             format:
-                description: "Output format  json (default) or yaml. Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Output format  json (default) or yaml. Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "API_SPEC_GENERATE_FORMAT_JSON"
             name:
-                description: "Name for the spec generation object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name for the spec generation object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     ApiSpecGenerateState:
         type: object
         properties:
             last_changed_time:
-                description: "Timestamp of the last state transition. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Timestamp of the last state transition. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             reason:
-                description: "Human-readable reason for the current state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Human-readable reason for the current state. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             state:
-                description: "Current FSM state of the spec generation. Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Current FSM state of the spec generation. Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     IpAddr:
         type: object

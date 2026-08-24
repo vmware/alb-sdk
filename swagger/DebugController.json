@@ -765,47 +765,47 @@
                     "type": "boolean"
                 },
                 "vs_security_metrics_batch_size": {
-                    "description": "Batch size for vs security metrics query. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Batch size for vs security metrics query. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "waap_app_comp_threshold": {
-                    "description": "Sigmoid midpoint for weighted ungoverned ratio. Allowed values are 0.01-1.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Sigmoid midpoint for weighted ungoverned ratio. Allowed values are 0.01-1.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_app_comp_weight": {
-                    "description": "Relative weight for app composition sub-score. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative weight for app composition sub-score. Allowed values are 0-10.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_config_weight": {
-                    "description": "Relative weight for WAAP config sub-score. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative weight for WAAP config sub-score. Allowed values are 0-10.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_orphan_api_weight": {
-                    "description": "Relative risk weight for orphan API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative risk weight for orphan API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_shadow_api_weight": {
-                    "description": "Relative risk weight for shadow API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative risk weight for shadow API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_violation_ratio_threshold": {
-                    "description": "Sigmoid midpoint for WAAP violation ratio (violation_count/total_hits at which sub-score is ~50). Allowed values are 0.001-1.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Sigmoid midpoint for WAAP violation ratio (violation_count/total_hits at which sub-score is ~50). Allowed values are 0.001-1.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_violation_ratio_weight": {
-                    "description": "Relative weight for violation ratio in combined WAAP penalty. Allowed values are 0-10.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative weight for violation ratio in combined WAAP penalty. Allowed values are 0-10.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "waap_zombie_api_weight": {
-                    "description": "Relative risk weight for zombie API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.2.1. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Relative risk weight for zombie API traffic in app composition. Allowed values are 0-5.0. Field introduced in 32.1.4. Unit is RATIO. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 }
@@ -833,7 +833,7 @@
                     "format": "uint32"
                 },
                 "bulk_payload_buffer_percent": {
-                    "description": "Percentage of bulk_payload_string_size to reserve as buffer for IP group string replacement. This buffer accounts for cases where short IP addresses are replaced with longer IP group names during batch processing. Default is 5%. Allowed values are 0-20. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Percentage of bulk_payload_string_size to reserve as buffer for IP group string replacement. This buffer accounts for cases where short IP addresses are replaced with longer IP group names during batch processing. Default is 5%. Allowed values are 0-20. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 5,
                     "format": "uint32"
@@ -1179,27 +1179,27 @@
                     "format": "uint32"
                 },
                 "metrics_db_rd_boundary_window_min": {
-                    "description": "First N minutes of each hour treated as the rollup window (BALANCED mode bypasses the freshness gate here). 0 disables the bypass. Allowed values are 0-30. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "First N minutes of each hour treated as the rollup window (BALANCED mode bypasses the freshness gate here). 0 disables the bypass. Allowed values are 0-30. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "metrics_db_rd_check_interval_sec": {
-                    "description": "Follower health-probe cadence. Allowed values are 10-600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Follower health-probe cadence. Allowed values are 10-600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "metrics_db_rd_lag_stale_after_sec": {
-                    "description": "Probe-recency gate  distrust the cached follower probe if older than this. Must be >= metrics_db_rd_check_interval_sec. Allowed values are 30-1800. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Probe-recency gate  distrust the cached follower probe if older than this. Must be >= metrics_db_rd_check_interval_sec. Allowed values are 30-1800. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "metrics_db_rd_lag_threshold_sec": {
-                    "description": "Max now - last_replay_ts (worst-case follower staleness) for the freshness gate. Allowed values are 5-3600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Max now - last_replay_ts (worst-case follower staleness) for the freshness gate. Allowed values are 5-3600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "metrics_db_rd_routing_mode": {
-                    "description": "Follower-routing mode for metrics reads  BALANCED (default), DISABLED (always leader), FRESHNESS_ONLY, or FORCE_FOLLOWER_NON_RT. Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY, METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Follower-routing mode for metrics reads  BALANCED (default), DISABLED (always leader), FRESHNESS_ONLY, or FORCE_FOLLOWER_NON_RT. Enum options - METRICS_DB_ROUTING_BALANCED, METRICS_DB_ROUTING_DISABLED, METRICS_DB_ROUTING_FRESHNESS_ONLY, METRICS_DB_ROUTING_FORCE_FOLLOWER_NON_RT. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -1264,19 +1264,19 @@
                     }
                 },
                 "adaptive_sampler_config_cooldown": {
-                    "description": "Cooldown period between adaptive sampling configuration sends to prevent excessive updates. Allowed values are 1-600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Cooldown period between adaptive sampling configuration sends to prevent excessive updates. Allowed values are 1-600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 180,
                     "format": "uint32"
                 },
                 "adaptive_sampler_tick_interval": {
-                    "description": "Adaptive sampler tick interval for periodic sampling adjustments. Allowed values are 1-3600. Field introduced in 32.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Adaptive sampler tick interval for periodic sampling adjustments. Allowed values are 1-3600. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
                 },
                 "api_path_markers": {
-                    "description": "Custom API path markers for endpoint classification (e.g., /api/, /v1/, /graphql). If not configured, uses default markers. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Custom API path markers for endpoint classification (e.g., /api/, /v1/, /graphql). If not configured, uses default markers. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1288,7 +1288,7 @@
                     "default": true
                 },
                 "enable_secmgr_api_endpoint_consolidation": {
-                    "description": "[Internal] Toggle API endpoint consolidation - applies to Application Insights, API Protection, Positive Security. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "[Internal] Toggle API endpoint consolidation - applies to Application Insights, API Protection, Positive Security. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -1297,7 +1297,7 @@
                     "type": "string"
                 },
                 "learning_db_cleanup_lookback_period": {
-                    "description": "Lookback period for learning database cleanup. Allowed values are 1-365. Field introduced in 32.2.1. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Lookback period for learning database cleanup. Allowed values are 1-365. Field introduced in 32.1.4. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30,
                     "format": "uint32"
@@ -1314,27 +1314,27 @@
                     "format": "uint32"
                 },
                 "secmgr_api_classification_task_periodicity": {
-                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API determination routine runs. Allowed values are 1-10080. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API determination routine runs. Allowed values are 1-10080. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 360,
                     "format": "uint32"
                 },
                 "secmgr_api_hits_population_interval": {
-                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 5-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "[Internal] Periodicity at which Orphan/Zombie/Active API hits population routine runs. Allowed values are 5-1440. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 15,
                     "format": "uint32"
                 },
                 "secmgr_waap_full_sync": {
-                    "description": "Trigger full sync of API specification changes to learning database for all eligible VSes. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Trigger full sync of API specification changes to learning database for all eligible VSes. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "secmgr_waap_full_sync_vs_uuid": {
-                    "description": "Trigger full sync for a specific VS UUID. If set, only this VS will be processed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Trigger full sync for a specific VS UUID. If set, only this VS will be processed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "static_file_extensions": {
-                    "description": "File extensions considered as static non-API content (e.g., .html, .css, .js, .png). If not configured, uses default extensions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "File extensions considered as static non-API content (e.g., .html, .css, .js, .png). If not configured, uses default extensions. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"

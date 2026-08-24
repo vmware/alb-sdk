@@ -658,35 +658,35 @@
                     "type": "string"
                 },
                 "cloud_config_cksum": {
-                    "description": "Checksum of the cloud configuration for AkoAmkoCluster object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Checksum of the cloud configuration for AkoAmkoCluster object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cloud_ref": {
-                    "description": "Cloud reference UUID in Avi Controller. It is a reference to an object of type Cloud. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Cloud reference UUID in Avi Controller. It is a reference to an object of type Cloud. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "cluster_type": {
-                    "description": "Type of operator - AKO or AMKO. Enum options - CLUSTER_TYPE_AKO, CLUSTER_TYPE_AMKO. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Type of operator - AKO or AMKO. Enum options - CLUSTER_TYPE_AKO, CLUSTER_TYPE_AMKO. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "created_by": {
-                    "description": "AKO/AMKO user identifier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "AKO/AMKO user identifier. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "deployment_info": {
-                    "description": "Deployment configuration information. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Deployment configuration information. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AkoAmkoClusterDeploymentInfo"
                 },
                 "metadata": {
-                    "description": "Additional cluster metadata. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Additional cluster metadata. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AkoAmkoClusterMetadata"
                 },
                 "name": {
-                    "description": "Name of the AKO/AMKO cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the AKO/AMKO cluster. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "tenant_ref": {
-                    "description": "Tenant that AKO/AMKO cluster belongs to. It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tenant that AKO/AMKO cluster belongs to. It is a reference to an object of type Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -695,11 +695,11 @@
                     "type": "string"
                 },
                 "uuid": {
-                    "description": "UUID of the AKO/AMKO cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the AKO/AMKO cluster. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "version_info": {
-                    "description": "Version information including Kubernetes and AKO/AMKO versions. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Version information including Kubernetes and AKO/AMKO versions. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/AkoAmkoClusterVersionInfo"
                 }
             }
@@ -730,15 +730,15 @@
             "type": "object",
             "properties": {
                 "namespace": {
-                    "description": "Kubernetes namespace where AKO/AMKO is deployed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Kubernetes namespace where AKO/AMKO is deployed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pod_name": {
-                    "description": "Pod name for identification. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Pod name for identification. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "replica_count": {
-                    "description": "Number of replicas in the deployment. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of replicas in the deployment. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -748,11 +748,11 @@
             "type": "object",
             "properties": {
                 "cni": {
-                    "description": "Container Network Interface (CNI) type. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Container Network Interface (CNI) type. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "node_count": {
-                    "description": "Number of nodes in the Kubernetes cluster. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of nodes in the Kubernetes cluster. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -762,11 +762,11 @@
             "type": "object",
             "properties": {
                 "ako_amko_version": {
-                    "description": "AKO/AMKO operator version (e.g., '1.12.0'). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "AKO/AMKO operator version (e.g., '1.12.0'). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "kubernetes_version": {
-                    "description": "Kubernetes cluster version (e.g., '1.28.3'). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Kubernetes cluster version (e.g., '1.28.3'). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
