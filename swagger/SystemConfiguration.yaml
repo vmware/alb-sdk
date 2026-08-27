@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.2.1'
+    version: '32.1.4'
     title: Avi SystemConfiguration Object API
     contact:
         name: Avi Networks Inc.
@@ -378,12 +378,12 @@ definitions:
         type: object
         properties:
             blocked_certificate_signature_algorithms:
-                description: "Signature algorithm families whose certificates are blocked on new imports. Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384, SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Signature algorithm families whose certificates are blocked on new imports. Enum options - SIGNATURE_ALGORITHM_MD5, SIGNATURE_ALGORITHM_SHA1, SIGNATURE_ALGORITHM_SHA256, SIGNATURE_ALGORITHM_SHA384, SIGNATURE_ALGORITHM_SHA512, SIGNATURE_ALGORITHM_ED25519. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             blocked_ocsp_request_hash_algorithms:
-                description: "Hash algorithms not allowed for OCSP requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Hash algorithms not allowed for OCSP requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -444,7 +444,7 @@ definitions:
                 type: string
                 default: "SMTP_LOCAL_HOST"
             tls_config:
-                description: "TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TlsConfig'
     IpAddr:
         type: object
@@ -781,19 +781,19 @@ definitions:
             -   server
         properties:
             format:
-                description: "Syslog output format  SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, or SYSLOG_RFC5425_ENHANCED. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Syslog output format  SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, or SYSLOG_RFC5425_ENHANCED. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "SYSLOG_LEGACY"
             port:
-                description: "The destination Syslog server's service port. Allowed values are 1-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The destination Syslog server's service port. Allowed values are 1-65535. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 514
                 format: uint32
             server:
-                description: "IP Address or FQDN of the syslog server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "IP Address or FQDN of the syslog server. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
             udp:
-                description: "UDP transport (default true); set to false to use TCP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UDP transport (default true); set to false to use TCP. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     SystemConfiguration:
@@ -807,19 +807,19 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AdminAuthConfiguration'
             ai_assistant_enabled:
-                description: "Enable or disable AI Assistant feature on the Controller. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enable or disable AI Assistant feature on the Controller. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             allow_legacy_sha1_ntp_auth:
                 description: "Allow NTP authentication using legacy MD5 or SHA1 algorithms. When enabled, configuring MD5 or SHA1 NTP keys is permitted but a warning event is generated in the controller UI. When disabled (default), only SHA256 or stronger is accepted and configuring MD5 or SHA1 results in an API error. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             allow_private_ips:
-                description: "Allow usage of private IPs in CRL server, SAML metadata URL. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Allow usage of private IPs in CRL server, SAML metadata URL. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             avi_email_login_password:
                 description: "Password for avi_email_login user. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             certificate_security_policy:
-                description: "Certificate security policy for the system. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Certificate security policy for the system. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/CertificateSecurityPolicy'
             common_criteria_mode:
                 description: "Common criteria mode's current state. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -862,7 +862,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TenantConfiguration'
             gslb_client_cert_ref:
-                description: "Client certificate for mutual TLS authentication. Required when tls_mode is TLS_MODE_MTLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Client certificate for mutual TLS authentication. Required when tls_mode is TLS_MODE_MTLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             host_key_algorithm_exclude:
                 description: "Users can specify comma separated list of deprecated host key algorithm.If nothing is specified, all known algorithms provided by OpenSSH will be supported.This change could only apply on the controller node. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -933,7 +933,7 @@ definitions:
                 description: "Ability to sync the syslog server config to SEs. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             syslog_server_settings:
-                description: "Syslog server destinations including address, port, transport protocol, and output format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Syslog server destinations including address, port, transport protocol, and output format. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/SyslogServerConfig'
@@ -1033,8 +1033,8 @@ definitions:
         type: object
         properties:
             client_cert_ref:
-                description: "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             tls_mode:
-                description: "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

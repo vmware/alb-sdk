@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.2.1",
+        "version": "32.1.4",
         "title": "Avi HTTPPolicySet Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1425,12 +1425,12 @@
             ],
             "properties": {
                 "match_criteria": {
-                    "description": "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "IS_IN"
                 },
                 "values": {
-                    "description": "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Labels to be matched against the API endpoint labels. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1500,7 +1500,7 @@
                     "$ref": "#/definitions/IPReputationTypeMatch"
                 },
                 "label": {
-                    "description": "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LabelMatch"
                 },
                 "method": {
@@ -1795,7 +1795,7 @@
                     "$ref": "#/definitions/HostHdrMatch"
                 },
                 "label": {
-                    "description": "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/LabelMatch"
                 },
                 "loc_hdr": {

@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.2.1",
+        "version": "32.1.4",
         "title": "Avi SystemLimits Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -288,22 +288,22 @@
             "type": "object",
             "properties": {
                 "num_api_paths_per_policy": {
-                    "description": "Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_api_schemas_per_policy": {
-                    "description": "Maximum number of API schema objects that can be associated with a single API policy. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of API schema objects that can be associated with a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_apis": {
-                    "description": "Maximum total number of API endpoints allowed across the system. Each ApiPath can have up to 7 ApiEndpoints. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum total number of API endpoints allowed across the system. Each ApiPath can have up to 7 ApiEndpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_schema_nesting": {
-                    "description": "Maximum allowed nesting depth of JSON schema definitions within an API policy. Schema structures that exceed this depth will be rejected at config time. In the datapath, JSON payloads with greater nesting depth will not be parsed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum allowed nesting depth of JSON schema definitions within an API policy. Schema structures that exceed this depth will be rejected at config time. In the datapath, JSON payloads with greater nesting depth will not be parsed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -313,12 +313,12 @@
             "type": "object",
             "properties": {
                 "num_api_params": {
-                    "description": "Maximum total number of API parameters stored across all endpoints in the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its parameter budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum total number of API parameters stored across all endpoints in the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its parameter budget would exceed this limit. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "num_apis": {
-                    "description": "Maximum total number of API endpoints stored across the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its endpoint budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum total number of API endpoints stored across the system. Enabling ApplicationInsights on a virtual service is rejected at config time if adding its endpoint budget would exceed this limit. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -328,7 +328,7 @@
             "type": "object",
             "properties": {
                 "num_apis": {
-                    "description": "Maximum number of API endpoints for which metrics are tracked across the system. Associating an ApiPolicy with a virtual service is rejected at config time if adding its metrics budget would exceed this limit. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of API endpoints for which metrics are tracked across the system. Associating an ApiPolicy with a virtual service is rejected at config time if adding its metrics budget would exceed this limit. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -423,7 +423,7 @@
                     "$ref": "#/definitions/L7limits"
                 },
                 "num_tenant_bindings": {
-                    "description": "Maximum number of tenant bindings. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of tenant bindings. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 20000,
                     "format": "int32"
@@ -517,15 +517,15 @@
             "type": "object",
             "properties": {
                 "config_limits": {
-                    "description": "API configuration limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API configuration limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ApiConfigLimits"
                 },
                 "learning_limits": {
-                    "description": "API learning limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API learning limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ApiLearningLimits"
                 },
                 "metrics_limits": {
-                    "description": "API metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API metrics limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ApiMetricsLimits"
                 }
             }
@@ -548,7 +548,7 @@
             "type": "object",
             "properties": {
                 "api_limits": {
-                    "description": "API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ControllerSizingApiLimits"
                 },
                 "controller_sizing_cloud_limits": {
@@ -769,7 +769,7 @@
                     }
                 },
                 "serviceengine_waap_limits": {
-                    "description": "Per-tier WAAP SE sizing limits (SMALL, MEDIUM, LARGE). Defines the min_vcpus, min_memory, and max_vs_per_se for each tier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Per-tier WAAP SE sizing limits (SMALL, MEDIUM, LARGE). Defines the min_vcpus, min_memory, and max_vs_per_se for each tier. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ServiceEngineSizingWaapLimits"
@@ -781,22 +781,22 @@
             "type": "object",
             "properties": {
                 "max_vs_per_se": {
-                    "description": "Maximum number of VirtualServices allowed per SE for this tier. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of VirtualServices allowed per SE for this tier. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "min_memory": {
-                    "description": "Minimum memory per SE (MiB) for this tier. SEs in a WAAP-mode SE Group of this size must have at least this much memory. Field introduced in 32.2.1. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Minimum memory per SE (MiB) for this tier. SEs in a WAAP-mode SE Group of this size must have at least this much memory. Field introduced in 32.1.4. Unit is MB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "min_vcpus": {
-                    "description": "Minimum vCPUs per SE for this tier. SEs in a WAAP-mode SE Group of this size must have at least this many vCPUs. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Minimum vCPUs per SE for this tier. SEs in a WAAP-mode SE Group of this size must have at least this many vCPUs. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "waap_se_size": {
-                    "description": "Size tier this entry describes (SMALL, MEDIUM, or LARGE). Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Size tier this entry describes (SMALL, MEDIUM, or LARGE). Enum options - SE_SIZE_SMALL, SE_SIZE_MEDIUM, SE_SIZE_LARGE. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
