@@ -6291,13 +6291,13 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/pool": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "GET /debugvirtualservice",
+                "description": "/pool",
+                "operationId": "GET /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -6388,7 +6388,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/PoolApiResponse"
                         }
                     },
                     "401": {
@@ -6398,10 +6398,10 @@
             },
             "post": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "POST /debugvirtualservice",
+                "description": "/pool",
+                "operationId": "POST /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -6440,10 +6440,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     }
                 ],
@@ -6456,7 +6456,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6465,13 +6465,13 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/pool/{uuid}": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "GET /debugvirtualservice/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "GET /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6557,7 +6557,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6570,10 +6570,10 @@
             },
             "put": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PUT /debugvirtualservice/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PUT /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6619,10 +6619,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -6642,7 +6642,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6655,10 +6655,10 @@
             },
             "patch": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PATCH /debugvirtualservice/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PATCH /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6704,10 +6704,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -6727,7 +6727,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6740,10 +6740,10 @@
             },
             "delete": {
                 "tags": [
-                    "DebugVirtualService"
+                    "Pool"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "DELETE /debugvirtualservice/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "DELETE /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7333,13 +7333,13 @@
                 }
             }
         },
-        "/pool": {
+        "/debugvirtualservice": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool",
-                "operationId": "GET /pool",
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -7430,7 +7430,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PoolApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -7440,10 +7440,10 @@
             },
             "post": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool",
-                "operationId": "POST /pool",
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -7482,10 +7482,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -7498,7 +7498,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -7507,13 +7507,13 @@
                 }
             }
         },
-        "/pool/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "GET /pool/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7599,7 +7599,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -7612,10 +7612,10 @@
             },
             "put": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PUT /pool/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7661,10 +7661,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -7684,7 +7684,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -7697,10 +7697,10 @@
             },
             "patch": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PATCH /pool/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7746,10 +7746,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -7769,7 +7769,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -7782,10 +7782,10 @@
             },
             "delete": {
                 "tags": [
-                    "Pool"
+                    "DebugVirtualService"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "DELETE /pool/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
