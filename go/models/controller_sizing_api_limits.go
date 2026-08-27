@@ -8,12 +8,12 @@ package models
 // swagger:model ControllerSizingApiLimits
 type ControllerSizingAPILimits struct {
 
-	// API configuration limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API configuration limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConfigLimits *APIConfigLimits `json:"config_limits,omitempty"`
 
-	// API learning limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API learning limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningLimits *APILearningLimits `json:"learning_limits,omitempty"`
 
-	// API metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API metrics limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MetricsLimits *APIMetricsLimits `json:"metrics_limits,omitempty"`
 }

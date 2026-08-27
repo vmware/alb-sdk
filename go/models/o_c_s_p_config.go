@@ -17,7 +17,7 @@ type OCSPConfig struct {
 	// Interval between the OCSP queries. Allowed values are 60-31536000. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OcspReqInterval *uint32 `json:"ocsp_req_interval,omitempty"`
 
-	// Hash algorithm used to construct the OCSP CertID in requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Hash algorithm used to construct the OCSP CertID in requests. Enum options - OCSP_HASH_SHA1, OCSP_HASH_SHA256, OCSP_HASH_SHA384, OCSP_HASH_SHA512. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OcspRequestHashAlgorithms []string `json:"ocsp_request_hash_algorithms,omitempty"`
 
 	// Time in seconds that the system waits for a reply from the OCSP responder before dropping the connection. Field introduced in 20.1.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

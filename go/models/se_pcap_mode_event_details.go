@@ -8,12 +8,12 @@ package models
 // swagger:model SePcapModeEventDetails
 type SePcapModeEventDetails struct {
 
-	// Description of the event. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Description of the event. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Name of the SE, reporting this event. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the SE, reporting this event. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeName *string `json:"se_name,omitempty"`
 
-	// UUID of the SE, reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the SE, reporting this event. It is a reference to an object of type ServiceEngine. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

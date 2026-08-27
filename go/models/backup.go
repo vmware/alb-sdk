@@ -22,7 +22,7 @@ type Backup struct {
 	// URL to download the backup file. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LocalFileURL *string `json:"local_file_url,omitempty"`
 
-	// Name of the backup. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the backup. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Read Only: true
 	Name *string `json:"name,omitempty"`
 

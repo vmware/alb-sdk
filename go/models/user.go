@@ -51,7 +51,7 @@ type User struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Local *bool `json:"local,omitempty"`
 
-	// Indicates that this local user's password is managed externally (e.g. by VCF/SDDC Manager) rather than by Avi. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Indicates that this local user's password is managed externally (e.g. by VCF/SDDC Manager) rather than by Avi. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LocalPasswordManagedExternally *bool `json:"local_password_managed_externally,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

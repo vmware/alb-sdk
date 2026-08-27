@@ -8,9 +8,9 @@ package models
 // swagger:model DiscriminatorMapping
 type DiscriminatorMapping struct {
 
-	// Discriminator property value that maps to the referenced schema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Discriminator property value that maps to the referenced schema. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DiscriminatorKey *string `json:"discriminator_key,omitempty"`
 
-	// Reference to the schema to which the discriminator value maps. It is a reference to an object of type ApiSchema. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reference to the schema to which the discriminator value maps. It is a reference to an object of type ApiSchema. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SchemaRef *string `json:"schema_ref,omitempty"`
 }

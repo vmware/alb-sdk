@@ -11,16 +11,16 @@ type ConfigUserPasswordChangeRequest struct {
 	// Client IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientIP *string `json:"client_ip,omitempty"`
 
-	// Type of client used to initiate the operation, e.g. UI, CLI, API. Field introduced in 32.2.1,32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Type of client used to initiate the operation, e.g. UI, CLI, API. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClientType *string `json:"client_type,omitempty"`
 
-	// Error message if the operation failed. Field introduced in 32.2.1,32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Error message if the operation failed. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ErrorMessage *string `json:"error_message,omitempty"`
 
-	// API request path that triggered the operation. Field introduced in 32.2.1,32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API request path that triggered the operation. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RequestPath *string `json:"request_path,omitempty"`
 
-	// Authenticated principal (actor) that performed the operation, when different from the target user. Field introduced in 32.2.1,32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Authenticated principal (actor) that performed the operation, when different from the target user. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	RequestUser *string `json:"request_user,omitempty"`
 
 	// Operation status. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

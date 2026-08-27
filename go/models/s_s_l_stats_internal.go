@@ -11,10 +11,10 @@ type SSLStatsInternal struct {
 	//  Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	IssuerRevokedOcspResponses *uint64 `json:"issuer_revoked_ocsp_responses,omitempty"`
 
-	// Number of TLS 1.2 keylogs sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of TLS 1.2 keylogs sent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KeylogSentTls12 *uint64 `json:"keylog_sent_tls12,omitempty"`
 
-	// Number of TLS 1.3 keylogs sent. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of TLS 1.3 keylogs sent. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	KeylogSentTls13 *uint64 `json:"keylog_sent_tls13,omitempty"`
 
 	//  Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
