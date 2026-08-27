@@ -175,7 +175,7 @@ public class TCPProxyProfile  {
      * Controls whether receive window auto growth is allowed to fall back to an rtt-based estimate when the tcp timestamp option is not negotiated on
      * the connection.
      * Only takes effect when auto_window_growth is also enabled.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return autoWindowGrowthWithoutTimestamp
@@ -189,7 +189,7 @@ public class TCPProxyProfile  {
      * Controls whether receive window auto growth is allowed to fall back to an rtt-based estimate when the tcp timestamp option is not negotiated on
      * the connection.
      * Only takes effect when auto_window_growth is also enabled.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param autoWindowGrowthWithoutTimestamp set the autoWindowGrowthWithoutTimestamp.

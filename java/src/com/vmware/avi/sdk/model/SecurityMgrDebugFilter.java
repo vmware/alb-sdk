@@ -114,7 +114,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Cooldown period between adaptive sampling configuration sends to prevent excessive updates.
      * Allowed values are 1-600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -128,7 +128,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Cooldown period between adaptive sampling configuration sends to prevent excessive updates.
      * Allowed values are 1-600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 180.
@@ -142,7 +142,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Adaptive sampler tick interval for periodic sampling adjustments.
      * Allowed values are 1-3600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -156,7 +156,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Adaptive sampler tick interval for periodic sampling adjustments.
      * Allowed values are 1-3600.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is sec.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
@@ -169,7 +169,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
      * If not configured, uses default markers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiPathMarkers
@@ -182,7 +182,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method. this will set the apiPathMarkers
      * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
      * If not configured, uses default markers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiPathMarkers
@@ -195,7 +195,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method this will set the apiPathMarkers
      * Custom api path markers for endpoint classification (e.g., /api/, /v1/, /graphql).
      * If not configured, uses default markers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiPathMarkers
@@ -235,7 +235,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * [internal] toggle api endpoint consolidation - applies to application insights, api protection, positive security.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enableSecmgrApiEndpointConsolidation
@@ -247,7 +247,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the setter method to the attribute.
      * [internal] toggle api endpoint consolidation - applies to application insights, api protection, positive security.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enableSecmgrApiEndpointConsolidation set the enableSecmgrApiEndpointConsolidation.
@@ -286,7 +286,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Lookback period for learning database cleanup.
      * Allowed values are 1-365.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is days.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
@@ -300,7 +300,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Lookback period for learning database cleanup.
      * Allowed values are 1-365.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is days.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 30.
@@ -368,7 +368,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * [internal] periodicity at which orphan/zombie/active api determination routine runs.
      * Allowed values are 1-10080.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
@@ -382,7 +382,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * [internal] periodicity at which orphan/zombie/active api determination routine runs.
      * Allowed values are 1-10080.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 360.
@@ -396,7 +396,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
      * Allowed values are 5-1440.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
@@ -410,7 +410,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * [internal] periodicity at which orphan/zombie/active api hits population routine runs.
      * Allowed values are 5-1440.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is min.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 15.
@@ -423,7 +423,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the getter method this will return the attribute value.
      * Trigger full sync of api specification changes to learning database for all eligible vses.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return secmgrWaapFullSync
@@ -435,7 +435,7 @@ public class SecurityMgrDebugFilter  {
     /**
      * This is the setter method to the attribute.
      * Trigger full sync of api specification changes to learning database for all eligible vses.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param secmgrWaapFullSync set the secmgrWaapFullSync.
@@ -448,7 +448,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * Trigger full sync for a specific vs uuid.
      * If set, only this vs will be processed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return secmgrWaapFullSyncVsUuid
@@ -461,7 +461,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method to the attribute.
      * Trigger full sync for a specific vs uuid.
      * If set, only this vs will be processed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param secmgrWaapFullSyncVsUuid set the secmgrWaapFullSyncVsUuid.
@@ -473,7 +473,7 @@ public class SecurityMgrDebugFilter  {
      * This is the getter method this will return the attribute value.
      * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
      * If not configured, uses default extensions.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticFileExtensions
@@ -486,7 +486,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method. this will set the staticFileExtensions
      * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
      * If not configured, uses default extensions.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticFileExtensions
@@ -499,7 +499,7 @@ public class SecurityMgrDebugFilter  {
      * This is the setter method this will set the staticFileExtensions
      * File extensions considered as static non-api content (e.g., .html, .css, .js, .png).
      * If not configured, uses default extensions.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return staticFileExtensions

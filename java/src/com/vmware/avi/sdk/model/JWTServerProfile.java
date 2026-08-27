@@ -63,7 +63,7 @@ public class JWTServerProfile extends AviRestResource  {
      * Only applicable when jwt profile type is client_auth.
      * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
      * JWS_ALG_ES512.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 9 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -81,7 +81,7 @@ public class JWTServerProfile extends AviRestResource  {
      * Only applicable when jwt profile type is client_auth.
      * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
      * JWS_ALG_ES512.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 9 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -99,7 +99,7 @@ public class JWTServerProfile extends AviRestResource  {
      * Only applicable when jwt profile type is client_auth.
      * Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384,
      * JWS_ALG_ES512.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 9 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
