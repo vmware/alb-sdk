@@ -11,7 +11,7 @@ type WaapStats struct {
 	// Total number of active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ActiveAPICount *uint64 `json:"active_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ActiveAPILatency *uint64 `json:"active_api_latency,omitempty"`
 
 	// Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -128,7 +128,7 @@ type WaapStats struct {
 	// Total number of shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ShadowAPICount *uint64 `json:"shadow_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ShadowAPILatency *uint64 `json:"shadow_api_latency,omitempty"`
 
 	// Total number of 1XX responses for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

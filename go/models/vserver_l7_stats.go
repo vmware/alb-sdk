@@ -306,7 +306,7 @@ type VserverL7Stats struct {
 	// Total number of requests matching active API endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapActiveAPICount *uint64 `json:"waap_active_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for active API requests. Field introduced in 32.1.4. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapActiveAPILatency *uint64 `json:"waap_active_api_latency,omitempty"`
 
 	// Total number of requests flagged (but not rejected) by API Policy validation. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -360,7 +360,7 @@ type VserverL7Stats struct {
 	// Total number of requests matching shadow API paths. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapShadowAPICount *uint64 `json:"waap_shadow_api_count,omitempty"`
 
-	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Cumulative client transaction latency in ms for shadow API requests. Field introduced in 32.1.4. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	WaapShadowAPILatency *uint64 `json:"waap_shadow_api_latency,omitempty"`
 
 	// Total number of API validation failures across all endpoints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
