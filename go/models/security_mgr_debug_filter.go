@@ -26,8 +26,14 @@ type SecurityMgrDebugFilter struct {
 	// [Internal] Toggle API endpoint consolidation - applies to Application Insights, API Protection, Positive Security. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableSecmgrAPIEndpointConsolidation *bool `json:"enable_secmgr_api_endpoint_consolidation,omitempty"`
 
+	// [Internal] Minimum number of conforming sibling URI segments required before API endpoint consolidation learns a path-parameter pattern from them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic. Allowed values are 2-1000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	EndpointConsolidationMinSamples *uint32 `json:"endpoint_consolidation_min_samples,omitempty"`
+
 	// uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EntityRef *string `json:"entity_ref,omitempty"`
+
+	// On-demand debug event tracing  focus on up to 2 VS/SE/URI/stage combinations and capture their matching pipeline events into a per-entry ring buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'. Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	FocusEntries []*SecMgrDebugFocusEntry `json:"focus_entries,omitempty"`
 
 	// Lookback period for learning database cleanup. Allowed values are 1-365. Field introduced in 32.1.4. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LearningDbCleanupLookbackPeriod *uint32 `json:"learning_db_cleanup_lookback_period,omitempty"`
