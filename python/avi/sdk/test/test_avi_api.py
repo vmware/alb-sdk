@@ -13,7 +13,6 @@ from avi.sdk.avi_api import (ApiSession, ObjectNotFound, APIError, ApiResponse,
 from avi.sdk.utils.api_utils import ApiUtils
 from avi.sdk.samples.common import get_sample_ssl_params
 from avi.sdk.samples.clone_vs import AviClone
-from avi.sdk.test import conftest as test_conftest
 from requests.packages import urllib3
 from requests import Response
 from multiprocessing import Pool, Process
@@ -32,16 +31,9 @@ login_info = None
 urllib3.disable_warnings()
 gapi_version = '17.2.6'
 
-# Config is set by conftest.pytest_configure when pytest runs; fallback to load from file if needed
-config_file = getattr(test_conftest, '_config_file', None)
-cfg = getattr(test_conftest, '_cfg', None)
-if cfg is None and config_file:
-    with open(config_file) as f:
-        cfg = json.load(f)
-if cfg is None:
-    raise pytest.UsageError(
-        "Missing required --config option. Use: pytest --config=path/to/config.json ..."
-    )
+config_file = pytest.config.getoption("--config")
+with open(config_file) as f:
+    cfg = json.load(f)
 
 ARG_DEFAULT_VALUE = {
     'limit': 1,
@@ -84,17 +76,12 @@ def setUpModule():
 def create_sessions(args):
     login_info, num_sessions = args
     log.info('pid %d num_sessions %d', os.getpid(), num_sessions)
-    user = login_info.get("username", "admin")
-    cip = login_info.get("controller_ip")
-    port = login_info.get("port")
-    k_port = port if port else 443
-    key = cip + ":" + user + ":" + str(k_port)
     for _ in range(num_sessions):
         api = ApiSession(
             login_info["controller_ip"], login_info.get("username", "admin"),
             login_info.get("password", "fr3sca$%^"), api_version=login_info.get(
                 "api_version", "17.1"), data_log=login_info['data_log'])
-    return 1 if key in sessionDict else 0
+    return 1 if api.key in sessionDict else 0
 
 def shared_session_check(index):
     rsp = api.get('tenant')
