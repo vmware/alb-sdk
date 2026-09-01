@@ -192,7 +192,7 @@ type SeConsumerProto struct {
 	// Timestamp at which this VS was determined to be ineligible for placement. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PlacementIneligibleTimestamp *TimeStamp `json:"placement_ineligible_timestamp,omitempty"`
 
-	// Wall-clock time when this consumer's placement state was last committed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Wall-clock time when this consumer's placement state was last committed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PlacementLastChangeTime *TimeStamp `json:"placement_last_change_time,omitempty"`
 
 	// Information on issues with VIP or server resolution. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -17,7 +17,7 @@ type LogManagerDebugFilter struct {
 	// Number of workers for batch processing. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BatchWorkerCount *uint32 `json:"batch_worker_count,omitempty"`
 
-	// Percentage of bulk_payload_string_size to reserve as buffer for IP group *string replacement. This buffer accounts for cases where short IP addresses are replaced with longer IP group names during batch processing. Default is 5%. Allowed values are 0-20. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Percentage of bulk_payload_string_size to reserve as buffer for IP group *string replacement. This buffer accounts for cases where short IP addresses are replaced with longer IP group names during batch processing. Default is 5%. Allowed values are 0-20. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	BulkPayloadBufferPercent *uint32 `json:"bulk_payload_buffer_percent,omitempty"`
 
 	// Size of bulk payload buffer. This is the max bulk payload size. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

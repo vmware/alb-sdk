@@ -8,7 +8,7 @@ package models
 // swagger:model ControllerSizingLimits
 type ControllerSizingLimits struct {
 
-	// API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// API protection, learning, and metrics limits for this controller sizing. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APILimits *ControllerSizingAPILimits `json:"api_limits,omitempty"`
 
 	// Controller system limits specific to cloud type for this controller sizing. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

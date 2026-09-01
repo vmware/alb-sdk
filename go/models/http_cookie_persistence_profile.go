@@ -26,7 +26,7 @@ type HTTPCookiePersistenceProfile struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Key []*HTTPCookiePersistenceKey `json:"key,omitempty"`
 
-	// SameSite attribute for the persistence cookie. Allowed values  None (default, emitted only on SSL connections), Lax, Strict. . Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 32.1.3, 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SameSite attribute for the persistence cookie. Allowed values  None (default, emitted only on SSL connections), Lax, Strict. . Enum options - SAMESITE_NONE, SAMESITE_LAX, SAMESITE_STRICT. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Samesite *string `json:"samesite,omitempty"`
 
 	// The maximum lifetime of any session cookie. No value or 'zero' indicates no timeout. Allowed values are 1-14400. Special values are 0- No Timeout. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

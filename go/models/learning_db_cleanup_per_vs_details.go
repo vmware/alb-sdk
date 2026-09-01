@@ -8,9 +8,9 @@ package models
 // swagger:model LearningDbCleanupPerVsDetails
 type LearningDbCleanupPerVsDetails struct {
 
-	// Number of endpoint rows deleted for this VS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of endpoint rows deleted for this VS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumEndpointRowsDeleted *uint32 `json:"num_endpoint_rows_deleted,omitempty"`
 
-	// VirtualService UUID for which learning database cleanup was performed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// VirtualService UUID for which learning database cleanup was performed. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsUUID *string `json:"vs_uuid,omitempty"`
 }

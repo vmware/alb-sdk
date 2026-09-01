@@ -8,12 +8,12 @@ package models
 // swagger:model ApiSpecGenerateState
 type APISpecGenerateState struct {
 
-	// Timestamp of the last state transition. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Timestamp of the last state transition. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LastChangedTime *TimeStamp `json:"last_changed_time,omitempty"`
 
-	// Human-readable reason for the current state. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Human-readable reason for the current state. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Reason *string `json:"reason,omitempty"`
 
-	// Current FSM state of the spec generation. Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Current FSM state of the spec generation. Enum options - API_SPEC_GENERATE_FSM_IN_PROGRESS, API_SPEC_GENERATE_FSM_COMPLETED, API_SPEC_GENERATE_FSM_WARNING, API_SPEC_GENERATE_FSM_ERROR. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	State *string `json:"state,omitempty"`
 }

@@ -21,7 +21,7 @@ type AlertSyslogServer struct {
 	// The destination Syslog server's service port. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SyslogServerPort *uint32 `json:"syslog_server_port,omitempty"`
 
-	// TLS mode and client certificate for the connection to this syslog server, effective only when tls_enable is set. Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// TLS mode and client certificate for the connection to this syslog server, effective only when tls_enable is set. Supersedes ssl_key_and_certificate_uuid, anon_auth, and strict_cert_verify, which are deprecated in favor of this field. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
 
 	// Enable TLS to the syslog server. Use tls_config to select the TLS mode and client certificate. Field introduced in 17.2.16, 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

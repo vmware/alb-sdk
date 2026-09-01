@@ -8,12 +8,12 @@ package models
 // swagger:model VsSeStatus
 type VsSeStatus struct {
 
-	// Whether this Service Engine is up and serving traffic for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Whether this Service Engine is up and serving traffic for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OperStatus *OperationalStatus `json:"oper_status,omitempty"`
 
-	// Whether this Service Engine is the primary or standby for this Virtual Service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Whether this Service Engine is the primary or standby for this Virtual Service. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Role *string `json:"role,omitempty"`
 
-	// The Service Engine this status is for. It is a reference to an object of type ServiceEngine. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// The Service Engine this status is for. It is a reference to an object of type ServiceEngine. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

@@ -24,7 +24,7 @@ type ALBServicesStatus struct {
 	// Descriptive error message. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Error *string `json:"error,omitempty"`
 
-	// Name of the ALBServicesStatus object. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the ALBServicesStatus object. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
 

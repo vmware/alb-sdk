@@ -18,7 +18,7 @@ type ApplicationLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllResponseHeaders *string `json:"all_response_headers,omitempty"`
 
-	// Describe all aspects of the API module. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Describe all aspects of the API module. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	APILog *APILog `json:"api_log,omitempty"`
 
 	//  Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

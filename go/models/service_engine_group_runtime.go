@@ -26,7 +26,7 @@ type ServiceEngineGroupRuntime struct {
 	//  It is a reference to an object of type ServiceEngine. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DownSe []string `json:"down_se,omitempty"`
 
-	// Set to true while an asynchronous ReserveLicense RPC is in flight for an SE create (VS-driven or buffer) in this SE group. Blocks further placement/spawn in the group until HandleLicenseReservationNotification clears it on the reservation response. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Set to true while an asynchronous ReserveLicense RPC is in flight for an SE create (VS-driven or buffer) in this SE group. Blocks further placement/spawn in the group until HandleLicenseReservationNotification clears it on the reservation response. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseReservationPending *bool `json:"license_reservation_pending,omitempty"`
 
 	// Licensed service cores stats. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -35,19 +35,19 @@ type ServiceEngineGroupRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ModifyVnicStats *SeVnicStats `json:"modify_vnic_stats,omitempty"`
 
-	// Next tick at which placement may be retried for this SE group after a license reservation failure. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Next tick at which placement may be retried for this SE group after a license reservation failure. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NextLicenseReserveTicks *uint64 `json:"next_license_reserve_ticks,omitempty"`
 
 	// Next tick for SE spawn retry. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NextSeSpawnTicks *uint64 `json:"next_se_spawn_ticks,omitempty"`
 
-	// Number of consecutive times a license reservation for this SE group has failed with insufficient license or quota limit exceeded. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of consecutive times a license reservation for this SE group has failed with insufficient license or quota limit exceeded. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumLicenseReserveFail *int32 `json:"num_license_reserve_fail,omitempty"`
 
 	// Number of SE spawn fails. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumSeSpawnFail *int32 `json:"num_se_spawn_fail,omitempty"`
 
-	// In-flight license reservation information for this SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// In-flight license reservation information for this SE group. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PendingLicResInfo *PendingLicResInfo `json:"pending_lic_res_info,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
