@@ -667,7 +667,7 @@ definitions:
                 default: 60
                 format: uint32
             cloud_discovery_interval:
-                description: "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
@@ -676,7 +676,7 @@ definitions:
                 type: boolean
                 default: True
             cloud_reconcile_interval:
-                description: "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Time in minutes to wait between consecutive cloud reconcile cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
@@ -765,7 +765,7 @@ definitions:
                 type: boolean
                 default: True
             event_manager_api_rate_limit_per_min:
-                description: "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
@@ -831,12 +831,12 @@ definitions:
                 description: "Ignore the vrf_context filter for /networksubnetlist API. Field introduced in 22.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             ipgls_client_cache_size:
-                description: "Size of the IPGLS client cache. This cache stores country code lookups for IP addresses to reduce gRPC calls to the IPGLS service. Set to 0 to disable caching. Allowed values are 0-1000000. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Size of the IPGLS client cache. This cache stores country code lookups for IP addresses to reduce gRPC calls to the IPGLS service. Set to 0 to disable caching. Allowed values are 0-1000000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10000
                 format: uint32
             ipgls_client_cache_ttl_minutes:
-                description: "TTL for entries in the IPGLS client cache. After this duration, cached IP geolocation data will expire and require a fresh lookup. Lower values provide fresher data but increase load on IPGLS service. Higher values reduce load but may serve stale geolocation data. Allowed values are 1-1440. Field introduced in 32.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "TTL for entries in the IPGLS client cache. After this duration, cached IP geolocation data will expire and require a fresh lookup. Lower values provide fresher data but increase load on IPGLS service. Higher values reduce load but may serve stale geolocation data. Allowed values are 1-1440. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 5
                 format: uint32
@@ -928,7 +928,7 @@ definitions:
                 default: 1440
                 format: uint32
             promoted_log_fields:
-                description: "Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Fields to promote from extended to necessary tier for log indexing. Promoted fields are indexed in Opensearch and included in default API responses. Supports dot-notation for nested fields (e.g., 'waf_log.status'). Changes require log subsystem restart to take effect. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PromotedLogFields'
             query_host_fail:
                 description: " Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1203,17 +1203,17 @@ definitions:
         type: object
         properties:
             app_log_fields:
-                description: "Dot-notation field paths to promote for ApplicationLog. Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Dot-notation field paths to promote for ApplicationLog. Example  'waf_log' promotes the entire submessage; 'waf_log.status' promotes only the status sub-field. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             conn_log_fields:
-                description: "Dot-notation field paths to promote for ConnectionLog. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Dot-notation field paths to promote for ConnectionLog. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
             event_log_fields:
-                description: "Dot-notation field paths to promote for EventLog. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Dot-notation field paths to promote for EventLog. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string

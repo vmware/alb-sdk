@@ -792,7 +792,7 @@
                     "format": "double"
                 },
                 "migrate_progress": {
-                    "description": "Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeMigrateProgress"
                 },
                 "migrate_state": {
@@ -817,7 +817,7 @@
                     "type": "boolean"
                 },
                 "se_dp_start_time": {
-                    "description": "Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/TimeStamp"
                 },
                 "se_grp_reboot_pending": {

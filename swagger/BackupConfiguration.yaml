@@ -413,7 +413,7 @@ definitions:
                 type: boolean
                 default: True
             known_hosts_file_ref:
-                description: "Reference to a FileObject of type KNOWN_HOSTS whose file body is OpenSSH known_hosts file used for host key verification when uploading backups over SFTP or SCP. It is a reference to an object of type FileObject. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Reference to a FileObject of type KNOWN_HOSTS whose file body is OpenSSH known_hosts file used for host key verification when uploading backups over SFTP or SCP. It is a reference to an object of type FileObject. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             maximum_backups_stored:
                 description: "Rotate the backup files based on this count. Allowed values are 1-20. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

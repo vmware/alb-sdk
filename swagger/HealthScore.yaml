@@ -1319,7 +1319,7 @@ definitions:
                 type: number
                 format: double
             waap_score_data:
-                description: "WAAP security assessment for the VirtualService. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "WAAP security assessment for the VirtualService. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WaapScoreData'
     HealthScoreTypeContributorData:
         type: object
@@ -2324,7 +2324,7 @@ definitions:
             -   reason
         properties:
             api_protection_penalty:
-                description: "API Protection penalty assessment. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "API Protection penalty assessment. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WaapApiProtectionPenalty'
             reason:
                 description: "Reason for WAAP Security Penalty. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

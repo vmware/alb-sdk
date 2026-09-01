@@ -580,7 +580,7 @@ definitions:
                 type: number
                 format: double
             migrate_progress:
-                description: "Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Tracks the progress of VS migrations during SE disable/migrate operations. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeMigrateProgress'
             migrate_state:
                 description: "This state is used to indicate the current state of disable SE process. Enum options - SE_MIGRATE_STATE_IDLE, SE_MIGRATE_STATE_STARTED, SE_MIGRATE_STATE_FINISHED_WITH_FAILURE, SE_MIGRATE_STATE_FINISHED, SE_MIGRATE_STATE_IN_PROGRESS. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -599,7 +599,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
             se_dp_start_time:
-                description: "Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Unix timestamp when the se_dp process last started. Used to compute se_dp uptime dynamically. When se_dp restarts, all LB-related processes are restarted. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TimeStamp'
             se_grp_reboot_pending:
                 description: "Indicates SE reboot following SE group change is pending. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

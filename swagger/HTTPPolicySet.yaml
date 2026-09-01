@@ -1011,11 +1011,11 @@ definitions:
             -   match_criteria
         properties:
             match_criteria:
-                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Criterion to use for matching the labels. Enum options - IS_IN, IS_NOT_IN. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "IS_IN"
             values:
-                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.2.1. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Labels to be matched against the API endpoint labels. Field introduced in 32.1.4. Minimum of 1 items required. Maximum of 10 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -1065,7 +1065,7 @@ definitions:
                 description: "Configure IP reputation. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IPReputationTypeMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             method:
                 description: "Configure HTTP methods. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1279,7 +1279,7 @@ definitions:
                 description: "Configure the host header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/HostHdrMatch'
             label:
-                description: "Configure the label. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Configure the label. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/LabelMatch'
             loc_hdr:
                 description: "Configure the location header. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."

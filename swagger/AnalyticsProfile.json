@@ -1035,7 +1035,7 @@
                     "type": "string"
                 },
                 "waap_classification_disabled_penalty": {
-                    "description": "Penalty points per disabled orphan/zombie classification in WAAP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Penalty points per disabled orphan/zombie classification in WAAP. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "default": 50.0,
                     "format": "double"
