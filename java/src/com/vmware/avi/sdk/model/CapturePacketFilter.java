@@ -36,7 +36,7 @@ public class CapturePacketFilter  {
      * This is the getter method this will return the attribute value.
      * Capture filter for se ipc.
      * Not applicable for debug virtual service.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return captureIpcFilters
@@ -49,7 +49,7 @@ public class CapturePacketFilter  {
      * This is the setter method to the attribute.
      * Capture filter for se ipc.
      * Not applicable for debug virtual service.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param captureIpcFilters set the captureIpcFilters.
@@ -107,7 +107,7 @@ public class CapturePacketFilter  {
      * This is the getter method this will return the attribute value.
      * Filters all packets of a complete transaction (client and server side), based on client ip.
      * Supported for virtual service only.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clientIp
@@ -120,7 +120,7 @@ public class CapturePacketFilter  {
      * This is the setter method to the attribute.
      * Filters all packets of a complete transaction (client and server side), based on client ip.
      * Supported for virtual service only.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clientIp set the clientIp.

@@ -39,7 +39,7 @@ public class SyslogServerConfig  {
      * This is the getter method this will return the attribute value.
      * Syslog output format  syslog_legacy, syslog_rfc5424, syslog_json, or syslog_rfc5425_enhanced.
      * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSLOG_LEGACY".
      * @return format
@@ -52,7 +52,7 @@ public class SyslogServerConfig  {
      * This is the setter method to the attribute.
      * Syslog output format  syslog_legacy, syslog_rfc5424, syslog_json, or syslog_rfc5425_enhanced.
      * Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "SYSLOG_LEGACY".
      * @param format set the format.
@@ -65,7 +65,7 @@ public class SyslogServerConfig  {
      * This is the getter method this will return the attribute value.
      * The destination syslog server's service port.
      * Allowed values are 1-65535.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 514.
      * @return port
@@ -78,7 +78,7 @@ public class SyslogServerConfig  {
      * This is the setter method to the attribute.
      * The destination syslog server's service port.
      * Allowed values are 1-65535.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 514.
      * @param port set the port.
@@ -90,7 +90,7 @@ public class SyslogServerConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address or fqdn of the syslog server.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return server
@@ -102,7 +102,7 @@ public class SyslogServerConfig  {
     /**
      * This is the setter method to the attribute.
      * Ip address or fqdn of the syslog server.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param server set the server.
@@ -114,7 +114,7 @@ public class SyslogServerConfig  {
     /**
      * This is the getter method this will return the attribute value.
      * Udp transport (default true); set to false to use tcp.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return udp
@@ -126,7 +126,7 @@ public class SyslogServerConfig  {
     /**
      * This is the setter method to the attribute.
      * Udp transport (default true); set to false to use tcp.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param udp set the udp.

@@ -476,7 +476,7 @@ public class RoutingService  {
      * When oversizedpackets with df bit set exceed egress mtu, they will besegmented using hardware tso with this mss value.
      * Allowed values are 536-9000.
      * Special values are 0- auto.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.
@@ -492,7 +492,7 @@ public class RoutingService  {
      * When oversizedpackets with df bit set exceed egress mtu, they will besegmented using hardware tso with this mss value.
      * Allowed values are 536-9000.
      * Special values are 0- auto.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 0.

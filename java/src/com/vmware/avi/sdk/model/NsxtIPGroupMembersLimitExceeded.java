@@ -41,7 +41,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the getter method this will return the attribute value.
      * Error message.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return errorString
@@ -53,7 +53,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the setter method to the attribute.
      * Error message.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param errorString set the errorString.
@@ -65,7 +65,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the getter method this will return the attribute value.
      * Number of ip address members from the nsx group.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddressMembers
@@ -77,7 +77,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the setter method to the attribute.
      * Number of ip address members from the nsx group.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddressMembers set the ipAddressMembers.
@@ -89,7 +89,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the getter method this will return the attribute value.
      * Ipaddrgroup uuid that would have been updated.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipGroupUuid
@@ -101,7 +101,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the setter method to the attribute.
      * Ipaddrgroup uuid that would have been updated.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipGroupUuid set the ipGroupUuid.
@@ -113,7 +113,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum allowed ip address members count.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return limit
@@ -125,7 +125,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the setter method to the attribute.
      * Maximum allowed ip address members count.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param limit set the limit.
@@ -137,7 +137,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the getter method this will return the attribute value.
      * Nsx group policy path.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nsxGroupPath
@@ -149,7 +149,7 @@ public class NsxtIPGroupMembersLimitExceeded  {
     /**
      * This is the setter method to the attribute.
      * Nsx group policy path.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nsxGroupPath set the nsxGroupPath.

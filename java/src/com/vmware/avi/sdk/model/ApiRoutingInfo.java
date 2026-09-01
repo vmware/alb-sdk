@@ -31,7 +31,7 @@ public class ApiRoutingInfo  {
      * Rules are ored  a request matches if any rule matches.
      * Header conditions within a rule are anded  all must match.
      * Example  a rule named 'v1-route' with an hdr_equals match on x-api-version='v1' matches only requests carrying that header.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 32 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -47,7 +47,7 @@ public class ApiRoutingInfo  {
      * Rules are ored  a request matches if any rule matches.
      * Header conditions within a rule are anded  all must match.
      * Example  a rule named 'v1-route' with an hdr_equals match on x-api-version='v1' matches only requests carrying that header.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 32 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -63,7 +63,7 @@ public class ApiRoutingInfo  {
      * Rules are ored  a request matches if any rule matches.
      * Header conditions within a rule are anded  all must match.
      * Example  a rule named 'v1-route' with an hdr_equals match on x-api-version='v1' matches only requests carrying that header.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Maximum of 32 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.

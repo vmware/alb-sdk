@@ -35,7 +35,7 @@ public class FileObjectState  {
     /**
      * This is the getter method this will return the attribute value.
      * The last time the state changed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return lastChangedTime
@@ -47,7 +47,7 @@ public class FileObjectState  {
     /**
      * This is the setter method to the attribute.
      * The last time the state changed.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param lastChangedTime set the lastChangedTime.
@@ -59,7 +59,7 @@ public class FileObjectState  {
     /**
      * This is the getter method this will return the attribute value.
      * Human-readable explanation of why the file object is in its current state.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return reason
@@ -71,7 +71,7 @@ public class FileObjectState  {
     /**
      * This is the setter method to the attribute.
      * Human-readable explanation of why the file object is in its current state.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param reason set the reason.
@@ -84,7 +84,7 @@ public class FileObjectState  {
      * This is the getter method this will return the attribute value.
      * Current processing state of the file object.
      * Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return state
@@ -97,7 +97,7 @@ public class FileObjectState  {
      * This is the setter method to the attribute.
      * Current processing state of the file object.
      * Enum options - FILE_OBJECT_FSM_STARTED, FILE_OBJECT_FSM_IN_PROGRESS, FILE_OBJECT_FSM_COMPLETED, FILE_OBJECT_FSM_WARNING, FILE_OBJECT_FSM_FAILED.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param state set the state.

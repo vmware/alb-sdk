@@ -400,7 +400,7 @@ public class OAuthProfile  {
     /**
      * This is the getter method this will return the attribute value.
      * Tls configuration for outbound jwks connections during oauth token validation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsConfig
@@ -412,7 +412,7 @@ public class OAuthProfile  {
     /**
      * This is the setter method to the attribute.
      * Tls configuration for outbound jwks connections during oauth token validation.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsConfig set the tlsConfig.

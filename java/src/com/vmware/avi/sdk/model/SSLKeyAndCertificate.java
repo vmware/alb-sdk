@@ -698,7 +698,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * When set to true, disables automatic ca certificate chain discovery based on issuer common name (cn).
      * The user must explicitly specify the desired ca certificates via the ca_certs field.
      * Not allowed for ca/intermediate type certificates.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return skipAutoChain
@@ -712,7 +712,7 @@ public class SSLKeyAndCertificate extends AviRestResource  {
      * When set to true, disables automatic ca certificate chain discovery based on issuer common name (cn).
      * The user must explicitly specify the desired ca certificates via the ca_certs field.
      * Not allowed for ca/intermediate type certificates.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param skipAutoChain set the skipAutoChain.

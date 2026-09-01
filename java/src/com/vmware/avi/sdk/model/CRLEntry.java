@@ -45,7 +45,7 @@ public class CRLEntry  {
      * This is the getter method this will return the attribute value.
      * Crl sequence number from the crl number extension (rfc 5280 §5.2.3).
      * Empty when the extension is absent.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return crlNumber
@@ -58,7 +58,7 @@ public class CRLEntry  {
      * This is the setter method to the attribute.
      * Crl sequence number from the crl number extension (rfc 5280 §5.2.3).
      * Empty when the extension is absent.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param crlNumber set the crlNumber.
@@ -70,7 +70,7 @@ public class CRLEntry  {
     /**
      * This is the getter method this will return the attribute value.
      * Common name extracted from the crl issuer dn.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return issuerCn
@@ -82,7 +82,7 @@ public class CRLEntry  {
     /**
      * This is the setter method to the attribute.
      * Common name extracted from the crl issuer dn.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param issuerCn set the issuerCn.
@@ -94,7 +94,7 @@ public class CRLEntry  {
     /**
      * This is the getter method this will return the attribute value.
      * Full distinguished name of the crl issuer (rfc 5280 issuer field).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return issuerDn
@@ -106,7 +106,7 @@ public class CRLEntry  {
     /**
      * This is the setter method to the attribute.
      * Full distinguished name of the crl issuer (rfc 5280 issuer field).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param issuerDn set the issuerDn.
@@ -119,7 +119,7 @@ public class CRLEntry  {
      * This is the getter method this will return the attribute value.
      * Milliseconds since the unix epoch (1970-01-01 00 00 00 utc) when the next crl is expected (nextupdate field, rfc 5280 §5.1.2.5).
      * Empty when the extension is absent.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return nextUpdate
@@ -132,7 +132,7 @@ public class CRLEntry  {
      * This is the setter method to the attribute.
      * Milliseconds since the unix epoch (1970-01-01 00 00 00 utc) when the next crl is expected (nextupdate field, rfc 5280 §5.1.2.5).
      * Empty when the extension is absent.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param nextUpdate set the nextUpdate.
@@ -144,7 +144,7 @@ public class CRLEntry  {
      * This is the getter method this will return the attribute value.
      * Decimal serial numbers of all certificates revoked in this crl block.
      * Used for revocation status checks against a certificate's serial number.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serialNumbers
@@ -157,7 +157,7 @@ public class CRLEntry  {
      * This is the setter method. this will set the serialNumbers
      * Decimal serial numbers of all certificates revoked in this crl block.
      * Used for revocation status checks against a certificate's serial number.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serialNumbers
@@ -170,7 +170,7 @@ public class CRLEntry  {
      * This is the setter method this will set the serialNumbers
      * Decimal serial numbers of all certificates revoked in this crl block.
      * Used for revocation status checks against a certificate's serial number.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serialNumbers
@@ -186,7 +186,7 @@ public class CRLEntry  {
     /**
      * This is the getter method this will return the attribute value.
      * Milliseconds since the unix epoch (1970-01-01 00 00 00 utc) when this crl was issued (thisupdate field, rfc 5280 §5.1.2.4).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return thisUpdate
@@ -198,7 +198,7 @@ public class CRLEntry  {
     /**
      * This is the setter method to the attribute.
      * Milliseconds since the unix epoch (1970-01-01 00 00 00 utc) when this crl was issued (thisupdate field, rfc 5280 §5.1.2.4).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param thisUpdate set the thisUpdate.

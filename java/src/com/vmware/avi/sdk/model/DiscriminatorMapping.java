@@ -32,7 +32,7 @@ public class DiscriminatorMapping  {
     /**
      * This is the getter method this will return the attribute value.
      * Discriminator property value that maps to the referenced schema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return discriminatorKey
@@ -44,7 +44,7 @@ public class DiscriminatorMapping  {
     /**
      * This is the setter method to the attribute.
      * Discriminator property value that maps to the referenced schema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param discriminatorKey set the discriminatorKey.
@@ -57,7 +57,7 @@ public class DiscriminatorMapping  {
      * This is the getter method this will return the attribute value.
      * Reference to the schema to which the discriminator value maps.
      * It is a reference to an object of type apischema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return schemaRef
@@ -70,7 +70,7 @@ public class DiscriminatorMapping  {
      * This is the setter method to the attribute.
      * Reference to the schema to which the discriminator value maps.
      * It is a reference to an object of type apischema.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param schemaRef set the schemaRef.

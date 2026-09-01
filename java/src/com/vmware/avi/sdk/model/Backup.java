@@ -124,7 +124,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the backup.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @return name
      */
@@ -135,7 +135,7 @@ public class Backup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Name of the backup.
-     * Field introduced in 32.1.3, 32.2.1.
+     * Field introduced in 32.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * @param name set the name.
      */

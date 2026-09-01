@@ -351,7 +351,7 @@ public class GslbCRMRuntime extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * This field will provide error information if any in gslb tls connection between sites.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tlsConnectionErr
@@ -363,7 +363,7 @@ public class GslbCRMRuntime extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * This field will provide error information if any in gslb tls connection between sites.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tlsConnectionErr set the tlsConnectionErr.

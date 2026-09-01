@@ -39,7 +39,7 @@ public class ApiSpecGenerateParams  {
      * This is the getter method this will return the attribute value.
      * Api policy to generate api spec from.
      * It is a reference to an object of type apipolicy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return apiPolicyRef
@@ -52,7 +52,7 @@ public class ApiSpecGenerateParams  {
      * This is the setter method to the attribute.
      * Api policy to generate api spec from.
      * It is a reference to an object of type apipolicy.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param apiPolicyRef set the apiPolicyRef.
@@ -65,7 +65,7 @@ public class ApiSpecGenerateParams  {
      * This is the getter method this will return the attribute value.
      * File object to generate api spec from.
      * It is a reference to an object of type fileobject.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return fileObjectRef
@@ -78,7 +78,7 @@ public class ApiSpecGenerateParams  {
      * This is the setter method to the attribute.
      * File object to generate api spec from.
      * It is a reference to an object of type fileobject.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param fileObjectRef set the fileObjectRef.
@@ -91,7 +91,7 @@ public class ApiSpecGenerateParams  {
      * This is the getter method this will return the attribute value.
      * Output format  json (default) or yaml.
      * Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_SPEC_GENERATE_FORMAT_JSON".
      * @return format
@@ -104,7 +104,7 @@ public class ApiSpecGenerateParams  {
      * This is the setter method to the attribute.
      * Output format  json (default) or yaml.
      * Enum options - API_SPEC_GENERATE_FORMAT_JSON, API_SPEC_GENERATE_FORMAT_YAML.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "API_SPEC_GENERATE_FORMAT_JSON".
      * @param format set the format.
@@ -116,7 +116,7 @@ public class ApiSpecGenerateParams  {
     /**
      * This is the getter method this will return the attribute value.
      * Name for the spec generation object.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -128,7 +128,7 @@ public class ApiSpecGenerateParams  {
     /**
      * This is the setter method to the attribute.
      * Name for the spec generation object.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
