@@ -36,7 +36,7 @@ from avi.protobuf.events_pb2 import SERVER_AUTOSCALE_IN, SERVER_AUTOSCALE_OUT,\
     EventId
 from avi.protobuf.autoscale_mgr_rpc_pb2 import ServerAutoScaleStatus, \
     AutoScaleService_Stub
-from google.protobuf.service import RpcController
+from avi.infrastructure.rpc_channel import RpcController
 from avi.protobuf.syserr_pb2 import SYSERR_SUCCESS
 from avi.protobuf.common_pb2 import SCALEIN, SCALEOUT
 from avi.protobuf.options_pb2 import V4
