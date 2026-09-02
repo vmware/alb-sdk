@@ -35,9 +35,6 @@ type QatInfo struct {
 	// QATLIB-SERVICE Version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	QatlibServiceVersion *string `json:"qatlib_service_version,omitempty"`
 
-	// QATLib Version. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	QatlibVersion *string `json:"qatlib_version,omitempty"`
-
 	// UUID of the Service Engine. It is a reference to an object of type ServiceEngine. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeRef *string `json:"se_ref,omitempty"`
 }

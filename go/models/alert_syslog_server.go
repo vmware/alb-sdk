@@ -11,9 +11,6 @@ type AlertSyslogServer struct {
 	// Syslog output format - legacy, RFC 5424, JSON. Enum options - SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED. Field introduced in 17.2.8. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Format *string `json:"format,omitempty"`
 
-	// Select the PKIProfile containing a CA or list of CA chainswhich will validate the certificate of the syslog server. When unset, SystemConfiguration.truststore_pkiprofile_uuid is used instead. It is a reference to an object of type PKIProfile. Field introduced in 17.2.17, 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PkiprofileRef *string `json:"pkiprofile_ref,omitempty"`
-
 	// The destination Syslog server IP(v4/v6) address or FQDN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	SyslogServer *string `json:"syslog_server"`
