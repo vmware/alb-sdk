@@ -1570,7 +1570,7 @@ public class ApplicationLog  {
      * Indicate if this request is used for learning.
      * If it is not used, this field contains the reason for this decision.
      * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
-     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR, LIMIT_EXCEEDED.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
@@ -1585,7 +1585,7 @@ public class ApplicationLog  {
      * Indicate if this request is used for learning.
      * If it is not used, this field contains the reason for this decision.
      * Enum options - NOT_ACTIVE, LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING, CLIENT_IS_NOT_AUTHENTICATED,
-     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
+     * CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR, LIMIT_EXCEEDED.
      * Field introduced in 31.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "NOT_ACTIVE".
