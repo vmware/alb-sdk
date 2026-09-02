@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.1.4",
+        "version": "32.1.5",
         "title": "Avi DebugController Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -1253,6 +1253,47 @@
                 }
             }
         },
+        "SecMgrDebugFocusEntry": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "duration": {
+                    "description": "How long this focus entry stays active before automatic expiry, in minutes (max 3h \u2014 starting conservative, may be raised later). Unlike DebugVirtualServiceCapture.duration, 0/infinite is not allowed \u2014 every focus entry must self-expire eventually. Allowed values are 1-180. Field introduced in 32.1.4. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 60,
+                    "format": "uint32"
+                },
+                "max_events": {
+                    "description": "Max events retained in this entry's ring buffer. Mirrors DebugVirtualServiceCapture.num_pkts. Changing this on an existing entry reallocates its buffer, discarding the trace captured so far. Allowed values are 1-500. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 500,
+                    "format": "uint32"
+                },
+                "name": {
+                    "description": "Unique name for this focus entry, chosen by the operator. Used to create/edit, remove, and dump this entry (see 'show securitymgr stats filter stage stage_debug_focus filter focus_name <name>'). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "se_ref": {
+                    "description": "Service Engine to focus on. Empty = any SE. It is a reference to an object of type ServiceEngine. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "stage": {
+                    "description": "Pipeline stage to focus on. Defaults to all stages. Enum options - STAGE_ALL, STAGE_INGRESS, STAGE_ENDPOINT_CLASSIFICATION, STAGE_ENDPOINT_CONSOLIDATION, STAGE_CONFIG_SYNC, STAGE_LEARNING_DB_SWEEP, STAGE_WAAP_HITS_POPULATOR, STAGE_DEBUG_FOCUS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "STAGE_ALL"
+                },
+                "uri": {
+                    "description": "URI path to focus on. Empty = any URI. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "vs_ref": {
+                    "description": "Virtual Service to focus on. Empty = any VS. It is a reference to an object of type Virtualservice. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
         "SecurityMgrDebugFilter": {
             "type": "object",
             "properties": {
@@ -1292,9 +1333,22 @@
                     "type": "boolean",
                     "default": true
                 },
+                "endpoint_consolidation_min_samples": {
+                    "description": "[Internal] Minimum number of conforming sibling URI segments required before API endpoint consolidation learns a path-parameter pattern from them, and before an existing consolidated template's pattern may be widened to absorb a new shape of traffic. Allowed values are 2-1000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 20,
+                    "format": "uint32"
+                },
                 "entity_ref": {
                     "description": "uuid of the entity. It is a reference to an object of type Virtualservice. Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "focus_entries": {
+                    "description": "On-demand debug event tracing  focus on up to 2 VS/SE/URI/stage combinations and capture their matching pipeline events into a per-entry ring buffer, dumpable via 'show securitymgr stats filter stage stage_debug_focus'. Edited via 'focus_entries name <name>' / 'no focus_entries name <name>'. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SecMgrDebugFocusEntry"
+                    }
                 },
                 "learning_db_cleanup_lookback_period": {
                     "description": "Lookback period for learning database cleanup. Allowed values are 1-365. Field introduced in 32.1.4. Unit is DAYS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
