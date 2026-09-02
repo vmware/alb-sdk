@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.1.4'
+    version: '32.1.5'
     title: Avi GslbInventory Object API
     contact:
         name: Avi Networks Inc.
@@ -171,12 +171,12 @@ paths:
                     description: object not found
 
 
-    /gslbcrmruntime:
+    /gslbsmruntime:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: GET /gslbcrmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: GET /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -239,14 +239,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime
-            operationId: POST /gslbcrmruntime
+                - GslbSMRuntime
+            description: /gslbsmruntime
+            operationId: POST /gslbsmruntime
             consumes:
                 -   application/json
             produces:
@@ -274,25 +274,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
-    /gslbcrmruntime/{uuid}:
+    /gslbsmruntime/{uuid}:
         get:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: GET /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: GET /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -352,16 +352,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -394,10 +394,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -409,16 +409,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -451,10 +451,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbCRMRuntime object creation
+                    description: GslbSMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -466,16 +466,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbCRMRuntime"
+                        $ref: "#/definitions/GslbSMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbCRMRuntime
-            description: /gslbcrmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbcrmruntime/{uuid}
+                - GslbSMRuntime
+            description: /gslbsmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbsmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -873,12 +873,12 @@ paths:
                     description: object not found
 
 
-    /gslbsmruntime:
+    /gslbcrmruntime:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: GET /gslbsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: GET /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -941,14 +941,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntimeApiResponse"
+                        $ref: "#/definitions/GslbCRMRuntimeApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime
-            operationId: POST /gslbsmruntime
+                - GslbCRMRuntime
+            description: /gslbcrmruntime
+            operationId: POST /gslbcrmruntime
             consumes:
                 -   application/json
             produces:
@@ -976,25 +976,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
-    /gslbsmruntime/{uuid}:
+    /gslbcrmruntime/{uuid}:
         get:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: GET /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: GET /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1054,16 +1054,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: PUT /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PUT /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1096,10 +1096,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1111,16 +1111,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: PATCH /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: PATCH /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -1153,10 +1153,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: GslbSMRuntime object creation
+                    description: GslbCRMRuntime object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -1168,16 +1168,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/GslbSMRuntime"
+                        $ref: "#/definitions/GslbCRMRuntime"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - GslbSMRuntime
-            description: /gslbsmruntime/{uuid}/{uuid}
-            operationId: DELETE /gslbsmruntime/{uuid}
+                - GslbCRMRuntime
+            description: /gslbcrmruntime/{uuid}/{uuid}
+            operationId: DELETE /gslbcrmruntime/{uuid}
             consumes:
                 -   application/json
             produces:
