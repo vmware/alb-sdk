@@ -3865,12 +3865,12 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-    /debugvirtualservice:
+    /httppolicyset:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: GET /debugvirtualservice
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: GET /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -3933,14 +3933,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
+                        $ref: "#/definitions/HTTPPolicySetApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice
-            operationId: POST /debugvirtualservice
+                - HTTPPolicySet
+            description: /httppolicyset
+            operationId: POST /httppolicyset
             consumes:
                 -   application/json
             produces:
@@ -3968,25 +3968,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
-    /debugvirtualservice/{uuid}:
+    /httppolicyset/{uuid}:
         get:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: GET /debugvirtualservice/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: GET /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4046,16 +4046,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PUT /debugvirtualservice/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PUT /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4088,10 +4088,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4103,16 +4103,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: PATCH /debugvirtualservice/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: PATCH /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4145,10 +4145,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: DebugVirtualService object creation
+                    description: HTTPPolicySet object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4160,16 +4160,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/DebugVirtualService"
+                        $ref: "#/definitions/HTTPPolicySet"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - DebugVirtualService
-            description: /debugvirtualservice/{uuid}/{uuid}
-            operationId: DELETE /debugvirtualservice/{uuid}
+                - HTTPPolicySet
+            description: /httppolicyset/{uuid}/{uuid}
+            operationId: DELETE /httppolicyset/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4567,12 +4567,12 @@ paths:
                     description: object not found
 
 
-    /httppolicyset:
+    /debugvirtualservice:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: GET /httppolicyset
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: GET /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -4635,14 +4635,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySetApiResponse"
+                        $ref: "#/definitions/DebugVirtualServiceApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset
-            operationId: POST /httppolicyset
+                - DebugVirtualService
+            description: /debugvirtualservice
+            operationId: POST /debugvirtualservice
             consumes:
                 -   application/json
             produces:
@@ -4670,25 +4670,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
-    /httppolicyset/{uuid}:
+    /debugvirtualservice/{uuid}:
         get:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: GET /httppolicyset/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: GET /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4748,16 +4748,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PUT /httppolicyset/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PUT /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4790,10 +4790,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4805,16 +4805,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: PATCH /httppolicyset/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: PATCH /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -4847,10 +4847,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: HTTPPolicySet object creation
+                    description: DebugVirtualService object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -4862,16 +4862,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/HTTPPolicySet"
+                        $ref: "#/definitions/DebugVirtualService"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - HTTPPolicySet
-            description: /httppolicyset/{uuid}/{uuid}
-            operationId: DELETE /httppolicyset/{uuid}
+                - DebugVirtualService
+            description: /debugvirtualservice/{uuid}/{uuid}
+            operationId: DELETE /debugvirtualservice/{uuid}
             consumes:
                 -   application/json
             produces:
