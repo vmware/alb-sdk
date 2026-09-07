@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: 11
+          java-version: 17
           gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
           server-id: central
@@ -52,7 +52,9 @@ jobs:
         id: get_sdk_version
         run: | 
           echo "::set-output name=AVI_VERSION::$(python ./python/version.py)"
+          echo "GITHUB_REF: $GITHUB_REF"
           JAVA_VERSION=$(echo ${GITHUB_REF##*/} | cut -d - -f 2)
+          echo "JAVA_VERSION: $JAVA_VERSION"
           if [[ "$JAVA_VERSION" == *"post"* ]]; then
             echo "Java version post"
             JAVA_VERSION="${JAVA_VERSION/post/\.}"
