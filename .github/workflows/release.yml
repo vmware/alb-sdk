@@ -10,6 +10,9 @@ permissions:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    # Skip draft releases (e.g. from create_release.sh --test) so local testing of the
+    # tag + release creation flow doesn't trigger a real Maven Central/PyPI publish.
+    if: github.event.release.draft == false
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
 
