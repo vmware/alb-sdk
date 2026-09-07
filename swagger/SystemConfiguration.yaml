@@ -444,7 +444,7 @@ definitions:
                 type: string
                 default: "SMTP_LOCAL_HOST"
             tls_config:
-                description: "TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from the trust store configured in System Configuration. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TlsConfig'
     IpAddr:
         type: object
@@ -862,7 +862,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/TenantConfiguration'
             gslb_client_cert_ref:
-                description: "Client certificate for mutual TLS authentication. Required when tls_mode is TLS_MODE_MTLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "SSLKeyAndCertificate used as the client certificate for GSLB site-to-site mutual TLS (mTLS) authentication between Controllers. Required when tls_mode is set to Mutual TLS in GSLB Site-to-Site configuration. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             host_key_algorithm_exclude:
                 description: "Users can specify comma separated list of deprecated host key algorithm.If nothing is specified, all known algorithms provided by OpenSSH will be supported.This change could only apply on the controller node. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -1035,6 +1035,12 @@ definitions:
             client_cert_ref:
                 description: "Client certificate for mutual TLS connection. Required when TLS mode is Mutual TLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            pki_profile_ref:
+                description: "PKI Profile used to validate the server certificate validation in One-way TLS and Mutual TLS. If this field is not set, the PKI Profile from System Configuration will be used. Effective when TLS Mode is One-way TLS or Mutual TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            skip_hostname_verification:
+                description: "Skip hostname verification on the server certificate, chain validation still applies. Effective when TLS Mode is One-way TLS or Mutual TLS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
             tls_mode:
-                description: "Select how TLS is used to establish a secure outbound connection. Certificate validation uses the trust store configured in System Configuration (Truststore PKI Profile). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS, TLS_MODE_SKIP_HOSTNAME_VERIFY. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "How TLS is used for this outbound connection. Certificate validation uses the Truststore PKI Profile (default  Truststore PKI Profile from System Configuration). Enum options - TLS_MODE_NO_VERIFY, TLS_MODE_TLS, TLS_MODE_MTLS. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
