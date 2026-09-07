@@ -17,6 +17,10 @@ Arguments:
                  job has an `if: github.event.release.draft == false` guard, so
                  it will still queue for a draft release but skips its steps
                  without publishing anything.
+  --previous-tag <tag>
+                 Generate release notes relative to this tag instead of
+                 gh's auto-detected previous release (passed through as
+                 gh release create's --notes-start-tag).
   branch         Source branch to release from
   release_name   Release name, e.g. 32.1.3 (tag pushed will be tag-<release_name>).
                  Include exactly one of "java-sdk" or "python-sdk"
@@ -30,18 +34,31 @@ Requirements:
 Example:
   ./create_release.sh eng 32.1.3
   ./create_release.sh --test eng 32.1.3
+  ./create_release.sh --previous-tag tag-32.1.2 eng 32.1.3
 EOF
 }
 
 TEST_MODE=false
+PREVIOUS_TAG=""
 ARGS=()
-for arg in "$@"; do
-    case "$arg" in
+while [ $# -gt 0 ]; do
+    case "$1" in
         --test)
             TEST_MODE=true
+            shift
+            ;;
+        --previous-tag)
+            if [ $# -lt 2 ]; then
+                echo "Error: --previous-tag requires a value."
+                usage
+                exit 1
+            fi
+            PREVIOUS_TAG="$2"
+            shift 2
             ;;
         *)
-            ARGS+=("$arg")
+            ARGS+=("$1")
+            shift
             ;;
     esac
 done
@@ -123,6 +140,9 @@ git checkout -B $BRANCH
 RELEASE_CREATED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 echo "Creating release $REL_TAG."
 CREATE_ARGS=("$REL_TAG" --title "$REL_TAG" --generate-notes)
+if [ -n "$PREVIOUS_TAG" ]; then
+    CREATE_ARGS+=(--notes-start-tag "$PREVIOUS_TAG")
+fi
 if [ "$TEST_MODE" = true ]; then
     CREATE_ARGS+=(--draft)
 fi
