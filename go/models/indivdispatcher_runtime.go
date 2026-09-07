@@ -60,8 +60,7 @@ type IndivdispatcherRuntime struct {
 	FlowConnThrottledMem *uint32 `json:"flow_conn_throttled_mem"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Required: true
-	FlowConnThrottledNumFlows *uint32 `json:"flow_conn_throttled_num_flows"`
+	FlowConnThrottledNumFlows *uint32 `json:"flow_conn_throttled_num_flows,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
@@ -437,8 +436,7 @@ type IndivdispatcherRuntime struct {
 	IcmpPmtudPktReceived *uint64 `json:"icmp_pmtud_pkt_received,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Required: true
-	IcmpRspCurrentRate *uint32 `json:"icmp_rsp_current_rate"`
+	IcmpRspCurrentRate *uint32 `json:"icmp_rsp_current_rate,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
