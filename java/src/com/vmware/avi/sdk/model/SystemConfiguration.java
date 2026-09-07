@@ -605,8 +605,8 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Client certificate for mutual tls authentication.
-     * Required when tls_mode is tls_mode_mtls.
+     * Sslkeyandcertificate used as the client certificate for gslb site-to-site mutual tls (mtls) authentication between controllers.
+     * Required when tls_mode is set to mutual tls in gslb site-to-site configuration.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -619,8 +619,8 @@ public class SystemConfiguration extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Client certificate for mutual tls authentication.
-     * Required when tls_mode is tls_mode_mtls.
+     * Sslkeyandcertificate used as the client certificate for gslb site-to-site mutual tls (mtls) authentication between controllers.
+     * Required when tls_mode is set to mutual tls in gslb site-to-site configuration.
      * It is a reference to an object of type sslkeyandcertificate.
      * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
