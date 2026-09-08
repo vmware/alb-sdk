@@ -53818,12 +53818,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /ipaddrgroup:
+  /wafprofile:
     get:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup
-      operationId: GET /ipaddrgroup
+      - WafProfile
+      description: /wafprofile
+      operationId: GET /wafprofile
       consumes:
       - application/json
       produces:
@@ -53900,14 +53900,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/IpAddrGroupApiResponse'
+            $ref: '#/definitions/WafProfileApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup
-      operationId: POST /ipaddrgroup
+      - WafProfile
+      description: /wafprofile
+      operationId: POST /wafprofile
       consumes:
       - application/json
       produces:
@@ -53941,25 +53941,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: IpAddrGroup object creation
+        description: WafProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/IpAddrGroup'
+          $ref: '#/definitions/WafProfile'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/IpAddrGroup'
+            $ref: '#/definitions/WafProfile'
         '401':
           description: log in failed
-  /ipaddrgroup/{uuid}:
+  /wafprofile/{uuid}:
     get:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup/{uuid}/{uuid}
-      operationId: GET /ipaddrgroup/{uuid}
+      - WafProfile
+      description: /wafprofile/{uuid}/{uuid}
+      operationId: GET /wafprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -54029,16 +54029,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/IpAddrGroup'
+            $ref: '#/definitions/WafProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup/{uuid}/{uuid}
-      operationId: PUT /ipaddrgroup/{uuid}
+      - WafProfile
+      description: /wafprofile/{uuid}/{uuid}
+      operationId: PUT /wafprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -54077,10 +54077,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: IpAddrGroup object creation
+        description: WafProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/IpAddrGroup'
+          $ref: '#/definitions/WafProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54092,16 +54092,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/IpAddrGroup'
+            $ref: '#/definitions/WafProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup/{uuid}/{uuid}
-      operationId: PATCH /ipaddrgroup/{uuid}
+      - WafProfile
+      description: /wafprofile/{uuid}/{uuid}
+      operationId: PATCH /wafprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -54140,10 +54140,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: IpAddrGroup object creation
+        description: WafProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/IpAddrGroup'
+          $ref: '#/definitions/WafProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54155,16 +54155,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/IpAddrGroup'
+            $ref: '#/definitions/WafProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup/{uuid}/{uuid}
-      operationId: DELETE /ipaddrgroup/{uuid}
+      - WafProfile
+      description: /wafprofile/{uuid}/{uuid}
+      operationId: DELETE /wafprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -54215,12 +54215,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /ipaddrgroup/{uuid}/syncnsxt:
-    post:
+  /wafprofile/{uuid}/update-from-crs:
+    put:
       tags:
-      - IpAddrGroup
-      description: /ipaddrgroup/{uuid}/syncnsxt
-      operationId: POST /ipaddrgroup/{uuid}/syncnsxt
+      - WafProfile
+      description: /wafprofile/{uuid}/update-from-crs
+      operationId: PUT /wafprofile/{uuid}/update-from-crs
       consumes:
       - application/json
       produces:
@@ -54254,10 +54254,12 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: IpAddrGroupSyncParams
+        description: empty
         required: true
         schema:
-          $ref: '#/definitions/IpAddrGroupSyncParams'
+          type: object
+          additionalProperties:
+            type: string
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54274,12 +54276,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /apipolicy:
+  /networksecuritypolicy:
     get:
       tags:
-      - ApiPolicy
-      description: /apipolicy
-      operationId: GET /apipolicy
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy
+      operationId: GET /networksecuritypolicy
       consumes:
       - application/json
       produces:
@@ -54356,14 +54358,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ApiPolicyApiResponse'
+            $ref: '#/definitions/NetworkSecurityPolicyApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - ApiPolicy
-      description: /apipolicy
-      operationId: POST /apipolicy
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy
+      operationId: POST /networksecuritypolicy
       consumes:
       - application/json
       produces:
@@ -54397,25 +54399,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: ApiPolicy object creation
+        description: NetworkSecurityPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/ApiPolicy'
+          $ref: '#/definitions/NetworkSecurityPolicy'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ApiPolicy'
+            $ref: '#/definitions/NetworkSecurityPolicy'
         '401':
           description: log in failed
-  /apipolicy/{uuid}:
+  /networksecuritypolicy/{uuid}:
     get:
       tags:
-      - ApiPolicy
-      description: /apipolicy/{uuid}/{uuid}
-      operationId: GET /apipolicy/{uuid}
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy/{uuid}/{uuid}
+      operationId: GET /networksecuritypolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -54485,16 +54487,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ApiPolicy'
+            $ref: '#/definitions/NetworkSecurityPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - ApiPolicy
-      description: /apipolicy/{uuid}/{uuid}
-      operationId: PUT /apipolicy/{uuid}
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy/{uuid}/{uuid}
+      operationId: PUT /networksecuritypolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -54533,10 +54535,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: ApiPolicy object creation
+        description: NetworkSecurityPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/ApiPolicy'
+          $ref: '#/definitions/NetworkSecurityPolicy'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54548,16 +54550,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ApiPolicy'
+            $ref: '#/definitions/NetworkSecurityPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - ApiPolicy
-      description: /apipolicy/{uuid}/{uuid}
-      operationId: PATCH /apipolicy/{uuid}
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy/{uuid}/{uuid}
+      operationId: PATCH /networksecuritypolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -54596,10 +54598,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: ApiPolicy object creation
+        description: NetworkSecurityPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/ApiPolicy'
+          $ref: '#/definitions/NetworkSecurityPolicy'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54611,16 +54613,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ApiPolicy'
+            $ref: '#/definitions/NetworkSecurityPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - ApiPolicy
-      description: /apipolicy/{uuid}/{uuid}
-      operationId: DELETE /apipolicy/{uuid}
+      - NetworkSecurityPolicy
+      description: /networksecuritypolicy/{uuid}/{uuid}
+      operationId: DELETE /networksecuritypolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -54671,12 +54673,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /vsgs:
+  /poolgroup:
     get:
       tags:
-      - VsGs
-      description: /vsgs
-      operationId: GET /vsgs
+      - PoolGroup
+      description: /poolgroup
+      operationId: GET /poolgroup
       consumes:
       - application/json
       produces:
@@ -54753,14 +54755,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VsGsApiResponse'
+            $ref: '#/definitions/PoolGroupApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - VsGs
-      description: /vsgs
-      operationId: POST /vsgs
+      - PoolGroup
+      description: /poolgroup
+      operationId: POST /poolgroup
       consumes:
       - application/json
       produces:
@@ -54794,25 +54796,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: VsGs object creation
+        description: PoolGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/VsGs'
+          $ref: '#/definitions/PoolGroup'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VsGs'
+            $ref: '#/definitions/PoolGroup'
         '401':
           description: log in failed
-  /vsgs/{uuid}:
+  /poolgroup/{uuid}:
     get:
       tags:
-      - VsGs
-      description: /vsgs/{uuid}/{uuid}
-      operationId: GET /vsgs/{uuid}
+      - PoolGroup
+      description: /poolgroup/{uuid}/{uuid}
+      operationId: GET /poolgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -54882,16 +54884,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VsGs'
+            $ref: '#/definitions/PoolGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - VsGs
-      description: /vsgs/{uuid}/{uuid}
-      operationId: PUT /vsgs/{uuid}
+      - PoolGroup
+      description: /poolgroup/{uuid}/{uuid}
+      operationId: PUT /poolgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -54930,10 +54932,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: VsGs object creation
+        description: PoolGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/VsGs'
+          $ref: '#/definitions/PoolGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -54945,16 +54947,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VsGs'
+            $ref: '#/definitions/PoolGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - VsGs
-      description: /vsgs/{uuid}/{uuid}
-      operationId: PATCH /vsgs/{uuid}
+      - PoolGroup
+      description: /poolgroup/{uuid}/{uuid}
+      operationId: PATCH /poolgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -54993,10 +54995,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: VsGs object creation
+        description: PoolGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/VsGs'
+          $ref: '#/definitions/PoolGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -55008,16 +55010,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VsGs'
+            $ref: '#/definitions/PoolGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - VsGs
-      description: /vsgs/{uuid}/{uuid}
-      operationId: DELETE /vsgs/{uuid}
+      - PoolGroup
+      description: /poolgroup/{uuid}/{uuid}
+      operationId: DELETE /poolgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -55068,12 +55070,178 @@ paths:
             type: string
         '404':
           description: object not found
-  /stringgroup:
+  /poolgroup/clear:
+    post:
+      tags:
+      - PoolGroup
+      description: /poolgroup/clear
+      operationId: POST /poolgroup/clear
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: empty
+        required: true
+        schema:
+          type: object
+          additionalProperties:
+            type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+  /poolgroup/{uuid}/runtime/detail/:
     get:
       tags:
-      - StringGroup
-      description: /stringgroup
-      operationId: GET /stringgroup
+      - PoolGroup
+      description: /poolgroup/{uuid}/runtime/detail/
+      operationId: GET /poolgroup/{uuid}/runtime/detail/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PoolGroupRuntimeDetail'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+  /poolgroup/{uuid}/enable_primary_pool/clear:
+    post:
+      tags:
+      - PoolGroup
+      description: /poolgroup/{uuid}/enable_primary_pool/clear
+      operationId: POST /poolgroup/{uuid}/enable_primary_pool/clear
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: body
+        name: body
+        description: PrimaryPool
+        required: true
+        schema:
+          $ref: '#/definitions/PrimaryPool'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+  /wafpolicypsmgroup:
+    get:
+      tags:
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup
+      operationId: GET /wafpolicypsmgroup
       consumes:
       - application/json
       produces:
@@ -55150,14 +55318,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/StringGroupApiResponse'
+            $ref: '#/definitions/WafPolicyPSMGroupApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - StringGroup
-      description: /stringgroup
-      operationId: POST /stringgroup
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup
+      operationId: POST /wafpolicypsmgroup
       consumes:
       - application/json
       produces:
@@ -55191,25 +55359,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: StringGroup object creation
+        description: WafPolicyPSMGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/StringGroup'
+          $ref: '#/definitions/WafPolicyPSMGroup'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/StringGroup'
+            $ref: '#/definitions/WafPolicyPSMGroup'
         '401':
           description: log in failed
-  /stringgroup/{uuid}:
+  /wafpolicypsmgroup/{uuid}:
     get:
       tags:
-      - StringGroup
-      description: /stringgroup/{uuid}/{uuid}
-      operationId: GET /stringgroup/{uuid}
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup/{uuid}/{uuid}
+      operationId: GET /wafpolicypsmgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -55279,16 +55447,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/StringGroup'
+            $ref: '#/definitions/WafPolicyPSMGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - StringGroup
-      description: /stringgroup/{uuid}/{uuid}
-      operationId: PUT /stringgroup/{uuid}
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup/{uuid}/{uuid}
+      operationId: PUT /wafpolicypsmgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -55327,10 +55495,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: StringGroup object creation
+        description: WafPolicyPSMGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/StringGroup'
+          $ref: '#/definitions/WafPolicyPSMGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -55342,16 +55510,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/StringGroup'
+            $ref: '#/definitions/WafPolicyPSMGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - StringGroup
-      description: /stringgroup/{uuid}/{uuid}
-      operationId: PATCH /stringgroup/{uuid}
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup/{uuid}/{uuid}
+      operationId: PATCH /wafpolicypsmgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -55390,10 +55558,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: StringGroup object creation
+        description: WafPolicyPSMGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/StringGroup'
+          $ref: '#/definitions/WafPolicyPSMGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -55405,16 +55573,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/StringGroup'
+            $ref: '#/definitions/WafPolicyPSMGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - StringGroup
-      description: /stringgroup/{uuid}/{uuid}
-      operationId: DELETE /stringgroup/{uuid}
+      - WafPolicyPSMGroup
+      description: /wafpolicypsmgroup/{uuid}/{uuid}
+      operationId: DELETE /wafpolicypsmgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -56344,12 +56512,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /sslprofile:
+  /stringgroup:
     get:
       tags:
-      - SSLProfile
-      description: /sslprofile
-      operationId: GET /sslprofile
+      - StringGroup
+      description: /stringgroup
+      operationId: GET /stringgroup
       consumes:
       - application/json
       produces:
@@ -56426,14 +56594,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/SSLProfileApiResponse'
+            $ref: '#/definitions/StringGroupApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - SSLProfile
-      description: /sslprofile
-      operationId: POST /sslprofile
+      - StringGroup
+      description: /stringgroup
+      operationId: POST /stringgroup
       consumes:
       - application/json
       produces:
@@ -56467,25 +56635,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: SSLProfile object creation
+        description: StringGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/SSLProfile'
+          $ref: '#/definitions/StringGroup'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/SSLProfile'
+            $ref: '#/definitions/StringGroup'
         '401':
           description: log in failed
-  /sslprofile/{uuid}:
+  /stringgroup/{uuid}:
     get:
       tags:
-      - SSLProfile
-      description: /sslprofile/{uuid}/{uuid}
-      operationId: GET /sslprofile/{uuid}
+      - StringGroup
+      description: /stringgroup/{uuid}/{uuid}
+      operationId: GET /stringgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -56555,16 +56723,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/SSLProfile'
+            $ref: '#/definitions/StringGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - SSLProfile
-      description: /sslprofile/{uuid}/{uuid}
-      operationId: PUT /sslprofile/{uuid}
+      - StringGroup
+      description: /stringgroup/{uuid}/{uuid}
+      operationId: PUT /stringgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -56603,10 +56771,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: SSLProfile object creation
+        description: StringGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/SSLProfile'
+          $ref: '#/definitions/StringGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -56618,16 +56786,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/SSLProfile'
+            $ref: '#/definitions/StringGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - SSLProfile
-      description: /sslprofile/{uuid}/{uuid}
-      operationId: PATCH /sslprofile/{uuid}
+      - StringGroup
+      description: /stringgroup/{uuid}/{uuid}
+      operationId: PATCH /stringgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -56666,10 +56834,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: SSLProfile object creation
+        description: StringGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/SSLProfile'
+          $ref: '#/definitions/StringGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -56681,16 +56849,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/SSLProfile'
+            $ref: '#/definitions/StringGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - SSLProfile
-      description: /sslprofile/{uuid}/{uuid}
-      operationId: DELETE /sslprofile/{uuid}
+      - StringGroup
+      description: /stringgroup/{uuid}/{uuid}
+      operationId: DELETE /stringgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -56741,65 +56909,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /sslprofile/{uuid}/federated_info/:
+  /pkiprofile:
     get:
       tags:
-      - SSLProfile
-      description: /sslprofile/{uuid}/federated_info/
-      operationId: GET /sslprofile/{uuid}/federated_info/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GslbSSLProfileRuntime'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-  /wafpolicypsmgroup:
-    get:
-      tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup
-      operationId: GET /wafpolicypsmgroup
+      - PKIProfile
+      description: /pkiprofile
+      operationId: GET /pkiprofile
       consumes:
       - application/json
       produces:
@@ -56876,14 +56991,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafPolicyPSMGroupApiResponse'
+            $ref: '#/definitions/PKIProfileApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup
-      operationId: POST /wafpolicypsmgroup
+      - PKIProfile
+      description: /pkiprofile
+      operationId: POST /pkiprofile
       consumes:
       - application/json
       produces:
@@ -56917,25 +57032,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafPolicyPSMGroup object creation
+        description: PKIProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/WafPolicyPSMGroup'
+          $ref: '#/definitions/PKIProfile'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafPolicyPSMGroup'
+            $ref: '#/definitions/PKIProfile'
         '401':
           description: log in failed
-  /wafpolicypsmgroup/{uuid}:
+  /pkiprofile/{uuid}:
     get:
       tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup/{uuid}/{uuid}
-      operationId: GET /wafpolicypsmgroup/{uuid}
+      - PKIProfile
+      description: /pkiprofile/{uuid}/{uuid}
+      operationId: GET /pkiprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -57005,16 +57120,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafPolicyPSMGroup'
+            $ref: '#/definitions/PKIProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup/{uuid}/{uuid}
-      operationId: PUT /wafpolicypsmgroup/{uuid}
+      - PKIProfile
+      description: /pkiprofile/{uuid}/{uuid}
+      operationId: PUT /pkiprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -57053,10 +57168,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafPolicyPSMGroup object creation
+        description: PKIProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/WafPolicyPSMGroup'
+          $ref: '#/definitions/PKIProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -57068,16 +57183,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafPolicyPSMGroup'
+            $ref: '#/definitions/PKIProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup/{uuid}/{uuid}
-      operationId: PATCH /wafpolicypsmgroup/{uuid}
+      - PKIProfile
+      description: /pkiprofile/{uuid}/{uuid}
+      operationId: PATCH /pkiprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -57116,10 +57231,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafPolicyPSMGroup object creation
+        description: PKIProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/WafPolicyPSMGroup'
+          $ref: '#/definitions/PKIProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -57131,16 +57246,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafPolicyPSMGroup'
+            $ref: '#/definitions/PKIProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - WafPolicyPSMGroup
-      description: /wafpolicypsmgroup/{uuid}/{uuid}
-      operationId: DELETE /wafpolicypsmgroup/{uuid}
+      - PKIProfile
+      description: /pkiprofile/{uuid}/{uuid}
+      operationId: DELETE /pkiprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -57191,12 +57306,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /networksecuritypolicy:
+  /apipolicy:
     get:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy
-      operationId: GET /networksecuritypolicy
+      - ApiPolicy
+      description: /apipolicy
+      operationId: GET /apipolicy
       consumes:
       - application/json
       produces:
@@ -57273,14 +57388,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/NetworkSecurityPolicyApiResponse'
+            $ref: '#/definitions/ApiPolicyApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy
-      operationId: POST /networksecuritypolicy
+      - ApiPolicy
+      description: /apipolicy
+      operationId: POST /apipolicy
       consumes:
       - application/json
       produces:
@@ -57314,25 +57429,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: NetworkSecurityPolicy object creation
+        description: ApiPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/NetworkSecurityPolicy'
+          $ref: '#/definitions/ApiPolicy'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/NetworkSecurityPolicy'
+            $ref: '#/definitions/ApiPolicy'
         '401':
           description: log in failed
-  /networksecuritypolicy/{uuid}:
+  /apipolicy/{uuid}:
     get:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy/{uuid}/{uuid}
-      operationId: GET /networksecuritypolicy/{uuid}
+      - ApiPolicy
+      description: /apipolicy/{uuid}/{uuid}
+      operationId: GET /apipolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -57402,16 +57517,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/NetworkSecurityPolicy'
+            $ref: '#/definitions/ApiPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy/{uuid}/{uuid}
-      operationId: PUT /networksecuritypolicy/{uuid}
+      - ApiPolicy
+      description: /apipolicy/{uuid}/{uuid}
+      operationId: PUT /apipolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -57450,10 +57565,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: NetworkSecurityPolicy object creation
+        description: ApiPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/NetworkSecurityPolicy'
+          $ref: '#/definitions/ApiPolicy'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -57465,16 +57580,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/NetworkSecurityPolicy'
+            $ref: '#/definitions/ApiPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy/{uuid}/{uuid}
-      operationId: PATCH /networksecuritypolicy/{uuid}
+      - ApiPolicy
+      description: /apipolicy/{uuid}/{uuid}
+      operationId: PATCH /apipolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -57513,10 +57628,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: NetworkSecurityPolicy object creation
+        description: ApiPolicy object creation
         required: true
         schema:
-          $ref: '#/definitions/NetworkSecurityPolicy'
+          $ref: '#/definitions/ApiPolicy'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -57528,16 +57643,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/NetworkSecurityPolicy'
+            $ref: '#/definitions/ApiPolicy'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - NetworkSecurityPolicy
-      description: /networksecuritypolicy/{uuid}/{uuid}
-      operationId: DELETE /networksecuritypolicy/{uuid}
+      - ApiPolicy
+      description: /apipolicy/{uuid}/{uuid}
+      operationId: DELETE /apipolicy/{uuid}
       consumes:
       - application/json
       produces:
@@ -58038,12 +58153,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /wafprofile:
+  /ipaddrgroup:
     get:
       tags:
-      - WafProfile
-      description: /wafprofile
-      operationId: GET /wafprofile
+      - IpAddrGroup
+      description: /ipaddrgroup
+      operationId: GET /ipaddrgroup
       consumes:
       - application/json
       produces:
@@ -58120,14 +58235,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafProfileApiResponse'
+            $ref: '#/definitions/IpAddrGroupApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - WafProfile
-      description: /wafprofile
-      operationId: POST /wafprofile
+      - IpAddrGroup
+      description: /ipaddrgroup
+      operationId: POST /ipaddrgroup
       consumes:
       - application/json
       produces:
@@ -58161,25 +58276,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafProfile object creation
+        description: IpAddrGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/WafProfile'
+          $ref: '#/definitions/IpAddrGroup'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafProfile'
+            $ref: '#/definitions/IpAddrGroup'
         '401':
           description: log in failed
-  /wafprofile/{uuid}:
+  /ipaddrgroup/{uuid}:
     get:
       tags:
-      - WafProfile
-      description: /wafprofile/{uuid}/{uuid}
-      operationId: GET /wafprofile/{uuid}
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/{uuid}
+      operationId: GET /ipaddrgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -58249,16 +58364,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafProfile'
+            $ref: '#/definitions/IpAddrGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - WafProfile
-      description: /wafprofile/{uuid}/{uuid}
-      operationId: PUT /wafprofile/{uuid}
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/{uuid}
+      operationId: PUT /ipaddrgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -58297,10 +58412,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafProfile object creation
+        description: IpAddrGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/WafProfile'
+          $ref: '#/definitions/IpAddrGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -58312,16 +58427,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafProfile'
+            $ref: '#/definitions/IpAddrGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - WafProfile
-      description: /wafprofile/{uuid}/{uuid}
-      operationId: PATCH /wafprofile/{uuid}
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/{uuid}
+      operationId: PATCH /ipaddrgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -58360,10 +58475,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: WafProfile object creation
+        description: IpAddrGroup object creation
         required: true
         schema:
-          $ref: '#/definitions/WafProfile'
+          $ref: '#/definitions/IpAddrGroup'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -58375,16 +58490,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/WafProfile'
+            $ref: '#/definitions/IpAddrGroup'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - WafProfile
-      description: /wafprofile/{uuid}/{uuid}
-      operationId: DELETE /wafprofile/{uuid}
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/{uuid}
+      operationId: DELETE /ipaddrgroup/{uuid}
       consumes:
       - application/json
       produces:
@@ -58435,12 +58550,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /wafprofile/{uuid}/update-from-crs:
-    put:
+  /ipaddrgroup/{uuid}/syncnsxt:
+    post:
       tags:
-      - WafProfile
-      description: /wafprofile/{uuid}/update-from-crs
-      operationId: PUT /wafprofile/{uuid}/update-from-crs
+      - IpAddrGroup
+      description: /ipaddrgroup/{uuid}/syncnsxt
+      operationId: POST /ipaddrgroup/{uuid}/syncnsxt
       consumes:
       - application/json
       produces:
@@ -58474,12 +58589,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: empty
+        description: IpAddrGroupSyncParams
         required: true
         schema:
-          type: object
-          additionalProperties:
-            type: string
+          $ref: '#/definitions/IpAddrGroupSyncParams'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -58494,6 +58607,403 @@ paths:
             type: string
         '401':
           description: log in failed
+        '404':
+          description: object not found
+  /vsgs:
+    get:
+      tags:
+      - VsGs
+      description: /vsgs
+      operationId: GET /vsgs
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VsGsApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - VsGs
+      description: /vsgs
+      operationId: POST /vsgs
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VsGs object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VsGs'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VsGs'
+        '401':
+          description: log in failed
+  /vsgs/{uuid}:
+    get:
+      tags:
+      - VsGs
+      description: /vsgs/{uuid}/{uuid}
+      operationId: GET /vsgs/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VsGs'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - VsGs
+      description: /vsgs/{uuid}/{uuid}
+      operationId: PUT /vsgs/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VsGs object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VsGs'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VsGs'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - VsGs
+      description: /vsgs/{uuid}/{uuid}
+      operationId: PATCH /vsgs/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: VsGs object creation
+        required: true
+        schema:
+          $ref: '#/definitions/VsGs'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VsGs'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - VsGs
+      description: /vsgs/{uuid}/{uuid}
+      operationId: DELETE /vsgs/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
         '404':
           description: object not found
   /sslkeyandcertificate:
@@ -63285,12 +63795,12 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /poolgroup:
+  /sslprofile:
     get:
       tags:
-      - PoolGroup
-      description: /poolgroup
-      operationId: GET /poolgroup
+      - SSLProfile
+      description: /sslprofile
+      operationId: GET /sslprofile
       consumes:
       - application/json
       produces:
@@ -63367,14 +63877,14 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroupApiResponse'
+            $ref: '#/definitions/SSLProfileApiResponse'
         '401':
           description: log in failed
     post:
       tags:
-      - PoolGroup
-      description: /poolgroup
-      operationId: POST /poolgroup
+      - SSLProfile
+      description: /sslprofile
+      operationId: POST /sslprofile
       consumes:
       - application/json
       produces:
@@ -63408,25 +63918,25 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: PoolGroup object creation
+        description: SSLProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/PoolGroup'
+          $ref: '#/definitions/SSLProfile'
       security:
       - basicAuth: []
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroup'
+            $ref: '#/definitions/SSLProfile'
         '401':
           description: log in failed
-  /poolgroup/{uuid}:
+  /sslprofile/{uuid}:
     get:
       tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/{uuid}
-      operationId: GET /poolgroup/{uuid}
+      - SSLProfile
+      description: /sslprofile/{uuid}/{uuid}
+      operationId: GET /sslprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -63496,16 +64006,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroup'
+            $ref: '#/definitions/SSLProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     put:
       tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/{uuid}
-      operationId: PUT /poolgroup/{uuid}
+      - SSLProfile
+      description: /sslprofile/{uuid}/{uuid}
+      operationId: PUT /sslprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -63544,10 +64054,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: PoolGroup object creation
+        description: SSLProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/PoolGroup'
+          $ref: '#/definitions/SSLProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -63559,16 +64069,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroup'
+            $ref: '#/definitions/SSLProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     patch:
       tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/{uuid}
-      operationId: PATCH /poolgroup/{uuid}
+      - SSLProfile
+      description: /sslprofile/{uuid}/{uuid}
+      operationId: PATCH /sslprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -63607,10 +64117,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: PoolGroup object creation
+        description: SSLProfile object creation
         required: true
         schema:
-          $ref: '#/definitions/PoolGroup'
+          $ref: '#/definitions/SSLProfile'
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -63622,16 +64132,16 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroup'
+            $ref: '#/definitions/SSLProfile'
         '401':
           description: log in failed
         '404':
           description: object not found
     delete:
       tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/{uuid}
-      operationId: DELETE /poolgroup/{uuid}
+      - SSLProfile
+      description: /sslprofile/{uuid}/{uuid}
+      operationId: DELETE /sslprofile/{uuid}
       consumes:
       - application/json
       produces:
@@ -63682,66 +64192,12 @@ paths:
             type: string
         '404':
           description: object not found
-  /poolgroup/clear:
-    post:
-      tags:
-      - PoolGroup
-      description: /poolgroup/clear
-      operationId: POST /poolgroup/clear
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: empty
-        required: true
-        schema:
-          type: object
-          additionalProperties:
-            type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-  /poolgroup/{uuid}/runtime/detail/:
+  /sslprofile/{uuid}/federated_info/:
     get:
       tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/runtime/detail/
-      operationId: GET /poolgroup/{uuid}/runtime/detail/
+      - SSLProfile
+      description: /sslprofile/{uuid}/federated_info/
+      operationId: GET /sslprofile/{uuid}/federated_info/
       consumes:
       - application/json
       produces:
@@ -63784,465 +64240,9 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PoolGroupRuntimeDetail'
+            $ref: '#/definitions/GslbSSLProfileRuntime'
         '401':
           description: log in failed
-        '404':
-          description: object not found
-  /poolgroup/{uuid}/enable_primary_pool/clear:
-    post:
-      tags:
-      - PoolGroup
-      description: /poolgroup/{uuid}/enable_primary_pool/clear
-      operationId: POST /poolgroup/{uuid}/enable_primary_pool/clear
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: body
-        name: body
-        description: PrimaryPool
-        required: true
-        schema:
-          $ref: '#/definitions/PrimaryPool'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-  /pkiprofile:
-    get:
-      tags:
-      - PKIProfile
-      description: /pkiprofile
-      operationId: GET /pkiprofile
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: refers_to
-        in: query
-        description: Filter to request all objects that refers to another Avi resource.
-          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
-          referring to pool p1 will be refers_to=pool:pool_p1_uuid
-        type: string
-      - name: referred_by
-        in: query
-        description: Filter to request all objects that are referred by another Avi
-          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
-          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PKIProfileApiResponse'
-        '401':
-          description: log in failed
-    post:
-      tags:
-      - PKIProfile
-      description: /pkiprofile
-      operationId: POST /pkiprofile
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: PKIProfile object creation
-        required: true
-        schema:
-          $ref: '#/definitions/PKIProfile'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PKIProfile'
-        '401':
-          description: log in failed
-  /pkiprofile/{uuid}:
-    get:
-      tags:
-      - PKIProfile
-      description: /pkiprofile/{uuid}/{uuid}
-      operationId: GET /pkiprofile/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - name: name
-        in: query
-        description: object name
-        required: false
-        type: string
-      - name: X-Avi-Tenant
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: uuid
-        in: path
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      - name: fields
-        in: query
-        description: List of fields to be returned for the resource. Some fields like
-          name, URL, uuid etc. are always returned.
-        type: string
-      - name: include_name
-        in: query
-        description: All the Avi REST reference URIs have a name suffix as URI#name.
-          It is useful to get the referenced resource name without performing get
-          on that object.
-        required: false
-        type: boolean
-      - name: skip_default
-        in: query
-        description: Default values are not set.
-        required: false
-        type: boolean
-      - name: join_subresources
-        in: query
-        description: It automatically returns additional dependent resources like
-          runtime. Eg. join_subresources=runtime.
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PKIProfile'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    put:
-      tags:
-      - PKIProfile
-      description: /pkiprofile/{uuid}/{uuid}
-      operationId: PUT /pkiprofile/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: PKIProfile object creation
-        required: true
-        schema:
-          $ref: '#/definitions/PKIProfile'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PKIProfile'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - PKIProfile
-      description: /pkiprofile/{uuid}/{uuid}
-      operationId: PATCH /pkiprofile/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: PKIProfile object creation
-        required: true
-        schema:
-          $ref: '#/definitions/PKIProfile'
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PKIProfile'
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    delete:
-      tags:
-      - PKIProfile
-      description: /pkiprofile/{uuid}/{uuid}
-      operationId: DELETE /pkiprofile/{uuid}
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '204':
-          description: object deleted
-          schema:
-            type: string
         '404':
           description: object not found
   /certificatemanagementprofile:
@@ -85897,6 +85897,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: /cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -85941,58 +85993,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: /cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
