@@ -32,9 +32,8 @@ Requirements:
   - gh CLI installed and authenticated (run 'gh auth login' once)
 
 Example:
-  ./create_release.sh eng 32.1.3
+  ./create_release.sh --previous-tag tag-32.1.2 32.1.3 32.1.3
   ./create_release.sh --test eng 32.1.3
-  ./create_release.sh --previous-tag tag-32.1.2 eng 32.1.3
 EOF
 }
 
