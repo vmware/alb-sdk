@@ -21,10 +21,41 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiMetricsLimits  {
+    @JsonProperty("disk_kb_per_endpoint")
+    private Integer diskKbPerEndpoint;
+
     @JsonProperty("num_apis")
     private Integer numApis;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Disk space consumed in metrics_db per api endpoint for which metrics are tracked, used to derive num_apis from the disk capacity allocated to
+     * metrics_db.
+     * Field introduced in 32.1.4.
+     * Unit is kb.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return diskKbPerEndpoint
+     */
+    public Integer getDiskKbPerEndpoint() {
+        return diskKbPerEndpoint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Disk space consumed in metrics_db per api endpoint for which metrics are tracked, used to derive num_apis from the disk capacity allocated to
+     * metrics_db.
+     * Field introduced in 32.1.4.
+     * Unit is kb.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param diskKbPerEndpoint set the diskKbPerEndpoint.
+     */
+    public void setDiskKbPerEndpoint(Integer  diskKbPerEndpoint) {
+        this.diskKbPerEndpoint = diskKbPerEndpoint;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -62,14 +93,16 @@ public class ApiMetricsLimits  {
           return false;
       }
       ApiMetricsLimits objApiMetricsLimits = (ApiMetricsLimits) o;
-      return   Objects.equals(this.numApis, objApiMetricsLimits.numApis);
+      return   Objects.equals(this.numApis, objApiMetricsLimits.numApis)&&
+  Objects.equals(this.diskKbPerEndpoint, objApiMetricsLimits.diskKbPerEndpoint);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ApiMetricsLimits {\n");
-                  sb.append("    numApis: ").append(toIndentedString(numApis)).append("\n");
+                  sb.append("    diskKbPerEndpoint: ").append(toIndentedString(diskKbPerEndpoint)).append("\n");
+                        sb.append("    numApis: ").append(toIndentedString(numApis)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
