@@ -542,6 +542,12 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeHmVsDetails *SeHmEventVsDetails `json:"se_hm_vs_details,omitempty"`
 
+	//  Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SeInternalGatewayHeartbeatFailedDetails *SeGatewayHeartbeatFailedDetails `json:"se_internal_gateway_heartbeat_failed_details,omitempty"`
+
+	//  Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SeInternalGatewayHeartbeatSuccessDetails *SeGatewayHeartbeatSuccessDetails `json:"se_internal_gateway_heartbeat_success_details,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeIp6DadFailedEventDetails *SeIP6DadFailedEventDetails `json:"se_ip6_dad_failed_event_details,omitempty"`
 
