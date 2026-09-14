@@ -156,6 +156,9 @@ public class Pool extends AviRestResource  {
     @JsonProperty("min_servers_up")
     private Integer minServersUp;
 
+    @JsonProperty("msg_lb_conn_pool_config")
+    private MsgLbConnPoolConfig msgLbConnPoolConfig;
+
     @JsonProperty("name")
     private String name;
 
@@ -1452,6 +1455,32 @@ public class Pool extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
+     * Distinct from l7 conn_pool_properties.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return msgLbConnPoolConfig
+     */
+    public MsgLbConnPoolConfig getMsgLbConnPoolConfig() {
+        return msgLbConnPoolConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
+     * Distinct from l7 conn_pool_properties.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param msgLbConnPoolConfig set the msgLbConnPoolConfig.
+     */
+    public void setMsgLbConnPoolConfig(MsgLbConnPoolConfig msgLbConnPoolConfig) {
+        this.msgLbConnPoolConfig = msgLbConnPoolConfig;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * The name of the pool.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -2260,7 +2289,8 @@ public class Pool extends AviRestResource  {
   Objects.equals(this.horizonProfile, objPool.horizonProfile)&&
   Objects.equals(this.poolType, objPool.poolType)&&
   Objects.equals(this.lbAlgoRrPerSe, objPool.lbAlgoRrPerSe)&&
-  Objects.equals(this.gracefulHmDownDisableTimeout, objPool.gracefulHmDownDisableTimeout);
+  Objects.equals(this.gracefulHmDownDisableTimeout, objPool.gracefulHmDownDisableTimeout)&&
+  Objects.equals(this.msgLbConnPoolConfig, objPool.msgLbConnPoolConfig);
     }
 
     @Override
@@ -2312,6 +2342,7 @@ public class Pool extends AviRestResource  {
                         sb.append("    maxConnRatePerServer: ").append(toIndentedString(maxConnRatePerServer)).append("\n");
                         sb.append("    minHealthMonitorsUp: ").append(toIndentedString(minHealthMonitorsUp)).append("\n");
                         sb.append("    minServersUp: ").append(toIndentedString(minServersUp)).append("\n");
+                        sb.append("    msgLbConnPoolConfig: ").append(toIndentedString(msgLbConnPoolConfig)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
                         sb.append("    nsxSecuritygroup: ").append(toIndentedString(nsxSecuritygroup)).append("\n");
