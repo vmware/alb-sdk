@@ -2675,6 +2675,10 @@ definitions:
                 type: integer
                 default: 4096
                 format: uint32
+            supervisor_group:
+                description: "Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is read only and cannot be modified. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                readOnly: True
+                type: boolean
             tenant_ref:
                 description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
