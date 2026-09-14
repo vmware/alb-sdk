@@ -23,6 +23,9 @@ type TCPStatRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MiscStats *MiscStats `json:"misc_stats,omitempty"`
 
+	// ISO 8583 MsgLB client-side stats; present only when type != BACKEND and the VS is an L4 MsgLB virtual service. These counters are incremented from the client-facing side (message committed, transaction/connpool lookup outcome), so there is no separate backend-only variant to report under type=BACKEND. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbStats *MsgLbTCPStats `json:"msg_lb_stats,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PacketsDropped *PacketDropStats `json:"packets_dropped,omitempty"`
 

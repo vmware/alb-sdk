@@ -114,6 +114,12 @@ type ConnectionLog struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MicroserviceName *string `json:"microservice_name,omitempty"`
 
+	// ISO 8583 MsgLB per-connection statistics. Present only when the VS is configured as an L4 MsgLB virtual service. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbStats *MsgLbStats `json:"msg_lb_stats,omitempty"`
+
+	// ISO 8583 MsgLB per-transaction log. Present only on the per-transaction ConnectionLog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears only on the once-per-connection summary log. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTxn *MsgLbTransactionLog `json:"msg_lb_txn,omitempty"`
+
 	//  Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Mss *uint32 `json:"mss"`
