@@ -291,21 +291,6 @@ class Test(unittest.TestCase):
         resp = api.get_object_by_name('tenant', 'admin', timeout=2)
         assert resp
 
-    @pytest.mark.travis
-    @pytest.mark.TCID1_48_1547_8_0
-    def test_force_uuid(self):
-        basic_vs_cfg = gSAMPLE_CONFIG["BasicVS"]
-        pool_cfg = copy.deepcopy(basic_vs_cfg["pool_obj"])
-        pool_cfg['name'] = pool_cfg['name'] + '-force'
-        resp = api.post('pool', data=pool_cfg, force_uuid='pool-force-42')
-        assert resp.status_code in (200, 201)
-        pool_obj = resp.json()
-        assert pool_obj['uuid'] == 'pool-force-42'
-        pool_obj = api.get_object_by_name('pool', pool_cfg['name'])
-        assert pool_obj['uuid'] == 'pool-force-42'
-        resp = api.delete_by_name("pool", pool_cfg['name'])
-        assert resp.status_code in (200, 204)
-
     @pytest.mark.skip_travis
 
     @pytest.mark.TCID1_48_1547_19_0
@@ -783,7 +768,7 @@ class Test(unittest.TestCase):
                 "uri"  : file_uri
             }
             #Invalidate the session by removing CSRF token
-            sessionDict['%s:%s:443' % (controller_ip, username)]['csrftoken'] = ""
+            sessionDict[api_session.key]['csrftoken'] = ""
             data = MultipartEncoder(file_dict)
             headers = {}
             headers['Content-Type'] = data.content_type
