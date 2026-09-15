@@ -98,6 +98,36 @@ type PoolStats struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LbFailSuspectState *uint32 `json:"lb_fail_suspect_state,omitempty"`
 
+	// Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbConnpoolHits *uint64 `json:"msg_lb_connpool_hits,omitempty"`
+
+	// Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbConnpoolMisses *uint64 `json:"msg_lb_connpool_misses,omitempty"`
+
+	// Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbConnpoolMux *uint64 `json:"msg_lb_connpool_mux,omitempty"`
+
+	// Connections rejected at accept because the VS has no L4_REQ datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript configuration problem, not a traffic problem. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbDsRejectCount *uint64 `json:"msg_lb_ds_reject_count,omitempty"`
+
+	// In-flight bindings orphaned when the client connection closed before a response arrived. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbOrphanCount *uint64 `json:"msg_lb_orphan_count,omitempty"`
+
+	// Bindings that expired waiting for a server response. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTimeoutCount *uint64 `json:"msg_lb_timeout_count,omitempty"`
+
+	// Total request bytes committed to backend servers for this pool. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTotalBytes *uint64 `json:"msg_lb_total_bytes,omitempty"`
+
+	// Total messages committed to backend servers for this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTotalMessages *uint64 `json:"msg_lb_total_messages,omitempty"`
+
+	// Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTransactionHits *uint64 `json:"msg_lb_transaction_hits,omitempty"`
+
+	// Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbTransactionMisses *uint64 `json:"msg_lb_transaction_misses,omitempty"`
+
 	// Number of times fallback algorithm was used for load balancing. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumFallbackAlgoUsed *uint64 `json:"num_fallback_algo_used,omitempty"`
 
