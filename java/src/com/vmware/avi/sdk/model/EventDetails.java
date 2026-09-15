@@ -555,6 +555,12 @@ public class EventDetails  {
     @JsonProperty("se_hm_vs_details")
     private SeHmEventVsDetails seHmVsDetails;
 
+    @JsonProperty("se_internal_gateway_heartbeat_failed_details")
+    private SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails;
+
+    @JsonProperty("se_internal_gateway_heartbeat_success_details")
+    private SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails;
+
     @JsonProperty("se_ip6_dad_failed_event_details")
     private SeIP6DadFailedEventDetails seIp6DadFailedEventDetails;
 
@@ -4550,6 +4556,50 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seInternalGatewayHeartbeatFailedDetails
+     */
+    public SeGatewayHeartbeatFailedDetails getSeInternalGatewayHeartbeatFailedDetails() {
+        return seInternalGatewayHeartbeatFailedDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seInternalGatewayHeartbeatFailedDetails set the seInternalGatewayHeartbeatFailedDetails.
+     */
+    public void setSeInternalGatewayHeartbeatFailedDetails(SeGatewayHeartbeatFailedDetails seInternalGatewayHeartbeatFailedDetails) {
+        this.seInternalGatewayHeartbeatFailedDetails = seInternalGatewayHeartbeatFailedDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seInternalGatewayHeartbeatSuccessDetails
+     */
+    public SeGatewayHeartbeatSuccessDetails getSeInternalGatewayHeartbeatSuccessDetails() {
+        return seInternalGatewayHeartbeatSuccessDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seInternalGatewayHeartbeatSuccessDetails set the seInternalGatewayHeartbeatSuccessDetails.
+     */
+    public void setSeInternalGatewayHeartbeatSuccessDetails(SeGatewayHeartbeatSuccessDetails seInternalGatewayHeartbeatSuccessDetails) {
+        this.seInternalGatewayHeartbeatSuccessDetails = seInternalGatewayHeartbeatSuccessDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seIp6DadFailedEventDetails
@@ -6432,6 +6482,8 @@ public class EventDetails  {
   Objects.equals(this.seRateLimiterDropDetails, objEventDetails.seRateLimiterDropDetails)&&
   Objects.equals(this.seQatModeEventDetail, objEventDetails.seQatModeEventDetail)&&
   Objects.equals(this.sePcapModeEventDetails, objEventDetails.sePcapModeEventDetails)&&
+  Objects.equals(this.seInternalGatewayHeartbeatFailedDetails, objEventDetails.seInternalGatewayHeartbeatFailedDetails)&&
+  Objects.equals(this.seInternalGatewayHeartbeatSuccessDetails, objEventDetails.seInternalGatewayHeartbeatSuccessDetails)&&
   Objects.equals(this.seHmPoolDetails, objEventDetails.seHmPoolDetails)&&
   Objects.equals(this.seHmVsDetails, objEventDetails.seHmVsDetails)&&
   Objects.equals(this.sePersistenceDetails, objEventDetails.sePersistenceDetails)&&
@@ -6797,6 +6849,8 @@ public class EventDetails  {
                         sb.append("    seHmGsgroupDetails: ").append(toIndentedString(seHmGsgroupDetails)).append("\n");
                         sb.append("    seHmPoolDetails: ").append(toIndentedString(seHmPoolDetails)).append("\n");
                         sb.append("    seHmVsDetails: ").append(toIndentedString(seHmVsDetails)).append("\n");
+                        sb.append("    seInternalGatewayHeartbeatFailedDetails: ").append(toIndentedString(seInternalGatewayHeartbeatFailedDetails)).append("\n");
+                        sb.append("    seInternalGatewayHeartbeatSuccessDetails: ").append(toIndentedString(seInternalGatewayHeartbeatSuccessDetails)).append("\n");
                         sb.append("    seIp6DadFailedEventDetails: ").append(toIndentedString(seIp6DadFailedEventDetails)).append("\n");
                         sb.append("    seIpAddedEventDetails: ").append(toIndentedString(seIpAddedEventDetails)).append("\n");
                         sb.append("    seIpRemovedEventDetails: ").append(toIndentedString(seIpRemovedEventDetails)).append("\n");
