@@ -439,7 +439,7 @@ definitions:
                 readOnly: True
                 type: string
             app_service_type:
-                description: "Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Specifies app service type for an application, including L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB) for ISO 8583-style traffic. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP, APP_SERVICE_TYPE_L4_MSG_LB. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_config_cksum:
                 description: "Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -470,6 +470,9 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
+            msg_lb_app_service_profile:
+                description: "Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceProfile'
             name:
                 description: "The name of the application profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -1308,6 +1311,51 @@ definitions:
                 description: "L4 stream idle connection timeout in seconds. Allowed values are 60-86400. Field introduced in 22.1.2. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 3600
+                format: uint32
+    MsgLbApplicationServiceProfile:
+        type: object
+        properties:
+            max_tcp_conn_per_client_per_server:
+                description: "Cap on distinct server TCP connections a single client connection may open per backend member for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            session_binding_mode:
+                description: "Controls how client connections are bound to backend server TCP connections. STICKY (default). Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "MSG_LB_SESSION_BINDING_MODE_STICKY"
+            sticky_binding_profile:
+                description: "Parameters for STICKY-mode anchor and per-request bindings. Ignored when session_binding_mode is TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceStickyBindingProfile'
+            transaction_binding_profile:
+                description: "Parameters for TRANSACTIONAL-mode session bindings. Ignored when session_binding_mode is STICKY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceTransactionBindingProfile'
+    MsgLbApplicationServiceStickyBindingProfile:
+        type: object
+        properties:
+            session_unbind_on_response:
+                description: "When true (default), a STICKY-mode per-request/session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Anchor bindings are unaffected regardless of this flag. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            session_unbind_timeout:
+                description: "Idle timeout in milliseconds for per-request/session bindings in STICKY mode. When session_unbind_on_response is true (default), this acts as a hard deadline  the session binding is force-torn-down if no matching response arrives within this window. When session_unbind_on_response is false, this is the sliding idle timeout  the session binding persists after response and is freed after this many milliseconds of inactivity. Default 30000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30000
+                format: uint32
+            sticky_unbind_timeout:
+                description: "Idle timeout in milliseconds for the STICKY-mode anchor binding. 0 (default)  anchor lives until the client connection closes. Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request or response. Allowed values are 0-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    MsgLbApplicationServiceTransactionBindingProfile:
+        type: object
+        properties:
+            session_unbind_on_response:
+                description: "When true, a TRANSACTIONAL session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            session_unbind_timeout:
+                description: "Time in milliseconds a TRANSACTIONAL session binding waits in idle state before it is torn down. Default 120000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 120000
                 format: uint32
     PathMatch:
         type: object
