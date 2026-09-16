@@ -6433,13 +6433,13 @@
                 }
             }
         },
-        "/networksecuritypolicy": {
+        "/pool": {
             "get": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy",
-                "operationId": "GET /networksecuritypolicy",
+                "description": "/pool",
+                "operationId": "GET /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -6530,7 +6530,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicyApiResponse"
+                            "$ref": "#/definitions/PoolApiResponse"
                         }
                     },
                     "401": {
@@ -6540,10 +6540,10 @@
             },
             "post": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy",
-                "operationId": "POST /networksecuritypolicy",
+                "description": "/pool",
+                "operationId": "POST /pool",
                 "consumes": [
                     "application/json"
                 ],
@@ -6582,10 +6582,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     }
                 ],
@@ -6598,7 +6598,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6607,13 +6607,13 @@
                 }
             }
         },
-        "/networksecuritypolicy/{uuid}": {
+        "/pool/{uuid}": {
             "get": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "GET /networksecuritypolicy/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "GET /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6699,7 +6699,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6712,10 +6712,10 @@
             },
             "put": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "PUT /networksecuritypolicy/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PUT /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6761,10 +6761,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -6784,7 +6784,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6797,10 +6797,10 @@
             },
             "patch": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "PATCH /networksecuritypolicy/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "PATCH /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6846,10 +6846,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "NetworkSecurityPolicy object creation",
+                        "description": "Pool object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     {
@@ -6869,7 +6869,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/NetworkSecurityPolicy"
+                            "$ref": "#/definitions/Pool"
                         }
                     },
                     "401": {
@@ -6882,10 +6882,10 @@
             },
             "delete": {
                 "tags": [
-                    "NetworkSecurityPolicy"
+                    "Pool"
                 ],
-                "description": "/networksecuritypolicy/{uuid}/{uuid}",
-                "operationId": "DELETE /networksecuritypolicy/{uuid}",
+                "description": "/pool/{uuid}/{uuid}",
+                "operationId": "DELETE /pool/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7475,13 +7475,13 @@
                 }
             }
         },
-        "/pool": {
+        "/networksecuritypolicy": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool",
-                "operationId": "GET /pool",
+                "description": "/networksecuritypolicy",
+                "operationId": "GET /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -7572,7 +7572,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PoolApiResponse"
+                            "$ref": "#/definitions/NetworkSecurityPolicyApiResponse"
                         }
                     },
                     "401": {
@@ -7582,10 +7582,10 @@
             },
             "post": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool",
-                "operationId": "POST /pool",
+                "description": "/networksecuritypolicy",
+                "operationId": "POST /networksecuritypolicy",
                 "consumes": [
                     "application/json"
                 ],
@@ -7624,10 +7624,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     }
                 ],
@@ -7640,7 +7640,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7649,13 +7649,13 @@
                 }
             }
         },
-        "/pool/{uuid}": {
+        "/networksecuritypolicy/{uuid}": {
             "get": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "GET /pool/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "GET /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7741,7 +7741,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7754,10 +7754,10 @@
             },
             "put": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PUT /pool/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PUT /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7803,10 +7803,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     {
@@ -7826,7 +7826,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7839,10 +7839,10 @@
             },
             "patch": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "PATCH /pool/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "PATCH /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7888,10 +7888,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Pool object creation",
+                        "description": "NetworkSecurityPolicy object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     {
@@ -7911,7 +7911,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/Pool"
+                            "$ref": "#/definitions/NetworkSecurityPolicy"
                         }
                     },
                     "401": {
@@ -7924,10 +7924,10 @@
             },
             "delete": {
                 "tags": [
-                    "Pool"
+                    "NetworkSecurityPolicy"
                 ],
-                "description": "/pool/{uuid}/{uuid}",
-                "operationId": "DELETE /pool/{uuid}",
+                "description": "/networksecuritypolicy/{uuid}/{uuid}",
+                "operationId": "DELETE /networksecuritypolicy/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
