@@ -5912,13 +5912,13 @@
                 }
             }
         },
-        "/httppolicyset": {
+        "/debugvirtualservice": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "GET /httppolicyset",
+                "description": "/debugvirtualservice",
+                "operationId": "GET /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -6009,7 +6009,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
+                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
                         }
                     },
                     "401": {
@@ -6019,10 +6019,10 @@
             },
             "post": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset",
-                "operationId": "POST /httppolicyset",
+                "description": "/debugvirtualservice",
+                "operationId": "POST /debugvirtualservice",
                 "consumes": [
                     "application/json"
                 ],
@@ -6061,10 +6061,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     }
                 ],
@@ -6077,7 +6077,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -6086,13 +6086,13 @@
                 }
             }
         },
-        "/httppolicyset/{uuid}": {
+        "/debugvirtualservice/{uuid}": {
             "get": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "GET /httppolicyset/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "GET /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6178,7 +6178,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -6191,10 +6191,10 @@
             },
             "put": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PUT /httppolicyset/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PUT /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6240,10 +6240,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -6263,7 +6263,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -6276,10 +6276,10 @@
             },
             "patch": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "PATCH /httppolicyset/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "PATCH /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6325,10 +6325,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "HTTPPolicySet object creation",
+                        "description": "DebugVirtualService object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     {
@@ -6348,7 +6348,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HTTPPolicySet"
+                            "$ref": "#/definitions/DebugVirtualService"
                         }
                     },
                     "401": {
@@ -6361,10 +6361,10 @@
             },
             "delete": {
                 "tags": [
-                    "HTTPPolicySet"
+                    "DebugVirtualService"
                 ],
-                "description": "/httppolicyset/{uuid}/{uuid}",
-                "operationId": "DELETE /httppolicyset/{uuid}",
+                "description": "/debugvirtualservice/{uuid}/{uuid}",
+                "operationId": "DELETE /debugvirtualservice/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -6954,13 +6954,13 @@
                 }
             }
         },
-        "/debugvirtualservice": {
+        "/httppolicyset": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "GET /debugvirtualservice",
+                "description": "/httppolicyset",
+                "operationId": "GET /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -7051,7 +7051,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualServiceApiResponse"
+                            "$ref": "#/definitions/HTTPPolicySetApiResponse"
                         }
                     },
                     "401": {
@@ -7061,10 +7061,10 @@
             },
             "post": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice",
-                "operationId": "POST /debugvirtualservice",
+                "description": "/httppolicyset",
+                "operationId": "POST /httppolicyset",
                 "consumes": [
                     "application/json"
                 ],
@@ -7103,10 +7103,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     }
                 ],
@@ -7119,7 +7119,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7128,13 +7128,13 @@
                 }
             }
         },
-        "/debugvirtualservice/{uuid}": {
+        "/httppolicyset/{uuid}": {
             "get": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "GET /debugvirtualservice/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "GET /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7220,7 +7220,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7233,10 +7233,10 @@
             },
             "put": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PUT /debugvirtualservice/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PUT /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7282,10 +7282,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -7305,7 +7305,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7318,10 +7318,10 @@
             },
             "patch": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "PATCH /debugvirtualservice/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "PATCH /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -7367,10 +7367,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "DebugVirtualService object creation",
+                        "description": "HTTPPolicySet object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     {
@@ -7390,7 +7390,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DebugVirtualService"
+                            "$ref": "#/definitions/HTTPPolicySet"
                         }
                     },
                     "401": {
@@ -7403,10 +7403,10 @@
             },
             "delete": {
                 "tags": [
-                    "DebugVirtualService"
+                    "HTTPPolicySet"
                 ],
-                "description": "/debugvirtualservice/{uuid}/{uuid}",
-                "operationId": "DELETE /debugvirtualservice/{uuid}",
+                "description": "/httppolicyset/{uuid}/{uuid}",
+                "operationId": "DELETE /httppolicyset/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
