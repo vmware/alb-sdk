@@ -430,3 +430,5 @@ definitions:
                     $ref: "#/definitions/ApiRateLimitProfile"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

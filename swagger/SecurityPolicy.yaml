@@ -388,6 +388,8 @@ definitions:
                 description: "Deny the attack packets further processing and drop them. Field introduced in 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
+    ConfigPbAttributes:
+        type: object
     DnsAttack:
         type: object
         required:
@@ -545,3 +547,7 @@ definitions:
                     $ref: "#/definitions/SecurityPolicy"
             next:
                 type: string
+    TcpAttacks:
+        type: object
+    UdpAttacks:
+        type: object

@@ -652,6 +652,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "KeyValue": {
             "type": "object",
             "required": [

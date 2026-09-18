@@ -381,6 +381,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     Scheduler:
         type: object
         required:

@@ -645,6 +645,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "L1FMandatoryTestCase": {
             "type": "object",
             "required": [

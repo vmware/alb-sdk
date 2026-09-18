@@ -455,6 +455,8 @@ definitions:
             heat_scale_up_url:
                 description: "Avi Controller will use this URL to scale upthe pool. Cloud connector will automatically update the membership. This is an alpha feature. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     KeyValue:
         type: object
         required:

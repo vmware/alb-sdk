@@ -428,3 +428,5 @@ definitions:
                     $ref: "#/definitions/AlertScriptConfig"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
