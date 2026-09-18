@@ -659,6 +659,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "TimeStamp": {
             "type": "object",
             "required": [

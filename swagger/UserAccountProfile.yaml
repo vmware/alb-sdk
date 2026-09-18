@@ -414,6 +414,8 @@ definitions:
                 type: integer
                 default: 5
                 format: uint32
+    ConfigPbAttributes:
+        type: object
     ExpirationConstraint:
         type: object
         properties:

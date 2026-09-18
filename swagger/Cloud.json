@@ -547,13 +547,13 @@
                 }
             }
         },
-        "/cloud/list": {
+        "/cloud-internals": {
             "post": {
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/list",
-                "operationId": "POST /cloud/list",
+                "description": "/cloud-internals",
+                "operationId": "POST /cloud-internals",
                 "consumes": [
                     "application/json"
                 ],
@@ -1342,6 +1342,9 @@
         }
     },
     "definitions": {
+        "APICConfiguration": {
+            "type": "object"
+        },
         "AwsConfiguration": {
             "type": "object",
             "required": [
@@ -3542,6 +3545,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ConsumerStats": {
             "type": "object",
             "properties": {
@@ -4715,6 +4721,9 @@
                     "format": "uint32"
                 }
             }
+        },
+        "NsxConfiguration": {
+            "type": "object"
         },
         "NsxtConfiguration": {
             "type": "object",
@@ -6019,6 +6028,9 @@
                     "type": "string"
                 }
             }
+        },
+        "SSHSeDeployment": {
+            "type": "object"
         },
         "Tier1LogicalRouterInfo": {
             "type": "object",

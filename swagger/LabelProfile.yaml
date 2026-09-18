@@ -638,6 +638,8 @@ definitions:
             match_operation:
                 description: "Match criteria. Enum options - IS_IN, IS_NOT_IN. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     CookieMatch:
         type: object
         required:

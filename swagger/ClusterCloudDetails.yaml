@@ -433,3 +433,5 @@ definitions:
                     $ref: "#/definitions/ClusterCloudDetails"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

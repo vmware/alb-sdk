@@ -1,0 +1,286 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "32.1.4",
+        "title": "Avi ControllerInventoryResponse Object API",
+        "contact": {
+            "name": "Avi Networks Inc.",
+            "url": "https://avinetworks.com/contact-us",
+            "email": "support@avinetworks.com"
+        },
+        "description": "Avi ControllerInventoryResponse object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
+    },
+    "tags": [
+        {
+            "name": "ControllerInventoryResponse"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "basic authentication"
+        }
+    },
+    "basePath": "/api",
+    "paths": {
+        "/controller-inventory": {
+            "get": {
+                "tags": [
+                    "ControllerInventoryResponse"
+                ],
+                "description": "/controller-inventory",
+                "operationId": "GET /controller-inventory",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ControllerInventoryResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ControllerBackupSchedulerFault": {
+            "type": "object",
+            "properties": {
+                "backup_scheduler_name": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                }
+            }
+        },
+        "ControllerClusterFault": {
+            "type": "object",
+            "properties": {
+                "cluster_state": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "inactive_nodes": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerInactiveNode"
+                    }
+                }
+            }
+        },
+        "ControllerDeprecatedApiFault": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ControllerInactiveNode": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ControllerInventoryFaults": {
+            "type": "object",
+            "properties": {
+                "backup_scheduler_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerBackupSchedulerFault"
+                    }
+                },
+                "cluster_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerClusterFault"
+                    }
+                },
+                "deprecated_api_version_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerDeprecatedApiFault"
+                    }
+                },
+                "license_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerLicenseFault"
+                    }
+                },
+                "migration_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerMigrationFault"
+                    }
+                },
+                "sslprofile_faults": {
+                    "description": "Each real JSON entry also carries one dynamic key per flagged SSLProfile name mapping to a list of blacklisted cipher-suite strings, those dynamic keys cannot be represented as static fields and are omitted here. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerSslProfileFault"
+                    }
+                },
+                "system_limits_faults": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ControllerSystemLimitsFault"
+                    }
+                }
+            }
+        },
+        "ControllerInventoryResponse": {
+            "type": "object",
+            "required": [
+                "count"
+            ],
+            "properties": {
+                "count": {
+                    "description": "Number of fault categories present in results (0-7), not total fault count. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "results": {
+                    "description": "Present fault categories, each list is only populated when the corresponding controller_faults flag is enabled and faults exist. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ControllerInventoryFaults"
+                }
+            }
+        },
+        "ControllerLicenseFault": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "LICENSE_EXPIRED or LICENSE_EXPIRING. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "valid_until": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ControllerMigrationFault": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "migration_name": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ControllerSslProfileFault": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Only the fixed 'description' key is represented; the real payload also contains one additional key per flagged SSLProfile name mapping to a list of cipher strings, which is not representable here. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ControllerSystemLimitsFault": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "details": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
+}

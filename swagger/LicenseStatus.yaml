@@ -226,6 +226,8 @@ definitions:
             usage_uploaded_at:
                 description: "Timestamp of last successful license usage upload to CLS. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     LicensePool:
         type: object
         properties:
