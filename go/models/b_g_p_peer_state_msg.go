@@ -4,9 +4,9 @@ package models
 
 // This file is auto-generated.
 
-// BGPPeerState b g p peer state
-// swagger:model BGPPeerState
-type BGPPeerState struct {
+// BGPPeerStateMsg b g p peer state msg
+// swagger:model BGPPeerStateMsg
+type BGPPeerStateMsg struct {
 
 	// Peer IP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PeerIP *string `json:"peer_ip,omitempty"`

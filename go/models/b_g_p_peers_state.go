@@ -9,7 +9,7 @@ package models
 type BGPPeersState struct {
 
 	// Peers state in the Vrf. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	PeersState []*BGPPeerState `json:"peers_state,omitempty"`
+	PeersState []*BGPPeerStateMsg `json:"peers_state,omitempty"`
 
 	// Vrf name. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VrfName *string `json:"vrf_name,omitempty"`
