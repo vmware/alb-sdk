@@ -36,6 +36,6 @@ type EmailConfiguration struct {
 	// Required: true
 	SMTPType *string `json:"smtp_type"`
 
-	// TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from SystemConfiguration.truststore_pkiprofile_uuid. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// TLS mode and optional client certificate for outbound SMTP connections. CA trust is always sourced from the trust store configured in System Configuration. When unset, no STARTTLS is attempted regardless of disable_tls. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TLSConfig *TLSConfig `json:"tls_config,omitempty"`
 }
