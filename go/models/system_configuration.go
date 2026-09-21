@@ -66,7 +66,7 @@ type SystemConfiguration struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GlobalTenantConfig *TenantConfiguration `json:"global_tenant_config,omitempty"`
 
-	// Client certificate for mutual TLS authentication. Required when tls_mode is TLS_MODE_MTLS. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// SSLKeyAndCertificate used as the client certificate for GSLB site-to-site mutual TLS (mTLS) authentication between Controllers. Required when tls_mode is set to Mutual TLS in GSLB Site-to-Site configuration. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GslbClientCertRef *string `json:"gslb_client_cert_ref,omitempty"`
 
 	// Users can specify comma separated list of deprecated host key algorithm.If nothing is specified, all known algorithms provided by OpenSSH will be supported.This change could only apply on the controller node. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
