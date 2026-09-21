@@ -317,6 +317,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "LicensePool": {
             "type": "object",
             "properties": {

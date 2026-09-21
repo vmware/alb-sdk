@@ -750,6 +750,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "RoleFilter": {
             "type": "object",
             "required": [

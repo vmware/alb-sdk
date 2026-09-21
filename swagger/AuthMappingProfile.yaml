@@ -526,6 +526,8 @@ definitions:
                 type: array
                 items:
                     type: string
+    ConfigPbAttributes:
+        type: object
     RoleFilter:
         type: object
         required:

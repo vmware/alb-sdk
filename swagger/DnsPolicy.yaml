@@ -381,6 +381,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     DnsAAAARdata:
         type: object
         required:
@@ -556,6 +558,8 @@ definitions:
             rate_limiter_object:
                 description: "Rate limiting object. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/RateLimiter'
+    DnsRateProfile:
+        type: object
     DnsRrSet:
         type: object
         required:

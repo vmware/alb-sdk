@@ -549,6 +549,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "TenantSystemConfiguration": {
             "type": "object",
             "required": [

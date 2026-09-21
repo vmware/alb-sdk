@@ -359,6 +359,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ControllerCloudLimits": {
             "type": "object",
             "properties": {
