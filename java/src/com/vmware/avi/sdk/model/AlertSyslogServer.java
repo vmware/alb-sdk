@@ -24,9 +24,6 @@ public class AlertSyslogServer  {
     @JsonProperty("format")
     private String format = "SYSLOG_LEGACY";
 
-    @JsonProperty("pkiprofile_ref")
-    private String pkiprofileRef;
-
     @JsonProperty("syslog_server")
     private String syslogServer;
 
@@ -68,34 +65,6 @@ public class AlertSyslogServer  {
      */
     public void setFormat(String  format) {
         this.format = format;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
-     * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
-     * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
-     * It is a reference to an object of type pkiprofile.
-     * Field introduced in 17.2.17, 18.2.5.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return pkiprofileRef
-     */
-    public String getPkiprofileRef() {
-        return pkiprofileRef;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * Select the pkiprofile containing a ca or list of ca chainswhich will validate the certificate of the syslog server.
-     * When unset, systemconfiguration.truststore_pkiprofile_uuid is used instead.
-     * It is a reference to an object of type pkiprofile.
-     * Field introduced in 17.2.17, 18.2.5.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param pkiprofileRef set the pkiprofileRef.
-     */
-    public void setPkiprofileRef(String  pkiprofileRef) {
-        this.pkiprofileRef = pkiprofileRef;
     }
 
     /**
@@ -231,7 +200,6 @@ public class AlertSyslogServer  {
   Objects.equals(this.udp, objAlertSyslogServer.udp)&&
   Objects.equals(this.format, objAlertSyslogServer.format)&&
   Objects.equals(this.tlsEnable, objAlertSyslogServer.tlsEnable)&&
-  Objects.equals(this.pkiprofileRef, objAlertSyslogServer.pkiprofileRef)&&
   Objects.equals(this.tlsConfig, objAlertSyslogServer.tlsConfig);
     }
 
@@ -240,7 +208,6 @@ public class AlertSyslogServer  {
       StringBuilder sb = new StringBuilder();
       sb.append("class AlertSyslogServer {\n");
                   sb.append("    format: ").append(toIndentedString(format)).append("\n");
-                        sb.append("    pkiprofileRef: ").append(toIndentedString(pkiprofileRef)).append("\n");
                         sb.append("    syslogServer: ").append(toIndentedString(syslogServer)).append("\n");
                         sb.append("    syslogServerPort: ").append(toIndentedString(syslogServerPort)).append("\n");
                         sb.append("    tlsConfig: ").append(toIndentedString(tlsConfig)).append("\n");
