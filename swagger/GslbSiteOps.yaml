@@ -14,6 +14,13 @@ info:
     description: |
         Avi GslbSiteOps object api
         ```
+        - gslb purge
+        - gslb changeleader
+        - gslb changeleader force
+        - gslb changeleader candidates
+        - gslb changeleader runtime
+        - gslb maintenancemode
+        - gslb resync
         ```
 
         API permission: PERMISSION_GSLBSITEOPS
@@ -98,6 +105,51 @@ paths:
                         $ref: "#/definitions/GslbSiteOpsApiResponse"
                 "401":
                     description: log in failed
+        post:
+            tags:
+                - GslbSiteOps
+            description: /gslbsiteops
+            operationId: POST /gslbsiteops
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: GslbSiteOps object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/GslbSiteOps"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/GslbSiteOps"
+                "401":
+                    description: log in failed
     /gslbsiteops/{uuid}:
         get:
             tags:
@@ -168,19 +220,21 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
-
-
-    /gslbsiteops/purge/:
         delete:
             tags:
                 - GslbSiteOps
-            description: /gslbsiteops/purge/
-            operationId: DELETE /gslbsiteops/purge/
+            description: /gslbsiteops/{uuid}/{uuid}
+            operationId: DELETE /gslbsiteops/{uuid}
             consumes:
                 -   application/json
             produces:
                 -   application/json
             parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
                 -   in: header
                     name: X-Avi-Tenant
                     type: string
@@ -191,161 +245,32 @@ paths:
                     type: string
                     required: false
                     description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   name: X-Avi-Version
                     in: header
                     type: string
                     required: true
                     description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
             security:
                 - basicAuth: []
             responses:
-                "200":
-                    description: OK
+                "204":
+                    description: object deleted
                     schema:
                         type: string
-                "401":
-                    description: log in failed
-    /gslbsiteops/changeleader/:
-        get:
-            tags:
-                - GslbSiteOps
-            description: /gslbsiteops/changeleader/
-            operationId: GET /gslbsiteops/changeleader/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/GslbChangeLeaderResponse"
-                "401":
-                    description: log in failed
-    /gslbsiteops/maintenancemode/:
-        post:
-            tags:
-                - GslbSiteOps
-            description: /gslbsiteops/maintenancemode/
-            operationId: POST /gslbsiteops/maintenancemode/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: body
-                    name: body
-                    description: empty
-                    required: true
-                    schema:
-                        type: object
-                        additionalProperties:
-                            type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
-    /gslbsiteops/resync/:
-        post:
-            tags:
-                - GslbSiteOps
-            description: /gslbsiteops/resync/
-            operationId: POST /gslbsiteops/resync/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: body
-                    name: body
-                    description: empty
-                    required: true
-                    schema:
-                        type: object
-                        additionalProperties:
-                            type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
+                "404":
+                    description: object not found
+
+
     /gslbsiteops/staleobjectchecks/:
         get:
             tags:
@@ -384,54 +309,6 @@ paths:
                     description: OK
                     schema:
                         $ref: "#/definitions/GslbSiteOpsStaleObjectStatus"
-                "401":
-                    description: log in failed
-    /gslbsiteops/staleobjectcleanup/:
-        post:
-            tags:
-                - GslbSiteOps
-            description: /gslbsiteops/staleobjectcleanup/
-            operationId: POST /gslbsiteops/staleobjectcleanup/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   in: body
-                    name: body
-                    description: empty
-                    required: true
-                    schema:
-                        type: object
-                        additionalProperties:
-                            type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
                 "401":
                     description: log in failed
 definitions:
@@ -822,27 +699,6 @@ definitions:
             domain_name:
                 description: "GSLB subdomain used for GSLB service FQDN match and placement. . Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-    EventInfo:
-        type: object
-        properties:
-            agent_id:
-                description: "Remote Site Watcher Agent ID. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            msg:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    type: string
-            name:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            timestamp:
-                description: "Event creation time. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/TimeStamp'
-            uuid:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
     FederationCheckpoint:
         type: object
     FileObject:
@@ -1158,19 +1014,6 @@ definitions:
                     $ref: "#/definitions/Gslb"
             next:
                 type: string
-    GslbChangeLeaderResponse:
-        type: object
-        properties:
-            eligible_leader_candidates:
-                description: "Sites eligible to be leader candidates. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/SiteInfo'
-            leader_change_runtime:
-                description: "Leader change runtime information. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/GslbLeaderChangeRuntime'
     GslbClientIpAddrGroup:
         type: object
         required:
@@ -1388,54 +1231,6 @@ definitions:
             ip:
                 description: "Public IP address of the pool member. Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddr'
-    GslbLeaderChangeRuntime:
-        type: object
-        properties:
-            edges:
-                description: "Connection edges of sites know by the reporting site. E.g. [(siteA, siteB), (siteA, siteC)]. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/SiteLink'
-            events:
-                description: "This field captures leader change events in both manual and auto mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: array
-                items:
-                    $ref: '#/definitions/EventInfo'
-            last_updated_time:
-                description: "Last update time stamp. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/TimeStamp'
-            maintenance_mode:
-                description: "Current maintenance mode of the peer site for enhanced visibility. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: boolean
-            mode:
-                description: "Mode of leader change - manual or automatic. Enum options - GSLB_LC_MODE_MANUAL, GSLB_LC_MODE_AUTO. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            num_unsuccessful_probes:
-                description: "This field captures number of consecutive unsuccessful health check probes. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: integer
-                format: uint32
-            site_info:
-                description: "Represents the site with cluster_uuid, name. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/SiteInfo'
-            status:
-                description: "This field captures the status of leader change process in both manual and auto mode. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/GslbLeaderChangeStatus'
-            uuid:
-                description: "Uuid of leader change record in datastore. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-    GslbLeaderChangeStatus:
-        type: object
-        properties:
-            last_changed_time:
-                description: "Timestamp of the status update. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                $ref: '#/definitions/TimeStamp'
-            reason:
-                description: "Reason for the leader change. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            state:
-                description: "Leader change process state. Enum options - GSLB_LC_STATE_INIT, GSLB_LC_STATE_MONITORING, GSLB_LC_STATE_IN_PROGRESS, GSLB_LC_STATE_COMPLETED, GSLB_LC_STATE_UNAVAILABLE, GSLB_LC_STATE_DISABLED. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-                default: "GSLB_LC_STATE_INIT"
     GslbPerDnsState:
         type: object
         properties:
