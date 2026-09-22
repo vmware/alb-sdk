@@ -21,10 +21,39 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class L4SSLApplicationProfile  {
+    @JsonProperty("collect_client_tls_fingerprint")
+    private Boolean collectClientTlsFingerprint = false;
+
     @JsonProperty("ssl_stream_idle_timeout")
     private Integer sslStreamIdleTimeout = 3600;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * If enabled, the client's tls fingerprint will be collected for this l4 ssl/tls virtual service and made available to datascripts via
+     * avi.ssl.get_tls_fingerprint().
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return collectClientTlsFingerprint
+     */
+    public Boolean getCollectClientTlsFingerprint() {
+        return collectClientTlsFingerprint;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * If enabled, the client's tls fingerprint will be collected for this l4 ssl/tls virtual service and made available to datascripts via
+     * avi.ssl.get_tls_fingerprint().
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param collectClientTlsFingerprint set the collectClientTlsFingerprint.
+     */
+    public void setCollectClientTlsFingerprint(Boolean  collectClientTlsFingerprint) {
+        this.collectClientTlsFingerprint = collectClientTlsFingerprint;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -64,14 +93,16 @@ public class L4SSLApplicationProfile  {
           return false;
       }
       L4SSLApplicationProfile objL4SSLApplicationProfile = (L4SSLApplicationProfile) o;
-      return   Objects.equals(this.sslStreamIdleTimeout, objL4SSLApplicationProfile.sslStreamIdleTimeout);
+      return   Objects.equals(this.sslStreamIdleTimeout, objL4SSLApplicationProfile.sslStreamIdleTimeout)&&
+  Objects.equals(this.collectClientTlsFingerprint, objL4SSLApplicationProfile.collectClientTlsFingerprint);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class L4SSLApplicationProfile {\n");
-                  sb.append("    sslStreamIdleTimeout: ").append(toIndentedString(sslStreamIdleTimeout)).append("\n");
+                  sb.append("    collectClientTlsFingerprint: ").append(toIndentedString(collectClientTlsFingerprint)).append("\n");
+                        sb.append("    sslStreamIdleTimeout: ").append(toIndentedString(sslStreamIdleTimeout)).append("\n");
                   sb.append("}");
       return sb.toString();
     }
