@@ -38,6 +38,9 @@ type OpsHistory struct {
 	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatediffRef *string `json:"statediff_ref,omitempty"`
 
+	// Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to Controller and all Service Engine groups). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	System *bool `json:"system,omitempty"`
+
 	// Controller events for Upgrade operation. Field introduced in 20.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	UpgradeEvents []*EventMap `json:"upgrade_events,omitempty"`
 
