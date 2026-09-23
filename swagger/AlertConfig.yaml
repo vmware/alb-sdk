@@ -552,6 +552,8 @@ definitions:
             metric_threshold:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/AlertMetricThreshold'
+    ConfigPbAttributes:
+        type: object
     EventDetailsFilter:
         type: object
         required:

@@ -749,6 +749,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "TlsConfig": {
             "type": "object",
             "properties": {

@@ -549,6 +549,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DnsAAAARdata": {
             "type": "object",
             "required": [
@@ -798,6 +801,9 @@
                     "$ref": "#/definitions/RateLimiter"
                 }
             }
+        },
+        "DnsRateProfile": {
+            "type": "object"
         },
         "DnsRrSet": {
             "type": "object",

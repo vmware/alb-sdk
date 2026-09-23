@@ -578,6 +578,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "PositiveSecurityParams": {
             "type": "object",
             "properties": {

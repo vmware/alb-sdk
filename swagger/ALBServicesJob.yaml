@@ -461,6 +461,8 @@ definitions:
             value:
                 description: "Parameter value. Field introduced in 22.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     TimeStamp:
         type: object
         required:

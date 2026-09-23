@@ -445,3 +445,5 @@ definitions:
                     $ref: "#/definitions/ActionGroupConfig"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

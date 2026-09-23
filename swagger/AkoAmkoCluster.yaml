@@ -540,3 +540,5 @@ definitions:
             kubernetes_version:
                 description: "Kubernetes cluster version (e.g., '1.28.3'). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object

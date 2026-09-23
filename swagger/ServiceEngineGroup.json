@@ -1190,6 +1190,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ConsumerStats": {
             "type": "object",
             "properties": {

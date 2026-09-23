@@ -769,6 +769,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "GCPCredentials": {
             "type": "object",
             "properties": {

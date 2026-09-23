@@ -29,12 +29,12 @@ securityDefinitions:
 basePath: /api
 paths:
 
-    /restore:
+    /restore/upgrade:
         post:
             tags:
                 - RestoreParams
-            description: /restore
-            operationId: POST /restore
+            description: /restore/upgrade
+            operationId: POST /restore/upgrade
             consumes:
                 -   application/json
             produces:

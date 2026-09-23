@@ -620,6 +620,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "MicroServiceGroup": {
             "type": "object",
             "required": [

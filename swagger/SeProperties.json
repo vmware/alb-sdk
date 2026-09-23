@@ -306,6 +306,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DosThreshold": {
             "type": "object",
             "required": [

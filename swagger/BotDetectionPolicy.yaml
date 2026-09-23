@@ -564,6 +564,8 @@ definitions:
                     $ref: "#/definitions/BotDetectionPolicy"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
     CookieMatch:
         type: object
         required:

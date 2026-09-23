@@ -645,6 +645,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ContentLibConfig": {
             "type": "object",
             "properties": {

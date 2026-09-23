@@ -611,6 +611,9 @@
                     "type": "string"
                 }
             }
+        },
+        "ConfigPbAttributes": {
+            "type": "object"
         }
     },
     "_comment": [

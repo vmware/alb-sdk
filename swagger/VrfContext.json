@@ -873,6 +873,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DebugVrf": {
             "type": "object",
             "required": [

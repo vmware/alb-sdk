@@ -424,3 +424,5 @@ definitions:
                     $ref: "#/definitions/BotConfigConsolidator"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

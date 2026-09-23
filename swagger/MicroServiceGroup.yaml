@@ -428,6 +428,8 @@ paths:
                 "404":
                     description: object not found
 definitions:
+    ConfigPbAttributes:
+        type: object
     MicroServiceGroup:
         type: object
         required:

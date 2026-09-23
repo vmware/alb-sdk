@@ -100,51 +100,6 @@ paths:
                         $ref: "#/definitions/DebugServiceEngineApiResponse"
                 "401":
                     description: log in failed
-        post:
-            tags:
-                - DebugServiceEngine
-            description: /debugserviceengine
-            operationId: POST /debugserviceengine
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: DebugServiceEngine object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/DebugServiceEngine"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/DebugServiceEngine"
-                "401":
-                    description: log in failed
     /debugserviceengine/{uuid}:
         get:
             tags:

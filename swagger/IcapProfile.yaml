@@ -449,6 +449,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     IcapNsxDefenderConfig:
         type: object
         properties:

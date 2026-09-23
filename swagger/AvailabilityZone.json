@@ -781,6 +781,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "VSphereZone": {
             "type": "object",
             "required": [

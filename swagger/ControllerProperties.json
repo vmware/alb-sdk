@@ -284,6 +284,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ControllerProperties": {
             "type": "object",
             "properties": {

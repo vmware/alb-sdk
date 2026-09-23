@@ -590,6 +590,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ExpirationConstraint": {
             "type": "object",
             "properties": {

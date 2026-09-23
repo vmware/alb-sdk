@@ -620,6 +620,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DsrProfile": {
             "type": "object",
             "required": [

@@ -645,6 +645,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "EquivalentLabels": {
             "type": "object",
             "properties": {

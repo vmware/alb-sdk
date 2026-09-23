@@ -404,6 +404,8 @@ definitions:
                 type: integer
                 default: 9999
                 format: uint32
+    ConfigPbAttributes:
+        type: object
     PositiveSecurityParams:
         type: object
         properties:
