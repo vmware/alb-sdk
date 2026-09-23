@@ -498,11 +498,9 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
                                       existing_obj=existing_obj,
                                       api_context=api.get_context())
 
-        # Build multipart form fields.  The module exposes 'url' for the CRL
-        # server address, but the fileobject/upload form schema uses 'server_url'.
         fields = {}
         for k, v in obj.items():
-            fields['server_url' if k == 'url' else k] = str(v)
+            fields[k] = str(v)
 
         rsp = None
         if file_path:
