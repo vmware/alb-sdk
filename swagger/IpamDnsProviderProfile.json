@@ -546,6 +546,156 @@
                     }
                 }
             }
+        },
+        "/ipamdnsproviderprofilenetworklist": {
+            "get": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofilenetworklist",
+                "operationId": "GET /ipamdnsproviderprofilenetworklist",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "type": "string",
+                        "required": false,
+                        "description": "IPAM/DNS provider type (one of the IpamDnsType enum values). Either this or ipamdnsprovider_uuid is required."
+                    },
+                    {
+                        "in": "query",
+                        "name": "ipamdnsprovider_uuid",
+                        "type": "string",
+                        "required": false,
+                        "description": "UUID of a specific IPAM/DNS provider profile. Either this or type is required."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/IpamDnsSubnetDomainList"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/ipamdnsproviderprofiledomainlist": {
+            "get": {
+                "tags": [
+                    "IpamDnsProviderProfile"
+                ],
+                "description": "/ipamdnsproviderprofiledomainlist",
+                "operationId": "GET /ipamdnsproviderprofiledomainlist",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "type": "string",
+                        "required": false,
+                        "description": "IPAM/DNS provider type (one of the IpamDnsType enum values). Either this or ipamdnsprovider_uuid is required."
+                    },
+                    {
+                        "in": "query",
+                        "name": "ipamdnsprovider_uuid",
+                        "type": "string",
+                        "required": false,
+                        "description": "UUID of a specific IPAM/DNS provider profile. Either this or type is required."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/IpamDnsSubnetDomainList"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -602,6 +752,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "CustomIpamSubnet": {
             "type": "object",
             "required": [
@@ -646,6 +799,193 @@
                 }
             }
         },
+        "DnsAAAARdata": {
+            "type": "object",
+            "required": [
+                "ip6_address"
+            ],
+            "properties": {
+                "ip6_address": {
+                    "description": "IPv6 address for FQDN. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                }
+            }
+        },
+        "DnsARdata": {
+            "type": "object",
+            "required": [
+                "ip_address"
+            ],
+            "properties": {
+                "ip_address": {
+                    "description": "IP address for FQDN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                }
+            }
+        },
+        "DnsCnameRdata": {
+            "type": "object",
+            "required": [
+                "cname"
+            ],
+            "properties": {
+                "cname": {
+                    "description": "Canonical name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "DnsDomain": {
+            "type": "object",
+            "required": [
+                "domain_name"
+            ],
+            "properties": {
+                "domain_name": {
+                    "description": "Service domain string used for FQDN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "domain_type": {
+                    "description": "Domain name is available in private zone and/or public zone. Enum options - DOMAIN_DEFAULT, DOMAIN_PRIVATE, DOMAIN_PUBLIC, DOMAIN_PRIVATE_PUBLIC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "DOMAIN_DEFAULT"
+                }
+            }
+        },
+        "DnsMxRdata": {
+            "type": "object",
+            "required": [
+                "host",
+                "priority"
+            ],
+            "properties": {
+                "host": {
+                    "description": "Fully qualified domain name of a mailserver . The host name maps directly to one or more address records in the DNS table, and must not point to any CNAME records (RFC 2181). Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "priority": {
+                    "description": "The priority field identifies which mail server should be preferred. Allowed values are 0-65535. Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                }
+            }
+        },
+        "DnsNsRdata": {
+            "type": "object",
+            "required": [
+                "nsname"
+            ],
+            "properties": {
+                "ip6_address": {
+                    "description": "IPv6 address for Name Server. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
+                "ip_address": {
+                    "description": "IP address for Name Server. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
+                "nsname": {
+                    "description": "Name Server name. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "DnsRecord": {
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "algorithm": {
+                    "description": "Specifies the algorithm to pick the IP address(es) to be returned, when multiple entries are configured. This does not apply if num_records_in_response is 0. Default is round-robin. Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "DNS_RECORD_RESPONSE_ROUND_ROBIN"
+                },
+                "cname": {
+                    "description": "Canonical name in CNAME record. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/DnsCnameRdata"
+                },
+                "delegated": {
+                    "description": "Configured FQDNs are delegated domains (i.e. they represent a zone cut). Field introduced in 17.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "description": {
+                    "description": "Details of DNS record. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "fqdn": {
+                    "description": "Fully Qualified Domain Name. Minimum of 1 items required. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ip6_address": {
+                    "description": "IPv6 address in AAAA record. Field introduced in 18.1.1. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsAAAARdata"
+                    }
+                },
+                "ip_address": {
+                    "description": "IP address in A record. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsARdata"
+                    }
+                },
+                "metadata": {
+                    "description": "Internal metadata for the DNS record. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "mx_records": {
+                    "description": "MX record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsMxRdata"
+                    }
+                },
+                "ns": {
+                    "description": "Name Server information in NS record. Field introduced in 17.1.1. Maximum of 13 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsNsRdata"
+                    }
+                },
+                "num_records_in_response": {
+                    "description": "Specifies the number of records returned by the DNS service. Enter 0 to return all records. Default is 0. Allowed values are 0-20. Special values are 0- Return all records. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "service_locator": {
+                    "description": "Service locator info in SRV record. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsSrvRdata"
+                    }
+                },
+                "ttl": {
+                    "description": "Time To Live for this DNS record. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "txt_records": {
+                    "description": "Text record. Field introduced in 18.2.9, 20.1.1. Maximum of 4 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsTxtRdata"
+                    }
+                },
+                "type": {
+                    "description": "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "wildcard_match": {
+                    "description": "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                }
+            }
+        },
         "DnsServiceDomain": {
             "type": "object",
             "required": [
@@ -668,6 +1008,46 @@
                 }
             }
         },
+        "DnsSrvRdata": {
+            "type": "object",
+            "required": [
+                "port"
+            ],
+            "properties": {
+                "port": {
+                    "description": "Service port. Allowed values are 0-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "priority": {
+                    "description": "Priority of the target hosting the service, low value implies higher priority for this service record. Allowed values are 0-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "target": {
+                    "description": "Canonical hostname, of the machine hosting the service, with no trailing period. 'default.host' is valid but not 'default.host.'. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "default.host"
+                },
+                "weight": {
+                    "description": "Relative weight for service records with same priority, high value implies higher preference for this service record. Allowed values are 0-65535. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                }
+            }
+        },
+        "DnsTxtRdata": {
+            "type": "object",
+            "required": [
+                "text_str"
+            ],
+            "properties": {
+                "text_str": {
+                    "description": "Text data associated with the FQDN. Field introduced in 18.2.9, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
         "InfobloxSubnet": {
             "type": "object",
             "properties": {
@@ -677,6 +1057,33 @@
                 },
                 "subnet6": {
                     "description": "IPv6 subnet to use for Infoblox allocation. Field introduced in 18.2.8, 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddrPrefix"
+                }
+            }
+        },
+        "InfobloxSubnetRange": {
+            "type": "object",
+            "properties": {
+                "ipv6_ranges": {
+                    "description": "IPv6 reserved range to use for Infoblox allocation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpAddrRange"
+                    }
+                },
+                "ranges": {
+                    "description": "IPv4 reserved range to use for Infoblox allocation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpAddrRange"
+                    }
+                },
+                "subnet": {
+                    "description": "IPv4 subnet to use for Infoblox allocation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddrPrefix"
+                },
+                "subnet6": {
+                    "description": "IPv6 subnet to use for Infoblox allocation. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddrPrefix"
                 }
             }
@@ -713,6 +1120,23 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
+                }
+            }
+        },
+        "IpAddrRange": {
+            "type": "object",
+            "required": [
+                "begin",
+                "end"
+            ],
+            "properties": {
+                "begin": {
+                    "description": "Starting IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
+                "end": {
+                    "description": "Ending IP address of the range. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
                 }
             }
         },
@@ -1160,6 +1584,71 @@
                 },
                 "next": {
                     "type": "string"
+                }
+            }
+        },
+        "IpamDnsRecordInfo": {
+            "type": "object",
+            "properties": {
+                "num_records": {
+                    "description": "Number of DNS records. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "records": {
+                    "description": "List of DNS records. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsRecord"
+                    }
+                }
+            }
+        },
+        "IpamDnsSubnetDomainList": {
+            "type": "object",
+            "properties": {
+                "alloc_networks_and_subnets": {
+                    "description": "List of networks, v4 subnets and v6 subnets. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CustomIpamSubnet"
+                    }
+                },
+                "alloc_subnets_and_ranges": {
+                    "description": "List of v4 and v6 subnets with ranges. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/InfobloxSubnetRange"
+                    }
+                },
+                "dns_records": {
+                    "description": "List of DNS records. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpamDnsRecordInfo"
+                },
+                "domains": {
+                    "description": "Domains List. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "error": {
+                    "description": "Failure reason. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "subnets": {
+                    "description": "Subnet List. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IpAddrPrefix"
+                    }
+                },
+                "zdomains": {
+                    "description": "Domains List with visibility. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DnsDomain"
+                    }
                 }
             }
         },

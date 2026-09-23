@@ -781,6 +781,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DiameterAVPPersistenceProfile": {
             "type": "object",
             "properties": {

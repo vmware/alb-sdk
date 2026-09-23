@@ -446,6 +446,8 @@ definitions:
             uuid:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     IpAddr:
         type: object
         required:

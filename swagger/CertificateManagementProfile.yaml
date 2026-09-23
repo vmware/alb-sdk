@@ -432,6 +432,8 @@ definitions:
                     $ref: "#/definitions/CertificateManagementProfile"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
     CustomParams:
         type: object
         required:

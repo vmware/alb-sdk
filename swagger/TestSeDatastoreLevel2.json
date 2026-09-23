@@ -549,6 +549,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "TestSeDatastoreLevel2": {
             "type": "object",
             "required": [

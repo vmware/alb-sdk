@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/rollback": {
+        "/rollback/rollback": {
             "post": {
                 "tags": [
                     "RollbackPatchControllerParams"
                 ],
-                "description": "/rollback",
-                "operationId": "POST /rollback",
+                "description": "/rollback/rollback",
+                "operationId": "POST /rollback/rollback",
                 "consumes": [
                     "application/json"
                 ],

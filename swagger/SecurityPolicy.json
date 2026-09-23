@@ -559,6 +559,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DnsAttack": {
             "type": "object",
             "required": [
@@ -775,6 +778,12 @@
                     "type": "string"
                 }
             }
+        },
+        "TcpAttacks": {
+            "type": "object"
+        },
+        "UdpAttacks": {
+            "type": "object"
         }
     },
     "_comment": [

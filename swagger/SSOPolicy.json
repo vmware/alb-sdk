@@ -740,6 +740,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "HostHdrMatch": {
             "type": "object",
             "required": [

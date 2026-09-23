@@ -473,3 +473,5 @@ definitions:
                     $ref: "#/definitions/BackupConfiguration"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

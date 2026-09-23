@@ -1157,6 +1157,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "HTTPStatusRange": {
             "type": "object",
             "required": [
