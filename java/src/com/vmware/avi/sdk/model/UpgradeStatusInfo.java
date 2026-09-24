@@ -1271,7 +1271,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Flag is set only in the cluster if the upgrade is initiated as a system-upgrade.
+     * Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to controller and all service engine groups).
      * Field introduced in 18.2.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -1283,7 +1283,7 @@ public class UpgradeStatusInfo extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Flag is set only in the cluster if the upgrade is initiated as a system-upgrade.
+     * Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to controller and all service engine groups).
      * Field introduced in 18.2.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
