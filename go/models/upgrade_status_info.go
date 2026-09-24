@@ -135,7 +135,7 @@ type UpgradeStatusInfo struct {
 	// Record of Pre/Post snapshot captured for current upgrade operation. It is a reference to an object of type StatediffOperation. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	StatediffRef *string `json:"statediff_ref,omitempty"`
 
-	// Flag is set only in the cluster if the upgrade is initiated as a system-upgrade. . Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Flag indicating whether the upgrade operation was initiated as a system-upgrade (applying to Controller and all Service Engine groups). Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	System *bool `json:"system,omitempty"`
 
 	// Tracks the list of reports created for node. It is a reference to an object of type SystemReport. Field introduced in 22.1.6, 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
