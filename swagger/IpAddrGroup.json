@@ -629,6 +629,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "IpAddr": {
             "type": "object",
             "required": [

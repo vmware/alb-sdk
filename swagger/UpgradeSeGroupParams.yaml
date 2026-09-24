@@ -29,12 +29,12 @@ securityDefinitions:
 basePath: /api
 paths:
 
-    /upgrade:
+    /upgrade/upgrade:
         post:
             tags:
                 - UpgradeSeGroupParams
-            description: /upgrade
-            operationId: POST /upgrade
+            description: /upgrade/upgrade
+            operationId: POST /upgrade/upgrade
             consumes:
                 -   application/json
             produces:

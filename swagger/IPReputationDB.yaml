@@ -382,6 +382,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     IPReputationDB:
         type: object
         required:

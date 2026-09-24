@@ -829,6 +829,8 @@ definitions:
             vmg_name:
                 description: "Cluster VM Group name.VM Group name is unique inside cluster. Field introduced in 20.1.7, 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     ConsumerStats:
         type: object
         properties:

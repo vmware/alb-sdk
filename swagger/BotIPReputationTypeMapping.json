@@ -625,6 +625,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "IPReputationTypeMapping": {
             "type": "object",
             "required": [

@@ -549,6 +549,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "RoleFilterMatchLabel": {
             "type": "object",
             "required": [

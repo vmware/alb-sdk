@@ -966,6 +966,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "DiameterServiceApplicationProfile": {
             "type": "object",
             "properties": {

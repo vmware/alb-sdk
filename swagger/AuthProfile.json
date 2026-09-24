@@ -696,6 +696,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "LdapAuthSettings": {
             "type": "object",
             "required": [

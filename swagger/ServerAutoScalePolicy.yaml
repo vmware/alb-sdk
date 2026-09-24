@@ -381,6 +381,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     KeyValue:
         type: object
         required:
