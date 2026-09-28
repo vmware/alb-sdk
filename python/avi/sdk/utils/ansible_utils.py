@@ -463,7 +463,8 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
         # As per API response, name is always same as username regardless of full_name
         obj['name'] = obj['username']
 
-    log.info('passed object %s ', {**obj, 'password': None})
+    redact_keys = set(sensitive_fields or ()) | {'password'}
+    log.info('passed object %s ', { k: (None if k in redact_keys else v) for k, v in obj.items() })
 
     file_path = obj.pop('file_path', None)
     is_fileObject_endpoint = obj_type == "fileobject/upload"
