@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VSDataScriptSet extends AviRestResource  {
+    @JsonProperty("clf_profile_ref")
+    private String clfProfileRef;
+
     @JsonProperty("created_by")
     private String createdBy;
 
@@ -85,6 +88,34 @@ public class VSDataScriptSet extends AviRestResource  {
     private String uuid;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Optional custom log forward profile this datascriptset forwards logs to via avi.vs.log_forward().
+     * Resolved from the specific datascriptset invoking log_forward(), not from the virtualservice it is attached to.
+     * It is a reference to an object of type clfprofile.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clfProfileRef
+     */
+    public String getClfProfileRef() {
+        return clfProfileRef;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Optional custom log forward profile this datascriptset forwards logs to via avi.vs.log_forward().
+     * Resolved from the specific datascriptset invoking log_forward(), not from the virtualservice it is attached to.
+     * It is a reference to an object of type clfprofile.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clfProfileRef set the clfProfileRef.
+     */
+    public void setClfProfileRef(String  clfProfileRef) {
+        this.clfProfileRef = clfProfileRef;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -819,14 +850,16 @@ public class VSDataScriptSet extends AviRestResource  {
   Objects.equals(this.geoDbRef, objVSDataScriptSet.geoDbRef)&&
   Objects.equals(this.sslProfileRefs, objVSDataScriptSet.sslProfileRefs)&&
   Objects.equals(this.sslKeyCertificateRefs, objVSDataScriptSet.sslKeyCertificateRefs)&&
-  Objects.equals(this.pkiProfileRefs, objVSDataScriptSet.pkiProfileRefs);
+  Objects.equals(this.pkiProfileRefs, objVSDataScriptSet.pkiProfileRefs)&&
+  Objects.equals(this.clfProfileRef, objVSDataScriptSet.clfProfileRef);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class VSDataScriptSet {\n");
-                  sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+                  sb.append("    clfProfileRef: ").append(toIndentedString(clfProfileRef)).append("\n");
+                        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
                         sb.append("    datascript: ").append(toIndentedString(datascript)).append("\n");
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    geoDbRef: ").append(toIndentedString(geoDbRef)).append("\n");

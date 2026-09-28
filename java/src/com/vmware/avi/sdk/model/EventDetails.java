@@ -693,6 +693,9 @@ public class EventDetails  {
     @JsonProperty("ssl_revoked_details")
     private SSLRevokedDetails sslRevokedDetails;
 
+    @JsonProperty("supervisor_se_group_free_license_details")
+    private SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails;
+
     @JsonProperty("switchover_details")
     private SwitchoverEventDetails switchoverDetails;
 
@@ -5508,6 +5511,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Supervisor se group free license capacity exhausted/available details.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return supervisorSeGroupFreeLicenseDetails
+     */
+    public SupervisorSeGroupFreeLicenseDetails getSupervisorSeGroupFreeLicenseDetails() {
+        return supervisorSeGroupFreeLicenseDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Supervisor se group free license capacity exhausted/available details.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param supervisorSeGroupFreeLicenseDetails set the supervisorSeGroupFreeLicenseDetails.
+     */
+    public void setSupervisorSeGroupFreeLicenseDetails(SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails) {
+        this.supervisorSeGroupFreeLicenseDetails = supervisorSeGroupFreeLicenseDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return switchoverDetails
@@ -6641,6 +6668,7 @@ public class EventDetails  {
   Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
   Objects.equals(this.centralLicenseSubscriptionDetails, objEventDetails.centralLicenseSubscriptionDetails)&&
   Objects.equals(this.centralLicenseRefreshDetails, objEventDetails.centralLicenseRefreshDetails)&&
+  Objects.equals(this.supervisorSeGroupFreeLicenseDetails, objEventDetails.supervisorSeGroupFreeLicenseDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.apiserverRequestQueueFullEventInfo, objEventDetails.apiserverRequestQueueFullEventInfo)&&
   Objects.equals(this.apiserverRequestQueueRecoveryEventInfo, objEventDetails.apiserverRequestQueueRecoveryEventInfo)&&
@@ -6895,6 +6923,7 @@ public class EventDetails  {
                         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");
                         sb.append("    sslRenewFailedDetails: ").append(toIndentedString(sslRenewFailedDetails)).append("\n");
                         sb.append("    sslRevokedDetails: ").append(toIndentedString(sslRevokedDetails)).append("\n");
+                        sb.append("    supervisorSeGroupFreeLicenseDetails: ").append(toIndentedString(supervisorSeGroupFreeLicenseDetails)).append("\n");
                         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
                         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");
