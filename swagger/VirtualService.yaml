@@ -2925,6 +2925,53 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
+    /virtualservice/{uuid}/clfprofilehmonstat/:
+        get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/clfprofilehmonstat/
+            operationId: GET /virtualservice/{uuid}/clfprofilehmonstat/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfileHmonStat"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
     /virtualservice/{uuid}/geolocationinfo/:
         get:
             tags:
@@ -4693,6 +4740,57 @@ definitions:
             tcp_syn:
                 description: "TCP SYN flag filter. Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+    ClfPoolHmon:
+        type: object
+        properties:
+            hmon:
+                description: "Health-monitor runtime stats for all servers in this CLF pool. Populated when an active se_pool_t backs this CLF pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/HealthMonitorStatRuntime'
+            log_format:
+                description: "Wire format configured for log records delivered to this pool. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pool_index:
+                description: "Zero-based index of this pool within the ClfProfile.clf_pools list. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            pool_name:
+                description: "Name of this CLF pool as configured in ClfPool.name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            priority:
+                description: "Priority of this CLF pool (higher value = higher precedence). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            transport:
+                description: "Transport protocol for log delivery to this pool. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    ClfProfileHmonStat:
+        type: object
+        properties:
+            clf_profile_name:
+                description: "Name of the ClfProfile attached to the Virtual Service. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            clf_profile_uuid:
+                description: "UUID of the ClfProfile attached to the Virtual Service. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            no_clf_profile_reason:
+                description: "Set when no CLF profile is attached to the Virtual Service; describes why no stats are available. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pools:
+                description: "Per-pool health-monitor stats. One entry per ClfPool in the profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfPoolHmon'
+            replicate:
+                description: "Whether logs are replicated to all pools (true) or routed by priority (false). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            se_uuid:
+                description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vs_uuid:
+                description: "UUID of the Virtual Service these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     ClientInsightsSampling:
         type: object
         properties:

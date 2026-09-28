@@ -329,9 +329,11 @@ info:
     \  <key>\n- show vinfra quarantinedhost\n```\n\nAPI permission: PERMISSION_CLOUD\n\
     Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_Licensing\n\
     Avi PKIProfile object api\n```\n- configure pkiprofile <key>\n- show pkiprofile\
-    \ <key>\n```\n\nAPI permission: PERMISSION_PKIPROFILE\nAvi ImageRawInventoryResponse\
-    \ object api\n```\n```\n\nAPI permission: PERMISSION_Image\nAvi ControllerBannerList\
-    \ object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineGroupInventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_PKIPROFILE\nAvi ClfProfile object api\n\
+    ```\n- configure clfprofile <key>\n- show clfprofile <key>\n```\n\nAPI permission:\
+    \ PERMISSION_VSDATASCRIPTSET\nAvi ImageRawInventoryResponse object api\n```\n\
+    ```\n\nAPI permission: PERMISSION_Image\nAvi ControllerBannerList object api\n\
+    ```\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineGroupInventory\
     \ object api\n```\n- show serviceenginegroupinventory <key>\n```\n\nAPI permission:\
     \ PERMISSION_SERVICEENGINEGROUP\nAvi ProtocolParser object api\n```\n- configure\
     \ protocolparser <key>\n- show protocolparser <key>\n```\n\nAPI permission: PERMISSION_PROTOCOLPARSER\n\
@@ -2650,6 +2652,21 @@ tags:
 
 
     API permission: PERMISSION_PKIPROFILE
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: ClfProfile
+  description: 'Avi ClfProfile object api
+
+    ```
+
+    - configure clfprofile <key>
+
+    - show clfprofile <key>
+
+    ```
+
+
+    API permission: PERMISSION_VSDATASCRIPTSET
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: ImageRawInventoryResponse
@@ -51600,6 +51617,403 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /clfprofile:
+    get:
+      tags:
+      - ClfProfile
+      description: /clfprofile
+      operationId: GET /clfprofile
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: refers_to
+        in: query
+        description: Filter to request all objects that refers to another Avi resource.
+          Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services
+          referring to pool p1 will be refers_to=pool:pool_p1_uuid
+        type: string
+      - name: referred_by
+        in: query
+        description: Filter to request all objects that are referred by another Avi
+          resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools
+          referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfileApiResponse'
+        '401':
+          description: log in failed
+    post:
+      tags:
+      - ClfProfile
+      description: /clfprofile
+      operationId: POST /clfprofile
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ClfProfile object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ClfProfile'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfile'
+        '401':
+          description: log in failed
+  /clfprofile/{uuid}:
+    get:
+      tags:
+      - ClfProfile
+      description: /clfprofile/{uuid}/{uuid}
+      operationId: GET /clfprofile/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: name
+        in: query
+        description: object name
+        required: false
+        type: string
+      - name: X-Avi-Tenant
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: uuid
+        in: path
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      - name: fields
+        in: query
+        description: List of fields to be returned for the resource. Some fields like
+          name, URL, uuid etc. are always returned.
+        type: string
+      - name: include_name
+        in: query
+        description: All the Avi REST reference URIs have a name suffix as URI#name.
+          It is useful to get the referenced resource name without performing get
+          on that object.
+        required: false
+        type: boolean
+      - name: skip_default
+        in: query
+        description: Default values are not set.
+        required: false
+        type: boolean
+      - name: join_subresources
+        in: query
+        description: It automatically returns additional dependent resources like
+          runtime. Eg. join_subresources=runtime.
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfile'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    put:
+      tags:
+      - ClfProfile
+      description: /clfprofile/{uuid}/{uuid}
+      operationId: PUT /clfprofile/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ClfProfile object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ClfProfile'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfile'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - ClfProfile
+      description: /clfprofile/{uuid}/{uuid}
+      operationId: PATCH /clfprofile/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: ClfProfile object creation
+        required: true
+        schema:
+          $ref: '#/definitions/ClfProfile'
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfile'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    delete:
+      tags:
+      - ClfProfile
+      description: /clfprofile/{uuid}/{uuid}
+      operationId: DELETE /clfprofile/{uuid}
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: name
+        description: object name
+        required: false
+        type: string
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '204':
+          description: object deleted
+          schema:
+            type: string
+        '404':
+          description: object not found
   /sslprofile:
     get:
       tags:
@@ -80252,6 +80666,59 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /virtualservice/{uuid}/clfprofilehmonstat/:
+    get:
+      tags:
+      - VirtualService
+      description: /virtualservice/{uuid}/clfprofilehmonstat/
+      operationId: GET /virtualservice/{uuid}/clfprofilehmonstat/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ClfProfileHmonStat'
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
   /virtualservice/{uuid}/geolocationinfo/:
     get:
       tags:
@@ -90189,6 +90656,14 @@ definitions:
         description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
         readOnly: true
         type: string
+      clf_profile_ref:
+        description: Optional Custom Log Forward profile this DataScriptSet forwards
+          logs to via avi.vs.log_forward(). Resolved from the specific DataScriptSet
+          invoking log_forward(), not from the VirtualService it is attached to. It
+          is a reference to an object of type ClfProfile. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
       created_by:
         description: Creator name. Field introduced in 17.1.11,17.2.4. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
@@ -97095,7 +97570,7 @@ definitions:
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
           APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE,
-          SESSIONKEYFORWARDER, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
+          SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
           DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE,
           CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG,
           ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE,
@@ -97183,13 +97658,14 @@ definitions:
           SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE,
           SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO,
           METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL,
-          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT,
+          SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -101052,7 +101528,7 @@ definitions:
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
           APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE,
-          SESSIONKEYFORWARDER, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
+          SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
           DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE,
           CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG,
           ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE,
@@ -101140,13 +101616,14 @@ definitions:
           SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE,
           SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO,
           METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL,
-          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT,
+          SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -101422,7 +101899,7 @@ definitions:
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
           APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE,
-          SESSIONKEYFORWARDER, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
+          SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
           DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE,
           CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG,
           ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE,
@@ -101510,13 +101987,14 @@ definitions:
           SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE,
           SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO,
           METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL,
-          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT,
+          SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -101841,24 +102319,25 @@ definitions:
           PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED,
           UPGRADE_REQUEST, LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
           LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
-          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
-          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
-          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
-          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
-          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
-          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
-          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
-          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
-          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
-          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
-          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
-          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
-          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
-          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
-          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID,
-          NTP_WEAK_AUTH_ALGORITHM_CONFIGURED, OPEN_API_SPEC_DELETE_CLEANUP_STARTED,
-          OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, LICENSE_SUPERVISOR_GROUP_FREE_LICENSE_CAPACITY_EXHAUSTED,
+          ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED,
+          UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT,
+          LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION,
+          CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED,
+          PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED,
+          RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED,
+          LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING,
+          POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT,
+          SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED,
+          SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON,
+          CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED,
+          UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE,
+          SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
+          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
+          PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
         type: string
       not_cond:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -105361,9 +105840,9 @@ definitions:
         description: Indicate if this request is used for learning. If it is not used,
           this field contains the reason for this decision. Enum options - NOT_ACTIVE,
           LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING,
-          CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
-          Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR,
+          LIMIT_EXCEEDED. Field introduced in 31.2.1. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
         default: NOT_ACTIVE
       log_id:
@@ -114527,6 +115006,283 @@ definitions:
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
+  ClfPool:
+    type: object
+    required:
+    - name
+    - priority
+    properties:
+      health_monitor_refs:
+        description: Reference to at most one health monitor for collectors in this
+          pool. It is a reference to an object of type HealthMonitor. Field introduced
+          in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
+      lb_algorithm:
+        description: Load balancing algorithm for distributing logs across servers.
+          Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported;
+          consistent-hash always hashes on the UUID of the VirtualService invoking
+          avi.vs.log_forward(), not a per-request client IP/URI/header, so all of
+          one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS,
+          LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
+          LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM,
+          LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY,
+          LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+        default: LB_ALGORITHM_ROUND_ROBIN
+      log_format:
+        description: Wire format for log records delivered to this pool's collectors.
+          Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY,
+          CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in
+          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: CLF_LOG_FORMAT_SYSLOG_OCTET
+      name:
+        description: Unique name for this pool within the ClfProfile. Used as part
+          of the composite key for the backing se_pool_t on the SE. The controller
+          rejects profiles where two pools share the same name. Field introduced in
+          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      pki_profile_ref:
+        description: PKI profile whose CA certificates validate the collector's server
+          certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference
+          to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      priority:
+        description: Pool priority within the ClfProfile. Higher value = higher priority.
+          Must be unique across all pools in the same profile. When replicate=false,
+          the highest-priority pool with an UP member receives all log records; lower-priority
+          pools act as fallback. Allowed values are 1-255. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: uint32
+      servers:
+        description: List of log collector endpoints for this pool. Field introduced
+          in 32.1.5. Maximum of 32 items allowed. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/ClfServer'
+      ssl_key_and_certificate_ref:
+        description: Client certificate and key the SE presents to the collector for
+          mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only
+          TLS is used when this is not set. It is a reference to an object of type
+          SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      ssl_profile_ref:
+        description: SSL profile controlling the TLS version and cipher policy used
+          for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS.
+          It is a reference to an object of type SSLProfile. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      transport:
+        description: Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP,
+          CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+        default: CLF_TRANSPORT_TCP
+  ClfPoolHmon:
+    type: object
+    properties:
+      hmon:
+        description: Health-monitor runtime stats for all servers in this CLF pool.
+          Populated when an active se_pool_t backs this CLF pool. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/HealthMonitorStatRuntime'
+      log_format:
+        description: Wire format configured for log records delivered to this pool.
+          Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET,
+          CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      pool_index:
+        description: Zero-based index of this pool within the ClfProfile.clf_pools
+          list. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
+      pool_name:
+        description: Name of this CLF pool as configured in ClfPool.name. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      priority:
+        description: Priority of this CLF pool (higher value = higher precedence).
+          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
+      transport:
+        description: Transport protocol for log delivery to this pool. Enum options
+          - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+  ClfProfile:
+    type: object
+    required:
+    - name
+    - vrf_context_ref
+    properties:
+      _last_modified:
+        description: UNIX time since epoch in microseconds. Units(MICROSECONDS).
+        readOnly: true
+        type: string
+      clf_pools:
+        description: List of pools associated with this profile. Each pool must have
+          a unique priority value. The controller rejects profiles where two pools
+          share the same priority (HTTP 400). Field introduced in 32.1.5. Maximum
+          of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic,
+          Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/ClfPool'
+      description:
+        description: Human-readable description for this CLF profile. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      enabled:
+        description: Enable or disable log delivery for this profile without disturbing
+          pool state, health monitors, or VirtualService/DataScriptSet bindings. When
+          false, avi.vs.log_forward() is a silent no-op for every VS attached via
+          this profile; delivery resumes immediately when set back to true. Field
+          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: boolean
+        default: true
+      markers:
+        description: List of labels to be used for granular RBAC. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/RoleFilterMatchLabel'
+      name:
+        description: The name of the CLF profile. Field introduced in 32.1.5. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      replicate:
+        description: When false (default), log records are routed to the highest-priority
+          pool that has at least one UP member (priority-based failover). When true,
+          log records are replicated to ALL pools regardless of priority. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: boolean
+      tenant_ref:
+        description: Reference to the tenant that owns this CLF profile. It is a reference
+          to an object of type Tenant. Field introduced in 32.1.5. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      url:
+        description: url
+        readOnly: true
+        type: string
+      uuid:
+        description: UUID of the CLF profile. Field introduced in 32.1.5. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      vrf_context_ref:
+        description: Virtual Routing Context for this profile's collector pools. Only
+          Virtual Services in the same Virtual Routing Context can use this profile.
+          Cannot be changed once set. It is a reference to an object of type VrfContext.
+          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+  ClfProfileApiResponse:
+    type: object
+    required:
+    - count
+    - results
+    properties:
+      count:
+        type: integer
+        format: int32
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ClfProfile'
+      next:
+        type: string
+  ClfProfileHmonStat:
+    type: object
+    properties:
+      clf_profile_name:
+        description: Name of the ClfProfile attached to the Virtual Service. Field
+          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      clf_profile_uuid:
+        description: UUID of the ClfProfile attached to the Virtual Service. Field
+          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      no_clf_profile_reason:
+        description: Set when no CLF profile is attached to the Virtual Service; describes
+          why no stats are available. Field introduced in 32.1.5. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      pools:
+        description: Per-pool health-monitor stats. One entry per ClfPool in the profile.
+          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/ClfPoolHmon'
+      replicate:
+        description: Whether logs are replicated to all pools (true) or routed by
+          priority (false). Field introduced in 32.1.5. Allowed with any value in
+          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: boolean
+      se_uuid:
+        description: UUID of the Service Engine reporting these stats. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      vs_uuid:
+        description: UUID of the Virtual Service these stats belong to. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+  ClfServer:
+    type: object
+    required:
+    - ip_addr
+    - port
+    properties:
+      enabled:
+        description: Enable or disable this collector. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: boolean
+        default: true
+      ip_addr:
+        description: IP address of the external log collector. Field introduced in
+          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/IpAddr'
+      port:
+        description: UDP/TCP port the collector listens on. Allowed values are 1-65535.
+          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint32
   ClientCertAuthSettings:
     type: object
     properties:
@@ -123104,8 +123860,8 @@ definitions:
           DEBUG_ARP, DEBUG_ARP_PKT_IN, DEBUG_ARP_PKT_OUT, DEBUG_ETHERNET, DEBUG_ETHERNET_PKT_IN,
           DEBUG_ETHERNET_PKT_OUT, DEBUG_ICMP, DEBUG_PCAP_RX, DEBUG_PCAP_TX, DEBUG_PCAP_DROP,
           DEBUG_PCAP_ALL, DEBUG_MISC, DEBUG_CRUD, DEBUG_POOL, DEBUG_PCAP_DOS, DEBUG_PCAP_HM,
-          DEBUG_SE_APP, DEBUG_UDP, DEBUG_SE_VS_HB, DEBUG_ND, DEBUG_ERROR, DEBUG_NONE,
-          DEBUG_ALL, DEBUG_STRICT, DEBUG_FLOW_MIRROR, DEBUG_NAT, DEBUG_NAT_ERROR,
+          DEBUG_SE_APP, DEBUG_UDP, DEBUG_SE_VS_HB, DEBUG_ND, DEBUG_CLF, DEBUG_ERROR,
+          DEBUG_NONE, DEBUG_ALL, DEBUG_STRICT, DEBUG_FLOW_MIRROR, DEBUG_NAT, DEBUG_NAT_ERROR,
           DEBUG_NAT_PKT, DEBUG_NAT_END2END, DEBUG_NAT_ALL, DEBUG_PCAP_SE_IPC, DEBUG_PCAP_NAT,
           DEBUG_PCAP_ROUTING. Allowed with any value in Enterprise, Essentials, Basic,
           Enterprise with Cloud Services edition.'
@@ -128400,6 +129156,11 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/SSLRevokedDetails'
+      supervisor_se_group_free_license_details:
+        description: Supervisor SE group free license capacity exhausted/available
+          details. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/SupervisorSeGroupFreeLicenseDetails'
       switchover_details:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -128816,24 +129577,25 @@ definitions:
           PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED,
           UPGRADE_REQUEST, LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
           LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
-          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
-          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
-          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
-          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
-          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
-          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
-          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
-          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
-          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
-          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
-          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
-          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
-          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
-          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
-          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID,
-          NTP_WEAK_AUTH_ALGORITHM_CONFIGURED, OPEN_API_SPEC_DELETE_CLEANUP_STARTED,
-          OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.'
+          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, LICENSE_SUPERVISOR_GROUP_FREE_LICENSE_CAPACITY_EXHAUSTED,
+          ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED,
+          UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT,
+          LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION,
+          CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED,
+          PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED,
+          RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED,
+          LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING,
+          POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT,
+          SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED,
+          SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON,
+          CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED,
+          UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE,
+          SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
+          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
+          PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: array
         items:
           type: string
@@ -129084,24 +129846,25 @@ definitions:
           PATCH_SE_GROUP_SUSPENDED, ROLLBACK_SE_GROUP_SUSPENDED, ROLLBACKPATCH_SE_GROUP_SUSPENDED,
           UPGRADE_REQUEST, LICENSE_TRANSACTION, LICENSE_SE_RECONCILE, LICENSE_CONTROLLER_LICENSE_RECONCILE,
           LICENSE_TIER_SWITCH, CENTRAL_LICENSE_SUBSCRIPTION, CENTRAL_LICENSE_UNSUBSCRIPTION,
-          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, ROLLBACK_CONTROLLER_ABORTED,
-          ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED, UPGRADE_DRYRUN_COMPLETED,
-          UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT, LOGAGENT_STREAMING_CONN_EVENT,
-          CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION, CONNECT_TO_METRICSMGR_ERROR,
-          DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED, PRE_CHECK_COMPLETED,
-          POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED, RESTORE_CONTROLLER_STARTED,
-          RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED, LOG_FREQUENT_DISK_CLEANUP,
-          REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING, POSTGRES_MAX_CONN_LIMIT_BREACHED,
-          POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT, SYSTEM_REPORT_GENERATION_STARTED,
-          SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED, SYSTEM_REPORT_DELETED,
-          CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON, CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE,
-          UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED, UPGRADE_FILECOPY_FAILED,
-          SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE, SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG,
-          SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG, SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED,
-          PASSWORD_ROTATION_COMPLETED, PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID,
-          NTP_WEAK_AUTH_ALGORITHM_CONFIGURED, OPEN_API_SPEC_DELETE_CLEANUP_STARTED,
-          OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.'
+          CENTRAL_LICENSE_REFRESH_SUCCESS, CENTRAL_LICENSE_REFRESH_FAILURE, LICENSE_SUPERVISOR_GROUP_FREE_LICENSE_CAPACITY_EXHAUSTED,
+          ROLLBACK_CONTROLLER_ABORTED, ROLLBACKPATCH_CONTROLLER_ABORTED, UPGRADE_DRYRUN_STARTED,
+          UPGRADE_DRYRUN_COMPLETED, UPGRADE_DRYRUN_ABORTED, AUDIT_COMPLIANCE_EVENT,
+          LOGAGENT_STREAMING_CONN_EVENT, CONTROLLER_DB_ERROR, AVI_FALSE_POSITIVE_DETECTION,
+          CONNECT_TO_METRICSMGR_ERROR, DNS_VS_STATUS, CONFIG_VERSION_ACK_STATUS, PRE_CHECK_STARTED,
+          PRE_CHECK_COMPLETED, POSTGRES_REPLICATION_FAILED, SAML_METADATA_UPDATE_FAILED,
+          RESTORE_CONTROLLER_STARTED, RESTORE_CONTROLLER_ABORTED, RESTORE_CONTROLLER_COMPLETED,
+          LOG_FREQUENT_DISK_CLEANUP, REQUEST_QUEUE_FULL, REQUEST_QUEUE_RECOVERING,
+          POSTGRES_MAX_CONN_LIMIT_BREACHED, POSTGRES_CONN_RECOVERY, REQUEST_RATELIMIT,
+          SYSTEM_REPORT_GENERATION_STARTED, SYSTEM_REPORT_GENERATION_COMPLETED, SYSTEM_REPORT_GENERATION_FAILED,
+          SYSTEM_REPORT_DELETED, CRL_ENDPOINT_EXPIRED, CRL_ENDPOINT_EXPIRING_SOON,
+          CRL_INVALID_ETAG, UBER_EVENT_TEMPLATE, UBER_EVENT_ERR_TEMPLATE, UPGRADE_FILECOPY_COMPLETED,
+          UPGRADE_FILECOPY_FAILED, SE_PROCESS_CRASHED, CONTROLSCRIPT_EXECUTION_FAILURE,
+          SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
+          SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
+          PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       event_pages:
         description: Pages in which event should come up. Allowed with any value in
@@ -129154,7 +129917,7 @@ definitions:
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
           APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE,
-          SESSIONKEYFORWARDER, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
+          SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
           DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE,
           CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG,
           ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE,
@@ -129242,13 +130005,14 @@ definitions:
           SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE,
           SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO,
           METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL,
-          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT,
+          SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -163823,7 +164587,7 @@ definitions:
           BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING,
           AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY,
           APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE,
-          SESSIONKEYFORWARDER, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
+          SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER,
           DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE,
           CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG,
           ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE,
@@ -163911,13 +164675,14 @@ definitions:
           SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE,
           SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO,
           METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL,
-          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, SERESOURCEPROTO,
-          SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO,
-          VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS,
-          ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS,
-          VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS,
-          VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME,
-          PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
+          SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT,
+          SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS,
+          SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS,
+          INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS,
+          SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES,
+          CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME,
+          VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS,
+          ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE,
           SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE,
           SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL,
           PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME,
@@ -165127,6 +165892,11 @@ definitions:
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         $ref: '#/definitions/ApplicationInsightsPolicy'
+      clf_profile:
+        description: CLF Profile configuration for high-speed log routing. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/ClfProfile'
       cloud:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -165871,6 +166641,10 @@ definitions:
       applicationprofile:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
+        $ref: '#/definitions/SeAgentGraphDBNodeInfo'
+      clfprofile:
+        description: ' Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/SeAgentGraphDBNodeInfo'
       cloud:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -185205,10 +185979,9 @@ definitions:
         format: uint32
       supervisor_group:
         description: Indicates that this Service Engine Group is reserved for exclusive
-          use by the Supervisor in VCF environment. This is read only and cannot be
-          modified. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          use by the Supervisor in VCF environment. This is a read-only field for
+          external user. Field introduced in 32.1.5. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
-        readOnly: true
         type: boolean
       tenant_ref:
         description: ' It is a reference to an object of type Tenant. Allowed with
@@ -190892,6 +191665,31 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+  SupervisorSeGroupFreeLicenseDetails:
+    type: object
+    properties:
+      free_su_limit:
+        description: Free service unit allowance for the supervisor SE group. Field
+          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: number
+        format: double
+      se_group_name:
+        description: Name of the supervisor SE group. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      se_group_uuid:
+        description: UUID of the supervisor SE group. Field introduced in 32.1.5.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      service_units_used:
+        description: Service units currently consumed and reserved by the supervisor
+          SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
+        type: number
+        format: double
   SupportedMigrations:
     type: object
     properties:
@@ -209657,9 +210455,9 @@ definitions:
         description: Indicate if this request is used for learning. If it is not used,
           this field contains the reason for this decision. Enum options - NOT_ACTIVE,
           LEARNED, NOTHING_TO_LEARN, SERVER_ERROR, FLAGGED_BY_WAF, SKIPPED_BY_SAMPLING,
-          CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR.
-          Field introduced in 30.2.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          CLIENT_IS_NOT_AUTHENTICATED, CLIENT_IS_NOT_TRUSTED, CLIENT_IS_A_BOT, ERROR,
+          LIMIT_EXCEEDED. Field introduced in 30.2.1. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
         default: NOT_ACTIVE
       memory_allocated:

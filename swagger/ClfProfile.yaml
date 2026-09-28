@@ -6,21 +6,21 @@
 swagger: '2.0'
 info:
     version: '32.2.1'
-    title: Avi AlertObjectList Object API
+    title: Avi ClfProfile Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi AlertObjectList object api
+        Avi ClfProfile object api
         ```
-        - configure alertobjectlist
-        - show alertobjectlist
+        - configure clfprofile <key>
+        - show clfprofile <key>
         ```
 
-        API permission: PERMISSION_ALERTCONFIG
+        API permission: PERMISSION_VSDATASCRIPTSET
 tags:
-  - name: AlertObjectList
+  - name: ClfProfile
 schemes:
   - https
 securityDefinitions:
@@ -29,12 +29,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /alertobjectlist:
+    /clfprofile:
         get:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist
-            operationId: GET /alertobjectlist
+                - ClfProfile
+            description: /clfprofile
+            operationId: GET /clfprofile
             consumes:
                 -   application/json
             produces:
@@ -97,14 +97,14 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectListApiResponse"
+                        $ref: "#/definitions/ClfProfileApiResponse"
                 "401":
                     description: log in failed
         post:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist
-            operationId: POST /alertobjectlist
+                - ClfProfile
+            description: /clfprofile
+            operationId: POST /clfprofile
             consumes:
                 -   application/json
             produces:
@@ -132,25 +132,25 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: ClfProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
             security:
                 - basicAuth: []
             responses:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 "401":
                     description: log in failed
-    /alertobjectlist/{uuid}:
+    /clfprofile/{uuid}:
         get:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
-            operationId: GET /alertobjectlist/{uuid}
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: GET /clfprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -210,16 +210,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         put:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
-            operationId: PUT /alertobjectlist/{uuid}
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: PUT /clfprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -252,10 +252,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: ClfProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -267,16 +267,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         patch:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
-            operationId: PATCH /alertobjectlist/{uuid}
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: PATCH /clfprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -309,10 +309,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: AlertObjectList object creation
+                    description: ClfProfile object creation
                     required: true
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -324,16 +324,16 @@ paths:
                 "200":
                     description: OK
                     schema:
-                        $ref: "#/definitions/AlertObjectList"
+                        $ref: "#/definitions/ClfProfile"
                 "401":
                     description: log in failed
                 "404":
                     description: object not found
         delete:
             tags:
-                - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
-            operationId: DELETE /alertobjectlist/{uuid}
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: DELETE /clfprofile/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -381,38 +381,97 @@ paths:
 
 
 definitions:
-    AlertObjectList:
+    ClfPool:
         type: object
         required:
             -   name
-            -   source
+            -   priority
+        properties:
+            health_monitor_refs:
+                description: "Reference to at most one health monitor for collectors in this pool. It is a reference to an object of type HealthMonitor. Field introduced in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            lb_algorithm:
+                description: "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking avi.vs.log_forward(), not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "LB_ALGORITHM_ROUND_ROBIN"
+            log_format:
+                description: "Wire format for log records delivered to this pool's collectors. Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "CLF_LOG_FORMAT_SYSLOG_OCTET"
+            name:
+                description: "Unique name for this pool within the ClfProfile. Used as part of the composite key for the backing se_pool_t on the SE. The controller rejects profiles where two pools share the same name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pki_profile_ref:
+                description: "PKI profile whose CA certificates validate the collector's server certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            priority:
+                description: "Pool priority within the ClfProfile. Higher value = higher priority. Must be unique across all pools in the same profile. When replicate=false, the highest-priority pool with an UP member receives all log records; lower-priority pools act as fallback. Allowed values are 1-255. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            servers:
+                description: "List of log collector endpoints for this pool. Field introduced in 32.1.5. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfServer'
+            ssl_key_and_certificate_ref:
+                description: "Client certificate and key the SE presents to the collector for mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only TLS is used when this is not set. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            ssl_profile_ref:
+                description: "SSL profile controlling the TLS version and cipher policy used for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type SSLProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            transport:
+                description: "Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "CLF_TRANSPORT_TCP"
+    ClfProfile:
+        type: object
+        required:
+            -   name
+            -   vrf_context_ref
         properties:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
                 type: string
-            name:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
-                type: string
-            objects:
-                description: " Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP, STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT, PKIPROFILE, AUTHPROFILE, CLOUD, SERVERAUTOSCALEPOLICY, AUTOSCALELAUNCHCONFIG, MICROSERVICEGROUP, IPAMPROFILE, HARDWARESECURITYMODULEGROUP, POOLGROUP, PRIORITYLABELS, POOLGROUPDEPLOYMENTPOLICY, GSLBSERVICE, GSLBSERVICERUNTIME, SCHEDULER, GSLBGEODBPROFILE, GSLBAPPLICATIONPERSISTENCEPROFILE, TRAFFICCLONEPROFILE, VSVIP, WAFPOLICY, WAFPROFILE, ERRORPAGEPROFILE, ERRORPAGEBODY, L4POLICYSET, GSLBSERVICERUNTIMEBATCH, WAFPOLICYPSMGROUP, PINGACCESSAGENT, NETWORKSERVICE, NATPOLICY, SSOPOLICY, PROTOCOLPARSER, EXAMPLECHILD, TESTSEDATASTORELEVEL1, TESTSEDATASTORELEVEL2, TESTSEDATASTORELEVEL3, FILEOBJECT, IPREPUTATIONDB, FEDERATIONCHECKPOINT, ICAPPROFILE, DYNAMICDNSRECORD, JWTSERVERPROFILE, GEODB, BOTDETECTIONPOLICY, BOTMAPPING, BOTCONFIGCONSOLIDATOR, JWTPROFILE, BOTIPREPUTATIONTYPEMAPPING, AVIFALSEPOSITIVEDETECTION, VSGS, WAFCRS, SYSTEMDEFAULTOBJECT, CSRFPOLICY, APPLICATIONINSIGHTSPOLICY, POSITIVESECURITYPOLICY, APPLICATIONINSIGHTSRUNTIMESTATE, SESSIONKEYFORWARDER, CLFPROFILE, SERVICEENGINE, DEBUGSERVICEENGINE, DEBUGCONTROLLER, DEBUGVIRTUALSERVICE, SERVICEENGINEGROUP, SEPROPERTIES, NETWORK, CONTROLLERNODE, CONTROLLERPROPERTIES, SYSTEMCONFIGURATION, VRFCONTEXT, USER, ALERTCONFIG, ALERTSYSLOGCONFIG, ALERTEMAILCONFIG, ALERTTYPECONFIG, APPLICATION, ROLE, CLOUDPROPERTIES, SNMPTRAPPROFILE, ACTIONGROUPPROFILE, MICROSERVICE, ALERTPARAMS, ACTIONGROUPCONFIG, CLOUDCONNECTORUSER, GSLB, GSLBDNSUPDATE, GSLBSITEOPS, GLBMGRWARMSTART, IPAMDNSRECORD, GSLBDNSGSSTATUS, GSLBDNSGEOFILEOPS, GSLBDNSGEOUPDATE, GSLBDNSGEOCLUSTEROPS, GSLBDNSCLEANUP, GSLBSITEOPSRESYNC, IPAMDNSPROVIDERPROFILE, ALBSERVICESCONFIG, SYSTEMLIMITS, REPLICATIONOPERATION, VCENTERSERVER, AVAILABILITYZONE, IMAGE, VSMGRDNSCLEANUP, ALBSERVICESFILEUPLOAD, CONTROLLERSITE, ALERTOBJECTLIST, BACKUPCONFIGURATION, USERACCOUNTPROFILE, WAFAPPLICATIONSIGNATUREPROVIDER, LABELGROUP, CERTIFICATEMANAGEMENTPROFILE, CUSTOMIPAMDNSPROFILE, ALERTSCRIPTCONFIG, WEBHOOK, CLUSTERCLOUDDETAILS, INVENTORYFAULTCONFIG, MEMORYBALANCERREQUEST, SECURECHANNELMAPPING, ALBSERVICESJOB, STATEDIFFOPERATION, SITEVERSION, AUTHMAPPINGPROFILE, WEBAPPUT, TENANTSYSTEMCONFIGURATION, ALERT, JOBENTRY, SECURECHANNELTOKEN, SECURECHANNELAVAILABLELOCALIPS, LICENSESTATUS, FLOATINGIPSUBNET, STATEDIFFSNAPSHOT, CONTROLLERLICENSE, SCVSSTATEINFO, SCPOOLSERVERSTATEINFO, UPGRADESTATUSSUMMARY, CONTROLLERPORTALREGISTRATION, LOGCONTROLLERMAPPING, VIDCINFO, VIPGNAMEINFO, BACKUP, SECURITYMANAGERDATA, VSAPICEXTENSION, GSLBSITE, GSLBTHIRDPARTYSITE, LICENSEINFO, LICENSELEDGERDETAILS, USERACTIVITY, OBJECTACCESSPOLICY, SERVICEAUTHPROFILE, ALBSERVICESFILEDOWNLOAD, TRUSTEDHOSTPROFILE, APIRATELIMITPROFILE, RATELIMITCONFIGURATION, VIRETRIEVEPGNAMES, VCENTERLOGIN, SEGROUPINFO, LICENSERESERVATIONINFO, REDISCOVERVCENTERPARAM, CERTJWTSTORE, LICENSEQUOTAUSAGEINFO, MANAGEMENTSERVICEREQ, MANAGEMENTSERVICEACCESSGRANTREQ, CREATEMANAGEMENTSERVICEREQ, CREATEMANAGEMENTSERVICEACCESSGRANTREQ, TENANTBINDING, CCCREATESEREQ, CCDELETESEREQ, CCADDVNICSREQ, CCDELVNICSREQ, AKOAMKOCLUSTER, TLSPROFILE, ALBSERVICESSTATUS, TCPSTATRUNTIME, UDPSTATRUNTIME, IPSTATRUNTIME, ARPSTATRUNTIME, MBSTATRUNTIME, IPSTKQSTATSRUNTIME, MALLOCSTATRUNTIME, SHMALLOCSTATRUNTIME, CPUUSAGERUNTIME, L7GLOBALSTATSRUNTIME, L7VIRTUALSERVICESTATSRUNTIME, SEAGENTVNICDBRUNTIME, SEAGENTGRAPHDBRUNTIME, SEAGENTSTATERUNTIME, INTERFACERUNTIME, ARPTABLERUNTIME, DISPATCHERSTATRUNTIME, DISPATCHERSTATCLEARRUNTIME, DISPATCHERTABLEDUMPRUNTIME, DISPATCHERREMOTETIMERLISTDUMPRUNTIME, METRICSAGENTMESSAGE, HEALTHMONITORSTATRUNTIME, METRICSENTITYRUNTIME, PERSISTENCEINTERNAL, HTTPPOLICYSETINTERNAL, DNSPOLICYINTERNAL, CONNECTIONDUMPRUNTIME, SHAREDDBSTATS, SHAREDDBSTATSCLEAR, ICMPSTATRUNTIME, ROUTETABLERUNTIME, VIRTUALMACHINE, POOLSERVER, SEVSLIST, MEMINFORUNTIME, RTERINGSTATRUNTIME, ALGOSTATRUNTIME, HEALTHMONITORRUNTIME, CPUSTATRUNTIME, SEVM, HOST, PORTGROUP, CLUSTER, DATACENTER, VCENTER, HTTPPOLICYSETSTATS, DNSPOLICYSTATS, METRICSSESTATS, RATELIMITERSTATRUNTIME, NETWORKSECURITYPOLICYSTATS, TCPCONNRUNTIME, POOLSTATS, CONNPOOLINTERNAL, CONNPOOLSTATS, VSHASHSHOWRUNTIME, SELOGSTATSRUNTIME, NETWORKSECURITYPOLICYDETAIL, LICENSERUNTIME, SERVERRUNTIME, METRICSRUNTIMESUMMARY, METRICSRUNTIMEDETAIL, DISPATCHERSEHMPROBETEMPDISABLERUNTIME, POOLDEBUG, VSLOGMGRMAP, SERUMINSERTIONSTATS, HTTPCACHE, HTTPCACHESTATS, SEDOSSTATRUNTIME, VSDOSSTATRUNTIME, SERVERUPDATEREQ, VSSCALEOUTLIST, SEMEMDISTRUNTIME, TCPCONNRUNTIMEDETAIL, SEUPGRADESTATUS, SEUPGRADEPREVIEW, SEFAULTINJECTEXHAUSTM, SEFAULTINJECTEXHAUSTMCL, SEFAULTINJECTEXHAUSTMCLSMALL, SEFAULTINJECTEXHAUSTCONN, SEHEADLESSONLINEREQ, SEUPGRADE, SEUPGRADESTATUSDETAIL, SERESERVEDVS, SERESERVEDVSCLEAR, VSCANDIDATESEHOSTLIST, SEGROUPUPGRADE, REBALANCE, SEGROUPREBALANCE, SEAUTHSTATSRUNTIME, AUTOSCALESTATE, VIRTUALSERVICEAUTHSTATS, NETWORKSECURITYPOLICYDOS, KEYVALINTERNAL, KEYVALSUMMARYINTERNAL, SERVERSTATEUPDATEINFO, CLTRACKINTERNAL, CLTRACKSUMMARYINTERNAL, MICROSERVICERUNTIME, SEMICROSERVICE, VIRTUALSERVICEANALYSIS, CLIENTINTERNAL, CLIENTSUMMARYINTERNAL, MICROSERVICEGROUPRUNTIME, BGPRUNTIME, REQUESTQUEUERUNTIME, MIGRATEALL, MIGRATEALLSTATUSSUMMARY, MIGRATEALLSTATUSDETAIL, INTERFACESUMMARYRUNTIME, INTERFACELACPRUNTIME, DNSTABLE, GSLBSERVICEDETAIL, GSLBSERVICEINTERNAL, GSLBSERVICEHMONSTAT, SETROLESREQUEST, TRAFFICCLONERUNTIME, GEOLOCATIONINFO, SEVSHBSTATRUNTIME, GEODBINTERNAL, GSLBSITEINTERNAL, WAFSTATS, USERDEFINEDDATASCRIPTCOUNTERS, LLDPRUNTIME, VSESSHARINGPOOL, NDTABLERUNTIME, IP6STATRUNTIME, ICMP6STATRUNTIME, SEVSSPLACEMENT, L4POLICYSETSTATS, L4POLICYSETINTERNAL, BGPDEBUGINFO, SHARD, CPUSTATRUNTIMEDETAIL, SEASSERTSTATRUNTIME, SEFAULTINJECTINFRA, SEAGENTASSERTSTATRUNTIME, SEDATASTORESTATUS, DIFFQUEUESTATUS, IP6ROUTETABLERUNTIME, SECURITYMGRSTATE, VIRTUALSERVICESESCALEOUTSTATUS, SHARDSERVERSTATUS, SEAGENTSHARDCLIENTRESOURCEMAP, SEAGENTCONSISTENTHASH, SEAGENTVNICDBHISTORY, SEAGENTSHARDCLIENTAPPMAP, SEAGENTSHARDCLIENTEVENTHISTORY, NATSTATRUNTIME, NATFLOWRUNTIME, SECUTIRYMGRRUNTIME, SSOPOLICYSTATS, SENETWORKSERVICERUNTIME, SEGEORUNTIME, NATPOLICYSTATS, SEFAULTRUNTIME, VIRTUALSERVICESCALEOUTSTATUS, VIRTUALSERVICESCALEOUTSTATUSDETAIL, SECURITYMGRLEARN, SECURITYMGRTOPN, SSLSESSIONCACHE, SEGEODETAILS, GSLBSERVICEALGOSTAT, HTTPCONNECTIONRUNTIME, HTTPCONNECTIONRUNTIMEDETAIL, REMOTESITEWATCHERSUMMARY, REMOTESITEWATCHEREVENT, IPREPUTATIONDBRUNTIME, SEFAULTINJECTEXHAUSTCFG, SEFAULTINJECTEXHAUSTSHMCFG, SEFAULTINJECTEXHAUSTSHMCONN, BGPRUNNINGCONFIG, BGPADVERTISEDROUTES, BGPPEERSTATUS, BFDSESSIONSTATUS, BGPPEERINFO, GSLBSITEOPSREPLICATIONPOLICYOPS, FEDERATEDDATASTORESTATUS, FEDERATEDDIFFQUEUESTATUS, ROUTESTATRUNTIME, ROUTEFLOWRUNTIME, NSXTSEGMENTRUNTIME, VIRTUALSERVICEICAPSTATS, KEYVALSUMMARYOBJSYNC, POOLOBJSYNC, KEYVALDISPATCH, SEAGENTOBJSYNCDETAILS, VIRTUALSERVICESCALEOUTSTATUSKEYVAL, VIRTUALSERVICESCALEOUTSTATUSKEYVALSUMMARY, VIRTUALSERVICEOUTOFBANDREQUESTSTATS, GEODBLOCATIONINFO, SEAGENTRESOLVDBRUNTIME, SEAGENTRESOLVDBRUNTIMESUMMARY, METRICSRUNTIMEDEBUG, BOTCLASSIFICATIONRESULTMETRICS, BOTUACACHERUNTIME, BOTUACACHESTATSRUNTIME, POOLGROUPRUNTIMEDETAIL, SECURITYMGRUACACHEQUERY, SECURITYMGRUACACHECLEAR, SECURITYMGRUACACHESUMMARY, GSLBADAPTIVERUNTIME, BGPPEERSSTATE, VSSERVICESERVERMAPKV, VSSERVICESERVERMAPTABLE, UPGRADESTATUSINFO, CLOUDRUNTIME, ALERTPERFDATA, METRICSRUNTIMEDEBUGSUMMARY, SCTPCONNRUNTIME, SCTPCONNRUNTIMEDETAIL, VIMGRIPSUBNETRUNTIME, VIMGRSEVMRUNTIME, VIMGRVMRUNTIME, VIMGRCLUSTERRUNTIME, SEAGENTDPPROBE, BFDRUNNINGCONFIG, LOGAGENTSTATSPERVS, VSLOGSTATSDISAGGR, VRFIPINFORUNTIME, DPMETRICSRUNTIME, SEAGENTOBJSYNCSTATS, KEYVALSTATS, CSRFMETRICS, DIAMETERCONNECTIONS, DUMPALLOBJSYNCSTATS, QATSTATSRUNTIME, DISPATCHERSTATRUNTIME6, DISPATCHERSTATCLEARRUNTIME6, SEFAULTINJECTSEPARAM, SEFAULTINJECTEXHAUSTPARAM, PRIMARYPOOL, CONNECTIONCLEARFILTER, DISPATCHERTABLEDUMPCLEAR, ARPTABLEFILTER, HTTPCACHEOBJFILTER, CONNPOOLFILTER, PERSISTENCEFILTER, SELOGAGENTSTATS, SELOGAGENTOPERSTATS, SELOGAGENTCONTROLLERINTERFACESTATS, SELOGAGENTNETWORKSTREAMSTATS, SEGROUPREBALANCEREQSTATUSRESPONSE, SEAUTOSCALERSTATUSRESPONSE, SEGROUPONETIMEREQUESTRESPONSE, SEGROUPREBALANCEHISTORYRESPONSE, REBALANCEPARAMS, SESYSTEMINFORUNTIME, NICINFO, METRICSAPISRVRSTATS, SEAGENTSTARTGARP, SESSIONKEYFORWARDERSTATS, SESSIONKEYFORWARDERSTATSDETAIL, SECURITYMGRINGRESSPIPELINESTATS, SECMGRSTATS, SECMGRSTATSCLEARRESULT, CLFPROFILEHMONSTAT, SERESOURCEPROTO, SECONSUMERPROTO, SECREATEPENDINGPROTO, PLACEMENTSTATS, SEVIPPROTO, RMVRFPROTO, VCENTERMAP, VIMGRVCENTERRUNTIME, INTERESTEDVMS, INTERESTEDHOSTS, VCENTERSUPPORTEDCOUNTERS, ENTITYCOUNTERS, TRANSACTIONSTATS, SEVMCREATEPROGRESS, PLACEMENTSTATUS, VISUBFOLDERS, VIDATASTORE, VIHOSTRESOURCES, CLOUDCONNECTOR, VINETWORKSUBNETVMS, VIDATASTORECONTENTS, VIMGRVCENTERCLOUDRUNTIME, VIVCENTERPORTGROUPS, VIVCENTERDATACENTERS, VIMGRHOSTRUNTIME, PLACEMENTGLOBALS, ALBSERVICES, RMCLOUDOPSPROTO, CLOUDPLACEMENTSUMMARY, CLOUDPLACEMENTINELIGIBLE, SEGROUPPLACEMENTSUMMARY, SEGROUPPLACEMENTDETAIL, SEGROUPPLACEMENTINELIGIBLE, SECONSUMERSUMMARY, SECONSUMERDETAIL, SERESOURCESUMMARY, SERESOURCEDETAIL, PLACEMENTSYSTEMSUMMARY, VIMGRNWRUNTIME, NETWORKRUNTIME, SCTPSTATRUNTIME, SEHUGEPAGEINFORUNTIME, VIRTUALSERVICEVHROUTESRUNTIME, APICCONFIGURATION, CIFTABLE, APICTRANSACTION, VIRTUALSERVICESTATEDBCACHESUMMARY, POOLSTATEDBCACHESUMMARY, SERVERSTATEDBCACHESUMMARY, APICAGENTINTERNAL, APICTRANSACTIONFLAP, APICGRAPHINSTANCES, APICEPGS, APICEPGEPS, APICDEVICEPKGVER, APICTENANTS, APICVMMDOMAINS, STATECACHESTATS, STATECACHECONFIG, STATECACHEINTERNAL, STATECACHEDNS, STATECACHECONFIGVERSION, STATECACHEOPERSTATUS, STATECACHEVIRTUALSERVICE, STATECACHEPOOL, STATECACHENODE, STATECACHEOPERSTATE, STATECACHESERVICEENGINE, NSXCONFIGURATION, NSXSGTABLE, NSXAGENTINTERNAL, NSXSGINFO, NSXSGIPS, NSXAGENTINTERNALCLI, NSXTAGENT, SERATELIMITINGRLINTERNAL, SERATELIMITINGMSFINTERNAL, ADAPTREPL, POOLGROUPENABLEPRIMARYPOOL, KEYVALSESSION, KEYVALSESSIONSUMMARY, SYSTEMREPORT, AWSLOGIN, ADAPTREPLFAULTINJ, ALERTFAULTPARAMS, ALERTMGRPARAMS, ALERTTESTEMAILPARAMS, ALERTTESTSYSLOGSNMPPARAMS, APICVSPLACEMENTREQ, APPLYLOGRECOMMENDATIONS, CCFAULTPARAMS, CLUSTERPARAMS, CREDPARAMS, GETLOGRECOMMENDATIONS, GROUPPARAMS, NSXTNSSERVICEPARAMS, OPENSTACKLOGIN, RETRYPLACEMENTPARAMS, SERVERSCALEINPARAMS, SERVERSCALEOUTPARAMS, SYSTESTEMAILPARAMS, TIER1ROUTERFILTER, TRANSPORTZONEPARAMS, VIFAULTINJECTION, VISETMGMTIPSEREQ, VCENTERCLOUDSTATUSREQ, VCENTERINVENTORYDIAGREQ, VCENTERQUARANTINEDHOSTPARAMS, VSMIGRATEPARAMS, VSRESYNCPARAMS, VSSCALEINPARAMS, VSSCALEOUTPARAMS, VSSWITCHOVERPARAMS, TASKJOURNAL, JOURNALERROR, JOURNALINFO, JOURNALSUMMARY, EVENTMANAGERSTATS, EVENTMANAGERSUBSCRIPTIONS, EVENTMANAGERCONFIG, SYSTEMHEALTHGETSYSTEMHEALTHSECURECHANNELRESPONSE, SYSTEMHEALTHGETSYSTEMHEALTHCLUSTERINGRESPONSE, SYSTEMHEALTHGETSYSTEMHEALTHPOSTGRESRESPONSE, SYSTEMHEALTHGETSERVICEFAILEDRESPONSE, SYSTEMHEALTHGETSERVICERESTARTEDRESPONSE, SYSTEMHEALTHGETSERVICEDETAILRESPONSE, SEAGENTSEDATASTOREDOWNLOADFAIL, UPGRADEPROFILE, QATINFO, RETENTIONPOLICY, SYSTEMLIMITOBJECTCOUNT, SYSTEMLIMITOBJECTCOUNTS, EVENTGENPARAMS, LOGMANAGERSTATS, TECHSUPPORTPROFILE, TECHSUPPORT, TECHSUPPORTPARAMS, TECHSUPPORTMESSAGE, REPORT, REPORTPROFILE, SSPINSTANCE, VSPHEREZONEPARAMS, ROTATIONPARAMS, IPADDRGROUPSYNCPARAMS, OPERSTATUSSTREAMER_CACHEDUMP, VPCPARAMS, ALERTMGRMONITORINGDATA, MAXOBJECTS, GSLBSMRUNTIME, GSLBCRMRUNTIME, GSLBHSMRUNTIME, VERSIONINFO, CFGSTATE, GSLBDNSSEINFO, GSLBPERDNSSTATE, GSLBRUNTIME, GSLBSERVICESITEPERSISTENCEPOOL, GSLBHEALTHMONITORRUNTIME, GSLBGEODBPROFILERUNTIME, GSLBAPPLICATIONPERSISTENCEPROFILERUNTIME, GSLBPKIPROFILERUNTIME, GSLBJWTSERVERPROFILERUNTIME, GSLBSSLPROFILERUNTIME, GSLBSSLKEYANDCERTIFICATERUNTIME, GSLBGEOFILE, GSLBGEOFILERUNTIME, EVENTINFO, GSLBSITEHTTPTABLE, LOCALWORKERFDSVERSION, GSLBSERVICEHEALTHSTATUS, GSLBFILEOBJECTRUNTIME, GSLBRUNTIMESUMMARY, GSLBRUNTIMEDETAIL, GSLBRUNTIMEINTERNAL, GSLBLEADERCHANGERUNTIME, MSGLBTRANSACTIONRUNTIME, MSGLBCONNECTIONRUNTIME, MSGLBCONNPOOLRUNTIME, MSGLBCONTEXTRUNTIME, LABELPROFILE, APIPATH, APISCHEMA, APIPOLICY, WAAPSTATS, APIPATHSTATS, APISPECGENERATE, VIRTUALSERVICELEARNINGSTATS, WAAPPATHTREENODE. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+            clf_pools:
+                description: "List of pools associated with this profile. Each pool must have a unique priority value. The controller rejects profiles where two pools share the same priority (HTTP 400). Field introduced in 32.1.5. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
-                    type: string
-            source:
-                description: " Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                    $ref: '#/definitions/ClfPool'
+            description:
+                description: "Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            enabled:
+                description: "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, avi.vs.log_forward() is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
+            name:
+                description: "The name of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            replicate:
+                description: "When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
             tenant_ref:
-                description: " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
                 readOnly: True
                 type: string
             uuid:
-                description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
-    AlertObjectListApiResponse:
+            vrf_context_ref:
+                description: "Virtual Routing Context for this profile's collector pools. Only Virtual Services in the same Virtual Routing Context can use this profile. Cannot be changed once set. It is a reference to an object of type VrfContext. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    ClfProfileApiResponse:
         type: object
         required:
             - count
@@ -424,8 +483,50 @@ definitions:
             results:
                 type: array
                 items:
-                    $ref: "#/definitions/AlertObjectList"
+                    $ref: "#/definitions/ClfProfile"
             next:
                 type: string
+    ClfServer:
+        type: object
+        required:
+            -   ip_addr
+            -   port
+        properties:
+            enabled:
+                description: "Enable or disable this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            ip_addr:
+                description: "IP address of the external log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
+            port:
+                description: "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     ConfigPbAttributes:
         type: object
+    IpAddr:
+        type: object
+        required:
+            -   addr
+            -   type
+        properties:
+            addr:
+                description: "IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            type:
+                description: " Enum options - V4, DNS, V6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    RoleFilterMatchLabel:
+        type: object
+        required:
+            -   key
+        properties:
+            key:
+                description: "Key for filter match. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            values:
+                description: "Values for filter match. Multiple values will be evaluated as OR. Example  key = value1 OR key = value2. Behavior for match is key = * if this field is empty. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string

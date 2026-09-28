@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "32.2.1",
-        "title": "Avi VSDataScriptSet Object API",
+        "title": "Avi ClfProfile Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi VSDataScriptSet object api\n```\n- configure vsdatascriptset <key>\n- show vsdatascriptset <key>\n```\n\nAPI permission: PERMISSION_VSDATASCRIPTSET\n"
+        "description": "Avi ClfProfile object api\n```\n- configure clfprofile <key>\n- show clfprofile <key>\n```\n\nAPI permission: PERMISSION_VSDATASCRIPTSET\n"
     },
     "tags": [
         {
-            "name": "VSDataScriptSet"
+            "name": "ClfProfile"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/vsdatascriptset": {
+        "/clfprofile": {
             "get": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset",
-                "operationId": "GET /vsdatascriptset",
+                "description": "/clfprofile",
+                "operationId": "GET /clfprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -123,7 +123,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSetApiResponse"
+                            "$ref": "#/definitions/ClfProfileApiResponse"
                         }
                     },
                     "401": {
@@ -133,10 +133,10 @@
             },
             "post": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset",
-                "operationId": "POST /vsdatascriptset",
+                "description": "/clfprofile",
+                "operationId": "POST /clfprofile",
                 "consumes": [
                     "application/json"
                 ],
@@ -175,10 +175,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VSDataScriptSet object creation",
+                        "description": "ClfProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     }
                 ],
@@ -191,7 +191,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     "401": {
@@ -200,13 +200,13 @@
                 }
             }
         },
-        "/vsdatascriptset/{uuid}": {
+        "/clfprofile/{uuid}": {
             "get": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset/{uuid}/{uuid}",
-                "operationId": "GET /vsdatascriptset/{uuid}",
+                "description": "/clfprofile/{uuid}/{uuid}",
+                "operationId": "GET /clfprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -292,7 +292,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     "401": {
@@ -305,10 +305,10 @@
             },
             "put": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset/{uuid}/{uuid}",
-                "operationId": "PUT /vsdatascriptset/{uuid}",
+                "description": "/clfprofile/{uuid}/{uuid}",
+                "operationId": "PUT /clfprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -354,10 +354,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VSDataScriptSet object creation",
+                        "description": "ClfProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     {
@@ -377,7 +377,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     "401": {
@@ -390,10 +390,10 @@
             },
             "patch": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset/{uuid}/{uuid}",
-                "operationId": "PATCH /vsdatascriptset/{uuid}",
+                "description": "/clfprofile/{uuid}/{uuid}",
+                "operationId": "PATCH /clfprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -439,10 +439,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "VSDataScriptSet object creation",
+                        "description": "ClfProfile object creation",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     {
@@ -462,7 +462,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/VSDataScriptSet"
+                            "$ref": "#/definitions/ClfProfile"
                         }
                     },
                     "401": {
@@ -475,10 +475,10 @@
             },
             "delete": {
                 "tags": [
-                    "VSDataScriptSet"
+                    "ClfProfile"
                 ],
-                "description": "/vsdatascriptset/{uuid}/{uuid}",
-                "operationId": "DELETE /vsdatascriptset/{uuid}",
+                "description": "/clfprofile/{uuid}/{uuid}",
+                "operationId": "DELETE /clfprofile/{uuid}",
                 "consumes": [
                     "application/json"
                 ],
@@ -549,6 +549,172 @@
         }
     },
     "definitions": {
+        "ClfPool": {
+            "type": "object",
+            "required": [
+                "name",
+                "priority"
+            ],
+            "properties": {
+                "health_monitor_refs": {
+                    "description": "Reference to at most one health monitor for collectors in this pool. It is a reference to an object of type HealthMonitor. Field introduced in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "lb_algorithm": {
+                    "description": "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking avi.vs.log_forward(), not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "LB_ALGORITHM_ROUND_ROBIN"
+                },
+                "log_format": {
+                    "description": "Wire format for log records delivered to this pool's collectors. Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "CLF_LOG_FORMAT_SYSLOG_OCTET"
+                },
+                "name": {
+                    "description": "Unique name for this pool within the ClfProfile. Used as part of the composite key for the backing se_pool_t on the SE. The controller rejects profiles where two pools share the same name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "pki_profile_ref": {
+                    "description": "PKI profile whose CA certificates validate the collector's server certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "priority": {
+                    "description": "Pool priority within the ClfProfile. Higher value = higher priority. Must be unique across all pools in the same profile. When replicate=false, the highest-priority pool with an UP member receives all log records; lower-priority pools act as fallback. Allowed values are 1-255. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                },
+                "servers": {
+                    "description": "List of log collector endpoints for this pool. Field introduced in 32.1.5. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ClfServer"
+                    }
+                },
+                "ssl_key_and_certificate_ref": {
+                    "description": "Client certificate and key the SE presents to the collector for mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only TLS is used when this is not set. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ssl_profile_ref": {
+                    "description": "SSL profile controlling the TLS version and cipher policy used for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type SSLProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "transport": {
+                    "description": "Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "CLF_TRANSPORT_TCP"
+                }
+            }
+        },
+        "ClfProfile": {
+            "type": "object",
+            "required": [
+                "name",
+                "vrf_context_ref"
+            ],
+            "properties": {
+                "_last_modified": {
+                    "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "clf_pools": {
+                    "description": "List of pools associated with this profile. Each pool must have a unique priority value. The controller rejects profiles where two pools share the same priority (HTTP 400). Field introduced in 32.1.5. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ClfPool"
+                    }
+                },
+                "description": {
+                    "description": "Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, avi.vs.log_forward() is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "markers": {
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RoleFilterMatchLabel"
+                    }
+                },
+                "name": {
+                    "description": "The name of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "replicate": {
+                    "description": "When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "tenant_ref": {
+                    "description": "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "url",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": "UUID of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "vrf_context_ref": {
+                    "description": "Virtual Routing Context for this profile's collector pools. Only Virtual Services in the same Virtual Routing Context can use this profile. Cannot be changed once set. It is a reference to an object of type VrfContext. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ClfProfileApiResponse": {
+            "type": "object",
+            "required": [
+                "count",
+                "results"
+            ],
+            "properties": {
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ClfProfile"
+                    }
+                },
+                "next": {
+                    "type": "string"
+                }
+            }
+        },
+        "ClfServer": {
+            "type": "object",
+            "required": [
+                "ip_addr",
+                "port"
+            ],
+            "properties": {
+                "enabled": {
+                    "description": "Enable or disable this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "ip_addr": {
+                    "description": "IP address of the external log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpAddr"
+                },
+                "port": {
+                    "description": "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "uint32"
+                }
+            }
+        },
         "ConfigPbAttributes": {
             "type": "object"
         },
@@ -569,52 +735,6 @@
                 }
             }
         },
-        "KeyValue": {
-            "type": "object",
-            "required": [
-                "key"
-            ],
-            "properties": {
-                "key": {
-                    "description": "Key. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "value": {
-                    "description": "Value. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "RateLimiter": {
-            "type": "object",
-            "required": [
-                "count",
-                "period"
-            ],
-            "properties": {
-                "burst_sz": {
-                    "description": "Maximum number of connections, requests or packets to be let through instantaneously.  If this is less than count, it will have no effect. Allowed values are 0-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "format": "uint32"
-                },
-                "count": {
-                    "description": "Maximum number of connections, requests or packets permitted each period. Allowed values are 1-1000000000. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1000000000,
-                    "format": "uint32"
-                },
-                "name": {
-                    "description": "Identifier for Rate Limit. Constructed according to context. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "period": {
-                    "description": "Time value in seconds to enforce rate count. Allowed values are 1-1000000000. Field introduced in 18.2.9. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "integer",
-                    "default": 1,
-                    "format": "uint32"
-                }
-            }
-        },
         "RoleFilterMatchLabel": {
             "type": "object",
             "required": [
@@ -631,186 +751,6 @@
                     "items": {
                         "type": "string"
                     }
-                }
-            }
-        },
-        "VSDataScript": {
-            "type": "object",
-            "required": [
-                "evt",
-                "script"
-            ],
-            "properties": {
-                "evt": {
-                    "description": "Event triggering execution of datascript. Enum options - VS_DATASCRIPT_EVT_HTTP_REQ, VS_DATASCRIPT_EVT_HTTP_RESP, VS_DATASCRIPT_EVT_HTTP_RESP_DATA, VS_DATASCRIPT_EVT_HTTP_LB_FAILED, VS_DATASCRIPT_EVT_HTTP_REQ_DATA, VS_DATASCRIPT_EVT_HTTP_RESP_FAILED, VS_DATASCRIPT_EVT_HTTP_LB_DONE, VS_DATASCRIPT_EVT_HTTP_AUTH, VS_DATASCRIPT_EVT_HTTP_POST_AUTH, VS_DATASCRIPT_EVT_TCP_CLIENT_ACCEPT, VS_DATASCRIPT_EVT_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_CLIENT_SSL_PRE_CONNECT, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_HELLO, VS_DATASCRIPT_EVT_SERVER_SSL_SERVER_HELLO, VS_DATASCRIPT_EVT_SERVER_SSL_HANDSHAKE_DONE, VS_DATASCRIPT_EVT_CLIENT_SSL_CLIENT_CERT, VS_DATASCRIPT_EVT_DNS_REQ, VS_DATASCRIPT_EVT_DNS_RESP, VS_DATASCRIPT_EVT_L4_REQUEST, VS_DATASCRIPT_EVT_L4_RESPONSE, VS_DATASCRIPT_EVT_CLIENT_CLOSED, VS_DATASCRIPT_EVT_SERVER_CLOSED, VS_DATASCRIPT_EVT_SERVER_CONNECTED, VS_DATASCRIPT_EVT_L4_LB_DONE, VS_DATASCRIPT_EVT_L4_LB_FAILED, VS_DATASCRIPT_EVT_MAX. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "script": {
-                    "description": "Datascript to execute when the event triggers. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "VSDataScriptSet": {
-            "type": "object",
-            "required": [
-                "name"
-            ],
-            "properties": {
-                "_last_modified": {
-                    "description": "UNIX time since epoch in microseconds. Units(MICROSECONDS).",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "clf_profile_ref": {
-                    "description": "Optional Custom Log Forward profile this DataScriptSet forwards logs to via avi.vs.log_forward(). Resolved from the specific DataScriptSet invoking log_forward(), not from the VirtualService it is attached to. It is a reference to an object of type ClfProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "created_by": {
-                    "description": "Creator name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "datascript": {
-                    "description": "DataScripts to execute. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/VSDataScript"
-                    }
-                },
-                "description": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "geo_db_ref": {
-                    "description": "Geo Location Mapping Database used by this DataScriptSet. It is a reference to an object of type GeoDB. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "ip_reputation_db_ref": {
-                    "description": "IP reputation database that can be used by DataScript functions. It is a reference to an object of type IPReputationDB. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "ipgroup_refs": {
-                    "description": "UUID of IP Groups that could be referred by VSDataScriptSet objects. It is a reference to an object of type IpAddrGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/RoleFilterMatchLabel"
-                    }
-                },
-                "name": {
-                    "description": "Name for the virtual service datascript collection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "pki_profile_refs": {
-                    "description": "UUIDs of PKIProfile objects that could be referred by VSDataScriptSet objects. It is a reference to an object of type PKIProfile. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "pool_group_refs": {
-                    "description": "UUID of pool groups that could be referred by VSDataScriptSet objects. It is a reference to an object of type PoolGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "pool_refs": {
-                    "description": "UUID of pools that could be referred by VSDataScriptSet objects. It is a reference to an object of type Pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "protocol_parser_refs": {
-                    "description": "List of protocol parsers that could be referred by VSDataScriptSet objects. It is a reference to an object of type ProtocolParser. Field introduced in 18.2.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "rate_limiters": {
-                    "description": "The Rate Limit definitions needed for this DataScript. The name is composed of the Virtual Service name and the DataScript name. Field introduced in 18.2.9. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/RateLimiter"
-                    }
-                },
-                "snat_ip6s": {
-                    "description": "IPv6 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/IpAddr"
-                    }
-                },
-                "snat_ips": {
-                    "description": "IPv4 address used by a VS-DataScript in avi.l4.source_ip api. Field introduced in 31.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/IpAddr"
-                    }
-                },
-                "ssl_key_certificate_refs": {
-                    "description": "UUIDs of SSLKeyAndCertificate objects that could be referred by VSDataScriptSet objects. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "ssl_profile_refs": {
-                    "description": "UUIDs of SSLProfile objects that could be referred by VSDataScriptSet objects. It is a reference to an object of type SSLProfile. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "string_group_refs": {
-                    "description": "UUID of String Groups that could be referred by VSDataScriptSet objects. It is a reference to an object of type StringGroup. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "tenant_ref": {
-                    "description": " It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                },
-                "url": {
-                    "description": "url",
-                    "readOnly": true,
-                    "type": "string"
-                },
-                "uuid": {
-                    "description": "UUID of the virtual service datascript collection. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "string"
-                }
-            }
-        },
-        "VSDataScriptSetApiResponse": {
-            "type": "object",
-            "required": [
-                "count",
-                "results"
-            ],
-            "properties": {
-                "count": {
-                    "type": "integer",
-                    "format": "int32"
-                },
-                "results": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/VSDataScriptSet"
-                    }
-                },
-                "next": {
-                    "type": "string"
                 }
             }
         }
