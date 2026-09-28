@@ -12,6 +12,9 @@ type VSDataScriptSet struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
+	// Optional Custom Log Forward profile this DataScriptSet forwards logs to via avi.vs.log_forward(). Resolved from the specific DataScriptSet invoking log_forward(), not from the VirtualService it is attached to. It is a reference to an object of type ClfProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ClfProfileRef *string `json:"clf_profile_ref,omitempty"`
+
 	// Creator name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CreatedBy *string `json:"created_by,omitempty"`
 
