@@ -3,9 +3,9 @@
 Avi SDK is a Java API which creates a session with controller and perform CRUD operations.
 
 ## Prerequisites
-jdk 1.8
+- JDK 17
+- Maven
 
-Maven
 ## Installation
 
 
@@ -101,5 +101,4 @@ param.put("full_system", "true");
 param.put("passphrase", "abc1234");
 apiInstance.fileDownload("/configuration/export", "filepath", param);
 ```
-
 
