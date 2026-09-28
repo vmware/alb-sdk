@@ -814,8 +814,7 @@ type ServiceEngineGroup struct {
 	// Number of SSL sessions that can be cached per VS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSessCachePerVs *uint32 `json:"ssl_sess_cache_per_vs,omitempty"`
 
-	// Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is read only and cannot be modified. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	// Read Only: true
+	// Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is a read-only field for external user. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SupervisorGroup *bool `json:"supervisor_group,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
