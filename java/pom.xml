@@ -136,7 +136,7 @@
 		</plugins>
 	</build>
 	<properties>
-		<jackson.version>2.18.8</jackson.version>
+		<jackson.version>2.18.10</jackson.version>
 	</properties>
 	<dependencies>
 		<dependency>
