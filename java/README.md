@@ -101,4 +101,3 @@ param.put("full_system", "true");
 param.put("passphrase", "abc1234");
 apiInstance.fileDownload("/configuration/export", "filepath", param);
 ```
-
