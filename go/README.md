@@ -292,4 +292,3 @@ import (
 **Note:** Avi's Go SDK (`github.com/vmware/alb-sdk`) is being regenerated with an updated build tool (`go-swagger` 0.10.0 → 0.35.0) to correct capitalization bugs across roughly 24 Go model type names (e.g., `PKIprofile` becomes `PKIProfile`, `Http2ApplicationProfile` becomes `HTTP2ApplicationProfile`, and `FQDnstats` becomes `FQDNStats`). 
 * **No Impact:** REST API endpoints, over-the-wire JSON payloads, and non-Go toolchains (Postman, curl, Python, Java, Ansible, and HCL-based Terraform configurations) remain completely unchanged.
 * **Action Required:** Developers directly importing these Go models into custom Go code or Terraform provider source code must perform a quick find-and-replace for the updated type names in their codebase prior to recompiling.
-

@@ -8,8 +8,14 @@ package models
 // swagger:model ApiConfigLimits
 type APIConfigLimits struct {
 
+	// Maximum total number of API path objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	NumAPIPaths *int32 `json:"num_api_paths,omitempty"`
+
 	// Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumAPIPathsPerPolicy *int32 `json:"num_api_paths_per_policy,omitempty"`
+
+	// Maximum total number of API schema objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	NumAPISchemas *int32 `json:"num_api_schemas,omitempty"`
 
 	// Maximum number of API schema objects that can be associated with a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumAPISchemasPerPolicy *int32 `json:"num_api_schemas_per_policy,omitempty"`
