@@ -79,6 +79,7 @@ type AviClient struct {
 	DynamicDNSRecord                         *DynamicDNSRecordClient
 	ErrorPageBody                            *ErrorPageBodyClient
 	ErrorPageProfile                         *ErrorPageProfileClient
+	EventGenerateRequest                     *EventGenerateRequestClient
 	EventLog                                 *EventLogClient
 	FileObject                               *FileObjectClient
 	FileServiceIPAMDNSScriptUploadAck        *FileServiceIPAMDNSScriptUploadAckClient
@@ -322,6 +323,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.DynamicDNSRecord = NewDynamicDNSRecordClient(aviSession)
 	aviClient.ErrorPageBody = NewErrorPageBodyClient(aviSession)
 	aviClient.ErrorPageProfile = NewErrorPageProfileClient(aviSession)
+	aviClient.EventGenerateRequest = NewEventGenerateRequestClient(aviSession)
 	aviClient.EventLog = NewEventLogClient(aviSession)
 	aviClient.FileObject = NewFileObjectClient(aviSession)
 	aviClient.FileServiceIPAMDNSScriptUploadAck = NewFileServiceIPAMDNSScriptUploadAckClient(aviSession)
