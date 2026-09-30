@@ -135,7 +135,7 @@ type ControllerProperties struct {
 	// When set to true, Avi Controller will attempt to automatically sync NSX Groups with AVI IP Groups provided the IP group is configured with an NSX Group path and NSX Dynamic streaming is enabled and active. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EnableStreamingBasedNsxIPGroupSync *bool `json:"enable_streaming_based_nsx_ip_group_sync,omitempty"`
 
-	// Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. A value of 0 blocks all requests to this API. Allowed values are 1-1000. Special values are 0- blocks all requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	EventManagerAPIRateLimitPerMin *uint32 `json:"event_manager_api_rate_limit_per_min,omitempty"`
 
 	// Stated time duration beyond which Event manager disregards files whose modified timestamp from current time is later. Allowed values are 1-1800. Field introduced in 30.2.6, 31.2.1. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
