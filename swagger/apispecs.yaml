@@ -102869,11 +102869,23 @@ definitions:
   ApiConfigLimits:
     type: object
     properties:
+      num_api_paths:
+        description: Maximum total number of API path objects allowed across the system.
+          Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: int32
       num_api_paths_per_policy:
         description: Maximum number of API path definitions (unique URL path patterns)
           that can be configured for a single API policy. Field introduced in 32.1.4.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
+        type: integer
+        format: int32
+      num_api_schemas:
+        description: Maximum total number of API schema objects allowed across the
+          system. Field introduced in 32.1.4. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: int32
       num_api_schemas_per_policy:
@@ -190750,9 +190762,9 @@ definitions:
           SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS,
           NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY,
           NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS,
-          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT. Field introduced in 31.2.1.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       limit_description:
         description: Description of the system limit. Field introduced in 31.2.1.
