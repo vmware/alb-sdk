@@ -464,6 +464,8 @@ definitions:
             subnet:
                 description: "Subnet of the network to clone the traffic to. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/IpAddrPrefix'
+    ConfigPbAttributes:
+        type: object
     IpAddr:
         type: object
         required:

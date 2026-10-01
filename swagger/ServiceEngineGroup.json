@@ -1190,6 +1190,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ConsumerStats": {
             "type": "object",
             "properties": {
@@ -3582,8 +3585,7 @@
                     "format": "uint32"
                 },
                 "supervisor_group": {
-                    "description": "Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is read only and cannot be modified. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "readOnly": true,
+                    "description": "Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is a read-only field for external user. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {

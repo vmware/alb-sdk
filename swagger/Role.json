@@ -549,6 +549,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "Permission": {
             "type": "object",
             "required": [

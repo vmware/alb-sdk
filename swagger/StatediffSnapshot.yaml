@@ -28,12 +28,12 @@ securityDefinitions:
         description: basic authentication
 basePath: /api
 paths:
-    /statediffoperation:
+    /statediffsnapshot:
         get:
             tags:
                 - StatediffSnapshot
-            description: /statediffoperation
-            operationId: GET /statediffoperation
+            description: /statediffsnapshot
+            operationId: GET /statediffsnapshot
             consumes:
                 -   application/json
             produces:
@@ -99,57 +99,12 @@ paths:
                         $ref: "#/definitions/StatediffSnapshotApiResponse"
                 "401":
                     description: log in failed
-        post:
-            tags:
-                - StatediffSnapshot
-            description: /statediffoperation
-            operationId: POST /statediffoperation
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: StatediffSnapshot object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-                "401":
-                    description: log in failed
-    /statediffoperation/{uuid}:
+    /statediffsnapshot/{uuid}:
         get:
             tags:
                 - StatediffSnapshot
-            description: /statediffoperation/{uuid}/{uuid}
-            operationId: GET /statediffoperation/{uuid}
+            description: /statediffsnapshot/{uuid}/{uuid}
+            operationId: GET /statediffsnapshot/{uuid}
             consumes:
                 -   application/json
             produces:
@@ -202,120 +157,6 @@ paths:
                 -   name: join_subresources
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - StatediffSnapshot
-            description: /statediffoperation/{uuid}/{uuid}
-            operationId: PUT /statediffoperation/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: StatediffSnapshot object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - StatediffSnapshot
-            description: /statediffoperation/{uuid}/{uuid}
-            operationId: PATCH /statediffoperation/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: StatediffSnapshot object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/StatediffSnapshot"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
                     type: string
             security:
                 - basicAuth: []

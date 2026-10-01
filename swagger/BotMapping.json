@@ -730,6 +730,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "HdrMatch": {
             "type": "object",
             "required": [

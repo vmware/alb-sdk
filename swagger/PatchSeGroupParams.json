@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/upgrade": {
+        "/upgrade/upgrade": {
             "post": {
                 "tags": [
                     "PatchSeGroupParams"
                 ],
-                "description": "/upgrade",
-                "operationId": "POST /upgrade",
+                "description": "/upgrade/upgrade",
+                "operationId": "POST /upgrade/upgrade",
                 "consumes": [
                     "application/json"
                 ],

@@ -974,6 +974,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "HTTPStatusMatch": {
             "type": "object",
             "required": [

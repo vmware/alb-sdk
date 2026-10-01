@@ -454,6 +454,8 @@ paths:
 
 
 definitions:
+    ConfigPbAttributes:
+        type: object
     DiscoveredNetwork:
         type: object
         required:

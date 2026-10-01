@@ -435,6 +435,8 @@ definitions:
                     $ref: "#/definitions/BotIPReputationTypeMapping"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
     IPReputationTypeMapping:
         type: object
         required:

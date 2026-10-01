@@ -519,6 +519,8 @@ definitions:
             name:
                 description: "Name of the rule. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ConfigPbAttributes:
+        type: object
     HostHdrMatch:
         type: object
         required:

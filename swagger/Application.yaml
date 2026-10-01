@@ -426,3 +426,5 @@ definitions:
                     $ref: "#/definitions/Application"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object

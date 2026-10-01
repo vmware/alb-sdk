@@ -661,6 +661,9 @@
                 }
             }
         },
+        "AppLearningParams": {
+            "type": "object"
+        },
         "BotClassification": {
             "type": "object",
             "required": [
@@ -695,6 +698,9 @@
                     "type": "string"
                 }
             }
+        },
+        "ConfigPbAttributes": {
+            "type": "object"
         },
         "JsonParsingLimits": {
             "type": "object",

@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/upgrade/segroup/resume": {
+        "/upgrade/segroup/resume/upgrade": {
             "post": {
                 "tags": [
                     "ResumeSeGroupParams"
                 ],
-                "description": "/upgrade/segroup/resume",
-                "operationId": "POST /upgrade/segroup/resume",
+                "description": "/upgrade/segroup/resume/upgrade",
+                "operationId": "POST /upgrade/segroup/resume/upgrade",
                 "consumes": [
                     "application/json"
                 ],

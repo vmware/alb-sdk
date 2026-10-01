@@ -14,7 +14,6 @@ info:
     description: |
         Avi CertJwtStore object api
         ```
-        - show certjwtstore <key>
         ```
 
         API permission: PERMISSION_EXEMPT
@@ -99,51 +98,6 @@ paths:
                         $ref: "#/definitions/CertJwtStoreApiResponse"
                 "401":
                     description: log in failed
-        post:
-            tags:
-                - CertJwtStore
-            description: /certjwtstore
-            operationId: POST /certjwtstore
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   name: X-Avi-Tenant
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: CertJwtStore object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-                "401":
-                    description: log in failed
     /certjwtstore/{uuid}:
         get:
             tags:
@@ -202,120 +156,6 @@ paths:
                 -   name: join_subresources
                     in: query
                     description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        put:
-            tags:
-                - CertJwtStore
-            description: /certjwtstore/{uuid}/{uuid}
-            operationId: PUT /certjwtstore/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: CertJwtStore object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - CertJwtStore
-            description: /certjwtstore/{uuid}/{uuid}
-            operationId: PATCH /certjwtstore/{uuid}
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: query
-                    name: name
-                    description: object name
-                    required: false
-                    type: string
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: CertJwtStore object creation
-                    required: true
-                    schema:
-                        $ref: "#/definitions/CertJwtStore"
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
                     type: string
             security:
                 - basicAuth: []
@@ -387,6 +227,8 @@ definitions:
                     $ref: "#/definitions/CertJwtStore"
             next:
                 type: string
+    ConfigPbAttributes:
+        type: object
     TimeStamp:
         type: object
         required:

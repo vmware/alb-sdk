@@ -656,6 +656,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "GslbGeoDbEntry": {
             "type": "object",
             "properties": {

@@ -869,6 +869,9 @@
         }
     },
     "definitions": {
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "FailAction": {
             "type": "object",
             "required": [

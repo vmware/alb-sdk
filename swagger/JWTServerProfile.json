@@ -656,6 +656,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "ControllerInternalAuth": {
             "type": "object",
             "properties": {

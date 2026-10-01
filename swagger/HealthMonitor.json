@@ -656,6 +656,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "GslbHealthMonitorRuntime": {
             "type": "object",
             "properties": {

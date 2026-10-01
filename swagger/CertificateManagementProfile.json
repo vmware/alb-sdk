@@ -620,6 +620,9 @@
                 }
             }
         },
+        "ConfigPbAttributes": {
+            "type": "object"
+        },
         "CustomParams": {
             "type": "object",
             "required": [
