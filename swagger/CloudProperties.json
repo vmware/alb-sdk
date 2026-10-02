@@ -781,7 +781,7 @@
                     "default": true
                 },
                 "event_manager_api_rate_limit_per_min": {
-                    "description": "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. A value of 0 blocks all requests to this API. Allowed values are 1-1000. Special values are 0- blocks all requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"

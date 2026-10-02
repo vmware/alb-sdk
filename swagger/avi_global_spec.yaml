@@ -46326,94 +46326,6 @@ paths:
                 "404":
                     description: object not found
 
-    /securetoken-import:
-        post:
-            tags:
-                - SecureChannelToken
-            description: /securetoken-import
-            operationId: POST /securetoken-import
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   in: body
-                    name: body
-                    description: empty
-                    required: true
-                    schema:
-                        type: object
-                        additionalProperties:
-                            type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
-    /securetoken-generate:
-        get:
-            tags:
-                - SecureChannelToken
-            description: /securetoken-generate
-            operationId: GET /securetoken-generate
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
 
     /wafpolicypsmgroup:
         get:
@@ -54997,6 +54909,54 @@ paths:
                 "404":
                     description: object not found
 
+
+
+    /eventmanager/generateevent:
+        post:
+            tags:
+                - EventGenerateRequest
+            description: /eventmanager/generateevent
+            operationId: POST /eventmanager/generateevent
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: EventLog
+                    required: true
+                    schema:
+                        $ref: "#/definitions/EventLog"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
 
     /backup:
         get:
@@ -70340,8 +70300,16 @@ definitions:
     ApiConfigLimits:
         type: object
         properties:
+            num_api_paths:
+                description: "Maximum total number of API path objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             num_api_paths_per_policy:
                 description: "Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_api_schemas:
+                description: "Maximum total number of API schema objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_api_schemas_per_policy:
@@ -72696,7 +72664,7 @@ definitions:
         type: object
         properties:
             record_type:
-                description: "The record type in the DNS query. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "The record type in the DNS query. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             src_port:
                 description: "The source port for the DNS query. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -79706,7 +79674,7 @@ definitions:
                 description: "DNS policy rule name which resulted in a match. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             dns_qtype:
-                description: " Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             dns_request:
                 description: " Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -81542,7 +81510,7 @@ definitions:
                 type: boolean
                 default: True
             event_manager_api_rate_limit_per_min:
-                description: "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. Allowed values are 1-10000. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum number of POST /api/eventmanager/generateevent requests allowed per minute, across all event_id values. A value of 0 blocks all requests to this API. Allowed values are 1-1000. Special values are 0- blocks all requests. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 60
                 format: uint32
@@ -84220,7 +84188,7 @@ definitions:
                 type: integer
                 format: uint32
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_A"
     DnsLookupResult:
@@ -84471,7 +84439,7 @@ definitions:
                 description: "Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             query_type:
-                description: "DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -84554,7 +84522,7 @@ definitions:
                 items:
                     $ref: '#/definitions/DnsTxtRdata'
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             wildcard_match:
                 description: "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -84719,7 +84687,7 @@ definitions:
                 type: integer
                 format: uint32
             type:
-                description: "Type of resource record. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Type of resource record. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             vs_name:
                 description: "Virtual Service name - applicable only for Avi VS GSLB member. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -84884,7 +84852,7 @@ definitions:
                 type: integer
                 format: uint32
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     DnsRule:
         type: object
@@ -85191,7 +85159,7 @@ definitions:
                 type: integer
                 format: uint32
             record_type:
-                description: " Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             rsp:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -85873,7 +85841,7 @@ definitions:
                 items:
                     $ref: '#/definitions/DnsTxtRdata'
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -87032,6 +87000,12 @@ definitions:
             event_details_value:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    EventGenerateRequest:
+        type: object
+        properties:
+            event_log:
+                description: "The event log to be generated via the API. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/EventLog'
     EventGenParams:
         type: object
         properties:
@@ -91452,7 +91426,7 @@ definitions:
                 type: string
                 default: "RCODE_NO_ERROR"
             record_type:
-                description: "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_A"
             response_string:
@@ -105977,7 +105951,7 @@ definitions:
                 type: string
                 default: "default"
             verify_certificate:
-                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Flag is used to indicate whether TLS certificate verification be done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             vmc_mode:
@@ -128746,7 +128720,7 @@ definitions:
                 type: integer
                 format: int32
             limit:
-                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, SE_WAAP_MIN_VCPUS, SE_WAAP_MIN_MEMORY, SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY, NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS, NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, SE_WAAP_MIN_VCPUS, SE_WAAP_MIN_MEMORY, SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY, NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS, NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             limit_description:
                 description: "Description of the system limit. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -132813,7 +132787,7 @@ definitions:
                 description: "vCenter hostname or IP address. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             verify_certificate:
-                description: "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Flag is used to indicate whether TLS certificate verification be done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
     VCenterCredentials:

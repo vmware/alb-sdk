@@ -34,7 +34,7 @@ paths:
         get:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig
+            description: Get method to retrieve alert syslog configuration objects from the controller. Returns a list of syslog configurations that define where and how to send alert notifications via syslog protocol.
             operationId: GET /alertsyslogconfig
             consumes:
                 -   application/json
@@ -104,7 +104,7 @@ paths:
         post:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig
+            description: Post method to create an alert syslog configuration object on the controller. Create a new syslog notification configuration by specifying configuration name, list of syslog servers (each with IP/FQDN, port, UDP/TCP protocol), syslog format (SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED), optional TLS settings (tls_enable, ssl_key_and_certificate_uuid, pkiprofile_uuid for server validation), and optional sender_hostname for custom syslog message identification.
             operationId: POST /alertsyslogconfig
             consumes:
                 -   application/json
@@ -150,7 +150,7 @@ paths:
         get:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig/{uuid}/{uuid}
+            description: Get method to retrieve a specific alert syslog configuration object by its uuid. Returns complete syslog configuration including all server definitions, TLS settings, and format specifications.
             operationId: GET /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
@@ -219,7 +219,7 @@ paths:
         put:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig/{uuid}/{uuid}
+            description: Put method to update a specific alert syslog configuration object. Modify the syslog configuration including adding/removing/modifying syslog servers, changing syslog format, updating TLS/SSL settings, or modifying sender hostname.
             operationId: PUT /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
@@ -276,7 +276,7 @@ paths:
         patch:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig/{uuid}/{uuid}
+            description: Patch method to partially update a specific alert syslog configuration object. Update specific fields such as adding a new syslog server, enabling TLS, or changing the syslog format without replacing the entire configuration.
             operationId: PATCH /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
@@ -333,7 +333,7 @@ paths:
         delete:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig/{uuid}/{uuid}
+            description: Delete method to remove a specific alert syslog configuration object. Deletes the syslog configuration. Note ActionGroupConfigs referencing this syslog config will no longer send syslog notifications.
             operationId: DELETE /alertsyslogconfig/{uuid}
             consumes:
                 -   application/json
@@ -384,7 +384,7 @@ paths:
         post:
             tags:
                 - AlertSyslogConfig
-            description: /alertsyslogconfig/{uuid}/testsyslog
+            description: Post method to test syslog configuration by sending a test alert to the configured syslog server(s). Validates connectivity, authentication, and proper message delivery. Use this endpoint to verify syslog configuration is working correctly before associating it with action groups. Returns success/failure status and any connection or authentication errors encountered.
             operationId: POST /alertsyslogconfig/{uuid}/testsyslog
             consumes:
                 -   application/json

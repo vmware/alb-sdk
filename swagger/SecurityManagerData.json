@@ -31,7 +31,7 @@
                 "tags": [
                     "SecurityManagerData"
                 ],
-                "description": "/securitymanagerdata",
+                "description": "Get method to retrieve all security manager data objects from the controller. Security manager data stores WAF (Web Application Firewall) learning information and security-related analytics for virtual services. Contains application learning data including URI information, parameter hits, parameter types and sizes, and learning statistics across different applications protected by WAF policies. Used by the security manager to track and learn normal application behavior for positive security model generation.",
                 "operationId": "GET /securitymanagerdata",
                 "consumes": [
                     "application/json"
@@ -137,7 +137,7 @@
                 "tags": [
                     "SecurityManagerData"
                 ],
-                "description": "/securitymanagerdata/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific security manager data object by its uuid. Returns the complete learning data for a virtual service including application learning information with URI details, parameter hit counts, parameter type classifications, parameter size distributions, and learning progress across all applications (WAF policy combinations) associated with the virtual service.",
                 "operationId": "GET /securitymanagerdata/{uuid}",
                 "consumes": [
                     "application/json"

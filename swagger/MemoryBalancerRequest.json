@@ -31,7 +31,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier",
+                "description": "Get method to retrieve all memory balancer request objects from the controller. Memory balancer requests track the memory usage and operational state of controller processes, enabling dynamic memory management and process mode adjustments. Contains process information including current memory usage, memory limits, intimation counts, process mode (REGULAR, DEBUG, DEGRADED, STOP), memory usage trends, and threshold percentages. Used for monitoring and balancing memory consumption across controller processes.",
                 "operationId": "GET /memorybalancernotifier",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier",
+                "description": "Post method to create a new memory balancer request object to track a controller process's memory state",
                 "operationId": "POST /memorybalancernotifier",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific memory balancer request object by its uuid. Returns detailed information about a controller process including process ID, current memory usage, memory limits, process mode, memory trend (INCREASING, DECREASING, NEUTRAL), threshold percentage, intimation count, controller-wide memory usage, and timestamp of last update.",
                 "operationId": "GET /memorybalancernotifier/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier/{uuid}/{uuid}",
+                "description": "Put method to update an existing memory balancer request object with current process memory state and operational mode",
                 "operationId": "PUT /memorybalancernotifier/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier/{uuid}/{uuid}",
+                "description": "Patch method to partially update specific fields of a memory balancer request object",
                 "operationId": "PATCH /memorybalancernotifier/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "MemoryBalancerRequest"
                 ],
-                "description": "/memorybalancernotifier/{uuid}/{uuid}",
+                "description": "Delete method to remove a memory balancer request object from the controller",
                 "operationId": "DELETE /memorybalancernotifier/{uuid}",
                 "consumes": [
                     "application/json"
