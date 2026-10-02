@@ -14,16 +14,16 @@ import yaml
 import time
 import logging
 from copy import deepcopy
-from avi.sdk.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
-    AviCredentials
+from avi.sdk.avi_api import ApiSession, ObjectNotFound, APIError, \
+    avi_sdk_syslog_logger, AviCredentials
 from avi.sdk.csp_avi_api import CSPApiSession
 from avi.sdk.saml_avi_api import OneloginSAMLApiSession, OktaSAMLApiSession
 
 try:
-    from requests_toolbelt import MultipartEncoder
-    HAS_TOOLBELT = True
+    from avi.sdk.utils.multipart_encoder import MultipartEncoder
+    HAS_MULTIPART_ENCODER = True
 except ImportError:
-    HAS_TOOLBELT = False
+    HAS_MULTIPART_ENCODER = False
 
 if os.environ.get('AVI_LOG_HANDLER', '') != 'syslog':
     log = logging.getLogger(__name__)
@@ -34,6 +34,25 @@ else:
 
 class InvalidRefFormat(Exception):
     pass
+
+
+def handle_preflight_get_error(module, path, exc):
+    """
+    :param module: AnsibleModule, used to surface the warning
+    :param path: path that was queried, for the warning message
+    :param exc: the ObjectNotFound or APIError raised by rsp.json()
+    """
+    if isinstance(exc, ObjectNotFound):
+        return
+    rsp = exc.args[1] if len(exc.args) > 1 else None
+    if getattr(rsp, 'status_code', None) == 405:
+        module.warn(
+            "Pre-flight GET on path '%s' returned HTTP 405 (Method Not "
+            "Allowed); treating it as an action endpoint without GET "
+            "support and skipping the pre-flight existence check. Set "
+            "preflight_check: false to suppress this warning." % path)
+        return
+    raise exc
 
 
 class AviCheckModeResponse(object):
@@ -471,10 +490,10 @@ def avi_ansible_api(module, obj_type, sensitive_fields):
     upload_timeout = obj.pop('timeout', None) if is_fileObject_endpoint else None
 
     if is_fileObject_endpoint and state != 'absent':
-        if not HAS_TOOLBELT:
+        if not HAS_MULTIPART_ENCODER:
             return module.fail_json(
-                msg='requests_toolbelt is required for file uploads. '
-                    'Install it with: pip install requests_toolbelt')
+                msg='httpx2 is required for file uploads. '
+                    'Install it with: pip install httpx2')
         if file_path and not os.path.exists(file_path):
             return module.fail_json(msg='File not found: %s' % file_path)
 

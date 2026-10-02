@@ -16,15 +16,12 @@ setup(
     name='avisdk',
     version=AVI_PIP_VERSION,
     packages=find_packages(exclude=['*migrationtools*',
-                                    '*sdk.samples.autoscale*',
                                     '*sdk.test*'
                                    ]),
-    description='Avi python API SDK for Avi Controller REST API with samples'
-                ' and, utilities',
+    description='Avi python API SDK for Avi Controller REST API with utilities',
     url='https://github.com/vmware/alb-sdk',
     author='Avi Networks',
     author_email='avisdk@avinetworks.com',
-    scripts=['avi/sdk/samples/virtualservice_examples_api.py'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -37,7 +34,7 @@ setup(
     keywords='AVI ADC Loadbalancer automation datacenter SDK',
     license='Avi Networks',
     include_package_data=True,
-    install_requires=['requests', 'beautifulsoup4'],
+    install_requires=['requests', 'beautifulsoup4', 'httpx2'],
     package_data={'avi': ['*.cfg', '*.conf', '*.crt', '*.crl', '*.json',
                           '*.key', '*.pem', '*.xml', '*.yaml', '*.rst']},
 )
