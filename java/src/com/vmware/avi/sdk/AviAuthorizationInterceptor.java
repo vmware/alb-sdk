@@ -6,7 +6,6 @@ package com.vmware.avi.sdk;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.logging.Logger;
 
 import org.springframework.http.HttpHeaders;
@@ -32,7 +31,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 				&& ((headers.getContentType().toString().contains(MediaType.MULTIPART_FORM_DATA_VALUE.toString())))) {
 			return flag;
 		}        
-		if (headers.containsKey(key)) {
+		if (headers.containsHeader(key)) {
 			flag = true;
 		}
 		return flag;
@@ -69,7 +68,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 
 			response = execution.execute(request, body);
 
-			int responseCode = response.getRawStatusCode();
+			int responseCode = response.getStatusCode().value();
 			String requestUri = request.getURI().getPath();
 			if(responseCode == 200 && requestUri.contains("useraccount")){
 				LOGGER.info("Inside clearing the user session...");
@@ -92,7 +91,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 					Thread.sleep(this.aviCredentials.getRetryWaitTime() * 1000);
 					response = execution.execute(request, body);
 					LOGGER.info("Interceptor execution completed for retries");
-					if (Arrays.asList(419, 401).contains(response.getRawStatusCode())) {
+					if (Arrays.asList(419, 401).contains(response.getStatusCode().value())) {
 						numApiExecCount++;
 						continue;
 					} else {
