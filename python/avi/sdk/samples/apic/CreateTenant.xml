@@ -1,6 +1,0 @@
-<polUni>
-    <fvTenant name="$TENANT">
-        <fvCtx name="$PRIVATENETWORK"/>
-        <fvAp dn="uni/tn-$TENANT/ap-$APPPROFILE" name="$APPPROFILE"/>
-    </fvTenant>
-</polUni>

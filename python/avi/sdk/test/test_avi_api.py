@@ -5,13 +5,13 @@ import json
 import logging
 import unittest
 import pytest
-from requests_toolbelt import MultipartEncoder
 from avi.sdk.avi_api import (ApiSession, ObjectNotFound, APIError, ApiResponse,
                              avi_timedelta, sessionDict,
                              AviMultipartUploadError)
 from avi.sdk.utils.api_utils import ApiUtils
-from avi.sdk.samples.common import get_sample_ssl_params
-from avi.sdk.samples.clone_vs import AviClone
+from avi.sdk.utils.multipart_encoder import MultipartEncoder
+from avi.sdk.test.common import get_sample_ssl_params
+from avi.sdk.test.clone_vs import AviClone
 from requests.packages import urllib3
 from requests import Response
 from multiprocessing import Pool, Process
@@ -26,6 +26,7 @@ gSAMPLE_CONFIG = None
 api = None
 log = logging.getLogger(__name__)
 login_info = None
+
 
 urllib3.disable_warnings()
 gapi_version = '17.2.6'
@@ -167,9 +168,7 @@ class Test(unittest.TestCase):
         pool_ref = papi.get_obj_ref(resp.json())
         vsvip_ref = papi.get_obj_ref(vip_resp.json())
         cert, key, _, _ = get_sample_ssl_params \
-            (folder_path=os.path.abspath(
-                os.path.join(os.path.dirname(__file__), '..',
-                             'samples')) + os.sep)
+            (folder_path=os.path.abspath(os.path.dirname(__file__)) + os.sep)
         api_utils = ApiUtils(papi)
         try:
             resp = api_utils.import_ssl_certificate("ssl-vs-kc", key, cert)
