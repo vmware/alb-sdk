@@ -33,7 +33,7 @@ paths:
         get:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy
+            description: Get method to retrieve all security policy objects from the controller. Security policies define configuration for Distributed Denial of Service (DDoS) attack detection and mitigation, including DNS, TCP, and UDP protocol-based attack protections. Specifies operation mode (detection only or detection with mitigation), attack-specific thresholds and rules, references to network security policies and DNS policies for mitigation actions, and DNS amplification attack prevention settings. Used to protect virtual services from various network-layer and protocol-based attacks.
             operationId: GET /securitypolicy
             consumes:
                 -   application/json
@@ -103,7 +103,7 @@ paths:
         post:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy
+            description: Post method to create a new security policy object with DDoS detection and mitigation configuration
             operationId: POST /securitypolicy
             consumes:
                 -   application/json
@@ -149,7 +149,7 @@ paths:
         get:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy/{uuid}/{uuid}
+            description: Get method to retrieve a specific security policy object by its uuid. Returns the complete policy configuration including operation mode (DETECTION or MITIGATION), DNS attack settings, TCP attack settings, UDP attack settings, network security policy index for mitigation rules, DNS policy index for DNS-specific mitigations, DNS amplification deny ports configuration, and attack detection thresholds for the specified policy.
             operationId: GET /securitypolicy/{uuid}
             consumes:
                 -   application/json
@@ -218,7 +218,7 @@ paths:
         put:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy/{uuid}/{uuid}
+            description: Put method to update an existing security policy object with modified DDoS protection rules and settings
             operationId: PUT /securitypolicy/{uuid}
             consumes:
                 -   application/json
@@ -275,7 +275,7 @@ paths:
         patch:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy/{uuid}/{uuid}
+            description: Patch method to partially update specific fields of a security policy object
             operationId: PATCH /securitypolicy/{uuid}
             consumes:
                 -   application/json
@@ -332,7 +332,7 @@ paths:
         delete:
             tags:
                 - SecurityPolicy
-            description: /securitypolicy/{uuid}/{uuid}
+            description: Delete method to remove a security policy object from the controller
             operationId: DELETE /securitypolicy/{uuid}
             consumes:
                 -   application/json

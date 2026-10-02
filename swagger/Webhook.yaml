@@ -33,7 +33,7 @@ paths:
         get:
             tags:
                 - Webhook
-            description: /webhook
+            description: Get method to retrieve all webhook objects from the controller. Webhooks define HTTP callback endpoints that receive notifications about system events and state changes. Contains callback URL, optional verification token for security, and configuration for external integrations. Used by various features including pool group deployment policies, autoscaling events, alert notifications, and other automated workflows to send real-time updates to external systems via HTTP POST requests.
             operationId: GET /webhook
             consumes:
                 -   application/json
@@ -103,7 +103,7 @@ paths:
         post:
             tags:
                 - Webhook
-            description: /webhook
+            description: Post method to create a new webhook object with callback URL and verification token configuration
             operationId: POST /webhook
             consumes:
                 -   application/json
@@ -149,7 +149,7 @@ paths:
         get:
             tags:
                 - Webhook
-            description: /webhook/{uuid}/{uuid}
+            description: Get method to retrieve a specific webhook object by its uuid. Returns the complete webhook configuration including the callback URL endpoint, verification token (sent as query parameter for authentication), description, and tenant association for the specified webhook profile.
             operationId: GET /webhook/{uuid}
             consumes:
                 -   application/json
@@ -218,7 +218,7 @@ paths:
         put:
             tags:
                 - Webhook
-            description: /webhook/{uuid}/{uuid}
+            description: Put method to update an existing webhook object with modified callback URL or verification token
             operationId: PUT /webhook/{uuid}
             consumes:
                 -   application/json
@@ -275,7 +275,7 @@ paths:
         patch:
             tags:
                 - Webhook
-            description: /webhook/{uuid}/{uuid}
+            description: Patch method to partially update specific fields of a webhook object
             operationId: PATCH /webhook/{uuid}
             consumes:
                 -   application/json
@@ -332,7 +332,7 @@ paths:
         delete:
             tags:
                 - Webhook
-            description: /webhook/{uuid}/{uuid}
+            description: Delete method to remove a webhook object from the controller
             operationId: DELETE /webhook/{uuid}
             consumes:
                 -   application/json

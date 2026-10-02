@@ -31,7 +31,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile",
+                "description": "Get method to retrieve all analytics profile objects from the controller. Analytics profiles define settings for application performance monitoring including Apdex thresholds, response time tolerances, client and server log collection settings, metrics collection intervals, and analytics data retention policies. Used to configure how performance data is collected and analyzed for virtual services.",
                 "operationId": "GET /analyticsprofile",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile",
+                "description": "Post method to create a new analytics profile object on the controller with custom analytics and monitoring settings",
                 "operationId": "POST /analyticsprofile",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific analytics profile object by its uuid. Returns the complete configuration including Apdex response thresholds, client/server log settings, metrics collection parameters, and analytics policy settings for the specified profile.",
                 "operationId": "GET /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile/{uuid}/{uuid}",
+                "description": "Put method to update an existing analytics profile object with modified analytics and monitoring configuration",
                 "operationId": "PUT /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile/{uuid}/{uuid}",
+                "description": "Patch method to partially update specific fields of an analytics profile object",
                 "operationId": "PATCH /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "AnalyticsProfile"
                 ],
-                "description": "/analyticsprofile/{uuid}/{uuid}",
+                "description": "Delete method to remove an analytics profile object from the controller",
                 "operationId": "DELETE /analyticsprofile/{uuid}",
                 "consumes": [
                     "application/json"
