@@ -31,7 +31,7 @@
                 "tags": [
                     "LogControllerMapping"
                 ],
-                "description": "/logcontroller",
+                "description": "Get method to retrieve all log controller mapping objects from the controller. Log controller mappings define which controller node handles log collection and indexing for each virtual service. This enables distributed log management across controller cluster nodes, specifying the controller IP, metrics manager port, and whether the mapping is static or dynamic. Used to balance log processing load across the controller cluster.",
                 "operationId": "GET /logcontroller",
                 "consumes": [
                     "application/json"
@@ -137,7 +137,7 @@
                 "tags": [
                     "LogControllerMapping"
                 ],
-                "description": "/logcontroller/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific log controller mapping object by its uuid. Returns the mapping details including the virtual service UUID, assigned controller IP address, metrics manager port, previous controller assignment, static mapping flag, and node UUID for the specified mapping.",
                 "operationId": "GET /logcontroller/{uuid}",
                 "consumes": [
                     "application/json"

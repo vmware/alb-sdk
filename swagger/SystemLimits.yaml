@@ -206,8 +206,16 @@ definitions:
     ApiConfigLimits:
         type: object
         properties:
+            num_api_paths:
+                description: "Maximum total number of API path objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
             num_api_paths_per_policy:
                 description: "Maximum number of API path definitions (unique URL path patterns) that can be configured for a single API policy. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_api_schemas:
+                description: "Maximum total number of API schema objects allowed across the system. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_api_schemas_per_policy:

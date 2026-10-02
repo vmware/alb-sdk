@@ -31,7 +31,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig",
+                "description": "Get method to retrieve alert email configuration objects from the controller. Returns a list of email configurations that define where to send alert notifications via email.",
                 "operationId": "GET /alertemailconfig",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig",
+                "description": "Post method to create an alert email configuration object on the controller. Create a new email notification configuration by specifying configuration name, to_emails (comma-separated list of primary recipient email addresses), optional cc_emails (comma-separated list of CC recipient email addresses), and optional description. SMTP server settings must be configured separately in system configuration for emails to be sent.",
                 "operationId": "POST /alertemailconfig",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific alert email configuration object by its uuid. Returns complete email configuration including recipient lists and description.",
                 "operationId": "GET /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig/{uuid}/{uuid}",
+                "description": "Put method to update a specific alert email configuration object. Modify the email configuration including updating recipient email addresses (to_emails), modifying CC list (cc_emails), or changing the description.",
                 "operationId": "PUT /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig/{uuid}/{uuid}",
+                "description": "Patch method to partially update a specific alert email configuration object. Update specific fields such as adding new recipients or modifying the CC list without replacing the entire configuration.",
                 "operationId": "PATCH /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig/{uuid}/{uuid}",
+                "description": "Delete method to remove a specific alert email configuration object. Deletes the email configuration. Note ActionGroupConfigs referencing this email config will no longer send email notifications.",
                 "operationId": "DELETE /alertemailconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -552,7 +552,7 @@
                 "tags": [
                     "AlertEmailConfig"
                 ],
-                "description": "/alertemailconfig/{uuid}/testemail",
+                "description": "Post method to test email configuration by sending a test alert email to the configured recipients (both to_emails and cc_emails). Validates SMTP connectivity and proper email delivery. Use this endpoint to verify email configuration is working correctly before associating it with action groups. Returns success/failure status and any SMTP errors encountered.",
                 "operationId": "POST /alertemailconfig/{uuid}/testemail",
                 "consumes": [
                     "application/json"

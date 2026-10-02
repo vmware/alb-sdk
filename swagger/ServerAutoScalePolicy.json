@@ -31,7 +31,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy",
+                "description": "Get method to retrieve all server autoscale policy objects from the controller. Server autoscale policies define rules for automatically scaling pool servers based on load and capacity metrics. Supports intelligent autoscaling that compares pool load against estimated server capacity, with configurable scale-out and scale-in margins, minimum and maximum pool sizes, adjustment step sizes, cooldown periods, and scale-in/out triggers based on various metrics. Used to automatically adjust backend server capacity in response to traffic demands.",
                 "operationId": "GET /serverautoscalepolicy",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy",
+                "description": "Post method to create a new server autoscale policy object with intelligent or metric-based autoscaling rules",
                 "operationId": "POST /serverautoscalepolicy",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific server autoscale policy object by its uuid. Returns the complete policy configuration including intelligent autoscale settings, scale-out and scale-in margins, minimum and maximum server counts, maximum adjustment steps, cooldown periods, scale-in and scale-out triggers with metric thresholds, scheduled scaling configurations, and alerting parameters for autoscale events.",
                 "operationId": "GET /serverautoscalepolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy/{uuid}/{uuid}",
+                "description": "Put method to update an existing server autoscale policy object with modified autoscaling rules and thresholds",
                 "operationId": "PUT /serverautoscalepolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy/{uuid}/{uuid}",
+                "description": "Patch method to partially update specific fields of a server autoscale policy object",
                 "operationId": "PATCH /serverautoscalepolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "ServerAutoScalePolicy"
                 ],
-                "description": "/serverautoscalepolicy/{uuid}/{uuid}",
+                "description": "Delete method to remove a server autoscale policy object from the controller",
                 "operationId": "DELETE /serverautoscalepolicy/{uuid}",
                 "consumes": [
                     "application/json"

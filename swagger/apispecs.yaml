@@ -477,17 +477,18 @@ info:
     \ object api\n```\n- show localworkerfdsversion\n```\n\nAPI permission: PERMISSION_GSLB\n\
     Avi PatchSeGroupParams object api\n```\n- patch segroup\n```\n\nAPI permission:\
     \ PERMISSION_UPGRADE_OPS\nAvi GslbHSMRuntime object api\n```\n- show gslbhsm <key>\n\
-    ```\n\nAPI permission: PERMISSION_GSLB\nAvi GslbSiteOps object api\n```\n- gslb\
-    \ purge\n- gslb changeleader\n- gslb changeleader force\n- gslb changeleader candidates\n\
-    - gslb changeleader runtime\n- gslb maintenancemode\n- gslb resync\n```\n\nAPI\
-    \ permission: PERMISSION_GSLBSITEOPS\nAvi CertJwtStore object api\n```\n```\n\n\
-    API permission: PERMISSION_EXEMPT\nAvi ApiSchema object api\n```\n- configure\
-    \ apischema <key>\n- show apischema <key>\n```\n\nAPI permission: PERMISSION_APISCHEMA\n\
-    Avi StatediffOperation object api\n```\n- show statediff\n- delete statediff <key>\n\
-    ```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi Network object api\n```\n- configure\
-    \ network <key>\n- show network <key>\n```\n\nAPI permission: PERMISSION_NETWORK\n\
-    Avi RollbackSeGroupParams object api\n```\n- rollback segroup\n```\n\nAPI permission:\
-    \ PERMISSION_UPGRADE_OPS\n"
+    ```\n\nAPI permission: PERMISSION_GSLB\nAvi EventGenerateRequest object api\n\
+    ```\n- eventmanager generateevent\n```\n\nAPI permission: PERMISSION_INTERNAL\n\
+    Avi GslbSiteOps object api\n```\n- gslb purge\n- gslb changeleader\n- gslb changeleader\
+    \ force\n- gslb changeleader candidates\n- gslb changeleader runtime\n- gslb maintenancemode\n\
+    - gslb resync\n```\n\nAPI permission: PERMISSION_GSLBSITEOPS\nAvi CertJwtStore\
+    \ object api\n```\n```\n\nAPI permission: PERMISSION_EXEMPT\nAvi ApiSchema object\
+    \ api\n```\n- configure apischema <key>\n- show apischema <key>\n```\n\nAPI permission:\
+    \ PERMISSION_APISCHEMA\nAvi StatediffOperation object api\n```\n- show statediff\n\
+    - delete statediff <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi Network\
+    \ object api\n```\n- configure network <key>\n- show network <key>\n```\n\nAPI\
+    \ permission: PERMISSION_NETWORK\nAvi RollbackSeGroupParams object api\n```\n\
+    - rollback segroup\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\n"
 tags:
 - name: VIDCInfo
   description: 'Avi VIDCInfo object api
@@ -3794,6 +3795,19 @@ tags:
 
 
     API permission: PERMISSION_GSLB
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: EventGenerateRequest
+  description: 'Avi EventGenerateRequest object api
+
+    ```
+
+    - eventmanager generateevent
+
+    ```
+
+
+    API permission: PERMISSION_INTERNAL
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: GslbSiteOps
@@ -9428,106 +9442,6 @@ paths:
           description: log in failed
         '404':
           description: object not found
-  /securetoken-import:
-    post:
-      tags:
-      - SecureChannelToken
-      description: /securetoken-import
-      operationId: POST /securetoken-import
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: empty
-        required: true
-        schema:
-          type: object
-          additionalProperties:
-            type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-  /securetoken-generate:
-    get:
-      tags:
-      - SecureChannelToken
-      description: /securetoken-generate
-      operationId: GET /securetoken-generate
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
   /wafpolicy:
     get:
       tags:
@@ -11504,7 +11418,13 @@ paths:
     get:
       tags:
       - Webhook
-      description: /webhook
+      description: Get method to retrieve all webhook objects from the controller.
+        Webhooks define HTTP callback endpoints that receive notifications about system
+        events and state changes. Contains callback URL, optional verification token
+        for security, and configuration for external integrations. Used by various
+        features including pool group deployment policies, autoscaling events, alert
+        notifications, and other automated workflows to send real-time updates to
+        external systems via HTTP POST requests.
       operationId: GET /webhook
       consumes:
       - application/json
@@ -11588,7 +11508,8 @@ paths:
     post:
       tags:
       - Webhook
-      description: /webhook
+      description: Post method to create a new webhook object with callback URL and
+        verification token configuration
       operationId: POST /webhook
       consumes:
       - application/json
@@ -11640,7 +11561,10 @@ paths:
     get:
       tags:
       - Webhook
-      description: /webhook/{uuid}/{uuid}
+      description: Get method to retrieve a specific webhook object by its uuid. Returns
+        the complete webhook configuration including the callback URL endpoint, verification
+        token (sent as query parameter for authentication), description, and tenant
+        association for the specified webhook profile.
       operationId: GET /webhook/{uuid}
       consumes:
       - application/json
@@ -11719,7 +11643,8 @@ paths:
     put:
       tags:
       - Webhook
-      description: /webhook/{uuid}/{uuid}
+      description: Put method to update an existing webhook object with modified callback
+        URL or verification token
       operationId: PUT /webhook/{uuid}
       consumes:
       - application/json
@@ -11782,7 +11707,7 @@ paths:
     patch:
       tags:
       - Webhook
-      description: /webhook/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of a webhook object
       operationId: PATCH /webhook/{uuid}
       consumes:
       - application/json
@@ -11845,7 +11770,7 @@ paths:
     delete:
       tags:
       - Webhook
-      description: /webhook/{uuid}/{uuid}
+      description: Delete method to remove a webhook object from the controller
       operationId: DELETE /webhook/{uuid}
       consumes:
       - application/json
@@ -15168,7 +15093,7 @@ paths:
     get:
       tags:
       - Cloud
-      description: /cloud
+      description: Get method to get the object from the controller
       operationId: GET /cloud
       consumes:
       - application/json
@@ -15252,7 +15177,7 @@ paths:
     post:
       tags:
       - Cloud
-      description: /cloud
+      description: Post method to create the cloud object on the controller
       operationId: POST /cloud
       consumes:
       - application/json
@@ -15304,7 +15229,7 @@ paths:
     get:
       tags:
       - Cloud
-      description: /cloud/{uuid}/{uuid}
+      description: Get method to get the specific cloud object by its uuid
       operationId: GET /cloud/{uuid}
       consumes:
       - application/json
@@ -15383,7 +15308,7 @@ paths:
     put:
       tags:
       - Cloud
-      description: /cloud/{uuid}/{uuid}
+      description: Put method to update the cloud object
       operationId: PUT /cloud/{uuid}
       consumes:
       - application/json
@@ -15619,7 +15544,7 @@ paths:
     get:
       tags:
       - Cloud
-      description: /cloud/{uuid}/internals/
+      description: Get method to get the specific cloud object using cloud/{uuid}/internals/
       operationId: GET /cloud/{uuid}/internals/
       consumes:
       - application/json
@@ -15785,7 +15710,7 @@ paths:
     patch:
       tags:
       - Cloud
-      description: /cloud/{uuid}/gc/
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
       operationId: PATCH /cloud/{uuid}/gc/
       consumes:
       - application/json
@@ -16103,7 +16028,7 @@ paths:
     get:
       tags:
       - Cloud
-      description: /cloud/{uuid}/placement/ineligible/
+      description: Get method to get the specific cloud object using cloud/{uuid}/placement/ineligible/
       operationId: GET /cloud/{uuid}/placement/ineligible/
       consumes:
       - application/json
@@ -18141,7 +18066,14 @@ paths:
     get:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy
+      description: Get method to retrieve all server autoscale policy objects from
+        the controller. Server autoscale policies define rules for automatically scaling
+        pool servers based on load and capacity metrics. Supports intelligent autoscaling
+        that compares pool load against estimated server capacity, with configurable
+        scale-out and scale-in margins, minimum and maximum pool sizes, adjustment
+        step sizes, cooldown periods, and scale-in/out triggers based on various metrics.
+        Used to automatically adjust backend server capacity in response to traffic
+        demands.
       operationId: GET /serverautoscalepolicy
       consumes:
       - application/json
@@ -18225,7 +18157,8 @@ paths:
     post:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy
+      description: Post method to create a new server autoscale policy object with
+        intelligent or metric-based autoscaling rules
       operationId: POST /serverautoscalepolicy
       consumes:
       - application/json
@@ -18277,7 +18210,12 @@ paths:
     get:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy/{uuid}/{uuid}
+      description: Get method to retrieve a specific server autoscale policy object
+        by its uuid. Returns the complete policy configuration including intelligent
+        autoscale settings, scale-out and scale-in margins, minimum and maximum server
+        counts, maximum adjustment steps, cooldown periods, scale-in and scale-out
+        triggers with metric thresholds, scheduled scaling configurations, and alerting
+        parameters for autoscale events.
       operationId: GET /serverautoscalepolicy/{uuid}
       consumes:
       - application/json
@@ -18356,7 +18294,8 @@ paths:
     put:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy/{uuid}/{uuid}
+      description: Put method to update an existing server autoscale policy object
+        with modified autoscaling rules and thresholds
       operationId: PUT /serverautoscalepolicy/{uuid}
       consumes:
       - application/json
@@ -18419,7 +18358,8 @@ paths:
     patch:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of a server autoscale
+        policy object
       operationId: PATCH /serverautoscalepolicy/{uuid}
       consumes:
       - application/json
@@ -18482,7 +18422,8 @@ paths:
     delete:
       tags:
       - ServerAutoScalePolicy
-      description: /serverautoscalepolicy/{uuid}/{uuid}
+      description: Delete method to remove a server autoscale policy object from the
+        controller
       operationId: DELETE /serverautoscalepolicy/{uuid}
       consumes:
       - application/json
@@ -18538,7 +18479,12 @@ paths:
     get:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig
+      description: Get method to retrieve all autoscale launch configuration objects
+        from the controller. Launch configurations define the parameters for launching
+        new server instances during autoscale operations, including image IDs (AMI
+        for AWS, VM ID for OpenStack), instance types, network settings, and cloud-specific
+        configurations. These are used by ServerAutoScalePolicy to orchestrate pool
+        server creation and deletion.
       operationId: GET /autoscalelaunchconfig
       consumes:
       - application/json
@@ -18622,7 +18568,8 @@ paths:
     post:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig
+      description: Post method to create a new autoscale launch configuration object
+        with cloud-specific instance launch parameters
       operationId: POST /autoscalelaunchconfig
       consumes:
       - application/json
@@ -18674,7 +18621,10 @@ paths:
     get:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific autoscale launch configuration
+        object by its uuid. Returns the complete configuration including image ID,
+        cloud-specific settings (OpenStack or Mesos), external autoscaling group usage
+        flag, and other launch parameters for the specified configuration.
       operationId: GET /autoscalelaunchconfig/{uuid}
       consumes:
       - application/json
@@ -18753,7 +18703,8 @@ paths:
     put:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig/{uuid}/{uuid}
+      description: Put method to update an existing autoscale launch configuration
+        object with modified instance launch parameters
       operationId: PUT /autoscalelaunchconfig/{uuid}
       consumes:
       - application/json
@@ -18816,7 +18767,8 @@ paths:
     patch:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of an autoscale
+        launch configuration object
       operationId: PATCH /autoscalelaunchconfig/{uuid}
       consumes:
       - application/json
@@ -18879,7 +18831,8 @@ paths:
     delete:
       tags:
       - AutoScaleLaunchConfig
-      description: /autoscalelaunchconfig/{uuid}/{uuid}
+      description: Delete method to remove an autoscale launch configuration object
+        from the controller
       operationId: DELETE /autoscalelaunchconfig/{uuid}
       consumes:
       - application/json
@@ -19417,7 +19370,12 @@ paths:
     get:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile
+      description: Get method to retrieve all analytics profile objects from the controller.
+        Analytics profiles define settings for application performance monitoring
+        including Apdex thresholds, response time tolerances, client and server log
+        collection settings, metrics collection intervals, and analytics data retention
+        policies. Used to configure how performance data is collected and analyzed
+        for virtual services.
       operationId: GET /analyticsprofile
       consumes:
       - application/json
@@ -19501,7 +19459,8 @@ paths:
     post:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile
+      description: Post method to create a new analytics profile object on the controller
+        with custom analytics and monitoring settings
       operationId: POST /analyticsprofile
       consumes:
       - application/json
@@ -19553,7 +19512,10 @@ paths:
     get:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile/{uuid}/{uuid}
+      description: Get method to retrieve a specific analytics profile object by its
+        uuid. Returns the complete configuration including Apdex response thresholds,
+        client/server log settings, metrics collection parameters, and analytics policy
+        settings for the specified profile.
       operationId: GET /analyticsprofile/{uuid}
       consumes:
       - application/json
@@ -19632,7 +19594,8 @@ paths:
     put:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile/{uuid}/{uuid}
+      description: Put method to update an existing analytics profile object with
+        modified analytics and monitoring configuration
       operationId: PUT /analyticsprofile/{uuid}
       consumes:
       - application/json
@@ -19695,7 +19658,8 @@ paths:
     patch:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of an analytics
+        profile object
       operationId: PATCH /analyticsprofile/{uuid}
       consumes:
       - application/json
@@ -19758,7 +19722,7 @@ paths:
     delete:
       tags:
       - AnalyticsProfile
-      description: /analyticsprofile/{uuid}/{uuid}
+      description: Delete method to remove an analytics profile object from the controller
       operationId: DELETE /analyticsprofile/{uuid}
       consumes:
       - application/json
@@ -35609,7 +35573,9 @@ paths:
     get:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile
+      description: Get method to retrieve SNMP trap profile objects from the controller.
+        Returns a list of SNMP trap profiles that define where and how to send alert
+        notifications via SNMP traps to Network Management Systems.
       operationId: GET /snmptrapprofile
       consumes:
       - application/json
@@ -35693,7 +35659,14 @@ paths:
     post:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile
+      description: Post method to create an SNMP trap profile object on the controller.
+        Create a new SNMP trap notification configuration by specifying profile name,
+        list of trap_servers (each containing IP address/FQDN, port - default 162,
+        SNMP version - SNMP_VER2 or SNMP_VER3). For SNMP v2c specify community string
+        for authentication. For SNMP v3 specify user credentials including username,
+        authentication protocol (MD5/SHA), authentication passphrase, privacy protocol
+        (DES/AES), and privacy passphrase. The profile is referenced by ActionGroupConfig
+        to send alerts as SNMP traps.
       operationId: POST /snmptrapprofile
       consumes:
       - application/json
@@ -35745,7 +35718,9 @@ paths:
     get:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile/{uuid}/{uuid}
+      description: Get method to retrieve a specific SNMP trap profile object by its
+        uuid. Returns complete SNMP trap configuration including all trap server definitions,
+        version settings, and authentication details.
       operationId: GET /snmptrapprofile/{uuid}
       consumes:
       - application/json
@@ -35824,7 +35799,10 @@ paths:
     put:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile/{uuid}/{uuid}
+      description: Put method to update a specific SNMP trap profile object. Modify
+        the SNMP trap profile including adding/removing/modifying trap servers, changing
+        SNMP version, updating community strings (v2c), or modifying authentication/privacy
+        settings (v3). Changes affect all ActionGroupConfigs using this profile.
       operationId: PUT /snmptrapprofile/{uuid}
       consumes:
       - application/json
@@ -35887,7 +35865,10 @@ paths:
     patch:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile/{uuid}/{uuid}
+      description: Patch method to partially update a specific SNMP trap profile object.
+        Update specific fields such as adding a new trap server, changing authentication
+        credentials, or modifying specific server settings without replacing the entire
+        configuration.
       operationId: PATCH /snmptrapprofile/{uuid}
       consumes:
       - application/json
@@ -35950,7 +35931,9 @@ paths:
     delete:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile/{uuid}/{uuid}
+      description: Delete method to remove a specific SNMP trap profile object. Deletes
+        the SNMP trap profile. Note ActionGroupConfigs referencing this profile will
+        no longer send SNMP trap notifications.
       operationId: DELETE /snmptrapprofile/{uuid}
       consumes:
       - application/json
@@ -36006,7 +35989,12 @@ paths:
     post:
       tags:
       - SnmpTrapProfile
-      description: /snmptrapprofile/{uuid}/testsnmptrap
+      description: Post method to test SNMP trap configuration by sending a test alert
+        to all configured SNMP trap receivers. Validates network connectivity, authentication
+        (community string or v3 credentials), and proper trap delivery to each trap
+        server. Use this endpoint to verify SNMP trap configuration is working correctly
+        before associating it with action groups. Returns success/failure status for
+        each trap server and any connection, authentication, or delivery errors encountered.
       operationId: POST /snmptrapprofile/{uuid}/testsnmptrap
       consumes:
       - application/json
@@ -57391,7 +57379,14 @@ paths:
     get:
       tags:
       - SecurityPolicy
-      description: /securitypolicy
+      description: Get method to retrieve all security policy objects from the controller.
+        Security policies define configuration for Distributed Denial of Service (DDoS)
+        attack detection and mitigation, including DNS, TCP, and UDP protocol-based
+        attack protections. Specifies operation mode (detection only or detection
+        with mitigation), attack-specific thresholds and rules, references to network
+        security policies and DNS policies for mitigation actions, and DNS amplification
+        attack prevention settings. Used to protect virtual services from various
+        network-layer and protocol-based attacks.
       operationId: GET /securitypolicy
       consumes:
       - application/json
@@ -57475,7 +57470,8 @@ paths:
     post:
       tags:
       - SecurityPolicy
-      description: /securitypolicy
+      description: Post method to create a new security policy object with DDoS detection
+        and mitigation configuration
       operationId: POST /securitypolicy
       consumes:
       - application/json
@@ -57527,7 +57523,12 @@ paths:
     get:
       tags:
       - SecurityPolicy
-      description: /securitypolicy/{uuid}/{uuid}
+      description: Get method to retrieve a specific security policy object by its
+        uuid. Returns the complete policy configuration including operation mode (DETECTION
+        or MITIGATION), DNS attack settings, TCP attack settings, UDP attack settings,
+        network security policy index for mitigation rules, DNS policy index for DNS-specific
+        mitigations, DNS amplification deny ports configuration, and attack detection
+        thresholds for the specified policy.
       operationId: GET /securitypolicy/{uuid}
       consumes:
       - application/json
@@ -57606,7 +57607,8 @@ paths:
     put:
       tags:
       - SecurityPolicy
-      description: /securitypolicy/{uuid}/{uuid}
+      description: Put method to update an existing security policy object with modified
+        DDoS protection rules and settings
       operationId: PUT /securitypolicy/{uuid}
       consumes:
       - application/json
@@ -57669,7 +57671,8 @@ paths:
     patch:
       tags:
       - SecurityPolicy
-      description: /securitypolicy/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of a security
+        policy object
       operationId: PATCH /securitypolicy/{uuid}
       consumes:
       - application/json
@@ -57732,7 +57735,7 @@ paths:
     delete:
       tags:
       - SecurityPolicy
-      description: /securitypolicy/{uuid}/{uuid}
+      description: Delete method to remove a security policy object from the controller
       operationId: DELETE /securitypolicy/{uuid}
       consumes:
       - application/json
@@ -62644,7 +62647,12 @@ paths:
     get:
       tags:
       - LogControllerMapping
-      description: /logcontroller
+      description: Get method to retrieve all log controller mapping objects from
+        the controller. Log controller mappings define which controller node handles
+        log collection and indexing for each virtual service. This enables distributed
+        log management across controller cluster nodes, specifying the controller
+        IP, metrics manager port, and whether the mapping is static or dynamic. Used
+        to balance log processing load across the controller cluster.
       operationId: GET /logcontroller
       consumes:
       - application/json
@@ -62729,7 +62737,10 @@ paths:
     get:
       tags:
       - LogControllerMapping
-      description: /logcontroller/{uuid}/{uuid}
+      description: Get method to retrieve a specific log controller mapping object
+        by its uuid. Returns the mapping details including the virtual service UUID,
+        assigned controller IP address, metrics manager port, previous controller
+        assignment, static mapping flag, and node UUID for the specified mapping.
       operationId: GET /logcontroller/{uuid}
       consumes:
       - application/json
@@ -63371,7 +63382,13 @@ paths:
     get:
       tags:
       - SecurityManagerData
-      description: /securitymanagerdata
+      description: Get method to retrieve all security manager data objects from the
+        controller. Security manager data stores WAF (Web Application Firewall) learning
+        information and security-related analytics for virtual services. Contains
+        application learning data including URI information, parameter hits, parameter
+        types and sizes, and learning statistics across different applications protected
+        by WAF policies. Used by the security manager to track and learn normal application
+        behavior for positive security model generation.
       operationId: GET /securitymanagerdata
       consumes:
       - application/json
@@ -63456,7 +63473,12 @@ paths:
     get:
       tags:
       - SecurityManagerData
-      description: /securitymanagerdata/{uuid}/{uuid}
+      description: Get method to retrieve a specific security manager data object
+        by its uuid. Returns the complete learning data for a virtual service including
+        application learning information with URI details, parameter hit counts, parameter
+        type classifications, parameter size distributions, and learning progress
+        across all applications (WAF policy combinations) associated with the virtual
+        service.
       operationId: GET /securitymanagerdata/{uuid}
       consumes:
       - application/json
@@ -64892,7 +64914,9 @@ paths:
     get:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig
+      description: Get method to retrieve alert syslog configuration objects from
+        the controller. Returns a list of syslog configurations that define where
+        and how to send alert notifications via syslog protocol.
       operationId: GET /alertsyslogconfig
       consumes:
       - application/json
@@ -64976,7 +65000,13 @@ paths:
     post:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig
+      description: Post method to create an alert syslog configuration object on the
+        controller. Create a new syslog notification configuration by specifying configuration
+        name, list of syslog servers (each with IP/FQDN, port, UDP/TCP protocol),
+        syslog format (SYSLOG_LEGACY, SYSLOG_RFC5424, SYSLOG_JSON, SYSLOG_RFC5425_ENHANCED),
+        optional TLS settings (tls_enable, ssl_key_and_certificate_uuid, pkiprofile_uuid
+        for server validation), and optional sender_hostname for custom syslog message
+        identification.
       operationId: POST /alertsyslogconfig
       consumes:
       - application/json
@@ -65028,7 +65058,9 @@ paths:
     get:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert syslog configuration object
+        by its uuid. Returns complete syslog configuration including all server definitions,
+        TLS settings, and format specifications.
       operationId: GET /alertsyslogconfig/{uuid}
       consumes:
       - application/json
@@ -65107,7 +65139,10 @@ paths:
     put:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig/{uuid}/{uuid}
+      description: Put method to update a specific alert syslog configuration object.
+        Modify the syslog configuration including adding/removing/modifying syslog
+        servers, changing syslog format, updating TLS/SSL settings, or modifying sender
+        hostname.
       operationId: PUT /alertsyslogconfig/{uuid}
       consumes:
       - application/json
@@ -65170,7 +65205,9 @@ paths:
     patch:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig/{uuid}/{uuid}
+      description: Patch method to partially update a specific alert syslog configuration
+        object. Update specific fields such as adding a new syslog server, enabling
+        TLS, or changing the syslog format without replacing the entire configuration.
       operationId: PATCH /alertsyslogconfig/{uuid}
       consumes:
       - application/json
@@ -65233,7 +65270,9 @@ paths:
     delete:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig/{uuid}/{uuid}
+      description: Delete method to remove a specific alert syslog configuration object.
+        Deletes the syslog configuration. Note ActionGroupConfigs referencing this
+        syslog config will no longer send syslog notifications.
       operationId: DELETE /alertsyslogconfig/{uuid}
       consumes:
       - application/json
@@ -65289,7 +65328,11 @@ paths:
     post:
       tags:
       - AlertSyslogConfig
-      description: /alertsyslogconfig/{uuid}/testsyslog
+      description: Post method to test syslog configuration by sending a test alert
+        to the configured syslog server(s). Validates connectivity, authentication,
+        and proper message delivery. Use this endpoint to verify syslog configuration
+        is working correctly before associating it with action groups. Returns success/failure
+        status and any connection or authentication errors encountered.
       operationId: POST /alertsyslogconfig/{uuid}/testsyslog
       consumes:
       - application/json
@@ -65348,7 +65391,9 @@ paths:
     get:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig
+      description: Get method to retrieve alert email configuration objects from the
+        controller. Returns a list of email configurations that define where to send
+        alert notifications via email.
       operationId: GET /alertemailconfig
       consumes:
       - application/json
@@ -65432,7 +65477,12 @@ paths:
     post:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig
+      description: Post method to create an alert email configuration object on the
+        controller. Create a new email notification configuration by specifying configuration
+        name, to_emails (comma-separated list of primary recipient email addresses),
+        optional cc_emails (comma-separated list of CC recipient email addresses),
+        and optional description. SMTP server settings must be configured separately
+        in system configuration for emails to be sent.
       operationId: POST /alertemailconfig
       consumes:
       - application/json
@@ -65484,7 +65534,9 @@ paths:
     get:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert email configuration object
+        by its uuid. Returns complete email configuration including recipient lists
+        and description.
       operationId: GET /alertemailconfig/{uuid}
       consumes:
       - application/json
@@ -65563,7 +65615,9 @@ paths:
     put:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig/{uuid}/{uuid}
+      description: Put method to update a specific alert email configuration object.
+        Modify the email configuration including updating recipient email addresses
+        (to_emails), modifying CC list (cc_emails), or changing the description.
       operationId: PUT /alertemailconfig/{uuid}
       consumes:
       - application/json
@@ -65626,7 +65680,9 @@ paths:
     patch:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig/{uuid}/{uuid}
+      description: Patch method to partially update a specific alert email configuration
+        object. Update specific fields such as adding new recipients or modifying
+        the CC list without replacing the entire configuration.
       operationId: PATCH /alertemailconfig/{uuid}
       consumes:
       - application/json
@@ -65689,7 +65745,9 @@ paths:
     delete:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig/{uuid}/{uuid}
+      description: Delete method to remove a specific alert email configuration object.
+        Deletes the email configuration. Note ActionGroupConfigs referencing this
+        email config will no longer send email notifications.
       operationId: DELETE /alertemailconfig/{uuid}
       consumes:
       - application/json
@@ -65745,7 +65803,11 @@ paths:
     post:
       tags:
       - AlertEmailConfig
-      description: /alertemailconfig/{uuid}/testemail
+      description: Post method to test email configuration by sending a test alert
+        email to the configured recipients (both to_emails and cc_emails). Validates
+        SMTP connectivity and proper email delivery. Use this endpoint to verify email
+        configuration is working correctly before associating it with action groups.
+        Returns success/failure status and any SMTP errors encountered.
       operationId: POST /alertemailconfig/{uuid}/testemail
       consumes:
       - application/json
@@ -65804,7 +65866,9 @@ paths:
     get:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig
+      description: Get method to retrieve alert script configuration objects from
+        the controller. Returns a list of control script configurations that define
+        custom scripts to execute when alerts are triggered.
       operationId: GET /alertscriptconfig
       consumes:
       - application/json
@@ -65888,7 +65952,13 @@ paths:
     post:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig
+      description: Post method to create an alert script configuration object on the
+        controller. Create a new alert action script by specifying script name, action_script
+        (the script code to execute - can be Python, shell script, etc.), optional
+        timeout (maximum execution time in seconds), and optional description. The
+        script receives alert information as input and can perform custom actions
+        like remediation, integration with external systems, or automated responses.
+        Refer to kb.avinetworks.com for script development guidelines.
       operationId: POST /alertscriptconfig
       consumes:
       - application/json
@@ -65940,7 +66010,9 @@ paths:
     get:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert script configuration object
+        by its uuid. Returns complete script configuration including the script code,
+        timeout settings, and metadata about last editor.
       operationId: GET /alertscriptconfig/{uuid}
       consumes:
       - application/json
@@ -66019,7 +66091,10 @@ paths:
     put:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig/{uuid}/{uuid}
+      description: Put method to update a specific alert script configuration object.
+        Modify the script configuration including updating the script code (action_script),
+        changing timeout value, or modifying the description. Changes take effect
+        for subsequent alert executions.
       operationId: PUT /alertscriptconfig/{uuid}
       consumes:
       - application/json
@@ -66082,7 +66157,9 @@ paths:
     patch:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig/{uuid}/{uuid}
+      description: Patch method to partially update a specific alert script configuration
+        object. Update specific fields such as modifying the script code or timeout
+        value without replacing the entire configuration.
       operationId: PATCH /alertscriptconfig/{uuid}
       consumes:
       - application/json
@@ -66145,7 +66222,9 @@ paths:
     delete:
       tags:
       - AlertScriptConfig
-      description: /alertscriptconfig/{uuid}/{uuid}
+      description: Delete method to remove a specific alert script configuration object.
+        Deletes the script configuration. Note ActionGroupConfigs referencing this
+        script will no longer execute it when alerts are triggered.
       operationId: DELETE /alertscriptconfig/{uuid}
       consumes:
       - application/json
@@ -66201,7 +66280,10 @@ paths:
     get:
       tags:
       - AlertConfig
-      description: /alertconfig
+      description: Get method to retrieve alert configuration objects from the controller.
+        Returns a list of alert configurations that define when and how alerts should
+        be generated. Each configuration includes alert rules, thresholds, throttling
+        settings, and associated action groups.
       operationId: GET /alertconfig
       consumes:
       - application/json
@@ -66285,7 +66367,14 @@ paths:
     post:
       tags:
       - AlertConfig
-      description: /alertconfig
+      description: Post method to create an alert configuration object on the controller.
+        Define a new alert rule by specifying alert name and description, alert rules
+        (system events, connection/application log filters, or metrics with thresholds),
+        alert source (EVENT_LOGS, CONN_LOGS, APP_LOGS, or METRICS), category (REALTIME
+        or ROLLINGWINDOW), threshold (number of events to trigger alert), rolling_window
+        (time window in seconds), throttle period (seconds to suppress duplicate alerts),
+        expiry_time (when alert auto-expires), action_group_uuid (reference to ActionGroupConfig
+        for notifications), and object_type (VirtualService/Pool/ServiceEngine).
       operationId: POST /alertconfig
       consumes:
       - application/json
@@ -66337,7 +66426,10 @@ paths:
     get:
       tags:
       - AlertConfig
-      description: /alertconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert configuration object by
+        its uuid. Returns complete details of the alert configuration including all
+        rules, thresholds, throttling parameters, associated action groups, and enabled
+        state.
       operationId: GET /alertconfig/{uuid}
       consumes:
       - application/json
@@ -66416,7 +66508,11 @@ paths:
     put:
       tags:
       - AlertConfig
-      description: /alertconfig/{uuid}/{uuid}
+      description: Put method to update a specific alert configuration object. Modify
+        the alert configuration including alert rules and filters, threshold and rolling
+        window values, throttle duration, action group associations, enabled state,
+        or any other configuration parameters. Changes take effect immediately for
+        new alerts.
       operationId: PUT /alertconfig/{uuid}
       consumes:
       - application/json
@@ -66479,7 +66575,10 @@ paths:
     patch:
       tags:
       - AlertConfig
-      description: /alertconfig/{uuid}/{uuid}
+      description: Patch method to partially update a specific alert configuration
+        object. Update specific fields of the alert configuration without replacing
+        the entire object. Commonly used to toggle alert enabled state, modify thresholds,
+        or update action group associations.
       operationId: PATCH /alertconfig/{uuid}
       consumes:
       - application/json
@@ -66542,7 +66641,10 @@ paths:
     delete:
       tags:
       - AlertConfig
-      description: /alertconfig/{uuid}/{uuid}
+      description: Delete method to remove a specific alert configuration object.
+        Deletes the alert configuration and stops generating new alerts based on this
+        configuration. Existing alerts generated by this configuration are not automatically
+        deleted.
       operationId: DELETE /alertconfig/{uuid}
       consumes:
       - application/json
@@ -66598,7 +66700,10 @@ paths:
     get:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig
+      description: Get method to retrieve action group configuration objects from
+        the controller. Returns a list of action groups that define what notification
+        methods and actions to execute when alerts are triggered. Each action group
+        can combine multiple notification channels.
       operationId: GET /actiongroupconfig
       consumes:
       - application/json
@@ -66682,7 +66787,15 @@ paths:
     post:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig
+      description: Post method to create an action group configuration object on the
+        controller. Create a new action group by specifying action group name, alert
+        level (ALERT_HIGH, ALERT_MEDIUM, ALERT_LOW), optional email_config_uuid (reference
+        to AlertEmailConfig), optional syslog_config_uuid (reference to AlertSyslogConfig),
+        optional snmp_trap_profile_uuid (reference to SnmpTrapProfile), optional action_script_config_uuid
+        (reference to AlertScriptConfig for custom automation), external_only flag
+        (true to only send to external systems, not show in UI), and optional description.
+        The action group is then referenced by AlertConfig objects to execute these
+        actions when alerts fire.
       operationId: POST /actiongroupconfig
       consumes:
       - application/json
@@ -66734,7 +66847,9 @@ paths:
     get:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig/{uuid}/{uuid}
+      description: Get method to retrieve a specific action group configuration object
+        by its uuid. Returns complete action group configuration including all associated
+        notification method references and settings.
       operationId: GET /actiongroupconfig/{uuid}
       consumes:
       - application/json
@@ -66813,7 +66928,11 @@ paths:
     put:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig/{uuid}/{uuid}
+      description: Put method to update a specific action group configuration object.
+        Modify the action group including adding/removing notification methods (email,
+        syslog, SNMP, script), changing alert level, updating external_only flag,
+        or modifying other configuration parameters. Changes affect all AlertConfigs
+        using this action group.
       operationId: PUT /actiongroupconfig/{uuid}
       consumes:
       - application/json
@@ -66876,7 +66995,9 @@ paths:
     patch:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig/{uuid}/{uuid}
+      description: Patch method to partially update a specific action group configuration
+        object. Update specific fields such as adding a new notification method or
+        changing the alert level without replacing the entire configuration.
       operationId: PATCH /actiongroupconfig/{uuid}
       consumes:
       - application/json
@@ -66939,7 +67060,9 @@ paths:
     delete:
       tags:
       - ActionGroupConfig
-      description: /actiongroupconfig/{uuid}/{uuid}
+      description: Delete method to remove a specific action group configuration object.
+        Deletes the action group. Note AlertConfigs referencing this action group
+        will no longer execute any notification actions when alerts are triggered.
       operationId: DELETE /actiongroupconfig/{uuid}
       consumes:
       - application/json
@@ -66995,7 +67118,9 @@ paths:
     get:
       tags:
       - AlertObjectList
-      description: /alertobjectlist
+      description: Get method to retrieve alert object list configurations from the
+        controller. Returns a list of object list configurations that define named
+        groups of AVI objects for scoped alert monitoring.
       operationId: GET /alertobjectlist
       consumes:
       - application/json
@@ -67079,7 +67204,12 @@ paths:
     post:
       tags:
       - AlertObjectList
-      description: /alertobjectlist
+      description: Post method to configure alert object list on the controller. Create
+        a new object list by specifying list name, alert source (CONN_LOGS, APP_LOGS,
+        EVENT_LOGS, or METRICS indicating what type of alerts this list applies to),
+        and objects array (list of AVI object references like VirtualService UUIDs,
+        Pool UUIDs, ServiceEngine UUIDs, etc.). Use this to create logical groupings
+        of objects for targeted alert monitoring.
       operationId: POST /alertobjectlist
       consumes:
       - application/json
@@ -67131,7 +67261,9 @@ paths:
     get:
       tags:
       - AlertObjectList
-      description: /alertobjectlist/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert object list configuration
+        by its uuid. Returns the complete object list including the name, source type,
+        and all object references in the list.
       operationId: GET /alertobjectlist/{uuid}
       consumes:
       - application/json
@@ -67210,7 +67342,9 @@ paths:
     put:
       tags:
       - AlertObjectList
-      description: /alertobjectlist/{uuid}/{uuid}
+      description: Put method to update a specific alert object list configuration.
+        Modify the object list including adding or removing objects from the list,
+        changing the source type, or renaming the list.
       operationId: PUT /alertobjectlist/{uuid}
       consumes:
       - application/json
@@ -67273,7 +67407,9 @@ paths:
     patch:
       tags:
       - AlertObjectList
-      description: /alertobjectlist/{uuid}/{uuid}
+      description: Patch method to partially update a specific alert object list configuration.
+        Update specific fields such as adding new objects to the list or removing
+        specific objects without replacing the entire configuration.
       operationId: PATCH /alertobjectlist/{uuid}
       consumes:
       - application/json
@@ -67336,7 +67472,9 @@ paths:
     delete:
       tags:
       - AlertObjectList
-      description: /alertobjectlist/{uuid}/{uuid}
+      description: Delete method to remove a specific alert object list configuration.
+        Deletes the object list. AlertConfigs or other configurations referencing
+        this list will no longer have the scoped monitoring.
       operationId: DELETE /alertobjectlist/{uuid}
       consumes:
       - application/json
@@ -67392,7 +67530,10 @@ paths:
     get:
       tags:
       - Alert
-      description: /alert
+      description: Get method to retrieve alert objects from the controller. Returns
+        a list of alerts that have been raised by the Alert Engine based on configured
+        alert rules. Alerts include details such as timestamp, severity level, state,
+        associated events/logs/metrics, and throttle information.
       operationId: GET /alert
       consumes:
       - application/json
@@ -67477,7 +67618,11 @@ paths:
     get:
       tags:
       - Alert
-      description: /alert/{uuid}/{uuid}
+      description: Get method to retrieve a specific alert object by its uuid. Returns
+        detailed information about the alert including alert name and state, severity
+        level, reason for triggering, timestamp, associated object (VS/Pool/SE), list
+        of events/application logs/connection logs/metrics that triggered the alert,
+        throttle count and last throttle timestamp, and action script output if executed.
       operationId: GET /alert/{uuid}
       consumes:
       - application/json
@@ -67556,7 +67701,9 @@ paths:
     delete:
       tags:
       - Alert
-      description: /alert/{uuid}/{uuid}
+      description: Delete method to remove a specific alert object. Deletes the alert
+        instance from the system. Note The original events/logs that triggered the
+        alert remain in their respective logs. Only the alert object itself is deleted.
       operationId: DELETE /alert/{uuid}
       consumes:
       - application/json
@@ -67612,7 +67759,11 @@ paths:
     get:
       tags:
       - InventoryFaultConfig
-      description: /inventoryfaultconfig
+      description: Get method to retrieve inventory fault configuration from the controller.
+        Returns the global configuration that defines how infrastructure inventory
+        faults are detected and reported. This is a singleton object that controls
+        fault monitoring for cloud connectors, network infrastructure, and resource
+        availability.
       operationId: GET /inventoryfaultconfig
       consumes:
       - application/json
@@ -68011,6 +68162,58 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /eventmanager/generateevent:
+    post:
+      tags:
+      - EventGenerateRequest
+      description: /eventmanager/generateevent
+      operationId: POST /eventmanager/generateevent
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: body
+        name: body
+        description: EventLog
+        required: true
+        schema:
+          $ref: '#/definitions/EventLog'
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
   /backup:
     get:
       tags:
@@ -68632,7 +68835,13 @@ paths:
     get:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier
+      description: Get method to retrieve all memory balancer request objects from
+        the controller. Memory balancer requests track the memory usage and operational
+        state of controller processes, enabling dynamic memory management and process
+        mode adjustments. Contains process information including current memory usage,
+        memory limits, intimation counts, process mode (REGULAR, DEBUG, DEGRADED,
+        STOP), memory usage trends, and threshold percentages. Used for monitoring
+        and balancing memory consumption across controller processes.
       operationId: GET /memorybalancernotifier
       consumes:
       - application/json
@@ -68716,7 +68925,8 @@ paths:
     post:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier
+      description: Post method to create a new memory balancer request object to track
+        a controller process's memory state
       operationId: POST /memorybalancernotifier
       consumes:
       - application/json
@@ -68768,7 +68978,11 @@ paths:
     get:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier/{uuid}/{uuid}
+      description: Get method to retrieve a specific memory balancer request object
+        by its uuid. Returns detailed information about a controller process including
+        process ID, current memory usage, memory limits, process mode, memory trend
+        (INCREASING, DECREASING, NEUTRAL), threshold percentage, intimation count,
+        controller-wide memory usage, and timestamp of last update.
       operationId: GET /memorybalancernotifier/{uuid}
       consumes:
       - application/json
@@ -68847,7 +69061,8 @@ paths:
     put:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier/{uuid}/{uuid}
+      description: Put method to update an existing memory balancer request object
+        with current process memory state and operational mode
       operationId: PUT /memorybalancernotifier/{uuid}
       consumes:
       - application/json
@@ -68910,7 +69125,8 @@ paths:
     patch:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of a memory balancer
+        request object
       operationId: PATCH /memorybalancernotifier/{uuid}
       consumes:
       - application/json
@@ -68973,7 +69189,8 @@ paths:
     delete:
       tags:
       - MemoryBalancerRequest
-      description: /memorybalancernotifier/{uuid}/{uuid}
+      description: Delete method to remove a memory balancer request object from the
+        controller
       operationId: DELETE /memorybalancernotifier/{uuid}
       consumes:
       - application/json
@@ -74694,7 +74911,14 @@ paths:
     get:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy
+      description: Get method to retrieve all pool group deployment policy objects
+        from the controller. Deployment policies define automated strategies for promoting
+        new pools into production within a pool group, supporting blue-green and canary
+        deployment schemes. Includes configuration for test traffic ratio ramp-up,
+        evaluation duration, deployment rules based on health scores and metrics,
+        target traffic ratios, automatic disabling of old production pools, and webhook
+        notifications. Used by the autoscale manager to safely evaluate and promote
+        new pool versions.
       operationId: GET /poolgroupdeploymentpolicy
       consumes:
       - application/json
@@ -74778,7 +75002,8 @@ paths:
     post:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy
+      description: Post method to create a new pool group deployment policy object
+        with blue-green or canary deployment configuration
       operationId: POST /poolgroupdeploymentpolicy
       consumes:
       - application/json
@@ -74830,7 +75055,12 @@ paths:
     get:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy/{uuid}/{uuid}
+      description: Get method to retrieve a specific pool group deployment policy
+        object by its uuid. Returns the complete policy configuration including deployment
+        scheme (BLUE_GREEN or CANARY), test traffic ratio ramp-up percentage, evaluation
+        duration, deployment rules with metric thresholds, target test traffic ratio,
+        auto-disable settings for old pools, and webhook configuration for deployment
+        notifications.
       operationId: GET /poolgroupdeploymentpolicy/{uuid}
       consumes:
       - application/json
@@ -74909,7 +75139,8 @@ paths:
     put:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy/{uuid}/{uuid}
+      description: Put method to update an existing pool group deployment policy object
+        with modified deployment strategy and rules
       operationId: PUT /poolgroupdeploymentpolicy/{uuid}
       consumes:
       - application/json
@@ -74972,7 +75203,8 @@ paths:
     patch:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy/{uuid}/{uuid}
+      description: Patch method to partially update specific fields of a pool group
+        deployment policy object
       operationId: PATCH /poolgroupdeploymentpolicy/{uuid}
       consumes:
       - application/json
@@ -75035,7 +75267,8 @@ paths:
     delete:
       tags:
       - PoolGroupDeploymentPolicy
-      description: /poolgroupdeploymentpolicy/{uuid}/{uuid}
+      description: Delete method to remove a pool group deployment policy object from
+        the controller
       operationId: DELETE /poolgroupdeploymentpolicy/{uuid}
       consumes:
       - application/json
@@ -103444,11 +103677,23 @@ definitions:
   ApiConfigLimits:
     type: object
     properties:
+      num_api_paths:
+        description: Maximum total number of API path objects allowed across the system.
+          Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: int32
       num_api_paths_per_policy:
         description: Maximum number of API path definitions (unique URL path patterns)
           that can be configured for a single API policy. Field introduced in 32.1.4.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
+        type: integer
+        format: int32
+      num_api_schemas:
+        description: Maximum total number of API schema objects allowed across the
+          system. Field introduced in 32.1.4. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: int32
       num_api_schemas_per_policy:
@@ -107151,8 +107396,9 @@ definitions:
           DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR,
           DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY,
           DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
-          DNS_RECORD_ANY. Field introduced in 21.1.1. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+          DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 21.1.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: string
       src_port:
         description: The source port for the DNS query. Field introduced in 21.1.1.
@@ -118479,9 +118725,9 @@ definitions:
         description: ' Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS,
           DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
           DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV,
-          DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
+          DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       dns_request:
         description: ' Field introduced in 17.1.1. Allowed with any value in Enterprise,
@@ -121275,9 +121521,10 @@ definitions:
         default: true
       event_manager_api_rate_limit_per_min:
         description: Maximum number of POST /api/eventmanager/generateevent requests
-          allowed per minute, across all event_id values. Allowed values are 1-10000.
-          Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          allowed per minute, across all event_id values. A value of 0 blocks all
+          requests to this API. Allowed values are 1-1000. Special values are 0- blocks
+          all requests. Field introduced in 32.1.4. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         default: 60
         format: uint32
@@ -125474,9 +125721,9 @@ definitions:
         description: DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic,
+          Enterprise with Cloud Services edition.
         type: string
         default: DNS_RECORD_A
   DnsLookupResult:
@@ -125804,8 +126051,9 @@ definitions:
           DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR,
           DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY,
           DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
-          DNS_RECORD_ANY. Field introduced in 17.1.1. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+          DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 17.1.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: array
         items:
           type: string
@@ -125925,9 +126173,9 @@ definitions:
         description: DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic,
+          Enterprise with Cloud Services edition.
         type: string
       wildcard_match:
         description: Enable wild-card match of fqdn  if an exact match is not found
@@ -126170,9 +126418,9 @@ definitions:
         description: Type of resource record. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic,
+          Enterprise with Cloud Services edition.
         type: string
       vs_name:
         description: Virtual Service name - applicable only for Avi VS GSLB member.
@@ -126405,9 +126653,9 @@ definitions:
         description: DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise,
-          Essentials, Basic, Enterprise with Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Field introduced in 17.2.12, 18.1.2. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
   DnsRule:
     type: object
@@ -126881,9 +127129,9 @@ definitions:
         description: ' Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS,
           DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
           DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV,
-          DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed
-          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
-          edition.'
+          DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.'
         type: string
       rsp:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -127831,9 +128079,9 @@ definitions:
         description: DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Field introduced in 20.1.3. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       url:
         description: url
@@ -129360,6 +129608,14 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         type: string
+  EventGenerateRequest:
+    type: object
+    properties:
+      event_log:
+        description: The event log to be generated via the API. Field introduced in
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/EventLog'
   EventGenParams:
     type: object
     properties:
@@ -133860,9 +134116,9 @@ definitions:
           A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A,
           DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO,
           DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA,
-          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY.
-          Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY,
+          DNS_RECORD_CAA. Field introduced in 18.2.5. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
         default: DNS_RECORD_A
       response_string:
@@ -152610,8 +152866,8 @@ definitions:
         type: string
         default: default
       verify_certificate:
-        description: Flag is used to indicate whether TLS certificate verificationbe
-          done when establishing a connection to a vCenter and NSX-T Manager. Field
+        description: Flag is used to indicate whether TLS certificate verification
+          be done when establishing a connection to a vCenter and NSX-T Manager. Field
           introduced in 31.1.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: boolean
@@ -192449,9 +192705,9 @@ definitions:
           SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS,
           NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY,
           NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS,
-          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT. Field introduced in 31.2.1.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS.
+          Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       limit_description:
         description: Description of the system limit. Field introduced in 31.2.1.
@@ -199266,8 +199522,8 @@ definitions:
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       verify_certificate:
-        description: Flag is used to indicate whether TLS certificate verificationbe
-          done when establishing a connection to a vCenter server. Field introduced
+        description: Flag is used to indicate whether TLS certificate verification
+          be done when establishing a connection to a vCenter server. Field introduced
           in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: boolean
