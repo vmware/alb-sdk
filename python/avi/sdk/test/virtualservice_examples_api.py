@@ -18,7 +18,7 @@ import random
 
 from avi.sdk.avi_api import ApiSession
 from avi.sdk.utils.api_utils import ApiUtils
-from avi.sdk.samples.common import get_sample_ssl_params
+from avi.sdk.test.common import get_sample_ssl_params
 from requests.packages import urllib3
 
 logger = logging.getLogger(__name__)
