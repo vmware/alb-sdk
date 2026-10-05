@@ -1458,7 +1458,9 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
-     * Allowed values are 1-10000.
+     * A value of 0 blocks all requests to this api.
+     * Allowed values are 1-1000.
+     * Special values are 0- blocks all requests.
      * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
@@ -1471,7 +1473,9 @@ public class ControllerProperties extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of post /api/eventmanager/generateevent requests allowed per minute, across all event_id values.
-     * Allowed values are 1-10000.
+     * A value of 0 blocks all requests to this api.
+     * Allowed values are 1-1000.
+     * Special values are 0- blocks all requests.
      * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 60.
