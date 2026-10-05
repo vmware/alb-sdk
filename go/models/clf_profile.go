@@ -18,7 +18,7 @@ type ClfProfile struct {
 	// Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Description *string `json:"description,omitempty"`
 
-	// Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, avi.vs.log_forward() is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Enabled *bool `json:"enabled,omitempty"`
 
 	// List of labels to be used for granular RBAC. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

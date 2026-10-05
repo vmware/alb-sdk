@@ -32,7 +32,7 @@ type CCAgentProperties struct {
 	// Max datastore processing go routines for vcenter datastore updates. Allowed values are 1-40. Field introduced in 22.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterMaxDatastoreGoRoutines *uint32 `json:"vcenter_max_datastore_go_routines,omitempty"`
 
-	// Reconcile interval for vcenter inventory. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Reconcile interval for vcenter inventory. Allowed values are 60-86400. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VcenterReconcileInterval *uint32 `json:"vcenter_reconcile_interval,omitempty"`
 
 	// Maximum polls to check for vnics to be attached to VM. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
