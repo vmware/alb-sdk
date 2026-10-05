@@ -31,7 +31,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy",
+                "description": "Get method to retrieve all pool group deployment policy objects from the controller. Deployment policies define automated strategies for promoting new pools into production within a pool group, supporting blue-green and canary deployment schemes. Includes configuration for test traffic ratio ramp-up, evaluation duration, deployment rules based on health scores and metrics, target traffic ratios, automatic disabling of old production pools, and webhook notifications. Used by the autoscale manager to safely evaluate and promote new pool versions.",
                 "operationId": "GET /poolgroupdeploymentpolicy",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy",
+                "description": "Post method to create a new pool group deployment policy object with blue-green or canary deployment configuration",
                 "operationId": "POST /poolgroupdeploymentpolicy",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific pool group deployment policy object by its uuid. Returns the complete policy configuration including deployment scheme (BLUE_GREEN or CANARY), test traffic ratio ramp-up percentage, evaluation duration, deployment rules with metric thresholds, target test traffic ratio, auto-disable settings for old pools, and webhook configuration for deployment notifications.",
                 "operationId": "GET /poolgroupdeploymentpolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy/{uuid}/{uuid}",
+                "description": "Put method to update an existing pool group deployment policy object with modified deployment strategy and rules",
                 "operationId": "PUT /poolgroupdeploymentpolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy/{uuid}/{uuid}",
+                "description": "Patch method to partially update specific fields of a pool group deployment policy object",
                 "operationId": "PATCH /poolgroupdeploymentpolicy/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "PoolGroupDeploymentPolicy"
                 ],
-                "description": "/poolgroupdeploymentpolicy/{uuid}/{uuid}",
+                "description": "Delete method to remove a pool group deployment policy object from the controller",
                 "operationId": "DELETE /poolgroupdeploymentpolicy/{uuid}",
                 "consumes": [
                     "application/json"

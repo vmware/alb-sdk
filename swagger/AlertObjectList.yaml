@@ -33,7 +33,7 @@ paths:
         get:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist
+            description: Get method to retrieve alert object list configurations from the controller. Returns a list of object list configurations that define named groups of AVI objects for scoped alert monitoring.
             operationId: GET /alertobjectlist
             consumes:
                 -   application/json
@@ -103,7 +103,7 @@ paths:
         post:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist
+            description: Post method to configure alert object list on the controller. Create a new object list by specifying list name, alert source (CONN_LOGS, APP_LOGS, EVENT_LOGS, or METRICS indicating what type of alerts this list applies to), and objects array (list of AVI object references like VirtualService UUIDs, Pool UUIDs, ServiceEngine UUIDs, etc.). Use this to create logical groupings of objects for targeted alert monitoring.
             operationId: POST /alertobjectlist
             consumes:
                 -   application/json
@@ -149,7 +149,7 @@ paths:
         get:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
+            description: Get method to retrieve a specific alert object list configuration by its uuid. Returns the complete object list including the name, source type, and all object references in the list.
             operationId: GET /alertobjectlist/{uuid}
             consumes:
                 -   application/json
@@ -218,7 +218,7 @@ paths:
         put:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
+            description: Put method to update a specific alert object list configuration. Modify the object list including adding or removing objects from the list, changing the source type, or renaming the list.
             operationId: PUT /alertobjectlist/{uuid}
             consumes:
                 -   application/json
@@ -275,7 +275,7 @@ paths:
         patch:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
+            description: Patch method to partially update a specific alert object list configuration. Update specific fields such as adding new objects to the list or removing specific objects without replacing the entire configuration.
             operationId: PATCH /alertobjectlist/{uuid}
             consumes:
                 -   application/json
@@ -332,7 +332,7 @@ paths:
         delete:
             tags:
                 - AlertObjectList
-            description: /alertobjectlist/{uuid}/{uuid}
+            description: Delete method to remove a specific alert object list configuration. Deletes the object list. AlertConfigs or other configurations referencing this list will no longer have the scoped monitoring.
             operationId: DELETE /alertobjectlist/{uuid}
             consumes:
                 -   application/json

@@ -31,7 +31,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig",
+                "description": "Get method to retrieve all autoscale launch configuration objects from the controller. Launch configurations define the parameters for launching new server instances during autoscale operations, including image IDs (AMI for AWS, VM ID for OpenStack), instance types, network settings, and cloud-specific configurations. These are used by ServerAutoScalePolicy to orchestrate pool server creation and deletion.",
                 "operationId": "GET /autoscalelaunchconfig",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig",
+                "description": "Post method to create a new autoscale launch configuration object with cloud-specific instance launch parameters",
                 "operationId": "POST /autoscalelaunchconfig",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific autoscale launch configuration object by its uuid. Returns the complete configuration including image ID, cloud-specific settings (OpenStack or Mesos), external autoscaling group usage flag, and other launch parameters for the specified configuration.",
                 "operationId": "GET /autoscalelaunchconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig/{uuid}/{uuid}",
+                "description": "Put method to update an existing autoscale launch configuration object with modified instance launch parameters",
                 "operationId": "PUT /autoscalelaunchconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig/{uuid}/{uuid}",
+                "description": "Patch method to partially update specific fields of an autoscale launch configuration object",
                 "operationId": "PATCH /autoscalelaunchconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "AutoScaleLaunchConfig"
                 ],
-                "description": "/autoscalelaunchconfig/{uuid}/{uuid}",
+                "description": "Delete method to remove an autoscale launch configuration object from the controller",
                 "operationId": "DELETE /autoscalelaunchconfig/{uuid}",
                 "consumes": [
                     "application/json"

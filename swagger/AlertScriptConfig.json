@@ -31,7 +31,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig",
+                "description": "Get method to retrieve alert script configuration objects from the controller. Returns a list of control script configurations that define custom scripts to execute when alerts are triggered.",
                 "operationId": "GET /alertscriptconfig",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig",
+                "description": "Post method to create an alert script configuration object on the controller. Create a new alert action script by specifying script name, action_script (the script code to execute - can be Python, shell script, etc.), optional timeout (maximum execution time in seconds), and optional description. The script receives alert information as input and can perform custom actions like remediation, integration with external systems, or automated responses. Refer to kb.avinetworks.com for script development guidelines.",
                 "operationId": "POST /alertscriptconfig",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific alert script configuration object by its uuid. Returns complete script configuration including the script code, timeout settings, and metadata about last editor.",
                 "operationId": "GET /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig/{uuid}/{uuid}",
+                "description": "Put method to update a specific alert script configuration object. Modify the script configuration including updating the script code (action_script), changing timeout value, or modifying the description. Changes take effect for subsequent alert executions.",
                 "operationId": "PUT /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig/{uuid}/{uuid}",
+                "description": "Patch method to partially update a specific alert script configuration object. Update specific fields such as modifying the script code or timeout value without replacing the entire configuration.",
                 "operationId": "PATCH /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "AlertScriptConfig"
                 ],
-                "description": "/alertscriptconfig/{uuid}/{uuid}",
+                "description": "Delete method to remove a specific alert script configuration object. Deletes the script configuration. Note ActionGroupConfigs referencing this script will no longer execute it when alerts are triggered.",
                 "operationId": "DELETE /alertscriptconfig/{uuid}",
                 "consumes": [
                     "application/json"

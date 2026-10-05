@@ -31,7 +31,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig",
+                "description": "Get method to retrieve action group configuration objects from the controller. Returns a list of action groups that define what notification methods and actions to execute when alerts are triggered. Each action group can combine multiple notification channels.",
                 "operationId": "GET /actiongroupconfig",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig",
+                "description": "Post method to create an action group configuration object on the controller. Create a new action group by specifying action group name, alert level (ALERT_HIGH, ALERT_MEDIUM, ALERT_LOW), optional email_config_uuid (reference to AlertEmailConfig), optional syslog_config_uuid (reference to AlertSyslogConfig), optional snmp_trap_profile_uuid (reference to SnmpTrapProfile), optional action_script_config_uuid (reference to AlertScriptConfig for custom automation), external_only flag (true to only send to external systems, not show in UI), and optional description. The action group is then referenced by AlertConfig objects to execute these actions when alerts fire.",
                 "operationId": "POST /actiongroupconfig",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig/{uuid}/{uuid}",
+                "description": "Get method to retrieve a specific action group configuration object by its uuid. Returns complete action group configuration including all associated notification method references and settings.",
                 "operationId": "GET /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig/{uuid}/{uuid}",
+                "description": "Put method to update a specific action group configuration object. Modify the action group including adding/removing notification methods (email, syslog, SNMP, script), changing alert level, updating external_only flag, or modifying other configuration parameters. Changes affect all AlertConfigs using this action group.",
                 "operationId": "PUT /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -392,7 +392,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig/{uuid}/{uuid}",
+                "description": "Patch method to partially update a specific action group configuration object. Update specific fields such as adding a new notification method or changing the alert level without replacing the entire configuration.",
                 "operationId": "PATCH /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"
@@ -477,7 +477,7 @@
                 "tags": [
                     "ActionGroupConfig"
                 ],
-                "description": "/actiongroupconfig/{uuid}/{uuid}",
+                "description": "Delete method to remove a specific action group configuration object. Deletes the action group. Note AlertConfigs referencing this action group will no longer execute any notification actions when alerts are triggered.",
                 "operationId": "DELETE /actiongroupconfig/{uuid}",
                 "consumes": [
                     "application/json"

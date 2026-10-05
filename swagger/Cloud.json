@@ -31,7 +31,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud",
+                "description": "Get method to get the object from the controller",
                 "operationId": "GET /cloud",
                 "consumes": [
                     "application/json"
@@ -135,7 +135,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud",
+                "description": "Post method to create the cloud object on the controller",
                 "operationId": "POST /cloud",
                 "consumes": [
                     "application/json"
@@ -205,7 +205,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/{uuid}/{uuid}",
+                "description": "Get method to get the specific cloud object by its uuid",
                 "operationId": "GET /cloud/{uuid}",
                 "consumes": [
                     "application/json"
@@ -307,7 +307,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/{uuid}/{uuid}",
+                "description": "Put method to update the cloud object",
                 "operationId": "PUT /cloud/{uuid}",
                 "consumes": [
                     "application/json"
@@ -625,7 +625,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/{uuid}/internals/",
+                "description": "Get method to get the specific cloud object using cloud/{uuid}/internals/",
                 "operationId": "GET /cloud/{uuid}/internals/",
                 "consumes": [
                     "application/json"
@@ -848,7 +848,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/{uuid}/gc/",
+                "description": "Patch method to get the specific cloud object using cloud/{uuid}/gc/",
                 "operationId": "PATCH /cloud/{uuid}/gc/",
                 "consumes": [
                     "application/json"
@@ -1274,7 +1274,7 @@
                 "tags": [
                     "Cloud"
                 ],
-                "description": "/cloud/{uuid}/placement/ineligible/",
+                "description": "Get method to get the specific cloud object using cloud/{uuid}/placement/ineligible/",
                 "operationId": "GET /cloud/{uuid}/placement/ineligible/",
                 "consumes": [
                     "application/json"
@@ -4778,7 +4778,7 @@
                     "default": "default"
                 },
                 "verify_certificate": {
-                    "description": "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flag is used to indicate whether TLS certificate verification be done when establishing a connection to a vCenter and NSX-T Manager. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
@@ -6109,7 +6109,7 @@
                     "type": "string"
                 },
                 "verify_certificate": {
-                    "description": "Flag is used to indicate whether TLS certificate verificationbe done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Flag is used to indicate whether TLS certificate verification be done when establishing a connection to a vCenter server. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 }

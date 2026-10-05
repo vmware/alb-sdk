@@ -34,7 +34,7 @@ paths:
         get:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile
+            description: Get method to retrieve SNMP trap profile objects from the controller. Returns a list of SNMP trap profiles that define where and how to send alert notifications via SNMP traps to Network Management Systems.
             operationId: GET /snmptrapprofile
             consumes:
                 -   application/json
@@ -104,7 +104,7 @@ paths:
         post:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile
+            description: Post method to create an SNMP trap profile object on the controller. Create a new SNMP trap notification configuration by specifying profile name, list of trap_servers (each containing IP address/FQDN, port - default 162, SNMP version - SNMP_VER2 or SNMP_VER3). For SNMP v2c specify community string for authentication. For SNMP v3 specify user credentials including username, authentication protocol (MD5/SHA), authentication passphrase, privacy protocol (DES/AES), and privacy passphrase. The profile is referenced by ActionGroupConfig to send alerts as SNMP traps.
             operationId: POST /snmptrapprofile
             consumes:
                 -   application/json
@@ -150,7 +150,7 @@ paths:
         get:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile/{uuid}/{uuid}
+            description: Get method to retrieve a specific SNMP trap profile object by its uuid. Returns complete SNMP trap configuration including all trap server definitions, version settings, and authentication details.
             operationId: GET /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
@@ -219,7 +219,7 @@ paths:
         put:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile/{uuid}/{uuid}
+            description: Put method to update a specific SNMP trap profile object. Modify the SNMP trap profile including adding/removing/modifying trap servers, changing SNMP version, updating community strings (v2c), or modifying authentication/privacy settings (v3). Changes affect all ActionGroupConfigs using this profile.
             operationId: PUT /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
@@ -276,7 +276,7 @@ paths:
         patch:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile/{uuid}/{uuid}
+            description: Patch method to partially update a specific SNMP trap profile object. Update specific fields such as adding a new trap server, changing authentication credentials, or modifying specific server settings without replacing the entire configuration.
             operationId: PATCH /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
@@ -333,7 +333,7 @@ paths:
         delete:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile/{uuid}/{uuid}
+            description: Delete method to remove a specific SNMP trap profile object. Deletes the SNMP trap profile. Note ActionGroupConfigs referencing this profile will no longer send SNMP trap notifications.
             operationId: DELETE /snmptrapprofile/{uuid}
             consumes:
                 -   application/json
@@ -384,7 +384,7 @@ paths:
         post:
             tags:
                 - SnmpTrapProfile
-            description: /snmptrapprofile/{uuid}/testsnmptrap
+            description: Post method to test SNMP trap configuration by sending a test alert to all configured SNMP trap receivers. Validates network connectivity, authentication (community string or v3 credentials), and proper trap delivery to each trap server. Use this endpoint to verify SNMP trap configuration is working correctly before associating it with action groups. Returns success/failure status for each trap server and any connection, authentication, or delivery errors encountered.
             operationId: POST /snmptrapprofile/{uuid}/testsnmptrap
             consumes:
                 -   application/json

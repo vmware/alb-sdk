@@ -33,7 +33,7 @@ paths:
         get:
             tags:
                 - InventoryFaultConfig
-            description: /inventoryfaultconfig
+            description: Get method to retrieve inventory fault configuration from the controller. Returns the global configuration that defines how infrastructure inventory faults are detected and reported. This is a singleton object that controls fault monitoring for cloud connectors, network infrastructure, and resource availability.
             operationId: GET /inventoryfaultconfig
             consumes:
                 -   application/json

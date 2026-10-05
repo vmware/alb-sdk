@@ -6,22 +6,20 @@
 swagger: '2.0'
 info:
     version: '32.2.1'
-    title: Avi EventLog Object API
+    title: Avi EventGenerateRequest Object API
     contact:
         name: Avi Networks Inc.
         url: https://avinetworks.com/contact-us
         email: support@avinetworks.com
     description: |
-        Avi EventLog object api
+        Avi EventGenerateRequest object api
         ```
-        - show config_events
-        - show config_events detail
-        - show events detail
+        - eventmanager generateevent
         ```
 
-        API permission: PERMISSION_VIRTUALSERVICE
+        API permission: PERMISSION_INTERNAL
 tags:
-  - name: EventLog
+  - name: EventGenerateRequest
 schemes:
   - https
 securityDefinitions:
@@ -31,12 +29,12 @@ securityDefinitions:
 basePath: /api
 paths:
 
-    /analytics/logs/list:
+    /eventmanager/generateevent:
         post:
             tags:
-                - EventLog
-            description: /analytics/logs/list
-            operationId: POST /analytics/logs/list
+                - EventGenerateRequest
+            description: /eventmanager/generateevent
+            operationId: POST /eventmanager/generateevent
             consumes:
                 -   application/json
             produces:
@@ -64,12 +62,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: empty
+                    description: EventLog
                     required: true
                     schema:
-                        type: object
-                        additionalProperties:
-                            type: string
+                        $ref: "#/definitions/EventLog"
             security:
                 - basicAuth: []
             responses:
@@ -3847,6 +3843,12 @@ definitions:
             warning_event_details:
                 description: " Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/WarningEventDetails'
+    EventGenerateRequest:
+        type: object
+        properties:
+            event_log:
+                description: "The event log to be generated via the API. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/EventLog'
     EventInfo:
         type: object
         properties:
