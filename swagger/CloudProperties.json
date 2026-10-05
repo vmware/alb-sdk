@@ -336,7 +336,7 @@
                     "format": "uint32"
                 },
                 "vcenter_reconcile_interval": {
-                    "description": "Reconcile interval for vcenter inventory. Allowed values are 60-3600. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reconcile interval for vcenter inventory. Allowed values are 60-86400. Field introduced in 22.1.3. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 3600,
                     "format": "uint32"
@@ -368,6 +368,23 @@
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 100,
+                    "format": "uint32"
+                }
+            }
+        },
+        "ClockSkewToleranceConfig": {
+            "type": "object",
+            "description": "Clock-skew tolerance applied when validating JWT exp/iat claims, to account for clock drift between the token-issuing and verifying sides.",
+            "properties": {
+                "enabled": {
+                    "description": "Enable clock-skew tolerance when validating JWT exp/iat claims. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "skew_tolerance": {
+                    "description": "Maximum clock drift tolerated between the token-issuing and verifying sides when validating JWT exp/iat claims. Allowed values are 1-300. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 30,
                     "format": "uint32"
                 }
             }
@@ -659,6 +676,10 @@
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"
+                },
+                "clock_skew_config": {
+                    "description": "Clock-skew tolerance configuration for site to site communication with JWT authentication. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ClockSkewToleranceConfig"
                 },
                 "cloud_discovery_interval": {
                     "description": "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
