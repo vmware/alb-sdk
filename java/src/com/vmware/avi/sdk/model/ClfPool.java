@@ -102,7 +102,7 @@ public class ClfPool  {
      * This is the getter method this will return the attribute value.
      * Load balancing algorithm for distributing logs across servers.
      * Only lb_algorithm_round_robin and lb_algorithm_consistent_hash are supported; consistent-hash always hashes on the uuid of the virtualservice
-     * invoking avi.vs.log_forward(), not a per-request client ip/uri/header, so all of one vs's log records land on the same collector.
+     * invoking the datascript log forwarding call, not a per-request client ip/uri/header, so all of one vs's log records land on the same collector.
      * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
      * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
      * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
@@ -119,7 +119,7 @@ public class ClfPool  {
      * This is the setter method to the attribute.
      * Load balancing algorithm for distributing logs across servers.
      * Only lb_algorithm_round_robin and lb_algorithm_consistent_hash are supported; consistent-hash always hashes on the uuid of the virtualservice
-     * invoking avi.vs.log_forward(), not a per-request client ip/uri/header, so all of one vs's log records land on the same collector.
+     * invoking the datascript log forwarding call, not a per-request client ip/uri/header, so all of one vs's log records land on the same collector.
      * Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
      * LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
      * LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
