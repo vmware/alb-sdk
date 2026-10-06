@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ObjSyncConfig  {
+    @JsonProperty("cert_validation_mode")
+    private String certValidationMode = "OBJSYNC_CERT_VALIDATION_STRICT";
+
     @JsonProperty("objsync_cpu_limit")
     private Integer objsyncCpuLimit = 0;
 
@@ -31,6 +34,36 @@ public class ObjSyncConfig  {
     private Integer objsyncReconcileInterval = 10;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Tls certificate validation mode for inter-se objsync, validated against the system secure channel certificate.
+     * Strict (default) is the most secure mode.
+     * Compat also accepts legacy se certificates for backward compatibility.
+     * Enum options - OBJSYNC_CERT_VALIDATION_COMPAT, OBJSYNC_CERT_VALIDATION_STRICT, OBJSYNC_CERT_VALIDATION_AUTO.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "OBJSYNC_CERT_VALIDATION_STRICT".
+     * @return certValidationMode
+     */
+    public String getCertValidationMode() {
+        return certValidationMode;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Tls certificate validation mode for inter-se objsync, validated against the system secure channel certificate.
+     * Strict (default) is the most secure mode.
+     * Compat also accepts legacy se certificates for backward compatibility.
+     * Enum options - OBJSYNC_CERT_VALIDATION_COMPAT, OBJSYNC_CERT_VALIDATION_STRICT, OBJSYNC_CERT_VALIDATION_AUTO.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as "OBJSYNC_CERT_VALIDATION_STRICT".
+     * @param certValidationMode set the certValidationMode.
+     */
+    public void setCertValidationMode(String  certValidationMode) {
+        this.certValidationMode = certValidationMode;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -130,14 +163,16 @@ public class ObjSyncConfig  {
       ObjSyncConfig objObjSyncConfig = (ObjSyncConfig) o;
       return   Objects.equals(this.objsyncCpuLimit, objObjSyncConfig.objsyncCpuLimit)&&
   Objects.equals(this.objsyncReconcileInterval, objObjSyncConfig.objsyncReconcileInterval)&&
-  Objects.equals(this.objsyncHubElectInterval, objObjSyncConfig.objsyncHubElectInterval);
+  Objects.equals(this.objsyncHubElectInterval, objObjSyncConfig.objsyncHubElectInterval)&&
+  Objects.equals(this.certValidationMode, objObjSyncConfig.certValidationMode);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class ObjSyncConfig {\n");
-                  sb.append("    objsyncCpuLimit: ").append(toIndentedString(objsyncCpuLimit)).append("\n");
+                  sb.append("    certValidationMode: ").append(toIndentedString(certValidationMode)).append("\n");
+                        sb.append("    objsyncCpuLimit: ").append(toIndentedString(objsyncCpuLimit)).append("\n");
                         sb.append("    objsyncHubElectInterval: ").append(toIndentedString(objsyncHubElectInterval)).append("\n");
                         sb.append("    objsyncReconcileInterval: ").append(toIndentedString(objsyncReconcileInterval)).append("\n");
                   sb.append("}");
