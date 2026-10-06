@@ -114306,6 +114306,23 @@
                 }
             }
         },
+        "ClockSkewToleranceConfig": {
+            "type": "object",
+            "description": "Clock-skew tolerance applied when validating JWT exp/iat claims, to account for clock drift between the token-issuing and verifying sides.",
+            "properties": {
+                "enabled": {
+                    "description": "Enable clock-skew tolerance when validating JWT exp/iat claims. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "skew_tolerance": {
+                    "description": "Maximum clock drift tolerated between the token-issuing and verifying sides when validating JWT exp/iat claims. Allowed values are 1-300. Field introduced in 32.1.4. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "default": 30,
+                    "format": "uint32"
+                }
+            }
+        },
         "CloneServer": {
             "type": "object",
             "properties": {
@@ -119699,6 +119716,10 @@
                     "type": "integer",
                     "default": 60,
                     "format": "uint32"
+                },
+                "clock_skew_config": {
+                    "description": "Clock-skew tolerance configuration for site to site communication with JWT authentication. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ClockSkewToleranceConfig"
                 },
                 "cloud_discovery_interval": {
                     "description": "Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -153659,6 +153680,11 @@
         "ObjSyncConfig": {
             "type": "object",
             "properties": {
+                "cert_validation_mode": {
+                    "description": "TLS certificate validation mode for inter-SE objsync, validated against the system secure channel certificate. STRICT (default) is the most secure mode. COMPAT also accepts legacy SE certificates for backward compatibility. Enum options - OBJSYNC_CERT_VALIDATION_COMPAT, OBJSYNC_CERT_VALIDATION_STRICT, OBJSYNC_CERT_VALIDATION_AUTO. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string",
+                    "default": "OBJSYNC_CERT_VALIDATION_STRICT"
+                },
                 "objsync_cpu_limit": {
                     "description": "SE CPU limit for InterSE Object Distribution. Allowed values are 0-100. Special values are 0- No Restriction.. Field introduced in 20.1.3. Unit is PERCENT. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
@@ -181946,7 +181972,7 @@
                     "format": "uint32"
                 },
                 "type": {
-                    "description": " Enum options - JOB_TYPE_VS_FULL_LOGS, JOB_TYPE_VS_UDF, JOB_TYPE_VS_METRICS_RT, JOB_TYPE_SSL_CERT, JOB_TYPE_DEBUGVS_PKT_CAPTURE, JOB_TYPE_CONSISTENCY_CHECK, JOB_TYPE_TECHSUPPORT, JOB_TYPE_PKI_PROFILE, JOB_TYPE_NSP_RULE, JOB_TYPE_SEGROUP_METRICS_RT, JOB_TYPE_POSTGRES_STATUS, JOB_TYPE_VS_ROTATE_KEYS, JOB_TYPE_POOL_DNS, JOB_TYPE_GSLB_SERVICE, JOB_TYPE_APP_PERSISTENCE, JOB_TYPE_PROCESS_LOCKED_USER_ACCOUNTS, JOB_TYPE_SESSION, JOB_TYPE_AUTHTOKEN, JOB_TYPE_CLUSTER, JOB_TYPE_SE_SECURE_CHANNEL_CLEANUP, JOB_TYPE_OCSP_STAPLE_STATUS, JOB_TYPE_FILE_OBJECT_CLEANUP, JOB_TYPE_WAF_POLICY_REFRESH_APPLICATION_SIGNATURES, JOB_TYPE_POOL_ASYNC, JOB_TYPE_PROCESS_BASELINE_BENCHMARK, JOB_TYPE_GEODB_REFRESH_CONTROLLER_DATABASES, JOB_TYPE_POSTGRES_VACUUM, JOB_TYPE_WAF_POLICY_AUTO_UPDATE_CRS, JOB_TYPE_POOL_V6_DNS_REFRESH, JOB_TYPE_AUTHPROFILE_SAML_METADATA_UPDATE, JOB_TYPE_SYSTEM_REPORT_CLEANUP, JOB_TYPE_FILE_OBJECT_CRL, JOB_TYPE_POOL_METRICS_RT, JOB_TYPE_GSLB, JOB_TYPE_ARCHIVE_AND_RETENTION_FRAMEWORK, JOB_TYPE_ARCHIVE_AND_RETENTION_PERIODIC_POLICY, JOB_TYPE_EXECUTE_TELEMETRY, JOB_TYPE_SEGROUP_OBJSYNC, JOB_TYPE_CASCADE_UPDATE_CERT_CHILD_PARENT_REF, JOB_TYPE_SCHEDULE_CERT_CASCADE_UPDATE, JOB_TYPE_GSLB_DNS_RESOLVE_ON_SE, JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL, JOB_TYPE_CERTIFICATE_ROTATION_JWT_CLEANUP, JOB_TYPE_CCU_PASSWORD_ROTATION, JOB_TYPE_PASSWORD_EXPIRY_UPDATE. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Enum options - JOB_TYPE_VS_FULL_LOGS, JOB_TYPE_VS_UDF, JOB_TYPE_VS_METRICS_RT, JOB_TYPE_SSL_CERT, JOB_TYPE_DEBUGVS_PKT_CAPTURE, JOB_TYPE_CONSISTENCY_CHECK, JOB_TYPE_TECHSUPPORT, JOB_TYPE_PKI_PROFILE, JOB_TYPE_NSP_RULE, JOB_TYPE_SEGROUP_METRICS_RT, JOB_TYPE_POSTGRES_STATUS, JOB_TYPE_VS_ROTATE_KEYS, JOB_TYPE_POOL_DNS, JOB_TYPE_GSLB_SERVICE, JOB_TYPE_APP_PERSISTENCE, JOB_TYPE_PROCESS_LOCKED_USER_ACCOUNTS, JOB_TYPE_SESSION, JOB_TYPE_AUTHTOKEN, JOB_TYPE_CLUSTER, JOB_TYPE_SE_SECURE_CHANNEL_CLEANUP, JOB_TYPE_OCSP_STAPLE_STATUS, JOB_TYPE_FILE_OBJECT_CLEANUP, JOB_TYPE_WAF_POLICY_REFRESH_APPLICATION_SIGNATURES, JOB_TYPE_POOL_ASYNC, JOB_TYPE_PROCESS_BASELINE_BENCHMARK, JOB_TYPE_GEODB_REFRESH_CONTROLLER_DATABASES, JOB_TYPE_POSTGRES_VACUUM, JOB_TYPE_WAF_POLICY_AUTO_UPDATE_CRS, JOB_TYPE_POOL_V6_DNS_REFRESH, JOB_TYPE_AUTHPROFILE_SAML_METADATA_UPDATE, JOB_TYPE_SYSTEM_REPORT_CLEANUP, JOB_TYPE_FILE_OBJECT_CRL, JOB_TYPE_POOL_METRICS_RT, JOB_TYPE_GSLB, JOB_TYPE_ARCHIVE_AND_RETENTION_FRAMEWORK, JOB_TYPE_ARCHIVE_AND_RETENTION_PERIODIC_POLICY, JOB_TYPE_EXECUTE_TELEMETRY, JOB_TYPE_SEGROUP_OBJSYNC, JOB_TYPE_CASCADE_UPDATE_CERT_CHILD_PARENT_REF, JOB_TYPE_SCHEDULE_CERT_CASCADE_UPDATE, JOB_TYPE_GSLB_DNS_RESOLVE_ON_SE, JOB_TYPE_GSLB_AUTO_UPDATE_SEND_INTERVAL, JOB_TYPE_CERTIFICATE_ROTATION_JWT_CLEANUP, JOB_TYPE_CCU_PASSWORD_ROTATION, JOB_TYPE_PASSWORD_EXPIRY_UPDATE, JOB_TYPE_SEGROUP_OBJSYNC_CERT. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
