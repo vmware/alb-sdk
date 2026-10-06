@@ -2972,6 +2972,100 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
+    /virtualservice/{uuid}/clfprofilestats/:
+        get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/clfprofilestats/
+            operationId: GET /virtualservice/{uuid}/clfprofilestats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfileStats"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /virtualservice/{uuid}/clfprofilelbstats/:
+        get:
+            tags:
+                - VirtualService
+            description: /virtualservice/{uuid}/clfprofilelbstats/
+            operationId: GET /virtualservice/{uuid}/clfprofilelbstats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfileLbStats"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
     /virtualservice/{uuid}/geolocationinfo/:
         get:
             tags:
@@ -4765,6 +4859,63 @@ definitions:
             transport:
                 description: "Transport protocol for log delivery to this pool. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    ClfPoolLbStats:
+        type: object
+        properties:
+            clf_pool_uuid:
+                description: "Composite UUID of this ClfPool ('<clfprofile_uuid>-<SHA256(pool_name)>'). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            num_servers:
+                description: "Number of servers (collectors) configured in this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int64
+            num_servers_enabled:
+                description: "Number of enabled servers (collectors) in this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int64
+            num_servers_up:
+                description: "Number of servers (collectors) currently UP in this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int64
+            pool_name:
+                description: "Name of this ClfPool as configured in ClfPool.name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pool_stats:
+                description: "Connection-level stats for this pool's backing se_pool_t. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/PoolStats'
+    ClfPoolStats:
+        type: object
+        properties:
+            bytes_enqueued:
+                description: "Log record bytes queued for delivery to this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            clf_pool_uuid:
+                description: "Composite UUID of this ClfPool ('<clfprofile_uuid>-<SHA256(pool_name)>'). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            drops_no_server:
+                description: "Records for which this pool had no UP server, independent of whether another pool for the same record succeeded. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_ring_full:
+                description: "Records dropped because the delivery queue was full. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_shm_alloc_fail:
+                description: "Records dropped because the shared-memory allocation for the request failed. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_shm_limit:
+                description: "Records dropped because in-flight shared memory for CLF was exhausted. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            pool_name:
+                description: "Name of this ClfPool as configured in ClfPool.name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            records_enqueued:
+                description: "Log records queued for delivery to this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
     ClfProfileHmonStat:
         type: object
         properties:
@@ -4785,6 +4936,89 @@ definitions:
             replicate:
                 description: "Whether logs are replicated to all pools (true) or routed by priority (false). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
+            se_uuid:
+                description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vs_uuid:
+                description: "UUID of the Virtual Service these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    ClfProfileLbStats:
+        type: object
+        properties:
+            clf_profile_name:
+                description: "Name of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            clf_profile_uuid:
+                description: "UUID of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pools:
+                description: "Per-ClfPool LB/capacity breakdown. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfPoolLbStats'
+            se_uuid:
+                description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vs_uuid:
+                description: "UUID of the Virtual Service these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    ClfProfileStats:
+        type: object
+        properties:
+            bytes_enqueued:
+                description: "Log record bytes queued for delivery, summed across all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            clf_profile_name:
+                description: "Name of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            clf_profile_uuid:
+                description: "UUID of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            drops_empty_payload:
+                description: "Records dropped because the datascript log forwarding call had only empty or non-string arguments. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_no_server:
+                description: "Sum across all pools of drops_no_server (see ClfPoolStats) -- a record routed to multiple pools can contribute more than once here. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_payload_too_big:
+                description: "Records dropped because the payload exceeded the maximum supported log size. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_profile_disabled:
+                description: "Records dropped because the profile was disabled or had no pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_ring_full:
+                description: "Records dropped because the delivery queue was full, summed across all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_shm_alloc_fail:
+                description: "Records dropped because the shared-memory allocation for the request failed, summed across all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            drops_shm_limit:
+                description: "Records dropped because in-flight shared memory for CLF was exhausted, summed across all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            log_forward_calls:
+                description: "Log forwarding requests from the datascript that reached this profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            pools:
+                description: "Per-ClfPool breakdown of the enqueue-side dataplane counters. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfPoolStats'
+            proc_id:
+                description: "Dataplane process/core that reported this row. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            records_enqueued:
+                description: "Log records queued for delivery, summed across all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
             se_uuid:
                 description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

@@ -564,7 +564,7 @@
                     }
                 },
                 "lb_algorithm": {
-                    "description": "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking avi.vs.log_forward(), not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking the datascript log forwarding call, not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LB_ALGORITHM_ROUND_ROBIN"
                 },
@@ -632,7 +632,7 @@
                     "type": "string"
                 },
                 "enabled": {
-                    "description": "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, avi.vs.log_forward() is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },

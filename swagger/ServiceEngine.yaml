@@ -1091,6 +1091,53 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
+    /serviceengine/{uuid}/clfserverstats/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/clfserverstats/
+            operationId: GET /serviceengine/{uuid}/clfserverstats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfServerStats"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
     /serviceengine/{uuid}/seassertstats/ag/:
         get:
             tags:
@@ -8811,7 +8858,7 @@ definitions:
                 items:
                     type: string
             lb_algorithm:
-                description: "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking avi.vs.log_forward(), not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking the datascript log forwarding call, not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "LB_ALGORITHM_ROUND_ROBIN"
             log_format:
@@ -8862,7 +8909,7 @@ definitions:
                 description: "Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             enabled:
-                description: "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, avi.vs.log_forward() is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: boolean
                 default: True
             markers:
@@ -8919,6 +8966,107 @@ definitions:
                 $ref: '#/definitions/IpAddr'
             port:
                 description: "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    ClfServerStats:
+        type: object
+        properties:
+            bytes_sent:
+                description: "Bytes successfully written to the collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            conn_state:
+                description: "Current connection state  0=disconnected, 1=connecting, 2=active, 3=waiting to retry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            connect_attempts:
+                description: "Connection attempts to this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connect_failed:
+                description: "Connection attempts that failed. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connect_success:
+                description: "Connections successfully established. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            idle_closes:
+                description: "Connections closed because the collector went idle. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ip_addr:
+                description: "IP address of the log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
+            ip_port:
+                description: "Collector endpoint as 'ip port'. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            last_snapshot_time:
+                description: "Wall-clock date/time of the last snapshot reported for this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TimeStamp'
+            logs_dropped_queue_full:
+                description: "Log records evicted because the pending queue hit its record or byte limit. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_failed:
+                description: "Log records that could not be delivered. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_queued:
+                description: "Log records parked while the connection was being established. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_received:
+                description: "Log records handed to this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_sent:
+                description: "Log records successfully written to the collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            netns_errors:
+                description: "Failures entering the collector's VRF network namespace. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            pending_count:
+                description: "Log records currently parked on the pending queue. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            port:
+                description: "Port of the log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            proc_id:
+                description: "Dataplane process/core that reported this row. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            reconnects:
+                description: "Reconnect attempts after an established connection dropped. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            se_uuid:
+                description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            send_errors:
+                description: "Socket write/send errors. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_cert_errors:
+                description: "TLS failures attributable to certificate validation. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_handshake_failed:
+                description: "Failed TLS handshakes with this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_handshake_success:
+                description: "Successful TLS handshakes with this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            transport:
+                description: "Transport used to deliver logs to this collector. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vrf:
+                description: "VRF/namespace id the collector is reached through. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
     ClientInsightsSampling:
