@@ -16,7 +16,7 @@ info:
         ```
         ```
 
-        API permission: PERMISSION_Licensing
+        API permission: PERMISSION_LICENSING
 tags:
   - name: CloudLicenseSubscribeResult
 schemes:
@@ -61,12 +61,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: empty
+                    description: CloudLicenseSubscriptionRequest
                     required: true
                     schema:
-                        type: object
-                        additionalProperties:
-                            type: string
+                        $ref: "#/definitions/CloudLicenseSubscriptionRequest"
             security:
                 - basicAuth: []
             responses:
@@ -127,4 +125,10 @@ definitions:
                 type: string
             status:
                 description: "Literal 'success' on success, error responses instead return {'error'  ...} at a non-2xx HTTP status. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    CloudLicenseSubscriptionRequest:
+        type: object
+        properties:
+            pool_id:
+                description: "Pool ID for cloud licensing subscription. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string

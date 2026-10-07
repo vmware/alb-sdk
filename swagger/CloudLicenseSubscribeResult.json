@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_Licensing\n"
+        "description": "Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_LICENSING\n"
     },
     "tags": [
         {
@@ -71,13 +71,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "empty",
+                        "description": "CloudLicenseSubscriptionRequest",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/CloudLicenseSubscriptionRequest"
                         }
                     }
                 ],
@@ -172,6 +169,15 @@
                 },
                 "status": {
                     "description": "Literal 'success' on success, error responses instead return {'error'  ...} at a non-2xx HTTP status. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "CloudLicenseSubscriptionRequest": {
+            "type": "object",
+            "properties": {
+                "pool_id": {
+                    "description": "Pool ID for cloud licensing subscription. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }

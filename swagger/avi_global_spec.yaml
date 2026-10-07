@@ -11852,12 +11852,10 @@ paths:
                     description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
                 -   in: body
                     name: body
-                    description: empty
+                    description: CloudLicenseSubscriptionRequest
                     required: true
                     schema:
-                        type: object
-                        additionalProperties:
-                            type: string
+                        $ref: "#/definitions/CloudLicenseSubscriptionRequest"
             security:
                 - basicAuth: []
             responses:
@@ -78349,6 +78347,12 @@ definitions:
             status:
                 description: "Literal 'success' on success, error responses instead return {'error'  ...} at a non-2xx HTTP status. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+    CloudLicenseSubscriptionRequest:
+        type: object
+        properties:
+            pool_id:
+                description: "Pool ID for cloud licensing subscription. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
     CloudMeta:
         type: object
         required:
@@ -82393,6 +82397,10 @@ definitions:
                 format: int32
             num_east_west_virtualservices:
                 description: "Maximum number of east-west virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            num_geodb_records:
+                description: "System-wide maximum number of records allowed in a GeoDB database (SystemGeoDB and GslbGeoDB). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: int32
             num_pool_rt_metrics:
@@ -129122,7 +129130,7 @@ definitions:
                 type: integer
                 format: int32
             limit:
-                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, SE_WAAP_MIN_VCPUS, SE_WAAP_MIN_MEMORY, SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY, NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS, NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Enum of the system limit. Enum options - NUM_VIRTUALSERVICES, NUM_VIRTUALSERVICES_RT_METRICS, NUM_EW_VIRTUALSERVICES, NUM_SERVERS, NUM_SERVICEENGINES, NUM_VRFS, NUM_CLOUDS, NUM_TENANTS, POOLS_PER_VS, POOLGROUPS_PER_VS, CERTIFICATES_PER_VS, POOLS_PER_POOLGROUP, RULES_PER_HTTPPOLICY, RULES_PER_NSP, SERVERS_PER_POOL, ROUTES_PER_VRF, DEF_ROUTES_PER_VRF, SNI_CHILD_PER_PARENT_VS, IPS_PER_IPADDRGROUP, STRINGS_PER_STRINGGROUP, VS_L2_SCALEOUT, VS_BGP_SCALEOUT, GATEWAY_MON_PER_VRF, NUM_COMPRESSION_FILTERS, STRGROUPS_CACHE_MIME, STRGROUPS_NO_CACHE_MIME, STRGROUPS_NO_CACHE_URI, STR_CACHE_MIME, STR_NO_CACHE_MIME, STR_NO_CACHE_URI, NUM_HTTP_POLICIES_PER_VS, NUM_RULES_PER_HTTP_POLICIES, NUM_MATCHES_PER_RULE, NUM_STRGROUPS_PER_MATCH, NUM_CUSTOM_STR, WAF_PROFILE_NUM_CONTENT_TYPES, WAF_PROFILE_NUM_RESTRICTED_EXTENSIONS, WAF_PROFILE_NUM_RESTRICTED_HEADERS, WAF_PROFILE_NUM_STATIC_EXTENSIONS, WAF_PSM_NUM_MATCH_ELEMENTS, WAF_PSM_NUM_RULES_PER_LOCATION, WAF_PSM_NUM_LOCATIONS, WAF_PSM_NUM_GRP, WAF_POLICY_NUM_ALLOW_LIST_RULES, WAF_POLICY_NUM_APPS, WAF_POLICY_NUM_RULE_TAGS, WAF_POLICY_NUM_RULES_PER_RULEGROUP, WAF_POLICY_NUM_PRE_POST_GRP, WAF_PROFILE_NUM_DATA_FILES, RULES_PER_NAT_POLICY, IPADDR_PER_MATCH_CRITERIA, IPADDR_RANGE_PER_MATCH_CRITERIA, IPADDR_PREFIX_PER_MATCH_CRITERIA, IPADDR_GROUP_PER_MATCH_CRITERIA, WAF_PROFILE_NUM_ALLOWED_REQUEST_CONTENT_TYPE_CHARSETS, BOT_MAP_RULES, BOT_ALLOW_RULES, BOT_HDR_MATCHES, NUM_RULES_PER_EVH_HOST, WAF_PROFILE_NUM_CONTENT_TYPE_MAPPINGS, WAF_POLICY_NUM_EXCLUDE_LIST, NUM_WAF_VIRTUALSERVICES, WAF_RULE_METRICS_ENABLED_VS, SE_NUM_NS_VS, SE_NUM_EW_VS, SE_NUM_ALL_VS, SE_NUM_VS_RT_METRICS, SE_NUM_VLAN_PER_PHY_INTF, SE_NUM_VLAN_PER_SE, SE_NUM_PHY_INTF_PER_SE, SE_NUM_LOGICAL_INTF_PER_SE, SE_VRF_PER_SE, NUM_POOL_RT_METRICS, NUM_SE_RT_METRICS, NUM_VIRTUALSERVICES_RTMETRICS_WAF, SE_WAAP_MIN_VCPUS, SE_WAAP_MIN_MEMORY, SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS, NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY, NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS, NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS, NUM_GEODB_RECORDS. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             limit_description:
                 description: "Description of the system limit. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
