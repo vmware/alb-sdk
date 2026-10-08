@@ -51,6 +51,7 @@ type AviClient struct {
 	CSRFPolicy                               *CSRFPolicyClient
 	CertJwtStore                             *CertJwtStoreClient
 	CertificateManagementProfile             *CertificateManagementProfileClient
+	ChangelogResponse                        *ChangelogResponseClient
 	CheckPasswordResponse                    *CheckPasswordResponseClient
 	ClfProfile                               *ClfProfileClient
 	Cloud                                    *CloudClient
@@ -101,6 +102,7 @@ type AviClient struct {
 	HealthMonitor                            *HealthMonitorClient
 	IPAMDNSProviderProfile                   *IPAMDNSProviderProfileClient
 	IPAddrGroup                              *IPAddrGroupClient
+	IPPropertiesResponse                     *IPPropertiesResponseClient
 	IPReputationDB                           *IPReputationDBClient
 	IcapProfile                              *IcapProfileClient
 	Image                                    *ImageClient
@@ -115,6 +117,7 @@ type AviClient struct {
 	LabelGroup                               *LabelGroupClient
 	LabelProfile                             *LabelProfileClient
 	LicenseLedgerDetails                     *LicenseLedgerDetailsClient
+	LicenseStateResponse                     *LicenseStateResponseClient
 	LicenseStatus                            *LicenseStatusClient
 	LicenseUsageInfo                         *LicenseUsageInfoClient
 	LicensingActionResult                    *LicensingActionResultClient
@@ -295,6 +298,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.CSRFPolicy = NewCSRFPolicyClient(aviSession)
 	aviClient.CertJwtStore = NewCertJwtStoreClient(aviSession)
 	aviClient.CertificateManagementProfile = NewCertificateManagementProfileClient(aviSession)
+	aviClient.ChangelogResponse = NewChangelogResponseClient(aviSession)
 	aviClient.CheckPasswordResponse = NewCheckPasswordResponseClient(aviSession)
 	aviClient.ClfProfile = NewClfProfileClient(aviSession)
 	aviClient.Cloud = NewCloudClient(aviSession)
@@ -345,6 +349,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.HealthMonitor = NewHealthMonitorClient(aviSession)
 	aviClient.IPAMDNSProviderProfile = NewIPAMDNSProviderProfileClient(aviSession)
 	aviClient.IPAddrGroup = NewIPAddrGroupClient(aviSession)
+	aviClient.IPPropertiesResponse = NewIPPropertiesResponseClient(aviSession)
 	aviClient.IPReputationDB = NewIPReputationDBClient(aviSession)
 	aviClient.IcapProfile = NewIcapProfileClient(aviSession)
 	aviClient.Image = NewImageClient(aviSession)
@@ -359,6 +364,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.LabelGroup = NewLabelGroupClient(aviSession)
 	aviClient.LabelProfile = NewLabelProfileClient(aviSession)
 	aviClient.LicenseLedgerDetails = NewLicenseLedgerDetailsClient(aviSession)
+	aviClient.LicenseStateResponse = NewLicenseStateResponseClient(aviSession)
 	aviClient.LicenseStatus = NewLicenseStatusClient(aviSession)
 	aviClient.LicenseUsageInfo = NewLicenseUsageInfoClient(aviSession)
 	aviClient.LicensingActionResult = NewLicensingActionResultClient(aviSession)
