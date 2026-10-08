@@ -2,17 +2,17 @@
     "swagger": "2.0",
     "info": {
         "version": "32.2.1",
-        "title": "Avi LicenseUsageInfo Object API",
+        "title": "Avi ChangelogResponse Object API",
         "contact": {
             "name": "Avi Networks Inc.",
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi LicenseUsageInfo object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
+        "description": "Avi ChangelogResponse object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
     "tags": [
         {
-            "name": "LicenseUsageInfo"
+            "name": "ChangelogResponse"
         }
     ],
     "schemes": [
@@ -26,13 +26,13 @@
     },
     "basePath": "/api",
     "paths": {
-        "/licenseusage": {
+        "/changelog": {
             "get": {
                 "tags": [
-                    "LicenseUsageInfo"
+                    "ChangelogResponse"
                 ],
-                "description": "/licenseusage",
-                "operationId": "GET /licenseusage",
+                "description": "/changelog",
+                "operationId": "GET /changelog",
                 "consumes": [
                     "application/json"
                 ],
@@ -78,7 +78,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/LicenseUsageInfo"
+                            "$ref": "#/definitions/ChangelogResponse"
                         }
                     },
                     "401": {
@@ -87,13 +87,13 @@
                 }
             }
         },
-        "/tenant/<tenant>/licenseusage": {
+        "/tenant/<tenant>/changelog": {
             "get": {
                 "tags": [
-                    "LicenseUsageInfo"
+                    "ChangelogResponse"
                 ],
-                "description": "/tenant/<tenant>/licenseusage",
-                "operationId": "GET /tenant/<tenant>/licenseusage",
+                "description": "/tenant/<tenant>/changelog",
+                "operationId": "GET /tenant/<tenant>/changelog",
                 "consumes": [
                     "application/json"
                 ],
@@ -139,7 +139,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/LicenseUsageInfo"
+                            "$ref": "#/definitions/ChangelogResponse"
                         }
                     },
                     "401": {
@@ -150,73 +150,18 @@
         }
     },
     "definitions": {
-        "LicenseTenantUsageInfo": {
+        "ChangelogPackageLog": {
             "type": "object",
             "properties": {
-                "consumed_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "num_se_vcpus": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "reserved_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "used_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                }
-            }
-        },
-        "LicenseTierUsageInfo": {
-            "type": "object",
-            "properties": {
-                "consumed_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "licensed_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "licensed_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "num_se_vcpus": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "pertenant": {
-                    "description": "Per-tenant breakdown keyed by tenant UUID; omitted entirely when the filter_pertenant query param is true. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "versions": {
+                    "description": "Keyed by release date (YYYY-MM-DD). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "additionalProperties": {
-                        "$ref": "#/definitions/LicenseTenantUsageInfo"
+                        "$ref": "#/definitions/ChangelogVersionEntry"
                     }
-                },
-                "reserved_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "used_service_cores": {
-                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
                 }
             }
         },
-        "LicenseTierUsageInfo.PertenantEntry": {
+        "ChangelogPackageLog.VersionsEntry": {
             "type": "object",
             "properties": {
                 "key": {
@@ -225,52 +170,22 @@
                 },
                 "value": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/LicenseTenantUsageInfo"
+                    "$ref": "#/definitions/ChangelogVersionEntry"
                 }
             }
         },
-        "LicenseUsageInfo": {
+        "ChangelogResponse": {
             "type": "object",
             "properties": {
-                "consumed_service_cores": {
-                    "description": "Service cores actively consumed across all tenants for the default tier. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "licensed_cores": {
-                    "description": "Alias of licensed_service_cores. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "licensed_service_cores": {
-                    "description": "Service cores licensed for the controller's default license tier. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "num_se_vcpus": {
-                    "description": "Alias of used_service_cores. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "pertier": {
-                    "description": "Per-tier breakdown, keyed by LicenseTierType name (e.g. ENTERPRISE, ENTERPRISE_WITH_CLOUD_SERVICES). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                "packages": {
+                    "description": "Keyed by package name (currently only 'openssl' is ever populated); documents the shape of the unwrapped top-level response object. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "additionalProperties": {
-                        "$ref": "#/definitions/LicenseTierUsageInfo"
+                        "$ref": "#/definitions/ChangelogPackageLog"
                     }
-                },
-                "reserved_service_cores": {
-                    "description": "Service cores held in escrow but not yet consumed, for the default tier. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
-                },
-                "used_service_cores": {
-                    "description": "consumed_service_cores + reserved_service_cores. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "number",
-                    "format": "double"
                 }
             }
         },
-        "LicenseUsageInfo.PertierEntry": {
+        "ChangelogResponse.PackagesEntry": {
             "type": "object",
             "properties": {
                 "key": {
@@ -279,7 +194,19 @@
                 },
                 "value": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/LicenseTierUsageInfo"
+                    "$ref": "#/definitions/ChangelogPackageLog"
+                }
+            }
+        },
+        "ChangelogVersionEntry": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Changelog description lines for this release. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         }

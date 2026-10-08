@@ -1,0 +1,214 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "32.2.1",
+        "title": "Avi LicenseStateResponse Object API",
+        "contact": {
+            "name": "Avi Networks Inc.",
+            "url": "https://avinetworks.com/contact-us",
+            "email": "support@avinetworks.com"
+        },
+        "description": "Avi LicenseStateResponse object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
+    },
+    "tags": [
+        {
+            "name": "LicenseStateResponse"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "securityDefinitions": {
+        "basicAuth": {
+            "type": "basic",
+            "description": "basic authentication"
+        }
+    },
+    "basePath": "/api",
+    "paths": {
+        "/licensestates": {
+            "get": {
+                "tags": [
+                    "LicenseStateResponse"
+                ],
+                "description": "/licensestates",
+                "operationId": "GET /licensestates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/LicenseStateResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "LicenseStateResponse"
+                ],
+                "description": "/licensestates",
+                "operationId": "DELETE /licensestates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "LicenseStateGroup": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Total count of licenses in this state. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "licenses": {
+                    "description": "List of licenses in this state. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LicenseStateInfo"
+                    }
+                },
+                "state": {
+                    "description": "Lifecycle state for this group. Enum options - STATE_UNSPECIFIED, STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD, STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "LicenseStateInfo": {
+            "type": "object",
+            "properties": {
+                "expiration_time": {
+                    "description": "License expiration date and time. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "grace_period_end_time": {
+                    "description": "Grace period end time after expiration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "license_id": {
+                    "description": "Unique identifier for the license. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "lifecycle_state": {
+                    "description": "Current lifecycle state of the license. Enum options - STATE_UNSPECIFIED, STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD, STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "pre_warn_time": {
+                    "description": "Pre-warning period start time before expiration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "LicenseStateResponse": {
+            "type": "object",
+            "properties": {
+                "license_groups": {
+                    "description": "Licenses grouped by their lifecycle states. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LicenseStateGroup"
+                    }
+                }
+            }
+        }
+    },
+    "_comment": [
+        "Copyright 2021 VMware, Inc.",
+        "SPDX-License-Identifier: Apache License 2.0"
+    ]
+}

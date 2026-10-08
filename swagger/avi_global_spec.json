@@ -17719,6 +17719,67 @@
                 }
             }
         },
+        "/tenant/<tenant>/licenseusage": {
+            "get": {
+                "tags": [
+                    "LicenseUsageInfo"
+                ],
+                "description": "/tenant/<tenant>/licenseusage",
+                "operationId": "GET /tenant/<tenant>/licenseusage",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/LicenseUsageInfo"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
         "/jwtserverprofile": {
             "get": {
                 "tags": [
@@ -26219,6 +26280,309 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/ControllerBannerList"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/changelog": {
+            "get": {
+                "tags": [
+                    "ChangelogResponse"
+                ],
+                "description": "/changelog",
+                "operationId": "GET /changelog",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ChangelogResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/tenant/<tenant>/changelog": {
+            "get": {
+                "tags": [
+                    "ChangelogResponse"
+                ],
+                "description": "/tenant/<tenant>/changelog",
+                "operationId": "GET /tenant/<tenant>/changelog",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ChangelogResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/ipproperties": {
+            "get": {
+                "tags": [
+                    "IpPropertiesResponse"
+                ],
+                "description": "/ipproperties",
+                "operationId": "GET /ipproperties",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/IpPropertiesResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            }
+        },
+        "/licensestates": {
+            "get": {
+                "tags": [
+                    "LicenseStateResponse"
+                ],
+                "description": "/licensestates",
+                "operationId": "GET /licensestates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/LicenseStateResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "log in failed"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "LicenseStateResponse"
+                ],
+                "description": "/licensestates",
+                "operationId": "DELETE /licensestates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "X-Avi-Tenant",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header"
+                    },
+                    {
+                        "name": "X-Avi-Tenant-UUID",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Tenant Header UUID"
+                    },
+                    {
+                        "name": "X-Avi-Version",
+                        "in": "header",
+                        "type": "string",
+                        "required": true,
+                        "description": "The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version."
+                    },
+                    {
+                        "name": "X-CSRFToken",
+                        "in": "header",
+                        "type": "string",
+                        "required": false,
+                        "description": "Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests."
+                    }
+                ],
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
                         }
                     },
                     "401": {
@@ -113486,6 +113850,66 @@
                 }
             }
         },
+        "ChangelogPackageLog": {
+            "type": "object",
+            "properties": {
+                "versions": {
+                    "description": "Keyed by release date (YYYY-MM-DD). Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/ChangelogVersionEntry"
+                    }
+                }
+            }
+        },
+        "ChangelogPackageLog.VersionsEntry": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ChangelogVersionEntry"
+                }
+            }
+        },
+        "ChangelogResponse": {
+            "type": "object",
+            "properties": {
+                "packages": {
+                    "description": "Keyed by package name (currently only 'openssl' is ever populated); documents the shape of the unwrapped top-level response object. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/ChangelogPackageLog"
+                    }
+                }
+            }
+        },
+        "ChangelogResponse.PackagesEntry": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ChangelogPackageLog"
+                }
+            }
+        },
+        "ChangelogVersionEntry": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Changelog description lines for this release. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "CheckPasswordResponse": {
             "type": "object",
             "properties": {
@@ -141168,6 +141592,82 @@
                 }
             }
         },
+        "IpPropertiesAsData": {
+            "type": "object",
+            "properties": {
+                "asname": {
+                    "description": "Resolved AS name, or 'AS-Unknown' if not found. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "asnum": {
+                    "description": "Resolved AS number, or 'AS-Unknown' if not found. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "IpPropertiesGeolocData": {
+            "type": "object",
+            "properties": {
+                "countrycode": {
+                    "description": "Resolved country code, or 'Country-Unknown' if not found. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "IpPropertiesIpEntry": {
+            "type": "object",
+            "properties": {
+                "asdata": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpPropertiesAsData"
+                },
+                "geolocdata": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpPropertiesGeolocData"
+                }
+            }
+        },
+        "IpPropertiesResponse": {
+            "type": "object",
+            "properties": {
+                "asdata": {
+                    "description": "Keyed by each queried ASN (as a string) from ?asn=<csv>; value is the resolved AS name. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "ipdata": {
+                    "description": "Keyed by each queried IP from ?ip=<csv>. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/IpPropertiesIpEntry"
+                    }
+                }
+            }
+        },
+        "IpPropertiesResponse.AsdataEntry": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "IpPropertiesResponse.IpdataEntry": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/IpPropertiesIpEntry"
+                }
+            }
+        },
         "IpReputationConfig": {
             "type": "object",
             "properties": {
@@ -142205,6 +142705,10 @@
                         "type": "string"
                     }
                 },
+                "clock_skew_config": {
+                    "description": "Clock-skew tolerance applied to the 'nbf' and 'exp' claims when validating JWTs. If not configured, no clock-skew tolerance is applied. Only applicable when JWT Profile type is CLIENT_AUTH. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "$ref": "#/definitions/ClockSkewToleranceConfig"
+                },
                 "controller_internal_auth": {
                     "description": "JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/ControllerInternalAuth"
@@ -142233,6 +142737,11 @@
                 "protected_resource_config": {
                     "description": "OAuth 2.0 Protected Resource Metadata configuration (RFC 9728). Only applicable when jwt_profile_type is CLIENT_AUTH. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/JWTProtectedResourceConfig"
+                },
+                "reject_non_expiring_tokens": {
+                    "description": "Reject JWTs whose 'exp' claim is missing or non-numeric. This configuration knob is applicable only when the JWT Profile type is CLIENT_AUTH. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
                 },
                 "tenant_ref": {
                     "description": "UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -145381,6 +145890,64 @@
                 "service_units": {
                     "description": "Organization id. Field introduced in 21.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/OrgServiceUnits"
+                }
+            }
+        },
+        "LicenseStateGroup": {
+            "type": "object",
+            "properties": {
+                "count": {
+                    "description": "Total count of licenses in this state. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "licenses": {
+                    "description": "List of licenses in this state. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LicenseStateInfo"
+                    }
+                },
+                "state": {
+                    "description": "Lifecycle state for this group. Enum options - STATE_UNSPECIFIED, STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD, STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "LicenseStateInfo": {
+            "type": "object",
+            "properties": {
+                "expiration_time": {
+                    "description": "License expiration date and time. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "grace_period_end_time": {
+                    "description": "Grace period end time after expiration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "license_id": {
+                    "description": "Unique identifier for the license. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "lifecycle_state": {
+                    "description": "Current lifecycle state of the license. Enum options - STATE_UNSPECIFIED, STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD, STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "pre_warn_time": {
+                    "description": "Pre-warning period start time before expiration. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "LicenseStateResponse": {
+            "type": "object",
+            "properties": {
+                "license_groups": {
+                    "description": "Licenses grouped by their lifecycle states. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LicenseStateGroup"
+                    }
                 }
             }
         },
@@ -153534,6 +154101,11 @@
                 "auth_profile_ref": {
                     "description": "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
+                },
+                "reject_non_expiring_tokens": {
+                    "description": "Reject ID/JWT access tokens whose 'exp' claim is missing or non-numeric. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean",
+                    "default": true
                 },
                 "resource_server": {
                     "description": "Resource Server OAuth config. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",

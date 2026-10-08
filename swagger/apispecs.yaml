@@ -299,63 +299,65 @@ info:
     \ object api\n```\n```\n\nAPI permission: PERMISSION_EXEMPT\nAvi SecureChannelAvailableLocalIPs\
     \ object api\n```\n- show securechannelavailablelocalips <key>\n```\n\nAPI permission:\
     \ PERMISSION_CONTROLLER\nAvi RestoreParams object api\n```\n- restore configuration\n\
-    ```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi UserAccountProfile object api\n\
-    ```\n- configure useraccountprofile <key>\n- show useraccountprofile <key>\n```\n\
-    \nAPI permission: PERMISSION_USER\nAvi AlertSyslogConfig object api\n```\n- configure\
-    \ alertsyslogconfig <key>\n- show alertsyslogconfig <key>\n- test alerttestsyslog\
-    \ <key>\n```\n\nAPI permission: PERMISSION_ALERTSYSLOGCONFIG\nAvi SSLProfile object\
-    \ api\n```\n- configure sslprofile <key>\n- show sslprofile <key>\n```\n\nExamples\n\
-    - **sslprofile_example**: To create a standard security SSL profile\n  ```json\n\
-    \    {'name': 'Standard', 'accepted_versions': [{'type': 'SSL_VERSION_TLS1'},\
-    \ {'type': 'SSL_VERSION_TLS1'}, {'type': 'SSL_VERSION_TLS1_1'}, {'type': 'SSL_VERSION_TLS1_2'}],\
-    \ 'accepted_ciphers': 'aECDSA:aECDH:kEDH:kRSA'}\n  ```\nAPI permission: PERMISSION_SSLPROFILE\n\
-    Avi GslbCRMRuntime object api\n```\n- show gslbcrm <key>\n```\n\nAPI permission:\
-    \ PERMISSION_GSLB\nAvi NetworkInventory object api\n```\n- show networkinventory\
-    \ <key>\n```\n\nAPI permission: PERMISSION_NETWORK\nAvi RollbackPatchSystemParams\
-    \ object api\n```\n- rollbackpatch system\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\n\
-    Avi SspInstance object api\n```\n- configure sspinstance <key>\n- show sspinstance\
-    \ <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi InventoryFaultConfig\
-    \ object api\n```\n- configure inventoryfaultconfig\n- show inventoryfaultconfig\n\
-    ```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi AlertEmailConfig object api\n\
-    ```\n- configure alertemailconfig <key>\n- show alertemailconfig <key>\n- test\
-    \ alerttestemail <key>\n```\n\nAPI permission: PERMISSION_ALERTEMAILCONFIG\nAvi\
-    \ LogControllerMapping object api\n```\n- show logcontrollermapping\n```\n\nAPI\
-    \ permission: PERMISSION_CONTROLLER\nAvi BackupConfiguration object api\n```\n\
-    - show backupconfiguration <key>\n- configure backupconfiguration <key>\n```\n\
-    \nAPI permission: PERMISSION_CONTROLLER\nAvi UpgradeControllerParams object api\n\
-    ```\n- upgrade controller\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi\
-    \ FileServiceIpamDnsScriptUploadAck object api\n```\n```\n\nAPI permission: PERMISSION_IpamDnsProviderProfile\n\
-    Avi VIMgrHostRuntime object api\n```\n- show vinfra host <key>\n- vinfra makehostaccessible\
-    \  <key>\n- show vinfra quarantinedhost\n```\n\nAPI permission: PERMISSION_CLOUD\n\
-    Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_LICENSING\n\
-    Avi PKIProfile object api\n```\n- configure pkiprofile <key>\n- show pkiprofile\
-    \ <key>\n```\n\nAPI permission: PERMISSION_PKIPROFILE\nAvi ClfProfile object api\n\
-    ```\n- configure clfprofile <key>\n- show clfprofile <key>\n```\n\nAPI permission:\
-    \ PERMISSION_VSDATASCRIPTSET\nAvi ImageRawInventoryResponse object api\n```\n\
-    ```\n\nAPI permission: PERMISSION_Image\nAvi ControllerBannerList object api\n\
-    ```\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineGroupInventory\
-    \ object api\n```\n- show serviceenginegroupinventory <key>\n```\n\nAPI permission:\
-    \ PERMISSION_SERVICEENGINEGROUP\nAvi ProtocolParser object api\n```\n- configure\
-    \ protocolparser <key>\n- show protocolparser <key>\n```\n\nAPI permission: PERMISSION_PROTOCOLPARSER\n\
-    Avi BotIPReputationTypeMapping object api\n```\n- configure botipreputationtypemapping\
-    \ <key>\n- show botipreputationtypemapping <key>\n```\n\nAPI permission: PERMISSION_BOTDETECTIONPOLICY\n\
-    Avi SeVersion object api\n```\n- show version serviceengine\n```\n\nAPI permission:\
-    \ PERMISSION_CONTROLLER\nAvi ConfigExportBundleInfo object api\n```\n```\n\nAPI\
-    \ permission: PERMISSION_CONTROLLER\nAvi UpgradeSeGroupParams object api\n```\n\
-    - upgrade segroup\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi AkoAmkoCluster\
-    \ object api\n```\n- configure akoamkocluster <key>\n- show akoamkocluster <key>\n\
-    ```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\nAvi UpgradeStatusSummary object\
-    \ api\n```\n- show upgrade status\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
-    Avi RollbackPatchSeGroupParams object api\n```\n- rollbackpatch segroup\n```\n\
-    \nAPI permission: PERMISSION_UPGRADE_OPS\nAvi GslbGeoDbProfile object api\n```\n\
-    - configure gslbgeodbprofile <key>\n- show gslbgeodbprofile <key>\n```\n\nAPI\
-    \ permission: PERMISSION_GSLBGEODBPROFILE\nAvi IcapProfile object api\n```\n-\
-    \ configure icapprofile <key>\n- show icapprofile <key>\n```\n\nAPI permission:\
-    \ PERMISSION_ICAP\nAvi Alert object api\n```\n- show alert <key>\n- delete alert\
-    \ <key>\n```\n\nAPI permission: PERMISSION_ALERT\nAvi ALBServicesJob object api\n\
-    ```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n```\n\nAPI\
-    \ permission: PERMISSION_CONTROLLER\nAvi ServiceEngineInventory object api\n```\n\
-    - show serviceengineinventory <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINE\n\
+    ```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi LicenseStateResponse object\
+    \ api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi UserAccountProfile\
+    \ object api\n```\n- configure useraccountprofile <key>\n- show useraccountprofile\
+    \ <key>\n```\n\nAPI permission: PERMISSION_USER\nAvi AlertSyslogConfig object\
+    \ api\n```\n- configure alertsyslogconfig <key>\n- show alertsyslogconfig <key>\n\
+    - test alerttestsyslog <key>\n```\n\nAPI permission: PERMISSION_ALERTSYSLOGCONFIG\n\
+    Avi SSLProfile object api\n```\n- configure sslprofile <key>\n- show sslprofile\
+    \ <key>\n```\n\nExamples\n- **sslprofile_example**: To create a standard security\
+    \ SSL profile\n  ```json\n    {'name': 'Standard', 'accepted_versions': [{'type':\
+    \ 'SSL_VERSION_TLS1'}, {'type': 'SSL_VERSION_TLS1'}, {'type': 'SSL_VERSION_TLS1_1'},\
+    \ {'type': 'SSL_VERSION_TLS1_2'}], 'accepted_ciphers': 'aECDSA:aECDH:kEDH:kRSA'}\n\
+    \  ```\nAPI permission: PERMISSION_SSLPROFILE\nAvi GslbCRMRuntime object api\n\
+    ```\n- show gslbcrm <key>\n```\n\nAPI permission: PERMISSION_GSLB\nAvi NetworkInventory\
+    \ object api\n```\n- show networkinventory <key>\n```\n\nAPI permission: PERMISSION_NETWORK\n\
+    Avi RollbackPatchSystemParams object api\n```\n- rollbackpatch system\n```\n\n\
+    API permission: PERMISSION_UPGRADE_OPS\nAvi SspInstance object api\n```\n- configure\
+    \ sspinstance <key>\n- show sspinstance <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi InventoryFaultConfig object api\n```\n- configure inventoryfaultconfig\n-\
+    \ show inventoryfaultconfig\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi\
+    \ AlertEmailConfig object api\n```\n- configure alertemailconfig <key>\n- show\
+    \ alertemailconfig <key>\n- test alerttestemail <key>\n```\n\nAPI permission:\
+    \ PERMISSION_ALERTEMAILCONFIG\nAvi LogControllerMapping object api\n```\n- show\
+    \ logcontrollermapping\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi BackupConfiguration\
+    \ object api\n```\n- show backupconfiguration <key>\n- configure backupconfiguration\
+    \ <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi UpgradeControllerParams\
+    \ object api\n```\n- upgrade controller\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\n\
+    Avi ChangelogResponse object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi FileServiceIpamDnsScriptUploadAck object api\n```\n```\n\nAPI permission:\
+    \ PERMISSION_IpamDnsProviderProfile\nAvi VIMgrHostRuntime object api\n```\n- show\
+    \ vinfra host <key>\n- vinfra makehostaccessible  <key>\n- show vinfra quarantinedhost\n\
+    ```\n\nAPI permission: PERMISSION_CLOUD\nAvi CloudLicenseSubscribeResult object\
+    \ api\n```\n```\n\nAPI permission: PERMISSION_LICENSING\nAvi PKIProfile object\
+    \ api\n```\n- configure pkiprofile <key>\n- show pkiprofile <key>\n```\n\nAPI\
+    \ permission: PERMISSION_PKIPROFILE\nAvi ClfProfile object api\n```\n- configure\
+    \ clfprofile <key>\n- show clfprofile <key>\n```\n\nAPI permission: PERMISSION_VSDATASCRIPTSET\n\
+    Avi ImageRawInventoryResponse object api\n```\n```\n\nAPI permission: PERMISSION_Image\n\
+    Avi ControllerBannerList object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi ServiceEngineGroupInventory object api\n```\n- show serviceenginegroupinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINEGROUP\nAvi ProtocolParser\
+    \ object api\n```\n- configure protocolparser <key>\n- show protocolparser <key>\n\
+    ```\n\nAPI permission: PERMISSION_PROTOCOLPARSER\nAvi BotIPReputationTypeMapping\
+    \ object api\n```\n- configure botipreputationtypemapping <key>\n- show botipreputationtypemapping\
+    \ <key>\n```\n\nAPI permission: PERMISSION_BOTDETECTIONPOLICY\nAvi SeVersion object\
+    \ api\n```\n- show version serviceengine\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi ConfigExportBundleInfo object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi UpgradeSeGroupParams object api\n```\n- upgrade segroup\n```\n\nAPI permission:\
+    \ PERMISSION_UPGRADE_OPS\nAvi AkoAmkoCluster object api\n```\n- configure akoamkocluster\
+    \ <key>\n- show akoamkocluster <key>\n```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\n\
+    Avi UpgradeStatusSummary object api\n```\n- show upgrade status\n```\n\nAPI permission:\
+    \ PERMISSION_CONTROLLER\nAvi RollbackPatchSeGroupParams object api\n```\n- rollbackpatch\
+    \ segroup\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi GslbGeoDbProfile\
+    \ object api\n```\n- configure gslbgeodbprofile <key>\n- show gslbgeodbprofile\
+    \ <key>\n```\n\nAPI permission: PERMISSION_GSLBGEODBPROFILE\nAvi IcapProfile object\
+    \ api\n```\n- configure icapprofile <key>\n- show icapprofile <key>\n```\n\nAPI\
+    \ permission: PERMISSION_ICAP\nAvi Alert object api\n```\n- show alert <key>\n\
+    - delete alert <key>\n```\n\nAPI permission: PERMISSION_ALERT\nAvi ALBServicesJob\
+    \ object api\n```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n\
+    ```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineInventory object\
+    \ api\n```\n- show serviceengineinventory <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINE\n\
     Avi ClusterCloudDetails object api\n```\n- configure clusterclouddetails <key>\n\
     - show clusterclouddetails <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
     Avi ControllerVersion object api\n```\n- show version controller\n- show version\
@@ -383,7 +385,8 @@ info:
     Avi SeGroupVersion object api\n```\n- show version serviceenginegroup\n```\n\n\
     API permission: PERMISSION_CONTROLLER\nAvi IpamDnsProviderProfile object api\n\
     ```\n- configure ipamdnsproviderprofile <key>\n- show ipamdnsproviderprofile <key>\n\
-    ```\n\nAPI permission: PERMISSION_IPAMDNSPROVIDERPROFILE\nAvi InventoryMapResponse\
+    ```\n\nAPI permission: PERMISSION_IPAMDNSPROVIDERPROFILE\nAvi IpPropertiesResponse\
+    \ object api\n```\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi InventoryMapResponse\
     \ object api\n```\n```\n\nAPI permission: PERMISSION_VIRTUALSERVICE\nAvi AuthMappingProfile\
     \ object api\n```\n- configure authmappingprofile <key>\n- show authmappingprofile\
     \ <key>\n```\n\nAPI permission: PERMISSION_AUTHMAPPINGPROFILE\nAvi ReportProfile\
@@ -2434,6 +2437,17 @@ tags:
     API permission: PERMISSION_UPGRADE_OPS
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: LicenseStateResponse
+  description: 'Avi LicenseStateResponse object api
+
+    ```
+
+    ```
+
+
+    API permission: PERMISSION_CONTROLLER
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: UserAccountProfile
   description: 'Avi UserAccountProfile object api
 
@@ -2599,6 +2613,17 @@ tags:
 
 
     API permission: PERMISSION_UPGRADE_OPS
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: ChangelogResponse
+  description: 'Avi ChangelogResponse object api
+
+    ```
+
+    ```
+
+
+    API permission: PERMISSION_CONTROLLER
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: FileServiceIpamDnsScriptUploadAck
@@ -3085,6 +3110,17 @@ tags:
 
 
     API permission: PERMISSION_IPAMDNSPROVIDERPROFILE
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: IpPropertiesResponse
+  description: 'Avi IpPropertiesResponse object api
+
+    ```
+
+    ```
+
+
+    API permission: PERMISSION_CONTROLLER
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: InventoryMapResponse
@@ -23248,6 +23284,52 @@ paths:
             $ref: '#/definitions/LicenseUsageInfo'
         '401':
           description: log in failed
+  /tenant/<tenant>/licenseusage:
+    get:
+      tags:
+      - LicenseUsageInfo
+      description: /tenant/<tenant>/licenseusage
+      operationId: GET /tenant/<tenant>/licenseusage
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/LicenseUsageInfo'
+        '401':
+          description: log in failed
   /jwtserverprofile:
     get:
       tags:
@@ -29780,6 +29862,235 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/ControllerBannerList'
+        '401':
+          description: log in failed
+  /changelog:
+    get:
+      tags:
+      - ChangelogResponse
+      description: /changelog
+      operationId: GET /changelog
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ChangelogResponse'
+        '401':
+          description: log in failed
+  /tenant/<tenant>/changelog:
+    get:
+      tags:
+      - ChangelogResponse
+      description: /tenant/<tenant>/changelog
+      operationId: GET /tenant/<tenant>/changelog
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ChangelogResponse'
+        '401':
+          description: log in failed
+  /ipproperties:
+    get:
+      tags:
+      - IpPropertiesResponse
+      description: /ipproperties
+      operationId: GET /ipproperties
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/IpPropertiesResponse'
+        '401':
+          description: log in failed
+  /licensestates:
+    get:
+      tags:
+      - LicenseStateResponse
+      description: /licensestates
+      operationId: GET /licensestates
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/LicenseStateResponse'
+        '401':
+          description: log in failed
+    delete:
+      tags:
+      - LicenseStateResponse
+      description: /licensestates
+      operationId: DELETE /licensestates
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
         '401':
           description: log in failed
   /inventory-map:
@@ -115160,6 +115471,55 @@ definitions:
           $ref: '#/definitions/CertJwtStore'
       next:
         type: string
+  ChangelogPackageLog:
+    type: object
+    properties:
+      versions:
+        description: Keyed by release date (YYYY-MM-DD). Allowed with any value in
+          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        additionalProperties:
+          $ref: '#/definitions/ChangelogVersionEntry'
+  ChangelogPackageLog.VersionsEntry:
+    type: object
+    properties:
+      key:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+      value:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/ChangelogVersionEntry'
+  ChangelogResponse:
+    type: object
+    properties:
+      packages:
+        description: Keyed by package name (currently only 'openssl' is ever populated);
+          documents the shape of the unwrapped top-level response object. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        additionalProperties:
+          $ref: '#/definitions/ChangelogPackageLog'
+  ChangelogResponse.PackagesEntry:
+    type: object
+    properties:
+      key:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+      value:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/ChangelogPackageLog'
+  ChangelogVersionEntry:
+    type: object
+    properties:
+      description:
+        description: Changelog description lines for this release. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          type: string
   CheckPasswordResponse:
     type: object
     properties:
@@ -142260,6 +142620,73 @@ definitions:
         type: integer
         default: 5
         format: int32
+  IpPropertiesAsData:
+    type: object
+    properties:
+      asname:
+        description: Resolved AS name, or 'AS-Unknown' if not found. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      asnum:
+        description: Resolved AS number, or 'AS-Unknown' if not found. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+  IpPropertiesGeolocData:
+    type: object
+    properties:
+      countrycode:
+        description: Resolved country code, or 'Country-Unknown' if not found. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+  IpPropertiesIpEntry:
+    type: object
+    properties:
+      asdata:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/IpPropertiesAsData'
+      geolocdata:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/IpPropertiesGeolocData'
+  IpPropertiesResponse:
+    type: object
+    properties:
+      asdata:
+        description: Keyed by each queried ASN (as a string) from ?asn=<csv>; value
+          is the resolved AS name. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      ipdata:
+        description: Keyed by each queried IP from ?ip=<csv>. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        additionalProperties:
+          $ref: '#/definitions/IpPropertiesIpEntry'
+  IpPropertiesResponse.AsdataEntry:
+    type: object
+    properties:
+      key:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+      value:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+  IpPropertiesResponse.IpdataEntry:
+    type: object
+    properties:
+      key:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        type: string
+      value:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/IpPropertiesIpEntry'
   IpReputationConfig:
     type: object
     properties:
@@ -143093,6 +143520,13 @@ definitions:
         type: array
         items:
           type: string
+      clock_skew_config:
+        description: Clock-skew tolerance applied to the 'nbf' and 'exp' claims when
+          validating JWTs. If not configured, no clock-skew tolerance is applied.
+          Only applicable when JWT Profile type is CLIENT_AUTH. Field introduced in
+          32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        $ref: '#/definitions/ClockSkewToleranceConfig'
       controller_internal_auth:
         description: JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH.
           Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials,
@@ -143134,6 +143568,13 @@ definitions:
           32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         $ref: '#/definitions/JWTProtectedResourceConfig'
+      reject_non_expiring_tokens:
+        description: Reject JWTs whose 'exp' claim is missing or non-numeric. This
+          configuration knob is applicable only when the JWT Profile type is CLIENT_AUTH.
+          Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: boolean
+        default: true
       tenant_ref:
         description: UUID of the Tenant. It is a reference to an object of type Tenant.
           Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials,
@@ -146210,6 +146651,67 @@ definitions:
         description: Organization id. Field introduced in 21.1.4. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/OrgServiceUnits'
+  LicenseStateGroup:
+    type: object
+    properties:
+      count:
+        description: Total count of licenses in this state. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: int32
+      licenses:
+        description: List of licenses in this state. Field introduced in 32.1.1. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: array
+        items:
+          $ref: '#/definitions/LicenseStateInfo'
+      state:
+        description: Lifecycle state for this group. Enum options - STATE_UNSPECIFIED,
+          STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD,
+          STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+  LicenseStateInfo:
+    type: object
+    properties:
+      expiration_time:
+        description: License expiration date and time. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      grace_period_end_time:
+        description: Grace period end time after expiration. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      license_id:
+        description: Unique identifier for the license. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      lifecycle_state:
+        description: Current lifecycle state of the license. Enum options - STATE_UNSPECIFIED,
+          STATE_ACTIVE, STATE_WARNING_AGGRESIVE, STATE_WARNING_NORMAL, STATE_GRACE_PERIOD,
+          STATE_EXPIRED, STATE_ALL. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      pre_warn_time:
+        description: Pre-warning period start time before expiration. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+  LicenseStateResponse:
+    type: object
+    properties:
+      license_groups:
+        description: Licenses grouped by their lifecycle states. Field introduced
+          in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/LicenseStateGroup'
   LicenseStatus:
     type: object
     properties:
@@ -154195,6 +154697,12 @@ definitions:
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
+      reject_non_expiring_tokens:
+        description: Reject ID/JWT access tokens whose 'exp' claim is missing or non-numeric.
+          Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: boolean
+        default: true
       resource_server:
         description: Resource Server OAuth config. Field introduced in 21.1.3. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
