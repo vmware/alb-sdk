@@ -327,7 +327,7 @@ info:
     \ FileServiceIpamDnsScriptUploadAck object api\n```\n```\n\nAPI permission: PERMISSION_IpamDnsProviderProfile\n\
     Avi VIMgrHostRuntime object api\n```\n- show vinfra host <key>\n- vinfra makehostaccessible\
     \  <key>\n- show vinfra quarantinedhost\n```\n\nAPI permission: PERMISSION_CLOUD\n\
-    Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_Licensing\n\
+    Avi CloudLicenseSubscribeResult object api\n```\n```\n\nAPI permission: PERMISSION_LICENSING\n\
     Avi PKIProfile object api\n```\n- configure pkiprofile <key>\n- show pkiprofile\
     \ <key>\n```\n\nAPI permission: PERMISSION_PKIPROFILE\nAvi ClfProfile object api\n\
     ```\n- configure clfprofile <key>\n- show clfprofile <key>\n```\n\nAPI permission:\
@@ -2637,7 +2637,7 @@ tags:
     ```
 
 
-    API permission: PERMISSION_Licensing
+    API permission: PERMISSION_LICENSING
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: PKIProfile
@@ -14441,118 +14441,6 @@ paths:
             $ref: '#/definitions/LicenseStatus'
         '401':
           description: log in failed
-    put:
-      tags:
-      - LicenseStatus
-      description: /licensing/status
-      operationId: PUT /licensing/status
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: LicenseStatus object creation
-        required: true
-        schema:
-          $ref: '#/definitions/LicenseStatus'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/LicenseStatus'
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - LicenseStatus
-      description: /licensing/status
-      operationId: PATCH /licensing/status
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: LicenseStatus object creation
-        required: true
-        schema:
-          $ref: '#/definitions/LicenseStatus'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/LicenseStatus'
-        '401':
-          description: log in failed
   /licensing/status/{uuid}:
     get:
       tags:
@@ -23256,12 +23144,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: empty
+        description: CloudLicenseSubscriptionRequest
         required: true
         schema:
-          type: object
-          additionalProperties:
-            type: string
+          $ref: '#/definitions/CloudLicenseSubscriptionRequest'
       security:
       - basicAuth: []
       responses:
@@ -28425,118 +28311,6 @@ paths:
         description: Avi Controller may send back CSRF token in the response cookies.
           The caller should update the request headers with this token else controller
           will reject requests.
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/LicenseLedgerDetails'
-        '401':
-          description: log in failed
-    put:
-      tags:
-      - LicenseLedgerDetails
-      description: /licensing/ledger/details
-      operationId: PUT /licensing/ledger/details
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: LicenseLedgerDetails object creation
-        required: true
-        schema:
-          $ref: '#/definitions/LicenseLedgerDetails'
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/LicenseLedgerDetails'
-        '401':
-          description: log in failed
-    patch:
-      tags:
-      - LicenseLedgerDetails
-      description: /licensing/ledger/details
-      operationId: PATCH /licensing/ledger/details
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: name
-        description: object name
-        required: false
-        type: string
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - in: body
-        name: body
-        description: LicenseLedgerDetails object creation
-        required: true
-        schema:
-          $ref: '#/definitions/LicenseLedgerDetails'
       security:
       - basicAuth: []
       responses:
@@ -117149,6 +116923,14 @@ definitions:
           {'error'  ...} at a non-2xx HTTP status. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+  CloudLicenseSubscriptionRequest:
+    type: object
+    properties:
+      pool_id:
+        description: Pool ID for cloud licensing subscription. Field introduced in
+          32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
   CloudMeta:
     type: object
     required:
@@ -122795,6 +122577,12 @@ definitions:
         description: Maximum number of east-west virtualservices. Field introduced
           in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
+        type: integer
+        format: int32
+      num_geodb_records:
+        description: System-wide maximum number of records allowed in a GeoDB database
+          (SystemGeoDB and GslbGeoDB). Field introduced in 32.1.4. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: int32
       num_pool_rt_metrics:
@@ -193266,9 +193054,9 @@ definitions:
           SE_WAAP_MAX_VS_PER_SE, T1_LRS_PER_CLOUD, NUM_VIRTUALSERVICES_APPLICATION_INSIGHTS,
           NUM_VIRTUALSERVICES_POSITIVE_SECURITY, NUM_TENANT_BINDINGS, NUM_APIS, NUM_API_PATHS_PER_POLICY,
           NUM_API_SCHEMAS_PER_POLICY, NUM_API_SCHEMA_NESTING, NUM_LEARNING_APIS, NUM_LEARNING_PARAMS,
-          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS.
-          Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials,
-          Basic, Enterprise with Cloud Services edition.
+          NUM_API_METRICS, API_METRICS_DISK_KB_PER_ENDPOINT, NUM_API_PATHS, NUM_API_SCHEMAS,
+          NUM_GEODB_RECORDS. Field introduced in 31.2.1. Allowed with any value in
+          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       limit_description:
         description: Description of the system limit. Field introduced in 31.2.1.
