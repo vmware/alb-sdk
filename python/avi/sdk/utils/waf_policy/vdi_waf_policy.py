@@ -9,7 +9,6 @@ import sys
 
 from avi.sdk.avi_api import ApiSession
 
-API_VERSION = "22.1.2"
 SYSTEM_WAF_POLICY_VDI='System-WAF-Policy-VDI'
 
 logger = logging.getLogger(__name__)
@@ -150,10 +149,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.password:
         api = ApiSession.get_session(args.controller_ip, args.user, args.password,
-                                     tenant=args.tenant, api_version=API_VERSION)
+                                     tenant=args.tenant)
     elif args.authtoken:
         api = ApiSession.get_session(args.controller_ip, args.user, tenant=args.tenant,
-                                     token=args.authtoken, api_version=API_VERSION)
+                                     token=args.authtoken)
     else:
         logging.error("Either password or authtokentoken must be provided.")
         sys.exit(1)
