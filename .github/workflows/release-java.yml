@@ -1,0 +1,166 @@
+name: Release Java SDK
+# Publishes the Java SDK to Maven Central, or (dry run) builds the final signed
+# bundle without publishing so it can be validated before the real release.
+on:
+  # Real release, chosen by tag: "*-java-sdk" runs this SDK only, "*-python-sdk" skips it,
+  # a tag with both (or neither) names runs both SDKs.
+  release:
+    types: [created]
+  # Manual run: dry run by default.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release name / version, e.g. 32.1.4, 32.1.4b1, 32.1.4post1 (or tag-32.1.4-java-sdk)'
+        required: true
+        type: string
+      ref:
+        description: 'Branch, tag or SHA to build'
+        required: true
+        default: 'eng'
+        type: string
+      dry_run:
+        description: 'Dry run: build and package only, do NOT publish to Maven Central'
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  java-sdk:
+    if: github.event_name == 'workflow_dispatch' || (contains(github.event.release.tag_name, 'java-sdk') || !contains(github.event.release.tag_name, 'python-sdk'))
+    runs-on: ubuntu-22.04
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+      RELEASE_NAME: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.event.release.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.sha }}
+
+      - name: Set up JDK and Maven Central credentials
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17   # pom.xml compiles with <release>17</release>
+          gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Compute Java version
+        id: version
+        run: |
+          # tag-32.1.4-java-sdk -> 32.1.4 ; 32.1.4 -> 32.1.4
+          JAVA_VERSION=$(echo "$RELEASE_NAME" | sed -E 's/^(tag|test)-//' | cut -d - -f 1)
+          if [[ -z "$JAVA_VERSION" ]]; then
+            echo "Could not derive a version from '$RELEASE_NAME'"; exit 1
+          fi
+          if [[ "$JAVA_VERSION" == *"post"* ]]; then
+            JAVA_VERSION="${JAVA_VERSION/post/.}"
+          elif [[ "$JAVA_VERSION" == *"b"* ]]; then
+            JAVA_VERSION="${JAVA_VERSION/b/-beta-}"
+          else
+            JAVA_VERSION="$JAVA_VERSION.RELEASE"
+          fi
+          echo "Java version: $JAVA_VERSION (dry run: $DRY_RUN)"
+          echo "JAVA_RELEASE_VERSION=$JAVA_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Set version in pom.xml
+        working-directory: java
+        run: mvn --batch-mode versions:set -DnewVersion=${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+
+      # Re-run safety: Maven Central never accepts the same version twice.
+      - name: Check if version is already on Maven Central
+        id: central
+        env:
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          URL="https://repo1.maven.org/maven2/com/vmware/avi/sdk/avisdk/$V/avisdk-$V.pom"
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' "$URL")
+          echo "Central lookup $URL -> HTTP $CODE"
+          if [[ "$CODE" == "200" ]]; then
+            echo "EXISTS=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "EXISTS=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Dry run: full build + javadoc + sources + GPG signing (verify phase), no upload.
+      - name: Build and sign (dry run)
+        if: env.DRY_RUN == 'true'
+        working-directory: java
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+        run: mvn clean -e --batch-mode verify -DskipTests
+
+      - name: Publish to Maven Central
+        if: env.DRY_RUN != 'true' && steps.central.outputs.EXISTS != 'true'
+        working-directory: java
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
+        run: mvn clean -e --batch-mode deploy -DskipTests
+
+      # Already published (re-run): do not deploy again; take the exact published files
+      # so the bundle / release assets match what is on Maven Central.
+      - name: Reuse artifacts already on Maven Central
+        if: env.DRY_RUN != 'true' && steps.central.outputs.EXISTS == 'true'
+        env:
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          echo "::warning::avisdk $V already exists on Maven Central - skipping deploy, reusing published files"
+          mkdir -p java/target
+          BASE="https://repo1.maven.org/maven2/com/vmware/avi/sdk/avisdk/$V"
+          for f in avisdk-$V.jar avisdk-$V-javadoc.jar avisdk-$V-sources.jar; do
+            curl -sSfL -o "java/target/$f" "$BASE/$f"
+            curl -sSfL -o "java/target/$f.asc" "$BASE/$f.asc"
+          done
+
+      - name: Assemble release bundle
+        id: bundle
+        env:
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          mkdir -p bundle
+          ls -l java/target/
+          for f in avisdk-$V.jar avisdk-$V-javadoc.jar avisdk-$V-sources.jar; do
+            cp "java/target/$f" bundle/
+            # signatures are produced by the gpg plugin during verify/deploy
+            [[ -f "java/target/$f.asc" ]] && cp "java/target/$f.asc" bundle/ || echo "WARN: no signature for $f"
+          done
+          cp java/pom.xml "bundle/avisdk-$V.pom"
+          # Same files, with the names used for GitHub release assets
+          mkdir -p assets
+          cp bundle/avisdk-$V.jar         assets/Java-avisdk-$V.jar
+          cp bundle/avisdk-$V-javadoc.jar assets/Java-avisdk-$V-javadoc.jar
+          cp bundle/avisdk-$V-sources.jar assets/Java-avisdk-$V-javasources.jar
+          (cd bundle && sha256sum * > SHA256SUMS && zip -r "../avisdk-java-bundle-$V.zip" .)
+          echo "--- bundle contents ---"; unzip -l "avisdk-java-bundle-$V.zip"
+
+      - name: Validate bundle
+        env:
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          for f in avisdk-$V.jar avisdk-$V-javadoc.jar avisdk-$V-sources.jar; do
+            jar tf "bundle/$f" > /dev/null
+          done
+          # Gpg signatures must exist for a Central-publishable bundle
+          ls bundle/*.asc > /dev/null
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-sdk-bundle-${{ steps.version.outputs.JAVA_RELEASE_VERSION }}${{ env.DRY_RUN == 'true' && '-dry-run' || '' }}
+          path: avisdk-java-bundle-${{ steps.version.outputs.JAVA_RELEASE_VERSION }}.zip
+          if-no-files-found: error
+
+      - name: Attach assets to GitHub release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" assets/* --clobber
