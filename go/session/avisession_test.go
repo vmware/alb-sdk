@@ -89,6 +89,10 @@ func getValidTokenV2() (string, error) {
 			SetAuthToken(AVI_AUTH_TOKEN), SetInsecure, SetTenant(AVI_TENANT),
 			SetVersion(aviVersion))
 	}
+	if err != nil {
+		return "", err
+	}
+
 	err = aviAuthSessionV2.Post(tokenPath, data, &robj)
 	if err != nil {
 		glog.Infof("Error while getting auth token. [ERROR]: %s", err.Error())
@@ -117,12 +121,16 @@ func getSessions(t *testing.T) []*AviSession {
 			SetTenant(AVI_TENANT), SetAuthToken(AVI_AUTH_TOKEN), SetInsecure, SetVersion(aviVersion))
 	}
 
+	if err != nil {
+		t.Errorf("Set tenant failed: %s", err.Error())
+	}
+
 	var sessionSetAuthTokenV2 *AviSession
 	sessionSetAuthTokenV2, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
 		SetRefreshAuthTokenCallbackV2(getValidTokenV2), SetInsecure, SetTenant(AVI_TENANT),
 		SetVersion(aviVersion))
 	if err != nil {
-		t.Errorf("Session Creation failed: %s", err)
+		t.Errorf("Session Creation failed: %s", err.Error())
 	}
 
 	if AVI_CONTROLLER != "localhost" {
@@ -163,17 +171,17 @@ func testControllerStatusCheckLimits(t *testing.T) {
 
 	// try to init the session with illegal inputs for controller status check limits.
 	if AVI_PASSWORD != "" {
-		aviSession, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
+		_, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
 			SetTenant(AVI_TENANT), SetPassword(AVI_PASSWORD), SetInsecure, SetLazyAuthentication(true),
 			SetControllerStatusCheckLimits(0, -1), SetVersion(aviVersion))
 	} else {
-		aviSession, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
+		_, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
 			SetTenant(AVI_TENANT), SetAuthToken(AVI_AUTH_TOKEN), SetInsecure, SetLazyAuthentication(true),
 			SetControllerStatusCheckLimits(-2, -3),
 			SetVersion(aviVersion))
 	}
 	if err == nil {
-		t.Errorf("The Avi session go created with illegal arguments")
+		t.Errorf("The Avi session got created with illegal arguments")
 	}
 	if AVI_PASSWORD != "" {
 		aviSession, err = NewAviSession(AVI_CONTROLLER, AVI_USERNAME,
@@ -464,6 +472,10 @@ func TestTokenAuthRobustness(t *testing.T) {
 	authTokenSessionCallback, err := NewAviSession(AVI_CONTROLLER, "admin",
 		SetRefreshAuthTokenCallback(bogusAuthTokenFunction),
 		SetInsecure)
+	if err != nil {
+		t.Errorf("Failed to create new session: %s", err.Error())
+	}
+
 	var res interface{}
 	err = authTokenSessionCallback.Get("api/tenant", &res)
 	if err == nil {
@@ -473,6 +485,10 @@ func TestTokenAuthRobustness(t *testing.T) {
 	authTokenSession, err := NewAviSession(AVI_CONTROLLER, "admin",
 		SetAuthToken("wrong-auth-token"),
 		SetInsecure)
+	if err != nil {
+		t.Errorf("Failed to create new session: %s", err.Error())
+	}
+
 	err = authTokenSession.Get("api/tenant", &res)
 	if err == nil {
 		t.Errorf("ERROR: Expected an error from incorrect token auth")
@@ -484,6 +500,10 @@ func TestTokenAuthRobustnessV2(t *testing.T) {
 	authTokenSessionCallback, err := NewAviSession(AVI_CONTROLLER, "admin",
 		SetRefreshAuthTokenCallbackV2(bogusAuthTokenFunctionV2),
 		SetInsecure)
+	if err != nil {
+		t.Errorf("Failed to create new session: %s", err.Error())
+	}
+
 	var res interface{}
 	err = authTokenSessionCallback.Get("api/tenant", &res)
 	if err.Error() != "Invalid token from callback method" {
@@ -641,7 +661,11 @@ func testTenantSwitch(t *testing.T, avisess *AviSession) {
 
 // Tests to check logout functionality
 func testApiLogout(t *testing.T, avisess *AviSession) {
-	avisess.Logout()
+	err := avisess.Logout()
+	if err != nil {
+		t.Errorf("Failed to logout: %s", err.Error())
+	}
+
 	prevSsnId := avisess.sessionid
 	var res interface{}
 	if err := avisess.Get("api/pool", &res); err == nil {
