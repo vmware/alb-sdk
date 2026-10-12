@@ -8,18 +8,18 @@ package models
 // swagger:model ClfProfileLbStats
 type ClfProfileLbStats struct {
 
-	// Name of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the ClfProfile these stats belong to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClfProfileName *string `json:"clf_profile_name,omitempty"`
 
-	// UUID of the ClfProfile these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the ClfProfile these stats belong to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClfProfileUUID *string `json:"clf_profile_uuid,omitempty"`
 
-	// Per-ClfPool LB/capacity breakdown. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Per-ClfPool LB/capacity breakdown. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Pools []*ClfPoolLbStats `json:"pools,omitempty"`
 
-	// UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the Service Engine reporting these stats. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeUUID *string `json:"se_uuid,omitempty"`
 
-	// UUID of the Virtual Service these stats belong to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the Virtual Service these stats belong to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	VsUUID *string `json:"vs_uuid,omitempty"`
 }
