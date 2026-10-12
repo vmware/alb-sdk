@@ -15571,58 +15571,6 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
     put:
       tags:
       - Cloud
@@ -15667,6 +15615,58 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -120631,9 +120631,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       placement_ineligible_reason_str:
         description: Reason string for why VS cannot be placed on this SE. Field introduced
@@ -120694,9 +120694,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       timestamp:
         description: Timestamp at which this count was obtained. Field introduced
@@ -157590,9 +157590,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
   PlacementIneligibleReasonResources:
     type: object
@@ -157629,9 +157629,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       resource_uuids:
         description: SE UUIDs. Field introduced in 21.1.2. Allowed with any value
@@ -170466,9 +170466,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       placement_ineligible_reason_str:
         description: Placement ineligible reason string. Field introduced in 21.1.2.
@@ -172854,9 +172854,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
         default: PLACEMENT_INELIGIBLE_VS_ELIGIBLE
       placement_ineligible_reason_str:
@@ -173972,9 +173972,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       placement_ineligible_reason_str:
         description: Placement ineligible reason string. Field introduced in 21.1.2.
@@ -179434,9 +179434,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       placement_ineligible_reason_str:
         description: Placement ineligible reason string. Field introduced in 21.1.2.
@@ -179762,9 +179762,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
         default: PLACEMENT_INELIGIBLE_SE_ELIGIBLE
       placement_ineligible_reason_str:
@@ -180031,9 +180031,9 @@ definitions:
           PLACEMENT_INELIGIBLE_IP_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_PENDING_VNIC_OP,
           PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_VNICS_IN_COOLDOWN, PLACEMENT_INELIGIBLE_VNIC_CANDIDATE_HOST_DISCONNECTED,
           PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DEL_PENDING, PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISCONNECTED,
-          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED. Field introduced in
-          21.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
-          with Cloud Services edition.
+          PLACEMENT_INELIGIBLE_NO_BACKEND_REACH_VNIC_DISABLED, PLACEMENT_INELIGIBLE_VNIC_ADD_DEFERRED_READY_SE_EXISTS.
+          Field introduced in 21.1.2. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       placement_ineligible_reason_str:
         description: Placement ineligible reason string. Field introduced in 21.1.2.
