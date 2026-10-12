@@ -35,7 +35,7 @@ public class ClfServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Enable or disable this collector.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
@@ -47,7 +47,7 @@ public class ClfServer  {
     /**
      * This is the setter method to the attribute.
      * Enable or disable this collector.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
@@ -59,7 +59,7 @@ public class ClfServer  {
     /**
      * This is the getter method this will return the attribute value.
      * Ip address of the external log collector.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return ipAddr
@@ -71,7 +71,7 @@ public class ClfServer  {
     /**
      * This is the setter method to the attribute.
      * Ip address of the external log collector.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param ipAddr set the ipAddr.
@@ -84,7 +84,7 @@ public class ClfServer  {
      * This is the getter method this will return the attribute value.
      * Udp/tcp port the collector listens on.
      * Allowed values are 1-65535.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return port
@@ -97,7 +97,7 @@ public class ClfServer  {
      * This is the setter method to the attribute.
      * Udp/tcp port the collector listens on.
      * Allowed values are 1-65535.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param port set the port.

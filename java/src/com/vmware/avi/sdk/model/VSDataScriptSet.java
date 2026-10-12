@@ -91,10 +91,9 @@ public class VSDataScriptSet extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * Optional custom log forward profile this datascriptset forwards logs to via avi.vs.log_forward().
-     * Resolved from the specific datascriptset invoking log_forward(), not from the virtualservice it is attached to.
+     * Uuid of the custom log forward profile that is referred by virtual service datascript objects.
      * It is a reference to an object of type clfprofile.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return clfProfileRef
@@ -105,10 +104,9 @@ public class VSDataScriptSet extends AviRestResource  {
 
     /**
      * This is the setter method to the attribute.
-     * Optional custom log forward profile this datascriptset forwards logs to via avi.vs.log_forward().
-     * Resolved from the specific datascriptset invoking log_forward(), not from the virtualservice it is attached to.
+     * Uuid of the custom log forward profile that is referred by virtual service datascript objects.
      * It is a reference to an object of type clfprofile.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param clfProfileRef set the clfProfileRef.

@@ -38,7 +38,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Free service unit allowance for the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return freeSuLimit
@@ -50,7 +50,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the setter method to the attribute.
      * Free service unit allowance for the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param freeSuLimit set the freeSuLimit.
@@ -62,7 +62,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Name of the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupName
@@ -74,7 +74,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the setter method to the attribute.
      * Name of the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupName set the seGroupName.
@@ -86,7 +86,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Uuid of the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seGroupUuid
@@ -98,7 +98,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param seGroupUuid set the seGroupUuid.
@@ -110,7 +110,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the getter method this will return the attribute value.
      * Service units currently consumed and reserved by the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return serviceUnitsUsed
@@ -122,7 +122,7 @@ public class SupervisorSeGroupFreeLicenseDetails  {
     /**
      * This is the setter method to the attribute.
      * Service units currently consumed and reserved by the supervisor se group.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param serviceUnitsUsed set the serviceUnitsUsed.

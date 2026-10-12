@@ -40,7 +40,7 @@ public class MsgLbApplicationServiceProfile  {
      * Cap on distinct server tcp connections a single client connection may open per backend member for l4 message-level lb.
      * 0 = unlimited; valid limit range is 1-65535.
      * Allowed values are 0-65535.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @return maxTcpConnPerClientPerServer
@@ -54,7 +54,7 @@ public class MsgLbApplicationServiceProfile  {
      * Cap on distinct server tcp connections a single client connection may open per backend member for l4 message-level lb.
      * 0 = unlimited; valid limit range is 1-65535.
      * Allowed values are 0-65535.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 1.
      * @param maxTcpConnPerClientPerServer set the maxTcpConnPerClientPerServer.
@@ -68,7 +68,7 @@ public class MsgLbApplicationServiceProfile  {
      * Controls how client connections are bound to backend server tcp connections.
      * Sticky (default).
      * Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "MSG_LB_SESSION_BINDING_MODE_STICKY".
      * @return sessionBindingMode
@@ -82,7 +82,7 @@ public class MsgLbApplicationServiceProfile  {
      * Controls how client connections are bound to backend server tcp connections.
      * Sticky (default).
      * Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as "MSG_LB_SESSION_BINDING_MODE_STICKY".
      * @param sessionBindingMode set the sessionBindingMode.
@@ -95,7 +95,7 @@ public class MsgLbApplicationServiceProfile  {
      * This is the getter method this will return the attribute value.
      * Parameters for sticky-mode anchor and per-request bindings.
      * Ignored when session_binding_mode is transactional.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return stickyBindingProfile
@@ -108,7 +108,7 @@ public class MsgLbApplicationServiceProfile  {
      * This is the setter method to the attribute.
      * Parameters for sticky-mode anchor and per-request bindings.
      * Ignored when session_binding_mode is transactional.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param stickyBindingProfile set the stickyBindingProfile.
@@ -121,7 +121,7 @@ public class MsgLbApplicationServiceProfile  {
      * This is the getter method this will return the attribute value.
      * Parameters for transactional-mode session bindings.
      * Ignored when session_binding_mode is sticky.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return transactionBindingProfile
@@ -134,7 +134,7 @@ public class MsgLbApplicationServiceProfile  {
      * This is the setter method to the attribute.
      * Parameters for transactional-mode session bindings.
      * Ignored when session_binding_mode is sticky.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param transactionBindingProfile set the transactionBindingProfile.
