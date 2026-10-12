@@ -29,7 +29,7 @@ type SeAgentGraphDBNodeConfig struct {
 	// Configuration for Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Applicationinsightspolicy *ApplicationInsightsPolicy `json:"applicationinsightspolicy,omitempty"`
 
-	// CLF Profile configuration for high-speed log routing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// CLF Profile configuration for high-speed log routing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClfProfile *ClfProfile `json:"clf_profile,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

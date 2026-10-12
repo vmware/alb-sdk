@@ -42,7 +42,7 @@ type ApplicationProfile struct {
 	// List of labels to be used for granular RBAC. Field introduced in 20.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Markers []*RoleFilterMatchLabel `json:"markers,omitempty"`
 
-	// Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MsgLbAppServiceProfile *MsgLbApplicationServiceProfile `json:"msg_lb_app_service_profile,omitempty"`
 
 	// The name of the application profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

@@ -542,10 +542,10 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeHmVsDetails *SeHmEventVsDetails `json:"se_hm_vs_details,omitempty"`
 
-	//  Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeInternalGatewayHeartbeatFailedDetails *SeGatewayHeartbeatFailedDetails `json:"se_internal_gateway_heartbeat_failed_details,omitempty"`
 
-	//  Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	//  Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeInternalGatewayHeartbeatSuccessDetails *SeGatewayHeartbeatSuccessDetails `json:"se_internal_gateway_heartbeat_success_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -680,7 +680,7 @@ type EventDetails struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslRevokedDetails *SSLRevokedDetails `json:"ssl_revoked_details,omitempty"`
 
-	// Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SupervisorSeGroupFreeLicenseDetails *SupervisorSeGroupFreeLicenseDetails `json:"supervisor_se_group_free_license_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

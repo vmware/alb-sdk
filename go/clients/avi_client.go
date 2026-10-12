@@ -15,6 +15,7 @@ type AviClient struct {
 	ALBServicesFileDownload                  *ALBServicesFileDownloadClient
 	ALBServicesFileUpload                    *ALBServicesFileUploadClient
 	ALBServicesJob                           *ALBServicesJobClient
+	ALBServicesLogin                         *ALBServicesLoginClient
 	ALBServicesStatus                        *ALBServicesStatusClient
 	APIPath                                  *APIPathClient
 	APIPolicy                                *APIPolicyClient
@@ -262,6 +263,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.ALBServicesFileDownload = NewALBServicesFileDownloadClient(aviSession)
 	aviClient.ALBServicesFileUpload = NewALBServicesFileUploadClient(aviSession)
 	aviClient.ALBServicesJob = NewALBServicesJobClient(aviSession)
+	aviClient.ALBServicesLogin = NewALBServicesLoginClient(aviSession)
 	aviClient.ALBServicesStatus = NewALBServicesStatusClient(aviSession)
 	aviClient.APIPath = NewAPIPathClient(aviSession)
 	aviClient.APIPolicy = NewAPIPolicyClient(aviSession)

@@ -8,9 +8,9 @@ package models
 // swagger:model MsgLbConnPoolRuntime
 type MsgLbConnPoolRuntime struct {
 
-	// Per-server connection-pool state for this pool, on this core. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Per-server connection-pool state for this pool, on this core. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Entry []*MsgLbConnPoolServerEntry `json:"entry,omitempty"`
 
-	// Name of the MsgLB pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the MsgLB pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolName *string `json:"pool_name,omitempty"`
 }
