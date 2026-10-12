@@ -33,7 +33,7 @@ public class MsgLbApplicationServiceTransactionBindingProfile  {
      * This is the getter method this will return the attribute value.
      * When true, a transactional session binding is freed as soon as its matching response is received.
      * When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return sessionUnbindOnResponse
@@ -46,7 +46,7 @@ public class MsgLbApplicationServiceTransactionBindingProfile  {
      * This is the setter method to the attribute.
      * When true, a transactional session binding is freed as soon as its matching response is received.
      * When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param sessionUnbindOnResponse set the sessionUnbindOnResponse.
@@ -60,7 +60,7 @@ public class MsgLbApplicationServiceTransactionBindingProfile  {
      * Time in milliseconds a transactional session binding waits in idle state before it is torn down.
      * Default 120000 ms.
      * Allowed values are 1-3600000.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Unit is milliseconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120000.
@@ -75,7 +75,7 @@ public class MsgLbApplicationServiceTransactionBindingProfile  {
      * Time in milliseconds a transactional session binding waits in idle state before it is torn down.
      * Default 120000 ms.
      * Allowed values are 1-3600000.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Unit is milliseconds.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 120000.

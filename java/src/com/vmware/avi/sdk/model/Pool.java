@@ -1457,7 +1457,7 @@ public class Pool extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
      * Distinct from l7 conn_pool_properties.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return msgLbConnPoolConfig
@@ -1470,7 +1470,7 @@ public class Pool extends AviRestResource  {
      * This is the setter method to the attribute.
      * Tcp connection pool limits for l4 message-level load balancing vses that use this pool.
      * Distinct from l7 conn_pool_properties.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param msgLbConnPoolConfig set the msgLbConnPoolConfig.

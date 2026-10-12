@@ -341,7 +341,7 @@ public class ApplicationProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Per-client connection cap settings for l4 message-level load balancing (app_service_type_l4_msg_lb).
      * Ignored for other application profile types.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return msgLbAppServiceProfile
@@ -354,7 +354,7 @@ public class ApplicationProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Per-client connection cap settings for l4 message-level load balancing (app_service_type_l4_msg_lb).
      * Ignored for other application profile types.
-     * Field introduced in 32.1.5.
+     * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param msgLbAppServiceProfile set the msgLbAppServiceProfile.
