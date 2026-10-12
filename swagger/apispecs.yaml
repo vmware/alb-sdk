@@ -403,9 +403,10 @@ info:
     \ labelgroup <key>\n- show labelgroup <key>\n```\n\nAPI permission: PERMISSION_LABELGROUP\n\
     Avi VIMgrNWRuntime object api\n```\n- show vinfra network <key>\n```\n\nAPI permission:\
     \ PERMISSION_CLOUD\nAvi UserTokenCheckout object api\n```\n```\n\nAPI permission:\
-    \ PERMISSION_EXEMPT\nAvi PoolInventory object api\n```\n- show poolinventory <key>\n\
-    ```\n\nAPI permission: PERMISSION_POOL\nAvi WafCRS object api\n```\n- configure\
-    \ wafcrs <key>\n- show wafcrs <key>\n```\n\nAPI permission: PERMISSION_WAFCRS\n\
+    \ PERMISSION_EXEMPT\nAvi ALBServicesLogin object api\n```\n```\n\nAPI permission:\
+    \ PERMISSION_ALBSERVICESREG\nAvi PoolInventory object api\n```\n- show poolinventory\
+    \ <key>\n```\n\nAPI permission: PERMISSION_POOL\nAvi WafCRS object api\n```\n\
+    - configure wafcrs <key>\n- show wafcrs <key>\n```\n\nAPI permission: PERMISSION_WAFCRS\n\
     Avi TrafficCloneProfile object api\n```\n- configure trafficcloneprofile <key>\n\
     - show trafficcloneprofile <key>\n```\n\nAPI permission: PERMISSION_TRAFFICCLONEPROFILE\n\
     Avi LicenseStatus object api\n```\n- show license status\n```\n\nAPI permission:\
@@ -3270,6 +3271,17 @@ tags:
 
 
     API permission: PERMISSION_EXEMPT
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: ALBServicesLogin
+  description: 'Avi ALBServicesLogin object api
+
+    ```
+
+    ```
+
+
+    API permission: PERMISSION_ALBSERVICESREG
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: PoolInventory
@@ -15571,6 +15583,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -15615,58 +15679,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -30850,6 +30862,206 @@ paths:
             type: string
         '401':
           description: log in failed
+  /portal-login-status:
+    get:
+      tags:
+      - ALBServicesLogin
+      description: /portal-login-status
+      operationId: GET /portal-login-status
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+  /albservices/login:
+    get:
+      tags:
+      - ALBServicesLogin
+      description: /albservices/login
+      operationId: GET /albservices/login
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: query
+        name: return_url
+        type: string
+        required: false
+        description: Controller-relative path to return to after login.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+  /portal/callback:
+    get:
+      tags:
+      - ALBServicesLogin
+      description: /portal/callback
+      operationId: GET /portal/callback
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - in: query
+        name: code
+        type: string
+        required: true
+        description: OAuth authorization code from the portal.
+      - in: query
+        name: return_url
+        type: string
+        required: false
+        description: URL the portal returns to; must carry the session's tenant= query
+          param.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+  /portal/silent-login:
+    get:
+      tags:
+      - ALBServicesLogin
+      description: /portal/silent-login
+      operationId: GET /portal/silent-login
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ALBServicesLogin'
+        '401':
+          description: log in failed
   /botdetectionpolicy:
     get:
       tags:
@@ -33698,12 +33910,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: empty
+        description: ALBServicesAsset
         required: true
         schema:
-          type: object
-          additionalProperties:
-            type: string
+          $ref: '#/definitions/ALBServicesAsset'
       security:
       - basicAuth: []
       responses:
@@ -33751,12 +33961,10 @@ paths:
           will reject requests.
       - in: body
         name: body
-        description: empty
+        description: ALBServicesAsset
         required: true
         schema:
-          type: object
-          additionalProperties:
-            type: string
+          $ref: '#/definitions/ALBServicesAsset'
       security:
       - basicAuth: []
       responses:
@@ -91134,12 +91342,10 @@ definitions:
         readOnly: true
         type: string
       clf_profile_ref:
-        description: Optional Custom Log Forward profile this DataScriptSet forwards
-          logs to via avi.vs.log_forward(). Resolved from the specific DataScriptSet
-          invoking log_forward(), not from the VirtualService it is attached to. It
-          is a reference to an object of type ClfProfile. Field introduced in 32.1.5.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+        description: UUID of the Custom Log Forward profile that is referred by virtual
+          service datascript objects. It is a reference to an object of type ClfProfile.
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       created_by:
         description: Creator name. Field introduced in 17.1.11,17.2.4. Allowed with
@@ -100809,6 +101015,63 @@ definitions:
         description: ' Field introduced in 20.1.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
         type: string
+  ALBServicesAsset:
+    type: object
+    required:
+    - description
+    - name
+    - status
+    - tenant
+    properties:
+      account_id:
+        description: Account ID to which asset will be scoped in the cloud. Field
+          introduced in 20.1.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
+      description:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+      email:
+        description: Email of the point of contact for particular asset. Field introduced
+          in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      id:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+      license_unsubscribe:
+        description: Unsubscribe from license when de-registering the controller from
+          portal. Default is false. Field introduced in 32.1.1. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: boolean
+      name:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+      site_id:
+        description: Site ID to which asset will be scoped. Field introduced in 32.1.1.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: string
+      site_name:
+        description: Site Name to which asset will be scoped. Field introduced in
+          32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      status:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+      tenant:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
+      uuid:
+        description: ' Field introduced in 18.2.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.'
+        type: string
   ALBServicesAssetResponse:
     type: object
     properties:
@@ -101712,6 +101975,8 @@ definitions:
         description: Parameter value. Field introduced in 22.1.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
+  ALBServicesLogin:
+    type: object
   ALBServicesStatusDetails:
     type: object
     properties:
@@ -107209,7 +107474,7 @@ definitions:
       msg_lb_app_service_profile:
         description: Per-client connection cap settings for L4 message-level load
           balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile
-          types. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          types. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/MsgLbApplicationServiceProfile'
       name:
@@ -115554,7 +115819,7 @@ definitions:
       health_monitor_refs:
         description: Reference to at most one health monitor for collectors in this
           pool. It is a reference to an object of type HealthMonitor. Field introduced
-          in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise,
+          in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: array
         items:
@@ -115568,7 +115833,7 @@ definitions:
           - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE,
           LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS,
           LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
-          LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5.
+          LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
@@ -115577,7 +115842,7 @@ definitions:
         description: Wire format for log records delivered to this pool's collectors.
           Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY,
           CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
         default: CLF_LOG_FORMAT_SYSLOG_OCTET
@@ -115585,13 +115850,13 @@ definitions:
         description: Unique name for this pool within the ClfProfile. Used as part
           of the composite key for the backing se_pool_t on the SE. The controller
           rejects profiles where two pools share the same name. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       pki_profile_ref:
         description: PKI profile whose CA certificates validate the collector's server
           certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference
-          to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with
+          to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115599,14 +115864,14 @@ definitions:
         description: Pool priority within the ClfProfile. Higher value = higher priority.
           Must be unique across all pools in the same profile. When replicate=false,
           the highest-priority pool with an UP member receives all log records; lower-priority
-          pools act as fallback. Allowed values are 1-255. Field introduced in 32.1.5.
+          pools act as fallback. Allowed values are 1-255. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint32
       servers:
         description: List of log collector endpoints for this pool. Field introduced
-          in 32.1.5. Maximum of 32 items allowed. Allowed with any value in Enterprise,
+          in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: array
         items:
@@ -115615,19 +115880,19 @@ definitions:
         description: Client certificate and key the SE presents to the collector for
           mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only
           TLS is used when this is not set. It is a reference to an object of type
-          SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value
+          SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       ssl_profile_ref:
         description: SSL profile controlling the TLS version and cipher policy used
           for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS.
-          It is a reference to an object of type SSLProfile. Field introduced in 32.1.5.
+          It is a reference to an object of type SSLProfile. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       transport:
         description: Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP,
-          CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed
+          CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115638,7 +115903,7 @@ definitions:
       hmon:
         description: Health-monitor runtime stats for all servers in this CLF pool.
           Populated when an active se_pool_t backs this CLF pool. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
@@ -115646,30 +115911,30 @@ definitions:
       log_format:
         description: Wire format configured for log records delivered to this pool.
           Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET,
-          CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value
+          CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       pool_index:
         description: Zero-based index of this pool within the ClfProfile.clf_pools
-          list. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          list. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       pool_name:
         description: Name of this CLF pool as configured in ClfPool.name. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       priority:
         description: Priority of this CLF pool (higher value = higher precedence).
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       transport:
         description: Transport protocol for log delivery to this pool. Enum options
           - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   ClfPoolLbStats:
@@ -115677,35 +115942,35 @@ definitions:
     properties:
       clf_pool_uuid:
         description: Composite UUID of this ClfPool ('<clfprofile_uuid>-<SHA256(pool_name)>').
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
       num_servers:
         description: Number of servers (collectors) configured in this pool. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: int64
       num_servers_enabled:
         description: Number of enabled servers (collectors) in this pool. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: int64
       num_servers_up:
         description: Number of servers (collectors) currently UP in this pool. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: int64
       pool_name:
         description: Name of this ClfPool as configured in ClfPool.name. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       pool_stats:
         description: Connection-level stats for this pool's backing se_pool_t. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/PoolStats'
   ClfPoolStats:
@@ -115713,48 +115978,48 @@ definitions:
     properties:
       bytes_enqueued:
         description: Log record bytes queued for delivery to this pool. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       clf_pool_uuid:
         description: Composite UUID of this ClfPool ('<clfprofile_uuid>-<SHA256(pool_name)>').
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
       drops_no_server:
         description: Records for which this pool had no UP server, independent of
           whether another pool for the same record succeeded. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       drops_ring_full:
         description: Records dropped because the delivery queue was full. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       drops_shm_alloc_fail:
         description: Records dropped because the shared-memory allocation for the
-          request failed. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          request failed. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       drops_shm_limit:
         description: Records dropped because in-flight shared memory for CLF was exhausted.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       pool_name:
         description: Name of this ClfPool as configured in ClfPool.name. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       records_enqueued:
         description: Log records queued for delivery to this pool. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
@@ -115771,7 +116036,7 @@ definitions:
       clf_pools:
         description: List of pools associated with this profile. Each pool must have
           a unique priority value. The controller rejects profiles where two pools
-          share the same priority (HTTP 400). Field introduced in 32.1.5. Maximum
+          share the same priority (HTTP 400). Field introduced in 32.2.1. Maximum
           of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic,
           Enterprise with Cloud Services edition.
         type: array
@@ -115779,7 +116044,7 @@ definitions:
           $ref: '#/definitions/ClfPool'
       description:
         description: Human-readable description for this CLF profile. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       enabled:
@@ -115787,19 +116052,19 @@ definitions:
           pool state, health monitors, or VirtualService/DataScriptSet bindings. When
           false, datascript log forwarding is a silent no-op for every VS attached
           via this profile; delivery resumes immediately when set back to true. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: boolean
         default: true
       markers:
         description: List of labels to be used for granular RBAC. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/RoleFilterMatchLabel'
       name:
-        description: The name of the CLF profile. Field introduced in 32.1.5. Allowed
+        description: The name of the CLF profile. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115807,12 +116072,12 @@ definitions:
         description: When false (default), log records are routed to the highest-priority
           pool that has at least one UP member (priority-based failover). When true,
           log records are replicated to ALL pools regardless of priority. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: boolean
       tenant_ref:
         description: Reference to the tenant that owns this CLF profile. It is a reference
-          to an object of type Tenant. Field introduced in 32.1.5. Allowed with any
+          to an object of type Tenant. Field introduced in 32.2.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       url:
@@ -115820,7 +116085,7 @@ definitions:
         readOnly: true
         type: string
       uuid:
-        description: UUID of the CLF profile. Field introduced in 32.1.5. Allowed
+        description: UUID of the CLF profile. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -115828,7 +116093,7 @@ definitions:
         description: Virtual Routing Context for this profile's collector pools. Only
           Virtual Services in the same Virtual Routing Context can use this profile.
           Cannot be changed once set. It is a reference to an object of type VrfContext.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
   ClfProfileApiResponse:
@@ -115851,39 +116116,39 @@ definitions:
     properties:
       clf_profile_name:
         description: Name of the ClfProfile attached to the Virtual Service. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
       clf_profile_uuid:
         description: UUID of the ClfProfile attached to the Virtual Service. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
       no_clf_profile_reason:
         description: Set when no CLF profile is attached to the Virtual Service; describes
-          why no stats are available. Field introduced in 32.1.5. Allowed with any
+          why no stats are available. Field introduced in 32.2.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       pools:
         description: Per-pool health-monitor stats. One entry per ClfPool in the profile.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/ClfPoolHmon'
       replicate:
         description: Whether logs are replicated to all pools (true) or routed by
-          priority (false). Field introduced in 32.1.5. Allowed with any value in
+          priority (false). Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       se_uuid:
         description: UUID of the Service Engine reporting these stats. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       vs_uuid:
         description: UUID of the Virtual Service these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   ClfProfileLbStats:
@@ -115891,16 +116156,16 @@ definitions:
     properties:
       clf_profile_name:
         description: Name of the ClfProfile these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       clf_profile_uuid:
         description: UUID of the ClfProfile these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       pools:
-        description: Per-ClfPool LB/capacity breakdown. Field introduced in 32.1.5.
+        description: Per-ClfPool LB/capacity breakdown. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: array
@@ -115908,12 +116173,12 @@ definitions:
           $ref: '#/definitions/ClfPoolLbStats'
       se_uuid:
         description: UUID of the Service Engine reporting these stats. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       vs_uuid:
         description: UUID of the Virtual Service these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   ClfProfileStats:
@@ -115921,23 +116186,23 @@ definitions:
     properties:
       bytes_enqueued:
         description: Log record bytes queued for delivery, summed across all pools.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       clf_profile_name:
         description: Name of the ClfProfile these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       clf_profile_uuid:
         description: UUID of the ClfProfile these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       drops_empty_payload:
         description: Records dropped because the datascript log forwarding call had
-          only empty or non-string arguments. Field introduced in 32.1.5. Allowed
+          only empty or non-string arguments. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -115945,73 +116210,73 @@ definitions:
       drops_no_server:
         description: Sum across all pools of drops_no_server (see ClfPoolStats) --
           a record routed to multiple pools can contribute more than once here. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       drops_payload_too_big:
         description: Records dropped because the payload exceeded the maximum supported
-          log size. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          log size. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       drops_profile_disabled:
         description: Records dropped because the profile was disabled or had no pools.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       drops_ring_full:
         description: Records dropped because the delivery queue was full, summed across
-          all pools. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          all pools. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       drops_shm_alloc_fail:
         description: Records dropped because the shared-memory allocation for the
-          request failed, summed across all pools. Field introduced in 32.1.5. Allowed
+          request failed, summed across all pools. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
         format: uint64
       drops_shm_limit:
         description: Records dropped because in-flight shared memory for CLF was exhausted,
-          summed across all pools. Field introduced in 32.1.5. Allowed with any value
+          summed across all pools. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       log_forward_calls:
         description: Log forwarding requests from the datascript that reached this
-          profile. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          profile. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       pools:
         description: Per-ClfPool breakdown of the enqueue-side dataplane counters.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/ClfPoolStats'
       proc_id:
         description: Dataplane process/core that reported this row. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       records_enqueued:
         description: Log records queued for delivery, summed across all pools. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       se_uuid:
         description: UUID of the Service Engine reporting these stats. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       vs_uuid:
         description: UUID of the Virtual Service these stats belong to. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   ClfServer:
@@ -116021,19 +116286,19 @@ definitions:
     - port
     properties:
       enabled:
-        description: Enable or disable this collector. Field introduced in 32.1.5.
+        description: Enable or disable this collector. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: boolean
         default: true
       ip_addr:
         description: IP address of the external log collector. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         $ref: '#/definitions/IpAddr'
       port:
         description: UDP/TCP port the collector listens on. Allowed values are 1-65535.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
@@ -116042,152 +116307,152 @@ definitions:
     properties:
       bytes_sent:
         description: Bytes successfully written to the collector. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       conn_state:
         description: Current connection state  0=disconnected, 1=connecting, 2=active,
-          3=waiting to retry. Field introduced in 32.1.5. Allowed with any value in
+          3=waiting to retry. Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       connect_attempts:
-        description: Connection attempts to this collector. Field introduced in 32.1.5.
+        description: Connection attempts to this collector. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       connect_failed:
-        description: Connection attempts that failed. Field introduced in 32.1.5.
+        description: Connection attempts that failed. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       connect_success:
-        description: Connections successfully established. Field introduced in 32.1.5.
+        description: Connections successfully established. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       idle_closes:
         description: Connections closed because the collector went idle. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       ip_addr:
-        description: IP address of the log collector. Field introduced in 32.1.5.
+        description: IP address of the log collector. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         $ref: '#/definitions/IpAddr'
       ip_port:
-        description: Collector endpoint as 'ip port'. Field introduced in 32.1.5.
+        description: Collector endpoint as 'ip port'. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       last_snapshot_time:
         description: Wall-clock date/time of the last snapshot reported for this collector.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/TimeStamp'
       logs_dropped_queue_full:
         description: Log records evicted because the pending queue hit its record
-          or byte limit. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          or byte limit. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       logs_failed:
         description: Log records that could not be delivered. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       logs_queued:
         description: Log records parked while the connection was being established.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       logs_received:
-        description: Log records handed to this collector. Field introduced in 32.1.5.
+        description: Log records handed to this collector. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       logs_sent:
         description: Log records successfully written to the collector. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       netns_errors:
         description: Failures entering the collector's VRF network namespace. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       pending_count:
         description: Log records currently parked on the pending queue. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint32
       port:
-        description: Port of the log collector. Field introduced in 32.1.5. Allowed
+        description: Port of the log collector. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
         format: int32
       proc_id:
         description: Dataplane process/core that reported this row. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       reconnects:
         description: Reconnect attempts after an established connection dropped. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       se_uuid:
         description: UUID of the Service Engine reporting these stats. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       send_errors:
-        description: Socket write/send errors. Field introduced in 32.1.5. Allowed
+        description: Socket write/send errors. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
         format: uint64
       ssl_cert_errors:
         description: TLS failures attributable to certificate validation. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       ssl_handshake_failed:
         description: Failed TLS handshakes with this collector. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       ssl_handshake_success:
         description: Successful TLS handshakes with this collector. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       transport:
         description: Transport used to deliver logs to this collector. Enum options
           - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       vrf:
         description: VRF/namespace id the collector is reached through. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint32
@@ -119474,7 +119739,7 @@ definitions:
         type: string
       msg_lb_stats:
         description: ISO 8583 MsgLB per-connection statistics. Present only when the
-          VS is configured as an L4 MsgLB virtual service. Field introduced in 32.1.5.
+          VS is configured as an L4 MsgLB virtual service. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         $ref: '#/definitions/MsgLbStats'
@@ -119482,7 +119747,7 @@ definitions:
         description: "ISO 8583 MsgLB per-transaction log. Present only on the per-transaction\
           \ ConnectionLog pushed by ipstk_msg_lb_push_txn_log() \u2014 mutually exclusive\
           \ with msg_lb_stats, which appears only on the once-per-connection summary\
-          \ log. Field introduced in 32.1.5. Allowed with any value in Enterprise,\
+          \ log. Field introduced in 32.2.1. Allowed with any value in Enterprise,\
           \ Essentials, Basic, Enterprise with Cloud Services edition."
         $ref: '#/definitions/MsgLbTransactionLog'
       mss:
@@ -129917,11 +130182,11 @@ definitions:
           with Cloud Services edition.'
         $ref: '#/definitions/SeHmEventVsDetails'
       se_internal_gateway_heartbeat_failed_details:
-        description: ' Field introduced in 32.1.5. Allowed with any value in Enterprise,
+        description: ' Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/SeGatewayHeartbeatFailedDetails'
       se_internal_gateway_heartbeat_success_details:
-        description: ' Field introduced in 32.1.5. Allowed with any value in Enterprise,
+        description: ' Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/SeGatewayHeartbeatSuccessDetails'
       se_ip6_dad_failed_event_details:
@@ -130106,7 +130371,7 @@ definitions:
         $ref: '#/definitions/SSLRevokedDetails'
       supervisor_se_group_free_license_details:
         description: Supervisor SE group free license capacity exhausted/available
-          details. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          details. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/SupervisorSeGroupFreeLicenseDetails'
       switchover_details:
@@ -151609,7 +151874,7 @@ definitions:
         description: Cap on distinct server TCP connections a single client connection
           may open per backend member for L4 message-level LB. 0 = unlimited; valid
           limit range is 1-65535. Allowed values are 0-65535. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         default: 1
@@ -151617,20 +151882,20 @@ definitions:
       session_binding_mode:
         description: Controls how client connections are bound to backend server TCP
           connections. STICKY (default). Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY,
-          MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.1.5. Allowed
+          MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
         default: MSG_LB_SESSION_BINDING_MODE_STICKY
       sticky_binding_profile:
         description: Parameters for STICKY-mode anchor and per-request bindings. Ignored
-          when session_binding_mode is TRANSACTIONAL. Field introduced in 32.1.5.
+          when session_binding_mode is TRANSACTIONAL. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         $ref: '#/definitions/MsgLbApplicationServiceStickyBindingProfile'
       transaction_binding_profile:
         description: Parameters for TRANSACTIONAL-mode session bindings. Ignored when
-          session_binding_mode is STICKY. Field introduced in 32.1.5. Allowed with
+          session_binding_mode is STICKY. Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         $ref: '#/definitions/MsgLbApplicationServiceTransactionBindingProfile'
@@ -151642,7 +151907,7 @@ definitions:
           is freed as soon as its matching response is received. When false, the binding
           persists as a route-cache entry and is cleaned up after session_unbind_timeout
           milliseconds of inactivity. Anchor bindings are unaffected regardless of
-          this flag. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          this flag. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
         default: true
@@ -151653,7 +151918,7 @@ definitions:
           response arrives within this window. When session_unbind_on_response is
           false, this is the sliding idle timeout  the session binding persists after
           response and is freed after this many milliseconds of inactivity. Default
-          30000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit
+          30000 ms. Allowed values are 1-3600000. Field introduced in 32.2.1. Unit
           is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic,
           Enterprise with Cloud Services edition.
         type: integer
@@ -151664,7 +151929,7 @@ definitions:
           0 (default)  anchor lives until the client connection closes. Non-zero  anchor
           is torn down after this many milliseconds with no message forwarded in either
           direction; the idle timer resets on every request or response. Allowed values
-          are 0-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed
+          are 0-3600000. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -151676,13 +151941,13 @@ definitions:
         description: When true, a TRANSACTIONAL session binding is freed as soon as
           its matching response is received. When false, the binding persists as a
           route-cache entry and is cleaned up after session_unbind_timeout milliseconds
-          of inactivity. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          of inactivity. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       session_unbind_timeout:
         description: Time in milliseconds a TRANSACTIONAL session binding waits in
           idle state before it is torn down. Default 120000 ms. Allowed values are
-          1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with
+          1-3600000. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -151692,20 +151957,20 @@ definitions:
     type: object
     properties:
       client_ip_port:
-        description: Client address, 'a.b.c.d port' format. Field introduced in 32.1.5.
+        description: Client address, 'a.b.c.d port' format. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       server:
         description: Per-backend in-flight breakdown for this client. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/MsgLbConnectionServerEntry'
       total_msgs:
         description: Total requests forwarded by this client over the connection lifetime
-          (cumulative). Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          (cumulative). Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
@@ -151714,7 +151979,7 @@ definitions:
     properties:
       connection:
         description: Active MsgLB client connections for the requested VS. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
@@ -151722,7 +151987,7 @@ definitions:
       ds_reject_count:
         description: Connections rejected at accept because this VS has no L4_REQ
           datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript
-          configuration problem, not a traffic problem. Field introduced in 32.1.5.
+          configuration problem, not a traffic problem. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
@@ -151730,7 +151995,7 @@ definitions:
       truncated:
         description: True if this VS has more MsgLB client connections than the per-call
           display cap, so the connection list above is incomplete. Narrow down with
-          the client_ip filter to inspect a specific client. Field introduced in 32.1.5.
+          the client_ip filter to inspect a specific client. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: boolean
@@ -151739,20 +152004,20 @@ definitions:
     properties:
       in_flight_count:
         description: In-flight bindings from this client to this backend. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       oldest_pending_age_ms:
         description: Age in milliseconds of the oldest outstanding request to this
           backend for this client; 0 if none are outstanding. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       server_ip_port:
         description: Backend server address, 'a.b.c.d port' format. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   MsgLbConnPoolConfig:
@@ -151761,14 +152026,14 @@ definitions:
       idle_timeout_ms:
         description: Idle timeout for pooled server sockets used by L4 message-level
           LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field
-          introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise,
+          introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       max_tcp_conn_per_server:
         description: Cap on concurrent server TCP connections per core for L4 message-level
           LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
@@ -151777,13 +152042,13 @@ definitions:
     properties:
       entry:
         description: Per-server connection-pool state for this pool, on this core.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/MsgLbConnPoolServerEntry'
       pool_name:
-        description: Name of the MsgLB pool. Field introduced in 32.1.5. Allowed with
+        description: Name of the MsgLB pool. Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: string
@@ -151792,96 +152057,96 @@ definitions:
     properties:
       busy_count:
         description: Connections to this server currently carrying a request. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       free_count:
         description: Idle pooled connections to this server available for reuse. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       idle_timeout_ms:
         description: Configured idle timeout before a pooled connection to this server
           is closed; 0 means idle connections are closed immediately (pooling effectively
-          disabled). Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          disabled). Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       max_conns:
         description: Configured per-server connection cap; 0 means unlimited. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       pending_count:
         description: Connections to this server whose TCP handshake has not yet completed.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server_ip_port:
         description: Backend server address, 'a.b.c.d port' format. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
   MsgLbContextEntry:
     type: object
     properties:
       client_ip_port:
-        description: Client address, 'a.b.c.d port' format. Field introduced in 32.1.5.
+        description: Client address, 'a.b.c.d port' format. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       conn_cap:
         description: Configured per-client-per-server TCP connection cap; 0 means
-          unlimited. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          unlimited. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       curr_offset:
         description: Client-side datascript receive buffer write watermark -- bytes
           read from the client socket and buffered for the current message. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       ds_curr_offset:
         description: Client-side datascript logical read watermark -- how far the
           running script has consumed from the buffered bytes. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       msg_len:
         description: Client-side expected/collected message length for the message
-          currently being framed; 0 if none in progress. Field introduced in 32.1.5.
+          currently being framed; 0 if none in progress. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       msg_present:
         description: True if the client-side datascript has a complete framed message
-          ready (avi.l4.collect() target reached). Field introduced in 32.1.5. Allowed
+          ready (avi.l4.collect() target reached). Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: boolean
       pending_req_count:
         description: Requests currently pending a response across all servers for
-          this client. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          this client. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       req_timeout_ms:
         description: Configured per-request response-wait timeout for this client.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server:
         description: Every server-side binding for this client, including STICKY anchors.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: array
         items:
@@ -151889,48 +152154,48 @@ definitions:
       session_unbind_on_response:
         description: True if per-request bindings are freed as soon as the response
           arrives; false if they persist as route-cache entries until idle timeout.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: boolean
       sticky_anchor_timeout_ms:
         description: Configured idle timeout for the STICKY anchor binding; 0 means
           no timer (anchor lives until the client connection closes). Not applicable
-          in TRANSACTIONAL mode. Field introduced in 32.1.5. Allowed with any value
+          in TRANSACTIONAL mode. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       sticky_session:
         description: True if this client is in STICKY session-binding mode, false
-          if TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in
+          if TRANSACTIONAL. Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       total_bytes_rx:
         description: Cumulative response bytes received over this connection's lifetime.
-          Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise,
+          Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_bytes_tx:
         description: Cumulative request bytes forwarded over this connection's lifetime.
-          Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise,
+          Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_msgs_rx:
         description: Cumulative responses received over this connection's lifetime.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_msgs_tx:
         description: Cumulative requests forwarded over this connection's lifetime.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       transaction_key_buf_len:
         description: Length of the transaction/session key captured for the in-progress
-          message; 0 if none supplied yet. Field introduced in 32.1.5. Allowed with
+          message; 0 if none supplied yet. Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -151940,7 +152205,7 @@ definitions:
     properties:
       context:
         description: Matching client context(s) for the requested VS; always empty
-          unless the client_ip filter is supplied. Field introduced in 32.1.5. Allowed
+          unless the client_ip filter is supplied. Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: array
@@ -151951,100 +152216,100 @@ definitions:
     properties:
       age_ms:
         description: Milliseconds since the request was forwarded to the server; 0
-          if not yet committed. Field introduced in 32.1.5. Allowed with any value
+          if not yet committed. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       connpool_disposition:
         description: How the server connection was acquired  0=new, 1=idle-reuse,
-          2=busy-round-robin. Field introduced in 32.1.5. Allowed with any value in
+          2=busy-round-robin. Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       idle_ms:
         description: Milliseconds since this binding last carried traffic in either
           direction; only maintained in passthrough (session_unbind_on_response ==
-          false) mode, 0 otherwise. Field introduced in 32.1.5. Allowed with any value
+          false) mode, 0 otherwise. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       in_flight_count:
         description: Number of requests currently sharing this binding. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       is_anchor:
         description: True if this is a permanent STICKY-mode anchor binding (server
-          affinity route, not a live in-flight request). Field introduced in 32.1.5.
+          affinity route, not a live in-flight request). Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: boolean
       is_svr_initiated:
         description: True if this binding was created for a server-initiated message
-          rather than a client request. Field introduced in 32.1.5. Allowed with any
+          rather than a client request. Field introduced in 32.2.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       req_msg_len:
         description: Byte length of the request forwarded on this binding; 0 if not
-          yet committed. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          yet committed. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       resp_msg_len:
         description: Byte length of the response matched to this binding; 0 if none
-          received yet. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          received yet. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server_ip_port:
         description: Backend server address, 'a.b.c.d port' format. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       svr_curr_offset:
         description: Server-side datascript receive buffer write watermark -- bytes
           read from the backend socket and buffered for the current message. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       svr_ds_curr_offset:
         description: Server-side datascript logical read watermark -- how far the
           running script has consumed from the buffered bytes. Field introduced in
-          32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       svr_msg_len:
         description: Server-side expected/collected message length for the message
-          currently being framed; 0 if none in progress. Field introduced in 32.1.5.
+          currently being framed; 0 if none in progress. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       svr_msg_present:
         description: True if the server-side datascript has a complete framed message
-          ready (avi.l4.collect() target reached). Field introduced in 32.1.5. Allowed
+          ready (avi.l4.collect() target reached). Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: boolean
       svr_pending_req_count:
         description: Requests currently pending a response on this server context
           (shared across all bindings to the same backend for this client). Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       transaction_disposition:
         description: Transaction hash lookup outcome for this binding  0=none, 1=hit,
-          2=miss. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          2=miss. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       transaction_key_hex:
         description: Transaction/session key for this binding, hex-encoded; empty
-          if none was supplied. Field introduced in 32.1.5. Allowed with any value
+          if none was supplied. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
   MsgLbStats:
@@ -152052,63 +152317,63 @@ definitions:
     properties:
       connpool_hits:
         description: Messages that reused an idle pooled server connection. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       connpool_misses:
         description: Messages that required a new TCP connection to the backend. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       connpool_mux:
         description: Messages multiplexed onto a busy connection via round-robin.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       servers:
         description: Per-backend breakdown of message and byte counters. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/ServerMsgStats'
       total_bytes_rx:
         description: Total response bytes received from all backend servers. Field
-          introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise,
+          introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_bytes_tx:
         description: Total request bytes forwarded to all backend servers. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_messages_rx:
         description: Total ISO 8583 responses received from backend servers over this
-          connection. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          connection. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_messages_tx:
         description: Total ISO 8583 messages committed to backend servers over this
-          connection. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          connection. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       transaction_hits:
         description: Messages with a transaction or session key for which the transaction
-          hash returned an existing server affinity entry. Field introduced in 32.1.5.
+          hash returned an existing server affinity entry. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       transaction_misses:
         description: Messages with a transaction or session key where no transaction
-          entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with
+          entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -152118,51 +152383,51 @@ definitions:
     properties:
       connpool_hits:
         description: Messages that reused an idle pooled server connection. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       connpool_misses:
         description: Messages that required a new TCP connection to the backend. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       connpool_mux:
         description: Messages multiplexed onto a busy connection via round-robin.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       ds_reject_count:
         description: Connections rejected at accept because this VS has no L4_REQ
-          datascript configured for MsgLB message framing. Field introduced in 32.1.5.
+          datascript configured for MsgLB message framing. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       total_bytes:
         description: Total request bytes committed by clients on this VS. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       total_messages:
         description: ISO 8583 messages committed by clients on this VS. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       transaction_hits:
         description: Messages with a transaction/session key for which the transaction
-          hash returned an existing server affinity entry. Field introduced in 32.1.5.
+          hash returned an existing server affinity entry. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       transaction_misses:
         description: Messages with a transaction/session key where no transaction
-          entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with
+          entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -152173,29 +152438,29 @@ definitions:
       age_ms:
         description: Milliseconds since the request that created this binding was
           forwarded to the server; 0 if the request has not been committed yet. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       client_ip_port:
         description: Client address that owns this transaction binding, 'a.b.c.d port'
-          format. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          format. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       in_flight_count:
         description: Number of in-flight requests sharing this transaction binding.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server_ip_port:
         description: Backend server this key is currently bound to, 'a.b.c.d port'
-          format. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          format. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
       transaction_key_hex:
         description: Transaction/session key extracted by the datascript, hex-encoded.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
   MsgLbTransactionLog:
@@ -152203,43 +152468,43 @@ definitions:
     properties:
       connpool_disposition:
         description: Server-connection pool acquisition outcome for this request  0=new,
-          1=idle-reuse, 2=busy-round-robin. Field introduced in 32.1.5. Allowed with
+          1=idle-reuse, 2=busy-round-robin. Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
         format: uint32
       latency_us:
         description: Request-to-response latency in microseconds. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       req_msg_len:
         description: Byte length of the request forwarded to the server. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       resp_msg_len:
         description: Byte length of the response received from the server. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server_ip:
         description: Backend server address in 'a.b.c.d port' format. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       transaction_disposition:
         description: Transaction hash lookup outcome for this request  0=none, 1=hit,
-          2=miss. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          2=miss. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint32
       transaction_key:
         description: Hex-encoded transaction/session key for this message, or 'none'
-          if no key was supplied. Field introduced in 32.1.5. Allowed with any value
+          if no key was supplied. Field introduced in 32.2.1. Allowed with any value
           in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: string
   MsgLbTransactionRuntime:
@@ -152247,20 +152512,20 @@ definitions:
     properties:
       clt_count:
         description: Number of distinct clients with an active entry in this pool's
-          transaction table. Field introduced in 32.1.5. Allowed with any value in
+          transaction table. Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       entry:
         description: Active transaction-hash entries for this pool. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: array
         items:
           $ref: '#/definitions/MsgLbTransactionEntry'
       pool_name:
         description: Name of the MsgLB pool this transaction table belongs to. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: string
   NamespaceLldpEntry:
@@ -158075,7 +158340,7 @@ definitions:
       msg_lb_conn_pool_config:
         description: TCP connection pool limits for L4 message-level load balancing
           VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         $ref: '#/definitions/MsgLbConnPoolConfig'
       name:
@@ -159452,64 +159717,64 @@ definitions:
         format: uint32
       msg_lb_connpool_hits:
         description: Messages that reused an idle pooled server connection. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_connpool_misses:
         description: Messages that required a new TCP connection to the backend. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_connpool_mux:
         description: Messages multiplexed onto a busy connection via round-robin.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_ds_reject_count:
         description: Connections rejected at accept because the VS has no L4_REQ datascript
           configured for MsgLB message framing. Nonzero indicates a VS/datascript
-          configuration problem, not a traffic problem. Field introduced in 32.1.5.
+          configuration problem, not a traffic problem. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_orphan_count:
         description: In-flight bindings orphaned when the client connection closed
-          before a response arrived. Field introduced in 32.1.5. Allowed with any
+          before a response arrived. Field introduced in 32.2.1. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_timeout_count:
         description: Bindings that expired waiting for a server response. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_total_bytes:
         description: Total request bytes committed to backend servers for this pool.
-          Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise,
+          Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_total_messages:
         description: Total messages committed to backend servers for this pool. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_transaction_hits:
         description: Messages with a transaction or session key for which the transaction
-          hash returned an existing server affinity entry. Field introduced in 32.1.5.
+          hash returned an existing server affinity entry. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_transaction_misses:
         description: Messages with a transaction or session key where no transaction
-          entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with
+          entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with
           any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
@@ -167007,7 +167272,7 @@ definitions:
         $ref: '#/definitions/ApplicationInsightsPolicy'
       clf_profile:
         description: CLF Profile configuration for high-speed log routing. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         $ref: '#/definitions/ClfProfile'
       cloud:
@@ -167756,7 +168021,7 @@ definitions:
           with Cloud Services edition.'
         $ref: '#/definitions/SeAgentGraphDBNodeInfo'
       clfprofile:
-        description: ' Field introduced in 32.1.5. Allowed with any value in Enterprise,
+        description: ' Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.'
         $ref: '#/definitions/SeAgentGraphDBNodeInfo'
       cloud:
@@ -184475,49 +184740,49 @@ definitions:
     properties:
       avg_latency_us:
         description: Average request-to-response latency in microseconds (total_latency_us
-          / msg_count_rx; 0 if no responses). Field introduced in 32.1.5. Allowed
+          / msg_count_rx; 0 if no responses). Field introduced in 32.2.1. Allowed
           with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
           edition.
         type: integer
         format: uint64
       bytes_rx:
         description: Total response bytes received from this server. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       bytes_tx:
         description: Total request bytes forwarded to this server. Field introduced
-          in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
+          in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_count_rx:
         description: Number of responses received from this server. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       msg_count_tx:
         description: Number of requests forwarded to this server. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: integer
         format: uint64
       orphan_count:
         description: Number of in-flight requests outstanding when the client connection
-          was force-closed. Field introduced in 32.1.5. Allowed with any value in
+          was force-closed. Field introduced in 32.2.1. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       server_ip_port:
         description: Backend server address in 'a.b.c.d port' format. Field introduced
-          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.
         type: string
       timeout_count:
         description: Number of requests to this server that expired waiting for a
-          response. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          response. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
@@ -187093,7 +187358,7 @@ definitions:
       supervisor_group:
         description: Indicates that this Service Engine Group is reserved for exclusive
           use by the Supervisor in VCF environment. This is a read-only field for
-          external user. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          external user. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       tenant_ref:
@@ -192783,23 +193048,23 @@ definitions:
     properties:
       free_su_limit:
         description: Free service unit allowance for the supervisor SE group. Field
-          introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
       se_group_name:
-        description: Name of the supervisor SE group. Field introduced in 32.1.5.
+        description: Name of the supervisor SE group. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       se_group_uuid:
-        description: UUID of the supervisor SE group. Field introduced in 32.1.5.
+        description: UUID of the supervisor SE group. Field introduced in 32.2.1.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       service_units_used:
         description: Service units currently consumed and reserved by the supervisor
-          SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise,
+          SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
@@ -195225,7 +195490,7 @@ definitions:
           and the VS is an L4 MsgLB virtual service. These counters are incremented
           from the client-facing side (message committed, transaction/connpool lookup
           outcome), so there is no separate backend-only variant to report under type=BACKEND.
-          Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials,
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/MsgLbTcpStats'
       packets_dropped:

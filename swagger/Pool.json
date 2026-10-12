@@ -5096,12 +5096,12 @@
             "type": "object",
             "properties": {
                 "idle_timeout_ms": {
-                    "description": "Idle timeout for pooled server sockets used by L4 message-level LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Idle timeout for pooled server sockets used by L4 message-level LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "max_tcp_conn_per_server": {
-                    "description": "Cap on concurrent server TCP connections per core for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Cap on concurrent server TCP connections per core for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -5111,14 +5111,14 @@
             "type": "object",
             "properties": {
                 "entry": {
-                    "description": "Per-server connection-pool state for this pool, on this core. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Per-server connection-pool state for this pool, on this core. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MsgLbConnPoolServerEntry"
                     }
                 },
                 "pool_name": {
-                    "description": "Name of the MsgLB pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the MsgLB pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -5127,32 +5127,32 @@
             "type": "object",
             "properties": {
                 "busy_count": {
-                    "description": "Connections to this server currently carrying a request. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Connections to this server currently carrying a request. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "free_count": {
-                    "description": "Idle pooled connections to this server available for reuse. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Idle pooled connections to this server available for reuse. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "idle_timeout_ms": {
-                    "description": "Configured idle timeout before a pooled connection to this server is closed; 0 means idle connections are closed immediately (pooling effectively disabled). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configured idle timeout before a pooled connection to this server is closed; 0 means idle connections are closed immediately (pooling effectively disabled). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "max_conns": {
-                    "description": "Configured per-server connection cap; 0 means unlimited. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Configured per-server connection cap; 0 means unlimited. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "pending_count": {
-                    "description": "Connections to this server whose TCP handshake has not yet completed. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Connections to this server whose TCP handshake has not yet completed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "server_ip_port": {
-                    "description": "Backend server address, 'a.b.c.d port' format. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Backend server address, 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -5161,25 +5161,25 @@
             "type": "object",
             "properties": {
                 "age_ms": {
-                    "description": "Milliseconds since the request that created this binding was forwarded to the server; 0 if the request has not been committed yet. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Milliseconds since the request that created this binding was forwarded to the server; 0 if the request has not been committed yet. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "client_ip_port": {
-                    "description": "Client address that owns this transaction binding, 'a.b.c.d port' format. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Client address that owns this transaction binding, 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "in_flight_count": {
-                    "description": "Number of in-flight requests sharing this transaction binding. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of in-flight requests sharing this transaction binding. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "server_ip_port": {
-                    "description": "Backend server this key is currently bound to, 'a.b.c.d port' format. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Backend server this key is currently bound to, 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "transaction_key_hex": {
-                    "description": "Transaction/session key extracted by the datascript, hex-encoded. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Transaction/session key extracted by the datascript, hex-encoded. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -5188,19 +5188,19 @@
             "type": "object",
             "properties": {
                 "clt_count": {
-                    "description": "Number of distinct clients with an active entry in this pool's transaction table. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Number of distinct clients with an active entry in this pool's transaction table. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "entry": {
-                    "description": "Active transaction-hash entries for this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Active transaction-hash entries for this pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MsgLbTransactionEntry"
                     }
                 },
                 "pool_name": {
-                    "description": "Name of the MsgLB pool this transaction table belongs to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the MsgLB pool this transaction table belongs to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -5836,7 +5836,7 @@
                     "format": "uint32"
                 },
                 "msg_lb_conn_pool_config": {
-                    "description": "TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbConnPoolConfig"
                 },
                 "name": {
@@ -6486,52 +6486,52 @@
                     "format": "uint32"
                 },
                 "msg_lb_connpool_hits": {
-                    "description": "Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages that reused an idle pooled server connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_connpool_misses": {
-                    "description": "Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages that required a new TCP connection to the backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_connpool_mux": {
-                    "description": "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_ds_reject_count": {
-                    "description": "Connections rejected at accept because the VS has no L4_REQ datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript configuration problem, not a traffic problem. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Connections rejected at accept because the VS has no L4_REQ datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript configuration problem, not a traffic problem. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_orphan_count": {
-                    "description": "In-flight bindings orphaned when the client connection closed before a response arrived. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "In-flight bindings orphaned when the client connection closed before a response arrived. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_timeout_count": {
-                    "description": "Bindings that expired waiting for a server response. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Bindings that expired waiting for a server response. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_total_bytes": {
-                    "description": "Total request bytes committed to backend servers for this pool. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total request bytes committed to backend servers for this pool. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_total_messages": {
-                    "description": "Total messages committed to backend servers for this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total messages committed to backend servers for this pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_transaction_hits": {
-                    "description": "Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "msg_lb_transaction_misses": {
-                    "description": "Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },

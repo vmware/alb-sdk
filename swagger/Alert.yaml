@@ -3166,10 +3166,10 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             msg_lb_stats:
-                description: "ISO 8583 MsgLB per-connection statistics. Present only when the VS is configured as an L4 MsgLB virtual service. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "ISO 8583 MsgLB per-connection statistics. Present only when the VS is configured as an L4 MsgLB virtual service. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MsgLbStats'
             msg_lb_txn:
-                description: "ISO 8583 MsgLB per-transaction log. Present only on the per-transaction ConnectionLog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears only on the once-per-connection summary log. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "ISO 8583 MsgLB per-transaction log. Present only on the per-transaction ConnectionLog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears only on the once-per-connection summary log. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MsgLbTransactionLog'
             mss:
                 description: " Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -5219,10 +5219,10 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeHmEventVsDetails'
             se_internal_gateway_heartbeat_failed_details:
-                description: " Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeGatewayHeartbeatFailedDetails'
             se_internal_gateway_heartbeat_success_details:
-                description: " Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: " Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeGatewayHeartbeatSuccessDetails'
             se_ip6_dad_failed_event_details:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -5357,7 +5357,7 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SSLRevokedDetails'
             supervisor_se_group_free_license_details:
-                description: "Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SupervisorSeGroupFreeLicenseDetails'
             switchover_details:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -8785,74 +8785,74 @@ definitions:
         type: object
         properties:
             connpool_hits:
-                description: "Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Messages that reused an idle pooled server connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             connpool_misses:
-                description: "Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Messages that required a new TCP connection to the backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             connpool_mux:
-                description: "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             servers:
-                description: "Per-backend breakdown of message and byte counters. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Per-backend breakdown of message and byte counters. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     $ref: '#/definitions/ServerMsgStats'
             total_bytes_rx:
-                description: "Total response bytes received from all backend servers. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total response bytes received from all backend servers. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             total_bytes_tx:
-                description: "Total request bytes forwarded to all backend servers. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total request bytes forwarded to all backend servers. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             total_messages_rx:
-                description: "Total ISO 8583 responses received from backend servers over this connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total ISO 8583 responses received from backend servers over this connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             total_messages_tx:
-                description: "Total ISO 8583 messages committed to backend servers over this connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total ISO 8583 messages committed to backend servers over this connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             transaction_hits:
-                description: "Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             transaction_misses:
-                description: "Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     MsgLbTransactionLog:
         type: object
         properties:
             connpool_disposition:
-                description: "Server-connection pool acquisition outcome for this request  0=new, 1=idle-reuse, 2=busy-round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Server-connection pool acquisition outcome for this request  0=new, 1=idle-reuse, 2=busy-round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             latency_us:
-                description: "Request-to-response latency in microseconds. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Request-to-response latency in microseconds. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             req_msg_len:
-                description: "Byte length of the request forwarded to the server. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Byte length of the request forwarded to the server. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             resp_msg_len:
-                description: "Byte length of the response received from the server. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Byte length of the response received from the server. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             server_ip:
-                description: "Backend server address in 'a.b.c.d port' format. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Backend server address in 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             transaction_disposition:
-                description: "Transaction hash lookup outcome for this request  0=none, 1=hit, 2=miss. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Transaction hash lookup outcome for this request  0=none, 1=hit, 2=miss. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
             transaction_key:
-                description: "Hex-encoded transaction/session key for this message, or 'none' if no key was supplied. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Hex-encoded transaction/session key for this message, or 'none' if no key was supplied. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     MustChecksInfo:
         type: object
@@ -12292,34 +12292,34 @@ definitions:
         type: object
         properties:
             avg_latency_us:
-                description: "Average request-to-response latency in microseconds (total_latency_us / msg_count_rx; 0 if no responses). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Average request-to-response latency in microseconds (total_latency_us / msg_count_rx; 0 if no responses). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             bytes_rx:
-                description: "Total response bytes received from this server. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total response bytes received from this server. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             bytes_tx:
-                description: "Total request bytes forwarded to this server. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Total request bytes forwarded to this server. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             msg_count_rx:
-                description: "Number of responses received from this server. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of responses received from this server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             msg_count_tx:
-                description: "Number of requests forwarded to this server. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests forwarded to this server. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             orphan_count:
-                description: "Number of in-flight requests outstanding when the client connection was force-closed. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of in-flight requests outstanding when the client connection was force-closed. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             server_ip_port:
-                description: "Backend server address in 'a.b.c.d port' format. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Backend server address in 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             timeout_count:
-                description: "Number of requests to this server that expired waiting for a response. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Number of requests to this server that expired waiting for a response. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
     ServerRuntimeSummary:
@@ -13124,17 +13124,17 @@ definitions:
         type: object
         properties:
             free_su_limit:
-                description: "Free service unit allowance for the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Free service unit allowance for the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
             se_group_name:
-                description: "Name of the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Name of the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             se_group_uuid:
-                description: "UUID of the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "UUID of the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             service_units_used:
-                description: "Service units currently consumed and reserved by the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Service units currently consumed and reserved by the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: number
                 format: double
     SwitchoverEventDetails:

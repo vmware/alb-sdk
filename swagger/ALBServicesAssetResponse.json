@@ -71,13 +71,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "empty",
+                        "description": "ALBServicesAsset",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/ALBServicesAsset"
                         }
                     }
                 ],
@@ -142,13 +139,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "empty",
+                        "description": "ALBServicesAsset",
                         "required": true,
                         "schema": {
-                            "type": "object",
-                            "additionalProperties": {
-                                "type": "string"
-                            }
+                            "$ref": "#/definitions/ALBServicesAsset"
                         }
                     }
                 ],
@@ -210,6 +204,61 @@
                 },
                 "phone": {
                     "description": " Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                }
+            }
+        },
+        "ALBServicesAsset": {
+            "type": "object",
+            "required": [
+                "description",
+                "name",
+                "status",
+                "tenant"
+            ],
+            "properties": {
+                "account_id": {
+                    "description": "Account ID to which asset will be scoped in the cloud. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Email of the point of contact for particular asset. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "license_unsubscribe": {
+                    "description": "Unsubscribe from license when de-registering the controller from portal. Default is false. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "site_id": {
+                    "description": "Site ID to which asset will be scoped. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "site_name": {
+                    "description": "Site Name to which asset will be scoped. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "status": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "tenant": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
+                "uuid": {
+                    "description": " Field introduced in 18.2.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
