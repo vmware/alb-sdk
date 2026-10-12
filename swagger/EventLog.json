@@ -4916,11 +4916,11 @@
                     "$ref": "#/definitions/SeHmEventVsDetails"
                 },
                 "se_internal_gateway_heartbeat_failed_details": {
-                    "description": " Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGatewayHeartbeatFailedDetails"
                 },
                 "se_internal_gateway_heartbeat_success_details": {
-                    "description": " Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": " Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SeGatewayHeartbeatSuccessDetails"
                 },
                 "se_ip6_dad_failed_event_details": {
@@ -5100,7 +5100,7 @@
                     "$ref": "#/definitions/SSLRevokedDetails"
                 },
                 "supervisor_se_group_free_license_details": {
-                    "description": "Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/SupervisorSeGroupFreeLicenseDetails"
                 },
                 "switchover_details": {
@@ -14559,20 +14559,20 @@
             "type": "object",
             "properties": {
                 "free_su_limit": {
-                    "description": "Free service unit allowance for the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Free service unit allowance for the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 },
                 "se_group_name": {
-                    "description": "Name of the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Name of the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "se_group_uuid": {
-                    "description": "UUID of the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "service_units_used": {
-                    "description": "Service units currently consumed and reserved by the supervisor SE group. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Service units currently consumed and reserved by the supervisor SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "number",
                     "format": "double"
                 }
