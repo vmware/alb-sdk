@@ -524,7 +524,10 @@ class ApiSession(Session):
         """
         sessionDict[self.key]['connected'] = False
         logger.info('resetting session for %s', self.key)
-        self.user_hdrs = {}
+        # Drop only session-scoped headers (re-established on re-auth below);
+        # keep other custom user_hdrs (e.g. X-Avi-Version).
+        for k in self.SHARED_USER_HDRS:
+            self.user_hdrs.pop(k, None)
         for k, v in self.headers.items():
             if k not in self.SHARED_USER_HDRS:
                 self.user_hdrs[k] = v
