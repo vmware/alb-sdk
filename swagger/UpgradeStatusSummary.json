@@ -8,7 +8,7 @@
             "url": "https://avinetworks.com/contact-us",
             "email": "support@avinetworks.com"
         },
-        "description": "Avi UpgradeStatusSummary object api\n```\n- show upgrade status\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
+        "description": "Avi UpgradeStatusSummary object api\n```\n- show upgrade status\n- show upgrade status history\n```\n\nAPI permission: PERMISSION_CONTROLLER\n"
     },
     "tags": [
         {
