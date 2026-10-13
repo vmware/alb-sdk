@@ -15,6 +15,7 @@ info:
         Avi UpgradeStatusSummary object api
         ```
         - show upgrade status
+        - show upgrade status history
         ```
 
         API permission: PERMISSION_CONTROLLER

@@ -347,27 +347,27 @@ info:
     Avi UpgradeSeGroupParams object api\n```\n- upgrade segroup\n```\n\nAPI permission:\
     \ PERMISSION_UPGRADE_OPS\nAvi AkoAmkoCluster object api\n```\n- configure akoamkocluster\
     \ <key>\n- show akoamkocluster <key>\n```\n\nAPI permission: PERMISSION_AKOAMKOCLUSTER\n\
-    Avi UpgradeStatusSummary object api\n```\n- show upgrade status\n```\n\nAPI permission:\
-    \ PERMISSION_CONTROLLER\nAvi RollbackPatchSeGroupParams object api\n```\n- rollbackpatch\
-    \ segroup\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\nAvi GslbGeoDbProfile\
-    \ object api\n```\n- configure gslbgeodbprofile <key>\n- show gslbgeodbprofile\
-    \ <key>\n```\n\nAPI permission: PERMISSION_GSLBGEODBPROFILE\nAvi IcapProfile object\
-    \ api\n```\n- configure icapprofile <key>\n- show icapprofile <key>\n```\n\nAPI\
-    \ permission: PERMISSION_ICAP\nAvi Alert object api\n```\n- show alert <key>\n\
-    - delete alert <key>\n```\n\nAPI permission: PERMISSION_ALERT\nAvi ALBServicesJob\
-    \ object api\n```\n- configure albservicesjob <key>\n- show albservicesjob <key>\n\
-    ```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineInventory object\
-    \ api\n```\n- show serviceengineinventory <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINE\n\
-    Avi ClusterCloudDetails object api\n```\n- configure clusterclouddetails <key>\n\
-    - show clusterclouddetails <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
-    Avi ControllerVersion object api\n```\n- show version controller\n- show version\
-    \ ui\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi NatPolicy object api\n\
-    ```\n- configure natpolicy <key>\n- show natpolicy <key>\n```\n\nAPI permission:\
-    \ PERMISSION_NATPOLICY\nAvi VsVip object api\n```\n- configure vsvip <key>\n-\
-    \ show vsvip <key>\n```\n\nExamples\n- **vsvip_example_1**: To create a basic\
-    \ vsvip object\n  ```json\n    {'name': 'production_vsvip', 'vip': [{'subnet':\
-    \ {'ip_addr': {'addr': '10.10.10.0', 'type': 'V4'}}, 'auto_allocate_ip': True}],\
-    \ 'east_west_placement': False}\n  ```\nAPI permission: PERMISSION_VIRTUALSERVICE\n\
+    Avi UpgradeStatusSummary object api\n```\n- show upgrade status\n- show upgrade\
+    \ status history\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi RollbackPatchSeGroupParams\
+    \ object api\n```\n- rollbackpatch segroup\n```\n\nAPI permission: PERMISSION_UPGRADE_OPS\n\
+    Avi GslbGeoDbProfile object api\n```\n- configure gslbgeodbprofile <key>\n- show\
+    \ gslbgeodbprofile <key>\n```\n\nAPI permission: PERMISSION_GSLBGEODBPROFILE\n\
+    Avi IcapProfile object api\n```\n- configure icapprofile <key>\n- show icapprofile\
+    \ <key>\n```\n\nAPI permission: PERMISSION_ICAP\nAvi Alert object api\n```\n-\
+    \ show alert <key>\n- delete alert <key>\n```\n\nAPI permission: PERMISSION_ALERT\n\
+    Avi ALBServicesJob object api\n```\n- configure albservicesjob <key>\n- show albservicesjob\
+    \ <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ServiceEngineInventory\
+    \ object api\n```\n- show serviceengineinventory <key>\n```\n\nAPI permission:\
+    \ PERMISSION_SERVICEENGINE\nAvi ClusterCloudDetails object api\n```\n- configure\
+    \ clusterclouddetails <key>\n- show clusterclouddetails <key>\n```\n\nAPI permission:\
+    \ PERMISSION_CONTROLLER\nAvi ControllerVersion object api\n```\n- show version\
+    \ controller\n- show version ui\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi NatPolicy object api\n```\n- configure natpolicy <key>\n- show natpolicy <key>\n\
+    ```\n\nAPI permission: PERMISSION_NATPOLICY\nAvi VsVip object api\n```\n- configure\
+    \ vsvip <key>\n- show vsvip <key>\n```\n\nExamples\n- **vsvip_example_1**: To\
+    \ create a basic vsvip object\n  ```json\n    {'name': 'production_vsvip', 'vip':\
+    \ [{'subnet': {'ip_addr': {'addr': '10.10.10.0', 'type': 'V4'}}, 'auto_allocate_ip':\
+    \ True}], 'east_west_placement': False}\n  ```\nAPI permission: PERMISSION_VIRTUALSERVICE\n\
     Avi DebugServiceEngine object api\n```\n- debug serviceengine <key>\n- show debug\
     \ serviceengine <key>\n```\n\nAPI permission: PERMISSION_SERVICEENGINE\nAvi UserActivity\
     \ object api\n```\n- show useractivity <key>\n```\n\nAPI permission: PERMISSION_USER\n\
@@ -2819,6 +2819,8 @@ tags:
     ```
 
     - show upgrade status
+
+    - show upgrade status history
 
     ```
 
@@ -15583,58 +15585,6 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
     put:
       tags:
       - Cloud
@@ -15679,6 +15629,58 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
