@@ -19,6 +19,11 @@ Arguments:
                  is created. Triggers the workflow(s) in dry-run mode on <branch>,
                  waits for them and downloads the final bundles to
                  ./dry-run-<release_name>/ for pre-release validation.
+                 For the Go SDK the checks run locally on a temporary worktree of
+                 origin/<branch>: go mod verify/tidy, build, vet, gofmt, the pytest
+                 flow go/examples/test/tests_go_clients.py (full run if AVI_CONTROLLER,
+                 AVI_USERNAME and AVI_PASSWORD are exported, offline tests otherwise;
+                 needs go and pytest) and a consumer smoke test.
   --previous-tag <tag>
                  Generate release notes relative to this tag instead of
                  gh's auto-detected previous release (passed through as
@@ -26,9 +31,9 @@ Arguments:
   branch         Source branch to release from. The branch must contain the
                  release-java.yml / release-python.yml workflow files.
   release_name   Release name, e.g. 32.1.3 (tag pushed will be tag-<release_name>).
-                 Include exactly one of "java-sdk" or "python-sdk" in the name to
-                 release only that SDK (e.g. 32.1.3-java-sdk); omit both to
-                 release Java and Python together.
+                 Include exactly one of "java-sdk", "python-sdk" or "go-sdk" in the name
+                 to release only that SDK (e.g. 32.1.3-java-sdk); omit all to
+                 release all three together.
 
 Requirements:
   - gh CLI installed and authenticated (run 'gh auth login' once)
@@ -100,7 +105,7 @@ REL_TAG=tag-$REL
 # The workflows pick which SDK to publish by matching these exact substrings in the
 # tag name; no match means both SDKs. Validate the release name so a typo doesn't
 # silently fall through to a "both" release.
-SDK_KEYWORDS=(java-sdk python-sdk)
+SDK_KEYWORDS=(java-sdk python-sdk go-sdk)
 MATCHED_KEYWORDS=()
 for kw in "${SDK_KEYWORDS[@]}"; do
     if [[ "$REL_TAG" == *"$kw"* ]]; then
@@ -113,25 +118,28 @@ if [ "${#MATCHED_KEYWORDS[@]}" -gt 1 ]; then
     exit 1
 fi
 
-if [ "${#MATCHED_KEYWORDS[@]}" -eq 0 ] && echo "$REL_TAG" | grep -qiE '(java|python)[-_]?sdk'; then
+if [ "${#MATCHED_KEYWORDS[@]}" -eq 0 ] && echo "$REL_TAG" | grep -qiE '(java|python|go)[-_]?sdk'; then
     echo "Error: release name '$REL' looks like it references an SDK release but doesn't exactly match the keywords the workflows check for. Use one of: ${SDK_KEYWORDS[*]}."
     exit 1
 fi
 
-# Same routing as the workflows: java-sdk -> Java only, python-sdk -> Python only, else both.
+# Same routing as the workflows: java-sdk -> Java only, python-sdk -> Python only,
+# go-sdk -> Go only (no workflow, local checks / tag only), else all three.
 WORKFLOWS=()
+RUN_GO=false
 if [ "${#MATCHED_KEYWORDS[@]}" -eq 1 ]; then
     echo "Release type detected: ${MATCHED_KEYWORDS[0]}"
-    if [ "${MATCHED_KEYWORDS[0]}" = "java-sdk" ]; then
-        WORKFLOWS=(release-java.yml)
-    else
-        WORKFLOWS=(release-python.yml)
-    fi
+    case "${MATCHED_KEYWORDS[0]}" in
+        java-sdk)   WORKFLOWS=(release-java.yml) ;;
+        python-sdk) WORKFLOWS=(release-python.yml) ;;
+        go-sdk)     RUN_GO=true ;;
+    esac
 else
-    echo "Release type: both (java-sdk + python-sdk)"
+    echo "Release type: all (java-sdk + python-sdk + go-sdk)"
     WORKFLOWS=(release-java.yml release-python.yml)
+    RUN_GO=true
 fi
-echo "Workflows: ${WORKFLOWS[*]}"
+echo "Workflows: ${WORKFLOWS[*]:-none} (Go local checks: $RUN_GO)"
 
 if ! gh auth status &>/dev/null; then
     echo "gh is not authenticated. Run 'gh auth login'."
@@ -178,16 +186,69 @@ watch_run() {
     fi
 }
 
+# Go SDK pre-release checks. Go consumers fetch the git tag, so there is nothing to
+# publish and no workflow; validate origin/$BRANCH locally on a throwaway worktree.
+# Explicit '|| return 1' because this runs under '||' where 'set -e' is ignored.
+run_go_checks() {
+    local wt rc=0
+    for tool in go python3; do
+        command -v "$tool" &>/dev/null || { echo "Error: $tool is required for the Go checks."; return 1; }
+    done
+    python3 -m pytest --version &>/dev/null || { echo "Error: pytest is required (python3 -m pip install pytest)."; return 1; }
+    wt=$(mktemp -d) || return 1
+    git worktree add --detach "$wt" "origin/$BRANCH" || return 1
+    (
+        cd "$wt" || exit 1
+        go mod verify || exit 1
+        go mod tidy || exit 1
+        git diff --exit-code go.mod go.sum || { echo "go.mod/go.sum are not tidy"; exit 1; }
+        go build ./go/session/... ./go/clients/... ./go/models/... || exit 1
+        go vet ./go/session/... ./go/clients/... ./go/models/... || exit 1
+        unformatted=$(gofmt -l go/session go/models go/clients)
+        [ -z "$unformatted" ] || { echo "gofmt needed on: $unformatted"; exit 1; }
+
+        # Test flow: go/examples/test/tests_go_clients.py (pytest wrapping `go test`).
+        cd go/examples/test || exit 1
+        if [ -n "$AVI_CONTROLLER" ] && [ -n "$AVI_USERNAME" ] && [ -n "$AVI_PASSWORD" ]; then
+            echo "Controller $AVI_CONTROLLER configured: running the full tests_go_clients.py"
+            python3 -m pytest tests_go_clients.py -v || exit 1
+        else
+            echo "AVI_CONTROLLER/AVI_USERNAME/AVI_PASSWORD not set: running offline Go tests only"
+            python3 -m pytest tests_go_clients.py -v -k "test_avi_client_error or test_avisession" || exit 1
+        fi
+
+        # Same thing a consumer does: depend on the module and compile against it.
+        consumer=$(mktemp -d) || exit 1
+        cd "$consumer" || exit 1
+        go mod init consumer || exit 1
+        printf 'package main\n\nimport (\n\t_ "github.com/vmware/alb-sdk/go/clients"\n\t_ "github.com/vmware/alb-sdk/go/session"\n)\n\nfunc main() {}\n' > main.go
+        go mod edit -require github.com/vmware/alb-sdk@v0.0.0 -replace "github.com/vmware/alb-sdk=$wt" || exit 1
+        go mod tidy || exit 1
+        go build ./... || exit 1
+    ) || rc=1
+    git worktree remove --force "$wt"
+    return $rc
+}
+
 # ---- Dry run: nothing is tagged, released or published ----
 if [ "$TEST_MODE" = true ]; then
     OUT_DIR="dry-run-$REL"
     mkdir -p "$OUT_DIR"
-    echo "Running in --test mode: dry run of ${WORKFLOWS[*]} on $BRANCH. No tag or GitHub release is created."
+    echo "Running in --test mode: dry run of ${WORKFLOWS[*]:-no workflows} on $BRANCH (Go local checks: $RUN_GO). No tag or GitHub release is created."
     STARTED_AT=$(date -u +%Y-%m-%dT%H:%M:%SZ)
     for wf in "${WORKFLOWS[@]}"; do
         gh workflow run "$wf" --ref "$BRANCH" -f version="$REL" -f ref="$BRANCH" -f dry_run=true
     done
     FAILED=0
+    # Run the local Go checks while the workflows run remotely.
+    if [ "$RUN_GO" = true ]; then
+        if run_go_checks; then
+            echo "Go checks passed."
+        else
+            echo "Error: Go checks failed."
+            FAILED=1
+        fi
+    fi
     for wf in "${WORKFLOWS[@]}"; do
         if watch_run "$wf" "$STARTED_AT" workflow_dispatch; then
             gh run download "$LAST_RUN_ID" --dir "$OUT_DIR"
