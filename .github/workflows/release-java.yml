@@ -50,6 +50,21 @@ jobs:
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
 
+      # Maven 3.10.x makes central-publishing-maven-plugin bundle maven-metadata-local.xml,
+      # which Central rejects ("Bundle has content that does NOT have a .pom file").
+      # Pin Maven 3.9.x until the plugin handles it.
+      - name: Install Maven 3.9.16
+        run: |
+          MVN_VER=3.9.16
+          BASE=https://repo1.maven.org/maven2/org/apache/maven/apache-maven/$MVN_VER
+          curl -sSfL -o /tmp/maven.tar.gz "$BASE/apache-maven-$MVN_VER-bin.tar.gz"
+          echo "$(curl -sSfL "$BASE/apache-maven-$MVN_VER-bin.tar.gz.sha512")  /tmp/maven.tar.gz" | sha512sum -c -
+          tar -xzf /tmp/maven.tar.gz -C "$HOME"
+          echo "$HOME/apache-maven-$MVN_VER/bin" >> "$GITHUB_PATH"
+
+      - name: Show Maven version
+        run: mvn -version
+
       - name: Compute Java version
         id: version
         run: |
@@ -103,7 +118,31 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        run: mvn clean -e --batch-mode deploy -DskipTests
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          # Central can return 502 while the plugin polls the status after a successful upload;
+          # if the version is on Central afterwards, the release went out. A rejected bundle never shows up there.
+          mvn clean -e --batch-mode deploy -DskipTests || curl -sf --retry 10 --retry-delay 30 --retry-all-errors -o /dev/null \
+            "https://repo1.maven.org/maven2/com/vmware/avi/sdk/avisdk/$V/avisdk-$V.pom"
+
+      # Diagnostics: keep the exact bundle sent to Central so a validation failure can be inspected.
+      - name: List and keep Central bundle
+        if: always() && env.DRY_RUN != 'true'
+        run: |
+          for z in java/target/central-publishing/central-bundle.zip java/target/central-staging/central-bundle.zip; do
+            [[ -f "$z" ]] && { echo "--- $z ---"; unzip -l "$z"; }
+          done
+          find java/target/central-staging -type f | sort || true
+
+      - name: Upload Central bundle (diagnostics)
+        if: always() && env.DRY_RUN != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: central-bundle-diagnostics
+          path: |
+            java/target/central-publishing/central-bundle.zip
+            java/target/central-staging/central-bundle.zip
+          if-no-files-found: ignore
 
       # Already published (re-run): do not deploy again; take the exact published files
       # so the bundle / release assets match what is on Maven Central.
