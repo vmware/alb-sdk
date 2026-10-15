@@ -118,7 +118,12 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        run: mvn clean -e --batch-mode deploy -DskipTests
+          V: ${{ steps.version.outputs.JAVA_RELEASE_VERSION }}
+        run: |
+          # Central can return 502 while the plugin polls the status after a successful upload;
+          # if the version is on Central afterwards, the release went out. A rejected bundle never shows up there.
+          mvn clean -e --batch-mode deploy -DskipTests || curl -sf --retry 10 --retry-delay 30 --retry-all-errors -o /dev/null \
+            "https://repo1.maven.org/maven2/com/vmware/avi/sdk/avisdk/$V/avisdk-$V.pom"
 
       # Diagnostics: keep the exact bundle sent to Central so a validation failure can be inspected.
       - name: List and keep Central bundle
