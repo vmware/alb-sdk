@@ -495,6 +495,9 @@ type EventDetails struct {
 	SeBgpPeerStateChangeDetails *SeBgpPeerStateChangeDetails `json:"se_bgp_peer_state_change_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SeClfDetails *SeClfEventDetails `json:"se_clf_details,omitempty"`
+
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeConfigSedatastoreDlFail *SeVsConfigSeDatastoreDownloadFailed `json:"se_config_sedatastore_dl_fail,omitempty"`
 
 	//  Field introduced in 22.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
