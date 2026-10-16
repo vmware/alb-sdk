@@ -15585,6 +15585,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -15629,58 +15681,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -102911,6 +102911,7 @@ definitions:
           SE_EV_VS_RL_CONFIG_FAILED, SE_DP_HB_RECOVERED, SE_VS_PKT_BUFF_HIGH, SE_DISCONTINUOUS_TIME_CHANGE,
           SE_HIGH_INGRESS_PROC_LATENCY, SE_VS_DEL_FLOWS_DISRUPTED, SE_NTP_SYNCHRONIZATION_FAILED,
           SE_HIGH_EGRESS_PROC_LATENCY, SE_ARP_RATE_LIMIT_DROP, SE_ND_RATE_LIMIT_DROP,
+          SE_CLF_SERVER_DOWN, SE_CLF_SERVER_UP, SE_CLF_POOL_DOWN, SE_CLF_POOL_UP,
           DEBUG_MODE_ON, DEBUG_MODE_OFF, QAT_SERVICE_OPER_DOWN, SE_RUNNING_IN_PCAP_MODE,
           CONFIG_CREATE, CONFIG_UPDATE, CONFIG_DELETE, USER_LOGIN, USER_LOGOUT, CONFIG_ACTION,
           CONFIG_INTERNAL_CREATE, CONFIG_INTERNAL_UPDATE, USER_PASSWORD_CHANGE_REQUEST,
@@ -130117,6 +130118,10 @@ definitions:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
         $ref: '#/definitions/SeBgpPeerStateChangeDetails'
+      se_clf_details:
+        description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.'
+        $ref: '#/definitions/SeClfEventDetails'
       se_config_sedatastore_dl_fail:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
           with Cloud Services edition.'
@@ -130648,6 +130653,7 @@ definitions:
           SE_EV_VS_RL_CONFIG_FAILED, SE_DP_HB_RECOVERED, SE_VS_PKT_BUFF_HIGH, SE_DISCONTINUOUS_TIME_CHANGE,
           SE_HIGH_INGRESS_PROC_LATENCY, SE_VS_DEL_FLOWS_DISRUPTED, SE_NTP_SYNCHRONIZATION_FAILED,
           SE_HIGH_EGRESS_PROC_LATENCY, SE_ARP_RATE_LIMIT_DROP, SE_ND_RATE_LIMIT_DROP,
+          SE_CLF_SERVER_DOWN, SE_CLF_SERVER_UP, SE_CLF_POOL_DOWN, SE_CLF_POOL_UP,
           DEBUG_MODE_ON, DEBUG_MODE_OFF, QAT_SERVICE_OPER_DOWN, SE_RUNNING_IN_PCAP_MODE,
           CONFIG_CREATE, CONFIG_UPDATE, CONFIG_DELETE, USER_LOGIN, USER_LOGOUT, CONFIG_ACTION,
           CONFIG_INTERNAL_CREATE, CONFIG_INTERNAL_UPDATE, USER_PASSWORD_CHANGE_REQUEST,
@@ -130917,6 +130923,7 @@ definitions:
           SE_EV_VS_RL_CONFIG_FAILED, SE_DP_HB_RECOVERED, SE_VS_PKT_BUFF_HIGH, SE_DISCONTINUOUS_TIME_CHANGE,
           SE_HIGH_INGRESS_PROC_LATENCY, SE_VS_DEL_FLOWS_DISRUPTED, SE_NTP_SYNCHRONIZATION_FAILED,
           SE_HIGH_EGRESS_PROC_LATENCY, SE_ARP_RATE_LIMIT_DROP, SE_ND_RATE_LIMIT_DROP,
+          SE_CLF_SERVER_DOWN, SE_CLF_SERVER_UP, SE_CLF_POOL_DOWN, SE_CLF_POOL_UP,
           DEBUG_MODE_ON, DEBUG_MODE_OFF, QAT_SERVICE_OPER_DOWN, SE_RUNNING_IN_PCAP_MODE,
           CONFIG_CREATE, CONFIG_UPDATE, CONFIG_DELETE, USER_LOGIN, USER_LOGOUT, CONFIG_ACTION,
           CONFIG_INTERNAL_CREATE, CONFIG_INTERNAL_UPDATE, USER_PASSWORD_CHANGE_REQUEST,
@@ -170528,6 +170535,24 @@ definitions:
         type: integer
         default: 8192
         format: uint32
+  SeClfEventDetails:
+    type: object
+    properties:
+      clf_pool:
+        description: Name of the CLF pool. Field introduced in 32.1.5. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      clf_profile:
+        description: Name of the ClfProfile that owns the CLF pool. Field introduced
+          in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      server:
+        description: CLF server (collector) details. For pool events, the last server
+          that changed state, if any. Field introduced in 32.1.5. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        $ref: '#/definitions/SeHmEventServerDetails'
   SecMgrDataEvent:
     type: object
     properties:
