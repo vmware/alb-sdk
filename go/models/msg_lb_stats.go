@@ -17,6 +17,9 @@ type MsgLbStats struct {
 	// Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnpoolMux *uint64 `json:"connpool_mux,omitempty"`
 
+	// True on the periodic log pushed while the connection is still open. Counters are cumulative since the connection started, so the log pushed at close supersedes it. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Interim *bool `json:"interim,omitempty"`
+
 	// Per-backend breakdown of message and byte counters. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Servers []*ServerMsgStats `json:"servers,omitempty"`
 

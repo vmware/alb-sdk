@@ -58,4 +58,7 @@ type MsgLbContextEntry struct {
 
 	// Length of the transaction/session key captured for the in-progress message; 0 if none supplied yet. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TransactionKeyBufLen *uint64 `json:"transaction_key_buf_len,omitempty"`
+
+	// True if this client has more server-side bindings than the per-call display cap, so the server list above is incomplete. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Truncated *bool `json:"truncated,omitempty"`
 }

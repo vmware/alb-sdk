@@ -21,7 +21,7 @@ type MsgLbTransactionLog struct {
 	RespMsgLen *uint64 `json:"resp_msg_len,omitempty"`
 
 	// Backend server address in 'a.b.c.d port' format. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	ServerIP *string `json:"server_ip,omitempty"`
+	ServerIPPort *string `json:"server_ip_port,omitempty"`
 
 	// Transaction hash lookup outcome for this request  0=none, 1=hit, 2=miss. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TransactionDisposition *uint32 `json:"transaction_disposition,omitempty"`

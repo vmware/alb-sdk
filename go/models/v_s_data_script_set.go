@@ -12,7 +12,7 @@ type VSDataScriptSet struct {
 	// Read Only: true
 	LastModified *string `json:"_last_modified,omitempty"`
 
-	// UUID of the Custom Log Forward profile that is referred by virtual service datascript objects. It is a reference to an object of type ClfProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// UUID of the Custom Log Forward profile that is referred by virtual service datascript objects. It is a reference to an object of type ClfProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ClfProfileRef *string `json:"clf_profile_ref,omitempty"`
 
 	// Creator name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
