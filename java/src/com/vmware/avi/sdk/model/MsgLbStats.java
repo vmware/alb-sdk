@@ -30,6 +30,9 @@ public class MsgLbStats  {
     @JsonProperty("connpool_mux")
     private Integer connpoolMux;
 
+    @JsonProperty("interim")
+    private Boolean interim;
+
     @JsonProperty("servers")
     private List<ServerMsgStats> servers;
 
@@ -123,6 +126,32 @@ public class MsgLbStats  {
      */
     public void setConnpoolMux(Integer  connpoolMux) {
         this.connpoolMux = connpoolMux;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * True on the periodic log pushed while the connection is still open.
+     * Counters are cumulative since the connection started, so the log pushed at close supersedes it.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return interim
+     */
+    public Boolean getInterim() {
+        return interim;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * True on the periodic log pushed while the connection is still open.
+     * Counters are cumulative since the connection started, so the log pushed at close supersedes it.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param interim set the interim.
+     */
+    public void setInterim(Boolean  interim) {
+        this.interim = interim;
     }
     /**
      * This is the getter method this will return the attribute value.
@@ -331,7 +360,8 @@ public class MsgLbStats  {
   Objects.equals(this.connpoolMisses, objMsgLbStats.connpoolMisses)&&
   Objects.equals(this.connpoolMux, objMsgLbStats.connpoolMux)&&
   Objects.equals(this.transactionHits, objMsgLbStats.transactionHits)&&
-  Objects.equals(this.transactionMisses, objMsgLbStats.transactionMisses);
+  Objects.equals(this.transactionMisses, objMsgLbStats.transactionMisses)&&
+  Objects.equals(this.interim, objMsgLbStats.interim);
     }
 
     @Override
@@ -341,6 +371,7 @@ public class MsgLbStats  {
                   sb.append("    connpoolHits: ").append(toIndentedString(connpoolHits)).append("\n");
                         sb.append("    connpoolMisses: ").append(toIndentedString(connpoolMisses)).append("\n");
                         sb.append("    connpoolMux: ").append(toIndentedString(connpoolMux)).append("\n");
+                        sb.append("    interim: ").append(toIndentedString(interim)).append("\n");
                         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
                         sb.append("    totalBytesRx: ").append(toIndentedString(totalBytesRx)).append("\n");
                         sb.append("    totalBytesTx: ").append(toIndentedString(totalBytesTx)).append("\n");
