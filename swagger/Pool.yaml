@@ -3643,6 +3643,9 @@ definitions:
             pool_name:
                 description: "Name of the MsgLB pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            truncated:
+                description: "True if this pool has more servers than the per-call display cap, so the entry list above is incomplete. Narrow down with the server filter to inspect a specific backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
     MsgLbConnPoolServerEntry:
         type: object
         properties:
@@ -3704,6 +3707,9 @@ definitions:
             pool_name:
                 description: "Name of the MsgLB pool this transaction table belongs to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            truncated:
+                description: "True if this pool has more transaction-hash entries than the per-call display cap, so the entry list above is incomplete. Narrow down with the server filter to inspect a specific backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
     NetworkFilter:
         type: object
         required:

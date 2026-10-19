@@ -557,52 +557,52 @@
             ],
             "properties": {
                 "health_monitor_refs": {
-                    "description": "Reference to at most one health monitor for collectors in this pool. It is a reference to an object of type HealthMonitor. Field introduced in 32.2.1. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reference to at most one health monitor for collectors in this pool. It is a reference to an object of type HealthMonitor. Field introduced in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "type": "string"
                     }
                 },
                 "lb_algorithm": {
-                    "description": "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking the datascript log forwarding call, not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking the datascript log forwarding call, not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "LB_ALGORITHM_ROUND_ROBIN"
                 },
                 "log_format": {
-                    "description": "Wire format for log records delivered to this pool's collectors. Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Wire format for log records delivered to this pool's collectors. Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CLF_LOG_FORMAT_SYSLOG_OCTET"
                 },
                 "name": {
-                    "description": "Unique name for this pool within the ClfProfile. Used as part of the composite key for the backing se_pool_t on the SE. The controller rejects profiles where two pools share the same name. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Unique name for this pool within the ClfProfile. Used as part of the composite key for the backing se_pool_t on the SE. The controller rejects profiles where two pools share the same name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "pki_profile_ref": {
-                    "description": "PKI profile whose CA certificates validate the collector's server certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "PKI profile whose CA certificates validate the collector's server certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "priority": {
-                    "description": "Pool priority within the ClfProfile. Higher value = higher priority. Must be unique across all pools in the same profile. When replicate=false, the highest-priority pool with an UP member receives all log records; lower-priority pools act as fallback. Allowed values are 1-255. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Pool priority within the ClfProfile (mandatory, no default value, it must be given on every pool). A higher value means a higher priority. Must be unique across all pools in the same profile. Allowed values are 1-255. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "servers": {
-                    "description": "List of log collector endpoints for this pool. Field introduced in 32.2.1. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of log collector endpoints for this pool. Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ClfServer"
                     }
                 },
                 "ssl_key_and_certificate_ref": {
-                    "description": "Client certificate and key the SE presents to the collector for mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only TLS is used when this is not set. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Client certificate and key the SE presents to the collector for mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only TLS is used when this is not set. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "ssl_profile_ref": {
-                    "description": "SSL profile controlling the TLS version and cipher policy used for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type SSLProfile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "SSL profile controlling the TLS version and cipher policy used for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type SSLProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "transport": {
-                    "description": "Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "CLF_TRANSPORT_TCP"
                 }
@@ -621,38 +621,38 @@
                     "type": "string"
                 },
                 "clf_pools": {
-                    "description": "List of pools associated with this profile. Each pool must have a unique priority value. The controller rejects profiles where two pools share the same priority (HTTP 400). Field introduced in 32.2.1. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of pools associated with this profile (1 to 8). Each pool must have a unique priority value. The controller rejects profiles where two pools share the same priority (HTTP 400). Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ClfPool"
                     }
                 },
                 "description": {
-                    "description": "Human-readable description for this CLF profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "enabled": {
-                    "description": "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "markers": {
-                    "description": "List of labels to be used for granular RBAC. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "List of labels to be used for granular RBAC. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/RoleFilterMatchLabel"
                     }
                 },
                 "name": {
-                    "description": "The name of the CLF profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "The name of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "replicate": {
-                    "description": "When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "tenant_ref": {
-                    "description": "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "url": {
@@ -660,12 +660,16 @@
                     "readOnly": true,
                     "type": "string"
                 },
+                "use_management": {
+                    "description": "When true, log forwarding traffic for this profile is sent through the Service Engine management interface in the management VRF instead of the data interfaces in the profile's VRF context. Health monitors cannot be configured on any pool of a profile with this knob enabled, and the knob cannot be enabled while any pool has health monitors; remove them first. Cannot be changed after the profile is created. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "uuid": {
-                    "description": "UUID of the CLF profile. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UUID of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
                 "vrf_context_ref": {
-                    "description": "Virtual Routing Context for this profile's collector pools. Only Virtual Services in the same Virtual Routing Context can use this profile. Cannot be changed once set. It is a reference to an object of type VrfContext. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Virtual Routing Context for this profile's collector pools. Only Virtual Services in the same Virtual Routing Context can use this profile. Cannot be changed once set. It is a reference to an object of type VrfContext. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 }
             }
@@ -700,16 +704,16 @@
             ],
             "properties": {
                 "enabled": {
-                    "description": "Enable or disable this collector. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Enable or disable this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "ip_addr": {
-                    "description": "IP address of the external log collector. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "IP address of the external log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/IpAddr"
                 },
                 "port": {
-                    "description": "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
