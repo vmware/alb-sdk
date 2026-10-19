@@ -33,8 +33,8 @@ public class MsgLbTransactionLog  {
     @JsonProperty("resp_msg_len")
     private Integer respMsgLen;
 
-    @JsonProperty("server_ip")
-    private String serverIp;
+    @JsonProperty("server_ip_port")
+    private String serverIpPort;
 
     @JsonProperty("transaction_disposition")
     private Integer transactionDisposition;
@@ -150,10 +150,10 @@ public class MsgLbTransactionLog  {
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @return serverIp
+     * @return serverIpPort
      */
-    public String getServerIp() {
-        return serverIp;
+    public String getServerIpPort() {
+        return serverIpPort;
     }
 
     /**
@@ -162,10 +162,10 @@ public class MsgLbTransactionLog  {
      * Field introduced in 32.2.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
-     * @param serverIp set the serverIp.
+     * @param serverIpPort set the serverIpPort.
      */
-    public void setServerIp(String  serverIp) {
-        this.serverIp = serverIp;
+    public void setServerIpPort(String  serverIpPort) {
+        this.serverIpPort = serverIpPort;
     }
 
     /**
@@ -226,7 +226,7 @@ public class MsgLbTransactionLog  {
           return false;
       }
       MsgLbTransactionLog objMsgLbTransactionLog = (MsgLbTransactionLog) o;
-      return   Objects.equals(this.serverIp, objMsgLbTransactionLog.serverIp)&&
+      return   Objects.equals(this.serverIpPort, objMsgLbTransactionLog.serverIpPort)&&
   Objects.equals(this.transactionKey, objMsgLbTransactionLog.transactionKey)&&
   Objects.equals(this.reqMsgLen, objMsgLbTransactionLog.reqMsgLen)&&
   Objects.equals(this.respMsgLen, objMsgLbTransactionLog.respMsgLen)&&
@@ -243,7 +243,7 @@ public class MsgLbTransactionLog  {
                         sb.append("    latencyUs: ").append(toIndentedString(latencyUs)).append("\n");
                         sb.append("    reqMsgLen: ").append(toIndentedString(reqMsgLen)).append("\n");
                         sb.append("    respMsgLen: ").append(toIndentedString(respMsgLen)).append("\n");
-                        sb.append("    serverIp: ").append(toIndentedString(serverIp)).append("\n");
+                        sb.append("    serverIpPort: ").append(toIndentedString(serverIpPort)).append("\n");
                         sb.append("    transactionDisposition: ").append(toIndentedString(transactionDisposition)).append("\n");
                         sb.append("    transactionKey: ").append(toIndentedString(transactionKey)).append("\n");
                   sb.append("}");

@@ -45,6 +45,9 @@ public class ClfProfile extends AviRestResource  {
     @JsonProperty("url")
     private String url = "url";
 
+    @JsonProperty("use_management")
+    private Boolean useManagement = false;
+
     @JsonProperty("uuid")
     private String uuid;
 
@@ -54,10 +57,11 @@ public class ClfProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * List of pools associated with this profile.
+     * List of pools associated with this profile (1 to 8).
      * Each pool must have a unique priority value.
      * The controller rejects profiles where two pools share the same priority (http 400).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
+     * Minimum of 1 items required.
      * Maximum of 8 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -69,10 +73,11 @@ public class ClfProfile extends AviRestResource  {
 
     /**
      * This is the setter method. this will set the clfPools
-     * List of pools associated with this profile.
+     * List of pools associated with this profile (1 to 8).
      * Each pool must have a unique priority value.
      * The controller rejects profiles where two pools share the same priority (http 400).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
+     * Minimum of 1 items required.
      * Maximum of 8 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -84,10 +89,11 @@ public class ClfProfile extends AviRestResource  {
 
     /**
      * This is the setter method this will set the clfPools
-     * List of pools associated with this profile.
+     * List of pools associated with this profile (1 to 8).
      * Each pool must have a unique priority value.
      * The controller rejects profiles where two pools share the same priority (http 400).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
+     * Minimum of 1 items required.
      * Maximum of 8 items allowed.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -104,7 +110,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Human-readable description for this clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return description
@@ -116,7 +122,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Human-readable description for this clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param description set the description.
@@ -130,7 +136,7 @@ public class ClfProfile extends AviRestResource  {
      * Enable or disable log delivery for this profile without disturbing pool state, health monitors, or virtualservice/datascriptset bindings.
      * When false, datascript log forwarding is a silent no-op for every vs attached via this profile; delivery resumes immediately when set back to
      * true.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @return enabled
@@ -144,7 +150,7 @@ public class ClfProfile extends AviRestResource  {
      * Enable or disable log delivery for this profile without disturbing pool state, health monitors, or virtualservice/datascriptset bindings.
      * When false, datascript log forwarding is a silent no-op for every vs attached via this profile; delivery resumes immediately when set back to
      * true.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as true.
      * @param enabled set the enabled.
@@ -155,7 +161,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * List of labels to be used for granular rbac.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
@@ -167,7 +173,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the setter method. this will set the markers
      * List of labels to be used for granular rbac.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
@@ -179,7 +185,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the setter method this will set the markers
      * List of labels to be used for granular rbac.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return markers
@@ -195,7 +201,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * The name of the clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return name
@@ -207,7 +213,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * The name of the clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param name set the name.
@@ -220,7 +226,7 @@ public class ClfProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
      * When true, log records are replicated to all pools regardless of priority.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @return replicate
@@ -233,7 +239,7 @@ public class ClfProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
      * When true, log records are replicated to all pools regardless of priority.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as false.
      * @param replicate set the replicate.
@@ -246,7 +252,7 @@ public class ClfProfile extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Reference to the tenant that owns this clf profile.
      * It is a reference to an object of type tenant.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return tenantRef
@@ -259,7 +265,7 @@ public class ClfProfile extends AviRestResource  {
      * This is the setter method to the attribute.
      * Reference to the tenant that owns this clf profile.
      * It is a reference to an object of type tenant.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param tenantRef set the tenantRef.
@@ -287,8 +293,40 @@ public class ClfProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * When true, log forwarding traffic for this profile is sent through the service engine management interface in the management vrf instead of the
+     * data interfaces in the profile's vrf context.
+     * Health monitors cannot be configured on any pool of a profile with this knob enabled, and the knob cannot be enabled while any pool has health
+     * monitors; remove them first.
+     * Cannot be changed after the profile is created.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return useManagement
+     */
+    public Boolean getUseManagement() {
+        return useManagement;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * When true, log forwarding traffic for this profile is sent through the service engine management interface in the management vrf instead of the
+     * data interfaces in the profile's vrf context.
+     * Health monitors cannot be configured on any pool of a profile with this knob enabled, and the knob cannot be enabled while any pool has health
+     * monitors; remove them first.
+     * Cannot be changed after the profile is created.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param useManagement set the useManagement.
+     */
+    public void setUseManagement(Boolean  useManagement) {
+        this.useManagement = useManagement;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Uuid of the clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return uuid
@@ -300,7 +338,7 @@ public class ClfProfile extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Uuid of the clf profile.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param uuid set the uuid.
@@ -315,7 +353,7 @@ public class ClfProfile extends AviRestResource  {
      * Only virtual services in the same virtual routing context can use this profile.
      * Cannot be changed once set.
      * It is a reference to an object of type vrfcontext.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return vrfContextRef
@@ -330,7 +368,7 @@ public class ClfProfile extends AviRestResource  {
      * Only virtual services in the same virtual routing context can use this profile.
      * Cannot be changed once set.
      * It is a reference to an object of type vrfcontext.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param vrfContextRef set the vrfContextRef.
@@ -356,6 +394,7 @@ public class ClfProfile extends AviRestResource  {
   Objects.equals(this.vrfContextRef, objClfProfile.vrfContextRef)&&
   Objects.equals(this.replicate, objClfProfile.replicate)&&
   Objects.equals(this.enabled, objClfProfile.enabled)&&
+  Objects.equals(this.useManagement, objClfProfile.useManagement)&&
   Objects.equals(this.markers, objClfProfile.markers)&&
   Objects.equals(this.tenantRef, objClfProfile.tenantRef);
     }
@@ -371,7 +410,8 @@ public class ClfProfile extends AviRestResource  {
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    replicate: ").append(toIndentedString(replicate)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
-                                    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
+                                    sb.append("    useManagement: ").append(toIndentedString(useManagement)).append("\n");
+                        sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
                         sb.append("    vrfContextRef: ").append(toIndentedString(vrfContextRef)).append("\n");
                   sb.append("}");
       return sb.toString();

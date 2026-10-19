@@ -21,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MsgLbApplicationServiceProfile  {
+    @JsonProperty("enable_transaction_logs")
+    private Boolean enableTransactionLogs = false;
+
     @JsonProperty("max_tcp_conn_per_client_per_server")
     private Integer maxTcpConnPerClientPerServer = 1;
+
+    @JsonProperty("msg_lb_connection_log_interval")
+    private Integer msgLbConnectionLogInterval = 300;
 
     @JsonProperty("session_binding_mode")
     private String sessionBindingMode = "MSG_LB_SESSION_BINDING_MODE_STICKY";
@@ -34,6 +40,34 @@ public class MsgLbApplicationServiceProfile  {
     private MsgLbApplicationServiceTransactionBindingProfile transactionBindingProfile;
 
 
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Generate a per-transaction log for each completed msglb request/response pair.
+     * Only requests that carry a transaction key are logged.
+     * Disabled by default because it produces one log per message.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @return enableTransactionLogs
+     */
+    public Boolean getEnableTransactionLogs() {
+        return enableTransactionLogs;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Generate a per-transaction log for each completed msglb request/response pair.
+     * Only requests that carry a transaction key are logged.
+     * Disabled by default because it produces one log per message.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * @param enableTransactionLogs set the enableTransactionLogs.
+     */
+    public void setEnableTransactionLogs(Boolean  enableTransactionLogs) {
+        this.enableTransactionLogs = enableTransactionLogs;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -61,6 +95,40 @@ public class MsgLbApplicationServiceProfile  {
      */
     public void setMaxTcpConnPerClientPerServer(Integer  maxTcpConnPerClientPerServer) {
         this.maxTcpConnPerClientPerServer = maxTcpConnPerClientPerServer;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Interval in seconds at which a cumulative per-connection msglb log is pushed for each open client connection, so long-lived connections are
+     * visible before they close.
+     * 0 disables the periodic log; the log pushed when the connection closes is always generated.
+     * Changes apply to existing connections as well.
+     * Allowed values are 0-3600.
+     * Field introduced in 32.1.5.
+     * Unit is sec.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @return msgLbConnectionLogInterval
+     */
+    public Integer getMsgLbConnectionLogInterval() {
+        return msgLbConnectionLogInterval;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Interval in seconds at which a cumulative per-connection msglb log is pushed for each open client connection, so long-lived connections are
+     * visible before they close.
+     * 0 disables the periodic log; the log pushed when the connection closes is always generated.
+     * Changes apply to existing connections as well.
+     * Allowed values are 0-3600.
+     * Field introduced in 32.1.5.
+     * Unit is sec.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 300.
+     * @param msgLbConnectionLogInterval set the msgLbConnectionLogInterval.
+     */
+    public void setMsgLbConnectionLogInterval(Integer  msgLbConnectionLogInterval) {
+        this.msgLbConnectionLogInterval = msgLbConnectionLogInterval;
     }
 
     /**
@@ -156,14 +224,18 @@ public class MsgLbApplicationServiceProfile  {
       return   Objects.equals(this.maxTcpConnPerClientPerServer, objMsgLbApplicationServiceProfile.maxTcpConnPerClientPerServer)&&
   Objects.equals(this.sessionBindingMode, objMsgLbApplicationServiceProfile.sessionBindingMode)&&
   Objects.equals(this.stickyBindingProfile, objMsgLbApplicationServiceProfile.stickyBindingProfile)&&
-  Objects.equals(this.transactionBindingProfile, objMsgLbApplicationServiceProfile.transactionBindingProfile);
+  Objects.equals(this.transactionBindingProfile, objMsgLbApplicationServiceProfile.transactionBindingProfile)&&
+  Objects.equals(this.msgLbConnectionLogInterval, objMsgLbApplicationServiceProfile.msgLbConnectionLogInterval)&&
+  Objects.equals(this.enableTransactionLogs, objMsgLbApplicationServiceProfile.enableTransactionLogs);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class MsgLbApplicationServiceProfile {\n");
-                  sb.append("    maxTcpConnPerClientPerServer: ").append(toIndentedString(maxTcpConnPerClientPerServer)).append("\n");
+                  sb.append("    enableTransactionLogs: ").append(toIndentedString(enableTransactionLogs)).append("\n");
+                        sb.append("    maxTcpConnPerClientPerServer: ").append(toIndentedString(maxTcpConnPerClientPerServer)).append("\n");
+                        sb.append("    msgLbConnectionLogInterval: ").append(toIndentedString(msgLbConnectionLogInterval)).append("\n");
                         sb.append("    sessionBindingMode: ").append(toIndentedString(sessionBindingMode)).append("\n");
                         sb.append("    stickyBindingProfile: ").append(toIndentedString(stickyBindingProfile)).append("\n");
                         sb.append("    transactionBindingProfile: ").append(toIndentedString(transactionBindingProfile)).append("\n");
