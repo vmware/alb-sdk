@@ -143,18 +143,19 @@ info:
     Avi AuthProfile object api\n```\n- configure authprofile <key>\n- show authprofile\
     \ <key>\n```\n\nAPI permission: PERMISSION_AUTHPROFILE\nAvi AlertObjectList object\
     \ api\n```\n- configure alertobjectlist\n- show alertobjectlist\n```\n\nAPI permission:\
-    \ PERMISSION_ALERTCONFIG\nAvi SecureChannelMapping object api\n```\n- show securechannelmapping\
-    \ <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\nAvi ApiViolationCorrectionInteractiveRequest\
-    \ object api\n```\n- apiviolationcorrection\n```\n\nAPI permission: PERMISSION_APIPATH\n\
-    Avi SCPoolServerStateInfo object api\n```\n- show poolserverstateinfo\n```\n\n\
-    API permission: PERMISSION_CONTROLLER\nAvi ALBServicesConfig object api\n```\n\
-    - show albservicesconfig\n- configure albservicesconfig\n```\n\nAPI permission:\
-    \ PERMISSION_ALBSERVICESCONFIG\nAvi VirtualService object api\n```\n- configure\
-    \ virtualservice <key>\n- show virtualservice <key>\n- scaleout virtualservice\
-    \ <key>\n- scalein virtualservice <key>\n- migrate virtualservice <key>\n- switchover\
-    \ virtualservice <key>\n- clear virtualservice <key>\n- resync virtualservice\
-    \ <key>\n- rotatekeys virtualservice <key>\n- retryplacement virtualservice <key>\n\
-    - logrecommendation virtualservice <key>\n- applylogrecommendation virtualservice\
+    \ PERMISSION_ALERTCONFIG\nAvi AkoAmkoClusterInventory object api\n```\n```\n\n\
+    API permission: PERMISSION_AKOAMKOCLUSTER\nAvi SecureChannelMapping object api\n\
+    ```\n- show securechannelmapping <key>\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi ApiViolationCorrectionInteractiveRequest object api\n```\n- apiviolationcorrection\n\
+    ```\n\nAPI permission: PERMISSION_APIPATH\nAvi SCPoolServerStateInfo object api\n\
+    ```\n- show poolserverstateinfo\n```\n\nAPI permission: PERMISSION_CONTROLLER\n\
+    Avi ALBServicesConfig object api\n```\n- show albservicesconfig\n- configure albservicesconfig\n\
+    ```\n\nAPI permission: PERMISSION_ALBSERVICESCONFIG\nAvi VirtualService object\
+    \ api\n```\n- configure virtualservice <key>\n- show virtualservice <key>\n- scaleout\
+    \ virtualservice <key>\n- scalein virtualservice <key>\n- migrate virtualservice\
+    \ <key>\n- switchover virtualservice <key>\n- clear virtualservice <key>\n- resync\
+    \ virtualservice <key>\n- rotatekeys virtualservice <key>\n- retryplacement virtualservice\
+    \ <key>\n- logrecommendation virtualservice <key>\n- applylogrecommendation virtualservice\
     \ <key>\n```\n\nExamples\n- **virtualservice_example_1**: To create a basic virtualservice\
     \ object that has both http and https enabled\n  ```json\n    {'name': 'production_vs',\
     \ 'services': [{'port': 80}, {'port': 443, 'enable_ssl': True}], 'vsvip_ref':\
@@ -1284,6 +1285,17 @@ tags:
 
 
     API permission: PERMISSION_ALERTCONFIG
+
+    Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
+- name: AkoAmkoClusterInventory
+  description: 'Avi AkoAmkoClusterInventory object api
+
+    ```
+
+    ```
+
+
+    API permission: PERMISSION_AKOAMKOCLUSTER
 
     Contact Info: https://support.broadcom.com<br>Version: 32.2.1<br>BasePath: /api<br>'
 - name: SecureChannelMapping
@@ -35461,6 +35473,52 @@ paths:
           description: log in failed
         '404':
           description: object not found
+  /ako-amko-cluster-inventory:
+    get:
+      tags:
+      - AkoAmkoClusterInventory
+      description: /ako-amko-cluster-inventory
+      operationId: GET /ako-amko-cluster-inventory
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AkoAmkoClusterInventoryResponse'
+        '401':
+          description: log in failed
   /cloudproperties:
     get:
       tags:
@@ -100951,6 +101009,78 @@ definitions:
           Cloud Services edition.
         type: integer
         format: int32
+  AkoAmkoClusterInventory:
+    type: object
+    properties:
+      ako_amko_version:
+        description: AKO/AMKO operator version (e.g., '1.12.0'). Field introduced
+          in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      cloud_ref:
+        description: Cloud reference UUID in Avi Controller. It is a reference to
+          an object of type Cloud. Field introduced in 32.1.4. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      cluster_name:
+        description: Name of the AKO/AMKO cluster. Field introduced in 32.1.4. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      cluster_type:
+        description: Type of the AKO/AMKO cluster. Enum options - CLUSTER_TYPE_AKO,
+          CLUSTER_TYPE_AMKO. Field introduced in 32.1.4. Allowed with any value in
+          Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      health_status:
+        description: Health status of the AKO/AMKO cluster. Enum options - HEALTH_STATUS_UP,
+          HEALTH_STATUS_DOWN, HEALTH_STATUS_UNKNOWN. Field introduced in 32.1.4. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: string
+      kubernetes_version:
+        description: Kubernetes cluster version (e.g., '1.28.3'). Field introduced
+          in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      last_seen:
+        description: Last seen timestamp of the AKO/AMKO cluster. Field introduced
+          in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      tenant_ref:
+        description: Tenant reference UUID in Avi Controller. It is a reference to
+          an object of type Tenant. Field introduced in 32.1.4. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      virtual_service_count:
+        description: Number of virtual services in the AKO/AMKO cluster. Field introduced
+          in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: integer
+        format: int32
+  AkoAmkoClusterInventoryResponse:
+    type: object
+    required:
+    - count
+    properties:
+      count:
+        description: Total number of AKO/AMKO clusters matching the query. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: uint32
+      next:
+        description: URL of the next page of results, present only when more results
+          remain. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+      results:
+        description: Page of AKO/AMKO cluster inventory entries. Allowed with any
+          value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: array
+        items:
+          $ref: '#/definitions/AkoAmkoClusterInventory'
   AkoAmkoClusterMetadata:
     type: object
     properties:
