@@ -26,6 +26,7 @@ type AviClient struct {
 	APIViolationCorrectionInteractiveRequest *APIViolationCorrectionInteractiveRequestClient
 	ActionGroupConfig                        *ActionGroupConfigClient
 	AkoAmkoCluster                           *AkoAmkoClusterClient
+	AkoAmkoClusterInventory                  *AkoAmkoClusterInventoryClient
 	Alert                                    *AlertClient
 	AlertConfig                              *AlertConfigClient
 	AlertCount                               *AlertCountClient
@@ -274,6 +275,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.APIViolationCorrectionInteractiveRequest = NewAPIViolationCorrectionInteractiveRequestClient(aviSession)
 	aviClient.ActionGroupConfig = NewActionGroupConfigClient(aviSession)
 	aviClient.AkoAmkoCluster = NewAkoAmkoClusterClient(aviSession)
+	aviClient.AkoAmkoClusterInventory = NewAkoAmkoClusterInventoryClient(aviSession)
 	aviClient.Alert = NewAlertClient(aviSession)
 	aviClient.AlertConfig = NewAlertConfigClient(aviSession)
 	aviClient.AlertCount = NewAlertCountClient(aviSession)
