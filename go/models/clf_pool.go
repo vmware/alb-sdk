@@ -28,6 +28,9 @@ type ClfPool struct {
 	// Required: true
 	Priority *uint32 `json:"priority"`
 
+	// When true, each log record is sent to ALL servers in this pool that are currently UP. . Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Replicate *bool `json:"replicate,omitempty"`
+
 	// List of log collector endpoints for this pool. Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Servers []*ClfServer `json:"servers,omitempty"`
 

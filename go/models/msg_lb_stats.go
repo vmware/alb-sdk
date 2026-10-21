@@ -8,36 +8,36 @@ package models
 // swagger:model MsgLbStats
 type MsgLbStats struct {
 
-	// Messages that reused an idle pooled server connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnpoolHits *uint64 `json:"connpool_hits,omitempty"`
 
-	// Messages that required a new TCP connection to the backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnpoolMisses *uint64 `json:"connpool_misses,omitempty"`
 
-	// Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ConnpoolMux *uint64 `json:"connpool_mux,omitempty"`
 
 	// True on the periodic log pushed while the connection is still open. Counters are cumulative since the connection started, so the log pushed at close supersedes it. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Interim *bool `json:"interim,omitempty"`
 
-	// Per-backend breakdown of message and byte counters. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Per-backend breakdown of message and byte counters. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Servers []*ServerMsgStats `json:"servers,omitempty"`
 
-	// Total response bytes received from all backend servers. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total response bytes received from all backend servers. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalBytesRx *uint64 `json:"total_bytes_rx,omitempty"`
 
-	// Total request bytes forwarded to all backend servers. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total request bytes forwarded to all backend servers. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalBytesTx *uint64 `json:"total_bytes_tx,omitempty"`
 
-	// Total ISO 8583 responses received from backend servers over this connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total ISO 8583 responses received from backend servers over this connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalMessagesRx *uint64 `json:"total_messages_rx,omitempty"`
 
-	// Total ISO 8583 messages committed to backend servers over this connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Total ISO 8583 messages committed to backend servers over this connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalMessagesTx *uint64 `json:"total_messages_tx,omitempty"`
 
-	// Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TransactionHits *uint64 `json:"transaction_hits,omitempty"`
 
-	// Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Messages with a transaction or session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TransactionMisses *uint64 `json:"transaction_misses,omitempty"`
 }

@@ -28,9 +28,6 @@ type ClfProfile struct {
 	// Required: true
 	Name *string `json:"name"`
 
-	// When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Replicate *bool `json:"replicate,omitempty"`
-
 	// Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`
 

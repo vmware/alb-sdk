@@ -23,6 +23,9 @@ type ClfPoolHmon struct {
 	// Priority of this CLF pool (higher value = higher precedence). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Priority *uint32 `json:"priority,omitempty"`
 
+	// Whether logs sent to this pool go to all UP servers (true) or to a single server chosen by the load balancing algorithm (false). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Replicate *bool `json:"replicate,omitempty"`
+
 	// Transport protocol for log delivery to this pool. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Transport *string `json:"transport,omitempty"`
 }
