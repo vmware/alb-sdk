@@ -59,7 +59,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Messages that reused an idle pooled server connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connpoolHits
@@ -71,7 +71,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Messages that reused an idle pooled server connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connpoolHits set the connpoolHits.
@@ -83,7 +83,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Messages that required a new tcp connection to the backend.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connpoolMisses
@@ -95,7 +95,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Messages that required a new tcp connection to the backend.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connpoolMisses set the connpoolMisses.
@@ -107,7 +107,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Messages multiplexed onto a busy connection via round-robin.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return connpoolMux
@@ -119,7 +119,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Messages multiplexed onto a busy connection via round-robin.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param connpoolMux set the connpoolMux.
@@ -156,7 +156,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Per-backend breakdown of message and byte counters.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
@@ -168,7 +168,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method. this will set the servers
      * Per-backend breakdown of message and byte counters.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
@@ -180,7 +180,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method this will set the servers
      * Per-backend breakdown of message and byte counters.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return servers
@@ -196,7 +196,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Total response bytes received from all backend servers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -209,7 +209,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Total response bytes received from all backend servers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -222,7 +222,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Total request bytes forwarded to all backend servers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -235,7 +235,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Total request bytes forwarded to all backend servers.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Unit is bytes.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
@@ -248,7 +248,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Total iso 8583 responses received from backend servers over this connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalMessagesRx
@@ -260,7 +260,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Total iso 8583 responses received from backend servers over this connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalMessagesRx set the totalMessagesRx.
@@ -272,7 +272,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Total iso 8583 messages committed to backend servers over this connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return totalMessagesTx
@@ -284,7 +284,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Total iso 8583 messages committed to backend servers over this connection.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param totalMessagesTx set the totalMessagesTx.
@@ -296,7 +296,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return transactionHits
@@ -308,7 +308,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Messages with a transaction or session key for which the transaction hash returned an existing server affinity entry.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param transactionHits set the transactionHits.
@@ -320,7 +320,7 @@ public class MsgLbStats  {
     /**
      * This is the getter method this will return the attribute value.
      * Messages with a transaction or session key where no transaction entry was found (lb fallthrough).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return transactionMisses
@@ -332,7 +332,7 @@ public class MsgLbStats  {
     /**
      * This is the setter method to the attribute.
      * Messages with a transaction or session key where no transaction entry was found (lb fallthrough).
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param transactionMisses set the transactionMisses.

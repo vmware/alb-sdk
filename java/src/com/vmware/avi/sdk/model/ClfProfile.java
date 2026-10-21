@@ -36,9 +36,6 @@ public class ClfProfile extends AviRestResource  {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("replicate")
-    private Boolean replicate = false;
-
     @JsonProperty("tenant_ref")
     private String tenantRef;
 
@@ -224,32 +221,6 @@ public class ClfProfile extends AviRestResource  {
 
     /**
      * This is the getter method this will return the attribute value.
-     * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
-     * When true, log records are replicated to all pools regardless of priority.
-     * Field introduced in 32.1.5.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @return replicate
-     */
-    public Boolean getReplicate() {
-        return replicate;
-    }
-
-    /**
-     * This is the setter method to the attribute.
-     * When false (default), log records are routed to the highest-priority pool that has at least one up member (priority-based failover).
-     * When true, log records are replicated to all pools regardless of priority.
-     * Field introduced in 32.1.5.
-     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
-     * @param replicate set the replicate.
-     */
-    public void setReplicate(Boolean  replicate) {
-        this.replicate = replicate;
-    }
-
-    /**
-     * This is the getter method this will return the attribute value.
      * Reference to the tenant that owns this clf profile.
      * It is a reference to an object of type tenant.
      * Field introduced in 32.1.5.
@@ -392,7 +363,6 @@ public class ClfProfile extends AviRestResource  {
   Objects.equals(this.description, objClfProfile.description)&&
   Objects.equals(this.clfPools, objClfProfile.clfPools)&&
   Objects.equals(this.vrfContextRef, objClfProfile.vrfContextRef)&&
-  Objects.equals(this.replicate, objClfProfile.replicate)&&
   Objects.equals(this.enabled, objClfProfile.enabled)&&
   Objects.equals(this.useManagement, objClfProfile.useManagement)&&
   Objects.equals(this.markers, objClfProfile.markers)&&
@@ -408,7 +378,6 @@ public class ClfProfile extends AviRestResource  {
                         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
                         sb.append("    markers: ").append(toIndentedString(markers)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-                        sb.append("    replicate: ").append(toIndentedString(replicate)).append("\n");
                         sb.append("    tenantRef: ").append(toIndentedString(tenantRef)).append("\n");
                                     sb.append("    useManagement: ").append(toIndentedString(useManagement)).append("\n");
                         sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
