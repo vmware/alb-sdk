@@ -1051,7 +1051,7 @@ public class ConnectionLog  {
      * This is the getter method this will return the attribute value.
      * Iso 8583 msglb per-connection statistics.
      * Present only when the vs is configured as an l4 msglb virtual service.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return msgLbStats
@@ -1064,7 +1064,7 @@ public class ConnectionLog  {
      * This is the setter method to the attribute.
      * Iso 8583 msglb per-connection statistics.
      * Present only when the vs is configured as an l4 msglb virtual service.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param msgLbStats set the msgLbStats.
@@ -1078,7 +1078,7 @@ public class ConnectionLog  {
      * Iso 8583 msglb per-transaction log.
      * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
      * only on the once-per-connection summary log.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return msgLbTxn
@@ -1092,7 +1092,7 @@ public class ConnectionLog  {
      * Iso 8583 msglb per-transaction log.
      * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
      * only on the once-per-connection summary log.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.5.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param msgLbTxn set the msgLbTxn.
