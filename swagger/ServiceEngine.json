@@ -11039,7 +11039,7 @@
                     }
                 },
                 "msg_lb_app_service_profile": {
-                    "description": "Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbApplicationServiceProfile"
                 },
                 "name": {
@@ -12882,6 +12882,10 @@
                     "type": "integer",
                     "format": "uint32"
                 },
+                "replicate": {
+                    "description": "When true, each log record is sent to ALL servers in this pool that are currently UP. . Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "boolean"
+                },
                 "servers": {
                     "description": "List of log collector endpoints for this pool. Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "array",
@@ -12942,10 +12946,6 @@
                 "name": {
                     "description": "The name of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
-                },
-                "replicate": {
-                    "description": "When false (default), log records are routed to the highest-priority pool that has at least one UP member (priority-based failover). When true, log records are replicated to ALL pools regardless of priority. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "type": "boolean"
                 },
                 "tenant_ref": {
                     "description": "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
@@ -28043,7 +28043,7 @@
                     "type": "boolean"
                 },
                 "max_tcp_conn_per_client_per_server": {
-                    "description": "Cap on distinct server TCP connections a single client connection may open per backend member for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Cap on distinct server TCP connections a single client connection may open per backend member for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 1,
                     "format": "uint32"
@@ -28055,16 +28055,16 @@
                     "format": "uint32"
                 },
                 "session_binding_mode": {
-                    "description": "Controls how client connections are bound to backend server TCP connections. STICKY (default). Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Controls how client connections are bound to backend server TCP connections. STICKY (default). Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string",
                     "default": "MSG_LB_SESSION_BINDING_MODE_STICKY"
                 },
                 "sticky_binding_profile": {
-                    "description": "Parameters for STICKY-mode anchor and per-request bindings. Ignored when session_binding_mode is TRANSACTIONAL. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Parameters for STICKY-mode anchor and per-request bindings. Ignored when session_binding_mode is TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbApplicationServiceStickyBindingProfile"
                 },
                 "transaction_binding_profile": {
-                    "description": "Parameters for TRANSACTIONAL-mode session bindings. Ignored when session_binding_mode is STICKY. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Parameters for TRANSACTIONAL-mode session bindings. Ignored when session_binding_mode is STICKY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbApplicationServiceTransactionBindingProfile"
                 }
             }
@@ -28073,18 +28073,18 @@
             "type": "object",
             "properties": {
                 "session_unbind_on_response": {
-                    "description": "When true (default), a STICKY-mode per-request/session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Anchor bindings are unaffected regardless of this flag. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When true (default), a STICKY-mode per-request/session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Anchor bindings are unaffected regardless of this flag. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean",
                     "default": true
                 },
                 "session_unbind_timeout": {
-                    "description": "Idle timeout in milliseconds for per-request/session bindings in STICKY mode. When session_unbind_on_response is true (default), this acts as a hard deadline  the session binding is force-torn-down if no matching response arrives within this window. When session_unbind_on_response is false, this is the sliding idle timeout  the session binding persists after response and is freed after this many milliseconds of inactivity. Default 30000 ms. Allowed values are 1-3600000. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Idle timeout in milliseconds for per-request/session bindings in STICKY mode. When session_unbind_on_response is true (default), this acts as a hard deadline  the session binding is force-torn-down if no matching response arrives within this window. When session_unbind_on_response is false, this is the sliding idle timeout  the session binding persists after response and is freed after this many milliseconds of inactivity. Default 30000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 30000,
                     "format": "uint32"
                 },
                 "sticky_unbind_timeout": {
-                    "description": "Idle timeout in milliseconds for the STICKY-mode anchor binding. 0 (default)  anchor lives until the client connection closes. Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request or response. Allowed values are 0-3600000. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Idle timeout in milliseconds for the STICKY-mode anchor binding. 0 (default)  anchor lives until the client connection closes. Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request or response. Allowed values are 0-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -28094,11 +28094,11 @@
             "type": "object",
             "properties": {
                 "session_unbind_on_response": {
-                    "description": "When true, a TRANSACTIONAL session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "When true, a TRANSACTIONAL session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "boolean"
                 },
                 "session_unbind_timeout": {
-                    "description": "Time in milliseconds a TRANSACTIONAL session binding waits in idle state before it is torn down. Default 120000 ms. Allowed values are 1-3600000. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Time in milliseconds a TRANSACTIONAL session binding waits in idle state before it is torn down. Default 120000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "default": 120000,
                     "format": "uint32"
@@ -28109,12 +28109,12 @@
             "type": "object",
             "properties": {
                 "idle_timeout_ms": {
-                    "description": "Idle timeout for pooled server sockets used by L4 message-level LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field introduced in 32.2.1. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Idle timeout for pooled server sockets used by L4 message-level LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 },
                 "max_tcp_conn_per_server": {
-                    "description": "Cap on concurrent server TCP connections per core for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Cap on concurrent server TCP connections per core for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint32"
                 }
@@ -28124,42 +28124,42 @@
             "type": "object",
             "properties": {
                 "connpool_hits": {
-                    "description": "Messages that reused an idle pooled server connection. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "connpool_misses": {
-                    "description": "Messages that required a new TCP connection to the backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "connpool_mux": {
-                    "description": "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "ds_reject_count": {
-                    "description": "Connections rejected at accept because this VS has no L4_REQ datascript configured for MsgLB message framing. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Connections rejected at accept because this VS has no L4_REQ datascript configured for MsgLB message framing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "total_bytes": {
-                    "description": "Total request bytes committed by clients on this VS. Field introduced in 32.2.1. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Total request bytes committed by clients on this VS. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "total_messages": {
-                    "description": "ISO 8583 messages committed by clients on this VS. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "ISO 8583 messages committed by clients on this VS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "transaction_hits": {
-                    "description": "Messages with a transaction/session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages with a transaction/session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 },
                 "transaction_misses": {
-                    "description": "Messages with a transaction/session key where no transaction entry was found (LB fallthrough). Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "Messages with a transaction/session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "uint64"
                 }
@@ -30873,7 +30873,7 @@
                     "format": "uint32"
                 },
                 "msg_lb_conn_pool_config": {
-                    "description": "TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbConnPoolConfig"
                 },
                 "name": {
@@ -45264,7 +45264,7 @@
                     "$ref": "#/definitions/MiscStats"
                 },
                 "msg_lb_stats": {
-                    "description": "ISO 8583 MsgLB client-side stats; present only when type != BACKEND and the VS is an L4 MsgLB virtual service. These counters are incremented from the client-facing side (message committed, transaction/connpool lookup outcome), so there is no separate backend-only variant to report under type=BACKEND. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "description": "ISO 8583 MsgLB client-side stats; present only when type != BACKEND and the VS is an L4 MsgLB virtual service. These counters are incremented from the client-facing side (message committed, transaction/connpool lookup outcome), so there is no separate backend-only variant to report under type=BACKEND. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "$ref": "#/definitions/MsgLbTcpStats"
                 },
                 "packets_dropped": {
