@@ -20,9 +20,6 @@ type ClfProfileHmonStat struct {
 	// Per-pool health-monitor stats. One entry per ClfPool in the profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Pools []*ClfPoolHmon `json:"pools,omitempty"`
 
-	// Whether logs are replicated to all pools (true) or routed by priority (false). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
-	Replicate *bool `json:"replicate,omitempty"`
-
 	// UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeUUID *string `json:"se_uuid,omitempty"`
 

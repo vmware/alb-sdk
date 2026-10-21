@@ -8,15 +8,15 @@ package models
 // swagger:model MsgLbTransactionRuntime
 type MsgLbTransactionRuntime struct {
 
-	// Number of distinct clients with an active entry in this pool's transaction table. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Number of distinct clients with an active entry in this pool's transaction table. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CltCount *uint64 `json:"clt_count,omitempty"`
 
-	// Active transaction-hash entries for this pool. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Active transaction-hash entries for this pool. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Entry []*MsgLbTransactionEntry `json:"entry,omitempty"`
 
-	// Name of the MsgLB pool this transaction table belongs to. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Name of the MsgLB pool this transaction table belongs to. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	PoolName *string `json:"pool_name,omitempty"`
 
-	// True if this pool has more transaction-hash entries than the per-call display cap, so the entry list above is incomplete. Narrow down with the server filter to inspect a specific backend. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// True if this pool has more transaction-hash entries than the per-call display cap, so the entry list above is incomplete. Narrow down with the server filter to inspect a specific backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Truncated *bool `json:"truncated,omitempty"`
 }
