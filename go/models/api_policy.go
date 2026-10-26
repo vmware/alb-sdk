@@ -28,6 +28,9 @@ type APIPolicy struct {
 	// Mapping of labels to API policy actions. Field introduced in 32.1.4. Maximum of 256 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LabelMappings []*APIPolicyLabelActionMapping `json:"label_mappings,omitempty"`
 
+	// Size of the client request body inspected by API request body validation. A larger body is validated up to this size. More is inspected if another module (e.g. WAF) buffers more; the application profile's client_max_body_size, if set, is the upper limit. Allowed values are 1-32768. Field introduced in 32.2.1. Unit is KB. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MaxRequestBodyInspectionSize *uint32 `json:"max_request_body_inspection_size,omitempty"`
+
 	// Name of this object, unique per Tenant. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
