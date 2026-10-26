@@ -36,6 +36,9 @@ public class ApiPolicy extends AviRestResource  {
     @JsonProperty("label_mappings")
     private List<ApiPolicyLabelActionMapping> labelMappings;
 
+    @JsonProperty("max_request_body_inspection_size")
+    private Integer maxRequestBodyInspectionSize = 1024;
+
     @JsonProperty("name")
     private String name;
 
@@ -244,6 +247,40 @@ public class ApiPolicy extends AviRestResource  {
       }
       this.labelMappings.add(labelMappingsItem);
       return this;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Size of the client request body inspected by api request body validation.
+     * A larger body is validated up to this size.
+     * More is inspected if another module (e.g.
+     * Waf) buffers more; the application profile's client_max_body_size, if set, is the upper limit.
+     * Allowed values are 1-32768.
+     * Field introduced in 32.2.1.
+     * Unit is kb.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @return maxRequestBodyInspectionSize
+     */
+    public Integer getMaxRequestBodyInspectionSize() {
+        return maxRequestBodyInspectionSize;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Size of the client request body inspected by api request body validation.
+     * A larger body is validated up to this size.
+     * More is inspected if another module (e.g.
+     * Waf) buffers more; the application profile's client_max_body_size, if set, is the upper limit.
+     * Allowed values are 1-32768.
+     * Field introduced in 32.2.1.
+     * Unit is kb.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+     * @param maxRequestBodyInspectionSize set the maxRequestBodyInspectionSize.
+     */
+    public void setMaxRequestBodyInspectionSize(Integer  maxRequestBodyInspectionSize) {
+        this.maxRequestBodyInspectionSize = maxRequestBodyInspectionSize;
     }
 
     /**
@@ -638,6 +675,7 @@ public class ApiPolicy extends AviRestResource  {
   Objects.equals(this.orphanApiClassificationSettings, objApiPolicy.orphanApiClassificationSettings)&&
   Objects.equals(this.zombieApiClassificationSettings, objApiPolicy.zombieApiClassificationSettings)&&
   Objects.equals(this.validationSettings, objApiPolicy.validationSettings)&&
+  Objects.equals(this.maxRequestBodyInspectionSize, objApiPolicy.maxRequestBodyInspectionSize)&&
   Objects.equals(this.fileObjectRefs, objApiPolicy.fileObjectRefs)&&
   Objects.equals(this.apiSpecInfo, objApiPolicy.apiSpecInfo)&&
   Objects.equals(this.labelMappings, objApiPolicy.labelMappings)&&
@@ -659,6 +697,7 @@ public class ApiPolicy extends AviRestResource  {
                         sb.append("    description: ").append(toIndentedString(description)).append("\n");
                         sb.append("    fileObjectRefs: ").append(toIndentedString(fileObjectRefs)).append("\n");
                         sb.append("    labelMappings: ").append(toIndentedString(labelMappings)).append("\n");
+                        sb.append("    maxRequestBodyInspectionSize: ").append(toIndentedString(maxRequestBodyInspectionSize)).append("\n");
                         sb.append("    name: ").append(toIndentedString(name)).append("\n");
                         sb.append("    nonApiUrlLabels: ").append(toIndentedString(nonApiUrlLabels)).append("\n");
                         sb.append("    orphanApiClassificationSettings: ").append(toIndentedString(orphanApiClassificationSettings)).append("\n");
