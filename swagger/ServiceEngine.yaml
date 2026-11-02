@@ -5,7 +5,7 @@
 ---
 swagger: '2.0'
 info:
-    version: '32.1.4'
+    version: '32.1.6'
     title: Avi ServiceEngine Object API
     contact:
         name: Avi Networks Inc.
@@ -1087,6 +1087,53 @@ paths:
                     description: OK
                     schema:
                         $ref: "#/definitions/SeAssertStatRuntime"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+    /serviceengine/{uuid}/clfserverstats/:
+        get:
+            tags:
+                - ServiceEngine
+            description: /serviceengine/{uuid}/clfserverstats/
+            operationId: GET /serviceengine/{uuid}/clfserverstats/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfServerStats"
                 "401":
                     description: log in failed
                 "404":
@@ -5745,6 +5792,357 @@ paths:
                     description: log in failed
                 "404":
                     description: object not found
+    /clfprofile:
+        get:
+            tags:
+                - ClfProfile
+            description: /clfprofile
+            operationId: GET /clfprofile
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: refers_to
+                    in: query
+                    description: Filter to request all objects that refers to another Avi resource. Its syntax is refers_to=<obj_type>:<obj_uuid>. Eg. get all virtual services referring to pool p1 will be refers_to=pool:pool_p1_uuid
+                    type: string
+                -   name: referred_by
+                    in: query
+                    description: Filter to request all objects that are referred by another Avi resource. Its syntax is referred_by=<obj_type>:<obj_uuid>. Eg. get all pools referred_by virtual service vs1 - referred_by=virtualservice:vs_vs1_uuid
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfileApiResponse"
+                "401":
+                    description: log in failed
+        post:
+            tags:
+                - ClfProfile
+            description: /clfprofile
+            operationId: POST /clfprofile
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: ClfProfile object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                "401":
+                    description: log in failed
+    /clfprofile/{uuid}:
+        get:
+            tags:
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: GET /clfprofile/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   name: name
+                    in: query
+                    description: object name
+                    required: false
+                    type: string
+                -   name: X-Avi-Tenant
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: uuid
+                    in: path
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+                -   name: fields
+                    in: query
+                    description: List of fields to be returned for the resource. Some fields like name, URL, uuid etc. are always returned.
+                    type: string
+                -   name: include_name
+                    in: query
+                    description: All the Avi REST reference URIs have a name suffix as URI#name. It is useful to get the referenced resource name without performing get on that object.
+                    required: false
+                    type: boolean
+                -   name: skip_default
+                    in: query
+                    description: Default values are not set.
+                    required: false
+                    type: boolean
+                -   name: join_subresources
+                    in: query
+                    description: It automatically returns additional dependent resources like runtime. Eg. join_subresources=runtime.
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        put:
+            tags:
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: PUT /clfprofile/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: ClfProfile object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        patch:
+            tags:
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: PATCH /clfprofile/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: body
+                    name: body
+                    description: ClfProfile object creation
+                    required: true
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        $ref: "#/definitions/ClfProfile"
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
+        delete:
+            tags:
+                - ClfProfile
+            description: /clfprofile/{uuid}/{uuid}
+            operationId: DELETE /clfprofile/{uuid}
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: query
+                    name: name
+                    description: object name
+                    required: false
+                    type: string
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "204":
+                    description: object deleted
+                    schema:
+                        type: string
+                "404":
+                    description: object not found
+
+
 definitions:
     AbPool:
         type: object
@@ -7085,7 +7483,7 @@ definitions:
                 readOnly: True
                 type: string
             app_service_type:
-                description: "Specifies app service type for an application. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Specifies app service type for an application, including L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB) for ISO 8583-style traffic. Enum options - APP_SERVICE_TYPE_L7_HORIZON, APP_SERVICE_TYPE_L4_BLAST, APP_SERVICE_TYPE_L4_PCOIP, APP_SERVICE_TYPE_L4_FTP, APP_SERVICE_TYPE_HTTP_MCP, APP_SERVICE_TYPE_L4_MSG_LB. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             cloud_config_cksum:
                 description: "Checksum of application profiles. Internally set by cloud connector. Field introduced in 17.2.14, 18.1.5, 18.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -7116,6 +7514,9 @@ definitions:
                 type: array
                 items:
                     $ref: '#/definitions/RoleFilterMatchLabel'
+            msg_lb_app_service_profile:
+                description: "Per-client connection cap settings for L4 message-level load balancing (APP_SERVICE_TYPE_L4_MSG_LB). Ignored for other application profile types. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceProfile'
             name:
                 description: "The name of the application profile. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -8445,6 +8846,232 @@ definitions:
                 description: "Common name of the CA certificate subject. Field introduced in 32.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 readOnly: True
                 type: string
+    ClfPool:
+        type: object
+        required:
+            -   name
+            -   priority
+        properties:
+            health_monitor_refs:
+                description: "Reference to at most one health monitor for collectors in this pool. It is a reference to an object of type HealthMonitor. Field introduced in 32.1.5. Maximum of 1 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    type: string
+            lb_algorithm:
+                description: "Load balancing algorithm for distributing logs across servers. Only LB_ALGORITHM_ROUND_ROBIN and LB_ALGORITHM_CONSISTENT_HASH are supported; consistent-hash always hashes on the UUID of the VirtualService invoking the datascript log forwarding call, not a per-request client IP/URI/header, so all of one VS's log records land on the same collector. Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH, LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER, LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "LB_ALGORITHM_ROUND_ROBIN"
+            log_format:
+                description: "Wire format for log records delivered to this pool's collectors. Each pool independently configures its format. Enum options - CLF_LOG_FORMAT_SYSLOG_LEGACY, CLF_LOG_FORMAT_SYSLOG_OCTET, CLF_LOG_FORMAT_CUSTOM. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "CLF_LOG_FORMAT_SYSLOG_OCTET"
+            name:
+                description: "Unique name for this pool within the ClfProfile. Used as part of the composite key for the backing se_pool_t on the SE. The controller rejects profiles where two pools share the same name. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            pki_profile_ref:
+                description: "PKI profile whose CA certificates validate the collector's server certificate. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type PKIProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            priority:
+                description: "Pool priority within the ClfProfile (mandatory, no default value, it must be given on every pool). A higher value means a higher priority. Must be unique across all pools in the same profile. Allowed values are 1-255. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            replicate:
+                description: "When true, each log record is sent to ALL servers in this pool that are currently UP. . Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            servers:
+                description: "List of log collector endpoints for this pool. Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 32 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfServer'
+            ssl_key_and_certificate_ref:
+                description: "Client certificate and key the SE presents to the collector for mutual TLS. Optional even when transport is CLF_TRANSPORT_TCP_TLS; server-authentication-only TLS is used when this is not set. It is a reference to an object of type SSLKeyAndCertificate. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            ssl_profile_ref:
+                description: "SSL profile controlling the TLS version and cipher policy used for this pool's collector connections. Required when transport is CLF_TRANSPORT_TCP_TLS. It is a reference to an object of type SSLProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            transport:
+                description: "Transport protocol for log delivery. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "CLF_TRANSPORT_TCP"
+    ClfProfile:
+        type: object
+        required:
+            -   name
+            -   vrf_context_ref
+        properties:
+            _last_modified:
+                description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
+                readOnly: True
+                type: string
+            clf_pools:
+                description: "List of pools associated with this profile (1 to 8). Each pool must have a unique priority value. The controller rejects profiles where two pools share the same priority (HTTP 400). Field introduced in 32.1.5. Minimum of 1 items required. Maximum of 8 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/ClfPool'
+            description:
+                description: "Human-readable description for this CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            enabled:
+                description: "Enable or disable log delivery for this profile without disturbing pool state, health monitors, or VirtualService/DataScriptSet bindings. When false, datascript log forwarding is a silent no-op for every VS attached via this profile; delivery resumes immediately when set back to true. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            markers:
+                description: "List of labels to be used for granular RBAC. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: array
+                items:
+                    $ref: '#/definitions/RoleFilterMatchLabel'
+            name:
+                description: "The name of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            tenant_ref:
+                description: "Reference to the tenant that owns this CLF profile. It is a reference to an object of type Tenant. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            url:
+                description: "url"
+                readOnly: True
+                type: string
+            use_management:
+                description: "When true, log forwarding traffic for this profile is sent through the Service Engine management interface in the management VRF instead of the data interfaces in the profile's VRF context. Health monitors cannot be configured on any pool of a profile with this knob enabled, and the knob cannot be enabled while any pool has health monitors; remove them first. Cannot be changed after the profile is created. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            uuid:
+                description: "UUID of the CLF profile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vrf_context_ref:
+                description: "Virtual Routing Context for this profile's collector pools. Only Virtual Services in the same Virtual Routing Context can use this profile. Cannot be changed once set. It is a reference to an object of type VrfContext. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+    ClfProfileApiResponse:
+        type: object
+        required:
+            - count
+            - results
+        properties:
+            count:
+                type: integer
+                format: int32
+            results:
+                type: array
+                items:
+                    $ref: "#/definitions/ClfProfile"
+            next:
+                type: string
+    ClfServer:
+        type: object
+        required:
+            -   ip_addr
+            -   port
+        properties:
+            enabled:
+                description: "Enable or disable this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            ip_addr:
+                description: "IP address of the external log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
+            port:
+                description: "UDP/TCP port the collector listens on. Allowed values are 1-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    ClfServerStats:
+        type: object
+        properties:
+            bytes_sent:
+                description: "Bytes successfully written to the collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            conn_state:
+                description: "Current connection state  0=disconnected, 1=connecting, 2=active, 3=waiting to retry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            connect_attempts:
+                description: "Connection attempts to this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connect_failed:
+                description: "Connection attempts that failed. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connect_success:
+                description: "Connections successfully established. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            idle_closes:
+                description: "Connections closed because the collector went idle. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ip_addr:
+                description: "IP address of the log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/IpAddr'
+            ip_port:
+                description: "Collector endpoint as 'ip port'. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            last_snapshot_time:
+                description: "Wall-clock date/time of the last snapshot reported for this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/TimeStamp'
+            logs_dropped_queue_full:
+                description: "Log records evicted because the pending queue hit its record or byte limit. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_failed:
+                description: "Log records that could not be delivered. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_queued:
+                description: "Log records parked while the connection was being established. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_received:
+                description: "Log records handed to this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            logs_sent:
+                description: "Log records successfully written to the collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            netns_errors:
+                description: "Failures entering the collector's VRF network namespace. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            pending_count:
+                description: "Log records currently parked on the pending queue. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            port:
+                description: "Port of the log collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: int32
+            proc_id:
+                description: "Dataplane process/core that reported this row. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            reconnects:
+                description: "Reconnect attempts after an established connection dropped. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            se_uuid:
+                description: "UUID of the Service Engine reporting these stats. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            send_errors:
+                description: "Socket write/send errors. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_cert_errors:
+                description: "TLS failures attributable to certificate validation. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_handshake_failed:
+                description: "Failed TLS handshakes with this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ssl_handshake_success:
+                description: "Successful TLS handshakes with this collector. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            transport:
+                description: "Transport used to deliver logs to this collector. Enum options - CLF_TRANSPORT_TCP, CLF_TRANSPORT_UDP, CLF_TRANSPORT_TCP_TLS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+            vrf:
+                description: "VRF/namespace id the collector is reached through. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
     ClientInsightsSampling:
         type: object
         properties:
@@ -10278,7 +10905,7 @@ definitions:
                 type: integer
                 format: uint32
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_A"
     DnsMxRdata:
@@ -10419,7 +11046,7 @@ definitions:
                 description: "Criterion to use for matching the DNS query typein the question section. Enum options - IS_IN, IS_NOT_IN. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             query_type:
-                description: "DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS query types in the request query . Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: array
                 items:
                     type: string
@@ -10502,7 +11129,7 @@ definitions:
                 items:
                     $ref: '#/definitions/DnsTxtRdata'
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             wildcard_match:
                 description: "Enable wild-card match of fqdn  if an exact match is not found in the DNS table, the longest match is chosen by wild-carding the fqdn in the DNS request. Default is false. Field introduced in 17.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -10565,7 +11192,7 @@ definitions:
                 type: integer
                 format: uint32
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 17.2.12, 18.1.2. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
     DnsRule:
         type: object
@@ -11247,7 +11874,7 @@ definitions:
                 items:
                     $ref: '#/definitions/DnsTxtRdata'
             type:
-                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "DNS record type. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             url:
                 description: "url"
@@ -12915,7 +13542,7 @@ definitions:
                 type: string
                 default: "RCODE_NO_ERROR"
             record_type:
-                description: "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Resource record type used in the healthmonitor DNS query, only A or AAAA type supported. Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX, DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR, DNS_RECORD_ANY, DNS_RECORD_CAA. Field introduced in 18.2.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
                 default: "DNS_RECORD_A"
             response_string:
@@ -19739,6 +20366,105 @@ definitions:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
+    MsgLbApplicationServiceProfile:
+        type: object
+        properties:
+            enable_transaction_logs:
+                description: "Generate a per-transaction log for each completed MsgLB request/response pair. Only requests that carry a transaction key are logged. Disabled by default because it produces one log per message. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            max_tcp_conn_per_client_per_server:
+                description: "Cap on distinct server TCP connections a single client connection may open per backend member for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 1
+                format: uint32
+            msg_lb_connection_log_interval:
+                description: "Interval in seconds at which a cumulative per-connection MsgLB log is pushed for each open client connection, so long-lived connections are visible before they close. 0 disables the periodic log; the log pushed when the connection closes is always generated. Changes apply to existing connections as well. Allowed values are 0-3600. Field introduced in 32.1.5. Unit is SEC. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 300
+                format: uint32
+            session_binding_mode:
+                description: "Controls how client connections are bound to backend server TCP connections. STICKY (default). Enum options - MSG_LB_SESSION_BINDING_MODE_STICKY, MSG_LB_SESSION_BINDING_MODE_TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: string
+                default: "MSG_LB_SESSION_BINDING_MODE_STICKY"
+            sticky_binding_profile:
+                description: "Parameters for STICKY-mode anchor and per-request bindings. Ignored when session_binding_mode is TRANSACTIONAL. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceStickyBindingProfile'
+            transaction_binding_profile:
+                description: "Parameters for TRANSACTIONAL-mode session bindings. Ignored when session_binding_mode is STICKY. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbApplicationServiceTransactionBindingProfile'
+    MsgLbApplicationServiceStickyBindingProfile:
+        type: object
+        properties:
+            session_unbind_on_response:
+                description: "When true (default), a STICKY-mode per-request/session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Anchor bindings are unaffected regardless of this flag. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
+            session_unbind_timeout:
+                description: "Idle timeout in milliseconds for per-request/session bindings in STICKY mode. When session_unbind_on_response is true (default), this acts as a hard deadline  the session binding is force-torn-down if no matching response arrives within this window. When session_unbind_on_response is false, this is the sliding idle timeout  the session binding persists after response and is freed after this many milliseconds of inactivity. Default 30000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 30000
+                format: uint32
+            sticky_unbind_timeout:
+                description: "Idle timeout in milliseconds for the STICKY-mode anchor binding. 0 (default)  anchor lives until the client connection closes. Non-zero  anchor is torn down after this many milliseconds with no message forwarded in either direction; the idle timer resets on every request or response. Allowed values are 0-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    MsgLbApplicationServiceTransactionBindingProfile:
+        type: object
+        properties:
+            session_unbind_on_response:
+                description: "When true, a TRANSACTIONAL session binding is freed as soon as its matching response is received. When false, the binding persists as a route-cache entry and is cleaned up after session_unbind_timeout milliseconds of inactivity. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+            session_unbind_timeout:
+                description: "Time in milliseconds a TRANSACTIONAL session binding waits in idle state before it is torn down. Default 120000 ms. Allowed values are 1-3600000. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                default: 120000
+                format: uint32
+    MsgLbConnPoolConfig:
+        type: object
+        properties:
+            idle_timeout_ms:
+                description: "Idle timeout for pooled server sockets used by L4 message-level LB. Allowed values are 1000-86400000. Special values are 0 - Disable. Field introduced in 32.1.5. Unit is MILLISECONDS. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+            max_tcp_conn_per_server:
+                description: "Cap on concurrent server TCP connections per core for L4 message-level LB. 0 = unlimited; valid limit range is 1-65535. Allowed values are 0-65535. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint32
+    MsgLbTcpStats:
+        type: object
+        properties:
+            connpool_hits:
+                description: "Messages that reused an idle pooled server connection. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connpool_misses:
+                description: "Messages that required a new TCP connection to the backend. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            connpool_mux:
+                description: "Messages multiplexed onto a busy connection via round-robin. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            ds_reject_count:
+                description: "Connections rejected at accept because this VS has no L4_REQ datascript configured for MsgLB message framing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            total_bytes:
+                description: "Total request bytes committed by clients on this VS. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            total_messages:
+                description: "ISO 8583 messages committed by clients on this VS. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            transaction_hits:
+                description: "Messages with a transaction/session key for which the transaction hash returned an existing server affinity entry. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            transaction_misses:
+                description: "Messages with a transaction/session key where no transaction entry was found (LB fallthrough). Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
     NamespaceLldpEntry:
         type: object
         required:
@@ -20670,6 +21396,10 @@ definitions:
             auth_profile_ref:
                 description: "Auth Profile to use for validating users. It is a reference to an object of type AuthProfile. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
+            reject_non_expiring_tokens:
+                description: "Reject ID/JWT access tokens whose 'exp' claim is missing or non-numeric. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: boolean
+                default: True
             resource_server:
                 description: "Resource Server OAuth config. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/OAuthResourceServer'
@@ -21744,6 +22474,9 @@ definitions:
                 description: "Minimum number of servers in UP state for marking the pool UP. Field introduced in 18.2.1, 17.2.12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint32
+            msg_lb_conn_pool_config:
+                description: "TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbConnPoolConfig'
             name:
                 description: "The name of the pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
@@ -24123,6 +24856,9 @@ definitions:
             applicationinsightspolicy:
                 description: "Configuration for Application Insights. Field introduced in 31.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/ApplicationInsightsPolicy'
+            clf_profile:
+                description: "CLF Profile configuration for high-speed log routing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/ClfProfile'
             cloud:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/Cloud'
@@ -24390,6 +25126,9 @@ definitions:
                 $ref: '#/definitions/SeAgentGraphDBNodeInfo'
             applicationprofile:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/SeAgentGraphDBNodeInfo'
+            clfprofile:
+                description: " Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/SeAgentGraphDBNodeInfo'
             cloud:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
@@ -32762,6 +33501,9 @@ definitions:
             misc_stats:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/MiscStats'
+            msg_lb_stats:
+                description: "ISO 8583 MsgLB client-side stats; present only when type != BACKEND and the VS is an L4 MsgLB virtual service. These counters are incremented from the client-facing side (message committed, transaction/connpool lookup outcome), so there is no separate backend-only variant to report under type=BACKEND. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                $ref: '#/definitions/MsgLbTcpStats'
             packets_dropped:
                 description: " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 $ref: '#/definitions/PacketDropStats'
@@ -36129,6 +36871,9 @@ definitions:
             _last_modified:
                 description: "UNIX time since epoch in microseconds. Units(MICROSECONDS)."
                 readOnly: True
+                type: string
+            clf_profile_ref:
+                description: "UUID of the Custom Log Forward profile that is referred by virtual service datascript objects. It is a reference to an object of type ClfProfile. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: string
             created_by:
                 description: "Creator name. Field introduced in 17.1.11,17.2.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
