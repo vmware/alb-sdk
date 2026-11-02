@@ -15,6 +15,9 @@ type JWTServerProfile struct {
 	// Allowed signing algorithms when the matched JWK omits the 'alg' field (RFC 7517 §4.4). If the JWK carries 'alg', that value always wins and this list is ignored. An empty list rejects all such tokens (secure default). Only applicable when JWT Profile type is CLIENT_AUTH. Enum options - JWS_ALG_RS256, JWS_ALG_RS384, JWS_ALG_RS512, JWS_ALG_PS256, JWS_ALG_PS384, JWS_ALG_PS512, JWS_ALG_ES256, JWS_ALG_ES384, JWS_ALG_ES512. Field introduced in 32.1.4. Maximum of 9 items allowed. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	AllowedAlgorithms []string `json:"allowed_algorithms,omitempty"`
 
+	// Clock-skew tolerance applied to the 'nbf' and 'exp' claims when validating JWTs. If not configured, no clock-skew tolerance is applied. Only applicable when JWT Profile type is CLIENT_AUTH. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ClockSkewConfig *ClockSkewToleranceConfig `json:"clock_skew_config,omitempty"`
+
 	// JWT Auth configuration for profile_type CONTROLLER_INTERNAL_AUTH. Field introduced in 20.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ControllerInternalAuth *ControllerInternalAuth `json:"controller_internal_auth,omitempty"`
 
@@ -36,6 +39,9 @@ type JWTServerProfile struct {
 
 	// OAuth 2.0 Protected Resource Metadata configuration (RFC 9728). Only applicable when jwt_profile_type is CLIENT_AUTH. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ProtectedResourceConfig *JWTProtectedResourceConfig `json:"protected_resource_config,omitempty"`
+
+	// Reject JWTs whose 'exp' claim is missing or non-numeric. This configuration knob is applicable only when the JWT Profile type is CLIENT_AUTH. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RejectNonExpiringTokens *bool `json:"reject_non_expiring_tokens,omitempty"`
 
 	// UUID of the Tenant. It is a reference to an object of type Tenant. Field introduced in 20.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TenantRef *string `json:"tenant_ref,omitempty"`

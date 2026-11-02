@@ -148,6 +148,9 @@ type Pool struct {
 	// Minimum number of servers in UP state for marking the pool UP. Field introduced in 18.2.1, 17.2.12. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MinServersUp *uint32 `json:"min_servers_up,omitempty"`
 
+	// TCP connection pool limits for L4 message-level load balancing VSes that use this pool. Distinct from L7 conn_pool_properties. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbConnPoolConfig *MsgLbConnPoolConfig `json:"msg_lb_conn_pool_config,omitempty"`
+
 	// The name of the pool. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	// Required: true
 	Name *string `json:"name"`
