@@ -187584,7 +187584,7 @@ definitions:
       supervisor_group:
         description: Indicates that this Service Engine Group is reserved for exclusive
           use by the Supervisor in VCF environment. This is a read-only field for
-          external user. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          external user. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       tenant_ref:
