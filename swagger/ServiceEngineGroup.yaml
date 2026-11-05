@@ -2162,7 +2162,7 @@ definitions:
                 default: 17
                 format: uint32
             max_vs_per_se:
-                description: "Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                description: "Maximum number of Virtual Services that can be placed on a single Service Engine. SNI / EVH child and shared VIP Virtual Services when placed on a Service Engine due to networking constraints might lead to this limit being exceeded. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 default: 10
                 format: int32
