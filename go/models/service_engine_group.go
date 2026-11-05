@@ -444,7 +444,7 @@ type ServiceEngineGroup struct {
 	// Maximum of number of 4 KB pages allocated to the Linux kernel GRO subsystem for packet coalescing. This parameter is limited to supported kernels only. Requires SE Reboot. Allowed values are 1-17. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxSkbFrags *uint32 `json:"max_skb_frags,omitempty"`
 
-	// Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Maximum number of Virtual Services that can be placed on a single Service Engine. SNI / EVH child and shared VIP Virtual Services when placed on a Service Engine due to networking constraints might lead to this limit being exceeded. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxVsPerSe *int32 `json:"max_vs_per_se,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
