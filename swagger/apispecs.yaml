@@ -97522,6 +97522,14 @@ definitions:
     required:
     - provider_ref
     properties:
+      mode:
+        description: WAF mode for the application specific rules. This can be either
+          detection, enforcement or evaluation. If this is not set, the WAF Policy
+          mode is used. This only takes effect if the policy allows mode delegation.
+          Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
+          Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
       provider_ref:
         description: The external provide for the rules. It is a reference to an object
           of type WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed
@@ -130527,7 +130535,7 @@ definitions:
         $ref: '#/definitions/SSLRevokedDetails'
       supervisor_se_group_free_license_details:
         description: Supervisor SE group free license capacity exhausted/available
-          details. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          details. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/SupervisorSeGroupFreeLicenseDetails'
       switchover_details:
@@ -186697,7 +186705,9 @@ definitions:
         format: uint32
       max_vs_per_se:
         description: Maximum number of Virtual Services that can be placed on a single
-          Service Engine. Allowed values are 1-1000. Allowed with any value in Enterprise,
+          Service Engine. SNI / EVH child and shared VIP Virtual Services when placed
+          on a Service Engine due to networking constraints might lead to this limit
+          being exceeded. Allowed values are 1-1000. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         default: 10
@@ -187584,7 +187594,7 @@ definitions:
       supervisor_group:
         description: Indicates that this Service Engine Group is reserved for exclusive
           use by the Supervisor in VCF environment. This is a read-only field for
-          external user. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          external user. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       tenant_ref:
@@ -193274,23 +193284,23 @@ definitions:
     properties:
       free_su_limit:
         description: Free service unit allowance for the supervisor SE group. Field
-          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.1.6. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
       se_group_name:
-        description: Name of the supervisor SE group. Field introduced in 32.2.1.
+        description: Name of the supervisor SE group. Field introduced in 32.1.6.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       se_group_uuid:
-        description: UUID of the supervisor SE group. Field introduced in 32.2.1.
+        description: UUID of the supervisor SE group. Field introduced in 32.1.6.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       service_units_used:
         description: Service units currently consumed and reserved by the supervisor
-          SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          SE group. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
