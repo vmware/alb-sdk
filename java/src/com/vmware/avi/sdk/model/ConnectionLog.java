@@ -120,6 +120,12 @@ public class ConnectionLog  {
     @JsonProperty("microservice_name")
     private String microserviceName;
 
+    @JsonProperty("msg_lb_stats")
+    private MsgLbStats msgLbStats;
+
+    @JsonProperty("msg_lb_txn")
+    private MsgLbTransactionLog msgLbTxn;
+
     @JsonProperty("mss")
     private Integer mss = 1500;
 
@@ -761,7 +767,7 @@ public class ConnectionLog  {
      * This is the getter method this will return the attribute value.
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
-     * DNS_RECORD_ANY.
+     * DNS_RECORD_ANY, DNS_RECORD_CAA.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return dnsQtype
@@ -774,7 +780,7 @@ public class ConnectionLog  {
      * This is the setter method to the attribute.
      * Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
      * DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
-     * DNS_RECORD_ANY.
+     * DNS_RECORD_ANY, DNS_RECORD_CAA.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param dnsQtype set the dnsQtype.
@@ -1039,6 +1045,60 @@ public class ConnectionLog  {
      */
     public void setMicroserviceName(String  microserviceName) {
         this.microserviceName = microserviceName;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Iso 8583 msglb per-connection statistics.
+     * Present only when the vs is configured as an l4 msglb virtual service.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return msgLbStats
+     */
+    public MsgLbStats getMsgLbStats() {
+        return msgLbStats;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Iso 8583 msglb per-connection statistics.
+     * Present only when the vs is configured as an l4 msglb virtual service.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param msgLbStats set the msgLbStats.
+     */
+    public void setMsgLbStats(MsgLbStats msgLbStats) {
+        this.msgLbStats = msgLbStats;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Iso 8583 msglb per-transaction log.
+     * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
+     * only on the once-per-connection summary log.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return msgLbTxn
+     */
+    public MsgLbTransactionLog getMsgLbTxn() {
+        return msgLbTxn;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Iso 8583 msglb per-transaction log.
+     * Present only on the per-transaction connectionlog pushed by ipstk_msg_lb_push_txn_log() — mutually exclusive with msg_lb_stats, which appears
+     * only on the once-per-connection summary log.
+     * Field introduced in 32.1.5.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param msgLbTxn set the msgLbTxn.
+     */
+    public void setMsgLbTxn(MsgLbTransactionLog msgLbTxn) {
+        this.msgLbTxn = msgLbTxn;
     }
 
     /**
@@ -2445,7 +2505,9 @@ public class ConnectionLog  {
   Objects.equals(this.topologyPolicyRuleName, objConnectionLog.topologyPolicyRuleName)&&
   Objects.equals(this.dnsPolicy, objConnectionLog.dnsPolicy)&&
   Objects.equals(this.sslNamedGroup, objConnectionLog.sslNamedGroup)&&
-  Objects.equals(this.sslSignatureAlgorithm, objConnectionLog.sslSignatureAlgorithm);
+  Objects.equals(this.sslSignatureAlgorithm, objConnectionLog.sslSignatureAlgorithm)&&
+  Objects.equals(this.msgLbStats, objConnectionLog.msgLbStats)&&
+  Objects.equals(this.msgLbTxn, objConnectionLog.msgLbTxn);
     }
 
     @Override
@@ -2485,6 +2547,8 @@ public class ConnectionLog  {
                         sb.append("    maxIngressLatencyFe: ").append(toIndentedString(maxIngressLatencyFe)).append("\n");
                         sb.append("    microservice: ").append(toIndentedString(microservice)).append("\n");
                         sb.append("    microserviceName: ").append(toIndentedString(microserviceName)).append("\n");
+                        sb.append("    msgLbStats: ").append(toIndentedString(msgLbStats)).append("\n");
+                        sb.append("    msgLbTxn: ").append(toIndentedString(msgLbTxn)).append("\n");
                         sb.append("    mss: ").append(toIndentedString(mss)).append("\n");
                         sb.append("    networkSecurityPolicyRuleName: ").append(toIndentedString(networkSecurityPolicyRuleName)).append("\n");
                         sb.append("    numSynRetransmit: ").append(toIndentedString(numSynRetransmit)).append("\n");
