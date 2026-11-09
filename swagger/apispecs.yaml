@@ -124994,8 +124994,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       tenant_ref:
         description: ' It is a reference to an object of type Tenant. Allowed with
@@ -125125,8 +125126,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       vs_debug_filter:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -125197,8 +125199,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       trace_level:
         description: ' Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG,
