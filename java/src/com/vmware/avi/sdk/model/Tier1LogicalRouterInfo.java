@@ -21,6 +21,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tier1LogicalRouterInfo  {
+    @JsonProperty("attrs")
+    private List<KeyValue> attrs;
+
     @JsonProperty("locale_service")
     private String localeService;
 
@@ -31,6 +34,45 @@ public class Tier1LogicalRouterInfo  {
     private String tier1LrId;
 
 
+    /**
+     * This is the getter method this will return the attribute value.
+     * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public List<KeyValue> getAttrs() {
+        return attrs;
+    }
+
+    /**
+     * This is the setter method. this will set the attrs
+     * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public void setAttrs(List<KeyValue>  attrs) {
+        this.attrs = attrs;
+    }
+
+    /**
+     * This is the setter method this will set the attrs
+     * Generic key/value attributes for storing extra information about the tier1 segment configuration.
+     * Field introduced in 32.2.1.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return attrs
+     */
+    public Tier1LogicalRouterInfo addAttrsItem(KeyValue attrsItem) {
+      if (this.attrs == null) {
+        this.attrs = new ArrayList<KeyValue>();
+      }
+      this.attrs.add(attrsItem);
+      return this;
+    }
 
     /**
      * This is the getter method this will return the attribute value.
@@ -128,14 +170,16 @@ public class Tier1LogicalRouterInfo  {
       Tier1LogicalRouterInfo objTier1LogicalRouterInfo = (Tier1LogicalRouterInfo) o;
       return   Objects.equals(this.tier1LrId, objTier1LogicalRouterInfo.tier1LrId)&&
   Objects.equals(this.segmentId, objTier1LogicalRouterInfo.segmentId)&&
-  Objects.equals(this.localeService, objTier1LogicalRouterInfo.localeService);
+  Objects.equals(this.localeService, objTier1LogicalRouterInfo.localeService)&&
+  Objects.equals(this.attrs, objTier1LogicalRouterInfo.attrs);
     }
 
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
       sb.append("class Tier1LogicalRouterInfo {\n");
-                  sb.append("    localeService: ").append(toIndentedString(localeService)).append("\n");
+                  sb.append("    attrs: ").append(toIndentedString(attrs)).append("\n");
+                        sb.append("    localeService: ").append(toIndentedString(localeService)).append("\n");
                         sb.append("    segmentId: ").append(toIndentedString(segmentId)).append("\n");
                         sb.append("    tier1LrId: ").append(toIndentedString(tier1LrId)).append("\n");
                   sb.append("}");
