@@ -197429,6 +197429,14 @@ definitions:
     required:
     - tier1_lr_id
     properties:
+      attrs:
+        description: Generic key/value attributes for storing extra information about
+          the Tier1 segment configuration. Field introduced in 32.2.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: array
+        items:
+          $ref: '#/definitions/KeyValue'
       locale_service:
         description: Locale-services configuration, holds T1 edge-cluster information.
           When VirtualService is enabled with preserve client IP, ServiceInsertion
