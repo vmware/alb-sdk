@@ -4799,6 +4799,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the getter method this will return the attribute value.
      * Maximum number of virtual services that can be placed on a single service engine.
+     * Sni / evh child and shared vip virtual services when placed on a service engine due to networking constraints might lead to this limit being
+     * exceeded.
      * Allowed values are 1-1000.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -4811,6 +4813,8 @@ public class ServiceEngineGroup extends AviRestResource  {
     /**
      * This is the setter method to the attribute.
      * Maximum number of virtual services that can be placed on a single service engine.
+     * Sni / evh child and shared vip virtual services when placed on a service engine due to networking constraints might lead to this limit being
+     * exceeded.
      * Allowed values are 1-1000.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as 10.
@@ -8093,7 +8097,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the getter method this will return the attribute value.
      * Indicates that this service engine group is reserved for exclusive use by the supervisor in vcf environment.
      * This is a read-only field for external user.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return supervisorGroup
@@ -8106,7 +8110,7 @@ public class ServiceEngineGroup extends AviRestResource  {
      * This is the setter method to the attribute.
      * Indicates that this service engine group is reserved for exclusive use by the supervisor in vcf environment.
      * This is a read-only field for external user.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param supervisorGroup set the supervisorGroup.
