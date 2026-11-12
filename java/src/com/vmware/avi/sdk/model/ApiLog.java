@@ -33,6 +33,9 @@ public class ApiLog  {
     @JsonProperty("executed_api_labels_str")
     private String executedApiLabelsStr;
 
+    @JsonProperty("matched_api_path")
+    private String matchedApiPath;
+
     @JsonProperty("omitted_api_violations")
     private Integer omittedApiViolations;
 
@@ -167,6 +170,32 @@ public class ApiLog  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Name of the apipath object that matched this request.
+     * Unset when no apipolicy endpoint matched.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return matchedApiPath
+     */
+    public String getMatchedApiPath() {
+        return matchedApiPath;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Name of the apipath object that matched this request.
+     * Unset when no apipolicy endpoint matched.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param matchedApiPath set the matchedApiPath.
+     */
+    public void setMatchedApiPath(String  matchedApiPath) {
+        this.matchedApiPath = matchedApiPath;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Number of api violations that were not logged due to space constraints.
      * Field introduced in 32.1.4.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -270,7 +299,8 @@ public class ApiLog  {
   Objects.equals(this.omittedApiViolations, objApiLog.omittedApiViolations)&&
   Objects.equals(this.action, objApiLog.action)&&
   Objects.equals(this.effectiveLabels, objApiLog.effectiveLabels)&&
-  Objects.equals(this.executedApiLabelsStr, objApiLog.executedApiLabelsStr);
+  Objects.equals(this.executedApiLabelsStr, objApiLog.executedApiLabelsStr)&&
+  Objects.equals(this.matchedApiPath, objApiLog.matchedApiPath);
     }
 
     @Override
@@ -281,6 +311,7 @@ public class ApiLog  {
                         sb.append("    effectiveLabels: ").append(toIndentedString(effectiveLabels)).append("\n");
                         sb.append("    enabledApiChecks: ").append(toIndentedString(enabledApiChecks)).append("\n");
                         sb.append("    executedApiLabelsStr: ").append(toIndentedString(executedApiLabelsStr)).append("\n");
+                        sb.append("    matchedApiPath: ").append(toIndentedString(matchedApiPath)).append("\n");
                         sb.append("    omittedApiViolations: ").append(toIndentedString(omittedApiViolations)).append("\n");
                         sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
                         sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
