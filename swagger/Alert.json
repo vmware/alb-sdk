@@ -1065,6 +1065,10 @@
                     "description": "Comma-separated list of API policy labels that were executed for this request. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
                 },
+                "matched_api_path": {
+                    "description": "Name of the ApiPath object that matched this request. Unset when no ApiPolicy endpoint matched. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "string"
+                },
                 "omitted_api_violations": {
                     "description": "Number of API violations that were not logged due to space constraints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
