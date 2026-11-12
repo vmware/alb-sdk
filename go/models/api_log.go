@@ -20,6 +20,9 @@ type APILog struct {
 	// Comma-separated list of API policy labels that were executed for this request. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ExecutedAPILabelsStr *string `json:"executed_api_labels_str,omitempty"`
 
+	// Name of the ApiPath object that matched this request. Unset when no ApiPolicy endpoint matched. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MatchedAPIPath *string `json:"matched_api_path,omitempty"`
+
 	// Number of API violations that were not logged due to space constraints. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	OmittedAPIViolations *uint32 `json:"omitted_api_violations,omitempty"`
 
