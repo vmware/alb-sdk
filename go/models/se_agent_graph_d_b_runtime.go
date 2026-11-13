@@ -29,6 +29,9 @@ type SeAgentGraphDBRuntime struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Applicationprofile *SeAgentGraphDBNodeInfo `json:"applicationprofile,omitempty"`
 
+	//  Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	Clfprofile *SeAgentGraphDBNodeInfo `json:"clfprofile,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Cloud *SeAgentGraphDBNodeInfo `json:"cloud,omitempty"`
 
