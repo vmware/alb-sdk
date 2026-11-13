@@ -32,7 +32,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 				&& ((headers.getContentType().toString().contains(MediaType.MULTIPART_FORM_DATA_VALUE.toString())))) {
 			return flag;
 		}        
-		if (headers.containsHeader(key)) {
+		if (headers.containsKey(key)) {
 			flag = true;
 		}
 		return flag;
@@ -69,7 +69,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 
 			response = execution.execute(request, body);
 
-			int responseCode = response.getStatusCode().value();
+			int responseCode = response.getRawStatusCode();
 			String requestUri = request.getURI().getPath();
 			if(responseCode == 200 && requestUri.contains("useraccount")){
 				LOGGER.info("Inside clearing the user session...");
@@ -92,7 +92,7 @@ public class AviAuthorizationInterceptor implements ClientHttpRequestInterceptor
 					Thread.sleep(this.aviCredentials.getRetryWaitTime() * 1000);
 					response = execution.execute(request, body);
 					LOGGER.info("Interceptor execution completed for retries");
-					if (Arrays.asList(419, 401).contains(response.getStatusCode().value())) {
+					if (Arrays.asList(419, 401).contains(response.getRawStatusCode())) {
 						numApiExecCount++;
 						continue;
 					} else {
