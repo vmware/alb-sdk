@@ -69,6 +69,9 @@ type ControllerProperties struct {
 	// Period for sessions cleanup job. Field introduced in 18.1.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CleanupSessionsTimeoutPeriod *uint32 `json:"cleanup_sessions_timeout_period,omitempty"`
 
+	// Clock-skew tolerance configuration for site to site communication with JWT authentication. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	ClockSkewConfig *ClockSkewToleranceConfig `json:"clock_skew_config,omitempty"`
+
 	// Time in minutes to wait between consecutive cloud discovery cycles. Allowed values are 1-1440. Field introduced in 22.1.5, 30.1.2, 30.2.1. Unit is MIN. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	CloudDiscoveryInterval *uint32 `json:"cloud_discovery_interval,omitempty"`
 
