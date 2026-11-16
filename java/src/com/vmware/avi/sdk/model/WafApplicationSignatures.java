@@ -45,7 +45,7 @@ public class WafApplicationSignatures  {
      * If this is not set, the waf policy mode is used.
      * This only takes effect if the policy allows mode delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return mode
@@ -61,7 +61,7 @@ public class WafApplicationSignatures  {
      * If this is not set, the waf policy mode is used.
      * This only takes effect if the policy allows mode delegation.
      * Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
-     * Field introduced in 32.2.1.
+     * Field introduced in 32.1.6.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param mode set the mode.
