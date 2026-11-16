@@ -36,6 +36,9 @@ public class ControllerSizingLimits  {
     @JsonProperty("num_east_west_virtualservices")
     private Integer numEastWestVirtualservices;
 
+    @JsonProperty("num_geodb_records")
+    private Integer numGeodbRecords;
+
     @JsonProperty("num_pool_rt_metrics")
     private Integer numPoolRtMetrics;
 
@@ -203,6 +206,30 @@ public class ControllerSizingLimits  {
      */
     public void setNumEastWestVirtualservices(Integer  numEastWestVirtualservices) {
         this.numEastWestVirtualservices = numEastWestVirtualservices;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * System-wide maximum number of records allowed in a geodb database (systemgeodb and gslbgeodb).
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return numGeodbRecords
+     */
+    public Integer getNumGeodbRecords() {
+        return numGeodbRecords;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * System-wide maximum number of records allowed in a geodb database (systemgeodb and gslbgeodb).
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param numGeodbRecords set the numGeodbRecords.
+     */
+    public void setNumGeodbRecords(Integer  numGeodbRecords) {
+        this.numGeodbRecords = numGeodbRecords;
     }
 
     /**
@@ -469,6 +496,7 @@ public class ControllerSizingLimits  {
   Objects.equals(this.numSeRtMetrics, objControllerSizingLimits.numSeRtMetrics)&&
   Objects.equals(this.numVirtualservicesRtmetricsWaf, objControllerSizingLimits.numVirtualservicesRtmetricsWaf)&&
   Objects.equals(this.apiLimits, objControllerSizingLimits.apiLimits)&&
+  Objects.equals(this.numGeodbRecords, objControllerSizingLimits.numGeodbRecords)&&
   Objects.equals(this.controllerSizingCloudLimits, objControllerSizingLimits.controllerSizingCloudLimits);
     }
 
@@ -481,6 +509,7 @@ public class ControllerSizingLimits  {
                         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
                         sb.append("    numClouds: ").append(toIndentedString(numClouds)).append("\n");
                         sb.append("    numEastWestVirtualservices: ").append(toIndentedString(numEastWestVirtualservices)).append("\n");
+                        sb.append("    numGeodbRecords: ").append(toIndentedString(numGeodbRecords)).append("\n");
                         sb.append("    numPoolRtMetrics: ").append(toIndentedString(numPoolRtMetrics)).append("\n");
                         sb.append("    numSeRtMetrics: ").append(toIndentedString(numSeRtMetrics)).append("\n");
                         sb.append("    numServers: ").append(toIndentedString(numServers)).append("\n");
