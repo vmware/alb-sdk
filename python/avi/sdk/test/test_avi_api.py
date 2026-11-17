@@ -783,7 +783,7 @@ class Test(unittest.TestCase):
                 "uri"  : file_uri
             }
             #Invalidate the session by removing CSRF token
-            sessionDict['%s:%s:443' % (controller_ip, username)]['csrftoken'] = ""
+            sessionDict[api_session.key]['csrftoken'] = ""
             data = MultipartEncoder(file_dict)
             headers = {}
             headers['Content-Type'] = data.content_type

@@ -25,6 +25,7 @@ import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
 import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManagerBuilder;
 import org.apache.hc.client5.http.ssl.DefaultClientTlsStrategy;
 import org.apache.hc.client5.http.ssl.DefaultHostnameVerifier;
+import org.apache.hc.client5.http.ssl.HostnameVerificationPolicy;
 import org.apache.hc.client5.http.ssl.TlsSocketStrategy;
 import org.apache.hc.core5.http.ClassicHttpRequest;
 import org.apache.hc.core5.http.ContentType;
@@ -289,7 +290,7 @@ public class AviRestUtils {
 		}
 
 		// Setup TLS Connection Strategy (HttpClient 5 replacement for SSLConnectionSocketFactory)
-		TlsSocketStrategy tlsStrategy = new DefaultClientTlsStrategy(sslcontext, hostnameVerifier);
+		TlsSocketStrategy tlsStrategy = new DefaultClientTlsStrategy(sslcontext, HostnameVerificationPolicy.CLIENT, hostnameVerifier);
 		ConnectionConfig connectionConfig = ConnectionConfig.custom()
 				.setConnectTimeout(Timeout.ofSeconds(creds.getConnectionTimeout()))
 				.setSocketTimeout(Timeout.ofMilliseconds(SOCKET_TIMEOUT))
