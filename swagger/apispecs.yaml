@@ -132278,6 +132278,13 @@ definitions:
         type: integer
         default: 15
         format: uint32
+      monitor_protocol:
+        description: Protocol used by the gateway monitor to check gateway reachability.
+          Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP. Field introduced
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: GATEWAY_MONITOR_ICMP
       subnet:
         description: Subnet providing reachability for Multi-hop Gateway. Field introduced
           in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -141523,6 +141530,13 @@ definitions:
         type: integer
         default: 15
         format: uint32
+      monitor_protocol:
+        description: Protocol used by the gateway monitor to check gateway reachability.
+          Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP. Field introduced
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: GATEWAY_MONITOR_ICMP
   InUseInfo:
     type: object
     properties:
