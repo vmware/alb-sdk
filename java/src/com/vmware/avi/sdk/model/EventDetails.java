@@ -507,6 +507,9 @@ public class EventDetails  {
     @JsonProperty("se_bgp_peer_state_change_details")
     private SeBgpPeerStateChangeDetails seBgpPeerStateChangeDetails;
 
+    @JsonProperty("se_clf_details")
+    private SeClfEventDetails seClfDetails;
+
     @JsonProperty("se_config_sedatastore_dl_fail")
     private SeVsConfigSeDatastoreDownloadFailed seConfigSedatastoreDlFail;
 
@@ -686,6 +689,9 @@ public class EventDetails  {
 
     @JsonProperty("ssl_revoked_details")
     private SSLRevokedDetails sslRevokedDetails;
+
+    @JsonProperty("supervisor_se_group_free_license_details")
+    private SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails;
 
     @JsonProperty("switchover_details")
     private SwitchoverEventDetails switchoverDetails;
@@ -4216,6 +4222,26 @@ public class EventDetails  {
      * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return seClfDetails
+     */
+    public SeClfEventDetails getSeClfDetails() {
+        return seClfDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param seClfDetails set the seClfDetails.
+     */
+    public void setSeClfDetails(SeClfEventDetails seClfDetails) {
+        this.seClfDetails = seClfDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return seConfigSedatastoreDlFail
      */
     public SeVsConfigSeDatastoreDownloadFailed getSeConfigSedatastoreDlFail() {
@@ -5458,6 +5484,30 @@ public class EventDetails  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Supervisor se group free license capacity exhausted/available details.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return supervisorSeGroupFreeLicenseDetails
+     */
+    public SupervisorSeGroupFreeLicenseDetails getSupervisorSeGroupFreeLicenseDetails() {
+        return supervisorSeGroupFreeLicenseDetails;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Supervisor se group free license capacity exhausted/available details.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param supervisorSeGroupFreeLicenseDetails set the supervisorSeGroupFreeLicenseDetails.
+     */
+    public void setSupervisorSeGroupFreeLicenseDetails(SupervisorSeGroupFreeLicenseDetails supervisorSeGroupFreeLicenseDetails) {
+        this.supervisorSeGroupFreeLicenseDetails = supervisorSeGroupFreeLicenseDetails;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return switchoverDetails
@@ -6441,6 +6491,7 @@ public class EventDetails  {
   Objects.equals(this.seGeoDbDetails, objEventDetails.seGeoDbDetails)&&
   Objects.equals(this.vsConfigSedatastoreDlFail, objEventDetails.vsConfigSedatastoreDlFail)&&
   Objects.equals(this.seConfigSedatastoreDlFail, objEventDetails.seConfigSedatastoreDlFail)&&
+  Objects.equals(this.seClfDetails, objEventDetails.seClfDetails)&&
   Objects.equals(this.configCreateDetails, objEventDetails.configCreateDetails)&&
   Objects.equals(this.configUpdateDetails, objEventDetails.configUpdateDetails)&&
   Objects.equals(this.configDeleteDetails, objEventDetails.configDeleteDetails)&&
@@ -6589,6 +6640,7 @@ public class EventDetails  {
   Objects.equals(this.licenseTierSwitchDetails, objEventDetails.licenseTierSwitchDetails)&&
   Objects.equals(this.centralLicenseSubscriptionDetails, objEventDetails.centralLicenseSubscriptionDetails)&&
   Objects.equals(this.centralLicenseRefreshDetails, objEventDetails.centralLicenseRefreshDetails)&&
+  Objects.equals(this.supervisorSeGroupFreeLicenseDetails, objEventDetails.supervisorSeGroupFreeLicenseDetails)&&
   Objects.equals(this.genericAuditComplianceEventInfo, objEventDetails.genericAuditComplianceEventInfo)&&
   Objects.equals(this.apiserverRequestQueueFullEventInfo, objEventDetails.apiserverRequestQueueFullEventInfo)&&
   Objects.equals(this.apiserverRequestQueueRecoveryEventInfo, objEventDetails.apiserverRequestQueueRecoveryEventInfo)&&
@@ -6781,6 +6833,7 @@ public class EventDetails  {
                         sb.append("    seAutoscalerEventDetails: ").append(toIndentedString(seAutoscalerEventDetails)).append("\n");
                         sb.append("    seBgpPeerDownDetails: ").append(toIndentedString(seBgpPeerDownDetails)).append("\n");
                         sb.append("    seBgpPeerStateChangeDetails: ").append(toIndentedString(seBgpPeerStateChangeDetails)).append("\n");
+                        sb.append("    seClfDetails: ").append(toIndentedString(seClfDetails)).append("\n");
                         sb.append("    seConfigSedatastoreDlFail: ").append(toIndentedString(seConfigSedatastoreDlFail)).append("\n");
                         sb.append("    seDebugModeEventDetail: ").append(toIndentedString(seDebugModeEventDetail)).append("\n");
                         sb.append("    seDetails: ").append(toIndentedString(seDetails)).append("\n");
@@ -6841,6 +6894,7 @@ public class EventDetails  {
                         sb.append("    sslRenewDetails: ").append(toIndentedString(sslRenewDetails)).append("\n");
                         sb.append("    sslRenewFailedDetails: ").append(toIndentedString(sslRenewFailedDetails)).append("\n");
                         sb.append("    sslRevokedDetails: ").append(toIndentedString(sslRevokedDetails)).append("\n");
+                        sb.append("    supervisorSeGroupFreeLicenseDetails: ").append(toIndentedString(supervisorSeGroupFreeLicenseDetails)).append("\n");
                         sb.append("    switchoverDetails: ").append(toIndentedString(switchoverDetails)).append("\n");
                         sb.append("    switchoverFailDetails: ").append(toIndentedString(switchoverFailDetails)).append("\n");
                         sb.append("    syncServicesInfo: ").append(toIndentedString(syncServicesInfo)).append("\n");

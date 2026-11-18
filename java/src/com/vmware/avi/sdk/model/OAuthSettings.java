@@ -27,6 +27,9 @@ public class OAuthSettings  {
     @JsonProperty("auth_profile_ref")
     private String authProfileRef;
 
+    @JsonProperty("reject_non_expiring_tokens")
+    private Boolean rejectNonExpiringTokens = true;
+
     @JsonProperty("resource_server")
     private OAuthResourceServer resourceServer;
 
@@ -84,6 +87,30 @@ public class OAuthSettings  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * Reject id/jwt access tokens whose 'exp' claim is missing or non-numeric.
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @return rejectNonExpiringTokens
+     */
+    public Boolean getRejectNonExpiringTokens() {
+        return rejectNonExpiringTokens;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Reject id/jwt access tokens whose 'exp' claim is missing or non-numeric.
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as true.
+     * @param rejectNonExpiringTokens set the rejectNonExpiringTokens.
+     */
+    public void setRejectNonExpiringTokens(Boolean  rejectNonExpiringTokens) {
+        this.rejectNonExpiringTokens = rejectNonExpiringTokens;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Resource server oauth config.
      * Field introduced in 21.1.3.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
@@ -118,7 +145,8 @@ public class OAuthSettings  {
       OAuthSettings objOAuthSettings = (OAuthSettings) o;
       return   Objects.equals(this.authProfileRef, objOAuthSettings.authProfileRef)&&
   Objects.equals(this.appSettings, objOAuthSettings.appSettings)&&
-  Objects.equals(this.resourceServer, objOAuthSettings.resourceServer);
+  Objects.equals(this.resourceServer, objOAuthSettings.resourceServer)&&
+  Objects.equals(this.rejectNonExpiringTokens, objOAuthSettings.rejectNonExpiringTokens);
     }
 
     @Override
@@ -127,6 +155,7 @@ public class OAuthSettings  {
       sb.append("class OAuthSettings {\n");
                   sb.append("    appSettings: ").append(toIndentedString(appSettings)).append("\n");
                         sb.append("    authProfileRef: ").append(toIndentedString(authProfileRef)).append("\n");
+                        sb.append("    rejectNonExpiringTokens: ").append(toIndentedString(rejectNonExpiringTokens)).append("\n");
                         sb.append("    resourceServer: ").append(toIndentedString(resourceServer)).append("\n");
                   sb.append("}");
       return sb.toString();

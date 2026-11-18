@@ -79,6 +79,9 @@ public class ControllerProperties extends AviRestResource  {
     @JsonProperty("cleanup_sessions_timeout_period")
     private Integer cleanupSessionsTimeoutPeriod = 60;
 
+    @JsonProperty("clock_skew_config")
+    private ClockSkewToleranceConfig clockSkewConfig;
+
     @JsonProperty("cloud_discovery_interval")
     private Integer cloudDiscoveryInterval = 5;
 
@@ -887,6 +890,30 @@ public class ControllerProperties extends AviRestResource  {
      */
     public void setCleanupSessionsTimeoutPeriod(Integer  cleanupSessionsTimeoutPeriod) {
         this.cleanupSessionsTimeoutPeriod = cleanupSessionsTimeoutPeriod;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Clock-skew tolerance configuration for site to site communication with jwt authentication.
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @return clockSkewConfig
+     */
+    public ClockSkewToleranceConfig getClockSkewConfig() {
+        return clockSkewConfig;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Clock-skew tolerance configuration for site to site communication with jwt authentication.
+     * Field introduced in 32.1.4.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
+     * @param clockSkewConfig set the clockSkewConfig.
+     */
+    public void setClockSkewConfig(ClockSkewToleranceConfig clockSkewConfig) {
+        this.clockSkewConfig = clockSkewConfig;
     }
 
     /**
@@ -3682,7 +3709,8 @@ public class ControllerProperties extends AviRestResource  {
   Objects.equals(this.promotedLogFields, objControllerProperties.promotedLogFields)&&
   Objects.equals(this.ipglsClientCacheSize, objControllerProperties.ipglsClientCacheSize)&&
   Objects.equals(this.ipglsClientCacheTtlMinutes, objControllerProperties.ipglsClientCacheTtlMinutes)&&
-  Objects.equals(this.eventManagerApiRateLimitPerMin, objControllerProperties.eventManagerApiRateLimitPerMin);
+  Objects.equals(this.eventManagerApiRateLimitPerMin, objControllerProperties.eventManagerApiRateLimitPerMin)&&
+  Objects.equals(this.clockSkewConfig, objControllerProperties.clockSkewConfig);
     }
 
     @Override
@@ -3708,6 +3736,7 @@ public class ControllerProperties extends AviRestResource  {
                         sb.append("    checkVsvipFqdnSyntax: ").append(toIndentedString(checkVsvipFqdnSyntax)).append("\n");
                         sb.append("    cleanupExpiredAuthtokenTimeoutPeriod: ").append(toIndentedString(cleanupExpiredAuthtokenTimeoutPeriod)).append("\n");
                         sb.append("    cleanupSessionsTimeoutPeriod: ").append(toIndentedString(cleanupSessionsTimeoutPeriod)).append("\n");
+                        sb.append("    clockSkewConfig: ").append(toIndentedString(clockSkewConfig)).append("\n");
                         sb.append("    cloudDiscoveryInterval: ").append(toIndentedString(cloudDiscoveryInterval)).append("\n");
                         sb.append("    cloudReconcile: ").append(toIndentedString(cloudReconcile)).append("\n");
                         sb.append("    cloudReconcileInterval: ").append(toIndentedString(cloudReconcileInterval)).append("\n");
