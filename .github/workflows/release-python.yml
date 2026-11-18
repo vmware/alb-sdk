@@ -1,0 +1,117 @@
+name: Release Python SDK
+# Publishes the Python SDK (avisdk) to PyPI, or (dry run) builds and validates
+# the final sdist without publishing so it can be checked before the real release.
+on:
+  # Real release, chosen by tag: "*-python-sdk" runs this SDK only, "*-java-sdk" skips it,
+  # a tag with both (or neither) names runs both SDKs.
+  release:
+    types: [created]
+  # Manual run: dry run by default.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release name / version, e.g. 32.1.4 (or tag-32.1.4-python-sdk). Must match python/version.py'
+        required: true
+        type: string
+      ref:
+        description: 'Branch, tag or SHA to build'
+        required: true
+        default: 'eng'
+        type: string
+      dry_run:
+        description: 'Dry run: build and validate only, do NOT publish to PyPI'
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  python-sdk:
+    if: github.event_name == 'workflow_dispatch' || (contains(github.event.release.tag_name, 'python-sdk') || !contains(github.event.release.tag_name, 'java-sdk'))
+    runs-on: ubuntu-22.04
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+      RELEASE_NAME: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.event.release.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
+
+      - name: Check release name matches python/version.py
+        id: version
+        run: |
+          AVI_VERSION=$(python ./python/version.py)
+          NAME_VERSION=$(echo "$RELEASE_NAME" | sed -E 's/^(tag|test)-//' | cut -d - -f 1)
+          echo "version.py: $AVI_VERSION, release name: $NAME_VERSION (dry run: $DRY_RUN)"
+          if [[ "$AVI_VERSION" != "$NAME_VERSION" ]]; then
+            echo "::error::python/version.py ($AVI_VERSION) does not match release '$RELEASE_NAME'"
+            exit 1
+          fi
+          echo "AVI_VERSION=$AVI_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Install build tooling
+        run: python3 -m pip install --upgrade pip wheel twine setuptools==47.1.1
+
+      - name: Build sdist
+        working-directory: python
+        run: |
+          rm -rf dist
+          mkdir dist
+          ./create_sdk_pip_packages.sh sdk
+          ls -l dist/
+
+      - name: Validate package
+        working-directory: python
+        env:
+          AVI_VERSION: ${{ steps.version.outputs.AVI_VERSION }}
+        run: |
+          test -f "dist/avisdk-$AVI_VERSION.tar.gz"
+          python3 -m twine check dist/*
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/pip install "dist/avisdk-$AVI_VERSION.tar.gz"
+          /tmp/venv/bin/python -c "import avi.sdk; print('avi.sdk', avi.sdk.__version__)"
+
+      # Re-run safety: PyPI never accepts the same version twice.
+      - name: Publish to PyPI
+        if: env.DRY_RUN != 'true'
+        working-directory: python
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
+          TWINE_REPOSITORY: pypi
+          AVI_VERSION: ${{ steps.version.outputs.AVI_VERSION }}
+        run: |
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' "https://pypi.org/pypi/avisdk/$AVI_VERSION/json")
+          if [[ "$CODE" == "200" ]]; then
+            echo "::warning::avisdk $AVI_VERSION already exists on PyPI - skipping upload"
+          else
+            ./create_sdk_pypi.sh sdk
+          fi
+
+      - name: Stage release asset
+        env:
+          AVI_VERSION: ${{ steps.version.outputs.AVI_VERSION }}
+        run: |
+          mkdir -p assets
+          cp "python/dist/avisdk-$AVI_VERSION.tar.gz" "assets/pip-package-avisdk-$AVI_VERSION.tar.gz"
+          (cd assets && sha256sum * > SHA256SUMS)
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-sdk-bundle-${{ steps.version.outputs.AVI_VERSION }}${{ env.DRY_RUN == 'true' && '-dry-run' || '' }}
+          path: assets/
+          if-no-files-found: error
+
+      - name: Attach assets to GitHub release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: gh release upload "$TAG" assets/pip-package-* --clobber
