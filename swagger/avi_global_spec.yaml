@@ -4025,6 +4025,52 @@ paths:
                 "404":
                     description: object not found
     /cloud/{uuid}/gc/:
+        patch:
+            tags:
+                - Cloud
+            description: /cloud/{uuid}/gc/
+            operationId: PATCH /cloud/{uuid}/gc/
+            consumes:
+                -   application/json
+            produces:
+                -   application/json
+            parameters:
+                -   in: header
+                    name: X-Avi-Tenant
+                    type: string
+                    required: false
+                    description: Avi Tenant Header
+                -   name: X-Avi-Tenant-UUID
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Tenant Header UUID
+                -   name: X-CSRFToken
+                    in: header
+                    type: string
+                    required: false
+                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
+                -   name: X-Avi-Version
+                    in: header
+                    type: string
+                    required: true
+                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
+                -   in: path
+                    name: uuid
+                    description: UUID of the object to fetch
+                    required: true
+                    type: string
+            security:
+                - basicAuth: []
+            responses:
+                "200":
+                    description: OK
+                    schema:
+                        type: string
+                "401":
+                    description: log in failed
+                "404":
+                    description: object not found
         put:
             tags:
                 - Cloud
@@ -4063,52 +4109,6 @@ paths:
                         type: object
                         additionalProperties:
                             type: string
-                -   in: path
-                    name: uuid
-                    description: UUID of the object to fetch
-                    required: true
-                    type: string
-            security:
-                - basicAuth: []
-            responses:
-                "200":
-                    description: OK
-                    schema:
-                        type: string
-                "401":
-                    description: log in failed
-                "404":
-                    description: object not found
-        patch:
-            tags:
-                - Cloud
-            description: /cloud/{uuid}/gc/
-            operationId: PATCH /cloud/{uuid}/gc/
-            consumes:
-                -   application/json
-            produces:
-                -   application/json
-            parameters:
-                -   in: header
-                    name: X-Avi-Tenant
-                    type: string
-                    required: false
-                    description: Avi Tenant Header
-                -   name: X-Avi-Tenant-UUID
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Tenant Header UUID
-                -   name: X-CSRFToken
-                    in: header
-                    type: string
-                    required: false
-                    description: Avi Controller may send back CSRF token in the response cookies. The caller should update the request headers with this token else controller will reject requests.
-                -   name: X-Avi-Version
-                    in: header
-                    type: string
-                    required: true
-                    description: The caller is required to set Avi Version Header to the expected version of configuration. The response from the controller will provide and accept data according to the specified version. The controller will reject POST and PUT requests where the data is not compatible with the specified version.
                 -   in: path
                     name: uuid
                     description: UUID of the object to fetch
@@ -105754,6 +105754,22 @@ definitions:
                 description: "Connections rejected at accept because this VS has no L4_REQ datascript configured for MsgLB message framing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
+            fwd_failures:
+                description: "Failed attempts to forward a message  no server available, binding setup failure, immediate backend connect failure, or datascript error. A retried request can be counted more than once. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            partial_msg_drops:
+                description: "Times received bytes were discarded unforwarded because the peer closed mid-message or the datascript collect timeout expired. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            rsp_key_miss_drops:
+                description: "Server responses discarded because their transaction key matched no outstanding request. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            rsp_other_drops:
+                description: "Server responses discarded for a reason other than a key mismatch  no request binding, request not forwarded, or client already closed. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
             total_bytes:
                 description: "Total request bytes committed by clients on this VS. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
@@ -111024,8 +111040,20 @@ definitions:
                 description: "Connections rejected at accept because the VS has no L4_REQ datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript configuration problem, not a traffic problem. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
+            msg_lb_fwd_failures:
+                description: "Failed attempts to forward a request after this pool was selected  no server available, binding setup failure, or immediate backend connect failure. A retried request can be counted more than once. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
             msg_lb_orphan_count:
                 description: "In-flight bindings orphaned when the client connection closed before a response arrived. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            msg_lb_rsp_key_miss_drops:
+                description: "Responses from this pool's servers discarded because their transaction key matched no outstanding request. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
+                type: integer
+                format: uint64
+            msg_lb_rsp_other_drops:
+                description: "Responses from this pool's servers discarded for a reason other than a key mismatch  no request binding, request not forwarded, or client already closed. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition."
                 type: integer
                 format: uint64
             msg_lb_timeout_count:
