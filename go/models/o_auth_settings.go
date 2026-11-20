@@ -15,6 +15,9 @@ type OAuthSettings struct {
 	// Required: true
 	AuthProfileRef *string `json:"auth_profile_ref"`
 
+	// Reject ID/JWT access tokens whose 'exp' claim is missing or non-numeric. Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RejectNonExpiringTokens *bool `json:"reject_non_expiring_tokens,omitempty"`
+
 	// Resource Server OAuth config. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	ResourceServer *OAuthResourceServer `json:"resource_server,omitempty"`
 }

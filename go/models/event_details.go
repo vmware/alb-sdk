@@ -495,6 +495,9 @@ type EventDetails struct {
 	SeBgpPeerStateChangeDetails *SeBgpPeerStateChangeDetails `json:"se_bgp_peer_state_change_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SeClfDetails *SeClfEventDetails `json:"se_clf_details,omitempty"`
+
+	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SeConfigSedatastoreDlFail *SeVsConfigSeDatastoreDownloadFailed `json:"se_config_sedatastore_dl_fail,omitempty"`
 
 	//  Field introduced in 22.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -673,6 +676,9 @@ type EventDetails struct {
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslRevokedDetails *SSLRevokedDetails `json:"ssl_revoked_details,omitempty"`
+
+	// Supervisor SE group free license capacity exhausted/available details. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	SupervisorSeGroupFreeLicenseDetails *SupervisorSeGroupFreeLicenseDetails `json:"supervisor_se_group_free_license_details,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SwitchoverDetails *SwitchoverEventDetails `json:"switchover_details,omitempty"`

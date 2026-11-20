@@ -52,6 +52,7 @@ type AviClient struct {
 	CertJwtStore                             *CertJwtStoreClient
 	CertificateManagementProfile             *CertificateManagementProfileClient
 	CheckPasswordResponse                    *CheckPasswordResponseClient
+	ClfProfile                               *ClfProfileClient
 	Cloud                                    *CloudClient
 	CloudConnectorUser                       *CloudConnectorUserClient
 	CloudInventory                           *CloudInventoryClient
@@ -294,6 +295,7 @@ func NewAviClient(host string, username string, options ...func(*session.AviSess
 	aviClient.CertJwtStore = NewCertJwtStoreClient(aviSession)
 	aviClient.CertificateManagementProfile = NewCertificateManagementProfileClient(aviSession)
 	aviClient.CheckPasswordResponse = NewCheckPasswordResponseClient(aviSession)
+	aviClient.ClfProfile = NewClfProfileClient(aviSession)
 	aviClient.Cloud = NewCloudClient(aviSession)
 	aviClient.CloudConnectorUser = NewCloudConnectorUserClient(aviSession)
 	aviClient.CloudInventory = NewCloudInventoryClient(aviSession)
