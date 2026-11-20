@@ -15597,6 +15597,58 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
     put:
       tags:
       - Cloud
@@ -15641,58 +15693,6 @@ paths:
           type: object
           additionalProperties:
             type: string
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -97522,6 +97522,14 @@ definitions:
     required:
     - provider_ref
     properties:
+      mode:
+        description: WAF mode for the application specific rules. This can be either
+          detection, enforcement or evaluation. If this is not set, the WAF Policy
+          mode is used. This only takes effect if the policy allows mode delegation.
+          Enum options - WAF_MODE_DETECTION_ONLY, WAF_MODE_ENFORCEMENT, WAF_MODE_EVALUATION.
+          Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: string
       provider_ref:
         description: The external provide for the rules. It is a reference to an object
           of type WafApplicationSignatureProvider. Field introduced in 20.1.1. Allowed
@@ -104646,6 +104654,12 @@ definitions:
         description: Comma-separated list of API policy labels that were executed
           for this request. Field introduced in 32.1.4. Allowed with any value in
           Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: string
+      matched_api_path:
+        description: Name of the ApiPath object that matched this request. Unset when
+          no ApiPolicy endpoint matched. Field introduced in 32.1.6. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
         type: string
       omitted_api_violations:
         description: Number of API violations that were not logged due to space constraints.
@@ -124986,8 +125000,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       tenant_ref:
         description: ' It is a reference to an object of type Tenant. Allowed with
@@ -125117,8 +125132,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       vs_debug_filter:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -125189,8 +125205,9 @@ definitions:
           AUTHSERVER_DEBUG, APISERVER_DEBUG, GSLBPORTAL_DEBUG, ANALYTICS_ENGINE_LOGRECEIVER_DEBUG,
           CLUSTIFY_DEBUG, IPGEOLOCATIONSERVER_DEBUG, SYSTEM_HEALTH_AGENT_DEBUG, SYSTEM_HEALTH_SERVICE_DEBUG,
           TECH_SUPPORT_HANDLER_DEBUG, SE_AUTOSCALER_DEBUG, REPORTING_SERVER_DEBUG,
-          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG. Allowed with any value
-          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.'
+          OPERSTATUS_STREAMER_DEBUG, SECURITY_MGR_API_DEBUG, SNMPAGENT_DEBUG. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.'
         type: string
       trace_level:
         description: ' Enum options - TRACE_LEVEL_DISABLED, TRACE_LEVEL_ERROR, TRACE_LEVEL_DEBUG,
@@ -130527,7 +130544,7 @@ definitions:
         $ref: '#/definitions/SSLRevokedDetails'
       supervisor_se_group_free_license_details:
         description: Supervisor SE group free license capacity exhausted/available
-          details. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          details. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         $ref: '#/definitions/SupervisorSeGroupFreeLicenseDetails'
       switchover_details:
@@ -132261,6 +132278,13 @@ definitions:
         type: integer
         default: 15
         format: uint32
+      monitor_protocol:
+        description: Protocol used by the gateway monitor to check gateway reachability.
+          Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP. Field introduced
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: GATEWAY_MONITOR_ICMP
       subnet:
         description: Subnet providing reachability for Multi-hop Gateway. Field introduced
           in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -141506,6 +141530,13 @@ definitions:
         type: integer
         default: 15
         format: uint32
+      monitor_protocol:
+        description: Protocol used by the gateway monitor to check gateway reachability.
+          Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP. Field introduced
+          in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: string
+        default: GATEWAY_MONITOR_ICMP
   InUseInfo:
     type: object
     properties:
@@ -152607,6 +152638,34 @@ definitions:
           Cloud Services edition.
         type: integer
         format: uint64
+      fwd_failures:
+        description: Failed attempts to forward a message  no server available, binding
+          setup failure, immediate backend connect failure, or datascript error. A
+          retried request can be counted more than once. Field introduced in 32.1.6.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: uint64
+      partial_msg_drops:
+        description: Times received bytes were discarded unforwarded because the peer
+          closed mid-message or the datascript collect timeout expired. Field introduced
+          in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise
+          with Cloud Services edition.
+        type: integer
+        format: uint64
+      rsp_key_miss_drops:
+        description: Server responses discarded because their transaction key matched
+          no outstanding request. Field introduced in 32.1.6. Allowed with any value
+          in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint64
+      rsp_other_drops:
+        description: Server responses discarded for a reason other than a key mismatch  no
+          request binding, request not forwarded, or client already closed. Field
+          introduced in 32.1.6. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint64
       total_bytes:
         description: Total request bytes committed by clients on this VS. Field introduced
           in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials,
@@ -159949,10 +160008,32 @@ definitions:
           Cloud Services edition.
         type: integer
         format: uint64
+      msg_lb_fwd_failures:
+        description: Failed attempts to forward a request after this pool was selected  no
+          server available, binding setup failure, or immediate backend connect failure.
+          A retried request can be counted more than once. Field introduced in 32.1.6.
+          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
+          Cloud Services edition.
+        type: integer
+        format: uint64
       msg_lb_orphan_count:
         description: In-flight bindings orphaned when the client connection closed
           before a response arrived. Field introduced in 32.1.5. Allowed with any
           value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+        type: integer
+        format: uint64
+      msg_lb_rsp_key_miss_drops:
+        description: Responses from this pool's servers discarded because their transaction
+          key matched no outstanding request. Field introduced in 32.1.6. Allowed
+          with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: integer
+        format: uint64
+      msg_lb_rsp_other_drops:
+        description: Responses from this pool's servers discarded for a reason other
+          than a key mismatch  no request binding, request not forwarded, or client
+          already closed. Field introduced in 32.1.6. Allowed with any value in Enterprise,
+          Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         format: uint64
       msg_lb_timeout_count:
@@ -186697,7 +186778,9 @@ definitions:
         format: uint32
       max_vs_per_se:
         description: Maximum number of Virtual Services that can be placed on a single
-          Service Engine. Allowed values are 1-1000. Allowed with any value in Enterprise,
+          Service Engine. SNI / EVH child and shared VIP Virtual Services when placed
+          on a Service Engine due to networking constraints might lead to this limit
+          being exceeded. Allowed values are 1-1000. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: integer
         default: 10
@@ -187584,7 +187667,7 @@ definitions:
       supervisor_group:
         description: Indicates that this Service Engine Group is reserved for exclusive
           use by the Supervisor in VCF environment. This is a read-only field for
-          external user. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          external user. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: boolean
       tenant_ref:
@@ -193274,23 +193357,23 @@ definitions:
     properties:
       free_su_limit:
         description: Free service unit allowance for the supervisor SE group. Field
-          introduced in 32.2.1. Allowed with any value in Enterprise, Essentials,
+          introduced in 32.1.6. Allowed with any value in Enterprise, Essentials,
           Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
       se_group_name:
-        description: Name of the supervisor SE group. Field introduced in 32.2.1.
+        description: Name of the supervisor SE group. Field introduced in 32.1.6.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       se_group_uuid:
-        description: UUID of the supervisor SE group. Field introduced in 32.2.1.
+        description: UUID of the supervisor SE group. Field introduced in 32.1.6.
           Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
           Cloud Services edition.
         type: string
       service_units_used:
         description: Service units currently consumed and reserved by the supervisor
-          SE group. Field introduced in 32.2.1. Allowed with any value in Enterprise,
+          SE group. Field introduced in 32.1.6. Allowed with any value in Enterprise,
           Essentials, Basic, Enterprise with Cloud Services edition.
         type: number
         format: double
@@ -197416,6 +197499,14 @@ definitions:
     required:
     - tier1_lr_id
     properties:
+      attrs:
+        description: Generic key/value attributes for storing extra information about
+          the Tier1 segment configuration. Field introduced in 32.2.1. Allowed with
+          any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services
+          edition.
+        type: array
+        items:
+          $ref: '#/definitions/KeyValue'
       locale_service:
         description: Locale-services configuration, holds T1 edge-cluster information.
           When VirtualService is enabled with preserve client IP, ServiceInsertion
