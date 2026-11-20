@@ -20,6 +20,18 @@ type MsgLbTCPStats struct {
 	// Connections rejected at accept because this VS has no L4_REQ datascript configured for MsgLB message framing. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	DsRejectCount *uint64 `json:"ds_reject_count,omitempty"`
 
+	// Failed attempts to forward a message  no server available, binding setup failure, immediate backend connect failure, or datascript error. A retried request can be counted more than once. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	FwdFailures *uint64 `json:"fwd_failures,omitempty"`
+
+	// Times received bytes were discarded unforwarded because the peer closed mid-message or the datascript collect timeout expired. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	PartialMsgDrops *uint64 `json:"partial_msg_drops,omitempty"`
+
+	// Server responses discarded because their transaction key matched no outstanding request. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RspKeyMissDrops *uint64 `json:"rsp_key_miss_drops,omitempty"`
+
+	// Server responses discarded for a reason other than a key mismatch  no request binding, request not forwarded, or client already closed. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	RspOtherDrops *uint64 `json:"rsp_other_drops,omitempty"`
+
 	// Total request bytes committed by clients on this VS. Field introduced in 32.1.5. Unit is BYTES. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	TotalBytes *uint64 `json:"total_bytes,omitempty"`
 
