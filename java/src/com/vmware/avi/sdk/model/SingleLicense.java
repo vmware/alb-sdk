@@ -69,6 +69,12 @@ public class SingleLicense  {
     @JsonProperty("license_tier")
     private List<String> licenseTier;
 
+    @JsonProperty("license_token")
+    private String licenseToken;
+
+    @JsonProperty("license_token_hash")
+    private String licenseTokenHash;
+
     @JsonProperty("license_type")
     private String licenseType;
 
@@ -506,6 +512,50 @@ public class SingleLicense  {
 
     /**
      * This is the getter method this will return the attribute value.
+     * License token the license was loaded from  the signed jws license from lh, or the signed license text.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return licenseToken
+     */
+    public String getLicenseToken() {
+        return licenseToken;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * License token the license was loaded from  the signed jws license from lh, or the signed license text.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param licenseToken set the licenseToken.
+     */
+    public void setLicenseToken(String  licenseToken) {
+        this.licenseToken = licenseToken;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
+     * Hex encoded sha-256 hash of license_token.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @return licenseTokenHash
+     */
+    public String getLicenseTokenHash() {
+        return licenseTokenHash;
+    }
+
+    /**
+     * This is the setter method to the attribute.
+     * Hex encoded sha-256 hash of license_token.
+     * Field introduced in 32.1.6.
+     * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
+     * @param licenseTokenHash set the licenseTokenHash.
+     */
+    public void setLicenseTokenHash(String  licenseTokenHash) {
+        this.licenseTokenHash = licenseTokenHash;
+    }
+
+    /**
+     * This is the getter method this will return the attribute value.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
      * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return licenseType
@@ -853,7 +903,9 @@ public class SingleLicense  {
   Objects.equals(this.unit, objSingleLicense.unit)&&
   Objects.equals(this.tenantUuid, objSingleLicense.tenantUuid)&&
   Objects.equals(this.clsId, objSingleLicense.clsId)&&
-  Objects.equals(this.policy, objSingleLicense.policy);
+  Objects.equals(this.policy, objSingleLicense.policy)&&
+  Objects.equals(this.licenseTokenHash, objSingleLicense.licenseTokenHash)&&
+  Objects.equals(this.licenseToken, objSingleLicense.licenseToken);
     }
 
     @Override
@@ -876,6 +928,8 @@ public class SingleLicense  {
                         sb.append("    licenseName: ").append(toIndentedString(licenseName)).append("\n");
                         sb.append("    licenseString: ").append(toIndentedString(licenseString)).append("\n");
                         sb.append("    licenseTier: ").append(toIndentedString(licenseTier)).append("\n");
+                        sb.append("    licenseToken: ").append(toIndentedString(licenseToken)).append("\n");
+                        sb.append("    licenseTokenHash: ").append(toIndentedString(licenseTokenHash)).append("\n");
                         sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
                         sb.append("    maxSes: ").append(toIndentedString(maxSes)).append("\n");
                         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
