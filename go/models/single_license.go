@@ -58,6 +58,14 @@ type SingleLicense struct {
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseTier []string `json:"license_tier,omitempty"`
 
+	// License token the license was loaded from  the signed JWS license from LH, or the signed license text. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Read Only: true
+	LicenseToken *string `json:"license_token,omitempty"`
+
+	// Hex encoded SHA-256 hash of license_token. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Read Only: true
+	LicenseTokenHash *string `json:"license_token_hash,omitempty"`
+
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	LicenseType *string `json:"license_type,omitempty"`
 
