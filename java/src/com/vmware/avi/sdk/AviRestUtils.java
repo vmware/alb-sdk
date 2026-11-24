@@ -236,13 +236,8 @@ public class AviRestUtils {
 				SSLContextBuilder sslBuilder = SSLContexts.custom();
 				// Handle Server Trust (Accepting Untrusted/Self-Signed Targets)
 				if (creds.getVerify()) {
-					hostnameVerifier = new HostnameVerifier() {
-						private final DefaultHostnameVerifier defaultVerifier = new DefaultHostnameVerifier();
-						@Override
-						public boolean verify(String hostname, SSLSession session) {
-							return creds.getController().equals(hostname) || defaultVerifier.verify(hostname, session);
-						}
-					};
+					// Compare the host we connected to with the names in the server certificate.
+					hostnameVerifier = new DefaultHostnameVerifier();
 
 					if (creds.getSslCertificate() != null) {
 						// If it contains the Controller's CA, validation will succeed.
