@@ -25,7 +25,7 @@ public class RemoteController  {
     private String address;
 
     @JsonProperty("enabled")
-    private Boolean enabled = false;
+    private Boolean enabled;
 
     @JsonProperty("password")
     private String password;
@@ -67,7 +67,7 @@ public class RemoteController  {
      * Enable remote controller request.
      * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -79,7 +79,7 @@ public class RemoteController  {
      * Enable remote controller request.
      * Field introduced in 32.1.1.
      * Allowed with any value in enterprise, essentials, basic, enterprise with cloud services edition.
-     * Default value when not specified in API or module is interpreted by Avi Controller as false.
+     * Default value when not specified in API or module is interpreted by Avi Controller as null.
      * @param enabled set the enabled.
      */
     public void setEnabled(Boolean  enabled) {
