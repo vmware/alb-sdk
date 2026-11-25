@@ -60,10 +60,13 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.HttpCookie;
 import java.net.UnknownHostException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyFactory;
 import java.security.KeyStore;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
@@ -233,13 +236,8 @@ public class AviRestUtils {
 				SSLContextBuilder sslBuilder = SSLContexts.custom();
 				// Handle Server Trust (Accepting Untrusted/Self-Signed Targets)
 				if (creds.getVerify()) {
-					hostnameVerifier = new HostnameVerifier() {
-						private final DefaultHostnameVerifier defaultVerifier = new DefaultHostnameVerifier();
-						@Override
-						public boolean verify(String hostname, SSLSession session) {
-							return creds.getController().equals(hostname) || defaultVerifier.verify(hostname, session);
-						}
-					};
+					// Compare the host we connected to with the names in the server certificate.
+					hostnameVerifier = new DefaultHostnameVerifier();
 
 					if (creds.getSslCertificate() != null) {
 						// If it contains the Controller's CA, validation will succeed.
@@ -461,12 +459,25 @@ public class AviRestUtils {
 		sb.append(aviCredentials.getTenant()).append(":");
 		sb.append(aviCredentials.getVerify());
 		if (aviCredentials.getPassword() != null) {
-			sb.append(":").append(aviCredentials.getPassword().hashCode());
+			sb.append(":").append(sha256Base64(aviCredentials.getPassword()));
 		}
 		if (aviCredentials.getToken() != null) {
-			sb.append(":").append(aviCredentials.getToken().hashCode());
+			sb.append(":").append(sha256Base64(aviCredentials.getToken()));
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * Computes a SHA-256 digest of the given secret so it can be used as part of
+	 * a cache key without the collision weakness of String.hashCode().
+	 */
+	private static String sha256Base64(String input) {
+		try {
+			byte[] hash = MessageDigest.getInstance("SHA-256").digest(input.getBytes(StandardCharsets.UTF_8));
+			return java.util.Base64.getEncoder().encodeToString(hash);
+		} catch (NoSuchAlgorithmException e) {
+			throw new RuntimeException("SHA-256 algorithm not available", e);
+		}
 	}
 
 	/**
