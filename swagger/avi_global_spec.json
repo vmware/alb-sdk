@@ -161263,10 +161263,6 @@
                     "default": 1,
                     "format": "uint32"
                 },
-                "remote_controller": {
-                    "description": "Remote controller request to enable report generation for remote controller. If enabled, the report generation will be done for the remote controller. Field introduced in 32.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
-                    "$ref": "#/definitions/RemoteController"
-                },
                 "url": {
                     "description": "url",
                     "readOnly": true,
