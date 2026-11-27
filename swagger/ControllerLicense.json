@@ -593,6 +593,16 @@
                         "type": "string"
                     }
                 },
+                "license_token": {
+                    "description": "License token the license was loaded from  the signed JWS license from LH, or the signed license text. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string"
+                },
+                "license_token_hash": {
+                    "description": "Hex encoded SHA-256 hash of license_token. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "readOnly": true,
+                    "type": "string"
+                },
                 "license_type": {
                     "description": " Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "string"
