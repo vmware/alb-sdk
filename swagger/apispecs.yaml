@@ -15597,58 +15597,6 @@ paths:
         '404':
           description: object not found
   /cloud/{uuid}/gc/:
-    patch:
-      tags:
-      - Cloud
-      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
-      operationId: PATCH /cloud/{uuid}/gc/
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      parameters:
-      - in: header
-        name: X-Avi-Tenant
-        type: string
-        required: false
-        description: Avi Tenant Header
-      - name: X-Avi-Tenant-UUID
-        in: header
-        type: string
-        required: false
-        description: Avi Tenant Header UUID
-      - name: X-CSRFToken
-        in: header
-        type: string
-        required: false
-        description: Avi Controller may send back CSRF token in the response cookies.
-          The caller should update the request headers with this token else controller
-          will reject requests.
-      - name: X-Avi-Version
-        in: header
-        type: string
-        required: true
-        description: The caller is required to set Avi Version Header to the expected
-          version of configuration. The response from the controller will provide
-          and accept data according to the specified version. The controller will
-          reject POST and PUT requests where the data is not compatible with the specified
-          version.
-      - in: path
-        name: uuid
-        description: UUID of the object to fetch
-        required: true
-        type: string
-      security:
-      - basicAuth: []
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: string
-        '401':
-          description: log in failed
-        '404':
-          description: object not found
     put:
       tags:
       - Cloud
@@ -15693,6 +15641,58 @@ paths:
           type: object
           additionalProperties:
             type: string
+      - in: path
+        name: uuid
+        description: UUID of the object to fetch
+        required: true
+        type: string
+      security:
+      - basicAuth: []
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: log in failed
+        '404':
+          description: object not found
+    patch:
+      tags:
+      - Cloud
+      description: Patch method to get the specific cloud object using cloud/{uuid}/gc/
+      operationId: PATCH /cloud/{uuid}/gc/
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: header
+        name: X-Avi-Tenant
+        type: string
+        required: false
+        description: Avi Tenant Header
+      - name: X-Avi-Tenant-UUID
+        in: header
+        type: string
+        required: false
+        description: Avi Tenant Header UUID
+      - name: X-CSRFToken
+        in: header
+        type: string
+        required: false
+        description: Avi Controller may send back CSRF token in the response cookies.
+          The caller should update the request headers with this token else controller
+          will reject requests.
+      - name: X-Avi-Version
+        in: header
+        type: string
+        required: true
+        description: The caller is required to set Avi Version Header to the expected
+          version of configuration. The response from the controller will provide
+          and accept data according to the specified version. The controller will
+          reject POST and PUT requests where the data is not compatible with the specified
+          version.
       - in: path
         name: uuid
         description: UUID of the object to fetch
@@ -103218,9 +103218,9 @@ definitions:
           SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
           SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
           PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
-          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED,
+          PASSWORD_ROTATION_AUTH_FAILED. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.
         type: string
       not_cond:
         description: ' Allowed with any value in Enterprise, Essentials, Basic, Enterprise
@@ -130988,9 +130988,9 @@ definitions:
           SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
           SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
           PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
-          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.'
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED,
+          PASSWORD_ROTATION_AUTH_FAILED. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.'
         type: array
         items:
           type: string
@@ -131258,9 +131258,9 @@ definitions:
           SYSTEM_LIMIT_BEYOND_SUPPORTED_CONFIG, SYSTEM_LIMIT_WITHIN_SUPPORTED_CONFIG,
           SYSTEM_CONFIG_SYNC_FAILURE, SE_AUTOSCALER_ACTIONS_GENERATED, PASSWORD_ROTATION_COMPLETED,
           PASSWORD_ROTATION_FAILED, PASSWORD_ROTATION_BOTH_PASSWORDS_INVALID, NTP_WEAK_AUTH_ALGORITHM_CONFIGURED,
-          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED.
-          Allowed with any value in Enterprise, Essentials, Basic, Enterprise with
-          Cloud Services edition.'
+          OPEN_API_SPEC_DELETE_CLEANUP_STARTED, OPEN_API_SPEC_DELETE_CLEANUP_COMPLETED,
+          PASSWORD_ROTATION_AUTH_FAILED. Allowed with any value in Enterprise, Essentials,
+          Basic, Enterprise with Cloud Services edition.'
         type: string
       event_pages:
         description: Pages in which event should come up. Allowed with any value in
