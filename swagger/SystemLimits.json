@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "32.1.4",
+        "version": "32.1.6",
         "title": "Avi SystemLimits Object API",
         "contact": {
             "name": "Avi Networks Inc.",
@@ -587,6 +587,11 @@
                 },
                 "num_east_west_virtualservices": {
                     "description": "Maximum number of east-west virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "num_geodb_records": {
+                    "description": "System-wide maximum number of records allowed in a GeoDB database (SystemGeoDB and GslbGeoDB). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.",
                     "type": "integer",
                     "format": "int32"
                 },
