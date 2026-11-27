@@ -444,7 +444,7 @@ type ServiceEngineGroup struct {
 	// Maximum of number of 4 KB pages allocated to the Linux kernel GRO subsystem for packet coalescing. This parameter is limited to supported kernels only. Requires SE Reboot. Allowed values are 1-17. Field introduced in 21.1.3. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxSkbFrags *uint32 `json:"max_skb_frags,omitempty"`
 
-	// Maximum number of Virtual Services that can be placed on a single Service Engine. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Maximum number of Virtual Services that can be placed on a single Service Engine. SNI / EVH child and shared VIP Virtual Services when placed on a Service Engine due to networking constraints might lead to this limit being exceeded. Allowed values are 1-1000. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MaxVsPerSe *int32 `json:"max_vs_per_se,omitempty"`
 
 	//  Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
@@ -814,7 +814,7 @@ type ServiceEngineGroup struct {
 	// Number of SSL sessions that can be cached per VS. Field introduced in 21.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SslSessCachePerVs *uint32 `json:"ssl_sess_cache_per_vs,omitempty"`
 
-	// Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is a read-only field for external user. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	// Indicates that this Service Engine Group is reserved for exclusive use by the Supervisor in VCF environment. This is a read-only field for external user. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	SupervisorGroup *bool `json:"supervisor_group,omitempty"`
 
 	//  It is a reference to an object of type Tenant. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.

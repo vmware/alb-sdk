@@ -110,8 +110,17 @@ type PoolStats struct {
 	// Connections rejected at accept because the VS has no L4_REQ datascript configured for MsgLB message framing. Nonzero indicates a VS/datascript configuration problem, not a traffic problem. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MsgLbDsRejectCount *uint64 `json:"msg_lb_ds_reject_count,omitempty"`
 
+	// Failed attempts to forward a request after this pool was selected  no server available, binding setup failure, or immediate backend connect failure. A retried request can be counted more than once. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbFwdFailures *uint64 `json:"msg_lb_fwd_failures,omitempty"`
+
 	// In-flight bindings orphaned when the client connection closed before a response arrived. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MsgLbOrphanCount *uint64 `json:"msg_lb_orphan_count,omitempty"`
+
+	// Responses from this pool's servers discarded because their transaction key matched no outstanding request. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbRspKeyMissDrops *uint64 `json:"msg_lb_rsp_key_miss_drops,omitempty"`
+
+	// Responses from this pool's servers discarded for a reason other than a key mismatch  no request binding, request not forwarded, or client already closed. Field introduced in 32.1.6. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MsgLbRspOtherDrops *uint64 `json:"msg_lb_rsp_other_drops,omitempty"`
 
 	// Bindings that expired waiting for a server response. Field introduced in 32.1.5. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	MsgLbTimeoutCount *uint64 `json:"msg_lb_timeout_count,omitempty"`

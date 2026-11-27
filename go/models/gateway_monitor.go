@@ -21,6 +21,9 @@ type GatewayMonitor struct {
 	// The number of consecutive successful gateway health checks before a gateway that was marked down by the gateway monitor is marked up. Allowed values are 3-50. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	GatewayMonitorSuccessThreshold *uint32 `json:"gateway_monitor_success_threshold,omitempty"`
 
+	// Protocol used by the gateway monitor to check gateway reachability. Enum options - GATEWAY_MONITOR_ICMP, GATEWAY_MONITOR_ARP. Field introduced in 32.2.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	MonitorProtocol *string `json:"monitor_protocol,omitempty"`
+
 	// Subnet providing reachability for Multi-hop Gateway. Field introduced in 18.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	Subnet *IPAddrPrefix `json:"subnet,omitempty"`
 }
