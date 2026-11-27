@@ -23,6 +23,9 @@ type ControllerSizingLimits struct {
 	// Maximum number of east-west virtualservices. Field introduced in 20.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumEastWestVirtualservices *int32 `json:"num_east_west_virtualservices,omitempty"`
 
+	// System-wide maximum number of records allowed in a GeoDB database (SystemGeoDB and GslbGeoDB). Field introduced in 32.1.4. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
+	NumGeodbRecords *int32 `json:"num_geodb_records,omitempty"`
+
 	// Maximum number of pools with realtime metrics enabled. Field introduced in 31.1.1. Allowed with any value in Enterprise, Essentials, Basic, Enterprise with Cloud Services edition.
 	NumPoolRtMetrics *int32 `json:"num_pool_rt_metrics,omitempty"`
 
